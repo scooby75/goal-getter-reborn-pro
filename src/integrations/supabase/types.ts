@@ -9,16 +9,79 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          email: string
+          full_name: string | null
+          id: string
+          role: Database["public"]["Enums"]["user_role"] | null
+          status: Database["public"]["Enums"]["user_status"] | null
+          updated_at: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email: string
+          full_name?: string | null
+          id: string
+          role?: Database["public"]["Enums"]["user_role"] | null
+          status?: Database["public"]["Enums"]["user_status"] | null
+          updated_at?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email?: string
+          full_name?: string | null
+          id?: string
+          role?: Database["public"]["Enums"]["user_role"] | null
+          status?: Database["public"]["Enums"]["user_status"] | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      update_logs: {
+        Row: {
+          completed_at: string | null
+          error_details: string | null
+          id: string
+          message: string | null
+          started_at: string | null
+          status: string
+        }
+        Insert: {
+          completed_at?: string | null
+          error_details?: string | null
+          id?: string
+          message?: string | null
+          started_at?: string | null
+          status: string
+        }
+        Update: {
+          completed_at?: string | null
+          error_details?: string | null
+          id?: string
+          message?: string | null
+          started_at?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: {
+        Args: { user_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      user_role: "admin" | "user"
+      user_status: "pending" | "approved" | "blocked"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -133,6 +196,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role: ["admin", "user"],
+      user_status: ["pending", "approved", "blocked"],
+    },
   },
 } as const
