@@ -2,6 +2,7 @@
 import { GoalStatsConsulta } from "@/components/GoalStatsConsulta";
 import { AuthButton } from "@/components/AuthButton";
 import { AuthGuard } from "@/components/AuthGuard";
+import { UpdateStatusDisplay } from "@/components/UpdateStatusDisplay";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
@@ -65,6 +66,9 @@ const Index = () => {
               <AuthButton />
             </div>
           </div>
+          
+          {/* Update Status Display */}
+          <UpdateStatusDisplay />
           
           <GoalStatsConsulta />
         </div>

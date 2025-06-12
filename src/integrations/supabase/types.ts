@@ -82,6 +82,24 @@ export type Database = {
         Args: { user_id: string }
         Returns: boolean
       }
+      list_cron_jobs: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          jobid: number
+          schedule: string
+          command: string
+          nodename: string
+          nodeport: number
+          database: string
+          username: string
+          active: boolean
+          jobname: string
+        }[]
+      }
+      trigger_data_update: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
     }
     Enums: {
       user_role: "admin" | "user"
