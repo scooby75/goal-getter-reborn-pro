@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalStatsData, LeagueAverageData } from '@/types/goalStats';
@@ -114,21 +113,36 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
 };
 
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
-  console.log(`Fetching data from: ${url}`);
+  console.log(`🔄 Attempting to fetch data from: ${url}`);
+  
   try {
+    // First, let's test if we can reach the URL at all
+    console.log('🌐 Testing network connectivity...');
+    
     const response = await fetch(url, {
+      method: 'GET',
+      mode: 'cors',
       headers: {
         'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
+        'Pragma': 'no-cache',
+        'Accept': 'text/csv,text/plain,*/*'
       }
     });
     
+    console.log(`📡 Response status: ${response.status} ${response.statusText}`);
+    console.log(`📡 Response headers:`, Object.fromEntries(response.headers.entries()));
+    
     if (!response.ok) {
-      throw new Error(`Failed to fetch data from ${url}: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`❌ HTTP Error ${response.status}: ${response.statusText}`);
+      console.error(`❌ Error response body:`, errorText);
+      throw new Error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`);
     }
     
     const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}, length: ${csvText.length} characters`);
+    console.log(`✅ Data fetched successfully from ${url}`);
+    console.log(`📊 Response length: ${csvText.length} characters`);
+    console.log(`📊 First 200 characters:`, csvText.substring(0, 200));
     
     if (!csvText || csvText.trim() === '') {
       throw new Error(`Empty response from ${url}`);
@@ -136,28 +150,43 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
     
     return parseCSV(csvText);
   } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
+    console.error(`💥 Error fetching data from ${url}:`, error);
+    
+    // Additional debugging information
+    if (error instanceof TypeError && error.message.includes('fetch')) {
+      console.error('🚫 Network error - possible CORS or connectivity issue');
+      console.error('🔍 Check if GitHub is accessible and CORS is properly configured');
+    }
+    
     throw error;
   }
 };
 
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
   const url = 'https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/League_Averages.csv';
-  console.log(`Fetching league averages from: ${url}`);
+  console.log(`🔄 Fetching league averages from: ${url}`);
+  
   try {
     const response = await fetch(url, {
+      method: 'GET',
+      mode: 'cors',
       headers: {
         'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
+        'Pragma': 'no-cache',
+        'Accept': 'text/csv,text/plain,*/*'
       }
     });
     
+    console.log(`📡 League averages response status: ${response.status} ${response.statusText}`);
+    
     if (!response.ok) {
-      throw new Error(`Failed to fetch league averages: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`❌ League averages HTTP Error ${response.status}: ${response.statusText}`);
+      throw new Error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`);
     }
     
     const csvText = await response.text();
-    console.log(`League averages data fetched successfully, length: ${csvText.length} characters`);
+    console.log(`✅ League averages data fetched successfully, length: ${csvText.length} characters`);
     
     if (!csvText || csvText.trim() === '') {
       throw new Error('Empty league averages response');
@@ -165,43 +194,83 @@ const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
     
     return parseLeagueAveragesCSV(csvText);
   } catch (error) {
-    console.error('Error fetching league averages:', error);
+    console.error('💥 Error fetching league averages:', error);
     throw error;
   }
 };
 
 export const useGoalStats = () => {
-  console.log('useGoalStats hook called');
+  console.log('🚀 useGoalStats hook called');
 
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery({
     queryKey: ['homeStats'],
-    queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Home.csv'),
-    retry: 3,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    queryFn: () => {
+      console.log('🏠 Starting home stats fetch...');
+      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Home.csv');
+    },
+    retry: (failureCount, error) => {
+      console.log(`🔄 Home stats retry attempt ${failureCount + 1}:`, error?.message);
+      return failureCount < 3;
+    },
+    retryDelay: (attemptIndex) => {
+      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      console.log(`⏱️ Home stats retry delay: ${delay}ms`);
+      return delay;
+    },
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery({
     queryKey: ['awayStats'],
-    queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Away.csv'),
-    retry: 3,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    queryFn: () => {
+      console.log('✈️ Starting away stats fetch...');
+      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Away.csv');
+    },
+    retry: (failureCount, error) => {
+      console.log(`🔄 Away stats retry attempt ${failureCount + 1}:`, error?.message);
+      return failureCount < 3;
+    },
+    retryDelay: (attemptIndex) => {
+      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      console.log(`⏱️ Away stats retry delay: ${delay}ms`);
+      return delay;
+    },
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery({
     queryKey: ['overallStats'],
-    queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Overall.csv'),
-    retry: 3,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    queryFn: () => {
+      console.log('📊 Starting overall stats fetch...');
+      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Overall.csv');
+    },
+    retry: (failureCount, error) => {
+      console.log(`🔄 Overall stats retry attempt ${failureCount + 1}:`, error?.message);
+      return failureCount < 3;
+    },
+    retryDelay: (attemptIndex) => {
+      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      console.log(`⏱️ Overall stats retry delay: ${delay}ms`);
+      return delay;
+    },
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useQuery({
     queryKey: ['leagueAverages'],
-    queryFn: fetchLeagueAveragesData,
-    retry: 3,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    queryFn: () => {
+      console.log('🏆 Starting league averages fetch...');
+      return fetchLeagueAveragesData();
+    },
+    retry: (failureCount, error) => {
+      console.log(`🔄 League averages retry attempt ${failureCount + 1}:`, error?.message);
+      return failureCount < 3;
+    },
+    retryDelay: (attemptIndex) => {
+      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      console.log(`⏱️ League averages retry delay: ${delay}ms`);
+      return delay;
+    },
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
@@ -209,7 +278,7 @@ export const useGoalStats = () => {
   const error = homeError || awayError || overallError || leagueError;
 
   // Enhanced debugging
-  console.log('Hook state:', {
+  console.log('🎯 Hook state summary:', {
     homeLoading,
     awayLoading,
     overallLoading,
@@ -220,14 +289,14 @@ export const useGoalStats = () => {
     leagueError: leagueError?.message
   });
 
-  console.log('Raw data counts:', {
+  console.log('📈 Data counts:', {
     homeStats: homeStats.length,
     awayStats: awayStats.length,
     overallStats: overallStats.length,
     leagueAverages: leagueAverages.length
   });
 
-  console.log('Valid teams:', {
+  console.log('✅ Valid teams:', {
     homeTeams: homeStats.filter(team => team.Team && team.Team.trim() !== '').length,
     awayTeams: awayStats.filter(team => team.Team && team.Team.trim() !== '').length
   });
@@ -256,7 +325,7 @@ export const useGoalStats = () => {
     leagueAverages,
   };
 
-  console.log('Final goal stats data:', { 
+  console.log('🏁 Final goal stats data:', { 
     isLoading, 
     error: error?.message, 
     homeCount: homeStats.length,
