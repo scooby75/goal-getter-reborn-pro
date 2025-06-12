@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalStatsData, LeagueAverageData } from '@/types/goalStats';
@@ -163,7 +164,7 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
 };
 
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
-  const url = 'https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/League_Averages.csv';
+  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv';
   console.log(`🔄 Fetching league averages from: ${url}`);
   
   try {
@@ -206,7 +207,7 @@ export const useGoalStats = () => {
     queryKey: ['homeStats'],
     queryFn: () => {
       console.log('🏠 Starting home stats fetch...');
-      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Home.csv');
+      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv');
     },
     retry: (failureCount, error) => {
       console.log(`🔄 Home stats retry attempt ${failureCount + 1}:`, error?.message);
@@ -224,7 +225,7 @@ export const useGoalStats = () => {
     queryKey: ['awayStats'],
     queryFn: () => {
       console.log('✈️ Starting away stats fetch...');
-      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Away.csv');
+      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Away.csv');
     },
     retry: (failureCount, error) => {
       console.log(`🔄 Away stats retry attempt ${failureCount + 1}:`, error?.message);
@@ -242,7 +243,7 @@ export const useGoalStats = () => {
     queryKey: ['overallStats'],
     queryFn: () => {
       console.log('📊 Starting overall stats fetch...');
-      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Overall.csv');
+      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Overall.csv');
     },
     retry: (failureCount, error) => {
       console.log(`🔄 Overall stats retry attempt ${failureCount + 1}:`, error?.message);
