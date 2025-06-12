@@ -17,11 +17,38 @@ export const GoalStatsConsulta = () => {
   
   const { goalStatsData, isLoading, error } = useGoalStats();
 
+  console.log('GoalStatsConsulta - Current state:', {
+    isLoading,
+    error: error?.message,
+    homeStatsCount: goalStatsData?.homeStats?.length || 0,
+    awayStatsCount: goalStatsData?.awayStats?.length || 0,
+    overallStatsCount: goalStatsData?.overallStats?.length || 0
+  });
+
   return (
     <AuthGuard requireApproval>
       <div className="space-y-6">
         {/* Last Update Display */}
         <LastUpdateDisplay />
+
+        {/* Debug Information */}
+        <Card className="shadow-lg bg-blue-50">
+          <CardHeader>
+            <CardTitle className="text-center text-lg text-blue-800">
+              🔍 Debug Information
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2 text-sm">
+              <p><strong>Loading:</strong> {isLoading ? 'Yes' : 'No'}</p>
+              <p><strong>Error:</strong> {error ? error.message : 'None'}</p>
+              <p><strong>Home Stats:</strong> {goalStatsData?.homeStats?.length || 0} teams</p>
+              <p><strong>Away Stats:</strong> {goalStatsData?.awayStats?.length || 0} teams</p>
+              <p><strong>Overall Stats:</strong> {goalStatsData?.overallStats?.length || 0} teams</p>
+              <p><strong>League Averages:</strong> {goalStatsData?.leagueAverages?.length || 0} leagues</p>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Display error or loading state */}
         {error && (
@@ -29,6 +56,9 @@ export const GoalStatsConsulta = () => {
             <div className="text-center">
               <AlertCircle className="h-8 w-8 mx-auto mb-4 text-red-600" />
               <p className="text-red-600">Erro ao carregar dados: {error.message}</p>
+              <p className="text-sm text-gray-500 mt-2">
+                Verifique sua conexão com a internet e tente novamente
+              </p>
             </div>
           </div>
         )}
@@ -38,45 +68,71 @@ export const GoalStatsConsulta = () => {
             <div className="text-center">
               <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-blue-600" />
               <p className="text-gray-600">Carregando dados das equipes...</p>
+              <p className="text-sm text-gray-500 mt-2">
+                Isso pode levar alguns segundos...
+              </p>
             </div>
           </div>
         )}
 
-        {!error && !isLoading && (
+        {!error && !isLoading && goalStatsData && (
           <>
-            {/* Team Selection */}
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-center text-2xl text-gray-800">
-                  Selecione as Equipes
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ImprovedTeamSearch
-                    value={selectedHomeTeam}
-                    onValueChange={setSelectedHomeTeam}
-                    options={goalStatsData.homeStats
-                      .map(team => team.Team)
-                      .filter(teamName => teamName && teamName.trim() !== '')
-                      .sort()}
-                    placeholder="Selecione o time da casa"
-                    label="Time da Casa"
-                  />
-                  
-                  <ImprovedTeamSearch
-                    value={selectedAwayTeam}
-                    onValueChange={setSelectedAwayTeam}
-                    options={goalStatsData.awayStats
-                      .map(team => team.Team)
-                      .filter(teamName => teamName && teamName.trim() !== '')
-                      .sort()}
-                    placeholder="Selecione o time visitante"
-                    label="Time Visitante"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+            {/* Show message if no data is available */}
+            {(!goalStatsData.homeStats || goalStatsData.homeStats.length === 0) && (
+              <Card className="shadow-lg bg-yellow-50 border-yellow-200">
+                <CardHeader>
+                  <CardTitle className="text-center text-xl text-yellow-800">
+                    ⚠️ Nenhum Dado Disponível
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-center">
+                    <p className="text-yellow-700">
+                      Não foram encontrados dados de equipes. A base de dados pode estar vazia ou em processo de atualização.
+                    </p>
+                    <p className="text-sm text-yellow-600 mt-2">
+                      Aguarde alguns minutos e tente novamente, ou entre em contato com o administrador.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Team Selection - only show if we have data */}
+            {goalStatsData.homeStats && goalStatsData.homeStats.length > 0 && (
+              <Card className="shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-center text-2xl text-gray-800">
+                    Selecione as Equipes
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ImprovedTeamSearch
+                      value={selectedHomeTeam}
+                      onValueChange={setSelectedHomeTeam}
+                      options={goalStatsData.homeStats
+                        .map(team => team.Team)
+                        .filter(teamName => teamName && teamName.trim() !== '')
+                        .sort()}
+                      placeholder="Selecione o time da casa"
+                      label="Time da Casa"
+                    />
+                    
+                    <ImprovedTeamSearch
+                      value={selectedAwayTeam}
+                      onValueChange={setSelectedAwayTeam}
+                      options={goalStatsData.awayStats
+                        .map(team => team.Team)
+                        .filter(teamName => teamName && teamName.trim() !== '')
+                        .sort()}
+                      placeholder="Selecione o time visitante"
+                      label="Time Visitante"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Rest of the existing component logic */}
             {(selectedHomeTeam || selectedAwayTeam) && (

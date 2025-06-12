@@ -1,10 +1,21 @@
+
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalStatsData, LeagueAverageData } from '@/types/goalStats';
 
 const parseCSV = (csvText: string): TeamStats[] => {
   console.log('Parsing CSV data...');
+  if (!csvText || csvText.trim() === '') {
+    console.warn('CSV text is empty or undefined');
+    return [];
+  }
+
   const lines = csvText.trim().split('\n');
+  if (lines.length === 0) {
+    console.warn('No lines found in CSV');
+    return [];
+  }
+
   const headers = lines[0].split(',');
   
   console.log('CSV Headers:', headers);
@@ -58,7 +69,17 @@ const parseCSV = (csvText: string): TeamStats[] => {
 
 const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
   console.log('Parsing League Averages CSV data...');
+  if (!csvText || csvText.trim() === '') {
+    console.warn('League averages CSV text is empty or undefined');
+    return [];
+  }
+
   const lines = csvText.trim().split('\n');
+  if (lines.length === 0) {
+    console.warn('No lines found in league averages CSV');
+    return [];
+  }
+
   const headers = lines[0].split(',');
   
   console.log('League CSV Headers:', headers);
@@ -95,12 +116,24 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
   console.log(`Fetching data from: ${url}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
+    
     if (!response.ok) {
-      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
+      throw new Error(`Failed to fetch data from ${url}: ${response.status} ${response.statusText}`);
     }
+    
     const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}`);
+    console.log(`Data fetched successfully from ${url}, length: ${csvText.length} characters`);
+    
+    if (!csvText || csvText.trim() === '') {
+      throw new Error(`Empty response from ${url}`);
+    }
+    
     return parseCSV(csvText);
   } catch (error) {
     console.error(`Error fetching data from ${url}:`, error);
@@ -112,12 +145,24 @@ const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
   const url = 'https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/League_Averages.csv';
   console.log(`Fetching league averages from: ${url}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
+    
     if (!response.ok) {
-      throw new Error(`Failed to fetch league averages: ${response.status}`);
+      throw new Error(`Failed to fetch league averages: ${response.status} ${response.statusText}`);
     }
+    
     const csvText = await response.text();
-    console.log('League averages data fetched successfully');
+    console.log(`League averages data fetched successfully, length: ${csvText.length} characters`);
+    
+    if (!csvText || csvText.trim() === '') {
+      throw new Error('Empty league averages response');
+    }
+    
     return parseLeagueAveragesCSV(csvText);
   } catch (error) {
     console.error('Error fetching league averages:', error);
@@ -132,39 +177,60 @@ export const useGoalStats = () => {
     queryKey: ['homeStats'],
     queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Home.csv'),
     retry: 3,
-    retryDelay: 1000,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery({
     queryKey: ['awayStats'],
     queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Away.csv'),
     retry: 3,
-    retryDelay: 1000,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery({
     queryKey: ['overallStats'],
     queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Overall.csv'),
     retry: 3,
-    retryDelay: 1000,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useQuery({
     queryKey: ['leagueAverages'],
     queryFn: fetchLeagueAveragesData,
     retry: 3,
-    retryDelay: 1000,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading;
   const error = homeError || awayError || overallError || leagueError;
 
   // Enhanced debugging
-  console.log('Raw home stats count:', homeStats.length);
-  console.log('Raw away stats count:', awayStats.length);
-  console.log('Raw league averages count:', leagueAverages.length);
-  console.log('Valid home teams:', homeStats.filter(team => team.Team && team.Team.trim() !== '').length);
-  console.log('Valid away teams:', awayStats.filter(team => team.Team && team.Team.trim() !== '').length);
+  console.log('Hook state:', {
+    homeLoading,
+    awayLoading,
+    overallLoading,
+    leagueLoading,
+    homeError: homeError?.message,
+    awayError: awayError?.message,
+    overallError: overallError?.message,
+    leagueError: leagueError?.message
+  });
+
+  console.log('Raw data counts:', {
+    homeStats: homeStats.length,
+    awayStats: awayStats.length,
+    overallStats: overallStats.length,
+    leagueAverages: leagueAverages.length
+  });
+
+  console.log('Valid teams:', {
+    homeTeams: homeStats.filter(team => team.Team && team.Team.trim() !== '').length,
+    awayTeams: awayStats.filter(team => team.Team && team.Team.trim() !== '').length
+  });
 
   const calculateLeagueAverage = () => {
     if (overallStats.length === 0) return { "1.5+": 0, "2.5+": 0, "3.5+": 0, "4.5+": 0 };
@@ -196,7 +262,8 @@ export const useGoalStats = () => {
     homeCount: homeStats.length,
     awayCount: awayStats.length,
     overallCount: overallStats.length,
-    leagueAveragesCount: leagueAverages.length
+    leagueAveragesCount: leagueAverages.length,
+    hasValidData: homeStats.length > 0 && awayStats.length > 0
   });
 
   return { goalStatsData, isLoading, error };
