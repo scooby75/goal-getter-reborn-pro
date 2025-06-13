@@ -14,13 +14,12 @@ const FILES = {
   LEAGUE_AVERAGES: `${GITHUB_BASE_URL}/League_Averages.csv`
 };
 
-const parseCSV = (csvText: string): TeamStats[] => {
+const parseTeamStatsCSV = (csvText: string): TeamStats[] => {
   if (!csvText?.trim()) {
     console.warn('CSV text is empty or undefined');
     return [];
   }
 
-  // Normalize line endings and split lines
   const lines = csvText.trim().replace(/\r\n/g, '\n').split('\n');
   
   if (lines.length <= 1) {
@@ -28,29 +27,32 @@ const parseCSV = (csvText: string): TeamStats[] => {
     return [];
   }
 
-  // Process headers
   const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
   
   return lines.slice(1)
+    .filter(line => line.trim().length > 0)
     .map(line => {
-      // Handle quoted values that might contain commas
-      const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+      const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
       const stats: Partial<TeamStats> = {};
       
       headers.forEach((header, headerIndex) => {
         if (headerIndex >= values.length) return;
         
-        let cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
+        const cleanValue = values[headerIndex] || '';
         
-        if (header.toLowerCase() === 'team') {
+        // Map CSV columns to TeamStats fields
+        if (header === 'Team_Home' || header === 'Team_Away' || header === 'Team') {
           stats.Team = cleanValue;
         } else if (header === 'League_Name') {
           stats.League_Name = cleanValue;
-        } else {
-          // Remove any percentage signs before parsing numbers
-          cleanValue = cleanValue.replace('%', '');
-          const numericValue = parseFloat(cleanValue);
-          stats[header as keyof TeamStats] = isNaN(numericValue) ? 0 : numericValue;
+        } else if (header === 'GP') {
+          stats.GP = parseFloat(cleanValue) || 0;
+        } else if (header === 'Avg') {
+          stats.Avg = parseFloat(cleanValue) || 0;
+        } else if (header.includes('+') || header === 'BTS' || header === 'CS' || header === 'FTS') {
+          // Handle percentage values (0.5+, 1.5+, etc.) and other stats
+          const numericValue = parseFloat(cleanValue.replace('%', '')) || 0;
+          stats[header as keyof TeamStats] = numericValue;
         }
       });
       
@@ -58,9 +60,7 @@ const parseCSV = (csvText: string): TeamStats[] => {
     })
     .filter(team => {
       const teamName = team.Team?.trim();
-      return teamName && 
-             !teamName.toLowerCase().includes('league average') &&
-             !(teamName.includes(' - ') && team.GP && team.GP > 0);
+      return teamName && teamName.length > 0 && team.GP && team.GP > 0;
     });
 };
 
@@ -78,30 +78,38 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
 
   const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
   
-  return lines.slice(1).map(line => {
-    const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-    const league: Partial<LeagueAverageData> = {};
-    
-    headers.forEach((header, headerIndex) => {
-      if (headerIndex >= values.length) return;
+  return lines.slice(1)
+    .filter(line => line.trim().length > 0)
+    .map(line => {
+      const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+      const league: Partial<LeagueAverageData> = {};
       
-      let cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
+      headers.forEach((header, headerIndex) => {
+        if (headerIndex >= values.length) return;
+        
+        let cleanValue = values[headerIndex] || '';
+        
+        if (header === 'League_Name') {
+          league.League_Name = cleanValue;
+        } else {
+          cleanValue = cleanValue.replace('%', '');
+          const numericValue = parseFloat(cleanValue) || 0;
+          league[header as keyof LeagueAverageData] = numericValue;
+        }
+      });
       
-      if (header === 'League_Name') {
-        league.League_Name = cleanValue;
-      } else {
-        cleanValue = cleanValue.replace('%', '');
-        const numericValue = parseFloat(cleanValue);
-        league[header as keyof LeagueAverageData] = isNaN(numericValue) ? 0 : numericValue;
-      }
+      return league as LeagueAverageData;
     });
-    
-    return league as LeagueAverageData;
-  });
 };
 
 const fetchCSVData = async (url: string): Promise<string> => {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    headers: {
+      'Accept': 'text/csv',
+      'Cache-Control': 'no-cache'
+    },
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT)
+  });
   
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
@@ -118,30 +126,40 @@ const useQueryConfig = (queryKey: string, queryFn: () => Promise<any>) => ({
 });
 
 export const useGoalStats = () => {
-  const fetchAndParse = async (url: string, parser: (data: string) => any) => {
+  const fetchAndParseTeamStats = async (url: string) => {
     try {
       const csvText = await fetchCSVData(url);
-      return parser(csvText);
+      return parseTeamStatsCSV(csvText);
     } catch (error) {
-      console.error(`Error processing ${url}:`, error);
+      console.error(`Error processing team stats from ${url}:`, error);
+      throw error;
+    }
+  };
+
+  const fetchAndParseLeagueAverages = async () => {
+    try {
+      const csvText = await fetchCSVData(FILES.LEAGUE_AVERAGES);
+      return parseLeagueAveragesCSV(csvText);
+    } catch (error) {
+      console.error('Error processing league averages:', error);
       throw error;
     }
   };
 
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery(
-    useQueryConfig('homeStats', () => fetchAndParse(FILES.HOME_STATS, parseCSV))
+    useQueryConfig('homeStats', () => fetchAndParseTeamStats(FILES.HOME_STATS))
   );
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery(
-    useQueryConfig('awayStats', () => fetchAndParse(FILES.AWAY_STATS, parseCSV))
+    useQueryConfig('awayStats', () => fetchAndParseTeamStats(FILES.AWAY_STATS))
   );
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery(
-    useQueryConfig('overallStats', () => fetchAndParse(FILES.OVERALL_STATS, parseCSV))
+    useQueryConfig('overallStats', () => fetchAndParseTeamStats(FILES.OVERALL_STATS))
   );
 
   const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useQuery(
-    useQueryConfig('leagueAverages', () => fetchAndParse(FILES.LEAGUE_AVERAGES, parseLeagueAveragesCSV))
+    useQueryConfig('leagueAverages', fetchAndParseLeagueAverages)
   );
 
   const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading;
@@ -152,7 +170,7 @@ export const useGoalStats = () => {
     
     const averages = ["1.5+", "2.5+", "3.5+", "4.5+"].reduce((acc, key) => {
       const total = overallStats.reduce((sum, team) => sum + (team[key as keyof TeamStats] as number), 0);
-      acc[key] = Math.round((total / overallStats.length) * 100) / 100;
+      acc[key] = parseFloat((total / overallStats.length).toFixed(2));
       return acc;
     }, {} as Record<string, number>);
     
