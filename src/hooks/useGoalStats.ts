@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalStatsData, LeagueAverageData } from '@/types/goalStats';
 
-// Constantes para configuração
-const MAX_RETRIES = 2;
-const RETRY_BASE_DELAY = 1000;
-const MAX_RETRY_DELAY = 10000;
-const STALE_TIME = 1000 * 60 * 5; // 5 minutos
-const REQUEST_TIMEOUT = 30000; // 30 segundos
+// Constants
+const STALE_TIME = 1000 * 60 * 5; // 5 minutes
+const REQUEST_TIMEOUT = 30000; // 30 seconds
 
 interface FetchOptions {
   headers: Record<string, string>;
@@ -16,12 +12,21 @@ interface FetchOptions {
 
 const DEFAULT_FETCH_OPTIONS: FetchOptions = {
   headers: {
-    'Cache-Control': 'no-cache',
-    'Pragma': 'no-cache',
     'Accept': 'text/csv,text/plain,*/*',
     'User-Agent': 'Goal-Stats-App/1.0'
   },
   signal: AbortSignal.timeout(REQUEST_TIMEOUT)
+};
+
+// Base GitHub raw content URL
+const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main';
+
+// File paths
+const FILES = {
+  HOME_STATS: `${GITHUB_BASE_URL}/Goals_Stats_Home.csv`,
+  AWAY_STATS: `${GITHUB_BASE_URL}/Goals_Stats_Away.csv`,
+  OVERALL_STATS: `${GITHUB_BASE_URL}/Goals_Stats_Overall.csv`,
+  LEAGUE_AVERAGES: `${GITHUB_BASE_URL}/League_Averages.csv`
 };
 
 const parseCSV = (csvText: string): TeamStats[] => {
@@ -100,136 +105,49 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
   });
 };
 
-const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
+const fetchCSVData = async (url: string, parser: (data: string) => any): Promise<any> => {
   try {
     const response = await fetch(url, DEFAULT_FETCH_OPTIONS);
     
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`HTTP Error ${response.status}: ${response.statusText}`, errorText);
-      
-      const errorMessages: Record<number, string> = {
-        404: `File not found: ${url}. Please check if the repository and file exist.`,
-        403: `Access forbidden: ${url}. The repository might be private.`,
-        429: `Rate limit exceeded. Please wait before trying again.`
-      };
-      
-      throw new Error(errorMessages[response.status] || `HTTP ${response.status}: ${response.statusText}`);
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
     
     const csvText = await response.text();
     
     if (!csvText.trim()) {
-      throw new Error(`Empty response from ${url}`);
+      throw new Error('Empty response received');
     }
     
-    if (!csvText.includes(',') && !csvText.includes('\n')) {
-      console.warn('Response does not appear to be CSV format:', csvText.substring(0, 200));
-      throw new Error(`Invalid CSV format received from ${url}`);
-    }
-    
-    return parseCSV(csvText);
+    return parser(csvText);
   } catch (error) {
     console.error(`Error fetching data from ${url}:`, error);
-    
-    if (error instanceof TypeError && error.message.includes('fetch')) {
-      throw new Error('Network connectivity issue. Please check your internet connection and try again.');
-    } else if (error.name === 'AbortError') {
-      throw new Error('Request timeout. The server might be temporarily unavailable.');
-    }
-    
     throw error;
   }
-};
-
-const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
-  const possibleUrls = [
-    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv'    
-  ];
-  
-  for (const url of possibleUrls) {
-    try {
-      const response = await fetch(url, DEFAULT_FETCH_OPTIONS);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-      
-      const csvText = await response.text();
-      
-      if (!csvText.trim()) {
-        throw new Error('Empty league averages response');
-      }
-      
-      return parseLeagueAveragesCSV(csvText);
-    } catch (error) {
-      console.warn(`Failed to fetch from ${url}:`, error);
-      if (url === possibleUrls[possibleUrls.length - 1]) {
-        throw error;
-      }
-    }
-  }
-  
-  throw new Error('Failed to fetch league averages from all sources');
-};
-
-const fetchWithFallback = async (urls: string[]): Promise<TeamStats[]> => {
-  for (const url of urls) {
-    try {
-      return await fetchCSVData(url);
-    } catch (error) {
-      console.warn(`Failed to fetch from ${url}:`, error);
-      if (url === urls[urls.length - 1]) {
-        throw error;
-      }
-    }
-  }
-  
-  throw new Error('Failed to fetch from all URLs');
 };
 
 const useQueryConfig = (queryKey: string, queryFn: () => Promise<any>) => ({
   queryKey: [queryKey],
   queryFn,
-  retry: (failureCount: number, error: Error) => {
-    console.log(`Retry attempt ${failureCount + 1} for ${queryKey}:`, error?.message);
-    return failureCount < MAX_RETRIES;
-  },
-  retryDelay: (attemptIndex: number) => {
-    const delay = Math.min(RETRY_BASE_DELAY * 2 ** attemptIndex, MAX_RETRY_DELAY);
-    console.log(`Retry delay for ${queryKey}: ${delay}ms`);
-    return delay;
-  },
-  staleTime: STALE_TIME
+  staleTime: STALE_TIME,
+  retry: 2 // Simple retry count without custom delay logic
 });
 
 export const useGoalStats = () => {
-  const urls = {
-    homeStats: [
-      'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv'
-    ],
-    awayStats: [
-      'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Away.csv'
-    ],
-    overallStats: [
-      'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Overall.csv'
-    ]
-  };
-
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery(
-    useQueryConfig('homeStats', () => fetchWithFallback(urls.homeStats))
+    useQueryConfig('homeStats', () => fetchCSVData(FILES.HOME_STATS, parseCSV))
   );
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery(
-    useQueryConfig('awayStats', () => fetchWithFallback(urls.awayStats))
+    useQueryConfig('awayStats', () => fetchCSVData(FILES.AWAY_STATS, parseCSV))
   );
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery(
-    useQueryConfig('overallStats', () => fetchWithFallback(urls.overallStats))
+    useQueryConfig('overallStats', () => fetchCSVData(FILES.OVERALL_STATS, parseCSV))
   );
 
   const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useQuery(
-    useQueryConfig('leagueAverages', fetchLeagueAveragesData)
+    useQueryConfig('leagueAverages', () => fetchCSVData(FILES.LEAGUE_AVERAGES, parseLeagueAveragesCSV))
   );
 
   const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading;
