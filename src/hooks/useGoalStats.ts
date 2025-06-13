@@ -192,8 +192,7 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
   // Try multiple possible URLs for the league averages file
   const possibleUrls = [
-    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/League_Averages.csv',
-    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv'
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv'    
   ];
   
   let lastError: Error | null = null;
@@ -243,18 +242,15 @@ export const useGoalStats = () => {
   console.log('🚀 useGoalStats hook called');
 
   // Updated URLs - trying both with and without refs/heads
-  const homeStatsUrls = [
-    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Home.csv',
+  const homeStatsUrls = [    
     'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv'
   ];
   
-  const awayStatsUrls = [
-    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Away.csv',
+  const awayStatsUrls = [   
     'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Away.csv'
   ];
   
-  const overallStatsUrls = [
-    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Overall.csv',
+  const overallStatsUrls = [    
     'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Overall.csv'
   ];
 
