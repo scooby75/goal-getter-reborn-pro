@@ -117,7 +117,7 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
   console.log(`🔄 Attempting to fetch data from: ${url}`);
   
   try {
-    // First, let's test if we can reach the URL at all
+    // Enhanced fetch with additional headers and error handling
     console.log('🌐 Testing network connectivity...');
     
     const response = await fetch(url, {
@@ -126,37 +126,63 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
       headers: {
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache',
-        'Accept': 'text/csv,text/plain,*/*'
-      }
+        'Accept': 'text/csv,text/plain,*/*',
+        'User-Agent': 'Goal-Stats-App/1.0'
+      },
+      // Add timeout
+      signal: AbortSignal.timeout(30000) // 30 seconds timeout
     });
     
     console.log(`📡 Response status: ${response.status} ${response.statusText}`);
     console.log(`📡 Response headers:`, Object.fromEntries(response.headers.entries()));
     
     if (!response.ok) {
+      // Enhanced error handling
       const errorText = await response.text();
       console.error(`❌ HTTP Error ${response.status}: ${response.statusText}`);
       console.error(`❌ Error response body:`, errorText);
-      throw new Error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`);
+      
+      // Specific error messages for common issues
+      if (response.status === 404) {
+        throw new Error(`File not found: ${url}. Please check if the repository and file exist.`);
+      } else if (response.status === 403) {
+        throw new Error(`Access forbidden: ${url}. The repository might be private.`);
+      } else if (response.status === 429) {
+        throw new Error(`Rate limit exceeded. Please wait before trying again.`);
+      } else {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
     }
     
     const csvText = await response.text();
     console.log(`✅ Data fetched successfully from ${url}`);
     console.log(`📊 Response length: ${csvText.length} characters`);
-    console.log(`📊 First 200 characters:`, csvText.substring(0, 200));
     
+    // Enhanced validation
     if (!csvText || csvText.trim() === '') {
       throw new Error(`Empty response from ${url}`);
     }
+    
+    // Check if response looks like CSV
+    if (!csvText.includes(',') && !csvText.includes('\n')) {
+      console.warn('Response does not appear to be CSV format:', csvText.substring(0, 200));
+      throw new Error(`Invalid CSV format received from ${url}`);
+    }
+    
+    console.log(`📊 First 200 characters:`, csvText.substring(0, 200));
     
     return parseCSV(csvText);
   } catch (error) {
     console.error(`💥 Error fetching data from ${url}:`, error);
     
-    // Additional debugging information
+    // Enhanced error diagnostics
     if (error instanceof TypeError && error.message.includes('fetch')) {
       console.error('🚫 Network error - possible CORS or connectivity issue');
       console.error('🔍 Check if GitHub is accessible and CORS is properly configured');
+      throw new Error('Network connectivity issue. Please check your internet connection and try again.');
+    } else if (error.name === 'AbortError') {
+      console.error('⏰ Request timeout - GitHub might be slow or unavailable');
+      throw new Error('Request timeout. GitHub might be temporarily unavailable.');
     }
     
     throw error;
@@ -164,57 +190,102 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
 };
 
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
-  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv';
-  console.log(`🔄 Fetching league averages from: ${url}`);
+  // Try multiple possible URLs for the league averages file
+  const possibleUrls = [
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/League_Averages.csv',
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv'
+  ];
   
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache',
-        'Accept': 'text/csv,text/plain,*/*'
+  let lastError: Error | null = null;
+  
+  for (const url of possibleUrls) {
+    try {
+      console.log(`🔄 Trying league averages from: ${url}`);
+      
+      const response = await fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache',
+          'Accept': 'text/csv,text/plain,*/*',
+          'User-Agent': 'Goal-Stats-App/1.0'
+        },
+        signal: AbortSignal.timeout(30000)
+      });
+      
+      console.log(`📡 League averages response status: ${response.status} ${response.statusText}`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
-    });
-    
-    console.log(`📡 League averages response status: ${response.status} ${response.statusText}`);
-    
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`❌ League averages HTTP Error ${response.status}: ${response.statusText}`);
-      throw new Error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`);
+      
+      const csvText = await response.text();
+      console.log(`✅ League averages data fetched successfully, length: ${csvText.length} characters`);
+      
+      if (!csvText || csvText.trim() === '') {
+        throw new Error('Empty league averages response');
+      }
+      
+      return parseLeagueAveragesCSV(csvText);
+    } catch (error) {
+      console.warn(`Failed to fetch from ${url}:`, error);
+      lastError = error as Error;
+      continue;
     }
-    
-    const csvText = await response.text();
-    console.log(`✅ League averages data fetched successfully, length: ${csvText.length} characters`);
-    
-    if (!csvText || csvText.trim() === '') {
-      throw new Error('Empty league averages response');
-    }
-    
-    return parseLeagueAveragesCSV(csvText);
-  } catch (error) {
-    console.error('💥 Error fetching league averages:', error);
-    throw error;
   }
+  
+  console.error('💥 All league averages URLs failed');
+  throw lastError || new Error('Failed to fetch league averages from all sources');
 };
 
 export const useGoalStats = () => {
   console.log('🚀 useGoalStats hook called');
 
+  // Updated URLs - trying both with and without refs/heads
+  const homeStatsUrls = [
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Home.csv',
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv'
+  ];
+  
+  const awayStatsUrls = [
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Away.csv',
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Away.csv'
+  ];
+  
+  const overallStatsUrls = [
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Overall.csv',
+    'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Overall.csv'
+  ];
+
+  const fetchWithFallback = async (urls: string[]): Promise<TeamStats[]> => {
+    let lastError: Error | null = null;
+    
+    for (const url of urls) {
+      try {
+        return await fetchCSVData(url);
+      } catch (error) {
+        console.warn(`Failed to fetch from ${url}:`, error);
+        lastError = error as Error;
+        continue;
+      }
+    }
+    
+    throw lastError || new Error('Failed to fetch from all URLs');
+  };
+
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery({
     queryKey: ['homeStats'],
     queryFn: () => {
       console.log('🏠 Starting home stats fetch...');
-      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv');
+      return fetchWithFallback(homeStatsUrls);
     },
     retry: (failureCount, error) => {
       console.log(`🔄 Home stats retry attempt ${failureCount + 1}:`, error?.message);
-      return failureCount < 3;
+      return failureCount < 2; // Reduced retries
     },
     retryDelay: (attemptIndex) => {
-      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      const delay = Math.min(1000 * 2 ** attemptIndex, 10000);
       console.log(`⏱️ Home stats retry delay: ${delay}ms`);
       return delay;
     },
@@ -225,14 +296,14 @@ export const useGoalStats = () => {
     queryKey: ['awayStats'],
     queryFn: () => {
       console.log('✈️ Starting away stats fetch...');
-      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Away.csv');
+      return fetchWithFallback(awayStatsUrls);
     },
     retry: (failureCount, error) => {
       console.log(`🔄 Away stats retry attempt ${failureCount + 1}:`, error?.message);
-      return failureCount < 3;
+      return failureCount < 2;
     },
     retryDelay: (attemptIndex) => {
-      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      const delay = Math.min(1000 * 2 ** attemptIndex, 10000);
       console.log(`⏱️ Away stats retry delay: ${delay}ms`);
       return delay;
     },
@@ -243,14 +314,14 @@ export const useGoalStats = () => {
     queryKey: ['overallStats'],
     queryFn: () => {
       console.log('📊 Starting overall stats fetch...');
-      return fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Overall.csv');
+      return fetchWithFallback(overallStatsUrls);
     },
     retry: (failureCount, error) => {
       console.log(`🔄 Overall stats retry attempt ${failureCount + 1}:`, error?.message);
-      return failureCount < 3;
+      return failureCount < 2;
     },
     retryDelay: (attemptIndex) => {
-      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      const delay = Math.min(1000 * 2 ** attemptIndex, 10000);
       console.log(`⏱️ Overall stats retry delay: ${delay}ms`);
       return delay;
     },
@@ -265,10 +336,10 @@ export const useGoalStats = () => {
     },
     retry: (failureCount, error) => {
       console.log(`🔄 League averages retry attempt ${failureCount + 1}:`, error?.message);
-      return failureCount < 3;
+      return failureCount < 2;
     },
     retryDelay: (attemptIndex) => {
-      const delay = Math.min(1000 * 2 ** attemptIndex, 30000);
+      const delay = Math.min(1000 * 2 ** attemptIndex, 10000);
       console.log(`⏱️ League averages retry delay: ${delay}ms`);
       return delay;
     },
