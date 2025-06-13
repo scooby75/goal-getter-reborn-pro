@@ -5,23 +5,8 @@ import { TeamStats, GoalStatsData, LeagueAverageData } from '@/types/goalStats';
 const STALE_TIME = 1000 * 60 * 5; // 5 minutes
 const REQUEST_TIMEOUT = 30000; // 30 seconds
 
-interface FetchOptions {
-  headers: Record<string, string>;
-  signal: AbortSignal;
-}
-
-const DEFAULT_FETCH_OPTIONS: FetchOptions = {
-  headers: {
-    'Accept': 'text/csv,text/plain,*/*',
-    'User-Agent': 'Goal-Stats-App/1.0'
-  },
-  signal: AbortSignal.timeout(REQUEST_TIMEOUT)
-};
-
-// Base GitHub raw content URL
 const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main';
 
-// File paths
 const FILES = {
   HOME_STATS: `${GITHUB_BASE_URL}/Goals_Stats_Home.csv`,
   AWAY_STATS: `${GITHUB_BASE_URL}/Goals_Stats_Away.csv`,
@@ -35,27 +20,35 @@ const parseCSV = (csvText: string): TeamStats[] => {
     return [];
   }
 
-  const lines = csvText.trim().split('\n');
+  // Normalize line endings and split lines
+  const lines = csvText.trim().replace(/\r\n/g, '\n').split('\n');
+  
   if (lines.length <= 1) {
     console.warn('No data lines found in CSV');
     return [];
   }
 
+  // Process headers
   const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
   
   return lines.slice(1)
     .map(line => {
-      const values = line.split(',');
+      // Handle quoted values that might contain commas
+      const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
       const stats: Partial<TeamStats> = {};
       
       headers.forEach((header, headerIndex) => {
-        const cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
+        if (headerIndex >= values.length) return;
+        
+        let cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
         
         if (header.toLowerCase() === 'team') {
           stats.Team = cleanValue;
         } else if (header === 'League_Name') {
           stats.League_Name = cleanValue;
         } else {
+          // Remove any percentage signs before parsing numbers
+          cleanValue = cleanValue.replace('%', '');
           const numericValue = parseFloat(cleanValue);
           stats[header as keyof TeamStats] = isNaN(numericValue) ? 0 : numericValue;
         }
@@ -67,7 +60,7 @@ const parseCSV = (csvText: string): TeamStats[] => {
       const teamName = team.Team?.trim();
       return teamName && 
              !teamName.toLowerCase().includes('league average') &&
-             !(teamName.includes(' - ') && (!team.GP || team.GP === 0));
+             !(teamName.includes(' - ') && team.GP && team.GP > 0);
     });
 };
 
@@ -77,7 +70,7 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
     return [];
   }
 
-  const lines = csvText.trim().split('\n');
+  const lines = csvText.trim().replace(/\r\n/g, '\n').split('\n');
   if (lines.length <= 1) {
     console.warn('No data lines found in league averages CSV');
     return [];
@@ -86,10 +79,12 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
   const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
   
   return lines.slice(1).map(line => {
-    const values = line.split(',');
+    const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
     const league: Partial<LeagueAverageData> = {};
     
     headers.forEach((header, headerIndex) => {
+      if (headerIndex >= values.length) return;
+      
       let cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
       
       if (header === 'League_Name') {
@@ -105,49 +100,48 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
   });
 };
 
-const fetchCSVData = async (url: string, parser: (data: string) => any): Promise<any> => {
-  try {
-    const response = await fetch(url, DEFAULT_FETCH_OPTIONS);
-    
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-    
-    const csvText = await response.text();
-    
-    if (!csvText.trim()) {
-      throw new Error('Empty response received');
-    }
-    
-    return parser(csvText);
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    throw error;
+const fetchCSVData = async (url: string): Promise<string> => {
+  const response = await fetch(url);
+  
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
   }
+  
+  return await response.text();
 };
 
 const useQueryConfig = (queryKey: string, queryFn: () => Promise<any>) => ({
   queryKey: [queryKey],
   queryFn,
   staleTime: STALE_TIME,
-  retry: 2 // Simple retry count without custom delay logic
+  retry: 2
 });
 
 export const useGoalStats = () => {
+  const fetchAndParse = async (url: string, parser: (data: string) => any) => {
+    try {
+      const csvText = await fetchCSVData(url);
+      return parser(csvText);
+    } catch (error) {
+      console.error(`Error processing ${url}:`, error);
+      throw error;
+    }
+  };
+
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery(
-    useQueryConfig('homeStats', () => fetchCSVData(FILES.HOME_STATS, parseCSV))
+    useQueryConfig('homeStats', () => fetchAndParse(FILES.HOME_STATS, parseCSV))
   );
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery(
-    useQueryConfig('awayStats', () => fetchCSVData(FILES.AWAY_STATS, parseCSV))
+    useQueryConfig('awayStats', () => fetchAndParse(FILES.AWAY_STATS, parseCSV))
   );
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery(
-    useQueryConfig('overallStats', () => fetchCSVData(FILES.OVERALL_STATS, parseCSV))
+    useQueryConfig('overallStats', () => fetchAndParse(FILES.OVERALL_STATS, parseCSV))
   );
 
   const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useQuery(
-    useQueryConfig('leagueAverages', () => fetchCSVData(FILES.LEAGUE_AVERAGES, parseLeagueAveragesCSV))
+    useQueryConfig('leagueAverages', () => fetchAndParse(FILES.LEAGUE_AVERAGES, parseLeagueAveragesCSV))
   );
 
   const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading;
