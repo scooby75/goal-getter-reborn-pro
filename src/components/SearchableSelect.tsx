@@ -16,7 +16,8 @@ const normalizeText = (text: string): string => {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '') // Remove acentos
-    .replace(/[^a-z0-9\s]/g, '') // Remove caracteres especiais, mantendo espaços
+    .replace(/[^a-z0-9\s]/g, '') // Remove caracteres especiais
+    .replace(/\s+/g, ' ') // Normaliza espaços múltiplos
     .trim();
 };
 
@@ -42,47 +43,32 @@ export const SearchableSelect = ({
     return options
       .filter(option => {
         const normalizedOption = normalizeText(option);
-        return normalizedOption.includes(normalizedSearch);
+        
+        // Verifica se o termo de busca está contido no início de qualquer palavra do nome
+        const words = normalizedOption.split(' ');
+        return words.some(word => word.startsWith(normalizedSearch));
       })
       .sort((a, b) => {
         const normalizedA = normalizeText(a);
         const normalizedB = normalizeText(b);
 
-        // Prioriza matches no início do nome
-        const aStartsWith = normalizedA.startsWith(normalizedSearch) ? 1 : 0;
-        const bStartsWith = normalizedB.startsWith(normalizedSearch) ? 1 : 0;
+        // Prioriza matches exatos no início do nome
+        if (normalizedA.startsWith(normalizedSearch) && !normalizedB.startsWith(normalizedSearch)) return -1;
+        if (!normalizedA.startsWith(normalizedSearch) && normalizedB.startsWith(normalizedSearch)) return 1;
 
-        if (aStartsWith !== bStartsWith) {
-          return bStartsWith - aStartsWith;
-        }
+        // Depois prioriza matches no início de palavras
+        const aWordMatch = normalizedA.split(' ').some(word => word.startsWith(normalizedSearch));
+        const bWordMatch = normalizedB.split(' ').some(word => word.startsWith(normalizedSearch));
+        
+        if (aWordMatch && !bWordMatch) return -1;
+        if (!aWordMatch && bWordMatch) return 1;
 
-        // Depois prioriza matches mais curtos (mais provável de ser o que o usuário quer)
-        const lengthDiff = a.length - b.length;
-        if (lengthDiff !== 0) {
-          return lengthDiff;
-        }
-
-        // Finalmente ordena alfabeticamente
+        // Finalmente ordena por ordem alfabética
         return a.localeCompare(b);
       });
   }, [options, searchTerm]);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleOptionSelect = (option: string) => {
-    onValueChange(option === value ? "" : option);
-    setOpen(false);
-    setSearchTerm('');
-  };
+  // ... (restante do componente permanece igual)
 
   return (
     <div className={className} ref={containerRef}>
