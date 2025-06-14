@@ -12,14 +12,12 @@ interface SearchableSelectProps {
 }
 
 const normalizeText = (text: string): string => {
-  if (!text) return '';
   return text
-    .trim()
+    .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '') // Remove acentos
-    .replace(/[^a-zA-Z0-9\s]/g, '') // Remove caracteres especiais
-    .replace(/\s+/g, ' ') // Remove múltiplos espaços
-    .toLowerCase();
+    .replace(/[^a-z0-9\s]/g, '') // Remove caracteres especiais, mantendo espaços
+    .trim();
 };
 
 export const SearchableSelect = ({
@@ -34,53 +32,41 @@ export const SearchableSelect = ({
   const [searchTerm, setSearchTerm] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Filter and sort options based on search term
   const filteredOptions = useMemo(() => {
     const normalizedSearch = normalizeText(searchTerm);
+    
     if (!normalizedSearch) {
       return [...options].sort((a, b) => a.localeCompare(b));
     }
-    
+
     return options
-      .map(option => ({
-        original: option,
-        normalized: normalizeText(option),
-        searchScore: 0
-      }))
-      .filter(({ normalized }) => {
-        // Verifica se o termo de busca está contido na opção
-        if (normalized.includes(normalizedSearch)) {
-          return true;
-        }
-        
-        // Verifica se partes do termo estão presentes (para buscas mais flexíveis)
-        const searchParts = normalizedSearch.split(' ');
-        return searchParts.some(part => normalized.includes(part));
+      .filter(option => {
+        const normalizedOption = normalizeText(option);
+        return normalizedOption.includes(normalizedSearch);
       })
       .sort((a, b) => {
-        // Pontuação baseada na posição e qualidade do match
-        const aStartsWith = a.normalized.startsWith(normalizedSearch) ? 3 : 0;
-        const bStartsWith = b.normalized.startsWith(normalizedSearch) ? 3 : 0;
-        
-        const aWordStartsWith = a.normalized.includes(` ${normalizedSearch}`) ? 2 : 0;
-        const bWordStartsWith = b.normalized.includes(` ${normalizedSearch}`) ? 2 : 0;
-        
-        const aContains = a.normalized.includes(normalizedSearch) ? 1 : 0;
-        const bContains = b.normalized.includes(normalizedSearch) ? 1 : 0;
-        
-        const aScore = aStartsWith + aWordStartsWith + aContains;
-        const bScore = bStartsWith + bWordStartsWith + bContains;
-        
-        if (aScore !== bScore) return bScore - aScore;
-        
-        // Se a pontuação for igual, ordena alfabeticamente
-        return a.original.localeCompare(b.original);
-      })
-      .map(({ original }) => original);
+        const normalizedA = normalizeText(a);
+        const normalizedB = normalizeText(b);
+
+        // Prioriza matches no início do nome
+        const aStartsWith = normalizedA.startsWith(normalizedSearch) ? 1 : 0;
+        const bStartsWith = normalizedB.startsWith(normalizedSearch) ? 1 : 0;
+
+        if (aStartsWith !== bStartsWith) {
+          return bStartsWith - aStartsWith;
+        }
+
+        // Depois prioriza matches mais curtos (mais provável de ser o que o usuário quer)
+        const lengthDiff = a.length - b.length;
+        if (lengthDiff !== 0) {
+          return lengthDiff;
+        }
+
+        // Finalmente ordena alfabeticamente
+        return a.localeCompare(b);
+      });
   }, [options, searchTerm]);
 
-  // Restante do componente permanece igual...
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
@@ -89,24 +75,12 @@ export const SearchableSelect = ({
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const handleOptionSelect = (option: string) => {
     onValueChange(option === value ? "" : option);
     setOpen(false);
-    setSearchTerm('');
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-    if (!open) setOpen(true);
-  };
-
-  const handleButtonClick = () => {
-    setOpen(!open);
     setSearchTerm('');
   };
 
@@ -118,7 +92,10 @@ export const SearchableSelect = ({
       <div className="relative">
         <button
           type="button"
-          onClick={handleButtonClick}
+          onClick={() => {
+            setOpen(!open);
+            setSearchTerm('');
+          }}
           className="w-full flex items-center justify-between px-3 py-2 text-left bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <span className={value ? "text-gray-900" : "text-gray-500"}>
@@ -128,21 +105,24 @@ export const SearchableSelect = ({
         </button>
 
         {open && (
-          <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-hidden">
-            <div className="p-2 border-b border-gray-200">
+          <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+            <div className="p-2 border-b border-gray-200 sticky top-0 bg-white">
               <input
                 type="text"
                 value={searchTerm}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  if (!open) setOpen(true);
+                }}
                 placeholder="Digite para buscar..."
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 autoFocus
               />
             </div>
-            <div className="max-h-48 overflow-y-auto">
-              {filteredOptions.length === 0 && searchTerm ? (
+            <div className="divide-y divide-gray-200">
+              {filteredOptions.length === 0 ? (
                 <div className="px-3 py-2 text-gray-500 text-center">
-                  Nenhum time encontrado.
+                  Nenhum time encontrado para "{searchTerm}"
                 </div>
               ) : (
                 filteredOptions.map((option) => (
@@ -151,17 +131,17 @@ export const SearchableSelect = ({
                     type="button"
                     onClick={() => handleOptionSelect(option)}
                     className={cn(
-                      "w-full flex items-center px-3 py-2 text-left hover:bg-gray-100 focus:outline-none focus:bg-gray-100",
+                      "w-full flex items-center px-3 py-2 text-left hover:bg-gray-50 focus:outline-none",
                       value === option ? "bg-blue-50 text-blue-600" : "text-gray-900"
                     )}
                   >
                     <Check
                       className={cn(
-                        "mr-2 h-4 w-4",
+                        "mr-2 h-4 w-4 flex-shrink-0",
                         value === option ? "opacity-100" : "opacity-0"
                       )}
                     />
-                    {option}
+                    <span className="truncate">{option}</span>
                   </button>
                 ))
               )}
