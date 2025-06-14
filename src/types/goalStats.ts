@@ -24,6 +24,7 @@ export interface GoalsHalfStats {
 
 export interface ScoredFirstStats {
   Team: string;
+  GP?: number;
   "Perc.": number;
 }
 

@@ -124,8 +124,17 @@ const parseGoalsHalfCSV = (csvText: string): GoalsHalfStats[] => {
 
 const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
   console.log('Parsing Scored First CSV data...');
-  const lines = csvText.trim().split('\n');
-  const headers = lines[0].split(',');
+  if (!csvText || csvText.trim() === '') {
+    console.warn('Scored First CSV text is empty or invalid.');
+    return [];
+  }
+  const lines = csvText.trim().split(/\r?\n/);
+  if (lines.length < 2) {
+    console.warn('Scored First CSV has no data rows.');
+    return [];
+  }
+  const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+  console.log('Scored First CSV Headers:', headers);
   
   const parsedData = lines.slice(1).map((line) => {
     const values = line.split(',');
@@ -146,9 +155,12 @@ const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
     });
     
     return stats as ScoredFirstStats;
-  }).filter(s => s.Team && s.Team.trim() !== '');
+  }).filter(s => s.Team && s.Team.trim() !== '' && s['Perc.'] !== undefined);
 
-  console.log('Parsed scored first stats count:', parsedData.length);
+  console.log(`Parsed scored first stats count: ${parsedData.length}`);
+  if(parsedData.length > 0) {
+    console.log('Sample of parsed scored first data:', parsedData[0]);
+  }
   return parsedData;
 };
 
@@ -208,10 +220,11 @@ const fetchScoredFirstHomeData = async (): Promise<ScoredFirstStats[]> => {
   try {
     const response = await fetch(url);
     if (!response.ok) {
+      console.error(`Failed to fetch scored first home data: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
     }
     const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}`);
+    console.log(`Data fetched successfully from ${url}, length: ${csvText.length}`);
     return parseScoredFirstCSV(csvText);
   } catch (error) {
     console.error(`Error fetching data from ${url}:`, error);
@@ -225,10 +238,11 @@ const fetchScoredFirstAwayData = async (): Promise<ScoredFirstStats[]> => {
   try {
     const response = await fetch(url);
     if (!response.ok) {
+      console.error(`Failed to fetch scored first away data: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
     }
     const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}`);
+    console.log(`Data fetched successfully from ${url}, length: ${csvText.length}`);
     return parseScoredFirstCSV(csvText);
   } catch (error) {
     console.error(`Error fetching data from ${url}:`, error);
