@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -33,9 +33,15 @@ export const SearchableSelect = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Filter options based on search term, ignoring accents and case
-  const filteredOptions = options.filter(option =>
-    normalizeText(option).includes(normalizeText(searchTerm))
-  );
+  const filteredOptions = useMemo(() => {
+    const normalizedSearch = normalizeText(searchTerm);
+    if (!normalizedSearch) {
+      return options;
+    }
+    return options.filter(option =>
+      normalizeText(option).includes(normalizedSearch)
+    );
+  }, [options, searchTerm]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -97,7 +103,7 @@ export const SearchableSelect = ({
               />
             </div>
             <div className="max-h-48 overflow-y-auto">
-              {filteredOptions.length === 0 ? (
+              {filteredOptions.length === 0 && searchTerm ? (
                 <div className="px-3 py-2 text-gray-500 text-center">
                   Nenhum time encontrado.
                 </div>
@@ -129,3 +135,4 @@ export const SearchableSelect = ({
     </div>
   );
 };
+
