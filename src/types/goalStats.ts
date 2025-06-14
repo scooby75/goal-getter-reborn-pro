@@ -1,4 +1,3 @@
-
 export interface TeamStats {
   Team: string;
   League_Name?: string;
@@ -10,6 +9,22 @@ export interface TeamStats {
   "3.5+": number;
   "4.5+": number;
   "5.5+"?: number;
+  "1st half"?: number;
+  "2nd half"?: number;
+  "Avg. minute"?: number;
+  scoredFirstPerc?: number;
+}
+
+export interface GoalsHalfStats {
+  Team: string;
+  "1st half": number;
+  "2nd half": number;
+  "Avg. minute": number;
+}
+
+export interface ScoredFirstStats {
+  Team: string;
+  "Perc.": number;
 }
 
 export interface LeagueAverageData {

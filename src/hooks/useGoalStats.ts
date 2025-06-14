@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { TeamStats, GoalStatsData, LeagueAverageData } from '@/types/goalStats';
+import { TeamStats, GoalStatsData, LeagueAverageData, GoalsHalfStats, ScoredFirstStats } from '@/types/goalStats';
 
 const parseCSV = (csvText: string): TeamStats[] => {
   console.log('Parsing CSV data...');
@@ -92,6 +92,66 @@ const parseLeagueAveragesCSV = (csvText: string): LeagueAverageData[] => {
   return parsedData;
 };
 
+const parseGoalsHalfCSV = (csvText: string): GoalsHalfStats[] => {
+  console.log('Parsing Goals Half CSV data...');
+  const lines = csvText.trim().split('\n');
+  const headers = lines[0].split(',');
+  
+  const parsedData = lines.slice(1).map((line) => {
+    const values = line.split(',');
+    const stats: any = {};
+    
+    headers.forEach((header, headerIndex) => {
+      const cleanHeader = header.trim().replace(/"/g, '');
+      let cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
+      
+      if (cleanHeader === 'Team') {
+        stats.Team = cleanValue;
+      } else {
+        if (cleanValue.includes('%')) {
+          cleanValue = cleanValue.replace('%', '');
+        }
+        stats[cleanHeader] = parseFloat(cleanValue) || 0;
+      }
+    });
+    
+    return stats as GoalsHalfStats;
+  }).filter(s => s.Team && s.Team.trim() !== '');
+
+  console.log('Parsed goals half stats count:', parsedData.length);
+  return parsedData;
+};
+
+const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
+  console.log('Parsing Scored First CSV data...');
+  const lines = csvText.trim().split('\n');
+  const headers = lines[0].split(',');
+  
+  const parsedData = lines.slice(1).map((line) => {
+    const values = line.split(',');
+    const stats: any = {};
+    
+    headers.forEach((header, headerIndex) => {
+      const cleanHeader = header.trim().replace(/"/g, '');
+      let cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
+      
+      if (cleanHeader === 'Team') {
+        stats.Team = cleanValue;
+      } else {
+        if (cleanValue.includes('%')) {
+          cleanValue = cleanValue.replace('%', '');
+        }
+        stats[cleanHeader] = parseFloat(cleanValue) || 0;
+      }
+    });
+    
+    return stats as ScoredFirstStats;
+  }).filter(s => s.Team && s.Team.trim() !== '');
+
+  console.log('Parsed scored first stats count:', parsedData.length);
+  return parsedData;
+};
+
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
   console.log(`Fetching data from: ${url}`);
   try {
@@ -121,6 +181,57 @@ const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
     return parseLeagueAveragesCSV(csvText);
   } catch (error) {
     console.error('Error fetching league averages:', error);
+    throw error;
+  }
+};
+
+const fetchGoalsHalfData = async (): Promise<GoalsHalfStats[]> => {
+  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Half.csv';
+  console.log(`Fetching goals half data from: ${url}`);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
+    }
+    const csvText = await response.text();
+    console.log(`Data fetched successfully from ${url}`);
+    return parseGoalsHalfCSV(csvText);
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
+    throw error;
+  }
+};
+
+const fetchScoredFirstHomeData = async (): Promise<ScoredFirstStats[]> => {
+  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_home.csv';
+  console.log(`Fetching scored first home data from: ${url}`);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
+    }
+    const csvText = await response.text();
+    console.log(`Data fetched successfully from ${url}`);
+    return parseScoredFirstCSV(csvText);
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
+    throw error;
+  }
+};
+
+const fetchScoredFirstAwayData = async (): Promise<ScoredFirstStats[]> => {
+  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_away.csv';
+  console.log(`Fetching scored first away data from: ${url}`);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
+    }
+    const csvText = await response.text();
+    console.log(`Data fetched successfully from ${url}`);
+    return parseScoredFirstCSV(csvText);
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
     throw error;
   }
 };
@@ -156,15 +267,37 @@ export const useGoalStats = () => {
     retryDelay: 1000,
   });
 
-  const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading;
-  const error = homeError || awayError || overallError || leagueError;
+  const { data: goalsHalfData = [], isLoading: goalsHalfLoading, error: goalsHalfError } = useQuery({
+    queryKey: ['goalsHalf'],
+    queryFn: fetchGoalsHalfData,
+    retry: 3,
+    retryDelay: 1000,
+  });
+
+  const { data: scoredFirstHomeData = [], isLoading: scoredFirstHomeLoading, error: scoredFirstHomeError } = useQuery({
+    queryKey: ['scoredFirstHome'],
+    queryFn: fetchScoredFirstHomeData,
+    retry: 3,
+    retryDelay: 1000,
+  });
+
+  const { data: scoredFirstAwayData = [], isLoading: scoredFirstAwayLoading, error: scoredFirstAwayError } = useQuery({
+    queryKey: ['scoredFirstAway'],
+    queryFn: fetchScoredFirstAwayData,
+    retry: 3,
+    retryDelay: 1000,
+  });
+
+  const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading || goalsHalfLoading || scoredFirstHomeLoading || scoredFirstAwayLoading;
+  const error = homeError || awayError || overallError || leagueError || goalsHalfError || scoredFirstHomeError || scoredFirstAwayError;
 
   // Enhanced debugging
   console.log('Raw home stats count:', homeStats.length);
   console.log('Raw away stats count:', awayStats.length);
   console.log('Raw league averages count:', leagueAverages.length);
-  console.log('Valid home teams:', homeStats.filter(team => team.Team && team.Team.trim() !== '').length);
-  console.log('Valid away teams:', awayStats.filter(team => team.Team && team.Team.trim() !== '').length);
+  console.log('Raw goals half data count:', goalsHalfData.length);
+  console.log('Raw scored first home data count:', scoredFirstHomeData.length);
+  console.log('Raw scored first away data count:', scoredFirstAwayData.length);
 
   const calculateLeagueAverage = () => {
     if (overallStats.length === 0) return { "1.5+": 0, "2.5+": 0, "3.5+": 0, "4.5+": 0 };
@@ -182,9 +315,43 @@ export const useGoalStats = () => {
     };
   };
 
+  const mergedHomeStats = useMemo(() => {
+    return homeStats.map(team => {
+      const halfData = goalsHalfData.find(d => d.Team === team.Team);
+      const scoredFirstData = scoredFirstHomeData.find(d => d.Team === team.Team);
+      const newStats: Partial<TeamStats> = {};
+      if (halfData) {
+        newStats['1st half'] = halfData['1st half'];
+        newStats['2nd half'] = halfData['2nd half'];
+        newStats['Avg. minute'] = halfData['Avg. minute'];
+      }
+      if (scoredFirstData) {
+        newStats.scoredFirstPerc = scoredFirstData['Perc.'];
+      }
+      return { ...team, ...newStats };
+    });
+  }, [homeStats, goalsHalfData, scoredFirstHomeData]);
+
+  const mergedAwayStats = useMemo(() => {
+    return awayStats.map(team => {
+      const halfData = goalsHalfData.find(d => d.Team === team.Team);
+      const scoredFirstData = scoredFirstAwayData.find(d => d.Team === team.Team);
+      const newStats: Partial<TeamStats> = {};
+      if (halfData) {
+        newStats['1st half'] = halfData['1st half'];
+        newStats['2nd half'] = halfData['2nd half'];
+        newStats['Avg. minute'] = halfData['Avg. minute'];
+      }
+      if (scoredFirstData) {
+        newStats.scoredFirstPerc = scoredFirstData['Perc.'];
+      }
+      return { ...team, ...newStats };
+    });
+  }, [awayStats, goalsHalfData, scoredFirstAwayData]);
+
   const goalStatsData: GoalStatsData = {
-    homeStats,
-    awayStats,
+    homeStats: mergedHomeStats,
+    awayStats: mergedAwayStats,
     overallStats,
     leagueAverage: calculateLeagueAverage(),
     leagueAverages,
@@ -193,8 +360,8 @@ export const useGoalStats = () => {
   console.log('Final goal stats data:', { 
     isLoading, 
     error: error?.message, 
-    homeCount: homeStats.length,
-    awayCount: awayStats.length,
+    homeCount: mergedHomeStats.length,
+    awayCount: mergedAwayStats.length,
     overallCount: overallStats.length,
     leagueAveragesCount: leagueAverages.length
   });

@@ -59,6 +59,10 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                 <TableHead className="font-bold text-gray-700 text-center">2.5+</TableHead>
                 <TableHead className="font-bold text-gray-700 text-center">3.5+</TableHead>
                 <TableHead className="font-bold text-gray-700 text-center">4.5+</TableHead>
+                <TableHead className="font-bold text-gray-700 text-center">Marcou 1ºT</TableHead>
+                <TableHead className="font-bold text-gray-700 text-center">Marcou 2ºT</TableHead>
+                <TableHead className="font-bold text-gray-700 text-center">1º Gol (min)</TableHead>
+                <TableHead className="font-bold text-gray-700 text-center">Marcou 1º</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -99,6 +103,10 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                       {stats["4.5+"]}%
                     </span>
                   </TableCell>
+                  <TableCell className="text-center font-semibold">{stats["1st half"] !== undefined ? `${stats["1st half"]}%` : '-'}</TableCell>
+                  <TableCell className="text-center font-semibold">{stats["2nd half"] !== undefined ? `${stats["2nd half"]}%` : '-'}</TableCell>
+                  <TableCell className="text-center font-semibold">{stats["Avg. minute"] !== undefined ? stats["Avg. minute"] : '-'}</TableCell>
+                  <TableCell className="text-center font-semibold">{stats.scoredFirstPerc !== undefined ? `${stats.scoredFirstPerc}%` : '-'}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -158,6 +166,36 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                     </div>
                   </div>
                 </div>
+
+                <div className="mt-4 border-t pt-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+                        <div className="text-center">
+                            <div className="text-gray-600 text-xs">Marcou 1ºT</div>
+                            <div className="bg-blue-100 text-blue-800 px-2 py-2 rounded-full font-medium">
+                                {stats["1st half"] !== undefined ? `${stats["1st half"]}%` : '-'}
+                            </div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-gray-600 text-xs">Marcou 2ºT</div>
+                            <div className="bg-blue-100 text-blue-800 px-2 py-2 rounded-full font-medium">
+                                {stats["2nd half"] !== undefined ? `${stats["2nd half"]}%` : '-'}
+                            </div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-gray-600 text-xs">1º Gol (min)</div>
+                            <div className="font-bold text-lg mt-2">
+                                {stats["Avg. minute"] !== undefined ? stats["Avg. minute"] : '-'}
+                            </div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-gray-600 text-xs">Marcou 1º</div>
+                            <div className="bg-purple-100 text-purple-800 px-2 py-2 rounded-full font-medium">
+                                {stats.scoredFirstPerc !== undefined ? `${stats.scoredFirstPerc}%` : '-'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
               </CardContent>
             </Card>
           ))}
