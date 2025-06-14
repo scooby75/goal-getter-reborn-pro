@@ -34,18 +34,18 @@ export const SearchableSelect = ({
 
   // Filter and sort options based on search term
   const filteredOptions = useMemo(() => {
-    const normalizedSearch = normalizeText(searchTerm);
-    if (!normalizedSearch) {
+    const lowerCaseSearch = searchTerm.trim().toLowerCase();
+    if (!lowerCaseSearch) {
       return [...options].sort((a, b) => a.localeCompare(b));
     }
     return options
-      .filter(option => normalizeText(option).includes(normalizedSearch))
+      .filter(option => option.trim().toLowerCase().includes(lowerCaseSearch))
       .sort((a, b) => {
-        const normalizedA = normalizeText(a);
-        const normalizedB = normalizeText(b);
+        const lowerA = a.trim().toLowerCase();
+        const lowerB = b.trim().toLowerCase();
 
-        const aStartsWith = normalizedA.startsWith(normalizedSearch);
-        const bStartsWith = normalizedB.startsWith(normalizedSearch);
+        const aStartsWith = lowerA.startsWith(lowerCaseSearch);
+        const bStartsWith = lowerB.startsWith(lowerCaseSearch);
 
         if (aStartsWith && !bStartsWith) return -1;
         if (!aStartsWith && bStartsWith) return 1;
