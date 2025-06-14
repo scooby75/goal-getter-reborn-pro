@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -18,6 +17,7 @@ const normalizeText = (text: string): string => {
     .trim()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9\s]/g, '')
     .toLowerCase();
 };
 
@@ -39,20 +39,31 @@ export const SearchableSelect = ({
     if (!normalizedSearch) {
       return [...options].sort((a, b) => a.localeCompare(b));
     }
+    
     return options
-      .filter(option => normalizeText(option).includes(normalizedSearch))
+      .map(option => ({
+        original: option,
+        normalized: normalizeText(option)
+      }))
+      .filter(({ normalized }) => normalized.includes(normalizedSearch))
       .sort((a, b) => {
-        const normalizedA = normalizeText(a);
-        const normalizedB = normalizeText(b);
-
-        const aStartsWith = normalizedA.startsWith(normalizedSearch);
-        const bStartsWith = normalizedB.startsWith(normalizedSearch);
-
+        // Prioritize exact matches at the start of the string
+        const aStartsWith = a.normalized.startsWith(normalizedSearch);
+        const bStartsWith = b.normalized.startsWith(normalizedSearch);
+        
         if (aStartsWith && !bStartsWith) return -1;
         if (!aStartsWith && bStartsWith) return 1;
-
-        return a.localeCompare(b);
-      });
+        
+        // Then prioritize earlier matches in the string
+        const aIndex = a.normalized.indexOf(normalizedSearch);
+        const bIndex = b.normalized.indexOf(normalizedSearch);
+        
+        if (aIndex !== bIndex) return aIndex - bIndex;
+        
+        // Finally sort alphabetically
+        return a.original.localeCompare(b.original);
+      })
+      .map(({ original }) => original);
   }, [options, searchTerm]);
 
   // Close dropdown when clicking outside
