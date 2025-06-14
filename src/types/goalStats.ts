@@ -26,6 +26,7 @@ export interface ScoredFirstStats {
   Team: string;
   GP?: number;
   "Perc.": number;
+  League?: string;
 }
 
 export interface LeagueAverageData {

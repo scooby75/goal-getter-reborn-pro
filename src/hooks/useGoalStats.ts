@@ -133,20 +133,35 @@ const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
     console.warn('Scored First CSV has no data rows.');
     return [];
   }
-  const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+
+  // Detect separator by checking for tabs in header
+  const separator = lines[0].includes('\t') ? '\t' : ',';
+
+  const headers = lines[0].split(separator).map(h => h.trim().replace(/"/g, ''));
   console.log('Scored First CSV Headers:', headers);
   
+  // Find team header ('Team_Home', 'Team_Away', or 'Team')
+  const teamHeader = headers.find(h => h.toLowerCase().startsWith('team'));
+  if (!teamHeader) {
+    console.error('Team column not found in scored first CSV');
+    return [];
+  }
+  console.log('Using team header:', teamHeader);
+
   const parsedData = lines.slice(1).map((line) => {
-    const values = line.split(',');
+    const values = line.split(separator);
     const stats: any = {};
     
     headers.forEach((header, headerIndex) => {
       const cleanHeader = header.trim().replace(/"/g, '');
       let cleanValue = values[headerIndex]?.trim().replace(/"/g, '') || '';
       
-      if (cleanHeader === 'Team') {
+      if (cleanHeader === teamHeader) {
         stats.Team = cleanValue;
-      } else {
+      } else if (cleanHeader.toLowerCase() === 'league') {
+        stats.League = cleanValue;
+      }
+      else {
         if (cleanValue.includes('%')) {
           cleanValue = cleanValue.replace('%', '');
         }
@@ -159,7 +174,7 @@ const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
 
   console.log(`Parsed scored first stats count: ${parsedData.length}`);
   if(parsedData.length > 0) {
-    console.log('Sample of parsed scored first data:', parsedData[0]);
+    console.log('Sample of parsed scored first data:', parsedData.slice(0, 5));
   }
   return parsedData;
 };
@@ -332,7 +347,18 @@ export const useGoalStats = () => {
   const mergedHomeStats = useMemo(() => {
     return homeStats.map(team => {
       const halfData = goalsHalfData.find(d => d.Team === team.Team);
-      const scoredFirstData = scoredFirstHomeData.find(d => d.Team === team.Team);
+      
+      const potentialMatches = scoredFirstHomeData.filter(d => d.Team === team.Team);
+      let scoredFirstData: ScoredFirstStats | undefined;
+
+      if (potentialMatches.length === 1) {
+        scoredFirstData = potentialMatches[0];
+      } else if (potentialMatches.length > 1) {
+        scoredFirstData = potentialMatches.find(d => 
+          d.League && team.League_Name && team.League_Name.toLowerCase().includes(d.League.toLowerCase())
+        );
+      }
+      
       const newStats: Partial<TeamStats> = {};
       if (halfData) {
         newStats['1st half'] = halfData['1st half'];
@@ -349,7 +375,18 @@ export const useGoalStats = () => {
   const mergedAwayStats = useMemo(() => {
     return awayStats.map(team => {
       const halfData = goalsHalfData.find(d => d.Team === team.Team);
-      const scoredFirstData = scoredFirstAwayData.find(d => d.Team === team.Team);
+      
+      const potentialMatches = scoredFirstAwayData.filter(d => d.Team === team.Team);
+      let scoredFirstData: ScoredFirstStats | undefined;
+
+      if (potentialMatches.length === 1) {
+        scoredFirstData = potentialMatches[0];
+      } else if (potentialMatches.length > 1) {
+        scoredFirstData = potentialMatches.find(d => 
+          d.League && team.League_Name && team.League_Name.toLowerCase().includes(d.League.toLowerCase())
+        );
+      }
+      
       const newStats: Partial<TeamStats> = {};
       if (halfData) {
         newStats['1st half'] = halfData['1st half'];
