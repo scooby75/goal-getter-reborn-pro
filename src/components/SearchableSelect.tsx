@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -34,18 +35,18 @@ export const SearchableSelect = ({
 
   // Filter and sort options based on search term
   const filteredOptions = useMemo(() => {
-    const lowerCaseSearch = searchTerm.trim().toLowerCase();
-    if (!lowerCaseSearch) {
+    const normalizedSearch = normalizeText(searchTerm);
+    if (!normalizedSearch) {
       return [...options].sort((a, b) => a.localeCompare(b));
     }
     return options
-      .filter(option => option.trim().toLowerCase().includes(lowerCaseSearch))
+      .filter(option => normalizeText(option).includes(normalizedSearch))
       .sort((a, b) => {
-        const lowerA = a.trim().toLowerCase();
-        const lowerB = b.trim().toLowerCase();
+        const normalizedA = normalizeText(a);
+        const normalizedB = normalizeText(b);
 
-        const aStartsWith = lowerA.startsWith(lowerCaseSearch);
-        const bStartsWith = lowerB.startsWith(lowerCaseSearch);
+        const aStartsWith = normalizedA.startsWith(normalizedSearch);
+        const bStartsWith = normalizedB.startsWith(normalizedSearch);
 
         if (aStartsWith && !bStartsWith) return -1;
         if (!aStartsWith && bStartsWith) return 1;
