@@ -16,8 +16,9 @@ const normalizeText = (text: string): string => {
   return text
     .trim()
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-zA-Z0-9\s]/g, '')
+    .replace(/[\u0300-\u036f]/g, '') // Remove acentos
+    .replace(/[^a-zA-Z0-9\s]/g, '') // Remove caracteres especiais
+    .replace(/\s+/g, ' ') // Remove múltiplos espaços
     .toLowerCase();
 };
 
@@ -43,29 +44,42 @@ export const SearchableSelect = ({
     return options
       .map(option => ({
         original: option,
-        normalized: normalizeText(option)
+        normalized: normalizeText(option),
+        searchScore: 0
       }))
-      .filter(({ normalized }) => normalized.includes(normalizedSearch))
+      .filter(({ normalized }) => {
+        // Verifica se o termo de busca está contido na opção
+        if (normalized.includes(normalizedSearch)) {
+          return true;
+        }
+        
+        // Verifica se partes do termo estão presentes (para buscas mais flexíveis)
+        const searchParts = normalizedSearch.split(' ');
+        return searchParts.some(part => normalized.includes(part));
+      })
       .sort((a, b) => {
-        // Prioritize exact matches at the start of the string
-        const aStartsWith = a.normalized.startsWith(normalizedSearch);
-        const bStartsWith = b.normalized.startsWith(normalizedSearch);
+        // Pontuação baseada na posição e qualidade do match
+        const aStartsWith = a.normalized.startsWith(normalizedSearch) ? 3 : 0;
+        const bStartsWith = b.normalized.startsWith(normalizedSearch) ? 3 : 0;
         
-        if (aStartsWith && !bStartsWith) return -1;
-        if (!aStartsWith && bStartsWith) return 1;
+        const aWordStartsWith = a.normalized.includes(` ${normalizedSearch}`) ? 2 : 0;
+        const bWordStartsWith = b.normalized.includes(` ${normalizedSearch}`) ? 2 : 0;
         
-        // Then prioritize earlier matches in the string
-        const aIndex = a.normalized.indexOf(normalizedSearch);
-        const bIndex = b.normalized.indexOf(normalizedSearch);
+        const aContains = a.normalized.includes(normalizedSearch) ? 1 : 0;
+        const bContains = b.normalized.includes(normalizedSearch) ? 1 : 0;
         
-        if (aIndex !== bIndex) return aIndex - bIndex;
+        const aScore = aStartsWith + aWordStartsWith + aContains;
+        const bScore = bStartsWith + bWordStartsWith + bContains;
         
-        // Finally sort alphabetically
+        if (aScore !== bScore) return bScore - aScore;
+        
+        // Se a pontuação for igual, ordena alfabeticamente
         return a.original.localeCompare(b.original);
       })
       .map(({ original }) => original);
   }, [options, searchTerm]);
 
+  // Restante do componente permanece igual...
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
