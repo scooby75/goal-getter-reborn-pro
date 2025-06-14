@@ -15,9 +15,8 @@ const normalizeText = (text: string): string => {
   return text
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '') // Remove acentos
-    .replace(/[^a-z0-9\s]/g, '') // Remove caracteres especiais
-    .replace(/\s+/g, ' ') // Normaliza espaços múltiplos
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, '')
     .trim();
 };
 
@@ -41,34 +40,26 @@ export const SearchableSelect = ({
     }
 
     return options
-      .filter(option => {
-        const normalizedOption = normalizeText(option);
-        
-        // Verifica se o termo de busca está contido no início de qualquer palavra do nome
-        const words = normalizedOption.split(' ');
-        return words.some(word => word.startsWith(normalizedSearch));
-      })
-      .sort((a, b) => {
-        const normalizedA = normalizeText(a);
-        const normalizedB = normalizeText(b);
-
-        // Prioriza matches exatos no início do nome
-        if (normalizedA.startsWith(normalizedSearch) && !normalizedB.startsWith(normalizedSearch)) return -1;
-        if (!normalizedA.startsWith(normalizedSearch) && normalizedB.startsWith(normalizedSearch)) return 1;
-
-        // Depois prioriza matches no início de palavras
-        const aWordMatch = normalizedA.split(' ').some(word => word.startsWith(normalizedSearch));
-        const bWordMatch = normalizedB.split(' ').some(word => word.startsWith(normalizedSearch));
-        
-        if (aWordMatch && !bWordMatch) return -1;
-        if (!aWordMatch && bWordMatch) return 1;
-
-        // Finalmente ordena por ordem alfabética
-        return a.localeCompare(b);
-      });
+      .filter(option => normalizeText(option).includes(normalizedSearch))
+      .sort((a, b) => a.localeCompare(b));
   }, [options, searchTerm]);
 
-  // ... (restante do componente permanece igual)
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleOptionSelect = (option: string) => {
+    onValueChange(option); // Corrigido: removida a verificação de value
+    setOpen(false);
+    setSearchTerm('');
+  };
 
   return (
     <div className={className} ref={containerRef}>
@@ -127,7 +118,7 @@ export const SearchableSelect = ({
                         value === option ? "opacity-100" : "opacity-0"
                       )}
                     />
-                    <span className="truncate">{option}</span>
+                    <span>{option}</span>
                   </button>
                 ))
               )}
