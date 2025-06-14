@@ -12,6 +12,14 @@ interface SearchableSelectProps {
   className?: string;
 }
 
+const normalizeText = (text: string): string => {
+  if (!text) return '';
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+};
+
 export const SearchableSelect = ({
   value,
   onValueChange,
@@ -24,9 +32,9 @@ export const SearchableSelect = ({
   const [searchTerm, setSearchTerm] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Filter options based on search term
+  // Filter options based on search term, ignoring accents and case
   const filteredOptions = options.filter(option =>
-    option.toLowerCase().includes(searchTerm.toLowerCase())
+    normalizeText(option).includes(normalizeText(searchTerm))
   );
 
   // Close dropdown when clicking outside
