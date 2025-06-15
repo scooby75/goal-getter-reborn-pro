@@ -6,6 +6,7 @@ import { StatsDisplay } from './StatsDisplay';
 import { FilteredLeagueAverage } from './FilteredLeagueAverage';
 import { LeagueAverageDisplay } from './LeagueAverageDisplay';
 import { SearchableSelect } from './SearchableSelect';
+import { ProbableScores } from './ProbableScores';
 
 export const GoalStatsConsulta = () => {
   console.log('GoalStatsConsulta component rendering');
@@ -270,6 +271,14 @@ export const GoalStatsConsulta = () => {
           awayTeam={selectedAwayTeam}
           homeStats={selectedHomeStats}
           awayStats={selectedAwayStats}
+        />
+      )}
+
+      {/* Probable Scores */}
+      {selectedHomeStats && selectedAwayStats && (
+        <ProbableScores 
+          homeStats={selectedHomeStats} 
+          awayStats={selectedAwayStats} 
         />
       )}
     </div>
