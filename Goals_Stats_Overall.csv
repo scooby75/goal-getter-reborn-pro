@@ -157,8 +157,8 @@ Brazil - Serie B,Athletico PR,13.0,2.77,100%,85%,69%,15%,8%,0%,77%,15%,8%,15%,8%
 Brazil - Serie B,Athletic Club,13.0,2.54,100%,69%,54%,15%,8%,8%,38%,8%,54%,8%,54%
 Brazil - Serie B,Operario PR,13.0,2.46,92%,77%,54%,15%,8%,0%,46%,31%,31%,23%,23%
 Brazil - Serie B,Cuiaba,13.0,2.31,100%,69%,38%,15%,8%,0%,46%,38%,15%,38%,15%
+Brazil - Serie B,America MG,14.0,2.29,100%,64%,50%,14%,0%,0%,43%,21%,36%,21%,36%
 Brazil - Serie B,Amazonas,13.0,2.23,92%,69%,31%,23%,8%,0%,46%,23%,38%,15%,31%
-Brazil - Serie B,America MG,13.0,2.23,100%,62%,46%,15%,0%,0%,38%,23%,38%,23%,38%
 Brazil - Serie B,Avai,13.0,2.23,92%,77%,46%,8%,0%,0%,62%,38%,8%,31%,0%
 Brazil - Serie B,Botafogo SP,13.0,2.15,92%,62%,38%,15%,8%,0%,38%,15%,54%,8%,46%
 Brazil - Serie B,Chapecoense,13.0,2.15,100%,62%,46%,8%,0%,0%,46%,23%,31%,23%,31%
@@ -168,8 +168,8 @@ Brazil - Serie B,Atletico GO,13.0,2.0,85%,69%,23%,8%,8%,8%,54%,38%,23%,23%,8%
 Brazil - Serie B,Goias,13.0,2.0,92%,62%,38%,8%,0%,0%,38%,46%,23%,38%,15%
 Brazil - Serie B,Novorizontino,13.0,2.0,92%,62%,31%,15%,0%,0%,38%,46%,23%,38%,15%
 Brazil - Serie B,Ferroviaria,13.0,1.92,85%,69%,31%,8%,0%,0%,54%,31%,31%,15%,15%
+Brazil - Serie B,CRB,14.0,1.86,100%,64%,21%,0%,0%,0%,43%,36%,21%,36%,21%
 Brazil - Serie B,Vila Nova,13.0,1.85,100%,46%,31%,8%,0%,0%,23%,31%,46%,31%,46%
-Brazil - Serie B,CRB,13.0,1.77,100%,62%,15%,0%,0%,0%,38%,38%,23%,38%,23%
 Brazil - Serie B,Paysandu,13.0,1.62,85%,38%,23%,15%,0%,0%,31%,31%,54%,15%,38%
 Brazil - Serie B,Coritiba,13.0,1.38,77%,38%,23%,0%,0%,0%,23%,62%,38%,38%,15%
 Brazil - Serie B,Volta Redonda,13.0,1.38,85%,46%,8%,0%,0%,0%,31%,31%,54%,15%,38%
@@ -249,29 +249,29 @@ China - League One,Foshan Nanshi,13.0,2.23,92%,77%,38%,15%,0%,0%,54%,15%,38%,8%,
 China - League One,Guangxi Pingguo,13.0,2.15,85%,54%,46%,23%,8%,0%,38%,23%,54%,8%,38%
 China - League One,Qingdao RL,13.0,1.69,92%,62%,8%,8%,0%,0%,38%,15%,54%,8%,46%
 China - League One,Suzhou Dongwu,13.0,1.69,69%,62%,23%,8%,8%,0%,38%,62%,31%,31%,0%
-China - League Two,Nantong Haimen,15.0,3.13,87%,60%,47%,47%,33%,20%,47%,47%,20%,33%,7%
-China - League Two,Hubei Istar,14.0,2.64,79%,71%,50%,29%,21%,14%,36%,36%,50%,14%,29%
-China - League Two,C. Rongcheng B,15.0,2.6,93%,80%,53%,27%,7%,0%,47%,40%,20%,33%,13%
-China - League Two,Guangxi H.,15.0,2.6,93%,87%,40%,20%,7%,7%,33%,60%,13%,53%,7%
-China - League Two,Hangzhou Linpin,15.0,2.53,93%,73%,53%,27%,7%,0%,60%,20%,27%,13%,20%
+China - League Two,Nantong Haimen,16.0,3.19,88%,62%,50%,50%,31%,19%,50%,44%,19%,31%,6%
+China - League Two,Hubei Istar,15.0,2.73,80%,73%,53%,33%,20%,13%,40%,33%,47%,13%,27%
+China - League Two,Guangxi H.,16.0,2.69,94%,88%,44%,25%,6%,6%,38%,56%,12%,50%,6%
+China - League Two,C. Rongcheng B,16.0,2.56,94%,81%,50%,25%,6%,0%,50%,38%,19%,31%,12%
 China - League Two,G. Zhucheng,15.0,2.47,93%,80%,60%,7%,7%,0%,53%,33%,20%,27%,13%
-China - League Two,Guangxi Lanhang,15.0,2.4,93%,73%,47%,27%,0%,0%,40%,7%,60%,0%,53%
+China - League Two,Hangzhou Linpin,16.0,2.44,94%,69%,50%,25%,6%,0%,56%,25%,25%,19%,19%
 China - League Two,Beijing IT,15.0,2.33,100%,67%,40%,13%,13%,0%,33%,20%,47%,20%,47%
-China - League Two,Kunming City,15.0,2.33,87%,67%,47%,13%,7%,7%,47%,33%,33%,20%,20%
 China - League Two,Shandong T. B,15.0,2.33,87%,67%,33%,20%,7%,7%,47%,47%,20%,33%,7%
 China - League Two,Shanxi Ronghai,15.0,2.33,73%,67%,33%,20%,20%,13%,20%,40%,67%,13%,40%
-China - League Two,G. Dandelion,15.0,2.27,87%,73%,53%,13%,0%,0%,53%,47%,13%,33%,0%
+China - League Two,Guangxi Lanhang,16.0,2.25,88%,69%,44%,25%,0%,0%,38%,12%,62%,0%,50%
 China - League Two,Jiangxi Lushan,15.0,2.2,93%,67%,27%,13%,13%,7%,40%,47%,20%,40%,13%
 China - League Two,L. Longyuan,15.0,2.2,87%,80%,27%,20%,7%,0%,40%,20%,53%,7%,40%
+China - League Two,G. Dandelion,16.0,2.19,88%,69%,50%,12%,0%,0%,50%,44%,19%,31%,6%
+China - League Two,Kunming City,16.0,2.19,81%,62%,44%,12%,6%,6%,44%,38%,38%,19%,19%
 China - League Two,Wenzhou Pro.,14.0,2.14,86%,64%,50%,14%,0%,0%,43%,36%,36%,21%,21%
-China - League Two,Guangdong M.,15.0,2.07,80%,73%,27%,20%,7%,0%,40%,27%,53%,7%,33%
-China - League Two,Shanghai Port B,15.0,2.07,87%,67%,40%,7%,7%,0%,40%,33%,40%,20%,27%
+China - League Two,Guangdong M.,16.0,2.13,81%,75%,31%,19%,6%,0%,44%,25%,50%,6%,31%
+China - League Two,Shanghai Port B,16.0,2.0,88%,62%,38%,6%,6%,0%,38%,31%,44%,19%,31%
 China - League Two,Taian Tiankuang,14.0,2.0,93%,57%,43%,7%,0%,0%,43%,21%,43%,14%,36%
+China - League Two,Shenzhen 2028,16.0,1.81,88%,62%,25%,6%,0%,0%,44%,44%,25%,31%,12%
+China - League Two,Ganzhou Ruishi,15.0,1.8,80%,73%,20%,7%,0%,0%,47%,33%,40%,13%,20%
 China - League Two,Wuxi Wugou,15.0,1.8,80%,53%,27%,7%,7%,7%,27%,60%,33%,40%,13%
-China - League Two,Ganzhou Ruishi,14.0,1.79,79%,71%,21%,7%,0%,0%,43%,36%,43%,14%,21%
-China - League Two,Quanzhou Yassin,13.0,1.69,85%,46%,23%,8%,8%,0%,31%,23%,62%,8%,46%
-China - League Two,Shenzhen 2028,15.0,1.67,87%,60%,20%,0%,0%,0%,40%,47%,27%,33%,13%
-China - League Two,Wuhan TT B,15.0,1.67,87%,53%,20%,7%,0%,0%,33%,33%,47%,20%,33%
+China - League Two,Quanzhou Yassin,14.0,1.79,86%,50%,29%,7%,7%,0%,36%,21%,57%,7%,43%
+China - League Two,Wuhan TT B,16.0,1.63,88%,50%,19%,6%,0%,0%,31%,38%,44%,25%,31%
 China - League Two,Changchun Xidu,15.0,1.27,80%,27%,13%,7%,0%,0%,13%,67%,40%,47%,20%
 Colombia - Primera A - Apertura,A. Nacional,20.0,2.9,90%,70%,55%,35%,25%,10%,50%,40%,20%,30%,10%
 Colombia - Primera A - Apertura,Santa Fe,20.0,2.55,85%,70%,40%,20%,15%,10%,50%,40%,25%,25%,10%
@@ -583,6 +583,15 @@ Finland - Kakkonen,Tampere Utd,10.0,3.0,100%,80%,50%,40%,30%,0%,40%,40%,20%,40%,
 Finland - Kakkonen,JJK,12.0,2.75,92%,75%,58%,33%,17%,0%,58%,17%,33%,8%,25%
 Finland - Kakkonen,KPV Kokkola,10.0,2.7,100%,70%,50%,40%,10%,0%,50%,30%,20%,30%,20%
 Finland - Kakkonen,Mikkelin,11.0,2.45,73%,64%,55%,36%,18%,0%,36%,45%,45%,18%,18%
+Finland - Kakkonen - C,SJK Akatemia B,10.0,5.2,100%,100%,100%,90%,60%,40%,90%,0%,10%,0%,10%
+Finland - Kakkonen - C,TP-47,9.0,5.0,100%,89%,78%,67%,67%,44%,89%,11%,0%,11%,0%
+Finland - Kakkonen - C,OsPa,10.0,4.9,100%,100%,80%,70%,50%,40%,90%,0%,10%,0%,10%
+Finland - Kakkonen - C,JS Hercules,9.0,4.67,100%,100%,100%,67%,67%,33%,100%,0%,0%,0%,0%
+Finland - Kakkonen - C,VIFK,8.0,4.25,100%,100%,88%,62%,50%,25%,100%,0%,0%,0%,0%
+Finland - Kakkonen - C,Narpes Kraft,10.0,4.1,100%,90%,80%,70%,50%,10%,90%,0%,10%,0%,10%
+Finland - Kakkonen - C,GBK Kokkola,9.0,4.0,100%,89%,78%,56%,44%,22%,78%,11%,11%,11%,11%
+Finland - Kakkonen - C,VPS B,9.0,3.89,100%,89%,78%,56%,33%,22%,56%,44%,0%,44%,0%
+Finland - Kakkonen - C,JBK,8.0,3.25,100%,75%,62%,50%,38%,0%,75%,0%,25%,0%,25%
 France - Ligue 1,Paris SG,34.0,3.74,97%,88%,74%,56%,35%,18%,79%,21%,3%,18%,0%
 France - Ligue 1,Marseille,34.0,3.56,100%,94%,68%,50%,29%,15%,68%,15%,18%,15%,18%
 France - Ligue 1,Saint-Etienne,34.0,3.41,100%,85%,56%,47%,26%,18%,56%,15%,29%,15%,29%
@@ -931,7 +940,7 @@ Japan - J2 League,Sagan Tosu,20.0,2.0,90%,50%,35%,20%,5%,0%,45%,35%,30%,25%,20%
 Japan - J2 League,Oita Trinita,20.0,1.95,90%,70%,30%,5%,0%,0%,45%,35%,30%,25%,20%
 Japan - J2 League,Ventforet Kofu,20.0,1.8,80%,50%,30%,10%,5%,5%,35%,50%,35%,30%,15%
 Japan - J2 League,Tokushima V.,20.0,1.6,90%,50%,5%,5%,5%,5%,20%,60%,30%,50%,20%
-Japan - J3 League,Fukushima Utd,17.0,4.12,100%,88%,76%,59%,35%,29%,71%,18%,12%,18%,12%
+Japan - J3 League,Fukushima Utd,18.0,3.94,100%,83%,72%,56%,33%,28%,67%,17%,17%,17%,17%
 Japan - J3 League,Kochi United,17.0,3.41,88%,82%,65%,53%,41%,6%,65%,18%,29%,6%,18%
 Japan - J3 League,Kusatsu,17.0,3.06,82%,76%,41%,41%,29%,24%,53%,35%,29%,18%,12%
 Japan - J3 League,Kagoshima Utd,17.0,2.94,94%,88%,53%,29%,18%,6%,71%,24%,12%,18%,6%
@@ -948,7 +957,7 @@ Japan - J3 League,Kamatamare S.,17.0,2.12,100%,71%,24%,6%,6%,6%,41%,18%,41%,18%,
 Japan - J3 League,FC Ryukyu,17.0,1.88,94%,65%,29%,0%,0%,0%,41%,18%,47%,12%,41%
 Japan - J3 League,AC Numazu,17.0,1.76,76%,53%,24%,18%,6%,0%,41%,29%,53%,6%,29%
 Japan - J3 League,Gainare Tottori,17.0,1.76,88%,59%,29%,0%,0%,0%,24%,35%,53%,24%,41%
-Japan - J3 League,V. Hachinohe,17.0,1.76,94%,53%,18%,6%,6%,0%,35%,53%,18%,47%,12%
+Japan - J3 League,V. Hachinohe,18.0,1.72,94%,50%,17%,6%,6%,0%,33%,56%,17%,50%,11%
 Japan - J3 League,G. Kitakyushu,17.0,1.71,94%,47%,18%,6%,6%,0%,29%,53%,24%,47%,18%
 Japan - J3 League,Tochigi SC,17.0,1.41,82%,29%,24%,6%,0%,0%,29%,47%,41%,29%,24%
 Kazakhstan - Premier League,Okzhetpes,13.0,3.0,100%,77%,54%,38%,15%,8%,62%,15%,23%,15%,23%
@@ -965,16 +974,40 @@ Kazakhstan - Premier League,Ordabasy,12.0,2.08,83%,50%,42%,25%,8%,0%,33%,50%,33%
 Kazakhstan - Premier League,Yelimay Semey,13.0,2.08,100%,77%,31%,0%,0%,0%,38%,38%,23%,38%,23%
 Kazakhstan - Premier League,Ulytau,13.0,2.0,92%,62%,31%,8%,8%,0%,38%,23%,46%,15%,38%
 Kazakhstan - Premier League,Zhenys,13.0,1.77,69%,54%,23%,15%,8%,8%,38%,46%,46%,15%,15%
-Lithuania - A Lyga,Riteriai,17.0,3.41,94%,82%,71%,47%,24%,18%,71%,12%,24%,6%,18%
-Lithuania - A Lyga,Hegelmann L.,17.0,2.94,100%,82%,65%,29%,12%,6%,47%,35%,18%,35%,18%
-Lithuania - A Lyga,Dainava,17.0,2.88,100%,88%,59%,35%,6%,0%,59%,0%,41%,0%,41%
-Lithuania - A Lyga,Siauliai,17.0,2.71,94%,76%,65%,29%,6%,0%,53%,24%,29%,18%,24%
-Lithuania - A Lyga,Panevezys,17.0,2.65,94%,88%,53%,24%,6%,0%,53%,29%,24%,24%,18%
-Lithuania - A Lyga,Zalgiris,17.0,2.41,88%,76%,41%,18%,12%,6%,47%,29%,35%,18%,24%
-Lithuania - A Lyga,Kauno Zalgiris,17.0,2.35,76%,65%,59%,29%,6%,0%,35%,59%,29%,35%,6%
-Lithuania - A Lyga,Suduva,17.0,2.35,82%,59%,41%,29%,12%,6%,35%,53%,29%,35%,12%
-Lithuania - A Lyga,Banga,17.0,2.12,100%,71%,35%,6%,0%,0%,47%,24%,29%,24%,29%
-Lithuania - A Lyga,Dziugas Telsiai,17.0,1.71,100%,53%,18%,0%,0%,0%,35%,29%,35%,29%,35%
+Latvia - Virsliga,Liepaja,20.0,3.2,90%,75%,60%,50%,25%,15%,55%,30%,25%,20%,15%
+Latvia - Virsliga,Daugavpils,20.0,3.1,95%,80%,60%,35%,30%,10%,70%,20%,15%,15%,10%
+Latvia - Virsliga,RFS,20.0,3.1,100%,70%,60%,35%,25%,15%,55%,35%,10%,35%,10%
+Latvia - Virsliga,Grobina,20.0,2.95,100%,85%,40%,30%,30%,10%,50%,20%,30%,20%,30%
+Latvia - Virsliga,Tukums,20.0,2.95,90%,90%,55%,30%,15%,10%,50%,20%,40%,10%,30%
+Latvia - Virsliga,Riga FC,19.0,2.95,100%,89%,53%,26%,11%,11%,42%,58%,0%,58%,0%
+Latvia - Virsliga,Metta,19.0,2.89,95%,79%,47%,37%,21%,11%,42%,11%,53%,5%,47%
+Latvia - Virsliga,Super Nova,19.0,2.79,95%,89%,47%,32%,11%,5%,68%,16%,21%,11%,16%
+Latvia - Virsliga,Auda,19.0,2.58,95%,74%,47%,26%,11%,5%,53%,37%,16%,32%,11%
+Latvia - Virsliga,FS Jelgava,20.0,1.95,90%,55%,30%,15%,5%,0%,45%,15%,50%,5%,40%
+Latvia - 1. Liga,AFA Olaine,10.0,4.2,100%,70%,60%,60%,60%,40%,70%,0%,30%,0%,30%
+Latvia - 1. Liga,Ogre United,10.0,4.0,100%,90%,80%,60%,30%,10%,70%,30%,0%,30%,0%
+Latvia - 1. Liga,Riga Mariners,10.0,3.9,100%,90%,70%,50%,40%,30%,80%,20%,0%,20%,0%
+Latvia - 1. Liga,Smiltene,10.0,3.9,100%,100%,90%,50%,30%,20%,80%,10%,10%,10%,10%
+Latvia - 1. Liga,RFS B,10.0,3.6,100%,100%,80%,50%,20%,10%,80%,10%,10%,10%,10%
+Latvia - 1. Liga,Rezekne,10.0,3.5,100%,80%,50%,30%,30%,20%,70%,10%,20%,10%,20%
+Latvia - 1. Liga,Riga FC B,10.0,3.3,100%,90%,60%,50%,20%,10%,70%,0%,30%,0%,30%
+Latvia - 1. Liga,Alberts JDFS,10.0,3.2,100%,80%,50%,40%,10%,10%,50%,50%,0%,50%,0%
+Latvia - 1. Liga,Augsdaugava,10.0,3.2,100%,90%,50%,40%,30%,10%,40%,0%,60%,0%,60%
+Latvia - 1. Liga,Tukums B,10.0,3.2,100%,80%,70%,50%,20%,0%,70%,10%,20%,10%,20%
+Latvia - 1. Liga,Leevon PPK,10.0,2.9,100%,80%,60%,30%,10%,10%,60%,10%,30%,10%,30%
+Latvia - 1. Liga,Skanste,10.0,2.6,100%,70%,30%,30%,20%,10%,50%,30%,20%,30%,20%
+Latvia - 1. Liga,JFK Ventspils,10.0,2.4,100%,80%,40%,20%,0%,0%,70%,30%,0%,30%,0%
+Latvia - 1. Liga,Marupe,10.0,1.9,100%,60%,30%,0%,0%,0%,40%,40%,20%,40%,20%
+Lithuania - 1st League,Riteriai,17.0,3.41,94%,82%,71%,47%,24%,18%,71%,12%,24%,6%,18%
+Lithuania - 1st League,Hegelmann L.,17.0,2.94,100%,82%,65%,29%,12%,6%,47%,35%,18%,35%,18%
+Lithuania - 1st League,Dainava,17.0,2.88,100%,88%,59%,35%,6%,0%,59%,0%,41%,0%,41%
+Lithuania - 1st League,Siauliai,17.0,2.71,94%,76%,65%,29%,6%,0%,53%,24%,29%,18%,24%
+Lithuania - 1st League,Panevezys,17.0,2.65,94%,88%,53%,24%,6%,0%,53%,29%,24%,24%,18%
+Lithuania - 1st League,Zalgiris,17.0,2.41,88%,76%,41%,18%,12%,6%,47%,29%,35%,18%,24%
+Lithuania - 1st League,Kauno Zalgiris,17.0,2.35,76%,65%,59%,29%,6%,0%,35%,59%,29%,35%,6%
+Lithuania - 1st League,Suduva,17.0,2.35,82%,59%,41%,29%,12%,6%,35%,53%,29%,35%,12%
+Lithuania - 1st League,Banga,17.0,2.12,100%,71%,35%,6%,0%,0%,47%,24%,29%,24%,29%
+Lithuania - 1st League,Dziugas Telsiai,17.0,1.71,100%,53%,18%,0%,0%,0%,35%,29%,35%,29%,35%
 Malaysia - Super League,Johor Darul,24.0,4.08,100%,96%,83%,58%,29%,21%,33%,67%,0%,67%,0%
 Malaysia - Super League,Kelantan United,24.0,4.08,100%,83%,75%,50%,42%,25%,46%,4%,50%,4%,50%
 Malaysia - Super League,Pahang,24.0,3.08,96%,83%,54%,42%,21%,12%,58%,21%,25%,17%,21%
@@ -1151,7 +1184,7 @@ Peru - Liga 1 - Apertura,Cajamarca,15.0,3.2,93%,80%,60%,33%,27%,20%,47%,20%,40%,
 Peru - Liga 1 - Apertura,S. Cristal,15.0,3.2,100%,73%,67%,47%,33%,0%,60%,20%,20%,20%,20%
 Peru - Liga 1 - Apertura,Sport Boys,15.0,3.2,100%,80%,67%,47%,13%,13%,60%,13%,27%,13%,27%
 Peru - Liga 1 - Apertura,Cienciano,15.0,3.13,87%,73%,60%,47%,33%,7%,73%,20%,20%,7%,7%
-Peru - Liga 1 - Apertura,Universitario,15.0,3.13,100%,87%,47%,47%,27%,7%,40%,40%,20%,40%,20%
+Peru - Liga 1 - Apertura,Universitario,16.0,3.06,100%,88%,44%,44%,25%,6%,38%,44%,19%,44%,19%
 Peru - Liga 1 - Apertura,Binacional,15.0,2.93,100%,93%,53%,33%,13%,0%,67%,20%,13%,20%,13%
 Peru - Liga 1 - Apertura,Comerciantes U.,15.0,2.93,100%,93%,53%,27%,13%,7%,60%,13%,27%,13%,27%
 Peru - Liga 1 - Apertura,Los Chankas,15.0,2.93,93%,87%,67%,33%,7%,7%,80%,7%,20%,0%,13%
@@ -1161,7 +1194,7 @@ Peru - Liga 1 - Apertura,FBC Melgar,15.0,2.87,100%,87%,60%,27%,13%,0%,73%,27%,0%
 Peru - Liga 1 - Apertura,Juan Pablo II C,14.0,2.79,93%,64%,50%,36%,21%,14%,29%,29%,50%,21%,43%
 Peru - Liga 1 - Apertura,A. Huanuco,15.0,2.73,87%,73%,47%,40%,20%,7%,53%,20%,40%,7%,27%
 Peru - Liga 1 - Apertura,Alianza A.,15.0,2.67,93%,67%,53%,27%,20%,7%,47%,47%,13%,40%,7%
-Peru - Liga 1 - Apertura,Atletico Grau,14.0,2.64,86%,79%,43%,21%,14%,14%,50%,36%,29%,21%,14%
+Peru - Liga 1 - Apertura,Atletico Grau,15.0,2.6,87%,80%,40%,20%,13%,13%,47%,33%,33%,20%,20%
 Peru - Liga 1 - Apertura,Sport Huancayo,15.0,2.6,93%,67%,60%,27%,7%,7%,53%,33%,20%,27%,13%
 Peru - Liga 1 - Apertura,Ayacucho,15.0,2.4,93%,67%,40%,20%,20%,0%,47%,13%,47%,7%,40%
 Peru - Liga 1 - Apertura,Alianza Lima,15.0,1.8,93%,53%,27%,7%,0%,0%,27%,60%,20%,53%,13%
@@ -1322,14 +1355,14 @@ South Africa - Premier Division ,Cape Town City,28.0,1.64,86%,50%,21%,4%,4%,0%,2
 South Africa - Premier Division ,Richards Bay,28.0,1.61,82%,46%,25%,7%,0%,0%,25%,43%,50%,25%,32%
 South Africa - Premier Division ,Polokwane,28.0,1.57,86%,57%,11%,4%,0%,0%,29%,36%,50%,21%,36%
 South Korea - K League 1,Daegu,20.0,2.75,95%,80%,65%,30%,5%,0%,65%,5%,35%,0%,30%
-South Korea - K League 1,Daejeon Citizen,20.0,2.5,90%,80%,50%,25%,5%,0%,55%,30%,25%,20%,15%
+South Korea - K League 1,Daejeon Citizen,21.0,2.48,90%,81%,48%,24%,5%,0%,57%,29%,24%,19%,14%
+South Korea - K League 1,Jeonbuk Motors,21.0,2.48,95%,71%,48%,29%,5%,0%,52%,38%,14%,33%,10%
 South Korea - K League 1,Anyang,20.0,2.45,100%,75%,50%,20%,0%,0%,60%,15%,25%,15%,25%
-South Korea - K League 1,Jeonbuk Motors,20.0,2.45,95%,70%,45%,30%,5%,0%,50%,40%,15%,35%,10%
 South Korea - K League 1,Pohang Steelers,20.0,2.35,95%,75%,45%,15%,5%,0%,55%,25%,25%,20%,20%
-South Korea - K League 1,Jeju Utd,20.0,2.3,90%,70%,45%,20%,5%,0%,50%,30%,30%,20%,20%
+South Korea - K League 1,Jeju Utd,21.0,2.29,90%,71%,43%,19%,5%,0%,52%,29%,29%,19%,19%
 South Korea - K League 1,Suwon City,19.0,2.26,84%,68%,42%,21%,11%,0%,58%,21%,37%,5%,21%
+South Korea - K League 1,Gimcheon Sangmu,21.0,2.24,86%,62%,38%,24%,14%,0%,43%,43%,29%,29%,14%
 South Korea - K League 1,Ulsan,19.0,2.21,95%,68%,32%,16%,11%,0%,47%,37%,21%,32%,16%
-South Korea - K League 1,Gimcheon Sangmu,20.0,2.2,85%,60%,35%,25%,15%,0%,40%,45%,30%,30%,15%
 South Korea - K League 1,Gwangju,20.0,2.1,90%,55%,40%,20%,5%,0%,50%,30%,30%,20%,20%
 South Korea - K League 1,Gangwon,20.0,2.05,90%,60%,45%,10%,0%,0%,35%,35%,40%,25%,30%
 South Korea - K League 1,Seoul,20.0,1.9,80%,55%,30%,20%,5%,0%,50%,35%,35%,15%,15%
