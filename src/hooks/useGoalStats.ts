@@ -1,4 +1,3 @@
-
 import { useQuery } from '@tanstack/react-query';
 import { GoalStatsData } from '@/types/goalStats';
 import { useHomeStats } from './useHomeStats';
@@ -6,71 +5,107 @@ import { useAwayStats } from './useAwayStats';
 import { useOverallStats } from './useOverallStats';
 import { useLeagueAverages } from './useLeagueAverages';
 import { useGoalMomentStats } from './useGoalMomentStats';
+import { useMemo } from 'react';
 
 export const useGoalStats = () => {
-  console.log('useGoalStats hook called');
+  // 1. Buscar todos os dados necessários
+  const homeStatsQuery = useHomeStats();
+  const awayStatsQuery = useAwayStats();
+  const overallStatsQuery = useOverallStats();
+  const leagueAveragesQuery = useLeagueAverages();
+  const goalMomentStatsQuery = useGoalMomentStats();
 
-  const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useHomeStats();
-  const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useAwayStats();
-  const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useOverallStats();
-  const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useLeagueAverages();
-  const { 
-    homeGoalMoments = [], 
-    awayGoalMoments = [], 
-    isLoading: goalMomentLoading, 
-    error: goalMomentError 
-  } = useGoalMomentStats();
+  // 2. Calcular estado agregado
+  const isLoading = useMemo(() => (
+    homeStatsQuery.isLoading ||
+    awayStatsQuery.isLoading ||
+    overallStatsQuery.isLoading ||
+    leagueAveragesQuery.isLoading ||
+    goalMomentStatsQuery.isLoading
+  ), [
+    homeStatsQuery.isLoading,
+    awayStatsQuery.isLoading,
+    overallStatsQuery.isLoading,
+    leagueAveragesQuery.isLoading,
+    goalMomentStatsQuery.isLoading
+  ]);
 
-  const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading || goalMomentLoading;
-  const error = homeError || awayError || overallError || leagueError || goalMomentError;
+  const error = useMemo(() => {
+    if (homeStatsQuery.error) return `Home stats error: ${homeStatsQuery.error.message}`;
+    if (awayStatsQuery.error) return `Away stats error: ${awayStatsQuery.error.message}`;
+    if (overallStatsQuery.error) return `Overall stats error: ${overallStatsQuery.error.message}`;
+    if (leagueAveragesQuery.error) return `League averages error: ${leagueAveragesQuery.error.message}`;
+    if (goalMomentStatsQuery.error) return `Goal moment stats error: ${goalMomentStatsQuery.error.message}`;
+    return null;
+  }, [
+    homeStatsQuery.error,
+    awayStatsQuery.error,
+    overallStatsQuery.error,
+    leagueAveragesQuery.error,
+    goalMomentStatsQuery.error
+  ]);
 
-  console.log('Data loading status:', {
-    homeStats: homeStats.length,
-    awayStats: awayStats.length,
-    overallStats: overallStats.length,
-    leagueAverages: leagueAverages.length,
-    homeGoalMoments: homeGoalMoments.length,
-    awayGoalMoments: awayGoalMoments.length,
-    isLoading,
-    error: error?.message
-  });
-
-  const calculateLeagueAverage = () => {
-    if (overallStats.length === 0) return { "1.5+": 0, "2.5+": 0, "3.5+": 0, "4.5+": 0 };
+  // 3. Calcular médias da liga
+  const leagueAverage = useMemo(() => {
+    if (!overallStatsQuery.data || overallStatsQuery.data.length === 0) {
+      return { "1.5+": 0, "2.5+": 0, "3.5+": 0, "4.5+": 0 };
+    }
     
-    const total15 = overallStats.reduce((sum, team) => sum + team["1.5+"], 0);
-    const total25 = overallStats.reduce((sum, team) => sum + team["2.5+"], 0);
-    const total35 = overallStats.reduce((sum, team) => sum + team["3.5+"], 0);
-    const total45 = overallStats.reduce((sum, team) => sum + team["4.5+"], 0);
+    const totals = overallStatsQuery.data.reduce((acc, team) => ({
+      "1.5+": acc["1.5+"] + (team["1.5+"] || 0),
+      "2.5+": acc["2.5+"] + (team["2.5+"] || 0),
+      "3.5+": acc["3.5+"] + (team["3.5+"] || 0),
+      "4.5+": acc["4.5+"] + (team["4.5+"] || 0),
+    }), { "1.5+": 0, "2.5+": 0, "3.5+": 0, "4.5+": 0 });
     
+    const count = overallStatsQuery.data.length;
     return {
-      "1.5+": Math.round((total15 / overallStats.length) * 100) / 100,
-      "2.5+": Math.round((total25 / overallStats.length) * 100) / 100,
-      "3.5+": Math.round((total35 / overallStats.length) * 100) / 100,
-      "4.5+": Math.round((total45 / overallStats.length) * 100) / 100,
+      "1.5+": parseFloat((totals["1.5+"] / count).toFixed(2)),
+      "2.5+": parseFloat((totals["2.5+"] / count).toFixed(2)),
+      "3.5+": parseFloat((totals["3.5+"] / count).toFixed(2)),
+      "4.5+": parseFloat((totals["4.5+"] / count).toFixed(2)),
     };
+  }, [overallStatsQuery.data]);
+
+  // 4. Preparar dados consolidados
+  const goalStatsData: GoalStatsData = useMemo(() => ({
+    homeStats: homeStatsQuery.data || [],
+    awayStats: awayStatsQuery.data || [],
+    overallStats: overallStatsQuery.data || [],
+    leagueAverage,
+    leagueAverages: leagueAveragesQuery.data || [],
+    homeGoalMoments: goalMomentStatsQuery.homeGoalMoments || [],
+    awayGoalMoments: goalMomentStatsQuery.awayGoalMoments || [],
+  }), [
+    homeStatsQuery.data,
+    awayStatsQuery.data,
+    overallStatsQuery.data,
+    leagueAverage,
+    leagueAveragesQuery.data,
+    goalMomentStatsQuery.homeGoalMoments,
+    goalMomentStatsQuery.awayGoalMoments
+  ]);
+
+  // 5. Função para recarregar todos os dados
+  const refetchAll = () => {
+    homeStatsQuery.refetch();
+    awayStatsQuery.refetch();
+    overallStatsQuery.refetch();
+    leagueAveragesQuery.refetch();
+    goalMomentStatsQuery.refetch();
   };
 
-  const goalStatsData: GoalStatsData = {
-    homeStats,
-    awayStats,
-    overallStats,
-    leagueAverage: calculateLeagueAverage(),
-    leagueAverages,
-    homeGoalMoments,
-    awayGoalMoments,
-  };
-
-  console.log('Final goal stats data:', { 
+  return { 
+    goalStatsData, 
     isLoading, 
-    error: error?.message, 
-    homeCount: homeStats.length,
-    awayCount: awayStats.length,
-    overallCount: overallStats.length,
-    leagueAveragesCount: leagueAverages.length,
-    homeGoalMomentsCount: homeGoalMoments.length,
-    awayGoalMomentsCount: awayGoalMoments.length
-  });
-
-  return { goalStatsData, isLoading, error };
+    isFetching: !isLoading && (
+      homeStatsQuery.isFetching ||
+      awayStatsQuery.isFetching ||
+      overallStatsQuery.isFetching ||
+      leagueAveragesQuery.isFetching ||
+      goalMomentStatsQuery.isFetching
+    ),
+    error,
+    refetch: refetchAll
+  };
 };
