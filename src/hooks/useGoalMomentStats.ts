@@ -5,8 +5,8 @@ import { fetchCSVWithRetry } from '@/utils/csvHelpers';
 import { parseGoalMomentCSV } from '@/utils/csvParsers';
 
 const CSV_URLS = {
-  HOME_GOAL_MOMENTS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/momento_do_gol_home.csv?token=GHSAT0AAAAAADFRERW34U7SQLMV6RER3EZC2DEMXNA',
-  AWAY_GOAL_MOMENTS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/momento_do_gol_away.csv?token=GHSAT0AAAAAADFRERW2TPP2D4DUAQZEA7LE2DEMYCQ'
+  HOME_GOAL_MOMENTS: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/momento_do_gol_home.csv',
+  AWAY_GOAL_MOMENTS: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/momento_do_gol_away.csv'
 };
 
 const fetchGoalMomentData = async (url: string): Promise<GoalMomentStats[]> => {
