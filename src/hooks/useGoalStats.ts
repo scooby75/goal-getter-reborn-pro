@@ -1,7 +1,62 @@
-
 import { useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalStatsData, LeagueAverageData, GoalsHalfStats, ScoredFirstStats } from '@/types/goalStats';
+
+// Updated URLs with authentication tokens
+const CSV_URLS = {
+  HOME_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv?token=GHSAT0AAAAAADFRERW3BMH35XT2N62NAHGY2DEKVNQ',
+  AWAY_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Away.csv?token=GHSAT0AAAAAADFRERW3MQDIWSCZUL3KNDMI2DEKVGA',
+  OVERALL_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Overall.csv?token=GHSAT0AAAAAADFRERW2KLIYUJDXDGQAMC522DEKVVQ',
+  LEAGUE_AVERAGES: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv?token=GHSAT0AAAAAADFRERW3PJEX53S6HL6TPHEK2DEKV5Q',
+  GOALS_HALF: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Half.csv?token=GHSAT0AAAAAADFRERW3JGMJHTYSVS7QDNWE2DEKUZQ',
+  SCORED_FIRST_HOME: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_home.csv',
+  SCORED_FIRST_AWAY: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_away.csv'
+};
+
+// Helper function to add cache busting parameter
+const addCacheBusting = (url: string): string => {
+  const timestamp = Date.now();
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}_t=${timestamp}`;
+};
+
+// Generic fetch function with better error handling
+const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<string> => {
+  console.log(`Fetching data from: ${url}`);
+  
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'text/csv,text/plain,*/*',
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        },
+        mode: 'cors'
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      const csvText = await response.text();
+      console.log(`Data fetched successfully from ${url} (attempt ${attempt})`);
+      return csvText;
+    } catch (error) {
+      console.error(`Attempt ${attempt} failed for ${url}:`, error);
+      
+      if (attempt === maxRetries) {
+        throw new Error(`Failed to fetch ${url} after ${maxRetries} attempts: ${error}`);
+      }
+      
+      // Wait before retrying
+      await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+    }
+  }
+  
+  throw new Error(`Failed to fetch ${url}`);
+};
 
 const parseCSV = (csvText: string): TeamStats[] => {
   console.log('Parsing CSV data...');
@@ -180,82 +235,28 @@ const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
   return parsedData;
 };
 
-// Updated URLs to use the correct repository
-const BASE_URL = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main';
-
-// Helper function to add cache busting parameter
-const addCacheBusting = (url: string): string => {
-  const timestamp = Date.now();
-  const separator = url.includes('?') ? '&' : '?';
-  return `${url}${separator}_t=${timestamp}`;
-};
-
-// Generic fetch function with better error handling
-const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<string> => {
-  const urlWithCacheBusting = addCacheBusting(url);
-  console.log(`Fetching data from: ${urlWithCacheBusting}`);
-  
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    try {
-      const response = await fetch(urlWithCacheBusting, {
-        method: 'GET',
-        headers: {
-          'Accept': 'text/csv,text/plain,*/*',
-          'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache'
-        },
-        mode: 'cors'
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-      
-      const csvText = await response.text();
-      console.log(`Data fetched successfully from ${url} (attempt ${attempt})`);
-      return csvText;
-    } catch (error) {
-      console.error(`Attempt ${attempt} failed for ${url}:`, error);
-      
-      if (attempt === maxRetries) {
-        throw new Error(`Failed to fetch ${url} after ${maxRetries} attempts: ${error}`);
-      }
-      
-      // Wait before retrying
-      await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
-    }
-  }
-  
-  throw new Error(`Failed to fetch ${url}`);
-};
-
-const fetchCSVData = async (filename: string): Promise<TeamStats[]> => {
-  const url = `${BASE_URL}/${filename}`;
+const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
   const csvText = await fetchCSVWithRetry(url);
   return parseCSV(csvText);
 };
 
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
-  const url = `${BASE_URL}/League_Averages.csv`;
-  const csvText = await fetchCSVWithRetry(url);
+  const csvText = await fetchCSVWithRetry(CSV_URLS.LEAGUE_AVERAGES);
   return parseLeagueAveragesCSV(csvText);
 };
 
 const fetchGoalsHalfData = async (): Promise<GoalsHalfStats[]> => {
-  const url = `${BASE_URL}/Goals_Half.csv`;
-  const csvText = await fetchCSVWithRetry(url);
+  const csvText = await fetchCSVWithRetry(CSV_URLS.GOALS_HALF);
   return parseGoalsHalfCSV(csvText);
 };
 
 const fetchScoredFirstHomeData = async (): Promise<ScoredFirstStats[]> => {
-  const url = `${BASE_URL}/scored_first_home.csv`;
-  const csvText = await fetchCSVWithRetry(url);
+  const csvText = await fetchCSVWithRetry(CSV_URLS.SCORED_FIRST_HOME);
   return parseScoredFirstCSV(csvText);
 };
 
 const fetchScoredFirstAwayData = async (): Promise<ScoredFirstStats[]> => {
-  const url = `${BASE_URL}/scored_first_away.csv`;
-  const csvText = await fetchCSVWithRetry(url);
+  const csvText = await fetchCSVWithRetry(CSV_URLS.SCORED_FIRST_AWAY);
   return parseScoredFirstCSV(csvText);
 };
 
@@ -264,7 +265,7 @@ export const useGoalStats = () => {
 
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery({
     queryKey: ['homeStats'],
-    queryFn: () => fetchCSVData('Goals_Stats_Home.csv'),
+    queryFn: () => fetchCSVData(CSV_URLS.HOME_STATS),
     retry: 2,
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
     staleTime: 5 * 60 * 1000, // 5 minutes
@@ -273,7 +274,7 @@ export const useGoalStats = () => {
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery({
     queryKey: ['awayStats'],
-    queryFn: () => fetchCSVData('Goals_Stats_Away.csv'),
+    queryFn: () => fetchCSVData(CSV_URLS.AWAY_STATS),
     retry: 2,
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
     staleTime: 5 * 60 * 1000,
@@ -282,7 +283,7 @@ export const useGoalStats = () => {
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery({
     queryKey: ['overallStats'],
-    queryFn: () => fetchCSVData('Goals_Stats_Overall.csv'),
+    queryFn: () => fetchCSVData(CSV_URLS.OVERALL_STATS),
     retry: 2,
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
     staleTime: 5 * 60 * 1000,
