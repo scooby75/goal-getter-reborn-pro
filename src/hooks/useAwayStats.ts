@@ -1,14 +1,14 @@
-
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalsHalfStats, ScoredFirstStats } from '@/types/goalStats';
 import { fetchCSVWithRetry } from '@/utils/csvHelpers';
 import { parseCSV, parseGoalsHalfCSV, parseScoredFirstCSV } from '@/utils/csvParsers';
 import { useMemo } from 'react';
 
+// ✅ URLs corrigidos para usar raw.githubusercontent.com
 const CSV_URLS = {
-  AWAY_STATS: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/Goals_Stats_Away.csv',
-  GOALS_HALF: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/Goals_Half.csv',
-  SCORED_FIRST_AWAY: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/scored_first_away.csv'
+  AWAY_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Away.csv',
+  GOALS_HALF: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Half.csv',
+  SCORED_FIRST_AWAY: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/scored_first_away.csv'
 };
 
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
@@ -27,7 +27,7 @@ const fetchScoredFirstAwayData = async (): Promise<ScoredFirstStats[]> => {
 };
 
 export const useAwayStats = () => {
-  const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery({
+  const awayStatsQuery = useQuery({
     queryKey: ['awayStats'],
     queryFn: () => fetchCSVData(CSV_URLS.AWAY_STATS),
     retry: 2,
@@ -36,7 +36,7 @@ export const useAwayStats = () => {
     gcTime: 10 * 60 * 1000,
   });
 
-  const { data: goalsHalfData = [], isLoading: goalsHalfLoading, error: goalsHalfError } = useQuery({
+  const goalsHalfQuery = useQuery({
     queryKey: ['goalsHalf'],
     queryFn: fetchGoalsHalfData,
     retry: 2,
@@ -45,7 +45,7 @@ export const useAwayStats = () => {
     gcTime: 10 * 60 * 1000,
   });
 
-  const { data: scoredFirstAwayData = [], isLoading: scoredFirstAwayLoading, error: scoredFirstAwayError } = useQuery({
+  const scoredFirstAwayQuery = useQuery({
     queryKey: ['scoredFirstAway'],
     queryFn: fetchScoredFirstAwayData,
     retry: 2,
@@ -55,10 +55,14 @@ export const useAwayStats = () => {
   });
 
   const mergedAwayStats = useMemo(() => {
-    return awayStats.map(team => {
-      const halfData = goalsHalfData.find(d => d.Team === team.Team);
+    if (!awayStatsQuery.data || !goalsHalfQuery.data || !scoredFirstAwayQuery.data) {
+      return [];
+    }
+
+    return awayStatsQuery.data.map(team => {
+      const halfData = goalsHalfQuery.data.find(d => d.Team === team.Team);
       
-      const potentialMatches = scoredFirstAwayData.filter(d => d.Team === team.Team);
+      const potentialMatches = scoredFirstAwayQuery.data.filter(d => d.Team === team.Team);
       let scoredFirstData: ScoredFirstStats | undefined;
 
       if (potentialMatches.length === 1) {
@@ -80,10 +84,19 @@ export const useAwayStats = () => {
       }
       return { ...team, ...newStats };
     });
-  }, [awayStats, goalsHalfData, scoredFirstAwayData]);
+  }, [awayStatsQuery.data, goalsHalfQuery.data, scoredFirstAwayQuery.data]);
 
-  const isLoading = awayLoading || goalsHalfLoading || scoredFirstAwayLoading;
-  const error = awayError || goalsHalfError || scoredFirstAwayError;
+  const isLoading = awayStatsQuery.isLoading || goalsHalfQuery.isLoading || scoredFirstAwayQuery.isLoading;
+  const error = awayStatsQuery.error || goalsHalfQuery.error || scoredFirstAwayQuery.error;
 
-  return { data: mergedAwayStats, isLoading, error };
+  return { 
+    data: mergedAwayStats, 
+    isLoading, 
+    error,
+    refetch: () => {
+      awayStatsQuery.refetch();
+      goalsHalfQuery.refetch();
+      scoredFirstAwayQuery.refetch();
+    }
+  };
 };
