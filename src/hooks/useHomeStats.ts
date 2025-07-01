@@ -1,14 +1,22 @@
-
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalsHalfStats, ScoredFirstStats } from '@/types/goalStats';
 import { fetchCSVWithRetry } from '@/utils/csvHelpers';
 import { parseCSV, parseGoalsHalfCSV, parseScoredFirstCSV } from '@/utils/csvParsers';
 import { useMemo } from 'react';
 
+// ✅ URLs corrigidos para raw.githubusercontent.com
 const CSV_URLS = {
-  HOME_STATS: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/Goals_Stats_Home.csv',
-  GOALS_HALF: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/Goals_Half.csv',
-  SCORED_FIRST_HOME: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/scored_first_home.csv'
+  HOME_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Home.csv',
+  GOALS_HALF: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Half.csv',
+  SCORED_FIRST_HOME: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/scored_first_home.csv'
+};
+
+// Configurações comuns para as queries
+const queryConfig = {
+  retry: 2,
+  retryDelay: (attemptIndex: number) => Math.min(1000 * 2 ** attemptIndex, 30000),
+  staleTime: 5 * 60 * 1000, // 5 minutos
+  gcTime: 10 * 60 * 1000, // 10 minutos
 };
 
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
@@ -27,45 +35,43 @@ const fetchScoredFirstHomeData = async (): Promise<ScoredFirstStats[]> => {
 };
 
 export const useHomeStats = () => {
-  const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery({
+  // Buscar dados individuais
+  const homeStatsQuery = useQuery<TeamStats[], Error>({
     queryKey: ['homeStats'],
     queryFn: () => fetchCSVData(CSV_URLS.HOME_STATS),
-    retry: 2,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
-    staleTime: 5 * 60 * 1000,
-    gcTime: 10 * 60 * 1000,
+    ...queryConfig
   });
 
-  const { data: goalsHalfData = [], isLoading: goalsHalfLoading, error: goalsHalfError } = useQuery({
+  const goalsHalfQuery = useQuery<GoalsHalfStats[], Error>({
     queryKey: ['goalsHalf'],
     queryFn: fetchGoalsHalfData,
-    retry: 2,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
-    staleTime: 5 * 60 * 1000,
-    gcTime: 10 * 60 * 1000,
+    ...queryConfig
   });
 
-  const { data: scoredFirstHomeData = [], isLoading: scoredFirstHomeLoading, error: scoredFirstHomeError } = useQuery({
+  const scoredFirstHomeQuery = useQuery<ScoredFirstStats[], Error>({
     queryKey: ['scoredFirstHome'],
     queryFn: fetchScoredFirstHomeData,
-    retry: 2,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
-    staleTime: 5 * 60 * 1000,
-    gcTime: 10 * 60 * 1000,
+    ...queryConfig
   });
 
+  // Combinar os dados
   const mergedHomeStats = useMemo(() => {
-    return homeStats.map(team => {
-      const halfData = goalsHalfData.find(d => d.Team === team.Team);
+    if (!homeStatsQuery.data || !goalsHalfQuery.data || !scoredFirstHomeQuery.data) {
+      return [];
+    }
+
+    return homeStatsQuery.data.map(team => {
+      const halfData = goalsHalfQuery.data.find(d => d.Team === team.Team);
       
-      const potentialMatches = scoredFirstHomeData.filter(d => d.Team === team.Team);
+      const potentialMatches = scoredFirstHomeQuery.data.filter(d => d.Team === team.Team);
       let scoredFirstData: ScoredFirstStats | undefined;
 
       if (potentialMatches.length === 1) {
         scoredFirstData = potentialMatches[0];
       } else if (potentialMatches.length > 1) {
         scoredFirstData = potentialMatches.find(d => 
-          d.League && team.League_Name && team.League_Name.toLowerCase().includes(d.League.toLowerCase())
+          d.League && team.League_Name && 
+          team.League_Name.toLowerCase().includes(d.League.toLowerCase())
         );
       }
       
@@ -78,12 +84,34 @@ export const useHomeStats = () => {
       if (scoredFirstData) {
         newStats.scoredFirstPerc = scoredFirstData['Perc.'];
       }
+      
       return { ...team, ...newStats };
     });
-  }, [homeStats, goalsHalfData, scoredFirstHomeData]);
+  }, [homeStatsQuery.data, goalsHalfQuery.data, scoredFirstHomeQuery.data]);
 
-  const isLoading = homeLoading || goalsHalfLoading || scoredFirstHomeLoading;
-  const error = homeError || goalsHalfError || scoredFirstHomeError;
+  // Estados consolidados
+  const isLoading = homeStatsQuery.isLoading || goalsHalfQuery.isLoading || scoredFirstHomeQuery.isLoading;
+  const isFetching = homeStatsQuery.isFetching || goalsHalfQuery.isFetching || scoredFirstHomeQuery.isFetching;
+  
+  const error = useMemo(() => {
+    if (homeStatsQuery.error) return `Erro nas estatísticas de casa: ${homeStatsQuery.error.message}`;
+    if (goalsHalfQuery.error) return `Erro nos dados de tempo de jogo: ${goalsHalfQuery.error.message}`;
+    if (scoredFirstHomeQuery.error) return `Erro nos dados de primeiro gol: ${scoredFirstHomeQuery.error.message}`;
+    return null;
+  }, [homeStatsQuery.error, goalsHalfQuery.error, scoredFirstHomeQuery.error]);
 
-  return { data: mergedHomeStats, isLoading, error };
+  // Função para recarregar todos os dados
+  const refetchAll = () => {
+    homeStatsQuery.refetch();
+    goalsHalfQuery.refetch();
+    scoredFirstHomeQuery.refetch();
+  };
+
+  return { 
+    data: mergedHomeStats, 
+    isLoading,
+    isFetching,
+    error,
+    refetch: refetchAll
+  };
 };
