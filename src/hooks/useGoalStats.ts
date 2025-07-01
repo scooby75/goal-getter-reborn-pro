@@ -2,15 +2,15 @@ import { useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalStatsData, LeagueAverageData, GoalsHalfStats, ScoredFirstStats } from '@/types/goalStats';
 
-// Updated URLs with authentication tokens
+// Use local CSV files instead of remote GitHub URLs
 const CSV_URLS = {
-  HOME_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv?token=GHSAT0AAAAAADFRERW3BMH35XT2N62NAHGY2DEKVNQ',
-  AWAY_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Away.csv?token=GHSAT0AAAAAADFRERW3MQDIWSCZUL3KNDMI2DEKVGA',
-  OVERALL_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Overall.csv?token=GHSAT0AAAAAADFRERW2KLIYUJDXDGQAMC522DEKVVQ',
-  LEAGUE_AVERAGES: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv?token=GHSAT0AAAAAADFRERW3PJEX53S6HL6TPHEK2DEKV5Q',
-  GOALS_HALF: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Half.csv?token=GHSAT0AAAAAADFRERW3JGMJHTYSVS7QDNWE2DEKUZQ',
-  SCORED_FIRST_HOME: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_home.csv',
-  SCORED_FIRST_AWAY: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_away.csv'
+  HOME_STATS: '/Goals_Stats_Home.csv',
+  AWAY_STATS: '/Goals_Stats_Away.csv',
+  OVERALL_STATS: '/Goals_Stats_Overall.csv',
+  LEAGUE_AVERAGES: '/League_Averages.csv',
+  GOALS_HALF: '/Goals_Half.csv',
+  SCORED_FIRST_HOME: '/scored_first_home.csv',
+  SCORED_FIRST_AWAY: '/scored_first_away.csv'
 };
 
 // Helper function to add cache busting parameter
@@ -22,11 +22,12 @@ const addCacheBusting = (url: string): string => {
 
 // Generic fetch function with better error handling
 const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<string> => {
-  console.log(`Fetching data from: ${url}`);
+  const urlWithCacheBusting = addCacheBusting(url);
+  console.log(`Fetching data from: ${urlWithCacheBusting}`);
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      const response = await fetch(url, {
+      const response = await fetch(urlWithCacheBusting, {
         method: 'GET',
         headers: {
           'Accept': 'text/csv,text/plain,*/*',
