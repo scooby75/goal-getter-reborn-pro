@@ -4,7 +4,7 @@ import { LeagueAverageData } from '@/types/goalStats';
 import { fetchCSVWithRetry } from '@/utils/csvHelpers';
 import { parseLeagueAveragesCSV } from '@/utils/csvParsers';
 
-const CSV_URL = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/League_Averages.csv?token=GHSAT0AAAAAADFRERW34U7SQLMV6RER3EZC2DEMXNA';
+const CSV_URL = 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/League_Averages.csv';
 
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
   const csvText = await fetchCSVWithRetry(CSV_URL);
