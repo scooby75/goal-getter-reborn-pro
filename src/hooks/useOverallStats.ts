@@ -1,70 +1,84 @@
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats } from '@/types/goalStats';
-import { fetchCSVWithRetry } from '@/utils/csvHelpers';
 import { parseCSV } from '@/utils/csvParsers';
 
-// Configurações constantes para a query
-const DEFAULT_QUERY_CONFIG = {
-  retry: 2,
-  retryDelay: (attemptIndex: number) => Math.min(1000 * 2 ** attemptIndex, 30000),
-  staleTime: 60 * 60 * 1000, // 1 hora (dados estatísticos mudam pouco)
-  gcTime: 24 * 60 * 60 * 1000, // 24 horas
+// Configurações otimizadas
+const QUERY_CONFIG = {
+  retry: 3, // Aumentado para 3 tentativas
+  retryDelay: (attemptIndex: number) => Math.min(1000 * 2 ** attemptIndex, 10000),
+  staleTime: 24 * 60 * 60 * 1000, // 24 horas
+  gcTime: 48 * 60 * 60 * 1000, // 48 horas
 } as const;
 
-// URL com tipagem constante
-const CSV_URL = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Overall.csv' as const;
-
-// Função de fetch com tratamento robusto de erros
-const fetchOverallStats = async (): Promise<TeamStats[]> => {
+// Função de fetch com tratamento de erro completo
+const fetchStatsData = async (): Promise<TeamStats[]> => {
   try {
-    // 1. Fetch dos dados com retry
-    const csvText = await fetchCSVWithRetry(CSV_URL);
-    
-    // 2. Validação do conteúdo
-    if (!csvText?.trim()) {
-      throw new Error('Conteúdo CSV vazio ou não carregado');
+    // URL corrigida com fallback
+    const CSV_URL = process.env.NODE_ENV === 'development'
+      ? '/data/Goals_Stats_Overall.csv' // Fallback local em desenvolvimento
+      : 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Overall.csv';
+
+    const response = await fetch(CSV_URL, {
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
+
+    // Verificações de status
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
-    // 3. Parsing dos dados
+
+    const csvText = await response.text();
+
+    // Validação do conteúdo
+    if (!csvText.trim()) {
+      throw new Error('O arquivo CSV está vazio');
+    }
+
+    // Parsing com validação
     const parsedData = parseCSV(csvText);
     
-    // 4. Validação da estrutura
     if (!Array.isArray(parsedData)) {
-      throw new Error('Formato inválido dos dados parseados');
+      throw new Error('Formato inválido dos dados');
     }
-    
+
     return parsedData;
+
   } catch (error) {
-    console.error('Erro ao carregar estatísticas gerais:', {
-      error,
-      url: CSV_URL,
-      timestamp: new Date().toISOString()
+    console.error('Erro detalhado:', {
+      error: error instanceof Error ? error.message : error,
+      timestamp: new Date().toISOString(),
+      url: CSV_URL
     });
     
-    throw new Error(
-      `Falha ao carregar estatísticas: ${error instanceof Error ? error.message : 'Erro desconhecido'}`
-    );
+    throw new Error(`Não foi possível carregar as estatísticas. Tente novamente mais tarde.`);
   }
 };
 
 export const useOverallStats = () => {
   const query = useQuery<TeamStats[], Error>({
     queryKey: ['overallStats'],
-    queryFn: fetchOverallStats,
-    ...DEFAULT_QUERY_CONFIG,
+    queryFn: fetchStatsData,
+    ...QUERY_CONFIG,
     onError: (error) => {
-      console.error('Erro na query de estatísticas gerais:', error.message);
+      // Log adicional para monitoramento
+      console.error('Erro na query:', {
+        message: error.message,
+        stack: error.stack,
+        date: new Date().toLocaleString()
+      });
     }
   });
 
-  // Retorno padronizado com todos os estados úteis
   return {
     data: query.data || [],
     isLoading: query.isLoading,
-    isFetching: query.isFetching,
+    isError: query.isError,
     error: query.error,
     refetch: query.refetch,
-    isError: query.isError,
+    isFetching: query.isFetching,
     status: query.status
   };
 };
