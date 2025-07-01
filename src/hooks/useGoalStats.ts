@@ -179,10 +179,24 @@ const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
   return parsedData;
 };
 
+// Helper function to add cache busting parameter
+const addCacheBusting = (url: string): string => {
+  const timestamp = Date.now();
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}_t=${timestamp}`;
+};
+
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
-  console.log(`Fetching data from: ${url}`);
+  const urlWithCacheBusting = addCacheBusting(url);
+  console.log(`Fetching data from: ${urlWithCacheBusting}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlWithCacheBusting, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
     if (!response.ok) {
       throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
     }
@@ -197,9 +211,16 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
 
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
   const url = 'https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/League_Averages.csv';
-  console.log(`Fetching league averages from: ${url}`);
+  const urlWithCacheBusting = addCacheBusting(url);
+  console.log(`Fetching league averages from: ${urlWithCacheBusting}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlWithCacheBusting, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
     if (!response.ok) {
       throw new Error(`Failed to fetch league averages: ${response.status}`);
     }
@@ -214,9 +235,16 @@ const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
 
 const fetchGoalsHalfData = async (): Promise<GoalsHalfStats[]> => {
   const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Half.csv';
-  console.log(`Fetching goals half data from: ${url}`);
+  const urlWithCacheBusting = addCacheBusting(url);
+  console.log(`Fetching goals half data from: ${urlWithCacheBusting}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlWithCacheBusting, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
     if (!response.ok) {
       throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
     }
@@ -231,9 +259,16 @@ const fetchGoalsHalfData = async (): Promise<GoalsHalfStats[]> => {
 
 const fetchScoredFirstHomeData = async (): Promise<ScoredFirstStats[]> => {
   const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_home.csv';
-  console.log(`Fetching scored first home data from: ${url}`);
+  const urlWithCacheBusting = addCacheBusting(url);
+  console.log(`Fetching scored first home data from: ${urlWithCacheBusting}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlWithCacheBusting, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
     if (!response.ok) {
       console.error(`Failed to fetch scored first home data: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
@@ -249,9 +284,16 @@ const fetchScoredFirstHomeData = async (): Promise<ScoredFirstStats[]> => {
 
 const fetchScoredFirstAwayData = async (): Promise<ScoredFirstStats[]> => {
   const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_away.csv';
-  console.log(`Fetching scored first away data from: ${url}`);
+  const urlWithCacheBusting = addCacheBusting(url);
+  console.log(`Fetching scored first away data from: ${urlWithCacheBusting}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlWithCacheBusting, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
     if (!response.ok) {
       console.error(`Failed to fetch scored first away data: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
@@ -269,52 +311,66 @@ export const useGoalStats = () => {
   console.log('useGoalStats hook called');
 
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery({
-    queryKey: ['homeStats'],
+    queryKey: ['homeStats', Date.now()], // Include timestamp in query key for cache busting
     queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Home.csv'),
     retry: 3,
     retryDelay: 1000,
+    staleTime: 0, // Always consider data stale
+    gcTime: 0, // Don't cache data
   });
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery({
-    queryKey: ['awayStats'],
+    queryKey: ['awayStats', Date.now()],
     queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Away.csv'),
     retry: 3,
     retryDelay: 1000,
+    staleTime: 0,
+    gcTime: 0,
   });
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery({
-    queryKey: ['overallStats'],
+    queryKey: ['overallStats', Date.now()],
     queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Overall.csv'),
     retry: 3,
     retryDelay: 1000,
+    staleTime: 0,
+    gcTime: 0,
   });
 
   const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useQuery({
-    queryKey: ['leagueAverages'],
+    queryKey: ['leagueAverages', Date.now()],
     queryFn: fetchLeagueAveragesData,
     retry: 3,
     retryDelay: 1000,
+    staleTime: 0,
+    gcTime: 0,
   });
 
   const { data: goalsHalfData = [], isLoading: goalsHalfLoading, error: goalsHalfError } = useQuery({
-    queryKey: ['goalsHalf'],
+    queryKey: ['goalsHalf', Date.now()],
     queryFn: fetchGoalsHalfData,
     retry: 3,
     retryDelay: 1000,
+    staleTime: 0,
+    gcTime: 0,
   });
 
   const { data: scoredFirstHomeData = [], isLoading: scoredFirstHomeLoading, error: scoredFirstHomeError } = useQuery({
-    queryKey: ['scoredFirstHome'],
+    queryKey: ['scoredFirstHome', Date.now()],
     queryFn: fetchScoredFirstHomeData,
     retry: 3,
     retryDelay: 1000,
+    staleTime: 0,
+    gcTime: 0,
   });
 
   const { data: scoredFirstAwayData = [], isLoading: scoredFirstAwayLoading, error: scoredFirstAwayError } = useQuery({
-    queryKey: ['scoredFirstAway'],
+    queryKey: ['scoredFirstAway', Date.now()],
     queryFn: fetchScoredFirstAwayData,
     retry: 3,
     retryDelay: 1000,
+    staleTime: 0,
+    gcTime: 0,
   });
 
   const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading || goalsHalfLoading || scoredFirstHomeLoading || scoredFirstAwayLoading;
