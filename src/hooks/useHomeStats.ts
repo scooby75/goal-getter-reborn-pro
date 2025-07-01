@@ -6,9 +6,9 @@ import { parseCSV, parseGoalsHalfCSV, parseScoredFirstCSV } from '@/utils/csvPar
 import { useMemo } from 'react';
 
 const CSV_URLS = {
-  HOME_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Stats_Home.csv?token=GHSAT0AAAAAADFRERW34U7SQLMV6RER3EZC2DEMXNA',
-  GOALS_HALF: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Half.csv?token=GHSAT0AAAAAADFRERW34U7SQLMV6RER3EZC2DEMXNA',
-  SCORED_FIRST_HOME: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_home.csv?token=GHSAT0AAAAAADFRERW34U7SQLMV6RER3EZC2DEMXNA'
+  HOME_STATS: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/Goals_Stats_Home.csv',
+  GOALS_HALF: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/Goals_Half.csv',
+  SCORED_FIRST_HOME: 'https://github.com/scooby75/goal-getter-reborn-pro/blob/main/scored_first_home.csv'
 };
 
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
