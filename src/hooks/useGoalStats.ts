@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { TeamStats, GoalStatsData, LeagueAverageData, GoalsHalfStats, ScoredFirstStats } from '@/types/goalStats';
@@ -179,6 +180,9 @@ const parseScoredFirstCSV = (csvText: string): ScoredFirstStats[] => {
   return parsedData;
 };
 
+// Updated URLs to use the correct repository
+const BASE_URL = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main';
+
 // Helper function to add cache busting parameter
 const addCacheBusting = (url: string): string => {
   const timestamp = Date.now();
@@ -186,203 +190,156 @@ const addCacheBusting = (url: string): string => {
   return `${url}${separator}_t=${timestamp}`;
 };
 
-const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
+// Generic fetch function with better error handling
+const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<string> => {
   const urlWithCacheBusting = addCacheBusting(url);
   console.log(`Fetching data from: ${urlWithCacheBusting}`);
-  try {
-    const response = await fetch(urlWithCacheBusting, {
-      cache: 'no-cache',
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
+  
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const response = await fetch(urlWithCacheBusting, {
+        method: 'GET',
+        headers: {
+          'Accept': 'text/csv,text/plain,*/*',
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        },
+        mode: 'cors'
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
-    });
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
+      
+      const csvText = await response.text();
+      console.log(`Data fetched successfully from ${url} (attempt ${attempt})`);
+      return csvText;
+    } catch (error) {
+      console.error(`Attempt ${attempt} failed for ${url}:`, error);
+      
+      if (attempt === maxRetries) {
+        throw new Error(`Failed to fetch ${url} after ${maxRetries} attempts: ${error}`);
+      }
+      
+      // Wait before retrying
+      await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
     }
-    const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}`);
-    return parseCSV(csvText);
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    throw error;
   }
+  
+  throw new Error(`Failed to fetch ${url}`);
+};
+
+const fetchCSVData = async (filename: string): Promise<TeamStats[]> => {
+  const url = `${BASE_URL}/${filename}`;
+  const csvText = await fetchCSVWithRetry(url);
+  return parseCSV(csvText);
 };
 
 const fetchLeagueAveragesData = async (): Promise<LeagueAverageData[]> => {
-  const url = 'https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/League_Averages.csv';
-  const urlWithCacheBusting = addCacheBusting(url);
-  console.log(`Fetching league averages from: ${urlWithCacheBusting}`);
-  try {
-    const response = await fetch(urlWithCacheBusting, {
-      cache: 'no-cache',
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
-      }
-    });
-    if (!response.ok) {
-      throw new Error(`Failed to fetch league averages: ${response.status}`);
-    }
-    const csvText = await response.text();
-    console.log('League averages data fetched successfully');
-    return parseLeagueAveragesCSV(csvText);
-  } catch (error) {
-    console.error('Error fetching league averages:', error);
-    throw error;
-  }
+  const url = `${BASE_URL}/League_Averages.csv`;
+  const csvText = await fetchCSVWithRetry(url);
+  return parseLeagueAveragesCSV(csvText);
 };
 
 const fetchGoalsHalfData = async (): Promise<GoalsHalfStats[]> => {
-  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/Goals_Half.csv';
-  const urlWithCacheBusting = addCacheBusting(url);
-  console.log(`Fetching goals half data from: ${urlWithCacheBusting}`);
-  try {
-    const response = await fetch(urlWithCacheBusting, {
-      cache: 'no-cache',
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
-      }
-    });
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
-    }
-    const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}`);
-    return parseGoalsHalfCSV(csvText);
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    throw error;
-  }
+  const url = `${BASE_URL}/Goals_Half.csv`;
+  const csvText = await fetchCSVWithRetry(url);
+  return parseGoalsHalfCSV(csvText);
 };
 
 const fetchScoredFirstHomeData = async (): Promise<ScoredFirstStats[]> => {
-  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_home.csv';
-  const urlWithCacheBusting = addCacheBusting(url);
-  console.log(`Fetching scored first home data from: ${urlWithCacheBusting}`);
-  try {
-    const response = await fetch(urlWithCacheBusting, {
-      cache: 'no-cache',
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
-      }
-    });
-    if (!response.ok) {
-      console.error(`Failed to fetch scored first home data: ${response.status} ${response.statusText}`);
-      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
-    }
-    const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}, length: ${csvText.length}`);
-    return parseScoredFirstCSV(csvText);
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    throw error;
-  }
+  const url = `${BASE_URL}/scored_first_home.csv`;
+  const csvText = await fetchCSVWithRetry(url);
+  return parseScoredFirstCSV(csvText);
 };
 
 const fetchScoredFirstAwayData = async (): Promise<ScoredFirstStats[]> => {
-  const url = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/scored_first_away.csv';
-  const urlWithCacheBusting = addCacheBusting(url);
-  console.log(`Fetching scored first away data from: ${urlWithCacheBusting}`);
-  try {
-    const response = await fetch(urlWithCacheBusting, {
-      cache: 'no-cache',
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
-      }
-    });
-    if (!response.ok) {
-      console.error(`Failed to fetch scored first away data: ${response.status} ${response.statusText}`);
-      throw new Error(`Failed to fetch data from ${url}: ${response.status}`);
-    }
-    const csvText = await response.text();
-    console.log(`Data fetched successfully from ${url}, length: ${csvText.length}`);
-    return parseScoredFirstCSV(csvText);
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    throw error;
-  }
+  const url = `${BASE_URL}/scored_first_away.csv`;
+  const csvText = await fetchCSVWithRetry(url);
+  return parseScoredFirstCSV(csvText);
 };
 
 export const useGoalStats = () => {
   console.log('useGoalStats hook called');
 
   const { data: homeStats = [], isLoading: homeLoading, error: homeError } = useQuery({
-    queryKey: ['homeStats', Date.now()], // Include timestamp in query key for cache busting
-    queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Home.csv'),
-    retry: 3,
-    retryDelay: 1000,
-    staleTime: 0, // Always consider data stale
-    gcTime: 0, // Don't cache data
+    queryKey: ['homeStats'],
+    queryFn: () => fetchCSVData('Goals_Stats_Home.csv'),
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes
   });
 
   const { data: awayStats = [], isLoading: awayLoading, error: awayError } = useQuery({
-    queryKey: ['awayStats', Date.now()],
-    queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Away.csv'),
-    retry: 3,
-    retryDelay: 1000,
-    staleTime: 0,
-    gcTime: 0,
+    queryKey: ['awayStats'],
+    queryFn: () => fetchCSVData('Goals_Stats_Away.csv'),
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   });
 
   const { data: overallStats = [], isLoading: overallLoading, error: overallError } = useQuery({
-    queryKey: ['overallStats', Date.now()],
-    queryFn: () => fetchCSVData('https://raw.githubusercontent.com/scooby75/goal-stats-selector-pro/refs/heads/main/Goals_Stats_Overall.csv'),
-    retry: 3,
-    retryDelay: 1000,
-    staleTime: 0,
-    gcTime: 0,
+    queryKey: ['overallStats'],
+    queryFn: () => fetchCSVData('Goals_Stats_Overall.csv'),
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   });
 
   const { data: leagueAverages = [], isLoading: leagueLoading, error: leagueError } = useQuery({
-    queryKey: ['leagueAverages', Date.now()],
+    queryKey: ['leagueAverages'],
     queryFn: fetchLeagueAveragesData,
-    retry: 3,
-    retryDelay: 1000,
-    staleTime: 0,
-    gcTime: 0,
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   });
 
   const { data: goalsHalfData = [], isLoading: goalsHalfLoading, error: goalsHalfError } = useQuery({
-    queryKey: ['goalsHalf', Date.now()],
+    queryKey: ['goalsHalf'],
     queryFn: fetchGoalsHalfData,
-    retry: 3,
-    retryDelay: 1000,
-    staleTime: 0,
-    gcTime: 0,
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   });
 
   const { data: scoredFirstHomeData = [], isLoading: scoredFirstHomeLoading, error: scoredFirstHomeError } = useQuery({
-    queryKey: ['scoredFirstHome', Date.now()],
+    queryKey: ['scoredFirstHome'],
     queryFn: fetchScoredFirstHomeData,
-    retry: 3,
-    retryDelay: 1000,
-    staleTime: 0,
-    gcTime: 0,
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   });
 
   const { data: scoredFirstAwayData = [], isLoading: scoredFirstAwayLoading, error: scoredFirstAwayError } = useQuery({
-    queryKey: ['scoredFirstAway', Date.now()],
+    queryKey: ['scoredFirstAway'],
     queryFn: fetchScoredFirstAwayData,
-    retry: 3,
-    retryDelay: 1000,
-    staleTime: 0,
-    gcTime: 0,
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   });
 
   const isLoading = homeLoading || awayLoading || overallLoading || leagueLoading || goalsHalfLoading || scoredFirstHomeLoading || scoredFirstAwayLoading;
   const error = homeError || awayError || overallError || leagueError || goalsHalfError || scoredFirstHomeError || scoredFirstAwayError;
 
   // Enhanced debugging
-  console.log('Raw home stats count:', homeStats.length);
-  console.log('Raw away stats count:', awayStats.length);
-  console.log('Raw league averages count:', leagueAverages.length);
-  console.log('Raw goals half data count:', goalsHalfData.length);
-  console.log('Raw scored first home data count:', scoredFirstHomeData.length);
-  console.log('Raw scored first away data count:', scoredFirstAwayData.length);
+  console.log('Data loading status:', {
+    homeStats: homeStats.length,
+    awayStats: awayStats.length,
+    overallStats: overallStats.length,
+    leagueAverages: leagueAverages.length,
+    goalsHalfData: goalsHalfData.length,
+    scoredFirstHomeData: scoredFirstHomeData.length,
+    scoredFirstAwayData: scoredFirstAwayData.length,
+    isLoading,
+    error: error?.message
+  });
 
   const calculateLeagueAverage = () => {
     if (overallStats.length === 0) return { "1.5+": 0, "2.5+": 0, "3.5+": 0, "4.5+": 0 };
