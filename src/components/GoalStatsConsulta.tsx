@@ -7,6 +7,7 @@ import { FilteredLeagueAverage } from './FilteredLeagueAverage';
 import { LeagueAverageDisplay } from './LeagueAverageDisplay';
 import { SearchableSelect } from './SearchableSelect';
 import { ProbableScores } from './ProbableScores';
+import { GoalMomentCard } from './GoalMomentCard';
 
 export const GoalStatsConsulta = () => {
   console.log('GoalStatsConsulta component rendering');
@@ -39,7 +40,6 @@ export const GoalStatsConsulta = () => {
     );
   }
 
-  // Enhanced team extraction with debugging
   const homeTeams = goalStatsData.homeStats
     .map(team => team.Team)
     .filter(teamName => teamName && teamName.trim() !== '')
@@ -58,7 +58,6 @@ export const GoalStatsConsulta = () => {
   const selectedHomeStats = goalStatsData.homeStats.find(team => team.Team === selectedHomeTeam);
   const selectedAwayStats = goalStatsData.awayStats.find(team => team.Team === selectedAwayTeam);
 
-  // Verificar as ligas dos times selecionados
   const getTeamLeague = (teamName: string, isHome: boolean) => {
     const stats = isHome 
       ? goalStatsData.homeStats.find(team => team.Team === teamName)
@@ -72,13 +71,12 @@ export const GoalStatsConsulta = () => {
   console.log('Home team league:', homeTeamLeague);
   console.log('Away team league:', awayTeamLeague);
 
-  // Determinar se devemos mostrar a média da liga ou aviso de ligas diferentes
   const shouldShowLeagueAverage = () => {
     if (!selectedHomeTeam && !selectedAwayTeam) return false;
     if (selectedHomeTeam && selectedAwayTeam) {
       return homeTeamLeague === awayTeamLeague && homeTeamLeague;
     }
-    return true; // Se apenas um time está selecionado, mostrar a média da liga
+    return true;
   };
 
   const shouldShowDifferentLeaguesWarning = () => {
@@ -97,6 +95,14 @@ export const GoalStatsConsulta = () => {
   };
 
   const leagueAverageData = getLeagueAverageData();
+
+  // Get goal moment data
+  const selectedHomeGoalMoments = goalStatsData.homeGoalMoments?.find(
+    team => team.Team === selectedHomeTeam
+  );
+  const selectedAwayGoalMoments = goalStatsData.awayGoalMoments?.find(
+    team => team.Team === selectedAwayTeam
+  );
 
   return (
     <div className="space-y-6">
@@ -128,7 +134,6 @@ export const GoalStatsConsulta = () => {
         </CardContent>
       </Card>
 
-      {/* Aviso de Ligas Diferentes */}
       {shouldShowDifferentLeaguesWarning() && (
         <Card className="shadow-lg bg-gradient-to-r from-red-500 to-orange-500 text-white">
           <CardHeader>
@@ -150,7 +155,6 @@ export const GoalStatsConsulta = () => {
         </Card>
       )}
 
-      {/* Média da Liga - Baseada nos times selecionados */}
       {shouldShowLeagueAverage() && leagueAverageData && (
         <Card className="shadow-lg bg-gradient-to-r from-blue-500 to-green-500 text-white">
           <CardHeader>
@@ -159,7 +163,6 @@ export const GoalStatsConsulta = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            {/* Desktop Table */}
             <div className="hidden md:block overflow-x-auto">
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="grid grid-cols-8 gap-4 text-center font-semibold">
@@ -199,7 +202,6 @@ export const GoalStatsConsulta = () => {
               </div>
             </div>
             
-            {/* Mobile Cards */}
             <div className="block md:hidden space-y-4">
               <div className="grid grid-cols-3 gap-2">
                 <div className="bg-white/20 rounded-lg p-3 text-center">
@@ -271,6 +273,16 @@ export const GoalStatsConsulta = () => {
           awayTeam={selectedAwayTeam}
           homeStats={selectedHomeStats}
           awayStats={selectedAwayStats}
+        />
+      )}
+
+      {/* Goal Moment Card */}
+      {(selectedHomeTeam || selectedAwayTeam) && (
+        <GoalMomentCard
+          homeTeam={selectedHomeTeam}
+          awayTeam={selectedAwayTeam}
+          homeGoalMoments={selectedHomeGoalMoments}
+          awayGoalMoments={selectedAwayGoalMoments}
         />
       )}
 
