@@ -44,7 +44,7 @@ export const ProbableScores: React.FC<ProbableScoresProps> = ({
           ))}
         </div>
         <p className="text-center text-xs text-gray-500 mt-4">
-          Calculado usando a distribuição de Poisson com base nas médias de gols das equipes.
+          #Calculado usando a distribuição de Poisson com base nas médias de gols das equipes.
         </p>
       </CardContent>
     </Card>
