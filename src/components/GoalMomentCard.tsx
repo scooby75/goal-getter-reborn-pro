@@ -43,7 +43,7 @@ export const GoalMomentCard: React.FC<GoalMomentCardProps> = ({
           {/* Gols Marcados */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-center text-green-700">
-              ⚽ Gols Marcados por Período
+              ⚽ Gols Marcados
             </h3>
             
             {/* Desktop Table */}
@@ -123,7 +123,7 @@ export const GoalMomentCard: React.FC<GoalMomentCardProps> = ({
           {/* Gols Sofridos */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-center text-red-700">
-              🥅 Gols Sofridos por Período
+              🥅 Gols Sofridos 
             </h3>
             
             {/* Desktop Table */}
