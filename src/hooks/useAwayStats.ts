@@ -12,14 +12,14 @@ const DEFAULT_QUERY_CONFIG = {
   gcTime: 10 * 60 * 1000, // 10 minutos
 };
 
-// ✅ URLs corrigidos e tipados
+// URLs dos arquivos CSV
 const CSV_URLS = {
   AWAY_STATS: '/Data/Goals_Stats_Away.csv',
   GOALS_HALF: '/Data/Goals_Half.csv',
   SCORED_FIRST_AWAY: '/Data/scored_first_away.csv'
 } as const;
 
-// Função de fetch com tratamento de erros melhorado
+// Fetch para dados já parseados em objetos
 const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
   try {
     const csvText = await fetchCSVWithRetry(url);
@@ -31,20 +31,24 @@ const fetchCSVData = async (url: string): Promise<TeamStats[]> => {
   }
 };
 
+// Fetch específico para CSV em texto (não parseado ainda)
+const fetchRawCSV = async (url: string): Promise<string> => {
+  const csvText = await fetchCSVWithRetry(url);
+  if (!csvText) throw new Error('Empty CSV content');
+  return csvText;
+};
+
 const fetchGoalsHalfData = async (): Promise<GoalsHalfStats[]> => {
-  return fetchCSVData(CSV_URLS.GOALS_HALF).then(data => 
-    parseGoalsHalfCSV(data as unknown as string)
-  );
+  const rawCSV = await fetchRawCSV(CSV_URLS.GOALS_HALF);
+  return parseGoalsHalfCSV(rawCSV);
 };
 
 const fetchScoredFirstAwayData = async (): Promise<ScoredFirstStats[]> => {
-  return fetchCSVData(CSV_URLS.SCORED_FIRST_AWAY).then(data => 
-    parseScoredFirstCSV(data as unknown as string)
-  );
+  const rawCSV = await fetchRawCSV(CSV_URLS.SCORED_FIRST_AWAY);
+  return parseScoredFirstCSV(rawCSV);
 };
 
 export const useAwayStats = () => {
-  // Consultas individuais com tipagem forte
   const awayStatsQuery = useQuery<TeamStats[], Error>({
     queryKey: ['awayStats'],
     queryFn: () => fetchCSVData(CSV_URLS.AWAY_STATS),
@@ -63,7 +67,6 @@ export const useAwayStats = () => {
     ...DEFAULT_QUERY_CONFIG
   });
 
-  // Combinação de dados com verificações de segurança
   const mergedAwayStats = useMemo(() => {
     if (!awayStatsQuery.data || !goalsHalfQuery.data || !scoredFirstAwayQuery.data) {
       return [];
@@ -71,15 +74,15 @@ export const useAwayStats = () => {
 
     return awayStatsQuery.data.map(team => {
       const halfData = goalsHalfQuery.data.find(d => d.Team?.toLowerCase() === team.Team?.toLowerCase());
-      
-      const potentialMatches = scoredFirstAwayQuery.data.filter(d => 
+
+      const potentialMatches = scoredFirstAwayQuery.data.filter(d =>
         d.Team?.toLowerCase() === team.Team?.toLowerCase()
       );
-      
-      const scoredFirstData = potentialMatches.length === 1 
-        ? potentialMatches[0] 
-        : potentialMatches.find(d => 
-            d.League && team.League_Name && 
+
+      const scoredFirstData = potentialMatches.length === 1
+        ? potentialMatches[0]
+        : potentialMatches.find(d =>
+            d.League && team.League_Name &&
             team.League_Name.toLowerCase().includes(d.League.toLowerCase())
           );
 
@@ -97,10 +100,9 @@ export const useAwayStats = () => {
     });
   }, [awayStatsQuery.data, goalsHalfQuery.data, scoredFirstAwayQuery.data]);
 
-  // Estados consolidados com tratamento de erros granular
   const isLoading = awayStatsQuery.isLoading || goalsHalfQuery.isLoading || scoredFirstAwayQuery.isLoading;
   const isFetching = awayStatsQuery.isFetching || goalsHalfQuery.isFetching || scoredFirstAwayQuery.isFetching;
-  
+
   const error = useMemo(() => {
     if (awayStatsQuery.error) return `Away stats error: ${awayStatsQuery.error.message}`;
     if (goalsHalfQuery.error) return `Goals half error: ${goalsHalfQuery.error.message}`;
@@ -108,8 +110,7 @@ export const useAwayStats = () => {
     return null;
   }, [awayStatsQuery.error, goalsHalfQuery.error, scoredFirstAwayQuery.error]);
 
-  // Retorno completo com todas as funcionalidades
-  return { 
+  return {
     data: mergedAwayStats,
     isLoading,
     isFetching,
