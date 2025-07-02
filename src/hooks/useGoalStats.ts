@@ -31,11 +31,11 @@ export const useGoalStats = () => {
   ]);
 
   const error = useMemo(() => {
-    if (homeStatsQuery.error) return `Home stats error: ${homeStatsQuery.error.message}`;
-    if (awayStatsQuery.error) return `Away stats error: ${awayStatsQuery.error.message}`;
-    if (overallStatsQuery.error) return `Overall stats error: ${overallStatsQuery.error.message}`;
-    if (leagueAveragesQuery.error) return `League averages error: ${leagueAveragesQuery.error.message}`;
-    if (goalMomentStatsQuery.error) return `Goal moment stats error: ${goalMomentStatsQuery.error.message}`;
+    if (homeStatsQuery.error) return `Home stats error: ${homeStatsQuery.error}`;
+    if (awayStatsQuery.error) return `Away stats error: ${awayStatsQuery.error}`;
+    if (overallStatsQuery.error) return `Overall stats error: ${overallStatsQuery.error}`;
+    if (leagueAveragesQuery.error) return `League averages error: ${leagueAveragesQuery.error}`;
+    if (goalMomentStatsQuery.error) return `Goal moment stats error: ${goalMomentStatsQuery.error}`;
     return null;
   }, [
     homeStatsQuery.error,
@@ -47,7 +47,7 @@ export const useGoalStats = () => {
 
   // 3. Calcular médias da liga
   const leagueAverage = useMemo(() => {
-    if (!overallStatsQuery.data || overallStatsQuery.data.length === 0) {
+    if (!overallStatsQuery.data || !Array.isArray(overallStatsQuery.data) || overallStatsQuery.data.length === 0) {
       return { "1.5+": 0, "2.5+": 0, "3.5+": 0, "4.5+": 0 };
     }
     
@@ -88,11 +88,11 @@ export const useGoalStats = () => {
 
   // 5. Função para recarregar todos os dados
   const refetchAll = () => {
-    homeStatsQuery.refetch();
-    awayStatsQuery.refetch();
+    homeStatsQuery.refetchAll();
+    awayStatsQuery.refetchAll();
     overallStatsQuery.refetch();
     leagueAveragesQuery.refetch();
-    goalMomentStatsQuery.refetch();
+    goalMomentStatsQuery.refetchAll();
   };
 
   return { 
@@ -101,7 +101,7 @@ export const useGoalStats = () => {
     isFetching: !isLoading && (
       homeStatsQuery.isFetching ||
       awayStatsQuery.isFetching ||
-      overallStatsQuery.isFetching ||
+      overallStatsQuery.isRefetching ||
       leagueAveragesQuery.isFetching ||
       goalMomentStatsQuery.isFetching
     ),

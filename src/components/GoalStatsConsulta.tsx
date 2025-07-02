@@ -23,7 +23,7 @@ export const GoalStatsConsulta = () => {
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center">
           <AlertCircle className="h-8 w-8 mx-auto mb-4 text-red-600" />
-          <p className="text-red-600">Erro ao carregar dados: {error.message}</p>
+          <p className="text-red-600">Erro ao carregar dados: {error}</p>
         </div>
       </div>
     );

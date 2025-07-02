@@ -14,9 +14,9 @@ const DEFAULT_QUERY_CONFIG = {
 
 // ✅ URLs corrigidos e tipados
 const CSV_URLS = {
-  AWAY_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Away.csv',
-  GOALS_HALF: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Half.csv',
-  SCORED_FIRST_AWAY: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/scored_first_away.csv'
+  AWAY_STATS: '/Data/Goals_Stats_Away.csv',
+  GOALS_HALF: '/Data/Goals_Half.csv',
+  SCORED_FIRST_AWAY: '/Data/scored_first_away.csv'
 } as const;
 
 // Função de fetch com tratamento de erros melhorado

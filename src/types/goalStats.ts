@@ -11,6 +11,8 @@ export interface TeamStats {
   "5.5+": number;
   BTS: number;
   CS: number;
+  Goals?: number;
+  Avg?: number;
   "1st half"?: number;
   "2nd half"?: number;
   "Avg. minute"?: number;

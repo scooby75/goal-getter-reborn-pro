@@ -11,9 +11,7 @@ const QUERY_CONFIG = {
 
 const fetchLeagueData = async (): Promise<LeagueAverageData[]> => {
   try {
-    const CSV_URL = process.env.NODE_ENV === 'development'
-      ? '/data/League_Averages.csv'
-      : 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/League_Averages.csv';
+    const CSV_URL = '/Data/League_Averages.csv';
 
     const response = await fetch(CSV_URL, {
       headers: {
@@ -63,6 +61,7 @@ export const useLeagueAverages = () => {
   return {
     data: query.data || [],
     isLoading: query.isLoading,
+    isFetching: query.isFetching,
     isError: query.isError,
     error: query.error,
     refetch: query.refetch

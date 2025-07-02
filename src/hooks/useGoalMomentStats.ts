@@ -14,8 +14,8 @@ const DEFAULT_QUERY_CONFIG = {
 
 // ✅ URLs tipados e constantes
 const CSV_URLS = {
-  HOME_GOAL_MOMENTS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/momento_do_gol_home.csv',
-  AWAY_GOAL_MOMENTS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/momento_do_gol_away.csv'
+  HOME_GOAL_MOMENTS: '/Data/momento_do_gol_home.csv',
+  AWAY_GOAL_MOMENTS: '/Data/momento_do_gol_away.csv'
 } as const;
 
 // Função de fetch com tratamento de erros robusto
@@ -44,15 +44,13 @@ export const useGoalMomentStats = () => {
   const homeQuery = useQuery<GoalMomentStats[], Error>({
     queryKey: ['homeGoalMoments'],
     queryFn: () => fetchGoalMomentData(CSV_URLS.HOME_GOAL_MOMENTS),
-    ...DEFAULT_QUERY_CONFIG,
-    onError: (error) => console.error('Erro na query homeGoalMoments:', error)
+    ...DEFAULT_QUERY_CONFIG
   });
 
   const awayQuery = useQuery<GoalMomentStats[], Error>({
     queryKey: ['awayGoalMoments'],
     queryFn: () => fetchGoalMomentData(CSV_URLS.AWAY_GOAL_MOMENTS),
-    ...DEFAULT_QUERY_CONFIG,
-    onError: (error) => console.error('Erro na query awayGoalMoments:', error)
+    ...DEFAULT_QUERY_CONFIG
   });
 
   // Estados consolidados com useMemo para otimização

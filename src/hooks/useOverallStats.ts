@@ -3,9 +3,7 @@ import { TeamStats } from '@/types/goalStats';
 import { parseCSV } from '@/utils/csvParsers';
 
 // 1. Defina a URL fora da função para evitar problemas de escopo
-const CSV_URL = process.env.NODE_ENV === 'development'
-  ? '/data/Goals_Stats_Overall.csv'
-  : 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Overall.csv';
+const CSV_URL = '/Data/Goals_Stats_Overall.csv';
 
 const QUERY_CONFIG = {
   retry: 3,
@@ -41,7 +39,7 @@ const fetchStatsData = async (): Promise<TeamStats[]> => {
 
     // Validação adicional dos campos obrigatórios
     const isValid = parsedData.every(item => 
-      item.Team && typeof item.Goals === 'number'
+      item.Team && typeof item["0.5+"] === 'number'
     );
     
     if (!isValid) {
@@ -65,15 +63,7 @@ export const useOverallStats = () => {
   const query = useQuery<TeamStats[], Error>({
     queryKey: ['overallStats'],
     queryFn: fetchStatsData,
-    ...QUERY_CONFIG,
-    onError: (error) => {
-      // Aqui você pode adicionar integração com serviço de monitoramento
-      console.error('Erro na query de estatísticas:', {
-        message: error.message,
-        stack: error.stack?.split('\n')[0], // Apenas a primeira linha do stack
-        time: new Date().toLocaleTimeString()
-      });
-    }
+    ...QUERY_CONFIG
   });
 
   return {

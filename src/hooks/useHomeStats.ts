@@ -14,9 +14,9 @@ const QUERY_CONFIG = {
 
 // URLs com tipagem constante e validação
 const CSV_URLS = {
-  HOME_STATS: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Stats_Home.csv',
-  GOALS_HALF: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Goals_Half.csv',
-  SCORED_FIRST_HOME: 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/scored_first_home.csv'
+  HOME_STATS: '/Data/Goals_Stats_Home.csv',
+  GOALS_HALF: '/Data/Goals_Half.csv',
+  SCORED_FIRST_HOME: '/Data/scored_first_home.csv'
 } as const;
 
 // Função principal de fetch com tratamento de erros completo
@@ -48,22 +48,19 @@ export const useHomeStats = () => {
   const homeStatsQuery = useQuery<TeamStats[], Error>({
     queryKey: ['homeStats'],
     queryFn: fetchHomeStats,
-    ...QUERY_CONFIG,
-    onError: (error) => console.error('Erro nos dados principais:', error)
+    ...QUERY_CONFIG
   });
 
   const goalsHalfQuery = useQuery<GoalsHalfStats[], Error>({
     queryKey: ['goalsHalf'],
     queryFn: fetchGoalsHalfStats,
-    ...QUERY_CONFIG,
-    onError: (error) => console.error('Erro nos dados por tempo:', error)
+    ...QUERY_CONFIG
   });
 
   const scoredFirstQuery = useQuery<ScoredFirstStats[], Error>({
     queryKey: ['scoredFirstHome'],
     queryFn: fetchScoredFirstStats,
-    ...QUERY_CONFIG,
-    onError: (error) => console.error('Erro nos dados de primeiro gol:', error)
+    ...QUERY_CONFIG
   });
 
   // Combinação otimizada dos dados
