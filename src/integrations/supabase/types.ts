@@ -19,6 +19,7 @@ export type Database = {
           role: Database["public"]["Enums"]["user_role"] | null
           status: Database["public"]["Enums"]["user_status"] | null
           updated_at: string | null
+          user_id: string | null
         }
         Insert: {
           avatar_url?: string | null
@@ -29,6 +30,7 @@ export type Database = {
           role?: Database["public"]["Enums"]["user_role"] | null
           status?: Database["public"]["Enums"]["user_status"] | null
           updated_at?: string | null
+          user_id?: string | null
         }
         Update: {
           avatar_url?: string | null
@@ -39,6 +41,7 @@ export type Database = {
           role?: Database["public"]["Enums"]["user_role"] | null
           status?: Database["public"]["Enums"]["user_status"] | null
           updated_at?: string | null
+          user_id?: string | null
         }
         Relationships: []
       }
