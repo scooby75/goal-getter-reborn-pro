@@ -3,26 +3,13 @@
 -- ========================================
 ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
-DO $$
-BEGIN
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can view their own profile' AND tablename = 'profiles') THEN
-    EXECUTE 'DROP POLICY "Users can view their own profile" ON public.profiles';
-  END IF;
+-- Remove políticas antigas
+DROP POLICY IF EXISTS "Users can view their own profile" ON public.profiles;
+DROP POLICY IF EXISTS "Users can update their own profile" ON public.profiles;
+DROP POLICY IF EXISTS "Admins can view all profiles" ON public.profiles;
+DROP POLICY IF EXISTS "Admins can update all profiles" ON public.profiles;
 
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can update their own profile' AND tablename = 'profiles') THEN
-    EXECUTE 'DROP POLICY "Users can update their own profile" ON public.profiles';
-  END IF;
-
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can view all profiles' AND tablename = 'profiles') THEN
-    EXECUTE 'DROP POLICY "Admins can view all profiles" ON public.profiles';
-  END IF;
-
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can update all profiles' AND tablename = 'profiles') THEN
-    EXECUTE 'DROP POLICY "Admins can update all profiles" ON public.profiles';
-  END IF;
-END;
-$$;
-
+-- Políticas de usuário comum
 CREATE POLICY "Users can view their own profile" 
   ON public.profiles FOR SELECT 
   USING (auth.uid() = user_id);
@@ -31,14 +18,15 @@ CREATE POLICY "Users can update their own profile"
   ON public.profiles FOR UPDATE 
   USING (auth.uid() = user_id);
 
+-- Políticas para administradores aprovados (sem cast ENUM)
 CREATE POLICY "Admins can view all profiles" 
   ON public.profiles FOR SELECT 
   USING (
     EXISTS (
       SELECT 1 FROM public.profiles 
       WHERE user_id = auth.uid() 
-        AND role = 'admin'::user_role 
-        AND status = 'approved'::user_status
+        AND role = 'admin'
+        AND status = 'approved'
     )
   );
 
@@ -48,8 +36,8 @@ CREATE POLICY "Admins can update all profiles"
     EXISTS (
       SELECT 1 FROM public.profiles 
       WHERE user_id = auth.uid() 
-        AND role = 'admin'::user_role 
-        AND status = 'approved'::user_status
+        AND role = 'admin'
+        AND status = 'approved'
     )
   );
 
