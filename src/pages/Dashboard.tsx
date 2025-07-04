@@ -10,28 +10,38 @@ const Dashboard = () => {
   const { toast } = useToast();
   const { user, profile, loading, signOut, isApproved } = useAuth();
 
+  // Variáveis intermediárias para clareza
+  const shouldWaitForLoad = loading || !profile?.status;
+  const shouldRedirectToAuth = !user;
+  const shouldRedirectToPending = !isApproved;
+
   useEffect(() => {
-    console.log('Dashboard.tsx - useEffect triggered:', {
+    console.log("Dashboard.tsx - useEffect triggered:", {
       loading,
       userExists: !!user,
       isApproved,
-      profileStatus: profile ? JSON.stringify(profile.status) : null,
+      profileStatus: profile?.status,
     });
 
-    // Aguarda o carregamento completo antes de redirecionar
-    if (loading || !profile?.status) return;
+    if (shouldWaitForLoad) return;
 
-    if (!user) {
-      console.log('Dashboard.tsx - No user, redirecting to auth');
-      navigate('/auth');
-    } else if (!isApproved) {
-      console.log('Dashboard.tsx - User not approved, redirecting to pending');
-      navigate('/pending');
+    if (shouldRedirectToAuth) {
+      console.log("Dashboard.tsx - No user, redirecting to /auth");
+      navigate("/auth");
+    } else if (shouldRedirectToPending) {
+      console.log("Dashboard.tsx - User not approved, redirecting to /pending");
+      navigate("/pending");
     } else {
-      console.log('Dashboard.tsx - User approved, staying on dashboard');
+      console.log("Dashboard.tsx - User approved, staying on dashboard");
     }
-  }, [loading, user, isApproved, navigate, profile?.status]);
+  }, [
+    shouldWaitForLoad,
+    shouldRedirectToAuth,
+    shouldRedirectToPending,
+    navigate,
+  ]);
 
+  // Tela de carregamento
   if (loading || !user || !profile) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
@@ -43,10 +53,11 @@ const Dashboard = () => {
     );
   }
 
+  // Tela principal
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
+        {/* Cabeçalho */}
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-4xl font-bold text-gray-800 mb-2">
@@ -57,8 +68,8 @@ const Dashboard = () => {
             </p>
           </div>
           <div className="flex items-center gap-4">
-            {profile.role === 'admin' && (
-              <Button variant="outline" onClick={() => navigate('/admin')}>
+            {profile.role === "admin" && (
+              <Button variant="outline" onClick={() => navigate("/admin")}>
                 Painel Admin
               </Button>
             )}
@@ -68,7 +79,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Main Content */}
+        {/* Conteúdo principal */}
         <GoalStatsConsulta />
       </div>
     </div>
