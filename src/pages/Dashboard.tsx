@@ -29,8 +29,7 @@ const Dashboard = () => {
         console.log('Dashboard.tsx - User approved, staying on dashboard');
       }
     }
-  // Removi 'profile' do array de dependências para evitar múltiplos disparos
-  }, [loading, user, isApproved, navigate]);
+  }, [loading, user, isApproved, navigate, profile?.status]);
 
   if (loading || !user || !profile) {
     return (
