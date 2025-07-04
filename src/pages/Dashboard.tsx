@@ -18,16 +18,17 @@ const Dashboard = () => {
       profileStatus: profile ? JSON.stringify(profile.status) : null,
     });
 
-    if (!loading) {
-      if (!user) {
-        console.log('Dashboard.tsx - No user, redirecting to auth');
-        navigate('/auth');
-      } else if (!isApproved) {
-        console.log('Dashboard.tsx - User not approved, redirecting to pending');
-        navigate('/pending');
-      } else {
-        console.log('Dashboard.tsx - User approved, staying on dashboard');
-      }
+    // Aguarda o carregamento completo antes de redirecionar
+    if (loading || !profile?.status) return;
+
+    if (!user) {
+      console.log('Dashboard.tsx - No user, redirecting to auth');
+      navigate('/auth');
+    } else if (!isApproved) {
+      console.log('Dashboard.tsx - User not approved, redirecting to pending');
+      navigate('/pending');
+    } else {
+      console.log('Dashboard.tsx - User approved, staying on dashboard');
     }
   }, [loading, user, isApproved, navigate, profile?.status]);
 
