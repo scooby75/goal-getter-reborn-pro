@@ -13,22 +13,27 @@ const Auth = () => {
   const { isAuthenticated, profile, loading: authLoading } = useAuth();
 
   useEffect(() => {
-    console.log('Auth.tsx - useEffect triggered:', { authLoading, isAuthenticated, profile });
     if (!authLoading && isAuthenticated && profile) {
-      console.log('Auth.tsx - User is authenticated, profile status:', profile.status);
-      if (profile.status === 'approved') {
-        console.log('Auth.tsx - Redirecting to dashboard (approved)');
-        navigate('/dashboard');
-      } else if (profile.status === 'pending') {
-        console.log('Auth.tsx - Redirecting to pending');
-        navigate('/pending');
-      } else if (profile.status === 'blocked') {
-        console.log('Auth.tsx - Account blocked');
-        toast({
-          title: "Acesso Bloqueado",
-          description: "Sua conta foi bloqueada. Entre em contato com o suporte.",
-          variant: "destructive"
-        });
+      switch (profile.status) {
+        case 'approved':
+          console.log('Auth.tsx - Redirecting to dashboard (approved)');
+          navigate('/dashboard');
+          break;
+        case 'pending':
+          console.log('Auth.tsx - Redirecting to pending');
+          navigate('/pending');
+          break;
+        case 'blocked':
+          console.log('Auth.tsx - Account blocked');
+          toast({
+            title: "Acesso Bloqueado",
+            description: "Sua conta foi bloqueada. Entre em contato com o suporte.",
+            variant: "destructive"
+          });
+          break;
+        default:
+          // Caso queira tratar outros status ou nada fazer
+          break;
       }
     }
   }, [isAuthenticated, profile, authLoading, navigate, toast]);
@@ -38,9 +43,7 @@ const Auth = () => {
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
-        options: {
-          redirectTo: `${window.location.origin}/auth`
-        }
+        options: { redirectTo: `${window.location.origin}/auth` }
       });
 
       if (error) {
@@ -50,7 +53,7 @@ const Auth = () => {
           variant: "destructive"
         });
       }
-    } catch (error) {
+    } catch {
       toast({
         title: "Erro",
         description: "Ocorreu um erro inesperado. Tente novamente.",
@@ -79,7 +82,7 @@ const Auth = () => {
           >
             {loading ? "Entrando..." : "Entrar com Google"}
           </Button>
-          
+
           <div className="text-center text-sm text-gray-600">
             <p>
               Ao fazer login, você concorda com nossos{" "}
@@ -94,9 +97,7 @@ const Auth = () => {
           </div>
 
           <div className="text-center text-sm text-gray-500">
-            <p>
-              ⚠️ Novos usuários precisam aguardar aprovação do administrador
-            </p>
+            <p>⚠️ Novos usuários precisam aguardar aprovação do administrador</p>
           </div>
         </CardContent>
       </Card>
