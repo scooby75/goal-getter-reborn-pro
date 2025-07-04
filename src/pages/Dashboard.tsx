@@ -11,7 +11,13 @@ const Dashboard = () => {
   const { user, profile, loading, signOut, isApproved } = useAuth();
 
   useEffect(() => {
-    console.log('Dashboard.tsx - useEffect triggered:', { loading, user: !!user, isApproved, profile });
+    console.log('Dashboard.tsx - useEffect triggered:', {
+      loading,
+      userExists: !!user,
+      isApproved,
+      profileStatus: profile ? JSON.stringify(profile.status) : null,
+    });
+
     if (!loading) {
       if (!user) {
         console.log('Dashboard.tsx - No user, redirecting to auth');
@@ -23,7 +29,8 @@ const Dashboard = () => {
         console.log('Dashboard.tsx - User approved, staying on dashboard');
       }
     }
-  }, [user, isApproved, loading, navigate, profile]);
+  // Removi 'profile' do array de dependências para evitar múltiplos disparos
+  }, [loading, user, isApproved, navigate]);
 
   if (loading || !user || !profile) {
     return (
