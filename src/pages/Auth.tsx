@@ -18,23 +18,37 @@ const Auth = () => {
   const { toast } = useToast();
   const { isAuthenticated, profile, loading: authLoading } = useAuth();
 
-  // 🔄 Processa o redirecionamento OAuth para trocar o código pelo token
+  // 🔄 Processa o redirecionamento OAuth (apenas se necessário)
   useEffect(() => {
     const handleOAuthRedirect = async () => {
-      const { error } = await supabase.auth.exchangeCodeForSession();
-      if (error) {
+      try {
+        const { error } = await supabase.auth.exchangeCodeForSession();
+        if (error) {
+          toast({
+            title: "Erro na autenticação",
+            description: error.message,
+            variant: "destructive",
+          });
+        } else {
+          // ✅ Remove fragmento da URL (#access_token=...) após autenticar
+          window.history.replaceState({}, document.title, "/auth");
+        }
+      } catch (err) {
+        console.error("Erro ao trocar código por sessão:", err);
         toast({
-          title: "Erro na autenticação",
-          description: error.message,
+          title: "Erro",
+          description: "Não foi possível concluir o login.",
           variant: "destructive",
         });
       }
     };
 
-    handleOAuthRedirect();
+    if (window.location.hash.includes("access_token")) {
+      handleOAuthRedirect();
+    }
   }, [toast]);
 
-  // Redireciona após autenticação conforme status do perfil
+  // Redireciona conforme status do perfil
   useEffect(() => {
     if (!authLoading && isAuthenticated && profile) {
       switch (profile.status) {
@@ -64,7 +78,7 @@ const Auth = () => {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth`, // redireciona para essa página
+          redirectTo: `${window.location.origin}/auth`,
         },
       });
 
