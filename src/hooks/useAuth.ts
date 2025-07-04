@@ -14,13 +14,17 @@ type Profile = {
   updated_at?: string;
 };
 
-export const useAuth = () => {
+type UseAuthProps = {
+  onLogoutRedirect?: () => void; // função opcional para redirecionar após logout
+};
+
+export const useAuth = ({ onLogoutRedirect }: UseAuthProps = {}) => {
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // 🔐 Sessão inicial + listener de mudanças
+  // Sessão inicial + listener de mudanças
   useEffect(() => {
     const init = async () => {
       try {
@@ -47,7 +51,7 @@ export const useAuth = () => {
     };
   }, []);
 
-  // 🧾 Carrega o perfil completo
+  // Carrega o perfil completo
   useEffect(() => {
     const loadProfile = async () => {
       if (!user) {
@@ -76,7 +80,7 @@ export const useAuth = () => {
     loadProfile();
   }, [user]);
 
-  // 🔒 Logout seguro
+  // Logout seguro com redirecionamento
   const signOut = async () => {
     try {
       await supabase.auth.signOut();
@@ -86,6 +90,9 @@ export const useAuth = () => {
       setSession(null);
       setUser(null);
       setProfile(null);
+      if (onLogoutRedirect) {
+        onLogoutRedirect();  // chama redirecionamento se fornecido
+      }
     }
   };
 
