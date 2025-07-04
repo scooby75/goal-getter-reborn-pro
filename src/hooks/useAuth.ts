@@ -20,7 +20,7 @@ export const useAuth = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Atualiza sessão e usuário
+  // Obtém sessão inicial e escuta mudanças de autenticação
   useEffect(() => {
     const fetchSession = async () => {
       const {
@@ -53,7 +53,7 @@ export const useAuth = () => {
     };
   }, []);
 
-  // Carrega perfil quando usuário mudar
+  // Carrega perfil com base no usuário logado
   useEffect(() => {
     const fetchProfile = async () => {
       if (!user) {
@@ -89,8 +89,10 @@ export const useAuth = () => {
     setProfile(null);
   };
 
-  // Normalização do status (para evitar espaços ou capitalização errada)
-  const normalizedStatus = profile?.status?.trim().toLowerCase();
+  // Normalização segura de status
+  const normalizedStatus = (profile?.status || '').trim().toLowerCase();
+  const isApproved = normalizedStatus === 'approved';
+  const isAdmin = isApproved && profile?.role === 'admin';
 
   return {
     user,
@@ -99,7 +101,7 @@ export const useAuth = () => {
     loading,
     signOut,
     isAuthenticated: !!session,
-    isApproved: normalizedStatus === 'approved',
-    isAdmin: profile?.role === 'admin' && normalizedStatus === 'approved'
+    isApproved,
+    isAdmin
   };
 };
