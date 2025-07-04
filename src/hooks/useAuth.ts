@@ -17,17 +17,64 @@ export const useAuth = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Carrega perfil do usuário do banco, se existir
+  const loadProfile = async (userId: string) => {
+    try {
+      console.log('Loading profile for user:', userId);
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('user_id', userId)
+        .single();
+
+      if (error && error.code !== 'PGRST116') { // PGRST116 = no rows found
+        console.error('Error loading profile:', error);
+        return null;
+      }
+
+      if (!data) {
+        console.log('Profile not found, creating new profile...');
+        // Criar perfil padrão se não existir
+        const { error: insertError, data: insertedProfile } = await supabase
+          .from('profiles')
+          .insert({
+            user_id: userId,
+            email: session?.user?.email ?? '',
+            full_name: '',
+            role: 'user',
+            status: 'pending',
+          })
+          .select()
+          .single();
+
+        if (insertError) {
+          console.error('Error creating profile:', insertError);
+          return null;
+        }
+
+        return insertedProfile;
+      }
+
+      return data;
+    } catch (error) {
+      console.error('Exception loading profile:', error);
+      return null;
+    }
+  };
+
   useEffect(() => {
     const getInitialSession = async () => {
+      setLoading(true);
       console.log('Getting initial session...');
       const { data: { session } } = await supabase.auth.getSession();
-      console.log('Initial session:', session);
       setSession(session);
       setUser(session?.user ?? null);
 
       if (session?.user) {
-        console.log('Loading profile for initial session user:', session.user.id);
-        await loadProfile(session.user.id);
+        const profileData = await loadProfile(session.user.id);
+        setProfile(profileData);
+      } else {
+        setProfile(null);
       }
 
       setLoading(false);
@@ -37,13 +84,13 @@ export const useAuth = () => {
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
+        setLoading(true);
         setSession(session);
         setUser(session?.user ?? null);
 
         if (session?.user) {
-          setTimeout(() => {
-            loadProfile(session.user.id);
-          }, 100);
+          const profileData = await loadProfile(session.user.id);
+          setProfile(profileData);
         } else {
           setProfile(null);
         }
@@ -55,33 +102,12 @@ export const useAuth = () => {
     return () => subscription.unsubscribe();
   }, []);
 
-  const loadProfile = async (userId: string) => {
-    try {
-      console.log('Loading profile for user:', userId);
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('user_id', userId)  // ✅ CORRIGIDO: era `.eq('id', userId)`
-        .single();
-
-      if (error) {
-        console.error('Error loading profile:', error);
-        return;
-      }
-
-      console.log('Profile loaded:', data);
-      setProfile(data);
-    } catch (error) {
-      console.error('Error loading profile:', error);
-    }
-  };
-
   const signOut = async () => {
     try {
       setUser(null);
       setSession(null);
       setProfile(null);
-      await supabase.auth.signOut({ scope: 'global' });
+      await supabase.auth.signOut();
       window.location.href = '/';
     } catch (error) {
       console.error('Error signing out:', error);
@@ -98,6 +124,12 @@ export const useAuth = () => {
     isAuthenticated: !!session,
     isApproved: profile?.status === 'approved',
     isAdmin: profile?.role === 'admin' && profile?.status === 'approved',
-    refetchProfile: loadProfile // 🔄 útil para recarregar manualmente o perfil
+    refetchProfile: async () => {
+      if (!user) return;
+      setLoading(true);
+      const profileData = await loadProfile(user.id);
+      setProfile(profileData);
+      setLoading(false);
+    }
   };
 };
