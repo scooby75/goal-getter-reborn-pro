@@ -14,11 +14,12 @@ import { useAuth } from "@/hooks/useAuth";
 
 const Auth = () => {
   const [loading, setLoading] = useState(false);
+  const [handledOAuth, setHandledOAuth] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
   const { isAuthenticated, profile, loading: authLoading } = useAuth();
 
-  // 🔄 Processa o redirecionamento OAuth (apenas se necessário)
+  // ✅ Processa o redirecionamento OAuth usando o código da URL (?code=...)
   useEffect(() => {
     const handleOAuthRedirect = async () => {
       try {
@@ -30,8 +31,9 @@ const Auth = () => {
             variant: "destructive",
           });
         } else {
-          // ✅ Remove fragmento da URL (#access_token=...) após autenticar
-          window.history.replaceState({}, document.title, "/auth");
+          // ✅ Remove parâmetros da URL após autenticar
+          const cleanUrl = `${window.location.origin}/auth`;
+          window.history.replaceState({}, document.title, cleanUrl);
         }
       } catch (err) {
         console.error("Erro ao trocar código por sessão:", err);
@@ -43,10 +45,14 @@ const Auth = () => {
       }
     };
 
-    if (window.location.hash.includes("access_token")) {
+    const url = new URL(window.location.href);
+    const code = url.searchParams.get("code");
+
+    if (code && !handledOAuth) {
+      setHandledOAuth(true);
       handleOAuthRedirect();
     }
-  }, [toast]);
+  }, [toast, handledOAuth]);
 
   // Redireciona conforme status do perfil
   useEffect(() => {
@@ -78,7 +84,7 @@ const Auth = () => {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth`,
+          redirectTo: `${window.location.origin}/auth`, // precisa estar registrado no Supabase
         },
       });
 
