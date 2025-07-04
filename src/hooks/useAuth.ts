@@ -56,6 +56,7 @@ export const useAuth = () => {
 
   const loadProfile = async (userId: string) => {
     try {
+      console.log('Loading profile for user:', userId);
       const { data, error } = await supabase
         .from('profiles')
         .select('*')
@@ -67,6 +68,7 @@ export const useAuth = () => {
         return;
       }
 
+      console.log('Profile loaded:', data);
       setProfile(data);
     } catch (error) {
       console.error('Error loading profile:', error);
