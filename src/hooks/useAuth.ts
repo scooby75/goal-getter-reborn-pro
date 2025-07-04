@@ -23,26 +23,27 @@ export const useAuth = () => {
   // Obtém sessão inicial e escuta mudanças de autenticação
   useEffect(() => {
     const fetchSession = async () => {
-      const {
-        data: { session },
-        error,
-      } = await supabase.auth.getSession();
+      try {
+        const {
+          data: { session },
+          error,
+        } = await supabase.auth.getSession();
 
-      if (error) {
-        console.error('Erro ao obter sessão:', error.message);
+        if (error) throw error;
+
+        setSession(session);
+        setUser(session?.user || null);
+      } catch (error: any) {
+        console.error('Erro ao obter sessão:', error.message || error);
+      } finally {
         setLoading(false);
-        return;
       }
-
-      setSession(session);
-      setUser(session?.user || null);
-      setLoading(false);
     };
 
     fetchSession();
 
     const { data: listener } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
+      (_event, session) => {
         setSession(session);
         setUser(session?.user || null);
       }
@@ -63,30 +64,36 @@ export const useAuth = () => {
 
       setLoading(true);
 
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('user_id', user.id)
-        .single();
+      try {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('user_id', user.id)
+          .single();
 
-      if (error) {
-        console.error('Erro ao carregar perfil:', error.message);
-        setProfile(null);
-      } else {
+        if (error) throw error;
+
         setProfile(data);
+      } catch (error: any) {
+        console.error('Erro ao carregar perfil:', error.message || error);
+        setProfile(null);
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
     };
 
     fetchProfile();
   }, [user]);
 
   const signOut = async () => {
-    await supabase.auth.signOut();
-    setSession(null);
-    setUser(null);
-    setProfile(null);
+    try {
+      await supabase.auth.signOut();
+      setSession(null);
+      setUser(null);
+      setProfile(null);
+    } catch (error: any) {
+      console.error('Erro ao fazer logout:', error.message || error);
+    }
   };
 
   // Normalização segura de status
@@ -102,6 +109,6 @@ export const useAuth = () => {
     signOut,
     isAuthenticated: !!session,
     isApproved,
-    isAdmin
+    isAdmin,
   };
 };
