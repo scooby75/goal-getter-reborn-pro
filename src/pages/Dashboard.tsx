@@ -11,14 +11,19 @@ const Dashboard = () => {
   const { user, profile, loading, signOut, isApproved } = useAuth();
 
   useEffect(() => {
+    console.log('Dashboard.tsx - useEffect triggered:', { loading, user: !!user, isApproved, profile });
     if (!loading) {
       if (!user) {
+        console.log('Dashboard.tsx - No user, redirecting to auth');
         navigate('/auth');
       } else if (!isApproved) {
+        console.log('Dashboard.tsx - User not approved, redirecting to pending');
         navigate('/pending');
+      } else {
+        console.log('Dashboard.tsx - User approved, staying on dashboard');
       }
     }
-  }, [user, isApproved, loading, navigate]);
+  }, [user, isApproved, loading, navigate, profile]);
 
   if (loading || !user || !profile) {
     return (

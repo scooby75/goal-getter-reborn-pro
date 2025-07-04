@@ -13,12 +13,17 @@ const Auth = () => {
   const { isAuthenticated, profile, loading: authLoading } = useAuth();
 
   useEffect(() => {
+    console.log('Auth.tsx - useEffect triggered:', { authLoading, isAuthenticated, profile });
     if (!authLoading && isAuthenticated && profile) {
+      console.log('Auth.tsx - User is authenticated, profile status:', profile.status);
       if (profile.status === 'approved') {
+        console.log('Auth.tsx - Redirecting to dashboard (approved)');
         navigate('/dashboard');
       } else if (profile.status === 'pending') {
+        console.log('Auth.tsx - Redirecting to pending');
         navigate('/pending');
       } else if (profile.status === 'blocked') {
+        console.log('Auth.tsx - Account blocked');
         toast({
           title: "Acesso Bloqueado",
           description: "Sua conta foi bloqueada. Entre em contato com o suporte.",

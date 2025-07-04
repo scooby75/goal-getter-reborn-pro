@@ -20,11 +20,14 @@ export const useAuth = () => {
   useEffect(() => {
     // Get initial session
     const getInitialSession = async () => {
+      console.log('Getting initial session...');
       const { data: { session } } = await supabase.auth.getSession();
+      console.log('Initial session:', session);
       setSession(session);
       setUser(session?.user ?? null);
       
       if (session?.user) {
+        console.log('Loading profile for initial session user:', session.user.id);
         await loadProfile(session.user.id);
       }
       setLoading(false);
