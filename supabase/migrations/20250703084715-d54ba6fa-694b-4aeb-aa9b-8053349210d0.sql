@@ -1,4 +1,13 @@
--- Create profiles table for user management
+-- Corrigir dados antigos se necessário (baseado no email)
+UPDATE public.profiles p
+SET user_id = u.id
+FROM auth.users u
+WHERE p.email = u.email AND p.user_id IS NULL;
+
+-- Drop da tabela (caso já exista - execute com cuidado)
+-- DROP TABLE IF EXISTS public.profiles;
+
+-- Criação da tabela de perfis
 CREATE TABLE public.profiles (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID NOT NULL UNIQUE REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -11,10 +20,10 @@ CREATE TABLE public.profiles (
   updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
--- Enable Row Level Security
+-- Ativar segurança por linha
 ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
--- Create policies for user access
+-- Políticas para usuários comuns
 CREATE POLICY "Users can view their own profile" 
 ON public.profiles 
 FOR SELECT 
@@ -25,7 +34,7 @@ ON public.profiles
 FOR UPDATE 
 USING (auth.uid() = user_id);
 
--- Create policy for admins to view all profiles
+-- Políticas para administradores aprovados
 CREATE POLICY "Admins can view all profiles" 
 ON public.profiles 
 FOR SELECT 
@@ -33,12 +42,11 @@ USING (
   EXISTS (
     SELECT 1 FROM public.profiles 
     WHERE user_id = auth.uid() 
-    AND role = 'admin' 
-    AND status = 'approved'
+      AND role = 'admin' 
+      AND status = 'approved'
   )
 );
 
--- Create policy for admins to update all profiles
 CREATE POLICY "Admins can update all profiles" 
 ON public.profiles 
 FOR UPDATE 
@@ -46,12 +54,12 @@ USING (
   EXISTS (
     SELECT 1 FROM public.profiles 
     WHERE user_id = auth.uid() 
-    AND role = 'admin' 
-    AND status = 'approved'
+      AND role = 'admin' 
+      AND status = 'approved'
   )
 );
 
--- Create function to handle new user registration
+-- Função para criar perfil automaticamente após novo usuário
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger
 LANGUAGE plpgsql
@@ -69,12 +77,12 @@ BEGIN
 END;
 $$;
 
--- Create trigger for automatic profile creation
+-- Trigger para criar perfil automaticamente
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
 
--- Create function to check if user is admin
+-- Função para verificar se um usuário é admin aprovado
 CREATE OR REPLACE FUNCTION public.is_user_admin(user_id UUID)
 RETURNS boolean
 LANGUAGE sql
@@ -83,12 +91,12 @@ AS $$
   SELECT EXISTS (
     SELECT 1 FROM public.profiles 
     WHERE user_id = $1 
-    AND role = 'admin' 
-    AND status = 'approved'
+      AND role = 'admin' 
+      AND status = 'approved'
   );
 $$;
 
--- Create function to update timestamps
+-- Função para atualizar updated_at
 CREATE OR REPLACE FUNCTION public.update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -97,7 +105,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Create trigger for automatic timestamp updates
+-- Trigger para manter updated_at sempre atualizado
 CREATE TRIGGER update_profiles_updated_at
 BEFORE UPDATE ON public.profiles
 FOR EACH ROW
