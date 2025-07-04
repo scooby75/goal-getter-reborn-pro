@@ -20,48 +20,42 @@ export const useAuth = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Obtém sessão inicial e escuta mudanças de autenticação
+  // 🔐 Sessão inicial + listener de mudanças
   useEffect(() => {
-    const fetchSession = async () => {
+    const init = async () => {
       try {
-        const {
-          data: { session },
-          error,
-        } = await supabase.auth.getSession();
-
+        const { data, error } = await supabase.auth.getSession();
         if (error) throw error;
-
-        setSession(session);
-        setUser(session?.user || null);
-      } catch (error: any) {
-        console.error('Erro ao obter sessão:', error.message || error);
+        setSession(data.session);
+        setUser(data.session?.user ?? null);
+      } catch (err: any) {
+        console.error("Erro ao obter sessão:", err.message || err);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchSession();
+    init();
 
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
-      setUser(session?.user || null);
+      setUser(session?.user ?? null);
     });
 
     return () => {
-      listener.subscription.unsubscribe();
+      authListener.subscription.unsubscribe();
     };
   }, []);
 
-  // Carrega perfil com base no usuário logado
+  // 🧾 Carrega o perfil completo
   useEffect(() => {
-    const fetchProfile = async () => {
+    const loadProfile = async () => {
       if (!user) {
         setProfile(null);
         return;
       }
 
       setLoading(true);
-
       try {
         const { data, error } = await supabase
           .from('profiles')
@@ -70,31 +64,31 @@ export const useAuth = () => {
           .single();
 
         if (error) throw error;
-
         setProfile(data);
-      } catch (error: any) {
-        console.error('Erro ao carregar perfil:', error.message || error);
+      } catch (err: any) {
+        console.error("Erro ao carregar perfil:", err.message || err);
         setProfile(null);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProfile();
+    loadProfile();
   }, [user]);
 
+  // 🔒 Logout seguro
   const signOut = async () => {
     try {
       await supabase.auth.signOut();
+    } catch (err: any) {
+      console.error("Erro ao sair:", err.message || err);
+    } finally {
       setSession(null);
       setUser(null);
       setProfile(null);
-    } catch (error: any) {
-      console.error('Erro ao fazer logout:', error.message || error);
     }
   };
 
-  // Normalização segura de status
   const normalizedStatus = (profile?.status || '').trim().toLowerCase();
   const isApproved = normalizedStatus === 'approved';
   const isAdmin = isApproved && profile?.role === 'admin';
