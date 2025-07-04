@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, AlertCircle } from 'lucide-react';
 import { useGoalStats } from '@/hooks/useGoalStats';
@@ -9,13 +9,40 @@ import { SearchableSelect } from './SearchableSelect';
 import { ProbableScores } from './ProbableScores';
 import { GoalMomentCard } from './GoalMomentCard';
 
+// Chave para armazenamento no localStorage
+const STORAGE_KEY = 'goalStatsFilters';
+
 export const GoalStatsConsulta = () => {
   console.log('GoalStatsConsulta component rendering');
   
-  const [selectedHomeTeam, setSelectedHomeTeam] = useState<string>('');
-  const [selectedAwayTeam, setSelectedAwayTeam] = useState<string>('');
+  // Estados iniciais carregados do localStorage
+  const [selectedHomeTeam, setSelectedHomeTeam] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const savedFilters = localStorage.getItem(STORAGE_KEY);
+      return savedFilters ? JSON.parse(savedFilters).homeTeam : '';
+    }
+    return '';
+  });
+  
+  const [selectedAwayTeam, setSelectedAwayTeam] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const savedFilters = localStorage.getItem(STORAGE_KEY);
+      return savedFilters ? JSON.parse(savedFilters).awayTeam : '';
+    }
+    return '';
+  });
   
   const { goalStatsData, isLoading, error } = useGoalStats();
+
+  // Salva os filtros no localStorage sempre que mudam
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        homeTeam: selectedHomeTeam,
+        awayTeam: selectedAwayTeam
+      }));
+    }
+  }, [selectedHomeTeam, selectedAwayTeam]);
 
   if (error) {
     console.error('Error in GoalStatsConsulta:', error);
