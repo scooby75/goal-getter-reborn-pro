@@ -1,4 +1,6 @@
--- Criação da tabela de perfis com checagens
+-- ========================================
+-- CRIAÇÃO DA TABELA PROFILES SE NÃO EXISTIR
+-- ========================================
 DO $$
 BEGIN
   IF NOT EXISTS (
@@ -20,10 +22,48 @@ BEGIN
 END;
 $$;
 
--- Ativar segurança por linha
+-- ========================================
+-- GARANTIR EXISTÊNCIA DA COLUNA user_id
+-- ========================================
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns 
+    WHERE table_name = 'profiles' AND column_name = 'user_id'
+  ) THEN
+    ALTER TABLE public.profiles ADD COLUMN user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE;
+  END IF;
+END;
+$$;
+
+-- ========================================
+-- CRIAR ÍNDICE ÚNICO EM user_id SE NECESSÁRIO
+-- ========================================
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_indexes 
+    WHERE tablename = 'profiles' AND indexname = 'idx_profiles_user_id'
+  ) THEN
+    CREATE UNIQUE INDEX idx_profiles_user_id ON public.profiles(user_id);
+  END IF;
+END;
+$$;
+
+-- ========================================
+-- ATUALIZAR user_id COM BASE NO EMAIL
+-- ========================================
+UPDATE public.profiles p
+SET user_id = u.id
+FROM auth.users u
+WHERE p.email = u.email AND p.user_id IS NULL;
+
+-- ========================================
+-- ATIVAR RLS E (RE)CRIAR POLÍTICAS DE ACESSO
+-- ========================================
 ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
--- Políticas para usuários comuns
+-- Remover políticas existentes
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can view their own profile') THEN
@@ -32,45 +72,50 @@ BEGIN
   IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can update their own profile') THEN
     DROP POLICY "Users can update their own profile" ON public.profiles;
   END IF;
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can view all profiles') THEN
+    DROP POLICY "Admins can view all profiles" ON public.profiles;
+  END IF;
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can update all profiles') THEN
+    DROP POLICY "Admins can update all profiles" ON public.profiles;
+  END IF;
 END;
 $$;
 
+-- Políticas para usuários comuns
 CREATE POLICY "Users can view their own profile" 
-ON public.profiles 
-FOR SELECT 
-USING (auth.uid() = user_id);
+  ON public.profiles FOR SELECT 
+  USING (auth.uid() = user_id);
 
 CREATE POLICY "Users can update their own profile" 
-ON public.profiles 
-FOR UPDATE 
-USING (auth.uid() = user_id);
+  ON public.profiles FOR UPDATE 
+  USING (auth.uid() = user_id);
 
 -- Políticas para administradores aprovados
 CREATE POLICY "Admins can view all profiles" 
-ON public.profiles 
-FOR SELECT 
-USING (
-  EXISTS (
-    SELECT 1 FROM public.profiles 
-    WHERE user_id = auth.uid() 
-      AND role = 'admin' 
-      AND status = 'approved'
-  )
-);
+  ON public.profiles FOR SELECT 
+  USING (
+    EXISTS (
+      SELECT 1 FROM public.profiles 
+      WHERE user_id = auth.uid() 
+        AND role = 'admin' 
+        AND status = 'approved'
+    )
+  );
 
 CREATE POLICY "Admins can update all profiles" 
-ON public.profiles 
-FOR UPDATE 
-USING (
-  EXISTS (
-    SELECT 1 FROM public.profiles 
-    WHERE user_id = auth.uid() 
-      AND role = 'admin' 
-      AND status = 'approved'
-  )
-);
+  ON public.profiles FOR UPDATE 
+  USING (
+    EXISTS (
+      SELECT 1 FROM public.profiles 
+      WHERE user_id = auth.uid() 
+        AND role = 'admin' 
+        AND status = 'approved'
+    )
+  );
 
--- Função para criar perfil automaticamente após novo usuário
+-- ========================================
+-- FUNÇÃO: Criar perfil automaticamente após cadastro
+-- ========================================
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger
 LANGUAGE plpgsql
@@ -81,21 +126,25 @@ BEGIN
   VALUES (
     NEW.id,
     NEW.email,
-    NEW.raw_user_meta_data->>'full_name',
-    NEW.raw_user_meta_data->>'avatar_url'
+    COALESCE(NEW.raw_user_meta_data->>'full_name', ''),
+    COALESCE(NEW.raw_user_meta_data->>'avatar_url', '')
   );
   RETURN NEW;
 END;
 $$;
 
--- Trigger para criar perfil automaticamente
+-- ========================================
+-- TRIGGER: Executa a função após criação de auth.users
+-- ========================================
 DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
 
--- Função para verificar se um usuário é admin aprovado
+-- ========================================
+-- FUNÇÃO: Verificar se user é admin aprovado
+-- ========================================
 CREATE OR REPLACE FUNCTION public.is_user_admin(user_id UUID)
 RETURNS boolean
 LANGUAGE sql
@@ -109,7 +158,9 @@ AS $$
   );
 $$;
 
--- Função para atualizar o updated_at
+-- ========================================
+-- FUNÇÃO: Atualizar campo updated_at automaticamente
+-- ========================================
 CREATE OR REPLACE FUNCTION public.update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -118,10 +169,12 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Trigger para atualizar o campo updated_at automaticamente
+-- ========================================
+-- TRIGGER: Atualiza updated_at antes de UPDATE
+-- ========================================
 DROP TRIGGER IF EXISTS update_profiles_updated_at ON public.profiles;
 
 CREATE TRIGGER update_profiles_updated_at
-BEFORE UPDATE ON public.profiles
-FOR EACH ROW
-EXECUTE FUNCTION public.update_updated_at_column();
+  BEFORE UPDATE ON public.profiles
+  FOR EACH ROW
+  EXECUTE FUNCTION public.update_updated_at_column();
