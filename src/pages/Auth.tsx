@@ -19,11 +19,12 @@ const Auth = () => {
   const { toast } = useToast();
   const { isAuthenticated, profile, loading: authLoading } = useAuth();
 
-  // ✅ Processa o redirecionamento OAuth usando o código da URL (?code=...)
+  // ✅ Processa redirecionamento OAuth após login com Google (código ?code=)
   useEffect(() => {
     const handleOAuthRedirect = async () => {
       try {
-        const { error } = await supabase.auth.exchangeCodeForSession();
+        const { data, error } = await supabase.auth.exchangeCodeForSession();
+
         if (error) {
           toast({
             title: "Erro na autenticação",
@@ -31,7 +32,8 @@ const Auth = () => {
             variant: "destructive",
           });
         } else {
-          // ✅ Remove parâmetros da URL após autenticar
+          console.log("Sessão iniciada:", data);
+          // Remove parâmetros da URL
           const cleanUrl = `${window.location.origin}/auth`;
           window.history.replaceState({}, document.title, cleanUrl);
         }
@@ -54,7 +56,7 @@ const Auth = () => {
     }
   }, [toast, handledOAuth]);
 
-  // Redireciona conforme status do perfil
+  // ✅ Redireciona com base no status do perfil
   useEffect(() => {
     if (!authLoading && isAuthenticated && profile) {
       switch (profile.status) {
@@ -78,13 +80,14 @@ const Auth = () => {
     }
   }, [isAuthenticated, profile, authLoading, navigate, toast]);
 
+  // ✅ Inicia login com Google (OAuth 2.0)
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth`, // precisa estar registrado no Supabase
+          redirectTo: `${window.location.origin}/auth`,
         },
       });
 
