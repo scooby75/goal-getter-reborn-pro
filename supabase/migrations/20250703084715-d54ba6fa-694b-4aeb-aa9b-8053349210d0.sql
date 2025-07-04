@@ -5,17 +5,20 @@ ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
 DO $$
 BEGIN
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can view their own profile') THEN
-    DROP POLICY "Users can view their own profile" ON public.profiles;
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can view their own profile' AND tablename = 'profiles') THEN
+    EXECUTE 'DROP POLICY "Users can view their own profile" ON public.profiles';
   END IF;
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can update their own profile') THEN
-    DROP POLICY "Users can update their own profile" ON public.profiles;
+
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can update their own profile' AND tablename = 'profiles') THEN
+    EXECUTE 'DROP POLICY "Users can update their own profile" ON public.profiles';
   END IF;
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can view all profiles') THEN
-    DROP POLICY "Admins can view all profiles" ON public.profiles;
+
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can view all profiles' AND tablename = 'profiles') THEN
+    EXECUTE 'DROP POLICY "Admins can view all profiles" ON public.profiles';
   END IF;
-  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can update all profiles') THEN
-    DROP POLICY "Admins can update all profiles" ON public.profiles;
+
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Admins can update all profiles' AND tablename = 'profiles') THEN
+    EXECUTE 'DROP POLICY "Admins can update all profiles" ON public.profiles';
   END IF;
 END;
 $$;
