@@ -14,17 +14,13 @@ type Profile = {
   updated_at?: string;
 };
 
-type UseAuthProps = {
-  onLogoutRedirect?: () => void; // função opcional para redirecionar após logout
-};
-
-export const useAuth = ({ onLogoutRedirect }: UseAuthProps = {}) => {
+export const useAuth = () => {
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Sessão inicial + listener de mudanças
+  // 🔐 Sessão inicial + listener de mudanças
   useEffect(() => {
     const init = async () => {
       try {
@@ -51,7 +47,7 @@ export const useAuth = ({ onLogoutRedirect }: UseAuthProps = {}) => {
     };
   }, []);
 
-  // Carrega o perfil completo
+  // 🧾 Carrega o perfil completo
   useEffect(() => {
     const loadProfile = async () => {
       if (!user) {
@@ -80,19 +76,18 @@ export const useAuth = ({ onLogoutRedirect }: UseAuthProps = {}) => {
     loadProfile();
   }, [user]);
 
-  // Logout seguro com redirecionamento
+  // 🔒 Logout seguro com redirecionamento
   const signOut = async () => {
     try {
       await supabase.auth.signOut();
+      // redireciona para a página inicial após logout
+      window.location.href = "https://goalstats.vercel.app/";
     } catch (err: any) {
       console.error("Erro ao sair:", err.message || err);
     } finally {
       setSession(null);
       setUser(null);
       setProfile(null);
-      if (onLogoutRedirect) {
-        onLogoutRedirect();  // chama redirecionamento se fornecido
-      }
     }
   };
 
