@@ -1,29 +1,40 @@
--- Corrigir dados antigos se necessário (baseado no email)
-UPDATE public.profiles p
-SET user_id = u.id
-FROM auth.users u
-WHERE p.email = u.email AND p.user_id IS NULL;
-
--- Drop da tabela (caso já exista - execute com cuidado)
--- DROP TABLE IF EXISTS public.profiles;
-
--- Criação da tabela de perfis
-CREATE TABLE public.profiles (
-  id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id UUID NOT NULL UNIQUE REFERENCES auth.users(id) ON DELETE CASCADE,
-  email TEXT NOT NULL UNIQUE,
-  full_name TEXT,
-  avatar_url TEXT,
-  role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('admin', 'user')),
-  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'blocked')),
-  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
-);
+-- Criação da tabela de perfis com checagens
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.tables 
+    WHERE table_schema = 'public' AND table_name = 'profiles'
+  ) THEN
+    CREATE TABLE public.profiles (
+      id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+      user_id UUID NOT NULL UNIQUE REFERENCES auth.users(id) ON DELETE CASCADE,
+      email TEXT NOT NULL UNIQUE,
+      full_name TEXT,
+      avatar_url TEXT,
+      role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('admin', 'user')),
+      status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'blocked')),
+      created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+      updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
+    );
+  END IF;
+END;
+$$;
 
 -- Ativar segurança por linha
 ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
 -- Políticas para usuários comuns
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can view their own profile') THEN
+    DROP POLICY "Users can view their own profile" ON public.profiles;
+  END IF;
+  IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can update their own profile') THEN
+    DROP POLICY "Users can update their own profile" ON public.profiles;
+  END IF;
+END;
+$$;
+
 CREATE POLICY "Users can view their own profile" 
 ON public.profiles 
 FOR SELECT 
@@ -78,6 +89,8 @@ END;
 $$;
 
 -- Trigger para criar perfil automaticamente
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
@@ -96,7 +109,7 @@ AS $$
   );
 $$;
 
--- Função para atualizar updated_at
+-- Função para atualizar o updated_at
 CREATE OR REPLACE FUNCTION public.update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -105,7 +118,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Trigger para manter updated_at sempre atualizado
+-- Trigger para atualizar o campo updated_at automaticamente
+DROP TRIGGER IF EXISTS update_profiles_updated_at ON public.profiles;
+
 CREATE TRIGGER update_profiles_updated_at
 BEFORE UPDATE ON public.profiles
 FOR EACH ROW
