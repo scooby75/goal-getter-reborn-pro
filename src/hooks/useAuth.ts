@@ -18,9 +18,9 @@ export const useAuth = () => {
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loadingSession, setLoadingSession] = useState(true);
+  const [loadingProfile, setLoadingProfile] = useState(false);
 
-  // 🔐 Sessão inicial + listener de mudanças
   useEffect(() => {
     const init = async () => {
       try {
@@ -31,7 +31,7 @@ export const useAuth = () => {
       } catch (err: any) {
         console.error("Erro ao obter sessão:", err.message || err);
       } finally {
-        setLoading(false);
+        setLoadingSession(false);
       }
     };
 
@@ -47,15 +47,15 @@ export const useAuth = () => {
     };
   }, []);
 
-  // 🧾 Carrega o perfil completo
   useEffect(() => {
-    const loadProfile = async () => {
-      if (!user) {
-        setProfile(null);
-        return;
-      }
+    if (!user) {
+      setProfile(null);
+      setLoadingProfile(false);
+      return;
+    }
 
-      setLoading(true);
+    const loadProfile = async () => {
+      setLoadingProfile(true);
       try {
         const { data, error } = await supabase
           .from('profiles')
@@ -63,34 +63,39 @@ export const useAuth = () => {
           .eq('user_id', user.id)
           .single();
 
-        if (error) throw error;
-        setProfile(data);
+        if (error) {
+          if (error.code === 'PGRST116') { // perfil não encontrado (PostgREST)
+            setProfile(null);
+          } else {
+            throw error;
+          }
+        } else {
+          setProfile(data);
+        }
       } catch (err: any) {
         console.error("Erro ao carregar perfil:", err.message || err);
         setProfile(null);
       } finally {
-        setLoading(false);
+        setLoadingProfile(false);
       }
     };
 
     loadProfile();
   }, [user]);
 
-  // 🔒 Logout seguro com redirecionamento
   const signOut = async () => {
+    setSession(null);
+    setUser(null);
+    setProfile(null);
     try {
       await supabase.auth.signOut();
-      // redireciona para a página inicial após logout
       window.location.href = "https://goalstats.vercel.app/";
     } catch (err: any) {
       console.error("Erro ao sair:", err.message || err);
-    } finally {
-      setSession(null);
-      setUser(null);
-      setProfile(null);
     }
   };
 
+  const loading = loadingSession || loadingProfile;
   const normalizedStatus = (profile?.status || '').trim().toLowerCase();
   const isApproved = normalizedStatus === 'approved';
   const isAdmin = isApproved && profile?.role === 'admin';
