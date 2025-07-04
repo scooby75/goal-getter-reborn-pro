@@ -59,11 +59,10 @@ FROM auth.users u
 WHERE p.email = u.email AND p.user_id IS NULL;
 
 -- ========================================
--- ATIVAR RLS E (RE)CRIAR POLÍTICAS DE ACESSO
+-- ATIVAR RLS E RECRIAR POLÍTICAS DE ACESSO
 -- ========================================
 ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
--- Remover políticas existentes
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Users can view their own profile') THEN
@@ -114,7 +113,7 @@ CREATE POLICY "Admins can update all profiles"
   );
 
 -- ========================================
--- FUNÇÃO: Criar perfil automaticamente após cadastro
+-- FUNÇÃO: Criar perfil automaticamente após novo usuário
 -- ========================================
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger
