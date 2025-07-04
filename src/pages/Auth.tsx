@@ -18,7 +18,7 @@ const Auth = () => {
   const { toast } = useToast();
   const { isAuthenticated, profile, loading: authLoading } = useAuth();
 
-  // 🔁 Novo useEffect para processar retorno do login OAuth
+  // 🔄 Processa o redirecionamento OAuth para trocar o código pelo token
   useEffect(() => {
     const handleOAuthRedirect = async () => {
       const { error } = await supabase.auth.exchangeCodeForSession();
@@ -32,22 +32,19 @@ const Auth = () => {
     };
 
     handleOAuthRedirect();
-  }, []);
+  }, [toast]);
 
-  // ⏩ Redirecionamento conforme status do usuário
+  // Redireciona após autenticação conforme status do perfil
   useEffect(() => {
     if (!authLoading && isAuthenticated && profile) {
       switch (profile.status) {
         case "approved":
-          console.log("Auth.tsx - Redirecting to dashboard (approved)");
           navigate("/dashboard");
           break;
         case "pending":
-          console.log("Auth.tsx - Redirecting to pending");
           navigate("/pending");
           break;
         case "blocked":
-          console.log("Auth.tsx - Account blocked");
           toast({
             title: "Acesso Bloqueado",
             description: "Sua conta foi bloqueada. Entre em contato com o suporte.",
@@ -55,20 +52,19 @@ const Auth = () => {
           });
           break;
         default:
-          console.warn("Auth.tsx - Status de perfil inesperado:", profile.status);
+          console.warn("Status de perfil inesperado:", profile.status);
           break;
       }
     }
   }, [isAuthenticated, profile, authLoading, navigate, toast]);
 
-  // 🔐 Login com Google
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth`, // 👈 Garante que o retorno seja para o domínio atual
+          redirectTo: `${window.location.origin}/auth`, // redireciona para essa página
         },
       });
 
