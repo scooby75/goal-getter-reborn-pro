@@ -28,19 +28,14 @@ const Pending = () => {
               <span className="font-medium">Aguardando Aprovação</span>
             </div>
             <p className="text-sm text-yellow-700">
-              Um administrador precisa aprovar sua conta antes que você possa acessar 
-              as funcionalidades da plataforma. Você receberá um email quando sua 
-              conta for aprovada.
+              Um administrador precisa aprovar sua conta antes que você possa acessar as funcionalidades da plataforma. Você receberá um email quando sua conta for aprovada.
             </p>
           </div>
-          
           <div className="text-sm text-gray-600">
             <p>
-              Isso pode levar até 24 horas. Se você não receber uma resposta 
-              em breve, entre em contato conosco.
+              Isso pode levar até 24 horas. Se você não receber uma resposta em breve, entre em contato conosco.
             </p>
           </div>
-
           <Button variant="outline" onClick={handleSignOut} className="w-full">
             Sair
           </Button>
