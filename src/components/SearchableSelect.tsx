@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -8,7 +7,7 @@ interface SearchableSelectProps {
   onValueChange: (value: string) => void;
   options: string[];
   placeholder: string;
-  label: string;
+  label: string;  // Já recebe o label completo formatado
   className?: string;
 }
 
@@ -26,7 +25,7 @@ export const SearchableSelect = ({
   onValueChange,
   options,
   placeholder,
-  label,
+  label,  // Usa o label como recebido, sem modificações
   className
 }: SearchableSelectProps) => {
   const [open, setOpen] = useState(false);
@@ -65,7 +64,7 @@ export const SearchableSelect = ({
   return (
     <div className={className} ref={containerRef}>
       <label className="block text-xs font-medium text-gray-700 mb-1">
-        {label} ({options.length} times disponíveis)
+        {label}  {/* Renderiza o label como recebido */}
       </label>
       <div className="relative">
         <button
