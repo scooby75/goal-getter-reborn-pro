@@ -4,20 +4,17 @@ import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp } fro
 import { useGoalStats } from '@/hooks/useGoalStats';
 import { StatsDisplay } from './StatsDisplay';
 import { FilteredLeagueAverage } from './FilteredLeagueAverage';
-import { LeagueAverageDisplay } from './LeagueAverageDisplay';
 import { SearchableSelect } from './SearchableSelect';
 import { ProbableScores } from './ProbableScores';
 import { DixonColesScores } from './DixonColesScores';
 import { GoalMomentCard } from './GoalMomentCard';
 import { Button } from '@/components/ui/button';
 
-// Chave para armazenamento no localStorage
 const STORAGE_KEY = 'goalStatsFilters';
 
 export const GoalStatsConsulta = () => {
   console.log('GoalStatsConsulta component rendering');
   
-  // Estados iniciais carregados do localStorage
   const [selectedHomeTeam, setSelectedHomeTeam] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const savedFilters = localStorage.getItem(STORAGE_KEY);
@@ -42,18 +39,16 @@ export const GoalStatsConsulta = () => {
     return '';
   });
 
-  // Estado para alternar entre modelos
   const [useDixonColes, setUseDixonColes] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       const savedPreference = localStorage.getItem('scorePredictionModel');
       return savedPreference === 'dixon-coles';
     }
-    return true; // Dixon-Coles por padrão
+    return true;
   });
   
   const { goalStatsData, isLoading, error } = useGoalStats();
 
-  // Salva os filtros no localStorage sempre que mudam
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -64,7 +59,6 @@ export const GoalStatsConsulta = () => {
     }
   }, [selectedHomeTeam, selectedAwayTeam, selectedPrintTeam]);
 
-  // Salva preferência do modelo
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('scorePredictionModel', useDixonColes ? 'dixon-coles' : 'poisson');
@@ -108,10 +102,6 @@ export const GoalStatsConsulta = () => {
     .filter((value, index, self) => self.indexOf(value) === index)
     .sort();
 
-  console.log('Extracted home teams:', homeTeams);
-  console.log('Extracted away teams:', awayTeams);
-  console.log('Extracted print teams:', printTeams);
-
   const selectedHomeStats = goalStatsData.homeStats.find(team => team.Team === selectedHomeTeam);
   const selectedAwayStats = goalStatsData.awayStats.find(team => team.Team === selectedAwayTeam);
 
@@ -124,9 +114,6 @@ export const GoalStatsConsulta = () => {
 
   const homeTeamLeague = selectedHomeTeam ? getTeamLeague(selectedHomeTeam, true) : null;
   const awayTeamLeague = selectedAwayTeam ? getTeamLeague(selectedAwayTeam, false) : null;
-
-  console.log('Home team league:', homeTeamLeague);
-  console.log('Away team league:', awayTeamLeague);
 
   const shouldShowLeagueAverage = () => {
     if (!selectedHomeTeam && !selectedAwayTeam) return false;
@@ -153,7 +140,6 @@ export const GoalStatsConsulta = () => {
 
   const leagueAverageData = getLeagueAverageData();
 
-  // Get goal moment data
   const selectedHomeGoalMoments = goalStatsData.homeGoalMoments?.find(
     team => team.Team === selectedHomeTeam
   );
@@ -163,7 +149,7 @@ export const GoalStatsConsulta = () => {
 
   return (
     <div className="space-y-4 p-3 min-h-screen gradient-crypto max-w-6xl mx-auto">
-      {/* Team Selection - Updated with three columns and proper z-index */}
+      {/* Team Selection */}
       <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg relative z-20 w-full">
         <CardHeader className="pb-3">
           <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
@@ -277,24 +263,79 @@ export const GoalStatsConsulta = () => {
         </Card>
       )}
 
-      {/* League Average Display for Selected Teams */}
+      {/* Média dos Times Selecionados - Novo Card */}
       {(selectedHomeTeam || selectedAwayTeam) && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
-          <LeagueAverageDisplay 
-            homeStats={selectedHomeStats}
-            awayStats={selectedAwayStats}
-            leagueAverages={goalStatsData.leagueAverages}
-            selectedHomeTeam={selectedHomeTeam}
-            selectedAwayTeam={selectedAwayTeam}
-          />
-          
-          <FilteredLeagueAverage 
-            homeStats={selectedHomeStats}
-            awayStats={selectedAwayStats}
-            selectedHomeTeam={selectedHomeTeam}
-            selectedAwayTeam={selectedAwayTeam}
-          />
-        </div>
+        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg z-10 w-full">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
+              <TrendingUp className="h-5 w-5 text-blue-600" />
+              Média dos Times Selecionados
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <div className="grid grid-cols-8 gap-3 text-center">
+                <div className="space-y-1">
+                  <div className="text-xs text-gray-600 font-medium">GP</div>
+                  <div className="text-lg font-bold text-gray-800">
+                    {selectedHomeStats?.GP || selectedAwayStats?.GP || '-'}
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <div className="text-xs text-gray-600 font-medium">Avg</div>
+                  <div className="text-lg font-bold text-gray-800">
+                    {selectedHomeStats?.Avg || selectedAwayStats?.Avg || '-'}
+                  </div>
+                </div>
+                {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+'].map((key) => (
+                  <div key={key} className="space-y-1">
+                    <div className="text-xs text-gray-600 font-medium">{key}</div>
+                    <div className="text-lg font-bold text-gray-800">
+                      {selectedHomeStats?.[key as keyof typeof selectedHomeStats] || 
+                       selectedAwayStats?.[key as keyof typeof selectedAwayStats] || '-'}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="block md:hidden mt-4">
+              <div className="grid grid-cols-3 gap-2">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-center">
+                  <div className="text-xs text-gray-600 font-medium">GP</div>
+                  <div className="text-sm font-bold text-gray-800">
+                    {selectedHomeStats?.GP || selectedAwayStats?.GP || '-'}
+                  </div>
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-center">
+                  <div className="text-xs text-gray-600 font-medium">Avg</div>
+                  <div className="text-sm font-bold text-gray-800">
+                    {selectedHomeStats?.Avg || selectedAwayStats?.Avg || '-'}
+                  </div>
+                </div>
+                {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+'].map((key) => (
+                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-center">
+                    <div className="text-xs text-gray-600 font-medium">{key}</div>
+                    <div className="text-sm font-bold text-gray-800">
+                      {selectedHomeStats?.[key as keyof typeof selectedHomeStats] || 
+                       selectedAwayStats?.[key as keyof typeof selectedAwayStats] || '-'}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Filtered League Average */}
+      {(selectedHomeTeam || selectedAwayTeam) && (
+        <FilteredLeagueAverage 
+          homeStats={selectedHomeStats}
+          awayStats={selectedAwayStats}
+          selectedHomeTeam={selectedHomeTeam}
+          selectedAwayTeam={selectedAwayTeam}
+        />
       )}
 
       {/* Stats Display */}
