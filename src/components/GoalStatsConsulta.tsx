@@ -345,7 +345,7 @@ export const GoalStatsConsulta = () => {
             <CardContent>
               <div className="flex items-center justify-center gap-4">
                 <span className={`text-sm font-medium ${!useDixonColes ? 'text-blue-600' : 'text-gray-500'}`}>
-                  Poisson Simples
+                  Poisson
                 </span>
                 <Button
                   variant="ghost"
@@ -360,7 +360,7 @@ export const GoalStatsConsulta = () => {
                   )}
                 </Button>
                 <span className={`text-sm font-medium ${useDixonColes ? 'text-blue-600' : 'text-gray-500'}`}>
-                  Dixon-Coles
+                  Avançado
                 </span>
               </div>
               <p className="text-xs text-gray-500 text-center mt-2">
