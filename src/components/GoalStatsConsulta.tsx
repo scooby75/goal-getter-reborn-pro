@@ -172,7 +172,7 @@ export const GoalStatsConsulta = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="pt-0 overflow-visible">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-visible">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-visible">
             <div className="relative z-30">
               <SearchableSelect
                 value={selectedHomeTeam}
@@ -192,18 +192,6 @@ export const GoalStatsConsulta = () => {
                 options={awayTeams}
                 placeholder="Selecione o time visitante"
                 label={`Time Visitante (${awayTeams.length} times disponíveis)`}
-                className="z-50"
-                dropdownClassName="z-50"
-              />
-            </div>
-
-            <div className="relative z-30">
-              <SearchableSelect
-                value={selectedPrintTeam}
-                onValueChange={setSelectedPrintTeam}
-                options={printTeams}
-                placeholder="Time Impressão (opcional)"
-                label={`Time Impressão (${printTeams.length} times disponíveis)`}
                 className="z-50"
                 dropdownClassName="z-50"
               />
