@@ -27,7 +27,7 @@ const Landing = () => {
     {
       name: "Premium",
       price: "R$ 99,90",
-      period: "mensal",
+      period: "semestral",
       popular: true,
       features: [
         "Acesso completo às estatísticas",
@@ -42,9 +42,8 @@ const Landing = () => {
       price: "R$ 149,90",
       period: "anual",
       features: [
-        "Tudo do plano Premium",
-        "12 meses pelo preço de 1,5",
-        "Economia de 87%",
+        "Tudo do plano Premium",        
+        "Economia de 40%",
         "Acesso antecipado a novas features",
         "Consultoria personalizada"
       ]
@@ -127,7 +126,7 @@ const Landing = () => {
                     variant={plan.popular ? "default" : "outline"}
                     asChild
                   >
-                    <Link to="/auth">Escolher Plano</Link>
+                    <Link to="/auth">Assinar</Link>
                   </Button>
                 </CardContent>
               </Card>
