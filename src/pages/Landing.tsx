@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 const Landing = () => {
   const features = [
     "Análise estatística completa de gols",
-    "Dados atualizados automaticamente",
-    "Filtros avançados por liga e time",
-    "Visualização de momentos dos gols",
-    "Estatísticas detalhadas casa/fora",
-    "Exportação de relatórios"
+    "Dados atualizados diariamente",
+    "Média de gols da Liga",
+    "Média de gols do time",
+    "Média de gols do confronto (h2h)",
+    "Frequência de gols 1T e 2T",
+    "Tempo médio 1º gol",
+    "Frequência que equipe marca o 1º",    
+    "Gols marcados e sofridos a cada 15min",
+    "Placares mais prováveis",    
   ];
 
   const plans = [
@@ -19,8 +23,8 @@ const Landing = () => {
       price: "R$ 19,90",
       period: "mensal",
       features: [
-        "Acesso às estatísticas básicas",
-        "5 consultas por dia",
+        "Acesso completo às estatísticas",
+        "Consultas ilimitadas",
         "Suporte por email"
       ]
     },
@@ -32,8 +36,6 @@ const Landing = () => {
       features: [
         "Acesso completo às estatísticas",
         "Consultas ilimitadas",
-        "Filtros avançados",
-        "Exportação de dados",
         "Suporte prioritário"
       ]
     },
@@ -43,9 +45,8 @@ const Landing = () => {
       period: "anual",
       features: [
         "Tudo do plano Premium",        
-        "Economia de 40%",
-        "Acesso antecipado a novas features",
-        "Consultoria personalizada"
+        "Economia de 40%",        
+        "Suporte prioritário Telegram",        
       ]
     }
   ];
