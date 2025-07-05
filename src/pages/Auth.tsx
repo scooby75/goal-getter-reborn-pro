@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,7 +24,15 @@ const Auth = () => {
   useEffect(() => {
     const handleOAuthRedirect = async () => {
       try {
-        const { data, error } = await supabase.auth.exchangeCodeForSession();
+        const url = new URL(window.location.href);
+        const code = url.searchParams.get("code");
+        
+        if (!code) {
+          console.log("No authorization code found in URL");
+          return;
+        }
+
+        const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
         if (error) {
           toast({
