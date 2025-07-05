@@ -32,7 +32,7 @@ export const DixonColesScores: React.FC<DixonColesScoresProps> = ({
         <CardHeader>
           <CardTitle className="text-center text-2xl text-gray-800 flex items-center justify-center gap-2">
             <Target className="h-6 w-6" />
-            Placares Mais Prováveis (Dixon-Coles)
+            Placares Mais Prováveis
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -47,7 +47,7 @@ export const DixonColesScores: React.FC<DixonColesScoresProps> = ({
             ))}
           </div>
           <p className="text-center text-xs text-gray-500 mt-4">
-            #Calculado usando o modelo Dixon-Coles com correções para placares baixos e vantagem de casa.
+            #Calculado usando o modelo com correções para placares baixos e vantagem de casa.
           </p>
         </CardContent>
       </Card>
