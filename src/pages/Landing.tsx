@@ -67,7 +67,7 @@ const Landing = () => {
           </p>
           <div className="flex justify-center gap-4">
             <Button asChild size="lg">
-              <Link to="/auth">Começar Agora</Link>
+              <Link to="/auth">Acessar</Link>
             </Button>
             <Button variant="outline" size="lg">
               Ver Demo
