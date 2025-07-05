@@ -4,17 +4,20 @@ import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp } fro
 import { useGoalStats } from '@/hooks/useGoalStats';
 import { StatsDisplay } from './StatsDisplay';
 import { FilteredLeagueAverage } from './FilteredLeagueAverage';
+import { LeagueAverageDisplay } from './LeagueAverageDisplay';
 import { SearchableSelect } from './SearchableSelect';
 import { ProbableScores } from './ProbableScores';
 import { DixonColesScores } from './DixonColesScores';
 import { GoalMomentCard } from './GoalMomentCard';
 import { Button } from '@/components/ui/button';
 
+// Chave para armazenamento no localStorage
 const STORAGE_KEY = 'goalStatsFilters';
 
 export const GoalStatsConsulta = () => {
   console.log('GoalStatsConsulta component rendering');
   
+  // Estados iniciais carregados do localStorage
   const [selectedHomeTeam, setSelectedHomeTeam] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const savedFilters = localStorage.getItem(STORAGE_KEY);
@@ -39,16 +42,18 @@ export const GoalStatsConsulta = () => {
     return '';
   });
 
+  // Estado para alternar entre modelos
   const [useDixonColes, setUseDixonColes] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       const savedPreference = localStorage.getItem('scorePredictionModel');
       return savedPreference === 'dixon-coles';
     }
-    return true;
+    return true; // Dixon-Coles por padrão
   });
   
   const { goalStatsData, isLoading, error } = useGoalStats();
 
+  // Salva os filtros no localStorage sempre que mudam
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -59,6 +64,7 @@ export const GoalStatsConsulta = () => {
     }
   }, [selectedHomeTeam, selectedAwayTeam, selectedPrintTeam]);
 
+  // Salva preferência do modelo
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('scorePredictionModel', useDixonColes ? 'dixon-coles' : 'poisson');
@@ -69,7 +75,7 @@ export const GoalStatsConsulta = () => {
     console.error('Error in GoalStatsConsulta:', error);
     return (
       <div className="flex items-center justify-center min-h-[300px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg w-full max-w-6xl mx-auto">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg">
           <AlertCircle className="h-8 w-8 mx-auto mb-3 text-red-500" />
           <p className="text-red-600 font-semibold text-sm">Erro ao carregar dados: {error}</p>
         </div>
@@ -80,7 +86,7 @@ export const GoalStatsConsulta = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[300px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-6 rounded-lg shadow-lg w-full max-w-6xl mx-auto">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-6 rounded-lg shadow-lg">
           <Loader2 className="h-8 w-8 animate-spin mx-auto mb-3 text-blue-600" />
           <p className="text-blue-600 font-semibold text-sm">Carregando dados das equipes...</p>
         </div>
@@ -102,6 +108,10 @@ export const GoalStatsConsulta = () => {
     .filter((value, index, self) => self.indexOf(value) === index)
     .sort();
 
+  console.log('Extracted home teams:', homeTeams);
+  console.log('Extracted away teams:', awayTeams);
+  console.log('Extracted print teams:', printTeams);
+
   const selectedHomeStats = goalStatsData.homeStats.find(team => team.Team === selectedHomeTeam);
   const selectedAwayStats = goalStatsData.awayStats.find(team => team.Team === selectedAwayTeam);
 
@@ -114,6 +124,9 @@ export const GoalStatsConsulta = () => {
 
   const homeTeamLeague = selectedHomeTeam ? getTeamLeague(selectedHomeTeam, true) : null;
   const awayTeamLeague = selectedAwayTeam ? getTeamLeague(selectedAwayTeam, false) : null;
+
+  console.log('Home team league:', homeTeamLeague);
+  console.log('Away team league:', awayTeamLeague);
 
   const shouldShowLeagueAverage = () => {
     if (!selectedHomeTeam && !selectedAwayTeam) return false;
@@ -140,6 +153,7 @@ export const GoalStatsConsulta = () => {
 
   const leagueAverageData = getLeagueAverageData();
 
+  // Get goal moment data
   const selectedHomeGoalMoments = goalStatsData.homeGoalMoments?.find(
     team => team.Team === selectedHomeTeam
   );
@@ -148,9 +162,9 @@ export const GoalStatsConsulta = () => {
   );
 
   return (
-    <div className="space-y-4 p-3 min-h-screen gradient-crypto max-w-6xl mx-auto">
-      {/* Team Selection - Updated with corrected labels */}
-      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg relative z-20 w-full">
+    <div className="space-y-4 p-3 min-h-screen gradient-crypto">
+      {/* Team Selection - Updated with three columns and proper z-index */}
+      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg relative z-20">
         <CardHeader className="pb-3">
           <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
             <Shield className="h-5 w-5 text-blue-600" />
@@ -165,7 +179,7 @@ export const GoalStatsConsulta = () => {
                 onValueChange={setSelectedHomeTeam}
                 options={homeTeams}
                 placeholder="Selecione o time da casa"
-                label={`Time da Casa (${homeTeams.length} times)`} // Label completo
+                label={`Time da Casa (${homeTeams.length} times disponíveis)`}
                 className="z-50"
                 dropdownClassName="z-50"
               />
@@ -177,7 +191,7 @@ export const GoalStatsConsulta = () => {
                 onValueChange={setSelectedAwayTeam}
                 options={awayTeams}
                 placeholder="Selecione o time visitante"
-                label={`Time Visitante (${awayTeams.length} times)`} // Label completo
+                label={`Time Visitante (${awayTeams.length} times disponíveis)`}
                 className="z-50"
                 dropdownClassName="z-50"
               />
@@ -186,27 +200,181 @@ export const GoalStatsConsulta = () => {
         </CardContent>
       </Card>
 
-      {/* Rest of the components remain exactly the same */}
       {shouldShowDifferentLeaguesWarning() && (
-        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg z-10 w-full">
-          {/* ... existing code ... */}
+        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg z-10">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-center text-lg text-red-600 flex items-center justify-center gap-2">
+              <AlertCircle className="h-5 w-5" />
+              Ligas Diferentes Detectadas
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <div className="text-center space-y-2">
+              <p className="text-gray-800 font-semibold text-sm">Os times selecionados pertencem a ligas diferentes.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                <div className="bg-gray-50 border border-gray-200 p-3 rounded-lg">
+                  <p className="text-gray-600 text-xs font-medium">Time da Casa</p>
+                  <p className="text-gray-800 font-bold text-sm">{homeTeamLeague}</p>
+                </div>
+                <div className="bg-gray-50 border border-gray-200 p-3 rounded-lg">
+                  <p className="text-gray-600 text-xs font-medium">Time Visitante</p>
+                  <p className="text-gray-800 font-bold text-sm">{awayTeamLeague}</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
         </Card>
       )}
 
       {shouldShowLeagueAverage() && leagueAverageData && (
-        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg z-10 w-full">
-          {/* ... existing code ... */}
+        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg z-10">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
+              <TrendingUp className="h-5 w-5 text-blue-600" />
+              Média da Liga: {leagueAverageData.League_Name}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <div className="hidden md:block overflow-x-auto">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="grid grid-cols-8 gap-3 text-center">
+                  {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+', 'BTS', 'CS'].map((key, index) => (
+                    <div key={key} className="space-y-1">
+                      <div className="text-xs text-gray-600 font-medium">{key}</div>
+                      <div className="text-lg font-bold text-gray-800">
+                        {leagueAverageData[key as keyof typeof leagueAverageData]}%
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <div className="block md:hidden space-y-3">
+              <div className="grid grid-cols-3 gap-2">
+                {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+'].map((key) => (
+                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-center">
+                    <div className="text-xs text-gray-600 font-medium">{key}</div>
+                    <div className="text-sm font-bold text-gray-800">
+                      {leagueAverageData[key as keyof typeof leagueAverageData]}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="grid grid-cols-2 gap-2 mt-3">
+                {['BTS', 'CS'].map((key) => (
+                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-center">
+                    <div className="text-xs text-gray-600 font-medium">{key}</div>
+                    <div className="text-sm font-bold text-gray-800">
+                      {leagueAverageData[key as keyof typeof leagueAverageData]}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </CardContent>
         </Card>
       )}
 
+      {/* League Average Display for Selected Teams */}
       {(selectedHomeTeam || selectedAwayTeam) && (
-        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg z-10 w-full">
-          {/* ... existing code ... */}
-        </Card>
+        <LeagueAverageDisplay 
+          homeStats={selectedHomeStats}
+          awayStats={selectedAwayStats}
+          leagueAverages={goalStatsData.leagueAverages}
+          selectedHomeTeam={selectedHomeTeam}
+          selectedAwayTeam={selectedAwayTeam}
+        />
       )}
 
-      {/* All other components remain unchanged */}
-      {/* ... */}
+      {/* Filtered League Average */}
+      {(selectedHomeTeam || selectedAwayTeam) && (
+        <FilteredLeagueAverage 
+          homeStats={selectedHomeStats}
+          awayStats={selectedAwayStats}
+          selectedHomeTeam={selectedHomeTeam}
+          selectedAwayTeam={selectedAwayTeam}
+        />
+      )}
+
+      {/* Stats Display */}
+      {(selectedHomeTeam || selectedAwayTeam) && (
+        <StatsDisplay 
+          homeTeam={selectedHomeTeam}
+          awayTeam={selectedAwayTeam}
+          homeStats={selectedHomeStats}
+          awayStats={selectedAwayStats}
+        />
+      )}
+
+      {/* Goal Moment Card */}
+      {(selectedHomeTeam || selectedAwayTeam) && (
+        <GoalMomentCard
+          homeTeam={selectedHomeTeam}
+          awayTeam={selectedAwayTeam}
+          homeGoalMoments={selectedHomeGoalMoments}
+          awayGoalMoments={selectedAwayGoalMoments}
+        />
+      )}
+
+      {/* Model Selection and Scores */}
+      {selectedHomeStats && selectedAwayStats && (
+        <div className="space-y-4">
+          {/* Model Toggle */}
+          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
+                <Shield className="h-5 w-5 text-blue-600" />
+                Modelo de Previsão Avançado
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <div className="flex items-center justify-center gap-4 mb-3">
+                <span className={`text-sm font-semibold ${!useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
+                  Poisson
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setUseDixonColes(!useDixonColes)}
+                  className="p-1 hover:bg-gray-100"
+                >
+                  {useDixonColes ? (
+                    <ToggleRight className="h-8 w-8 text-blue-600" />
+                  ) : (
+                    <ToggleLeft className="h-8 w-8 text-gray-400" />
+                  )}
+                </Button>
+                <span className={`text-sm font-semibold ${useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
+                  Avançado
+                </span>
+              </div>
+              <div className="text-center bg-blue-50 border border-blue-200 p-3 rounded-lg">
+                <p className="text-xs text-gray-700">
+                  {useDixonColes 
+                    ? 'Modelo com inteligência artificial e correções para placares baixos + vantagem de casa'
+                    : 'Modelo clássico baseado na distribuição estatística de Poisson'
+                  }
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Score Predictions */}
+          {useDixonColes ? (
+            <DixonColesScores 
+              homeStats={selectedHomeStats} 
+              awayStats={selectedAwayStats} 
+            />
+          ) : (
+            <ProbableScores 
+              homeStats={selectedHomeStats} 
+              awayStats={selectedAwayStats} 
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 };
