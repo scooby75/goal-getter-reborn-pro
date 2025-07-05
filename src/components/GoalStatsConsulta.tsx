@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp } from 'lucide-react';
@@ -66,9 +67,9 @@ export const GoalStatsConsulta = () => {
     console.error('Error in GoalStatsConsulta:', error);
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center glass-effect p-8 rounded-xl crypto-shadow">
-          <AlertCircle className="h-12 w-12 mx-auto mb-4 text-red-400" />
-          <p className="text-red-400 font-semibold">Erro ao carregar dados: {error}</p>
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-8 rounded-xl shadow-xl">
+          <AlertCircle className="h-12 w-12 mx-auto mb-4 text-red-500" />
+          <p className="text-red-600 font-semibold">Erro ao carregar dados: {error}</p>
         </div>
       </div>
     );
@@ -77,9 +78,9 @@ export const GoalStatsConsulta = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center glass-effect p-8 rounded-xl crypto-shadow">
-          <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4 text-crypto-steel" />
-          <p className="text-crypto-steel font-semibold">Carregando dados das equipes...</p>
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-8 rounded-xl shadow-xl">
+          <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-blue-600 font-semibold">Carregando dados das equipes...</p>
         </div>
       </div>
     );
@@ -152,10 +153,10 @@ export const GoalStatsConsulta = () => {
   return (
     <div className="space-y-6 p-6 min-h-screen gradient-crypto">
       {/* Team Selection */}
-      <Card className="glass-effect border-crypto-steel/30 crypto-shadow">
+      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-xl">
         <CardHeader>
-          <CardTitle className="text-center text-3xl text-white flex items-center justify-center gap-3">
-            <Shield className="h-8 w-8 text-crypto-steel" />
+          <CardTitle className="text-center text-3xl text-gray-800 flex items-center justify-center gap-3">
+            <Shield className="h-8 w-8 text-blue-600" />
             Seleção de Equipes
           </CardTitle>
         </CardHeader>
@@ -181,24 +182,24 @@ export const GoalStatsConsulta = () => {
       </Card>
 
       {shouldShowDifferentLeaguesWarning() && (
-        <Card className="glass-effect border-red-400/50 crypto-shadow">
+        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-xl">
           <CardHeader>
-            <CardTitle className="text-center text-xl text-red-400 flex items-center justify-center gap-2">
+            <CardTitle className="text-center text-xl text-red-600 flex items-center justify-center gap-2">
               <AlertCircle className="h-6 w-6" />
               Ligas Diferentes Detectadas
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-center space-y-2">
-              <p className="text-white font-semibold">Os times selecionados pertencem a ligas diferentes.</p>
+              <p className="text-gray-800 font-semibold">Os times selecionados pertencem a ligas diferentes.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div className="glass-effect p-4 rounded-lg">
-                  <p className="text-crypto-light text-sm font-medium">Time da Casa</p>
-                  <p className="text-white font-bold">{homeTeamLeague}</p>
+                <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                  <p className="text-gray-600 text-sm font-medium">Time da Casa</p>
+                  <p className="text-gray-800 font-bold">{homeTeamLeague}</p>
                 </div>
-                <div className="glass-effect p-4 rounded-lg">
-                  <p className="text-crypto-light text-sm font-medium">Time Visitante</p>
-                  <p className="text-white font-bold">{awayTeamLeague}</p>
+                <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                  <p className="text-gray-600 text-sm font-medium">Time Visitante</p>
+                  <p className="text-gray-800 font-bold">{awayTeamLeague}</p>
                 </div>
               </div>
             </div>
@@ -207,21 +208,21 @@ export const GoalStatsConsulta = () => {
       )}
 
       {shouldShowLeagueAverage() && leagueAverageData && (
-        <Card className="glass-effect border-crypto-steel/50 crypto-shadow">
+        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-xl">
           <CardHeader>
-            <CardTitle className="text-center text-2xl text-white flex items-center justify-center gap-3">
-              <TrendingUp className="h-7 w-7 text-crypto-steel" />
+            <CardTitle className="text-center text-2xl text-gray-800 flex items-center justify-center gap-3">
+              <TrendingUp className="h-7 w-7 text-blue-600" />
               Média da Liga: {leagueAverageData.League_Name}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="hidden md:block overflow-x-auto">
-              <div className="glass-effect rounded-lg p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <div className="grid grid-cols-8 gap-4 text-center">
                   {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+', 'BTS', 'CS'].map((key, index) => (
                     <div key={key} className="space-y-2">
-                      <div className="text-sm text-crypto-light font-medium">{key}</div>
-                      <div className="text-2xl font-bold text-white">
+                      <div className="text-sm text-gray-600 font-medium">{key}</div>
+                      <div className="text-2xl font-bold text-gray-800">
                         {leagueAverageData[key as keyof typeof leagueAverageData]}%
                       </div>
                     </div>
@@ -233,9 +234,9 @@ export const GoalStatsConsulta = () => {
             <div className="block md:hidden space-y-4">
               <div className="grid grid-cols-3 gap-3">
                 {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+'].map((key) => (
-                  <div key={key} className="glass-effect rounded-lg p-4 text-center">
-                    <div className="text-xs text-crypto-light font-medium">{key}</div>
-                    <div className="text-lg font-bold text-white">
+                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                    <div className="text-xs text-gray-600 font-medium">{key}</div>
+                    <div className="text-lg font-bold text-gray-800">
                       {leagueAverageData[key as keyof typeof leagueAverageData]}%
                     </div>
                   </div>
@@ -244,9 +245,9 @@ export const GoalStatsConsulta = () => {
               
               <div className="grid grid-cols-2 gap-3 mt-4">
                 {['BTS', 'CS'].map((key) => (
-                  <div key={key} className="glass-effect rounded-lg p-4 text-center">
-                    <div className="text-xs text-crypto-light font-medium">{key}</div>
-                    <div className="text-lg font-bold text-white">
+                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                    <div className="text-xs text-gray-600 font-medium">{key}</div>
+                    <div className="text-lg font-bold text-gray-800">
                       {leagueAverageData[key as keyof typeof leagueAverageData]}%
                     </div>
                   </div>
@@ -302,36 +303,36 @@ export const GoalStatsConsulta = () => {
       {selectedHomeStats && selectedAwayStats && (
         <div className="space-y-6">
           {/* Model Toggle */}
-          <Card className="glass-effect border-crypto-steel/30 crypto-shadow">
+          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-xl">
             <CardHeader>
-              <CardTitle className="text-center text-2xl text-white flex items-center justify-center gap-3">
-                <Shield className="h-6 w-6 text-crypto-steel" />
+              <CardTitle className="text-center text-2xl text-gray-800 flex items-center justify-center gap-3">
+                <Shield className="h-6 w-6 text-blue-600" />
                 Modelo de Previsão Avançado
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center justify-center gap-6 mb-4">
-                <span className={`text-lg font-semibold ${!useDixonColes ? 'text-crypto-steel' : 'text-crypto-light/60'}`}>
+                <span className={`text-lg font-semibold ${!useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
                   Poisson
                 </span>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setUseDixonColes(!useDixonColes)}
-                  className="p-2 hover:bg-crypto-steel/20"
+                  className="p-2 hover:bg-gray-100"
                 >
                   {useDixonColes ? (
-                    <ToggleRight className="h-10 w-10 text-crypto-steel" />
+                    <ToggleRight className="h-10 w-10 text-blue-600" />
                   ) : (
-                    <ToggleLeft className="h-10 w-10 text-crypto-light/60" />
+                    <ToggleLeft className="h-10 w-10 text-gray-400" />
                   )}
                 </Button>
-                <span className={`text-lg font-semibold ${useDixonColes ? 'text-crypto-steel' : 'text-crypto-light/60'}`}>
+                <span className={`text-lg font-semibold ${useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
                   Avançado
                 </span>
               </div>
-              <div className="text-center glass-effect p-4 rounded-lg">
-                <p className="text-sm text-crypto-light">
+              <div className="text-center bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                <p className="text-sm text-gray-700">
                   {useDixonColes 
                     ? 'Modelo com inteligência artificial e correções para placares baixos + vantagem de casa'
                     : 'Modelo clássico baseado na distribuição estatística de Poisson'

@@ -60,7 +60,7 @@ export const FilteredLeagueAverage: React.FC<FilteredLeagueAverageProps> = ({
   };
 
   return (
-    <Card className="shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+    <Card className="shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white">
       <CardHeader>
         <CardTitle className="text-center text-xl">
           🎯 {getTitle()}
@@ -69,39 +69,39 @@ export const FilteredLeagueAverage: React.FC<FilteredLeagueAverageProps> = ({
       <CardContent>
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
-          <div className="bg-white/10 rounded-lg p-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
             <div className="grid grid-cols-8 gap-4 text-center font-semibold">
               <div>
-                <div className="text-sm opacity-90 mb-1">GP</div>
-                <div className="text-lg">{filteredAverage.GP}</div>
+                <div className="text-sm text-white/90 mb-1">GP</div>
+                <div className="text-lg text-white">{filteredAverage.GP}</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">Avg</div>
-                <div className="text-lg">{filteredAverage.Avg}</div>
+                <div className="text-sm text-white/90 mb-1">Avg</div>
+                <div className="text-lg text-white">{filteredAverage.Avg}</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">0.5+</div>
-                <div className="text-lg">{filteredAverage["0.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">0.5+</div>
+                <div className="text-lg text-white">{filteredAverage["0.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">1.5+</div>
-                <div className="text-lg">{filteredAverage["1.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">1.5+</div>
+                <div className="text-lg text-white">{filteredAverage["1.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">2.5+</div>
-                <div className="text-lg">{filteredAverage["2.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">2.5+</div>
+                <div className="text-lg text-white">{filteredAverage["2.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">3.5+</div>
-                <div className="text-lg">{filteredAverage["3.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">3.5+</div>
+                <div className="text-lg text-white">{filteredAverage["3.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">4.5+</div>
-                <div className="text-lg">{filteredAverage["4.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">4.5+</div>
+                <div className="text-lg text-white">{filteredAverage["4.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">5.5+</div>
-                <div className="text-lg">{filteredAverage["5.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">5.5+</div>
+                <div className="text-lg text-white">{filteredAverage["5.5+"]}%</div>
               </div>
             </div>
           </div>
@@ -110,40 +110,40 @@ export const FilteredLeagueAverage: React.FC<FilteredLeagueAverageProps> = ({
         {/* Mobile Cards */}
         <div className="block md:hidden space-y-4">
           <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-sm opacity-90">GP</div>
-              <div className="text-xl font-bold">{filteredAverage.GP}</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-sm text-white/90">GP</div>
+              <div className="text-xl font-bold text-white">{filteredAverage.GP}</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-sm opacity-90">Avg</div>
-              <div className="text-xl font-bold">{filteredAverage.Avg}</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-sm text-white/90">Avg</div>
+              <div className="text-xl font-bold text-white">{filteredAverage.Avg}</div>
             </div>
           </div>
           
           <div className="grid grid-cols-3 gap-2">
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">0.5+</div>
-              <div className="text-lg font-bold">{filteredAverage["0.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">0.5+</div>
+              <div className="text-lg font-bold text-white">{filteredAverage["0.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">1.5+</div>
-              <div className="text-lg font-bold">{filteredAverage["1.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">1.5+</div>
+              <div className="text-lg font-bold text-white">{filteredAverage["1.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">2.5+</div>
-              <div className="text-lg font-bold">{filteredAverage["2.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">2.5+</div>
+              <div className="text-lg font-bold text-white">{filteredAverage["2.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">3.5+</div>
-              <div className="text-lg font-bold">{filteredAverage["3.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">3.5+</div>
+              <div className="text-lg font-bold text-white">{filteredAverage["3.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">4.5+</div>
-              <div className="text-lg font-bold">{filteredAverage["4.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">4.5+</div>
+              <div className="text-lg font-bold text-white">{filteredAverage["4.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">5.5+</div>
-              <div className="text-lg font-bold">{filteredAverage["5.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">5.5+</div>
+              <div className="text-lg font-bold text-white">{filteredAverage["5.5+"]}%</div>
             </div>
           </div>
         </div>

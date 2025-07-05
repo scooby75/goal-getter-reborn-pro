@@ -104,8 +104,8 @@ export const LeagueAverageDisplay: React.FC<LeagueAverageDisplayProps> = ({
         </CardHeader>
         <CardContent>
           <div className="text-center">
-            <p className="text-lg">Os times selecionados pertencem a ligas diferentes.</p>
-            <p className="text-sm opacity-90 mt-2">
+            <p className="text-lg text-white">Os times selecionados pertencem a ligas diferentes.</p>
+            <p className="text-sm text-white/90 mt-2">
               Selecione times da mesma liga para ver a média da liga.
             </p>
           </div>
@@ -129,7 +129,7 @@ export const LeagueAverageDisplay: React.FC<LeagueAverageDisplayProps> = ({
   };
 
   return (
-    <Card className="shadow-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+    <Card className="shadow-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
       <CardHeader>
         <CardTitle className="text-center text-xl">
           🏆 {getTitle()}
@@ -138,39 +138,39 @@ export const LeagueAverageDisplay: React.FC<LeagueAverageDisplayProps> = ({
       <CardContent>
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
-          <div className="bg-white/10 rounded-lg p-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
             <div className="grid grid-cols-8 gap-4 text-center font-semibold">
               <div>
-                <div className="text-sm opacity-90 mb-1">0.5+</div>
-                <div className="text-lg">{leagueAverage["0.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">0.5+</div>
+                <div className="text-lg text-white">{leagueAverage["0.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">1.5+</div>
-                <div className="text-lg">{leagueAverage["1.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">1.5+</div>
+                <div className="text-lg text-white">{leagueAverage["1.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">2.5+</div>
-                <div className="text-lg">{leagueAverage["2.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">2.5+</div>
+                <div className="text-lg text-white">{leagueAverage["2.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">3.5+</div>
-                <div className="text-lg">{leagueAverage["3.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">3.5+</div>
+                <div className="text-lg text-white">{leagueAverage["3.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">4.5+</div>
-                <div className="text-lg">{leagueAverage["4.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">4.5+</div>
+                <div className="text-lg text-white">{leagueAverage["4.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">5.5+</div>
-                <div className="text-lg">{leagueAverage["5.5+"]}%</div>
+                <div className="text-sm text-white/90 mb-1">5.5+</div>
+                <div className="text-lg text-white">{leagueAverage["5.5+"]}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">BTS</div>
-                <div className="text-lg">{leagueAverage.BTS}%</div>
+                <div className="text-sm text-white/90 mb-1">BTS</div>
+                <div className="text-lg text-white">{leagueAverage.BTS}%</div>
               </div>
               <div>
-                <div className="text-sm opacity-90 mb-1">CS</div>
-                <div className="text-lg">{leagueAverage.CS}%</div>
+                <div className="text-sm text-white/90 mb-1">CS</div>
+                <div className="text-lg text-white">{leagueAverage.CS}%</div>
               </div>
             </div>
           </div>
@@ -179,40 +179,40 @@ export const LeagueAverageDisplay: React.FC<LeagueAverageDisplayProps> = ({
         {/* Mobile Cards */}
         <div className="block md:hidden space-y-4">
           <div className="grid grid-cols-3 gap-2">
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">0.5+</div>
-              <div className="text-lg font-bold">{leagueAverage["0.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">0.5+</div>
+              <div className="text-lg font-bold text-white">{leagueAverage["0.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">1.5+</div>
-              <div className="text-lg font-bold">{leagueAverage["1.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">1.5+</div>
+              <div className="text-lg font-bold text-white">{leagueAverage["1.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">2.5+</div>
-              <div className="text-lg font-bold">{leagueAverage["2.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">2.5+</div>
+              <div className="text-lg font-bold text-white">{leagueAverage["2.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">3.5+</div>
-              <div className="text-lg font-bold">{leagueAverage["3.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">3.5+</div>
+              <div className="text-lg font-bold text-white">{leagueAverage["3.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">4.5+</div>
-              <div className="text-lg font-bold">{leagueAverage["4.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">4.5+</div>
+              <div className="text-lg font-bold text-white">{leagueAverage["4.5+"]}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">5.5+</div>
-              <div className="text-lg font-bold">{leagueAverage["5.5+"]}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">5.5+</div>
+              <div className="text-lg font-bold text-white">{leagueAverage["5.5+"]}%</div>
             </div>
           </div>
           
           <div className="grid grid-cols-2 gap-2 mt-4">
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">BTS</div>
-              <div className="text-lg font-bold">{leagueAverage.BTS}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">BTS</div>
+              <div className="text-lg font-bold text-white">{leagueAverage.BTS}%</div>
             </div>
-            <div className="bg-white/20 rounded-lg p-3 text-center">
-              <div className="text-xs opacity-90">CS</div>
-              <div className="text-lg font-bold">{leagueAverage.CS}%</div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+              <div className="text-xs text-white/90">CS</div>
+              <div className="text-lg font-bold text-white">{leagueAverage.CS}%</div>
             </div>
           </div>
         </div>
