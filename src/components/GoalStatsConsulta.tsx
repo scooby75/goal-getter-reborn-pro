@@ -75,7 +75,7 @@ export const GoalStatsConsulta = () => {
     console.error('Error in GoalStatsConsulta:', error);
     return (
       <div className="flex items-center justify-center min-h-[300px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg w-full max-w-6xl mx-auto">
           <AlertCircle className="h-8 w-8 mx-auto mb-3 text-red-500" />
           <p className="text-red-600 font-semibold text-sm">Erro ao carregar dados: {error}</p>
         </div>
@@ -86,7 +86,7 @@ export const GoalStatsConsulta = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[300px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-6 rounded-lg shadow-lg">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-6 rounded-lg shadow-lg w-full max-w-6xl mx-auto">
           <Loader2 className="h-8 w-8 animate-spin mx-auto mb-3 text-blue-600" />
           <p className="text-blue-600 font-semibold text-sm">Carregando dados das equipes...</p>
         </div>
@@ -162,9 +162,9 @@ export const GoalStatsConsulta = () => {
   );
 
   return (
-    <div className="space-y-4 p-3 min-h-screen gradient-crypto">
+    <div className="space-y-4 p-3 min-h-screen gradient-crypto max-w-6xl mx-auto">
       {/* Team Selection - Updated with three columns and proper z-index */}
-      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg relative z-20">
+      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg relative z-20 w-full">
         <CardHeader className="pb-3">
           <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
             <Shield className="h-5 w-5 text-blue-600" />
@@ -201,7 +201,7 @@ export const GoalStatsConsulta = () => {
       </Card>
 
       {shouldShowDifferentLeaguesWarning() && (
-        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg z-10">
+        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg z-10 w-full">
           <CardHeader className="pb-3">
             <CardTitle className="text-center text-lg text-red-600 flex items-center justify-center gap-2">
               <AlertCircle className="h-5 w-5" />
@@ -227,7 +227,7 @@ export const GoalStatsConsulta = () => {
       )}
 
       {shouldShowLeagueAverage() && leagueAverageData && (
-        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg z-10">
+        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg z-10 w-full">
           <CardHeader className="pb-3">
             <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
               <TrendingUp className="h-5 w-5 text-blue-600" />
@@ -279,23 +279,22 @@ export const GoalStatsConsulta = () => {
 
       {/* League Average Display for Selected Teams */}
       {(selectedHomeTeam || selectedAwayTeam) && (
-        <LeagueAverageDisplay 
-          homeStats={selectedHomeStats}
-          awayStats={selectedAwayStats}
-          leagueAverages={goalStatsData.leagueAverages}
-          selectedHomeTeam={selectedHomeTeam}
-          selectedAwayTeam={selectedAwayTeam}
-        />
-      )}
-
-      {/* Filtered League Average */}
-      {(selectedHomeTeam || selectedAwayTeam) && (
-        <FilteredLeagueAverage 
-          homeStats={selectedHomeStats}
-          awayStats={selectedAwayStats}
-          selectedHomeTeam={selectedHomeTeam}
-          selectedAwayTeam={selectedAwayTeam}
-        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+          <LeagueAverageDisplay 
+            homeStats={selectedHomeStats}
+            awayStats={selectedAwayStats}
+            leagueAverages={goalStatsData.leagueAverages}
+            selectedHomeTeam={selectedHomeTeam}
+            selectedAwayTeam={selectedAwayTeam}
+          />
+          
+          <FilteredLeagueAverage 
+            homeStats={selectedHomeStats}
+            awayStats={selectedAwayStats}
+            selectedHomeTeam={selectedHomeTeam}
+            selectedAwayTeam={selectedAwayTeam}
+          />
+        </div>
       )}
 
       {/* Stats Display */}
@@ -320,9 +319,9 @@ export const GoalStatsConsulta = () => {
 
       {/* Model Selection and Scores */}
       {selectedHomeStats && selectedAwayStats && (
-        <div className="space-y-4">
+        <div className="space-y-4 w-full">
           {/* Model Toggle */}
-          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
+          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10 w-full">
             <CardHeader className="pb-3">
               <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
                 <Shield className="h-5 w-5 text-blue-600" />
