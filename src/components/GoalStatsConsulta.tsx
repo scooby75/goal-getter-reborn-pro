@@ -165,7 +165,7 @@ export const GoalStatsConsulta = () => {
                 onValueChange={setSelectedHomeTeam}
                 options={homeTeams}
                 placeholder="Selecione o time da casa"
-                label={`Time da Casa (${homeTeams.length} times)`}
+                label={`Time da Casa (${homeTeams.length} times)`} // Label completo
                 className="z-50"
                 dropdownClassName="z-50"
               />
@@ -177,7 +177,7 @@ export const GoalStatsConsulta = () => {
                 onValueChange={setSelectedAwayTeam}
                 options={awayTeams}
                 placeholder="Selecione o time visitante"
-                label={`Time Visitante (${awayTeams.length} times)`}
+                label={`Time Visitante (${awayTeams.length} times)`} // Label completo
                 className="z-50"
                 dropdownClassName="z-50"
               />
