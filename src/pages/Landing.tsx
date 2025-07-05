@@ -5,14 +5,13 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   const features = [
-    "Análise estatística completa de gols",
-    "Dados atualizados diariamente",
+    "Análise estatística completa de gols",    
     "Média de gols da Liga",
     "Média de gols do time",
     "Média de gols do confronto (h2h)",
     "Frequência de gols 1T e 2T",
     "Tempo médio 1º gol",
-    "Frequência que equipe marca o 1º",    
+    "Frequência que a equipe marca o 1º",    
     "Gols marcados e sofridos a cada 15min",
     "Placares mais prováveis",    
   ];
