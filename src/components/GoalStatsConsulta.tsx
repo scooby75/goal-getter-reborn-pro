@@ -66,10 +66,10 @@ export const GoalStatsConsulta = () => {
   if (error) {
     console.error('Error in GoalStatsConsulta:', error);
     return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-8 rounded-xl shadow-xl">
-          <AlertCircle className="h-12 w-12 mx-auto mb-4 text-red-500" />
-          <p className="text-red-600 font-semibold">Erro ao carregar dados: {error}</p>
+      <div className="flex items-center justify-center min-h-[300px]">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg">
+          <AlertCircle className="h-8 w-8 mx-auto mb-3 text-red-500" />
+          <p className="text-red-600 font-semibold text-sm">Erro ao carregar dados: {error}</p>
         </div>
       </div>
     );
@@ -77,10 +77,10 @@ export const GoalStatsConsulta = () => {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-8 rounded-xl shadow-xl">
-          <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4 text-blue-600" />
-          <p className="text-blue-600 font-semibold">Carregando dados das equipes...</p>
+      <div className="flex items-center justify-center min-h-[300px]">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-6 rounded-lg shadow-lg">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-3 text-blue-600" />
+          <p className="text-blue-600 font-semibold text-sm">Carregando dados das equipes...</p>
         </div>
       </div>
     );
@@ -151,17 +151,17 @@ export const GoalStatsConsulta = () => {
   );
 
   return (
-    <div className="space-y-6 p-6 min-h-screen gradient-crypto">
+    <div className="space-y-4 p-3 min-h-screen gradient-crypto">
       {/* Team Selection */}
-      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-xl">
-        <CardHeader>
-          <CardTitle className="text-center text-3xl text-gray-800 flex items-center justify-center gap-3">
-            <Shield className="h-8 w-8 text-blue-600" />
+      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
+        <CardHeader className="pb-3">
+          <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
+            <Shield className="h-5 w-5 text-blue-600" />
             Seleção de Equipes
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <CardContent className="pt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <SearchableSelect
               value={selectedHomeTeam}
               onValueChange={setSelectedHomeTeam}
@@ -182,24 +182,24 @@ export const GoalStatsConsulta = () => {
       </Card>
 
       {shouldShowDifferentLeaguesWarning() && (
-        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-center text-xl text-red-600 flex items-center justify-center gap-2">
-              <AlertCircle className="h-6 w-6" />
+        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-center text-lg text-red-600 flex items-center justify-center gap-2">
+              <AlertCircle className="h-5 w-5" />
               Ligas Diferentes Detectadas
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-0">
             <div className="text-center space-y-2">
-              <p className="text-gray-800 font-semibold">Os times selecionados pertencem a ligas diferentes.</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
-                  <p className="text-gray-600 text-sm font-medium">Time da Casa</p>
-                  <p className="text-gray-800 font-bold">{homeTeamLeague}</p>
+              <p className="text-gray-800 font-semibold text-sm">Os times selecionados pertencem a ligas diferentes.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                <div className="bg-gray-50 border border-gray-200 p-3 rounded-lg">
+                  <p className="text-gray-600 text-xs font-medium">Time da Casa</p>
+                  <p className="text-gray-800 font-bold text-sm">{homeTeamLeague}</p>
                 </div>
-                <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
-                  <p className="text-gray-600 text-sm font-medium">Time Visitante</p>
-                  <p className="text-gray-800 font-bold">{awayTeamLeague}</p>
+                <div className="bg-gray-50 border border-gray-200 p-3 rounded-lg">
+                  <p className="text-gray-600 text-xs font-medium">Time Visitante</p>
+                  <p className="text-gray-800 font-bold text-sm">{awayTeamLeague}</p>
                 </div>
               </div>
             </div>
@@ -208,21 +208,21 @@ export const GoalStatsConsulta = () => {
       )}
 
       {shouldShowLeagueAverage() && leagueAverageData && (
-        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-center text-2xl text-gray-800 flex items-center justify-center gap-3">
-              <TrendingUp className="h-7 w-7 text-blue-600" />
+        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
+              <TrendingUp className="h-5 w-5 text-blue-600" />
               Média da Liga: {leagueAverageData.League_Name}
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-0">
             <div className="hidden md:block overflow-x-auto">
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                <div className="grid grid-cols-8 gap-4 text-center">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="grid grid-cols-8 gap-3 text-center">
                   {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+', 'BTS', 'CS'].map((key, index) => (
-                    <div key={key} className="space-y-2">
-                      <div className="text-sm text-gray-600 font-medium">{key}</div>
-                      <div className="text-2xl font-bold text-gray-800">
+                    <div key={key} className="space-y-1">
+                      <div className="text-xs text-gray-600 font-medium">{key}</div>
+                      <div className="text-lg font-bold text-gray-800">
                         {leagueAverageData[key as keyof typeof leagueAverageData]}%
                       </div>
                     </div>
@@ -231,23 +231,23 @@ export const GoalStatsConsulta = () => {
               </div>
             </div>
             
-            <div className="block md:hidden space-y-4">
-              <div className="grid grid-cols-3 gap-3">
+            <div className="block md:hidden space-y-3">
+              <div className="grid grid-cols-3 gap-2">
                 {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+'].map((key) => (
-                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-center">
                     <div className="text-xs text-gray-600 font-medium">{key}</div>
-                    <div className="text-lg font-bold text-gray-800">
+                    <div className="text-sm font-bold text-gray-800">
                       {leagueAverageData[key as keyof typeof leagueAverageData]}%
                     </div>
                   </div>
                 ))}
               </div>
               
-              <div className="grid grid-cols-2 gap-3 mt-4">
+              <div className="grid grid-cols-2 gap-2 mt-3">
                 {['BTS', 'CS'].map((key) => (
-                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                  <div key={key} className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-center">
                     <div className="text-xs text-gray-600 font-medium">{key}</div>
-                    <div className="text-lg font-bold text-gray-800">
+                    <div className="text-sm font-bold text-gray-800">
                       {leagueAverageData[key as keyof typeof leagueAverageData]}%
                     </div>
                   </div>
@@ -301,38 +301,38 @@ export const GoalStatsConsulta = () => {
 
       {/* Model Selection and Scores */}
       {selectedHomeStats && selectedAwayStats && (
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Model Toggle */}
-          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-center text-2xl text-gray-800 flex items-center justify-center gap-3">
-                <Shield className="h-6 w-6 text-blue-600" />
+          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
+                <Shield className="h-5 w-5 text-blue-600" />
                 Modelo de Previsão Avançado
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex items-center justify-center gap-6 mb-4">
-                <span className={`text-lg font-semibold ${!useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
+            <CardContent className="pt-0">
+              <div className="flex items-center justify-center gap-4 mb-3">
+                <span className={`text-sm font-semibold ${!useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
                   Poisson
                 </span>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setUseDixonColes(!useDixonColes)}
-                  className="p-2 hover:bg-gray-100"
+                  className="p-1 hover:bg-gray-100"
                 >
                   {useDixonColes ? (
-                    <ToggleRight className="h-10 w-10 text-blue-600" />
+                    <ToggleRight className="h-8 w-8 text-blue-600" />
                   ) : (
-                    <ToggleLeft className="h-10 w-10 text-gray-400" />
+                    <ToggleLeft className="h-8 w-8 text-gray-400" />
                   )}
                 </Button>
-                <span className={`text-lg font-semibold ${useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
+                <span className={`text-sm font-semibold ${useDixonColes ? 'text-blue-600' : 'text-gray-400'}`}>
                   Avançado
                 </span>
               </div>
-              <div className="text-center bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                <p className="text-sm text-gray-700">
+              <div className="text-center bg-blue-50 border border-blue-200 p-3 rounded-lg">
+                <p className="text-xs text-gray-700">
                   {useDixonColes 
                     ? 'Modelo com inteligência artificial e correções para placares baixos + vantagem de casa'
                     : 'Modelo clássico baseado na distribuição estatística de Poisson'

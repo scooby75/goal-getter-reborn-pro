@@ -57,61 +57,61 @@ const Landing = () => {
   return (
     <div className="min-h-screen gradient-crypto">
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-6">
-            <div className="p-4 rounded-2xl glass-effect crypto-shadow mr-4">
-              <BarChart3 className="h-12 w-12 text-crypto-light" />
+      <div className="container mx-auto px-3 py-8">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-4">
+            <div className="p-3 rounded-xl glass-effect crypto-shadow mr-3">
+              <BarChart3 className="h-8 w-8 text-crypto-light" />
             </div>
-            <h1 className="text-6xl font-bold text-white">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
               Goals Stats
             </h1>
           </div>
-          <p className="text-xl text-crypto-light mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-crypto-light mb-6 max-w-2xl mx-auto leading-relaxed px-4">
             A plataforma mais avançada para análise estatística de gols. 
             Tecnologia de ponta para decisões estratégicas precisas e confiáveis.
           </p>
-          <div className="flex justify-center gap-6">
-            <Button asChild size="lg" className="bg-crypto-steel hover:bg-crypto-blue text-white px-8 py-3 rounded-xl crypto-shadow transition-all duration-300 hover:scale-105">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
+            <Button asChild size="default" className="bg-crypto-steel hover:bg-crypto-blue text-white px-6 py-2 rounded-lg crypto-shadow transition-all duration-300 hover:scale-105">
               <Link to="/auth">
-                <Shield className="mr-2 h-5 w-5" />
+                <Shield className="mr-2 h-4 w-4" />
                 Acessar Plataforma
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-crypto-light text-crypto-light hover:bg-crypto-light hover:text-crypto-dark px-8 py-3 rounded-xl transition-all duration-300">
-              <Target className="mr-2 h-5 w-5" />
+            <Button variant="outline" size="default" className="border-crypto-light text-crypto-light hover:bg-crypto-light hover:text-crypto-dark px-6 py-2 rounded-lg transition-all duration-300">
+              <Target className="mr-2 h-4 w-4" />
               Ver Demonstração
             </Button>
           </div>
         </div>
 
         {/* Security Badge */}
-        <div className="flex justify-center mb-16">
-          <div className="glass-effect rounded-2xl p-6 crypto-shadow">
-            <div className="flex items-center gap-4 text-crypto-light">
-              <Lock className="h-6 w-6" />
-              <span className="text-sm font-semibold">Segurança Bancária • Dados Criptografados • 99.9% Uptime</span>
-              <Shield className="h-6 w-6" />
+        <div className="flex justify-center mb-12">
+          <div className="glass-effect rounded-xl p-4 crypto-shadow">
+            <div className="flex items-center gap-3 text-crypto-light text-xs md:text-sm">
+              <Lock className="h-4 w-4" />
+              <span className="font-semibold">Segurança Bancária • Dados Criptografados • 99.9% Uptime</span>
+              <Shield className="h-4 w-4" />
             </div>
           </div>
         </div>
 
         {/* Features Section */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center text-white mb-4">
+        <div className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-3">
             Recursos Avançados
           </h2>
-          <p className="text-crypto-light text-center mb-12 text-lg">
+          <p className="text-crypto-light text-center mb-8 text-sm md:text-base">
             Ferramentas profissionais para análise estatística de alto nível
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto px-4">
             {features.map((feature, index) => (
-              <div key={index} className="glass-effect p-6 rounded-xl crypto-shadow transition-all duration-300 hover:scale-105">
-                <div className="flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-crypto-steel/20">
-                    <Check className="text-crypto-light h-5 w-5" />
+              <div key={index} className="glass-effect p-4 rounded-lg crypto-shadow transition-all duration-300 hover:scale-105">
+                <div className="flex items-center gap-3">
+                  <div className="p-1.5 rounded-md bg-crypto-steel/20">
+                    <Check className="text-crypto-light h-4 w-4" />
                   </div>
-                  <span className="text-white font-medium">{feature}</span>
+                  <span className="text-white font-medium text-sm">{feature}</span>
                 </div>
               </div>
             ))}
@@ -119,52 +119,52 @@ const Landing = () => {
         </div>
 
         {/* Pricing Section */}
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-center text-white mb-4">
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-3">
             Planos Empresariais
           </h2>
-          <p className="text-crypto-light text-center mb-12 text-lg">
+          <p className="text-crypto-light text-center mb-8 text-sm md:text-base">
             Soluções escaláveis para diferentes necessidades
           </p>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
             {plans.map((plan, index) => (
               <Card 
                 key={index} 
-                className={`relative glass-effect border-crypto-steel/30 crypto-shadow transition-all duration-300 hover:scale-105 ${
-                  plan.popular ? 'ring-2 ring-crypto-steel shadow-2xl' : ''
+                className={`relative bg-white/95 backdrop-blur-sm border-gray-200 shadow-xl transition-all duration-300 hover:scale-105 ${
+                  plan.popular ? 'ring-2 ring-blue-500 shadow-2xl' : ''
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-crypto-steel to-crypto-blue text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-                      <TrendingUp className="inline h-4 w-4 mr-1" />
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg">
+                      <TrendingUp className="inline h-3 w-3 mr-1" />
                       Mais Escolhido
                     </div>
                   </div>
                 )}
-                <CardHeader className="text-center pb-8 pt-8">
-                  <CardTitle className="text-2xl text-white font-bold">{plan.name}</CardTitle>
-                  <div className="mt-6">
-                    <span className="text-5xl font-bold text-crypto-light">{plan.price}</span>
-                    <span className="text-crypto-light/80 ml-2">/{plan.period}</span>
+                <CardHeader className="text-center pb-6 pt-6">
+                  <CardTitle className="text-xl text-gray-800 font-bold">{plan.name}</CardTitle>
+                  <div className="mt-4">
+                    <span className="text-3xl md:text-4xl font-bold text-gray-800">{plan.price}</span>
+                    <span className="text-gray-600 ml-2 text-sm">/{plan.period}</span>
                   </div>
                 </CardHeader>
-                <CardContent className="pb-8">
-                  <ul className="space-y-4 mb-8">
+                <CardContent className="pb-6">
+                  <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3">
-                        <div className="p-1 rounded-full bg-crypto-steel/20">
-                          <Check className="text-crypto-light h-4 w-4" />
+                      <li key={featureIndex} className="flex items-center gap-2">
+                        <div className="p-0.5 rounded-full bg-green-100">
+                          <Check className="text-green-600 h-3 w-3" />
                         </div>
-                        <span className="text-white/90 font-medium">{feature}</span>
+                        <span className="text-gray-700 font-medium text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
-                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    className={`w-full py-2 rounded-lg font-semibold transition-all duration-300 text-sm ${
                       plan.popular 
-                        ? 'bg-gradient-to-r from-crypto-steel to-crypto-blue text-white hover:shadow-xl hover:scale-105' 
-                        : 'glass-effect border border-crypto-steel/50 text-crypto-light hover:bg-crypto-steel/20'
+                        ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:shadow-lg hover:scale-105' 
+                        : 'bg-gray-100 border border-gray-300 text-gray-700 hover:bg-gray-200'
                     }`}
                     asChild
                   >
@@ -179,18 +179,18 @@ const Landing = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center glass-effect rounded-3xl p-12 crypto-shadow">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-white mb-6">
+        <div className="text-center glass-effect rounded-2xl p-8 crypto-shadow">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Comece Sua Jornada Analítica
             </h2>
-            <p className="text-crypto-light mb-8 text-lg leading-relaxed">
+            <p className="text-crypto-light mb-6 text-sm md:text-base leading-relaxed">
               Junte-se a centenas de analistas profissionais que confiam no Goals Stats 
               para estratégias vencedoras no mercado esportivo.
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-crypto-steel to-crypto-blue text-white px-10 py-4 rounded-xl font-bold text-lg crypto-shadow transition-all duration-300 hover:scale-105" asChild>
+            <Button size="default" className="bg-gradient-to-r from-crypto-steel to-crypto-blue text-white px-8 py-3 rounded-lg font-bold crypto-shadow transition-all duration-300 hover:scale-105" asChild>
               <Link to="/auth">
-                <Shield className="mr-3 h-6 w-6" />
+                <Shield className="mr-2 h-5 w-5" />
                 Acesso Seguro Imediato
               </Link>
             </Button>
