@@ -25,7 +25,8 @@ const Landing = () => {
         "Acesso completo às estatísticas",
         "Consultas ilimitadas",
         "Suporte por email"
-      ]
+      ],
+      url: "https://buy.stripe.com/5kQdR86593wOb8C5r8eZ206"
     },
     {
       name: "Premium",
@@ -36,7 +37,8 @@ const Landing = () => {
         "Acesso completo às estatísticas",
         "Consultas ilimitadas",
         "Suporte prioritário"
-      ]
+      ],
+      url: "https://buy.stripe.com/5kQ7sK0KP9Vc2C6g5MeZ207"
     },
     {
       name: "Anual",
@@ -46,7 +48,8 @@ const Landing = () => {
         "Tudo do plano Premium",        
         "Economia de 40%",        
         "Suporte prioritário Telegram",        
-      ]
+      ],
+      url: "https://buy.stripe.com/cNi28qgJN5EWccGg5MeZ208"
     }
   ];
 
@@ -126,7 +129,9 @@ const Landing = () => {
                     variant={plan.popular ? "default" : "outline"}
                     asChild
                   >
-                    <Link to="/auth">Assinar</Link>
+                    <a href={plan.url} target="_blank" rel="noopener noreferrer">
+                      Assinar
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
