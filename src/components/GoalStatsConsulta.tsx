@@ -1,13 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, AlertCircle } from 'lucide-react';
+import { Loader2, AlertCircle, ToggleLeft, ToggleRight } from 'lucide-react';
 import { useGoalStats } from '@/hooks/useGoalStats';
 import { StatsDisplay } from './StatsDisplay';
 import { FilteredLeagueAverage } from './FilteredLeagueAverage';
 import { LeagueAverageDisplay } from './LeagueAverageDisplay';
 import { SearchableSelect } from './SearchableSelect';
 import { ProbableScores } from './ProbableScores';
+import { DixonColesScores } from './DixonColesScores';
 import { GoalMomentCard } from './GoalMomentCard';
+import { Button } from '@/components/ui/button';
 
 // Chave para armazenamento no localStorage
 const STORAGE_KEY = 'goalStatsFilters';
@@ -31,6 +34,15 @@ export const GoalStatsConsulta = () => {
     }
     return '';
   });
+
+  // Estado para alternar entre modelos
+  const [useDixonColes, setUseDixonColes] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const savedPreference = localStorage.getItem('scorePredictionModel');
+      return savedPreference === 'dixon-coles';
+    }
+    return true; // Dixon-Coles por padrão
+  });
   
   const { goalStatsData, isLoading, error } = useGoalStats();
 
@@ -43,6 +55,13 @@ export const GoalStatsConsulta = () => {
       }));
     }
   }, [selectedHomeTeam, selectedAwayTeam]);
+
+  // Salva preferência do modelo
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('scorePredictionModel', useDixonColes ? 'dixon-coles' : 'poisson');
+    }
+  }, [useDixonColes]);
 
   if (error) {
     console.error('Error in GoalStatsConsulta:', error);
@@ -313,12 +332,59 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Probable Scores */}
+      {/* Model Selection and Scores */}
       {selectedHomeStats && selectedAwayStats && (
-        <ProbableScores 
-          homeStats={selectedHomeStats} 
-          awayStats={selectedAwayStats} 
-        />
+        <div className="space-y-4">
+          {/* Model Toggle */}
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-center text-xl text-gray-800">
+                Modelo de Previsão
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-center gap-4">
+                <span className={`text-sm font-medium ${!useDixonColes ? 'text-blue-600' : 'text-gray-500'}`}>
+                  Poisson Simples
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setUseDixonColes(!useDixonColes)}
+                  className="p-1"
+                >
+                  {useDixonColes ? (
+                    <ToggleRight className="h-8 w-8 text-blue-600" />
+                  ) : (
+                    <ToggleLeft className="h-8 w-8 text-gray-400" />
+                  )}
+                </Button>
+                <span className={`text-sm font-medium ${useDixonColes ? 'text-blue-600' : 'text-gray-500'}`}>
+                  Dixon-Coles
+                </span>
+              </div>
+              <p className="text-xs text-gray-500 text-center mt-2">
+                {useDixonColes 
+                  ? 'Modelo avançado com correções para placares baixos e vantagem de casa'
+                  : 'Modelo clássico baseado na distribuição de Poisson'
+                }
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Score Predictions */}
+          {useDixonColes ? (
+            <DixonColesScores 
+              homeStats={selectedHomeStats} 
+              awayStats={selectedAwayStats} 
+            />
+          ) : (
+            <ProbableScores 
+              homeStats={selectedHomeStats} 
+              awayStats={selectedAwayStats} 
+            />
+          )}
+        </div>
       )}
     </div>
   );
