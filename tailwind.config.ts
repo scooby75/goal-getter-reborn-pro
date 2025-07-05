@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// New crypto/banking color scheme
+				crypto: {
+					dark: '#0D1B2A',      // Darker navy blue
+					navy: '#1B263B',      // Navy blue  
+					blue: '#415A77',      // Medium blue
+					steel: '#778DA9',     // Steel blue
+					light: '#E0E1DD'      // Light gray
 				}
 			},
 			borderRadius: {
