@@ -49,7 +49,7 @@ export const DixonColesScores: React.FC<DixonColesScoresProps> = ({
           <div className="mt-4 text-center bg-blue-50 border border-blue-200 p-3 rounded-lg">
             <p className="text-xs text-gray-700 flex items-center justify-center gap-2">
               <Shield className="h-3 w-3 text-blue-600" />
-              Calculado com modelo avançado Dixon-Coles com correções para placares baixos e vantagem de casa
+              Calculado com modelo avançado com correções para placares baixos e vantagem de casa
             </p>
           </div>
         </CardContent>
