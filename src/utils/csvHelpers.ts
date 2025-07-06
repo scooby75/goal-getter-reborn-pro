@@ -5,7 +5,7 @@ export const addCacheBusting = (url: string): string => {
   return `${url}${separator}_t=${timestamp}`;
 };
 
-// Lista de URLs RAW do GitHub confiáveis
+// Lista de URLs RAW do GitHub confiáveis.
 const RAW_GITHUB_URLS: string[] = [];
 
 // Função que tenta buscar o CSV com múltiplas URLs e tentativas
