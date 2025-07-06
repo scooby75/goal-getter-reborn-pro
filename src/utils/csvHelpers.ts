@@ -1,17 +1,20 @@
-// Adiciona parâmetro anti-cache à URL
+// Gera uma URL com parâmetro anti-cache (_t=timestamp)
 export const addCacheBusting = (url: string): string => {
   const timestamp = Date.now();
   const separator = url.includes('?') ? '&' : '?';
   return `${url}${separator}_t=${timestamp}`;
 };
 
-// URLs confiáveis do GitHub RAW
+// Lista de URLs RAW do GitHub confiáveis
 const RAW_GITHUB_URLS = [
   'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/all_leagues_results.csv',
 ];
 
-// Busca CSV com tentativas e tratamento de erro robusto
-export const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<string> => {
+// Função que tenta buscar o CSV com múltiplas URLs e tentativas
+export const fetchCSVWithRetry = async (
+  url: string,
+  maxRetries = 3
+): Promise<string> => {
   console.log('=== FETCH CSV WITH RETRY ===');
   console.log('Original URL:', url);
 
@@ -38,7 +41,7 @@ export const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<st
           credentials: 'omit',
         });
 
-        // Detecta bloqueios por CORS
+        // Verifica resposta opaca (possível bloqueio CORS)
         if (response.type === 'opaque') {
           console.warn('⚠️ Opaque response (CORS blocked?)');
           throw new Error('Opaque response received');
@@ -73,7 +76,7 @@ export const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<st
     }
   }
 
-  // Falha final após todas as tentativas
+  // Todas as tentativas falharam
   const finalError = new Error(
     `Failed to fetch CSV from all attempted URLs.\nTried:\n${urlVariations.join('\n')}`
   );
