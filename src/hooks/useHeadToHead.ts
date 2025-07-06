@@ -18,121 +18,138 @@ export interface HeadToHeadMatch {
 
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   try {
-    console.log('Parsing Head to Head CSV data...');
+    console.log('=== PARSING HEAD TO HEAD CSV ===');
     console.log('Raw CSV text length:', csvText.length);
-    console.log('First 500 characters:', csvText.substring(0, 500));
+    console.log('First 1000 characters:', csvText.substring(0, 1000));
     
     if (!csvText || typeof csvText !== 'string') {
       throw new Error('Invalid CSV data: empty or not a string');
     }
 
-    const lines = csvText.trim().split('\n');
+    const lines = csvText.trim().split(/\r?\n/);
+    console.log('Total lines found:', lines.length);
     
     if (lines.length < 2) {
       throw new Error('CSV file has no data rows');
     }
 
-    // Parse headers more carefully, handling potential quotes and commas
+    // Parse headers
     const headerLine = lines[0];
-    console.log('Header line:', headerLine);
+    console.log('Raw header line:', headerLine);
     
-    // Split by comma but respect quoted values
-    const headers = headerLine.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || headerLine.split(',');
-    const cleanHeaders = headers.map(h => h.trim().replace(/^"|"$/g, ''));
+    // Handle different CSV formats (comma or tab separated)
+    const separator = headerLine.includes('\t') ? '\t' : ',';
+    console.log('Using separator:', separator === '\t' ? 'TAB' : 'COMMA');
     
-    console.log('Parsed headers:', cleanHeaders);
+    const headers = headerLine.split(separator).map(h => h.trim().replace(/^"|"$/g, ''));
+    console.log('Parsed headers:', headers);
+    console.log('Headers count:', headers.length);
     
-    // Check for required headers with more flexible matching
-    const findHeader = (searchTerm: string) => {
-      return cleanHeaders.find(h => 
-        h.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        h.toLowerCase().replace(/[_\s]/g, '') === searchTerm.toLowerCase().replace(/[_\s]/g, '')
-      );
+    // Find key headers with flexible matching
+    const findHeaderIndex = (searchTerms: string[]) => {
+      for (const term of searchTerms) {
+        const index = headers.findIndex(h => 
+          h.toLowerCase().includes(term.toLowerCase()) ||
+          h.toLowerCase().replace(/[_\s]/g, '') === term.toLowerCase().replace(/[_\s]/g, '')
+        );
+        if (index !== -1) return index;
+      }
+      return -1;
     };
 
-    const dateHeader = findHeader('date') || findHeader('data');
-    const homeTeamHeader = findHeader('home') || findHeader('casa') || findHeader('team_home');
-    const awayTeamHeader = findHeader('away') || findHeader('visitante') || findHeader('team_away');
-    const scoreHeader = findHeader('score') || findHeader('placar') || findHeader('resultado');
+    const dateIndex = findHeaderIndex(['date', 'data']);
+    const homeTeamIndex = findHeaderIndex(['team_home', 'home', 'casa']);
+    const awayTeamIndex = findHeaderIndex(['team_away', 'away', 'visitante']);
+    const scoreIndex = findHeaderIndex(['score', 'placar', 'resultado']);
+    const leagueIndex = findHeaderIndex(['league', 'liga']);
 
-    console.log('Found headers:', { dateHeader, homeTeamHeader, awayTeamHeader, scoreHeader });
+    console.log('Header indices found:', {
+      date: dateIndex,
+      home: homeTeamIndex,
+      away: awayTeamIndex,
+      score: scoreIndex,
+      league: leagueIndex
+    });
 
-    if (!dateHeader || !homeTeamHeader || !awayTeamHeader || !scoreHeader) {
-      console.error('Missing required headers. Available headers:', cleanHeaders);
-      throw new Error(`Missing required headers. Found: ${cleanHeaders.join(', ')}`);
+    if (dateIndex === -1 || homeTeamIndex === -1 || awayTeamIndex === -1 || scoreIndex === -1) {
+      console.error('Missing required headers. Available headers:', headers);
+      throw new Error(`Missing required headers. Found: ${headers.join(', ')}`);
     }
+
+    console.log('Starting to parse data rows...');
+    let validMatches = 0;
+    let invalidMatches = 0;
 
     const parsedData = lines.slice(1).map((line, index) => {
       try {
-        // Parse line more carefully, handling quotes and commas
-        const values = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || line.split(',');
-        const cleanValues = values.map(v => v.trim().replace(/^"|"$/g, ''));
+        const values = line.split(separator).map(v => v.trim().replace(/^"|"$/g, ''));
         
-        if (cleanValues.length < cleanHeaders.length - 2) { // Allow some tolerance
-          console.warn(`Line ${index + 2} has fewer values than expected:`, cleanValues.length, 'vs', cleanHeaders.length);
-        }
-
-        const match: Partial<HeadToHeadMatch> = {};
-        
-        cleanHeaders.forEach((header, headerIndex) => {
-          const value = cleanValues[headerIndex]?.trim() || '';
-          
-          // Map headers to match interface
-          if (header === dateHeader) {
-            match.Date = value;
-          } else if (header === homeTeamHeader) {
-            match.Team_Home = value;
-          } else if (header === awayTeamHeader) {
-            match.Team_Away = value;
-          } else if (header === scoreHeader) {
-            match.Score = value;
-          } else if (header.toLowerCase().includes('league') || header.toLowerCase().includes('liga')) {
-            match.League = value;
-          } else if (header.toLowerCase().includes('ht') || header.toLowerCase().includes('intervalo')) {
-            match.HT_Score = value;
-          } else if (header.toLowerCase().includes('over') && header.includes('2.5')) {
-            match.Over_2_5 = value;
-          } else if (header.toLowerCase().includes('total') && header.toLowerCase().includes('goal')) {
-            match.Total_Goals = value;
-          } else if (header.toLowerCase().includes('both') || header.toLowerCase().includes('ambos')) {
-            match.Both_Teams_Scored = value;
-          } else if (header.toLowerCase().includes('status')) {
-            match.Status = value;
-          } else if (header.toLowerCase().includes('original') && header.toLowerCase().includes('date')) {
-            match.Original_Date = value;
-          }
-        });
-        
-        // Validate required fields
-        if (!match.Date || !match.Team_Home || !match.Team_Away || !match.Score) {
-          console.warn(`Invalid match data at line ${index + 2}:`, match);
+        if (values.length < Math.max(dateIndex, homeTeamIndex, awayTeamIndex, scoreIndex) + 1) {
+          console.warn(`Line ${index + 2} has insufficient values:`, values.length, 'vs required indices');
+          invalidMatches++;
           return null;
         }
 
-        // Set default values for optional fields
-        match.League = match.League || 'Unknown';
-        match.HT_Score = match.HT_Score || '0-0';
-        match.Over_2_5 = match.Over_2_5 || '';
-        match.Total_Goals = match.Total_Goals || '';
-        match.Both_Teams_Scored = match.Both_Teams_Scored || '';
-        match.Status = match.Status || 'FT';
-        match.Original_Date = match.Original_Date || match.Date;
+        const match: HeadToHeadMatch = {
+          League: leagueIndex !== -1 ? (values[leagueIndex] || 'Unknown') : 'Unknown',
+          Date: values[dateIndex] || '',
+          Original_Date: values[dateIndex] || '',
+          Team_Home: values[homeTeamIndex] || '',
+          Team_Away: values[awayTeamIndex] || '',
+          HT_Score: '0-0',
+          Score: values[scoreIndex] || '',
+          Over_2_5: '',
+          Total_Goals: '',
+          Both_Teams_Scored: '',
+          Status: 'FT'
+        };
         
-        return match as HeadToHeadMatch;
+        // Log specific matches for debugging
+        if (match.Team_Home.toLowerCase().includes('flamengo') || match.Team_Away.toLowerCase().includes('flamengo') ||
+            match.Team_Home.toLowerCase().includes('bahia') || match.Team_Away.toLowerCase().includes('bahia')) {
+          console.log(`FOUND FLAMENGO/BAHIA MATCH: ${match.Team_Home} vs ${match.Team_Away} (${match.Date}) - Score: ${match.Score}`);
+        }
+        
+        // Validate required fields
+        if (!match.Date || !match.Team_Home || !match.Team_Away || !match.Score) {
+          console.warn(`Invalid match data at line ${index + 2}:`, {
+            date: match.Date,
+            home: match.Team_Home,
+            away: match.Team_Away,
+            score: match.Score
+          });
+          invalidMatches++;
+          return null;
+        }
+
+        validMatches++;
+        return match;
       } catch (error) {
         console.error(`Error parsing line ${index + 2}:`, error, 'Line content:', line);
+        invalidMatches++;
         return null;
       }
     }).filter((match): match is HeadToHeadMatch => match !== null);
 
-    console.log(`Successfully parsed ${parsedData.length} head to head matches`);
+    console.log(`=== PARSING COMPLETE ===`);
+    console.log(`Valid matches: ${validMatches}`);
+    console.log(`Invalid matches: ${invalidMatches}`);
+    console.log(`Total parsed matches: ${parsedData.length}`);
+    
     if (parsedData.length > 0) {
-      console.log('Sample matches:', parsedData.slice(0, 3));
+      console.log('Sample matches:', parsedData.slice(0, 5));
+      
+      // Check for Flamengo vs Bahia specifically
+      const flaBahiaMatches = parsedData.filter(match => 
+        (match.Team_Home.toLowerCase().includes('flamengo') && match.Team_Away.toLowerCase().includes('bahia')) ||
+        (match.Team_Home.toLowerCase().includes('bahia') && match.Team_Away.toLowerCase().includes('flamengo'))
+      );
+      console.log(`Flamengo vs Bahia matches found: ${flaBahiaMatches.length}`, flaBahiaMatches);
     }
     
     return parsedData;
   } catch (error) {
-    console.error('Error parsing head to head CSV:', error);
+    console.error('=== CSV PARSING ERROR ===', error);
     throw error;
   }
 };
@@ -142,34 +159,61 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
     queryKey: ['headToHead', team1, team2],
     queryFn: async () => {
       try {
-        console.log('Fetching head to head data...');
+        console.log('=== STARTING HEAD TO HEAD FETCH ===');
+        console.log('Requested teams:', { team1, team2 });
+        
         const csvText = await fetchCSVWithRetry(
           'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/public/Data/all_leagues_results.csv'
         );
         
-        console.log('CSV data fetched, parsing...');
+        console.log('CSV data fetched successfully, starting parse...');
         const allMatches = parseHeadToHeadCSV(csvText);
         
-        console.log(`Total matches parsed: ${allMatches.length}`);
+        console.log(`=== FILTERING MATCHES ===`);
+        console.log(`Total matches available: ${allMatches.length}`);
         
         // Filter by specific teams if provided
         if (team1 && team2) {
-          const filteredMatches = allMatches.filter(match => 
-            (match.Team_Home === team1 && match.Team_Away === team2) ||
-            (match.Team_Home === team2 && match.Team_Away === team1)
-          );
-          console.log(`Filtered matches for ${team1} vs ${team2}: ${filteredMatches.length}`);
-          return filteredMatches;
+          console.log(`Filtering for direct matches between "${team1}" and "${team2}"`);
+          
+          const filteredMatches = allMatches.filter(match => {
+            const homeTeam = match.Team_Home.toLowerCase().trim();
+            const awayTeam = match.Team_Away.toLowerCase().trim();
+            const searchTeam1 = team1.toLowerCase().trim();
+            const searchTeam2 = team2.toLowerCase().trim();
+            
+            const isDirectMatch = (
+              (homeTeam === searchTeam1 && awayTeam === searchTeam2) ||
+              (homeTeam === searchTeam2 && awayTeam === searchTeam1) ||
+              (homeTeam.includes(searchTeam1) && awayTeam.includes(searchTeam2)) ||
+              (homeTeam.includes(searchTeam2) && awayTeam.includes(searchTeam1))
+            );
+            
+            if (isDirectMatch) {
+              console.log(`MATCH FOUND: ${match.Team_Home} vs ${match.Team_Away} (${match.Date})`);
+            }
+            
+            return isDirectMatch;
+          });
+          
+          console.log(`Direct matches found: ${filteredMatches.length}`);
+          return filteredMatches.sort((a, b) => {
+            try {
+              return new Date(b.Date).getTime() - new Date(a.Date).getTime();
+            } catch {
+              return 0;
+            }
+          });
         }
         
         return allMatches;
       } catch (error) {
-        console.error('Failed to fetch or parse head to head data:', error);
+        console.error('=== HEAD TO HEAD FETCH ERROR ===', error);
         throw new Error(`Failed to load match data: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     },
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    retry: 2,
-    enabled: true, // Always enable the query
+    staleTime: 10 * 60 * 1000, // 10 minutes
+    retry: 1, // Reduce retries since we handle them in fetchCSVWithRetry
+    enabled: true,
   });
 };
