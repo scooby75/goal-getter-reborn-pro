@@ -205,10 +205,10 @@ const Landing = () => {
                 className="bg-gradient-to-r from-crypto-steel to-crypto-blue hover:from-crypto-blue hover:to-crypto-steel text-white px-10 py-4 text-lg rounded-xl font-extrabold crypto-shadow-lg transition-all duration-500 hover:scale-110"
                 asChild
               >
-                <Link to="/auth">
+                <Link to="https://billing.stripe.com/p/login/cNibJ03X11oG3Ga9HoeZ200">
                   <Shield className="mr-3 h-5 w-5" />
                   QUERO MEU ACESSO IMEDIATO →
-                <Link to="https://billing.stripe.com/p/login/cNibJ03X11oG3Ga9HoeZ200">
+                </Link>
               </Button>
             </div>
 
