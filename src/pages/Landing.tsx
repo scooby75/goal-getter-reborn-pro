@@ -19,7 +19,7 @@ const Landing = () => {
 
   const plans = [
     {
-      name: "Básico",
+      name: "Mensal",
       price: "R$ 19,90",
       period: "mensal",
       features: [
@@ -30,14 +30,14 @@ const Landing = () => {
       url: "https://buy.stripe.com/5kQdR86593wOb8C5r8eZ206"
     },
     {
-      name: "Premium",
+      name: "Semestral",
       price: "R$ 99,90",
       period: "semestral",
       popular: true,
       features: [
         "Acesso completo às estatísticas",
         "Consultas ilimitadas",
-        "Suporte prioritário"
+        "Suporte prioritário por e-mail"
       ],
       url: "https://buy.stripe.com/5kQ7sK0KP9Vc2C6g5MeZ207"
     },
@@ -111,7 +111,7 @@ const Landing = () => {
         {/* Pricing Section */}
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-3">
-            Planos Empresariais
+            Escolha seu plano
           </h2>
           <p className="text-crypto-light text-center mb-8 text-sm md:text-base">
             Soluções escaláveis para diferentes necessidades
@@ -172,16 +172,15 @@ const Landing = () => {
         <div className="text-center glass-effect rounded-2xl p-8 crypto-shadow">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Comece Sua Jornada Analítica
+              Comece Sua Jornada 
             </h2>
             <p className="text-crypto-light mb-6 text-sm md:text-base leading-relaxed">
-              Junte-se a centenas de analistas profissionais que confiam no Goals Stats 
-              para estratégias vencedoras no mercado esportivo.
+              Junte-se a centenas de analistas profissionais que confiam no Goals Stats
             </p>
             <Button size="default" className="bg-gradient-to-r from-crypto-steel to-crypto-blue text-white px-8 py-3 rounded-lg font-bold crypto-shadow transition-all duration-300 hover:scale-105" asChild>
               <Link to="/auth">
                 <Shield className="mr-2 h-5 w-5" />
-                Acesso Seguro Imediato
+                Acessar
               </Link>
             </Button>
           </div>
