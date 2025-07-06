@@ -1,17 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchCSVWithRetry } from '@/utils/csvHelpers'; // Atualize este também abaixo
+import { fetchCSVWithRetry } from '@/utils/csvHelpers';
 import { parseHeadToHeadCSV, HeadToHeadMatch } from './parseHeadToHeadCSV';
 
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
     queryFn: async () => {
-      const urls = [
-        'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/all_leagues_results.csv',
-        'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/Data/all_leagues_results.csv',
-      ];
-
-      const csvText = await fetchCSVWithRetry(urls);
+      // ✅ Passe apenas uma URL como string
+      const csvText = await fetchCSVWithRetry(
+        'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/all_leagues_results.csv'
+      );
 
       const allMatches = parseHeadToHeadCSV(csvText);
 
