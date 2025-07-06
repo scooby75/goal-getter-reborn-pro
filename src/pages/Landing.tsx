@@ -176,15 +176,15 @@ const Landing = () => {
         <div className="text-center glass-effect rounded-2xl p-8 crypto-shadow">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Comece Sua Jornada 
+              Junte-se aos Analistas que já Dominam o Mercado: 
             </h2>
             <p className="text-crypto-light mb-6 text-sm md:text-base leading-relaxed">
-              Junte-se a centenas de analistas profissionais que confiam no Goals Stats
+              Dados precisos. Decisões vencedoras. Resultados reais.
             </p>
             <Button size="default" className="bg-gradient-to-r from-crypto-steel to-crypto-blue text-white px-8 py-3 rounded-lg font-bold crypto-shadow transition-all duration-300 hover:scale-105" asChild>
               <Link to="/auth">
                 <Shield className="mr-2 h-5 w-5" />
-                Acessar
+                Acesse Agora!
               </Link>
             </Button>
           </div>
