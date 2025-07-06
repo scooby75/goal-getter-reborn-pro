@@ -13,62 +13,25 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({
   homeTeam,
   awayTeam,
 }) => {
-  const { data: matches, isLoading, error, isError } = useHeadToHead();
+  const { data: matches, isLoading, error, isError } = useHeadToHead(homeTeam, awayTeam);
 
-  console.log('HeadToHeadCard render:', { homeTeam, awayTeam, matches: matches?.length, isLoading, error });
+  console.log('🏟️ HeadToHeadCard render:', { 
+    homeTeam, 
+    awayTeam, 
+    matchesCount: matches?.length, 
+    isLoading, 
+    error: error?.message 
+  });
 
   if (!homeTeam && !awayTeam) {
     return null;
   }
 
-  const getRelevantMatches = (): HeadToHeadMatch[] => {
-    if (!matches || matches.length === 0) {
-      console.log('No matches available');
-      return [];
-    }
-
-    console.log(`Total matches available: ${matches.length}`);
-    console.log('Sample matches:', matches.slice(0, 3));
-
-    const filtered = matches
-      .filter((match) => {
-        if (homeTeam && awayTeam) {
-          // Direct confrontations between the two teams
-          const isDirectMatch = (
-            (match.Team_Home === homeTeam && match.Team_Away === awayTeam) ||
-            (match.Team_Home === awayTeam && match.Team_Away === homeTeam)
-          );
-          console.log(`Checking match: ${match.Team_Home} vs ${match.Team_Away}, Direct match: ${isDirectMatch}`);
-          return isDirectMatch;
-        } else {
-          // Last games of the selected team
-          const selectedTeam = homeTeam || awayTeam;
-          const isRelevant = match.Team_Home === selectedTeam || match.Team_Away === selectedTeam;
-          console.log(`Checking match for team ${selectedTeam}: ${match.Team_Home} vs ${match.Team_Away}, Relevant: ${isRelevant}`);
-          return isRelevant;
-        }
-      })
-      .sort((a, b) => {
-        try {
-          return new Date(b.Date).getTime() - new Date(a.Date).getTime();
-        } catch (e) {
-          console.warn('Date parsing error:', e);
-          return 0;
-        }
-      })
-      .slice(0, 10); // Last 10 confrontations
-
-    console.log(`Filtered matches: ${filtered.length}`);
-    return filtered;
-  };
-
-  const relevantMatches = getRelevantMatches();
-
   const formatDate = (dateString: string): string => {
     try {
       const date = new Date(dateString);
       if (isNaN(date.getTime())) {
-        return dateString; // Return original if invalid
+        return dateString;
       }
       return date.toLocaleDateString('pt-BR', {
         day: '2-digit',
@@ -98,7 +61,7 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({
         return 'E';
       }
     } catch (e) {
-      console.warn('Error parsing match result:', e);
+      console.warn('Erro ao analisar resultado:', e);
       return '';
     }
   };
@@ -112,8 +75,15 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({
     }
   };
 
+  const getCardTitle = (): string => {
+    if (homeTeam && awayTeam) {
+      return `Histórico: ${homeTeam} vs ${awayTeam}`;
+    }
+    return `Últimos Jogos: ${homeTeam || awayTeam}`;
+  };
+
   if (isError || error) {
-    console.error('HeadToHeadCard error:', error);
+    console.error('❌ HeadToHeadCard error:', error);
     return (
       <Card className="bg-white/95 backdrop-blur-sm border-red-200 shadow-lg z-10">
         <CardHeader className="pb-3">
@@ -155,12 +125,29 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({
     );
   }
 
-  const getCardTitle = (): string => {
-    if (homeTeam && awayTeam) {
-      return `Histórico: ${homeTeam} vs ${awayTeam}`;
-    }
-    return `Últimos Jogos: ${homeTeam || awayTeam}`;
-  };
+  if (!matches || matches.length === 0) {
+    return (
+      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
+        <CardHeader className="pb-3">
+          <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
+            <Clock className="h-5 w-5 text-blue-600" />
+            {getCardTitle()}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="pt-0">
+          <div className="text-center py-4">
+            <AlertCircle className="h-8 w-8 mx-auto mb-2 text-gray-400" />
+            <p className="text-gray-600 text-sm mb-2">
+              Nenhum confronto encontrado para as equipes selecionadas.
+            </p>
+            <p className="text-gray-500 text-xs">
+              Os dados podem estar sendo carregados ou não estão disponíveis.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
@@ -171,89 +158,67 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        {!matches || matches.length === 0 ? (
-          <div className="text-center py-4">
-            <AlertCircle className="h-8 w-8 mx-auto mb-2 text-yellow-500" />
-            <p className="text-gray-600 text-sm mb-2">
-              Nenhum dado de confronto foi carregado.
-            </p>
-            <p className="text-gray-500 text-xs">
-              Verifique se o arquivo CSV está acessível e contém dados válidos.
-            </p>
-          </div>
-        ) : relevantMatches.length === 0 ? (
-          <div className="text-center py-4">
-            <AlertCircle className="h-8 w-8 mx-auto mb-2 text-gray-400" />
-            <p className="text-gray-600 text-sm mb-2">
-              Nenhum confronto encontrado para as equipes selecionadas.
-            </p>
-            <p className="text-gray-500 text-xs">
-              Total de jogos na base: {matches.length}
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-3">
-            {relevantMatches.map((match, index) => {
-              const selectedTeam = homeTeam && awayTeam ? undefined : (homeTeam || awayTeam);
-              const result = selectedTeam ? getMatchResult(match, selectedTeam) : '';
-              
-              return (
-                <div
-                  key={index}
-                  className="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-gray-500" />
-                      <span className="text-xs text-gray-600 font-medium">
-                        {formatDate(match.Date)}
+        <div className="space-y-3">
+          {matches.map((match, index) => {
+            const selectedTeam = homeTeam && awayTeam ? undefined : (homeTeam || awayTeam);
+            const result = selectedTeam ? getMatchResult(match, selectedTeam) : '';
+            
+            return (
+              <div
+                key={index}
+                className="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4 text-gray-500" />
+                    <span className="text-xs text-gray-600 font-medium">
+                      {formatDate(match.Date)}
+                    </span>
+                    {match.League && match.League !== 'Unknown' && (
+                      <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                        {match.League}
                       </span>
-                      {match.League && match.League !== 'Unknown' && (
-                        <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                          {match.League}
+                    )}
+                  </div>
+                  {result && (
+                    <div className={`px-2 py-1 rounded text-xs font-bold border ${getResultColor(result)}`}>
+                      {result}
+                    </div>
+                  )}
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <div className="text-sm font-semibold text-gray-800 mb-1">
+                      {match.Team_Home} vs {match.Team_Away}
+                    </div>
+                    <div className="flex items-center gap-4 text-xs text-gray-600">
+                      {match.HT_Score && match.HT_Score !== '0-0' && (
+                        <span>
+                          <strong>HT:</strong> {match.HT_Score}
+                        </span>
+                      )}
+                      <span>
+                        <strong>FT:</strong> {match.Score}
+                      </span>
+                      {match.Status && match.Status !== 'FT' && (
+                        <span className="text-yellow-600">
+                          {match.Status}
                         </span>
                       )}
                     </div>
-                    {result && (
-                      <div className={`px-2 py-1 rounded text-xs font-bold border ${getResultColor(result)}`}>
-                        {result}
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <div className="text-sm font-semibold text-gray-800 mb-1">
-                        {match.Team_Home} vs {match.Team_Away}
-                      </div>
-                      <div className="flex items-center gap-4 text-xs text-gray-600">
-                        {match.HT_Score && match.HT_Score !== '0-0' && (
-                          <span>
-                            <strong>HT:</strong> {match.HT_Score}
-                          </span>
-                        )}
-                        <span>
-                          <strong>FT:</strong> {match.Score}
-                        </span>
-                        {match.Status && match.Status !== 'FT' && (
-                          <span className="text-yellow-600">
-                            {match.Status}
-                          </span>
-                        )}
-                      </div>
-                    </div>
                   </div>
                 </div>
-              );
-            })}
-            
-            <div className="text-center mt-4 pt-3 border-t border-gray-200">
-              <p className="text-xs text-gray-500">
-                Mostrando {relevantMatches.length} de {matches.length} confrontos disponíveis
-              </p>
-            </div>
+              </div>
+            );
+          })}
+          
+          <div className="text-center mt-4 pt-3 border-t border-gray-200">
+            <p className="text-xs text-gray-500">
+              Mostrando {matches.length} confronto{matches.length !== 1 ? 's' : ''} encontrado{matches.length !== 1 ? 's' : ''}
+            </p>
           </div>
-        )}
+        </div>
       </CardContent>
     </Card>
   );

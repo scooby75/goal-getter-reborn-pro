@@ -1,3 +1,4 @@
+
 import {
   TeamStats,
   LeagueAverageData,
@@ -124,43 +125,4 @@ export const parseGoalMomentCSV = (csvText: string): GoalMomentStats[] => {
 
     return stats as GoalMomentStats;
   }).filter(s => s.Team && s.Team.trim() !== '');
-};
-
-// Modelo comum para H2H
-export type HeadToHeadMatch = {
-  Date: string;
-  Team_Home: string;
-  Team_Away: string;
-  Goals_Home: number;
-  Goals_Away: number;
-  Result: string;
-  Score?: string;
-  HT_Score?: string;
-  Status?: string;
-  League?: string;
-};
-
-export const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
-  if (!csvText || csvText.trim() === '') return [];
-  const lines = csvText.trim().split('\n');
-  if (lines.length < 2) return [];
-
-  const headers = lines[0].split(',').map(h => h.trim());
-  const get = (name: string) => headers.findIndex(h => h.toLowerCase() === name.toLowerCase());
-
-  return lines.slice(1).map(line => {
-    const cols = line.split(',');
-    return {
-      Date: cols[get('Date')] || '',
-      Team_Home: cols[get('Home')] || '',
-      Team_Away: cols[get('Away')] || '',
-      Goals_Home: parseInt(cols[get('Gols_Home')] || '0'),
-      Goals_Away: parseInt(cols[get('Gols_Away')] || '0'),
-      Result: cols[get('Resultado')] || '',
-      Score: `${cols[get('Gols_Home')] || '0'}-${cols[get('Gols_Away')] || '0'}`,
-      HT_Score: cols[get('HT_Score')] || '',
-      Status: cols[get('Status')] || '',
-      League: cols[get('League')] || '',
-    };
-  }).filter(m => m.Team_Home && m.Team_Away);
 };
