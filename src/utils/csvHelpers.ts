@@ -6,9 +6,7 @@ export const addCacheBusting = (url: string): string => {
 };
 
 // Lista de URLs RAW do GitHub confiáveis
-const RAW_GITHUB_URLS = [
-  'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/all_leagues_results.csv',
-];
+const RAW_GITHUB_URLS: string[] = [];
 
 // Função que tenta buscar o CSV com múltiplas URLs e tentativas
 export const fetchCSVWithRetry = async (
@@ -19,6 +17,7 @@ export const fetchCSVWithRetry = async (
   console.log('Original URL:', url);
 
   const urlVariations = Array.from(new Set([
+    url,
     addCacheBusting(url),
     ...RAW_GITHUB_URLS.map(addCacheBusting),
   ]));
