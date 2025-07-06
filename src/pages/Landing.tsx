@@ -181,7 +181,7 @@ const Landing = () => {
           
           <div className="max-w-2xl mx-auto relative z-10">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Domine o Mercado como os <span className="text-crypto-light">Top Analistas</span> 
+              Domine o Mercado como os <span className="text-crypto-light">Profissionais</span> 
             </h2>
             
             <div className="mb-6">
