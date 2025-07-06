@@ -85,16 +85,6 @@ const Landing = () => {
           </div>
         </div>
 
-        {/* Security Badge */}
-        <div className="flex justify-center mb-12">
-          <div className="glass-effect rounded-xl p-4 crypto-shadow">
-            <div className="flex items-center gap-3 text-crypto-light text-xs md:text-sm">
-              <Lock className="h-4 w-4" />
-              <span className="font-semibold">Segurança Bancária • Dados Criptografados • 99.9% Uptime</span>
-              <Shield className="h-4 w-4" />
-            </div>
-          </div>
-        </div>
 
         {/* Features Section */}
         <div className="mb-16">
