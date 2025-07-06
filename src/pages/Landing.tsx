@@ -13,7 +13,11 @@ const Landing = () => {
     "Tempo médio 1º gol",
     "Frequência que a equipe marca o 1º",    
     "Gols marcados e sofridos a cada 15min",
-    "Placares mais prováveis",    
+    "Placares mais prováveis",
+    "Análise Probabilística Resultado Final",
+    "Análise Probabilística Total de Gols",
+    "Análise Probabilística Ambas Marcam",
+    
   ];
 
   const plans = [
