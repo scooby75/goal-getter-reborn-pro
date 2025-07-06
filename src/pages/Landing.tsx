@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Shield, TrendingUp, Lock, BarChart3, Target } from "lucide-react";
@@ -67,10 +66,14 @@ const Landing = () => {
               Goals Stats
             </h1>
           </div>
-          <p className="text-base md:text-lg text-crypto-light mb-6 max-w-2xl mx-auto leading-relaxed px-4">
-            A plataforma mais avançada para análise estatística de gols. 
-            <p>Tecnologia de ponta para decisões estratégicas precisas e confiáveis.</p>
-          </p>
+          <div className="max-w-2xl mx-auto px-4">
+            <p className="text-base md:text-lg text-crypto-light mb-2 leading-relaxed">
+              A plataforma mais avançada para análise estatística de gols.
+            </p>
+            <p className="text-base md:text-lg text-crypto-light mb-6 leading-relaxed">
+              Tecnologia de ponta para decisões estratégicas precisas e confiáveis.
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
             <Button asChild size="default" className="bg-crypto-steel hover:bg-crypto-blue text-white px-6 py-2 rounded-lg crypto-shadow transition-all duration-300 hover:scale-105">
               <Link to="/auth">
@@ -78,13 +81,14 @@ const Landing = () => {
                 Acessar Plataforma
               </Link>
             </Button>
-            <Button variant="outline" size="default" className="border-crypto-light text-crypto-light hover:bg-crypto-light hover:text-crypto-dark px-6 py-2 rounded-lg transition-all duration-300">
-              <Target className="mr-2 h-4 w-4" />
-              Ver Demonstração
+            <Button asChild size="default" className="bg-crypto-steel hover:bg-crypto-blue text-white px-6 py-2 rounded-lg crypto-shadow transition-all duration-300 hover:scale-105">
+              <Link to="/demo">
+                <Target className="mr-2 h-4 w-4" />
+                Ver Demonstração
+              </Link>
             </Button>
           </div>
         </div>
-
 
         {/* Features Section */}
         <div className="mb-16">
