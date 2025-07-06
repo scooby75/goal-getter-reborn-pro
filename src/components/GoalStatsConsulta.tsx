@@ -9,6 +9,7 @@ import { SearchableSelect } from './SearchableSelect';
 import { ProbableScores } from './ProbableScores';
 import { DixonColesScores } from './DixonColesScores';
 import { GoalMomentCard } from './GoalMomentCard';
+import { HeadToHeadCard } from './HeadToHeadCard';
 import { Button } from '@/components/ui/button';
 
 // Chave para armazenamento no localStorage
@@ -305,6 +306,14 @@ export const GoalStatsConsulta = () => {
           awayTeam={selectedAwayTeam}
           homeStats={selectedHomeStats}
           awayStats={selectedAwayStats}
+        />
+      )}
+
+      {/* Head to Head Card */}
+      {(selectedHomeTeam || selectedAwayTeam) && (
+        <HeadToHeadCard
+          homeTeam={selectedHomeTeam}
+          awayTeam={selectedAwayTeam}
         />
       )}
 
