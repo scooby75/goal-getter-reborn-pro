@@ -14,7 +14,7 @@ export type HeadToHeadMatch = {
   League?: string;
 };
 
-// Função para buscar CSV com múltiplas tentativas
+// Função para buscar CSV com múltiplas tentativas.
 const fetchCSVData = async (): Promise<string> => {
   console.log('=== FETCH CSV DATA ===');
   
