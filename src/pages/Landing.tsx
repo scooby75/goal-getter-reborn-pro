@@ -208,7 +208,7 @@ const Landing = () => {
                 <Link to="/auth">
                   <Shield className="mr-3 h-5 w-5" />
                   QUERO MEU ACESSO IMEDIATO →
-                </Link>
+                <Link to="https://billing.stripe.com/p/login/cNibJ03X11oG3Ga9HoeZ200">
               </Button>
             </div>
 
