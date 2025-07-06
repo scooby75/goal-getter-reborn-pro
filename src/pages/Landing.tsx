@@ -100,7 +100,7 @@ const Landing = () => {
             Recursos Avançados
           </h2>
           <p className="text-crypto-light text-center mb-8 text-sm md:text-base">
-            Ferramentas profissionais para análise estatística de alto nível
+            Ferramenta profissional para análise estatística de alto nível
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto px-4">
             {features.map((feature, index) => (
