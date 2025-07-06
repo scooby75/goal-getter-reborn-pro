@@ -87,7 +87,7 @@ export const Planos = () => {
           {PLANS.map((plan) => (
             <div 
               key={plan.id}
-              className={\`relative transition-transform duration-300 hover:scale-[1.02] \${plan.popular ? 'md:-translate-y-3' : ''}\`}
+              className={`relative transition-transform duration-300 hover:scale-[1.02] ${plan.popular ? 'md:-translate-y-3' : ''}`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
@@ -98,7 +98,7 @@ export const Planos = () => {
                 </div>
               )}
 
-              <Card className={\`h-full border-0 overflow-hidden \${plan.popular ? 'ring-2 ring-amber-500 bg-gradient-to-b from-white to-gray-100' : 'bg-white/90 backdrop-blur-sm'}\`}>
+              <Card className={`h-full border-0 overflow-hidden ${plan.popular ? 'ring-2 ring-amber-500 bg-gradient-to-b from-white to-gray-100' : 'bg-white/90 backdrop-blur-sm'}`}>
                 <CardHeader className="pb-0">
                   <CardTitle className="text-xl text-center font-bold text-gray-900">
                     {plan.name}
@@ -139,7 +139,7 @@ export const Planos = () => {
 
                   <div className="space-y-3">
                     <Button
-                      className={\`w-full py-5 text-base font-bold rounded-lg \${plan.popular ? 'bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-lg' : 'bg-crypto-steel hover:bg-crypto-blue text-white'}\`}
+                      className={`w-full py-5 text-base font-bold rounded-lg ${plan.popular ? 'bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-lg' : 'bg-crypto-steel hover:bg-crypto-blue text-white'}`}
                       asChild
                     >
                       <a href={plan.url} target="_blank" rel="noopener noreferrer">
@@ -174,5 +174,5 @@ export const Planos = () => {
     </div>
   );
 };
-export default Planos;
 
+export default Planos;
