@@ -174,3 +174,5 @@ export const Planos = () => {
     </div>
   );
 };
+export default Planos;
+
