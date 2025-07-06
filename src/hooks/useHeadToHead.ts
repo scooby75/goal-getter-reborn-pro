@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchCSVWithRetry } from '@/utils/csvHelpers';
-import { parseHeadToHeadCSV, HeadToHeadMatch } from './parseHeadToHeadCSV';
+import { parseHeadToHeadCSV, HeadToHeadMatch } from '@/utils/csvParsers';
+
 
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
