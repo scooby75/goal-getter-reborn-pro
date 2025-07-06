@@ -1,32 +1,31 @@
-// Helper function to add cache busting parameter
+// Adiciona parâmetro anti-cache à URL
 export const addCacheBusting = (url: string): string => {
   const timestamp = Date.now();
   const separator = url.includes('?') ? '&' : '?';
   return `${url}${separator}_t=${timestamp}`;
 };
 
-// Lista segura de URLs RAW
+// URLs confiáveis do GitHub RAW
 const RAW_GITHUB_URLS = [
   'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/all_leagues_results.csv',
 ];
 
-// Função para buscar CSV com tentativas e melhor tratamento de erro
+// Busca CSV com tentativas e tratamento de erro robusto
 export const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<string> => {
   console.log('=== FETCH CSV WITH RETRY ===');
   console.log('Original URL:', url);
-  console.log('Max retries:', maxRetries);
 
   const urlVariations = Array.from(new Set([
     addCacheBusting(url),
     ...RAW_GITHUB_URLS.map(addCacheBusting),
   ]));
 
-  console.log('URL variations to try:', urlVariations);
+  console.log('🔁 URLs to try:', urlVariations);
 
   for (const currentUrl of urlVariations) {
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
-        console.log(`\n🟡 Attempt ${attempt}/${maxRetries} to fetch: ${currentUrl}`);
+        console.log(`\n🟡 Attempt ${attempt}/${maxRetries} → ${currentUrl}`);
 
         const response = await fetch(currentUrl, {
           method: 'GET',
@@ -36,8 +35,14 @@ export const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<st
             'Pragma': 'no-cache',
           },
           mode: 'cors',
-          credentials: 'omit'
+          credentials: 'omit',
         });
+
+        // Detecta bloqueios por CORS
+        if (response.type === 'opaque') {
+          console.warn('⚠️ Opaque response (CORS blocked?)');
+          throw new Error('Opaque response received');
+        }
 
         if (!response.ok) {
           throw new Error(`HTTP ${response.status} - ${response.statusText}`);
@@ -54,10 +59,10 @@ export const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<st
           throw new Error('CSV does not have enough lines.');
         }
 
-        console.log(`✅ Successfully fetched CSV with ${lines.length} lines from ${currentUrl}`);
+        console.log(`✅ Successfully fetched CSV from ${currentUrl} with ${lines.length} lines`);
         return csvText;
       } catch (error) {
-        console.warn(`❌ Failed on attempt ${attempt}:`, error);
+        console.warn(`❌ Attempt ${attempt} failed:`, error);
 
         if (attempt < maxRetries) {
           const delay = 1000 * attempt;
@@ -68,9 +73,9 @@ export const fetchCSVWithRetry = async (url: string, maxRetries = 3): Promise<st
     }
   }
 
-  // Final error after all retries
+  // Falha final após todas as tentativas
   const finalError = new Error(
-    `Failed to fetch CSV data from all attempted URLs. Possible CORS or network issue.\nTried: ${urlVariations.join(', ')}`
+    `Failed to fetch CSV from all attempted URLs.\nTried:\n${urlVariations.join('\n')}`
   );
   console.error('🔥 FINAL ERROR:', finalError);
   throw finalError;
