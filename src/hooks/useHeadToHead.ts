@@ -2,24 +2,23 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchCSVWithRetry } from '@/utils/csvHelpers';
 import { parseHeadToHeadCSV, HeadToHeadMatch } from '@/utils/csvParsers';
 
+const CSV_URL = 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/all_leagues_results.csv';
 
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
     queryFn: async () => {
-      // ✅ Passe apenas uma URL como string
-      const csvText = await fetchCSVWithRetry(
-        'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/all_leagues_results.csv'
-      );
-
+      const csvText = await fetchCSVWithRetry(CSV_URL);
       const allMatches = parseHeadToHeadCSV(csvText);
 
+      // Se ambos os times forem passados, filtra confrontos diretos
       if (team1 && team2) {
+        const t1 = team1.toLowerCase();
+        const t2 = team2.toLowerCase();
+
         const filtered = allMatches.filter(match => {
           const h = match.Team_Home.toLowerCase();
           const a = match.Team_Away.toLowerCase();
-          const t1 = team1.toLowerCase();
-          const t2 = team2.toLowerCase();
 
           return (
             (h === t1 && a === t2) ||
@@ -32,9 +31,17 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
         return filtered.sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime());
       }
 
+      // Se apenas um dos times for passado, retorna todos os jogos dele
+      if (team1 || team2) {
+        const selected = (team1 || team2 || '').toLowerCase();
+        return allMatches
+          .filter(match => match.Team_Home.toLowerCase() === selected || match.Team_Away.toLowerCase() === selected)
+          .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime());
+      }
+
       return allMatches;
     },
-    staleTime: 10 * 60 * 1000,
+    staleTime: 10 * 60 * 1000, // 10 minutos
     retry: 1,
     enabled: true,
   });
