@@ -69,7 +69,7 @@ const Landing = () => {
           </div>
           <p className="text-base md:text-lg text-crypto-light mb-6 max-w-2xl mx-auto leading-relaxed px-4">
             A plataforma mais avançada para análise estatística de gols. 
-            Tecnologia de ponta para decisões estratégicas precisas e confiáveis.
+            <p>Tecnologia de ponta para decisões estratégicas precisas e confiáveis.</p>
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
             <Button asChild size="default" className="bg-crypto-steel hover:bg-crypto-blue text-white px-6 py-2 rounded-lg crypto-shadow transition-all duration-300 hover:scale-105">
