@@ -98,8 +98,11 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         Goals_Away: awayGoalsIndex >= 0 ? parseInt(cols[awayGoalsIndex] || '0') || 0 : 0,
         Result: resultIndex >= 0 ? cols[resultIndex] || '' : '',
         Score: homeGoalsIndex >= 0 && awayGoalsIndex >= 0 
-          ? `${cols[homeGoalsIndex] || '0'}-${cols[awayGoalsIndex] || '0'}` 
+          ? `${cols[homeGoalsIndex]?.trim() || '0'}-${cols[awayGoalsIndex]?.trim() || '0'}` 
           : '0-0',
+        HT_Score: headers.findIndex(h => h.toLowerCase().includes('ht score')) >= 0 
+          ? cols[headers.findIndex(h => h.toLowerCase().includes('ht score'))]?.trim() || '' 
+          : '',
         League: cols[headers.findIndex(h => h.toLowerCase().includes('league'))] || 'Unknown'
       };
 
