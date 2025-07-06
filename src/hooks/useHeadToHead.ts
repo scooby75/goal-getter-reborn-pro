@@ -78,8 +78,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   const dateIndex = headers.findIndex(h => h.toLowerCase().includes('date') || h.toLowerCase().includes('data'));
   const homeIndex = headers.findIndex(h => h.toLowerCase().includes('home') || h.toLowerCase().includes('casa'));
   const awayIndex = headers.findIndex(h => h.toLowerCase().includes('away') || h.toLowerCase().includes('visitante'));
-  const homeGoalsIndex = headers.findIndex(h => h.toLowerCase().includes('gols_home') || h.toLowerCase().includes('home_goals'));
-  const awayGoalsIndex = headers.findIndex(h => h.toLowerCase().includes('gols_away') || h.toLowerCase().includes('away_goals'));
+  const scoreIndex = headers.findIndex(h => h.toLowerCase().includes('score'));
   const resultIndex = headers.findIndex(h => h.toLowerCase().includes('resultado') || h.toLowerCase().includes('result'));
   
   console.log('📍 Índices:', { dateIndex, homeIndex, awayIndex, homeGoalsIndex, awayGoalsIndex, resultIndex });
@@ -96,12 +95,10 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         Date: dateIndex >= 0 ? cols[dateIndex] || '' : '',
         Team_Home: homeIndex >= 0 ? cols[homeIndex] || '' : '',
         Team_Away: awayIndex >= 0 ? cols[awayIndex] || '' : '',
-        Goals_Home: homeGoalsIndex >= 0 ? parseInt(cols[homeGoalsIndex] || '0') || 0 : 0,
-        Goals_Away: awayGoalsIndex >= 0 ? parseInt(cols[awayGoalsIndex] || '0') || 0 : 0,
+        Goals_Home: scoreIndex >= 0 ? parseInt(cols[scoreIndex].split(' - ')[0]) || 0 : 0,
+        Goals_Away: scoreIndex >= 0 ? parseInt(cols[scoreIndex].split(' - ')[1]) || 0 : 0,
         Result: resultIndex >= 0 ? cols[resultIndex] || '' : '',
-        Score: homeGoalsIndex >= 0 && awayGoalsIndex >= 0 
-          ? `${cols[homeGoalsIndex] || '0'}-${cols[awayGoalsIndex] || '0'}` 
-          : '0-0',
+        Score: scoreIndex >= 0 ? cols[scoreIndex] : '0-0',
         League: cols[headers.findIndex(h => h.toLowerCase().includes('league'))] || 'Unknown'
       };
 
