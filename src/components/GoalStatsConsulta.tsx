@@ -182,7 +182,6 @@ export const GoalStatsConsulta = () => {
                 placeholder="Selecione o time da casa"
                 label={`Time da Casa (${homeTeams.length} times disponíveis)`}
                 className="z-50"
-                dropdownClassName="z-50"
               />
             </div>
             
@@ -194,7 +193,6 @@ export const GoalStatsConsulta = () => {
                 placeholder="Selecione o time visitante"
                 label={`Time Visitante (${awayTeams.length} times disponíveis)`}
                 className="z-50"
-                dropdownClassName="z-50"
               />
             </div>
           </div>
