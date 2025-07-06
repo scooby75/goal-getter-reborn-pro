@@ -202,11 +202,11 @@ const Landing = () => {
             <div className="animate-bounce hover:animate-none transition-transform">
               <Button 
                 size="default" 
-                className="bg-gradient-to-r from-crypto-steel to-crypto-blue hover:from-crypto-blue hover:to-crypto-steel text-white px-10 py-4 text-lg rounded-xl font-extrabold crypto-shadow-lg transition-all duration-500 hover:scale-110"
+                className="bg-gradient-to-r from-crypto-steel to-crypto-blue hover:from-crypto-blue hover:to-crypto-steel text-white px-4 sm:px-10 py-3 sm:py-4 text-sm sm:text-lg rounded-xl font-extrabold crypto-shadow-lg transition-all duration-500 hover:scale-110 w-full sm:w-auto"
                 asChild
               >
                 <Link to="/planos">
-                  <Shield className="mr-3 h-5 w-5" />
+                  <Shield className="mr-2 sm:mr-3 h-4 sm:h-5 w-4 sm:w-5" />
                   QUERO MEU ACESSO IMEDIATO →
                 </Link>
               </Button>
