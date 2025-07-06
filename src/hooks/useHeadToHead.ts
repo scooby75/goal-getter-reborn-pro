@@ -161,6 +161,11 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       try {
         console.log('=== STARTING HEAD TO HEAD FETCH ===');
         console.log('Requested teams:', { team1, team2 });
+        console.log('Browser info:', {
+          userAgent: navigator.userAgent,
+          location: window.location.href,
+          origin: window.location.origin
+        });
         
         const csvText = await fetchCSVWithRetry(
           'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/refs/heads/main/public/Data/all_leagues_results.csv'
@@ -209,7 +214,22 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
         return allMatches;
       } catch (error) {
         console.error('=== HEAD TO HEAD FETCH ERROR ===', error);
-        throw new Error(`Failed to load match data: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        
+        // Enhanced error information
+        if (error instanceof Error) {
+          console.error('Error details:', {
+            name: error.name,
+            message: error.message,
+            stack: error.stack
+          });
+        }
+        
+        // Check if it's a network/CORS error
+        if (error instanceof TypeError && error.message.includes('fetch')) {
+          throw new Error(`Erro de rede ou CORS: Não foi possível acessar o arquivo CSV. Verifique se o arquivo está acessível publicamente e se não há bloqueios de CORS.`);
+        }
+        
+        throw new Error(`Falha ao carregar dados dos confrontos: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
       }
     },
     staleTime: 10 * 60 * 1000, // 10 minutes
