@@ -10,6 +10,7 @@ import { ProbableScores } from './ProbableScores';
 import { DixonColesScores } from './DixonColesScores';
 import { GoalMomentCard } from './GoalMomentCard';
 import { HeadToHeadCard } from './HeadToHeadCard';
+import { RecentGamesCard } from './RecentGamesCard';
 import { Button } from '@/components/ui/button';
 
 // Chave para armazenamento no localStorage
