@@ -17,18 +17,20 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   if (!homeTeam && !awayTeam) return null;
 
   const formatDate = (dateString: string): string => {
-    try {
-      const date = new Date(dateString);
-      if (isNaN(date.getTime())) return dateString;
-      return date.toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-      });
-    } catch {
-      return dateString;
-    }
-  };
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+
+    return new Intl.DateTimeFormat('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    }).format(date);
+  } catch {
+    return dateString;
+  }
+};
+
 
   const getMatchResult = (match: RecentGameMatch, teamToCheck: string): string => {
     if (!match.Score || !match.Score.includes('-')) return '';
