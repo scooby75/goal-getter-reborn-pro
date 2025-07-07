@@ -17,19 +17,16 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   if (!homeTeam && !awayTeam) return null;
 
   const formatDate = (dateString: string): string => {
-  try {
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return dateString;
+  // dateString esperado: "YYYY-MM-DD"
+  if (!dateString) return '';
 
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // mês começa em 0
-    const year = date.getFullYear();
+  const parts = dateString.split('-');
+  if (parts.length !== 3) return dateString; // fallback se formato inesperado
 
-    return `${day}/${month}/${year}`;
-  } catch {
-    return dateString;
-  }
+  const [year, month, day] = parts;
+  return `${day}/${month}/${year}`;
 };
+
 
 
   const getMatchResult = (match: RecentGameMatch, teamToCheck: string): string => {
