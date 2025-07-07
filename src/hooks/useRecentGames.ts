@@ -1,4 +1,3 @@
-
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
@@ -19,9 +18,7 @@ export type RecentGameMatch = {
 const fetchCSVData = async (): Promise<string> => {
   console.log('=== FETCH RECENT GAMES CSV DATA ===');
 
-  const urls = [
-    '/Data/all_leagues_results.csv',
-  ];
+  const urls = ['/Data/all_leagues_results.csv'];
 
   for (const url of urls) {
     try {
@@ -72,8 +69,15 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
 
   const matches: RecentGameMatch[] = rows.map((row, index) => {
     try {
-      const homeGoals = parseInt(row.HomeGoals || row.Gols_Home || '0');
-      const awayGoals = parseInt(row.AwayGoals || row.Gols_Away || '0');
+      const scoreRaw = row.Score || row['Score'] || '';
+      let homeGoals = 0;
+      let awayGoals = 0;
+
+      if (scoreRaw.includes('-')) {
+        const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
+        homeGoals = parseInt(homeStr);
+        awayGoals = parseInt(awayStr);
+      }
 
       return {
         Date: row.Date || row.Data || '',
@@ -82,8 +86,8 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
         Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
         Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
         Result: row.FullTimeResult || row.Result || row.Resultado || '',
-        Score: `${homeGoals || 0}-${awayGoals || 0}`,
-        HT_Score: row.HT_Score || row.HTScore || '',
+        Score: scoreRaw.trim(),
+        HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
         League: row.League || 'Indefinida',
       };
     } catch (error) {
@@ -133,16 +137,16 @@ export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
       }
 
       // Remove duplicatas baseado na data e times
-      const uniqueMatches = filteredMatches.filter((match, index, self) => 
-        index === self.findIndex(m => 
-          m.Date === match.Date && 
-          m.Team_Home === match.Team_Home && 
+      const uniqueMatches = filteredMatches.filter((match, index, self) =>
+        index === self.findIndex(m =>
+          m.Date === match.Date &&
+          m.Team_Home === match.Team_Home &&
           m.Team_Away === match.Team_Away
         )
       );
 
       console.log(`🎯 Jogos únicos encontrados: ${uniqueMatches.length}`);
-      
+
       return uniqueMatches
         .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
         .slice(0, 15); // Limita a 15 jogos mais recentes
