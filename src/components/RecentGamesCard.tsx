@@ -17,7 +17,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   if (!homeTeam && !awayTeam) return null;
 
   const formatDate = (dateString: string): string => {
-    // Converte para dd/mm/aaaa
     const parts = dateString.includes('/')
       ? dateString.split('/')
       : dateString.includes('-')
@@ -25,11 +24,9 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
       : [];
 
     if (parts.length === 3) {
-      // yyyy-mm-dd
       if (dateString.includes('-')) {
         return `${parts[2].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[0]}`;
       }
-      // mm/dd/yyyy ou dd/mm/yyyy (mantém como está se já for)
       return `${parts[0].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[2]}`;
     }
 
@@ -42,6 +39,13 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     if (parts.length !== 2) return score;
     const [home, away] = parts;
     return `${home.trim()} - ${away.trim()}`;
+  };
+
+  const parseDate = (dateString: string): number => {
+    const date = dateString.includes('/')
+      ? new Date(dateString.split('/').reverse().join('-'))
+      : new Date(dateString);
+    return date.getTime();
   };
 
   const getMatchResult = (match: RecentGameMatch, teamToCheck: string): string => {
@@ -135,13 +139,13 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     );
   }
 
-  const homeMatches = matches.filter(match =>
-    homeTeam && match.Team_Home.toLowerCase().includes(homeTeam.toLowerCase())
-  );
+  const homeMatches = matches
+    .filter(match => homeTeam && match.Team_Home.toLowerCase().includes(homeTeam.toLowerCase()))
+    .sort((a, b) => parseDate(b.Date) - parseDate(a.Date));
 
-  const awayMatches = matches.filter(match =>
-    awayTeam && match.Team_Away.toLowerCase().includes(awayTeam.toLowerCase())
-  );
+  const awayMatches = matches
+    .filter(match => awayTeam && match.Team_Away.toLowerCase().includes(awayTeam.toLowerCase()))
+    .sort((a, b) => parseDate(b.Date) - parseDate(a.Date));
 
   return (
     <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
@@ -177,9 +181,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                         )}
                       </div>
                       <div className="flex items-center gap-2">
-                        <span title="Jogando em casa">
-                          <Home className="h-4 w-4 text-green-600" />
-                        </span>
+                        <Home className="h-4 w-4 text-green-600" />
                         {result && (
                           <div className={`px-2 py-1 rounded text-xs font-bold border ${getResultColor(result)}`}>
                             {result}
@@ -187,26 +189,17 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                         )}
                       </div>
                     </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <div className="text-sm font-semibold text-gray-800 mb-1">
-                          {match.Team_Home} vs {match.Team_Away}
-                        </div>
-                        <div className="flex items-center gap-4 text-xs text-gray-600">
-                          {match['HT Score'] && match['HT Score'] !== '0-0' && (
-                            <span>
-                              <strong>HT:</strong> {formatScore(match['HT Score'])}
-                            </span>
-                          )}
-                          <span>
-                            <strong>FT:</strong> {formatScore(match.Score)}
-                          </span>
-                          {match.Status && match.Status !== 'FT' && (
-                            <span className="text-yellow-600">{match.Status}</span>
-                          )}
-                        </div>
-                      </div>
+                    <div className="text-sm font-semibold text-gray-800 mb-1">
+                      {match.Team_Home} vs {match.Team_Away}
+                    </div>
+                    <div className="text-xs text-gray-600 flex gap-4">
+                      {match['HT Score'] && match['HT Score'] !== '0-0' && (
+                        <span><strong>HT:</strong> {formatScore(match['HT Score'])}</span>
+                      )}
+                      <span><strong>FT:</strong> {formatScore(match.Score)}</span>
+                      {match.Status && match.Status !== 'FT' && (
+                        <span className="text-yellow-600">{match.Status}</span>
+                      )}
                     </div>
                   </div>
                 );
@@ -240,9 +233,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                         )}
                       </div>
                       <div className="flex items-center gap-2">
-                        <span title="Jogando fora">
-                          <Plane className="h-4 w-4 text-blue-600" />
-                        </span>
+                        <Plane className="h-4 w-4 text-blue-600" />
                         {result && (
                           <div className={`px-2 py-1 rounded text-xs font-bold border ${getResultColor(result)}`}>
                             {result}
@@ -250,26 +241,17 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                         )}
                       </div>
                     </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <div className="text-sm font-semibold text-gray-800 mb-1">
-                          {match.Team_Home} vs {match.Team_Away}
-                        </div>
-                        <div className="flex items-center gap-4 text-xs text-gray-600">
-                          {match['HT Score'] && match['HT Score'] !== '0-0' && (
-                            <span>
-                              <strong>HT:</strong> {formatScore(match['HT Score'])}
-                            </span>
-                          )}
-                          <span>
-                            <strong>FT:</strong> {formatScore(match.Score)}
-                          </span>
-                          {match.Status && match.Status !== 'FT' && (
-                            <span className="text-yellow-600">{match.Status}</span>
-                          )}
-                        </div>
-                      </div>
+                    <div className="text-sm font-semibold text-gray-800 mb-1">
+                      {match.Team_Home} vs {match.Team_Away}
+                    </div>
+                    <div className="text-xs text-gray-600 flex gap-4">
+                      {match['HT Score'] && match['HT Score'] !== '0-0' && (
+                        <span><strong>HT:</strong> {formatScore(match['HT Score'])}</span>
+                      )}
+                      <span><strong>FT:</strong> {formatScore(match.Score)}</span>
+                      {match.Status && match.Status !== 'FT' && (
+                        <span className="text-yellow-600">{match.Status}</span>
+                      )}
                     </div>
                   </div>
                 );
@@ -279,7 +261,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
             )}
           </div>
         </div>
-
         <div className="text-center mt-4 pt-3 border-t border-gray-200 col-span-2">
           <p className="text-xs text-gray-500">
             Mostrando {matches.length} jogo{matches.length !== 1 ? 's' : ''} recente{matches.length !== 1 ? 's' : ''}
