@@ -1,4 +1,4 @@
-
+// ...imports mantidos
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, AlertCircle, Clock, Calendar, Home, Plane } from 'lucide-react';
@@ -23,20 +23,16 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     error: error?.message 
   });
 
-  if (!homeTeam && !awayTeam) {
-    return null;
-  }
+  if (!homeTeam && !awayTeam) return null;
 
   const formatDate = (dateString: string): string => {
     try {
       const date = new Date(dateString);
-      if (isNaN(date.getTime())) {
-        return dateString;
-      }
+      if (isNaN(date.getTime())) return dateString;
       return date.toLocaleDateString('pt-BR', {
         day: '2-digit',
         month: '2-digit',
-        year: 'numeric'
+        year: 'numeric',
       });
     } catch {
       return dateString;
@@ -45,24 +41,18 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
 
   const getMatchResult = (match: RecentGameMatch, teamToCheck: string): string => {
     if (!match.Score || !match.Score.includes('-')) return '';
-    
     try {
       const [homeScore, awayScore] = match.Score.split('-').map(s => parseInt(s.trim()));
-      
       if (isNaN(homeScore) || isNaN(awayScore)) return '';
-      
       if (match.Team_Home.toLowerCase().includes(teamToCheck.toLowerCase())) {
-        // Time jogando em casa
         if (homeScore > awayScore) return 'V';
         if (homeScore < awayScore) return 'D';
         return 'E';
       } else if (match.Team_Away.toLowerCase().includes(teamToCheck.toLowerCase())) {
-        // Time jogando fora
         if (awayScore > homeScore) return 'V';
         if (awayScore < homeScore) return 'D';
         return 'E';
       }
-      
       return '';
     } catch (e) {
       console.warn('Erro ao analisar resultado:', e);
@@ -84,7 +74,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   };
 
   if (isError || error) {
-    console.error('❌ RecentGamesCard error:', error);
     return (
       <Card className="bg-white/95 backdrop-blur-sm border-red-200 shadow-lg z-10">
         <CardHeader className="pb-3">
@@ -161,10 +150,8 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
       <CardContent className="pt-0">
         <div className="space-y-3">
           {matches.map((match, index) => {
-            // Determina qual time estamos analisando e seu resultado
             let relevantTeam = '';
             let result = '';
-            
             if (homeTeam && isTeamPlayingHome(match, homeTeam)) {
               relevantTeam = homeTeam;
               result = getMatchResult(match, homeTeam);
@@ -172,7 +159,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
               relevantTeam = awayTeam;
               result = getMatchResult(match, awayTeam);
             }
-            
+
             return (
               <div
                 key={index}
@@ -194,9 +181,13 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                     {relevantTeam && (
                       <>
                         {isTeamPlayingHome(match, relevantTeam) ? (
-                          <Home className="h-4 w-4 text-green-600" title="Jogando em casa" />
+                          <span title="Jogando em casa">
+                            <Home className="h-4 w-4 text-green-600" />
+                          </span>
                         ) : (
-                          <Plane className="h-4 w-4 text-blue-600" title="Jogando fora" />
+                          <span title="Jogando fora">
+                            <Plane className="h-4 w-4 text-blue-600" />
+                          </span>
                         )}
                         {result && (
                           <div className={`px-2 py-1 rounded text-xs font-bold border ${getResultColor(result)}`}>
@@ -207,7 +198,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                     )}
                   </div>
                 </div>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <div className="text-sm font-semibold text-gray-800 mb-1">
@@ -233,7 +224,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
               </div>
             );
           })}
-          
+
           <div className="text-center mt-4 pt-3 border-t border-gray-200">
             <p className="text-xs text-gray-500">
               Mostrando {matches.length} jogo{matches.length !== 1 ? 's' : ''} recente{matches.length !== 1 ? 's' : ''}
