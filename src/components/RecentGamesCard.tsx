@@ -17,7 +17,22 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   if (!homeTeam && !awayTeam) return null;
 
   const formatDate = (dateString: string): string => {
-    // Retorna a data no formato dd/mm/aaaa, já presente no CSV
+    // Converte para dd/mm/aaaa
+    const parts = dateString.includes('/')
+      ? dateString.split('/')
+      : dateString.includes('-')
+      ? dateString.split('-')
+      : [];
+
+    if (parts.length === 3) {
+      // yyyy-mm-dd
+      if (dateString.includes('-')) {
+        return `${parts[2].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[0]}`;
+      }
+      // mm/dd/yyyy ou dd/mm/yyyy (mantém como está se já for)
+      return `${parts[0].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[2]}`;
+    }
+
     return dateString;
   };
 
@@ -25,16 +40,14 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     if (!score) return '';
     const parts = score.trim().split(/\s*-\s*/);
     if (parts.length !== 2) return score;
-    return `${parts[0]} - ${parts[1]}`;
+    const [home, away] = parts;
+    return `${home.trim()} - ${away.trim()}`;
   };
 
   const getMatchResult = (match: RecentGameMatch, teamToCheck: string): string => {
     if (!match.Score || !match.Score.includes('-')) return '';
 
     try {
-      // Log para debug (remova se quiser)
-      console.log('Raw Score:', JSON.stringify(match.Score));
-
       const [homeScoreStr, awayScoreStr] = match.Score.trim().split(/\s*-\s*/);
       const homeScore = parseInt(homeScoreStr);
       const awayScore = parseInt(awayScoreStr);
@@ -190,9 +203,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                             <strong>FT:</strong> {formatScore(match.Score)}
                           </span>
                           {match.Status && match.Status !== 'FT' && (
-                            <span className="text-yellow-600">
-                              {match.Status}
-                            </span>
+                            <span className="text-yellow-600">{match.Status}</span>
                           )}
                         </div>
                       </div>
@@ -255,9 +266,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                             <strong>FT:</strong> {formatScore(match.Score)}
                           </span>
                           {match.Status && match.Status !== 'FT' && (
-                            <span className="text-yellow-600">
-                              {match.Status}
-                            </span>
+                            <span className="text-yellow-600">{match.Status}</span>
                           )}
                         </div>
                       </div>
