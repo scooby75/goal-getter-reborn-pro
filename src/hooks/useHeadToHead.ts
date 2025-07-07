@@ -71,25 +71,18 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
 
   const matches: HeadToHeadMatch[] = rows.map((row, index) => {
     try {
-      // Extrair gols do campo Score, ex: "1 - 0"
-      let homeGoals = 0;
-      let awayGoals = 0;
-      if (row.Score && typeof row.Score === 'string' && row.Score.includes('-')) {
-        const parts = row.Score.split('-').map((part: string) => part.trim());
-        homeGoals = parseInt(parts[0]) || 0;
-        awayGoals = parseInt(parts[1]) || 0;
-      }
+      const homeGoals = parseInt(row.HomeGoals || row.Gols_Home || '0');
+      const awayGoals = parseInt(row.AwayGoals || row.Gols_Away || '0');
 
       return {
         Date: row.Date || row.Data || '',
         Team_Home: row.HomeTeam || row.Team_Home || '',
         Team_Away: row.AwayTeam || row.Team_Away || '',
-        Goals_Home: homeGoals,
-        Goals_Away: awayGoals,
+        Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
+        Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
         Result: row.FullTimeResult || row.Result || row.Resultado || '',
-        Score: `${homeGoals} - ${awayGoals}`,
-        HT_Score: row['HT Score'] || row.HTScore || '',
-        Status: row.Status || '',
+        Score: `${homeGoals || 0}-${awayGoals || 0}`,
+        HT_Score: row.HT_Score || row.HTScore || '',
         League: row.League || 'Indefinida',
       };
     } catch (error) {
