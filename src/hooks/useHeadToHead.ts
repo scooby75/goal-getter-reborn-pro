@@ -10,7 +10,6 @@ export type HeadToHeadMatch = {
   Result: string;
   Score?: string;
   HT_Score?: string;
-  Status?: string;
   League?: string;
 };
 
@@ -99,7 +98,6 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         Score: row.Score || '',
         HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
         League: row.League || 'Indefinida',
-        Status: row.Status || '',
       };
     } catch (error) {
       console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
