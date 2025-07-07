@@ -71,8 +71,23 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
 
   const matches: HeadToHeadMatch[] = rows.map((row, index) => {
     try {
-      const homeGoals = parseInt(row.HomeGoals || row.Gols_Home || '0');
-      const awayGoals = parseInt(row.AwayGoals || row.Gols_Away || '0');
+      let homeGoals = 0;
+      let awayGoals = 0;
+
+      if (row.Score) {
+        const scoreParts = row.Score.split('-').map((s: string) => s.trim());
+        if (scoreParts.length === 2) {
+          homeGoals = parseInt(scoreParts[0], 10);
+          awayGoals = parseInt(scoreParts[1], 10);
+        }
+      }
+
+      let result = '';
+      if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
+        if (homeGoals > awayGoals) result = 'H';
+        else if (homeGoals < awayGoals) result = 'A';
+        else result = 'D';
+      }
 
       return {
         Date: row.Date || row.Data || '',
@@ -80,10 +95,11 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         Team_Away: row.AwayTeam || row.Team_Away || '',
         Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
         Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
-        Result: row.FullTimeResult || row.Result || row.Resultado || '',
-        Score: `${homeGoals || 0}-${awayGoals || 0}`,
-        HT_Score: row.HT_Score || row.HTScore || '',
+        Result: result,
+        Score: row.Score || '',
+        HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
         League: row.League || 'Indefinida',
+        Status: row.Status || '',
       };
     } catch (error) {
       console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
