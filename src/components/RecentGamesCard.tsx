@@ -1,4 +1,3 @@
-// ...imports mantidos
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, AlertCircle, Clock, Calendar, Home, Plane } from 'lucide-react';
@@ -14,14 +13,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   awayTeam,
 }) => {
   const { data: matches, isLoading, error, isError } = useRecentGames(homeTeam, awayTeam);
-
-  console.log('🎮 RecentGamesCard render:', { 
-    homeTeam, 
-    awayTeam, 
-    matchesCount: matches?.length, 
-    isLoading, 
-    error: error?.message 
-  });
 
   if (!homeTeam && !awayTeam) return null;
 
@@ -67,10 +58,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
       case 'E': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
       default: return 'text-gray-600 bg-gray-50 border-gray-200';
     }
-  };
-
-  const isTeamPlayingHome = (match: RecentGameMatch, team: string): boolean => {
-    return match.Team_Home.toLowerCase().includes(team.toLowerCase());
   };
 
   if (isError || error) {
@@ -139,6 +126,15 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     );
   }
 
+  // Filtrar partidas para home e away separadamente
+  const homeMatches = matches.filter(match =>
+    homeTeam && match.Team_Home.toLowerCase().includes(homeTeam.toLowerCase())
+  );
+
+  const awayMatches = matches.filter(match =>
+    awayTeam && match.Team_Away.toLowerCase().includes(awayTeam.toLowerCase())
+  );
+
   return (
     <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
       <CardHeader className="pb-3">
@@ -148,88 +144,142 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <div className="space-y-3">
-          {matches.map((match, index) => {
-            let relevantTeam = '';
-            let result = '';
-            if (homeTeam && isTeamPlayingHome(match, homeTeam)) {
-              relevantTeam = homeTeam;
-              result = getMatchResult(match, homeTeam);
-            } else if (awayTeam && !isTeamPlayingHome(match, awayTeam)) {
-              relevantTeam = awayTeam;
-              result = getMatchResult(match, awayTeam);
-            }
-
-            return (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 transition-colors"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-gray-500" />
-                    <span className="text-xs text-gray-600 font-medium">
-                      {formatDate(match.Date)}
-                    </span>
-                    {match.League && match.League !== 'Unknown' && (
-                      <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                        {match.League}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {relevantTeam && (
-                      <>
-                        {isTeamPlayingHome(match, relevantTeam) ? (
-                          <span title="Jogando em casa">
-                            <Home className="h-4 w-4 text-green-600" />
-                          </span>
-                        ) : (
-                          <span title="Jogando fora">
-                            <Plane className="h-4 w-4 text-blue-600" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Coluna Home */}
+          <div>
+            <h3 className="text-center font-semibold mb-3">{homeTeam}</h3>
+            {homeMatches.length > 0 ? (
+              homeMatches.map((match, index) => {
+                const result = getMatchResult(match, homeTeam);
+                return (
+                  <div
+                    key={`home-${index}`}
+                    className="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 transition-colors mb-3"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-gray-500" />
+                        <span className="text-xs text-gray-600 font-medium">
+                          {formatDate(match.Date)}
+                        </span>
+                        {match.League && match.League !== 'Unknown' && (
+                          <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                            {match.League}
                           </span>
                         )}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span title="Jogando em casa">
+                          <Home className="h-4 w-4 text-green-600" />
+                        </span>
                         {result && (
                           <div className={`px-2 py-1 rounded text-xs font-bold border ${getResultColor(result)}`}>
                             {result}
                           </div>
                         )}
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-800 mb-1">
-                      {match.Team_Home} vs {match.Team_Away}
+                      </div>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-gray-600">
-                      {match.HT_Score && match.HT_Score !== '0-0' && (
-                        <span>
-                          <strong>HT:</strong> {match.HT_Score}
-                        </span>
-                      )}
-                      <span>
-                        <strong>FT:</strong> {match.Score}
-                      </span>
-                      {match.Status && match.Status !== 'FT' && (
-                        <span className="text-yellow-600">
-                          {match.Status}
-                        </span>
-                      )}
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1">
+                        <div className="text-sm font-semibold text-gray-800 mb-1">
+                          {match.Team_Home} vs {match.Team_Away}
+                        </div>
+                        <div className="flex items-center gap-4 text-xs text-gray-600">
+                          {match.HT_Score && match.HT_Score !== '0-0' && (
+                            <span>
+                              <strong>HT:</strong> {match.HT_Score}
+                            </span>
+                          )}
+                          <span>
+                            <strong>FT:</strong> {match.Score}
+                          </span>
+                          {match.Status && match.Status !== 'FT' && (
+                            <span className="text-yellow-600">
+                              {match.Status}
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-
-          <div className="text-center mt-4 pt-3 border-t border-gray-200">
-            <p className="text-xs text-gray-500">
-              Mostrando {matches.length} jogo{matches.length !== 1 ? 's' : ''} recente{matches.length !== 1 ? 's' : ''}
-            </p>
+                );
+              })
+            ) : (
+              <p className="text-center text-gray-500 text-sm">Nenhum jogo recente em casa.</p>
+            )}
           </div>
+
+          {/* Coluna Away */}
+          <div>
+            <h3 className="text-center font-semibold mb-3">{awayTeam}</h3>
+            {awayMatches.length > 0 ? (
+              awayMatches.map((match, index) => {
+                const result = getMatchResult(match, awayTeam);
+                return (
+                  <div
+                    key={`away-${index}`}
+                    className="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 transition-colors mb-3"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-gray-500" />
+                        <span className="text-xs text-gray-600 font-medium">
+                          {formatDate(match.Date)}
+                        </span>
+                        {match.League && match.League !== 'Unknown' && (
+                          <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                            {match.League}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span title="Jogando fora">
+                          <Plane className="h-4 w-4 text-blue-600" />
+                        </span>
+                        {result && (
+                          <div className={`px-2 py-1 rounded text-xs font-bold border ${getResultColor(result)}`}>
+                            {result}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1">
+                        <div className="text-sm font-semibold text-gray-800 mb-1">
+                          {match.Team_Home} vs {match.Team_Away}
+                        </div>
+                        <div className="flex items-center gap-4 text-xs text-gray-600">
+                          {match.HT_Score && match.HT_Score !== '0-0' && (
+                            <span>
+                              <strong>HT:</strong> {match.HT_Score}
+                            </span>
+                          )}
+                          <span>
+                            <strong>FT:</strong> {match.Score}
+                          </span>
+                          {match.Status && match.Status !== 'FT' && (
+                            <span className="text-yellow-600">
+                              {match.Status}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <p className="text-center text-gray-500 text-sm">Nenhum jogo recente fora.</p>
+            )}
+          </div>
+        </div>
+
+        <div className="text-center mt-4 pt-3 border-t border-gray-200 col-span-2">
+          <p className="text-xs text-gray-500">
+            Mostrando {matches.length} jogo{matches.length !== 1 ? 's' : ''} recente{matches.length !== 1 ? 's' : ''}
+          </p>
         </div>
       </CardContent>
     </Card>
