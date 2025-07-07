@@ -193,9 +193,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                       {match.Team_Home} vs {match.Team_Away}
                     </div>
                     <div className="text-xs text-gray-600 flex gap-4">
-                      {match['HT Score'] && match['HT Score'] !== '0-0' && (
-                        <span><strong>HT:</strong> {formatScore(match['HT Score'])}</span>
-                      )}
+                      <span><strong>HT:</strong> {formatScore(match.HT_Score || '0-0')}</span>
                       <span><strong>FT:</strong> {formatScore(match.Score)}</span>
                       {match.Status && match.Status !== 'FT' && (
                         <span className="text-yellow-600">{match.Status}</span>
@@ -245,9 +243,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                       {match.Team_Home} vs {match.Team_Away}
                     </div>
                     <div className="text-xs text-gray-600 flex gap-4">
-                      {match['HT Score'] && match['HT Score'] !== '0-0' && (
-                        <span><strong>HT:</strong> {formatScore(match['HT Score'])}</span>
-                      )}
+                      <span><strong>HT:</strong> {formatScore(match.HT_Score || '0-0')}</span>
                       <span><strong>FT:</strong> {formatScore(match.Score)}</span>
                       {match.Status && match.Status !== 'FT' && (
                         <span className="text-yellow-600">{match.Status}</span>
