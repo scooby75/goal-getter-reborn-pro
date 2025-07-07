@@ -81,8 +81,9 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
         Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
         Result: row.FullTimeResult || row.Result || row.Resultado || '',
-        Score: `${homeGoals || 0}-${awayGoals || 0}`,
+        Score: `${homeGoals || 0} - ${awayGoals || 0}`,  // Atenção aos espaços aqui
         HT_Score: row.HT_Score || row.HTScore || '',
+        Status: row.Status || '',
         League: row.League || 'Indefinida',
       };
     } catch (error) {
@@ -115,7 +116,7 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
           const h = match.Team_Home.toLowerCase();
           const a = match.Team_Away.toLowerCase();
 
-          // Apenas confrontos com team1 como mandante
+          // Apenas confrontos com team1 como mandante e team2 como visitante
           return (
             (h === t1 && a === t2) ||
             (h.includes(t1) && a.includes(t2))
