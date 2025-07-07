@@ -17,23 +17,20 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   if (!homeTeam && !awayTeam) return null;
 
   const formatDate = (dateString: string): string => {
-  // dateString esperado: "YYYY-MM-DD"
-  if (!dateString) return '';
-
-  const parts = dateString.split('-');
-  if (parts.length !== 3) return dateString; // fallback se formato inesperado
-
-  const [year, month, day] = parts;
-  return `${day}/${month}/${year}`;
-};
-
-
+    // Formato esperado: "DD/MM/YYYY" no CSV (ex: "01/02/2025")
+    // Retorna direto, pois já está no formato desejado
+    return dateString;
+  };
 
   const getMatchResult = (match: RecentGameMatch, teamToCheck: string): string => {
     if (!match.Score || !match.Score.includes('-')) return '';
+
     try {
-      const [homeScore, awayScore] = match.Score.split('-').map(s => parseInt(s.trim()));
+      const [homeScoreStr, awayScoreStr] = match.Score.trim().split('-');
+      const homeScore = parseInt(homeScoreStr.trim());
+      const awayScore = parseInt(awayScoreStr.trim());
       if (isNaN(homeScore) || isNaN(awayScore)) return '';
+
       if (match.Team_Home.toLowerCase().includes(teamToCheck.toLowerCase())) {
         if (homeScore > awayScore) return 'V';
         if (homeScore < awayScore) return 'D';
@@ -47,15 +44,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     } catch (e) {
       console.warn('Erro ao analisar resultado:', e);
       return '';
-    }
-  };
-
-  const getResultColor = (result: string): string => {
-    switch (result) {
-      case 'V': return 'text-green-600 bg-green-50 border-green-200';
-      case 'D': return 'text-red-600 bg-red-50 border-red-200';
-      case 'E': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
-      default: return 'text-gray-600 bg-gray-50 border-gray-200';
     }
   };
 
@@ -125,7 +113,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     );
   }
 
-  // Filtrar partidas para home e away separadamente
   const homeMatches = matches.filter(match =>
     homeTeam && match.Team_Home.toLowerCase().includes(homeTeam.toLowerCase())
   );
@@ -185,13 +172,13 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                           {match.Team_Home} vs {match.Team_Away}
                         </div>
                         <div className="flex items-center gap-4 text-xs text-gray-600">
-                          {match.HT_Score && match.HT_Score !== '0-0' && (
+                          {match['HT Score'] && match['HT Score'] !== '0-0' && (
                             <span>
-                              <strong>HT:</strong> {match.HT_Score}
+                              <strong>HT:</strong> {match['HT Score'].trim()}
                             </span>
                           )}
                           <span>
-                            <strong>FT:</strong> {match.Score}
+                            <strong>FT:</strong> {match.Score.trim()}
                           </span>
                           {match.Status && match.Status !== 'FT' && (
                             <span className="text-yellow-600">
@@ -250,13 +237,13 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
                           {match.Team_Home} vs {match.Team_Away}
                         </div>
                         <div className="flex items-center gap-4 text-xs text-gray-600">
-                          {match.HT_Score && match.HT_Score !== '0-0' && (
+                          {match['HT Score'] && match['HT Score'] !== '0-0' && (
                             <span>
-                              <strong>HT:</strong> {match.HT_Score}
+                              <strong>HT:</strong> {match['HT Score'].trim()}
                             </span>
                           )}
                           <span>
-                            <strong>FT:</strong> {match.Score}
+                            <strong>FT:</strong> {match.Score.trim()}
                           </span>
                           {match.Status && match.Status !== 'FT' && (
                             <span className="text-yellow-600">
@@ -284,3 +271,12 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     </Card>
   );
 };
+
+function getResultColor(result: string): string {
+  switch (result) {
+    case 'V': return 'text-green-600 bg-green-50 border-green-200';
+    case 'D': return 'text-red-600 bg-red-50 border-red-200';
+    case 'E': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
+    default: return 'text-gray-600 bg-gray-50 border-gray-200';
+  }
+}
