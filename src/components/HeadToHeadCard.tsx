@@ -39,37 +39,35 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({ homeTeam, awayTe
     return dateStr;
   };
 
-  const formatScore = (score: string): string => {
-    if (!score) return '';
+  const formatScore = (score: string): { home: string; away: string } | null => {
+    if (!score) return null;
     const parts = score.trim().split(/\s*-\s*/);
-    if (parts.length !== 2) return score;
-    return `${parts[0]} - ${parts[1]}`;
+    if (parts.length !== 2) return null;
+    return { home: parts[0].trim(), away: parts[1].trim() };
   };
 
-  const getMatchResult = (match: any, teamToCheck: string): string => {
-    if (!match.Score || !match.Score.includes('-')) return '';
+  const getResult = (match: any, teamToCheck: string): string => {
+    const score = formatScore(match.Score);
+    if (!score) return '';
 
-    try {
-      const [homeScoreStr, awayScoreStr] = match.Score.trim().split(/\s*-\s*/);
-      const homeScore = parseInt(homeScoreStr);
-      const awayScore = parseInt(awayScoreStr);
-      if (isNaN(homeScore) || isNaN(awayScore)) return '';
+    const homeGoals = parseInt(score.home);
+    const awayGoals = parseInt(score.away);
 
-      if (match.Team_Home.toLowerCase().includes(teamToCheck.toLowerCase())) {
-        if (homeScore > awayScore) return 'V';
-        if (homeScore < awayScore) return 'D';
-        return 'E';
-      } else if (match.Team_Away.toLowerCase().includes(teamToCheck.toLowerCase())) {
-        if (awayScore > homeScore) return 'V';
-        if (awayScore < homeScore) return 'D';
-        return 'E';
-      }
+    if (isNaN(homeGoals) || isNaN(awayGoals)) return '';
 
-      return '';
-    } catch (e) {
-      console.warn('Erro ao analisar resultado:', e);
-      return '';
+    if (match.Team_Home.toLowerCase() === teamToCheck.toLowerCase()) {
+      if (homeGoals > awayGoals) return 'V';
+      if (homeGoals < awayGoals) return 'D';
+      return 'E';
     }
+
+    if (match.Team_Away.toLowerCase() === teamToCheck.toLowerCase()) {
+      if (awayGoals > homeGoals) return 'V';
+      if (awayGoals < homeGoals) return 'D';
+      return 'E';
+    }
+
+    return '';
   };
 
   const sortedMatches = (matches || []).sort((a, b) => parseDate(b.Date) - parseDate(a.Date));
@@ -91,7 +89,10 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({ homeTeam, awayTe
         ) : (
           <div className="space-y-3">
             {sortedMatches.map((match, index) => {
-              const result = getMatchResult(match, homeTeam);
+              const score = formatScore(match.Score);
+              const htScore = formatScore(match['HT Score']);
+              const result = getResult(match, homeTeam);
+
               return (
                 <div key={index} className="border border-gray-200 rounded-md p-3 hover:bg-gray-50 transition">
                   <div className="flex justify-between items-center mb-1">
@@ -101,18 +102,26 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({ homeTeam, awayTe
                     </div>
                     <div className="text-xs text-gray-600">{match.League}</div>
                   </div>
+
                   <div className="text-sm font-semibold text-gray-800">
-                    {match.Team_Home} {formatScore(match.Score)} {match.Team_Away}
+                    {match.Team_Home} vs {match.Team_Away}
                   </div>
-                  {match['HT Score'] && match['HT Score'] !== '0-0' && (
-                    <div className="text-xs text-gray-500 mt-1">Intervalo: {formatScore(match['HT Score'])}</div>
+
+                  {score && (
+                    <div className="text-xs mt-1 text-gray-700 font-medium">
+                      FT: {score.home} - {score.away}
+                    </div>
                   )}
+
+                  {htScore && htScore.home !== '0' && htScore.away !== '0' && (
+                    <div className="text-xs text-gray-500 mt-1">HT: {htScore.home} - {htScore.away}</div>
+                  )}
+
                   {result && (
-                    <div className="mt-1 text-xs font-bold inline-block px-2 py-1 rounded border 
-                      {result === 'V' ? 'text-green-600 bg-green-50 border-green-200' :
-                       result === 'D' ? 'text-red-600 bg-red-50 border-red-200' :
-                       result === 'E' ? 'text-yellow-600 bg-yellow-50 border-yellow-200' :
-                       'text-gray-600 bg-gray-50 border-gray-200'}">
+                    <div className={`mt-1 text-xs font-bold inline-block px-2 py-1 rounded border
+                      ${result === 'V' ? 'text-green-600 bg-green-50 border-green-200' :
+                        result === 'D' ? 'text-red-600 bg-red-50 border-red-200' :
+                          'text-yellow-600 bg-yellow-50 border-yellow-200'}`}>
                       {result}
                     </div>
                   )}
