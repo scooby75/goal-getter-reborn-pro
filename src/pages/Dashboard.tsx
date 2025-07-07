@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { GoalStatsConsulta } from "@/components/GoalStatsConsulta";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
+import { HeadToHeadCard } from '@/components/HeadToHeadCard';
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
