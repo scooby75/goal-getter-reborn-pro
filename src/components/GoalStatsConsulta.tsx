@@ -316,6 +316,14 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
+      {/* Recent Games Card */}
+      {(selectedHomeTeam || selectedAwayTeam) && (
+        <RecentGamesCard 
+          homeTeam={selectedHomeTeam} 
+          awayTeam={selectedAwayTeam} 
+        />
+      )}
+      
       {/* Goal Moment Card */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <GoalMomentCard
