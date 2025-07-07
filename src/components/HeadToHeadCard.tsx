@@ -27,21 +27,17 @@ export const HeadToHeadCard: React.FC<HeadToHeadCardProps> = ({
     return null;
   }
 
-  const formatDate = (dateString: string): string => {
-    try {
-      const date = new Date(dateString);
-      if (isNaN(date.getTime())) {
-        return dateString;
-      }
-      return date.toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-      });
-    } catch {
-      return dateString;
-    }
-  };
+ const formatDate = (dateString: string): string => {
+  // dateString esperado: "YYYY-MM-DD"
+  if (!dateString) return '';
+
+  const parts = dateString.split('-');
+  if (parts.length !== 3) return dateString; // fallback se formato inesperado
+
+  const [year, month, day] = parts;
+  return `${day}/${month}/${year}`;
+};
+
 
   const getMatchResult = (match: HeadToHeadMatch, teamToCheck?: string): string => {
     if (!teamToCheck || !match.Score || !match.Score.includes('-')) return '';
