@@ -165,35 +165,37 @@ export const GoalStatsConsulta = () => {
 
   return (
     <div className="space-y-4 p-3 min-h-screen gradient-crypto">
-      {/* Team Selection - Updated with three columns and proper z-index */}
-      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg relative z-20">
+      {/* Team Selection - Updated for mobile */}
+      <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
         <CardHeader className="pb-3">
           <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
             <Shield className="h-5 w-5 text-blue-600" />
             Seleção de Equipes
           </CardTitle>
         </CardHeader>
-        <CardContent className="pt-0 overflow-visible">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-visible">
-            <div className="relative z-30">
+        <CardContent className="pt-0">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
+            {/* Home Team - Added margin bottom for mobile */}
+            <div className="mb-4 md:mb-0">
               <SearchableSelect
                 value={selectedHomeTeam}
                 onValueChange={setSelectedHomeTeam}
                 options={homeTeams}
                 placeholder="Selecione o time da casa"
-                label={`Time da Casa (${homeTeams.length} times disponíveis)`}
-                className="z-50"
+                label={`Time da Casa (${homeTeams.length} times)`}
+                dropdownClassName="z-[100]"
               />
             </div>
             
-            <div className="relative z-30">
+            {/* Away Team - Properly spaced in mobile */}
+            <div>
               <SearchableSelect
                 value={selectedAwayTeam}
                 onValueChange={setSelectedAwayTeam}
                 options={awayTeams}
                 placeholder="Selecione o time visitante"
-                label={`Time Visitante (${awayTeams.length} times disponíveis)`}
-                className="z-50"
+                label={`Time Visitante (${awayTeams.length} times)`}
+                dropdownClassName="z-[90]"
               />
             </div>
           </div>
@@ -201,7 +203,7 @@ export const GoalStatsConsulta = () => {
       </Card>
 
       {shouldShowDifferentLeaguesWarning() && (
-        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg z-10">
+        <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg">
           <CardHeader className="pb-3">
             <CardTitle className="text-center text-lg text-red-600 flex items-center justify-center gap-2">
               <AlertCircle className="h-5 w-5" />
@@ -227,7 +229,7 @@ export const GoalStatsConsulta = () => {
       )}
 
       {shouldShowLeagueAverage() && leagueAverageData && (
-        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg z-10">
+        <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg">
           <CardHeader className="pb-3">
             <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
               <TrendingUp className="h-5 w-5 text-blue-600" />
@@ -338,7 +340,7 @@ export const GoalStatsConsulta = () => {
       {selectedHomeStats && selectedAwayStats && (
         <div className="space-y-4">
           {/* Model Toggle */}
-          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
+          <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
             <CardHeader className="pb-3">
               <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
                 <Shield className="h-5 w-5 text-blue-600" />
