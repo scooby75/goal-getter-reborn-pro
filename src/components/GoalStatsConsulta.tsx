@@ -1,25 +1,237 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp } from 'lucide-react';
+import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp, Search, Check } from 'lucide-react';
 import { useGoalStats } from '@/hooks/useGoalStats';
 import { StatsDisplay } from './StatsDisplay';
 import { FilteredLeagueAverage } from './FilteredLeagueAverage';
 import { LeagueAverageDisplay } from './LeagueAverageDisplay';
-import { SearchableSelect } from './SearchableSelect';
 import { ProbableScores } from './ProbableScores';
 import { DixonColesScores } from './DixonColesScores';
 import { GoalMomentCard } from './GoalMomentCard';
 import { HeadToHeadCard } from './HeadToHeadCard';
 import { RecentGamesCard } from './RecentGamesCard';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
-// Chave para armazenamento no localStorage
 const STORAGE_KEY = 'goalStatsFilters';
 
+const normalizeText = (text: string): string => {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, '')
+    .trim();
+};
+
+const TeamSearchInput = ({ 
+  value, 
+  onValueChange, 
+  options, 
+  placeholder, 
+  label,
+  className 
+}: {
+  value: string;
+  onValueChange: (value: string) => void;
+  options: string[];
+  placeholder: string;
+  label: string;
+  className?: string;
+}) => {
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [focused, setFocused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+    onValueChange(input);
+    
+    if (input.length > 1) {
+      const normalizedInput = normalizeText(input);
+      const filtered = options
+        .filter(option => normalizeText(option).includes(normalizedInput))
+        .slice(0, 5);
+      setSuggestions(filtered);
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleSelectSuggestion = (suggestion: string) => {
+    onValueChange(suggestion);
+    setSuggestions([]);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setSuggestions([]);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div className={cn("relative", className)} ref={containerRef}>
+      <label className="block text-xs font-medium text-gray-700 mb-1">
+        {label}
+      </label>
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <Search className="h-4 w-4 text-gray-400" />
+        </div>
+        <input
+          type="text"
+          value={value}
+          onChange={handleInputChange}
+          onFocus={() => {
+            setFocused(true);
+            if (value.length > 1) {
+              const normalizedInput = normalizeText(value);
+              const filtered = options
+                .filter(option => normalizeText(option).includes(normalizedInput))
+                .slice(0, 5);
+              setSuggestions(filtered);
+            }
+          }}
+          onBlur={() => setTimeout(() => setFocused(false), 200)}
+          placeholder={placeholder}
+          className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+        />
+        {focused && suggestions.length > 0 && (
+          <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+            {suggestions.map((suggestion) => (
+              <div
+                key={suggestion}
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm flex items-center"
+                onMouseDown={() => handleSelectSuggestion(suggestion)}
+              >
+                <Check className="h-4 w-4 mr-2 text-green-500 opacity-0 group-hover:opacity-100" />
+                <span>{suggestion}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const SearchableSelect = ({
+  value,
+  onValueChange,
+  options,
+  placeholder,
+  label,
+  className
+}: {
+  value: string;
+  onValueChange: (value: string) => void;
+  options: string[];
+  placeholder: string;
+  label: string;
+  className?: string;
+}) => {
+  const [open, setOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const filteredOptions = options
+    .filter(option => normalizeText(option).includes(normalizeText(searchTerm)))
+    .sort((a, b) => a.localeCompare(b));
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleOptionSelect = (option: string) => {
+    onValueChange(option);
+    setOpen(false);
+    setSearchTerm('');
+  };
+
+  return (
+    <div className={cn("relative", className)} ref={containerRef}>
+      <label className="block text-xs font-medium text-gray-700 mb-1">
+        {label}
+      </label>
+      <div className="relative">
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(!open);
+            setSearchTerm('');
+          }}
+          className="w-full flex items-center justify-between px-3 py-2 text-left bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+        >
+          <span className={value ? "text-gray-900" : "text-gray-500"}>
+            {value || placeholder}
+          </span>
+          <ChevronsUpDown className="h-4 w-4 text-gray-400" />
+        </button>
+
+        {open && (
+          <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+            <div className="p-2 border-b border-gray-200 sticky top-0 bg-white">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search className="h-4 w-4 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Buscar time..."
+                  className="w-full pl-10 pr-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  autoFocus
+                />
+              </div>
+            </div>
+            <div className="divide-y divide-gray-200">
+              {filteredOptions.length === 0 ? (
+                <div className="px-4 py-2 text-gray-500 text-center text-sm">
+                  Nenhum time encontrado
+                </div>
+              ) : (
+                filteredOptions.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => handleOptionSelect(option)}
+                    className={cn(
+                      "w-full flex items-center px-4 py-2 text-left hover:bg-gray-50 focus:outline-none text-sm",
+                      value === option ? "bg-blue-50 text-blue-600" : "text-gray-900"
+                    )}
+                  >
+                    <Check
+                      className={cn(
+                        "mr-2 h-4 w-4 flex-shrink-0",
+                        value === option ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                    <span>{option}</span>
+                  </button>
+                ))
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 export const GoalStatsConsulta = () => {
-  console.log('GoalStatsConsulta component rendering');
-  
-  // Estados iniciais carregados do localStorage
   const [selectedHomeTeam, setSelectedHomeTeam] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const savedFilters = localStorage.getItem(STORAGE_KEY);
@@ -44,18 +256,16 @@ export const GoalStatsConsulta = () => {
     return '';
   });
 
-  // Estado para alternar entre modelos
   const [useDixonColes, setUseDixonColes] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       const savedPreference = localStorage.getItem('scorePredictionModel');
       return savedPreference === 'dixon-coles';
     }
-    return true; // Dixon-Coles por padrão
+    return true;
   });
   
   const { goalStatsData, isLoading, error } = useGoalStats();
 
-  // Salva os filtros no localStorage sempre que mudam
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -66,7 +276,6 @@ export const GoalStatsConsulta = () => {
     }
   }, [selectedHomeTeam, selectedAwayTeam, selectedPrintTeam]);
 
-  // Salva preferência do modelo
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('scorePredictionModel', useDixonColes ? 'dixon-coles' : 'poisson');
@@ -74,7 +283,6 @@ export const GoalStatsConsulta = () => {
   }, [useDixonColes]);
 
   if (error) {
-    console.error('Error in GoalStatsConsulta:', error);
     return (
       <div className="flex items-center justify-center min-h-[300px]">
         <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg">
@@ -110,10 +318,6 @@ export const GoalStatsConsulta = () => {
     .filter((value, index, self) => self.indexOf(value) === index)
     .sort();
 
-  console.log('Extracted home teams:', homeTeams);
-  console.log('Extracted away teams:', awayTeams);
-  console.log('Extracted print teams:', printTeams);
-
   const selectedHomeStats = goalStatsData.homeStats.find(team => team.Team === selectedHomeTeam);
   const selectedAwayStats = goalStatsData.awayStats.find(team => team.Team === selectedAwayTeam);
 
@@ -126,9 +330,6 @@ export const GoalStatsConsulta = () => {
 
   const homeTeamLeague = selectedHomeTeam ? getTeamLeague(selectedHomeTeam, true) : null;
   const awayTeamLeague = selectedAwayTeam ? getTeamLeague(selectedAwayTeam, false) : null;
-
-  console.log('Home team league:', homeTeamLeague);
-  console.log('Away team league:', awayTeamLeague);
 
   const shouldShowLeagueAverage = () => {
     if (!selectedHomeTeam && !selectedAwayTeam) return false;
@@ -155,7 +356,6 @@ export const GoalStatsConsulta = () => {
 
   const leagueAverageData = getLeagueAverageData();
 
-  // Get goal moment data
   const selectedHomeGoalMoments = goalStatsData.homeGoalMoments?.find(
     team => team.Team === selectedHomeTeam
   );
@@ -165,7 +365,7 @@ export const GoalStatsConsulta = () => {
 
   return (
     <div className="space-y-4 p-3 min-h-screen gradient-crypto">
-      {/* Team Selection - Updated for mobile */}
+      {/* Team Selection - Versão mobile com inputs de busca */}
       <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
         <CardHeader className="pb-3">
           <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
@@ -174,34 +374,49 @@ export const GoalStatsConsulta = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="pt-0">
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
-            {/* Home Team - Added margin bottom for mobile */}
-            <div className="mb-4 md:mb-0">
+          <div className="flex flex-col gap-4">
+            {/* Versão mobile - inputs com autocompletar */}
+            <div className="md:hidden space-y-4">
+              <TeamSearchInput
+                value={selectedHomeTeam}
+                onValueChange={setSelectedHomeTeam}
+                options={homeTeams}
+                placeholder="Digite o time da casa"
+                label={`Time da Casa (${homeTeams.length} times)`}
+              />
+              
+              <TeamSearchInput
+                value={selectedAwayTeam}
+                onValueChange={setSelectedAwayTeam}
+                options={awayTeams}
+                placeholder="Digite o time visitante"
+                label={`Time Visitante (${awayTeams.length} times)`}
+              />
+            </div>
+
+            {/* Versão desktop - mantém os dropdowns */}
+            <div className="hidden md:grid md:grid-cols-2 gap-4">
               <SearchableSelect
                 value={selectedHomeTeam}
                 onValueChange={setSelectedHomeTeam}
                 options={homeTeams}
                 placeholder="Selecione o time da casa"
                 label={`Time da Casa (${homeTeams.length} times)`}
-                dropdownClassName="z-[100]"
               />
-            </div>
-            
-            {/* Away Team - Properly spaced in mobile */}
-            <div>
+              
               <SearchableSelect
                 value={selectedAwayTeam}
                 onValueChange={setSelectedAwayTeam}
                 options={awayTeams}
                 placeholder="Selecione o time visitante"
                 label={`Time Visitante (${awayTeams.length} times)`}
-                dropdownClassName="z-[90]"
               />
             </div>
           </div>
         </CardContent>
       </Card>
 
+      {/* Restante do código permanece igual */}
       {shouldShowDifferentLeaguesWarning() && (
         <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg">
           <CardHeader className="pb-3">
@@ -279,7 +494,6 @@ export const GoalStatsConsulta = () => {
         </Card>
       )}
 
-      {/* League Average Display for Selected Teams */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <LeagueAverageDisplay 
           homeStats={selectedHomeStats}
@@ -290,7 +504,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Filtered League Average */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <FilteredLeagueAverage 
           homeStats={selectedHomeStats}
@@ -300,7 +513,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Stats Display */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <StatsDisplay 
           homeTeam={selectedHomeTeam}
@@ -310,7 +522,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Head to Head Card */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <HeadToHeadCard
           homeTeam={selectedHomeTeam}
@@ -318,7 +529,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Recent Games Card */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <RecentGamesCard 
           homeTeam={selectedHomeTeam} 
@@ -326,7 +536,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
       
-      {/* Goal Moment Card */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <GoalMomentCard
           homeTeam={selectedHomeTeam}
@@ -336,10 +545,8 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Model Selection and Scores */}
       {selectedHomeStats && selectedAwayStats && (
         <div className="space-y-4">
-          {/* Model Toggle */}
           <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
             <CardHeader className="pb-3">
               <CardTitle className="text-center text-lg text-gray-800 flex items-center justify-center gap-2">
@@ -379,7 +586,6 @@ export const GoalStatsConsulta = () => {
             </CardContent>
           </Card>
 
-          {/* Score Predictions */}
           {useDixonColes ? (
             <DixonColesScores 
               homeStats={selectedHomeStats} 
