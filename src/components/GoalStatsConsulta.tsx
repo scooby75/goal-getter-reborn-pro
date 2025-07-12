@@ -1,6 +1,7 @@
+// src/components/GoalStatsConsulta.tsx
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp, Search } from 'lucide-react';
+import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp, Search, Check, Share2 } from 'lucide-react';
 import { useGoalStats } from '@/hooks/useGoalStats';
 import { StatsDisplay } from './StatsDisplay';
 import { FilteredLeagueAverage } from './FilteredLeagueAverage';
@@ -12,6 +13,7 @@ import { HeadToHeadCard } from './HeadToHeadCard';
 import { RecentGamesCard } from './RecentGamesCard';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { saveFiltersToUrl, getFiltersFromUrl } from '@/utils/urlParams';
 
 const STORAGE_KEY = 'goalStatsFilters';
 
@@ -85,16 +87,48 @@ const TeamSearchInput = ({
             {suggestions.map((suggestion) => (
               <div
                 key={suggestion}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm flex items-center"
                 onMouseDown={() => handleSelectSuggestion(suggestion)}
               >
-                {suggestion}
+                <span>{suggestion}</span>
               </div>
             ))}
           </div>
         )}
       </div>
     </div>
+  );
+};
+
+const ShareButton = ({ homeTeam, awayTeam }: { homeTeam: string; awayTeam: string }) => {
+  const handleShare = async () => {
+    try {
+      const currentUrl = window.location.href;
+      
+      if (navigator.share) {
+        await navigator.share({
+          title: `Estatísticas: ${homeTeam || 'Time da Casa'} vs ${awayTeam || 'Time Visitante'}`,
+          text: `Confira as estatísticas entre ${homeTeam || 'time da casa'} e ${awayTeam || 'time visitante'}`,
+          url: currentUrl
+        });
+      } else {
+        await navigator.clipboard.writeText(currentUrl);
+        alert('Link copiado para a área de transferência!');
+      }
+    } catch (err) {
+      console.error('Erro ao compartilhar:', err);
+    }
+  };
+
+  return (
+    <Button 
+      onClick={handleShare}
+      variant="outline"
+      className="gap-2"
+    >
+      <Share2 className="h-4 w-4" />
+      Compartilhar
+    </Button>
   );
 };
 
@@ -108,20 +142,33 @@ export const GoalStatsConsulta = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedFilters = localStorage.getItem(STORAGE_KEY);
-      if (savedFilters) {
-        const { homeTeam, awayTeam, printTeam } = JSON.parse(savedFilters);
-        setSelectedHomeTeam(homeTeam || '');
-        setSelectedAwayTeam(awayTeam || '');
-        setSelectedPrintTeam(printTeam || '');
-      }
+      const urlFilters = getFiltersFromUrl();
+      
+      if (urlFilters.homeTeam) setSelectedHomeTeam(urlFilters.homeTeam);
+      if (urlFilters.awayTeam) setSelectedAwayTeam(urlFilters.awayTeam);
+      if (urlFilters.printTeam) setSelectedPrintTeam(urlFilters.printTeam);
+      setUseDixonColes(urlFilters.model === 'dixon-coles');
 
-      const savedPreference = localStorage.getItem('scorePredictionModel');
-      setUseDixonColes(savedPreference ? savedPreference === 'dixon-coles' : true);
+      if (!urlFilters.homeTeam && !urlFilters.awayTeam) {
+        const savedFilters = localStorage.getItem(STORAGE_KEY);
+        if (savedFilters) {
+          const { homeTeam, awayTeam, printTeam } = JSON.parse(savedFilters);
+          setSelectedHomeTeam(homeTeam || '');
+          setSelectedAwayTeam(awayTeam || '');
+          setSelectedPrintTeam(printTeam || '');
+        }
+      }
     }
   }, []);
 
   useEffect(() => {
+    saveFiltersToUrl({
+      homeTeam: selectedHomeTeam,
+      awayTeam: selectedAwayTeam,
+      printTeam: selectedPrintTeam,
+      model: useDixonColes ? 'dixon-coles' : 'poisson'
+    });
+
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         homeTeam: selectedHomeTeam,
@@ -129,13 +176,7 @@ export const GoalStatsConsulta = () => {
         printTeam: selectedPrintTeam
       }));
     }
-  }, [selectedHomeTeam, selectedAwayTeam, selectedPrintTeam]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('scorePredictionModel', useDixonColes ? 'dixon-coles' : 'poisson');
-    }
-  }, [useDixonColes]);
+  }, [selectedHomeTeam, selectedAwayTeam, selectedPrintTeam, useDixonColes]);
 
   if (error) {
     return (
@@ -218,17 +259,20 @@ export const GoalStatsConsulta = () => {
 
   return (
     <div className="space-y-4 p-3 min-h-screen gradient-crypto">
-      {/* Seção de seleção de times */}
       <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
         <CardHeader className="pb-3">
-          <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
-            <Shield className="h-5 w-5 text-blue-600" />
-            Seleção de Equipes
-          </CardTitle>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-xl text-gray-800 flex items-center gap-2">
+              <Shield className="h-5 w-5 text-blue-600" />
+              Seleção de Equipes
+            </CardTitle>
+            {(selectedHomeTeam || selectedAwayTeam) && (
+              <ShareButton homeTeam={selectedHomeTeam} awayTeam={selectedAwayTeam} />
+            )}
+          </div>
         </CardHeader>
         <CardContent className="pt-0">
           <div className="flex flex-col gap-4">
-            {/* Versão mobile */}
             <div className="md:hidden space-y-4">
               <TeamSearchInput
                 value={selectedHomeTeam}
@@ -247,7 +291,6 @@ export const GoalStatsConsulta = () => {
               />
             </div>
 
-            {/* Versão desktop */}
             <div className="hidden md:block">
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -287,7 +330,6 @@ export const GoalStatsConsulta = () => {
         </CardContent>
       </Card>
 
-      {/* Aviso de ligas diferentes */}
       {shouldShowDifferentLeaguesWarning() && (
         <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg">
           <CardHeader className="pb-3">
@@ -314,7 +356,6 @@ export const GoalStatsConsulta = () => {
         </Card>
       )}
 
-      {/* Média da liga */}
       {shouldShowLeagueAverage() && leagueAverageData && (
         <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg">
           <CardHeader className="pb-3">
@@ -366,7 +407,6 @@ export const GoalStatsConsulta = () => {
         </Card>
       )}
 
-      {/* Média da liga para times selecionados */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <LeagueAverageDisplay 
           homeStats={selectedHomeStats}
@@ -377,7 +417,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Média filtrada da liga */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <FilteredLeagueAverage 
           homeStats={selectedHomeStats}
@@ -387,7 +426,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Estatísticas */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <StatsDisplay 
           homeTeam={selectedHomeTeam}
@@ -397,7 +435,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Confronto direto */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <HeadToHeadCard
           homeTeam={selectedHomeTeam}
@@ -405,7 +442,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Jogos recentes */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <RecentGamesCard 
           homeTeam={selectedHomeTeam} 
@@ -413,7 +449,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
       
-      {/* Momentos de gol */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <GoalMomentCard
           homeTeam={selectedHomeTeam}
@@ -423,7 +458,6 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
-      {/* Seleção de modelo e previsões */}
       {selectedHomeStats && selectedAwayStats && (
         <div className="space-y-4">
           <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
