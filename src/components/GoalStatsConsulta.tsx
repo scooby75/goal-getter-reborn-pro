@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp, Search, Check } from 'lucide-react';
+import { Loader2, AlertCircle, ToggleLeft, ToggleRight, Shield, TrendingUp, Search } from 'lucide-react';
 import { useGoalStats } from '@/hooks/useGoalStats';
 import { StatsDisplay } from './StatsDisplay';
 import { FilteredLeagueAverage } from './FilteredLeagueAverage';
@@ -40,8 +40,7 @@ const TeamSearchInput = ({
   className?: string;
 }) => {
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [focused, setFocused] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
@@ -63,19 +62,8 @@ const TeamSearchInput = ({
     setSuggestions([]);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setSuggestions([]);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   return (
-    <div className={cn("relative", className)} ref={containerRef}>
+    <div className={cn("relative", className)}>
       <label className="block text-xs font-medium text-gray-700 mb-1">
         {label}
       </label>
@@ -87,30 +75,20 @@ const TeamSearchInput = ({
           type="text"
           value={value}
           onChange={handleInputChange}
-          onFocus={() => {
-            setFocused(true);
-            if (value.length > 1) {
-              const normalizedInput = normalizeText(value);
-              const filtered = options
-                .filter(option => normalizeText(option).includes(normalizedInput))
-                .slice(0, 5);
-              setSuggestions(filtered);
-            }
-          }}
-          onBlur={() => setTimeout(() => setFocused(false), 200)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setTimeout(() => setIsFocused(false), 200)}
           placeholder={placeholder}
           className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
         />
-        {focused && suggestions.length > 0 && (
-          <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+        {isFocused && suggestions.length > 0 && (
+          <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg">
             {suggestions.map((suggestion) => (
               <div
                 key={suggestion}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm flex items-center"
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
                 onMouseDown={() => handleSelectSuggestion(suggestion)}
               >
-                <Check className="h-4 w-4 mr-2 text-green-500 opacity-0 group-hover:opacity-100" />
-                <span>{suggestion}</span>
+                {suggestion}
               </div>
             ))}
           </div>
@@ -120,151 +98,28 @@ const TeamSearchInput = ({
   );
 };
 
-const SearchableSelect = ({
-  value,
-  onValueChange,
-  options,
-  placeholder,
-  label,
-  className
-}: {
-  value: string;
-  onValueChange: (value: string) => void;
-  options: string[];
-  placeholder: string;
-  label: string;
-  className?: string;
-}) => {
-  const [open, setOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const filteredOptions = options
-    .filter(option => normalizeText(option).includes(normalizeText(searchTerm)))
-    .sort((a, b) => a.localeCompare(b));
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleOptionSelect = (option: string) => {
-    onValueChange(option);
-    setOpen(false);
-    setSearchTerm('');
-  };
-
-  return (
-    <div className={cn("relative", className)} ref={containerRef}>
-      <label className="block text-xs font-medium text-gray-700 mb-1">
-        {label}
-      </label>
-      <div className="relative">
-        <button
-          type="button"
-          onClick={() => {
-            setOpen(!open);
-            setSearchTerm('');
-          }}
-          className="w-full flex items-center justify-between px-3 py-2 text-left bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-        >
-          <span className={value ? "text-gray-900" : "text-gray-500"}>
-            {value || placeholder}
-          </span>
-          <ChevronsUpDown className="h-4 w-4 text-gray-400" />
-        </button>
-
-        {open && (
-          <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
-            <div className="p-2 border-b border-gray-200 sticky top-0 bg-white">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-4 w-4 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Buscar time..."
-                  className="w-full pl-10 pr-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  autoFocus
-                />
-              </div>
-            </div>
-            <div className="divide-y divide-gray-200">
-              {filteredOptions.length === 0 ? (
-                <div className="px-4 py-2 text-gray-500 text-center text-sm">
-                  Nenhum time encontrado
-                </div>
-              ) : (
-                filteredOptions.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => handleOptionSelect(option)}
-                    className={cn(
-                      "w-full flex items-center px-4 py-2 text-left hover:bg-gray-50 focus:outline-none text-sm",
-                      value === option ? "bg-blue-50 text-blue-600" : "text-gray-900"
-                    )}
-                  >
-                    <Check
-                      className={cn(
-                        "mr-2 h-4 w-4 flex-shrink-0",
-                        value === option ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                    <span>{option}</span>
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
 export const GoalStatsConsulta = () => {
-  const [selectedHomeTeam, setSelectedHomeTeam] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const savedFilters = localStorage.getItem(STORAGE_KEY);
-      return savedFilters ? JSON.parse(savedFilters).homeTeam : '';
-    }
-    return '';
-  });
-  
-  const [selectedAwayTeam, setSelectedAwayTeam] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const savedFilters = localStorage.getItem(STORAGE_KEY);
-      return savedFilters ? JSON.parse(savedFilters).awayTeam : '';
-    }
-    return '';
-  });
-
-  const [selectedPrintTeam, setSelectedPrintTeam] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const savedFilters = localStorage.getItem(STORAGE_KEY);
-      return savedFilters ? JSON.parse(savedFilters).printTeam : '';
-    }
-    return '';
-  });
-
-  const [useDixonColes, setUseDixonColes] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      const savedPreference = localStorage.getItem('scorePredictionModel');
-      return savedPreference === 'dixon-coles';
-    }
-    return true;
-  });
+  const [selectedHomeTeam, setSelectedHomeTeam] = useState<string>('');
+  const [selectedAwayTeam, setSelectedAwayTeam] = useState<string>('');
+  const [selectedPrintTeam, setSelectedPrintTeam] = useState<string>('');
+  const [useDixonColes, setUseDixonColes] = useState<boolean>(true);
   
   const { goalStatsData, isLoading, error } = useGoalStats();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedFilters = localStorage.getItem(STORAGE_KEY);
+      if (savedFilters) {
+        const { homeTeam, awayTeam, printTeam } = JSON.parse(savedFilters);
+        setSelectedHomeTeam(homeTeam || '');
+        setSelectedAwayTeam(awayTeam || '');
+        setSelectedPrintTeam(printTeam || '');
+      }
+
+      const savedPreference = localStorage.getItem('scorePredictionModel');
+      setUseDixonColes(savedPreference ? savedPreference === 'dixon-coles' : true);
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -304,27 +159,25 @@ export const GoalStatsConsulta = () => {
     );
   }
 
-  const homeTeams = goalStatsData.homeStats
-    .map(team => team.Team)
-    .filter(teamName => teamName && teamName.trim() !== '')
-    .sort();
+  const homeTeams = goalStatsData?.homeStats
+    ?.map(team => team.Team)
+    ?.filter(teamName => teamName && teamName.trim() !== '')
+    ?.sort() || [];
     
-  const awayTeams = goalStatsData.awayStats
-    .map(team => team.Team)
-    .filter(teamName => teamName && teamName.trim() !== '')
-    .sort();
+  const awayTeams = goalStatsData?.awayStats
+    ?.map(team => team.Team)
+    ?.filter(teamName => teamName && teamName.trim() !== '')
+    ?.sort() || [];
 
-  const printTeams = [...homeTeams, ...awayTeams]
-    .filter((value, index, self) => self.indexOf(value) === index)
-    .sort();
+  const printTeams = [...new Set([...homeTeams, ...awayTeams])].sort();
 
-  const selectedHomeStats = goalStatsData.homeStats.find(team => team.Team === selectedHomeTeam);
-  const selectedAwayStats = goalStatsData.awayStats.find(team => team.Team === selectedAwayTeam);
+  const selectedHomeStats = goalStatsData?.homeStats?.find(team => team.Team === selectedHomeTeam);
+  const selectedAwayStats = goalStatsData?.awayStats?.find(team => team.Team === selectedAwayTeam);
 
   const getTeamLeague = (teamName: string, isHome: boolean) => {
     const stats = isHome 
-      ? goalStatsData.homeStats.find(team => team.Team === teamName)
-      : goalStatsData.awayStats.find(team => team.Team === teamName);
+      ? goalStatsData?.homeStats?.find(team => team.Team === teamName)
+      : goalStatsData?.awayStats?.find(team => team.Team === teamName);
     return stats?.League_Name;
   };
 
@@ -349,23 +202,23 @@ export const GoalStatsConsulta = () => {
     const targetLeague = homeTeamLeague || awayTeamLeague;
     if (!targetLeague) return null;
     
-    return goalStatsData.leagueAverages.find(
+    return goalStatsData?.leagueAverages?.find(
       league => league.League_Name === targetLeague
     );
   };
 
   const leagueAverageData = getLeagueAverageData();
 
-  const selectedHomeGoalMoments = goalStatsData.homeGoalMoments?.find(
+  const selectedHomeGoalMoments = goalStatsData?.homeGoalMoments?.find(
     team => team.Team === selectedHomeTeam
   );
-  const selectedAwayGoalMoments = goalStatsData.awayGoalMoments?.find(
+  const selectedAwayGoalMoments = goalStatsData?.awayGoalMoments?.find(
     team => team.Team === selectedAwayTeam
   );
 
   return (
     <div className="space-y-4 p-3 min-h-screen gradient-crypto">
-      {/* Team Selection - Versão mobile com inputs de busca */}
+      {/* Seção de seleção de times */}
       <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
         <CardHeader className="pb-3">
           <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center gap-2">
@@ -375,7 +228,7 @@ export const GoalStatsConsulta = () => {
         </CardHeader>
         <CardContent className="pt-0">
           <div className="flex flex-col gap-4">
-            {/* Versão mobile - inputs com autocompletar */}
+            {/* Versão mobile */}
             <div className="md:hidden space-y-4">
               <TeamSearchInput
                 value={selectedHomeTeam}
@@ -394,29 +247,47 @@ export const GoalStatsConsulta = () => {
               />
             </div>
 
-            {/* Versão desktop - mantém os dropdowns */}
-            <div className="hidden md:grid md:grid-cols-2 gap-4">
-              <SearchableSelect
-                value={selectedHomeTeam}
-                onValueChange={setSelectedHomeTeam}
-                options={homeTeams}
-                placeholder="Selecione o time da casa"
-                label={`Time da Casa (${homeTeams.length} times)`}
-              />
-              
-              <SearchableSelect
-                value={selectedAwayTeam}
-                onValueChange={setSelectedAwayTeam}
-                options={awayTeams}
-                placeholder="Selecione o time visitante"
-                label={`Time Visitante (${awayTeams.length} times)`}
-              />
+            {/* Versão desktop */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                    Time da Casa ({homeTeams.length} times)
+                  </label>
+                  <select
+                    value={selectedHomeTeam}
+                    onChange={(e) => setSelectedHomeTeam(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+                  >
+                    <option value="">Selecione o time da casa</option>
+                    {homeTeams.map(team => (
+                      <option key={team} value={team}>{team}</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                    Time Visitante ({awayTeams.length} times)
+                  </label>
+                  <select
+                    value={selectedAwayTeam}
+                    onChange={(e) => setSelectedAwayTeam(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+                  >
+                    <option value="">Selecione o time visitante</option>
+                    {awayTeams.map(team => (
+                      <option key={team} value={team}>{team}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Restante do código permanece igual */}
+      {/* Aviso de ligas diferentes */}
       {shouldShowDifferentLeaguesWarning() && (
         <Card className="bg-white/95 backdrop-blur-sm border-red-300 shadow-lg">
           <CardHeader className="pb-3">
@@ -443,6 +314,7 @@ export const GoalStatsConsulta = () => {
         </Card>
       )}
 
+      {/* Média da liga */}
       {shouldShowLeagueAverage() && leagueAverageData && (
         <Card className="bg-white/95 backdrop-blur-sm border-blue-200 shadow-lg">
           <CardHeader className="pb-3">
@@ -455,7 +327,7 @@ export const GoalStatsConsulta = () => {
             <div className="hidden md:block overflow-x-auto">
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <div className="grid grid-cols-8 gap-3 text-center">
-                  {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+', 'BTS', 'CS'].map((key, index) => (
+                  {['0.5+', '1.5+', '2.5+', '3.5+', '4.5+', '5.5+', 'BTS', 'CS'].map((key) => (
                     <div key={key} className="space-y-1">
                       <div className="text-xs text-gray-600 font-medium">{key}</div>
                       <div className="text-lg font-bold text-gray-800">
@@ -494,16 +366,18 @@ export const GoalStatsConsulta = () => {
         </Card>
       )}
 
+      {/* Média da liga para times selecionados */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <LeagueAverageDisplay 
           homeStats={selectedHomeStats}
           awayStats={selectedAwayStats}
-          leagueAverages={goalStatsData.leagueAverages}
+          leagueAverages={goalStatsData?.leagueAverages || []}
           selectedHomeTeam={selectedHomeTeam}
           selectedAwayTeam={selectedAwayTeam}
         />
       )}
 
+      {/* Média filtrada da liga */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <FilteredLeagueAverage 
           homeStats={selectedHomeStats}
@@ -513,6 +387,7 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
+      {/* Estatísticas */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <StatsDisplay 
           homeTeam={selectedHomeTeam}
@@ -522,6 +397,7 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
+      {/* Confronto direto */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <HeadToHeadCard
           homeTeam={selectedHomeTeam}
@@ -529,6 +405,7 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
+      {/* Jogos recentes */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <RecentGamesCard 
           homeTeam={selectedHomeTeam} 
@@ -536,6 +413,7 @@ export const GoalStatsConsulta = () => {
         />
       )}
       
+      {/* Momentos de gol */}
       {(selectedHomeTeam || selectedAwayTeam) && (
         <GoalMomentCard
           homeTeam={selectedHomeTeam}
@@ -545,6 +423,7 @@ export const GoalStatsConsulta = () => {
         />
       )}
 
+      {/* Seleção de modelo e previsões */}
       {selectedHomeStats && selectedAwayStats && (
         <div className="space-y-4">
           <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
