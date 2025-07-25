@@ -29,6 +29,7 @@ SM San Juan,1 out of 7,14%,0,1,0,1 - 1,1,1.00,Argentina - Liga Profesional
 Union Santa Fe,1 out of 7,14%,0,0,1,1 - 2,0,0.00,Argentina - Liga Profesional
 Central Cordoba,2 out of 7,29%,0,0,2,3 - 5,0,0.00,Argentina - Liga Profesional
 Instituto,1 out of 9,11%,0,0,1,1 - 4,0,0.00,Argentina - Liga Profesional
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Argentina - Primera Nacional
 Chacarita J.,4 out of 9,44%,4,0,0,8 - 0,12,3.00,Argentina - Primera Nacional
 Atletico Mitre,4 out of 9,44%,4,0,0,8 - 1,12,3.00,Argentina - Primera Nacional
 D. de Belgrano,3 out of 9,33%,3,0,0,6 - 1,9,3.00,Argentina - Primera Nacional
@@ -65,6 +66,7 @@ Almagro,6 out of 9,67%,1,3,2,7 - 9,6,1.00,Argentina - Primera Nacional
 Agropecuario,3 out of 9,33%,0,2,1,5 - 6,2,0.67,Argentina - Primera Nacional
 All Boys,3 out of 9,33%,0,2,1,3 - 4,2,0.67,Argentina - Primera Nacional
 T. Remedios,0 out of 9,0%,0,0,0,0 - 0,0,0,Argentina - Primera Nacional
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Argentina - Primera B
 Argentino Merlo,5 out of 10,50%,5,0,0,11 - 2,15,3.00,Argentina - Primera B
 Acassuso,5 out of 10,50%,5,0,0,10 - 3,15,3.00,Argentina - Primera B
 Deportivo Merlo,3 out of 10,30%,3,0,0,5 - 0,9,3.00,Argentina - Primera B
@@ -86,6 +88,7 @@ S. Italiano,2 out of 10,20%,1,0,1,3 - 3,3,1.50,Argentina - Primera B
 A. Quilmes,2 out of 10,20%,1,0,1,4 - 6,3,1.50,Argentina - Primera B
 SM Burzaco,3 out of 10,30%,1,1,1,4 - 4,4,1.33,Argentina - Primera B
 Fenix,1 out of 10,10%,0,1,0,1 - 1,1,1.00,Argentina - Primera B
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Australia - A-League
 Wellington,3 out of 13,23%,3,0,0,7 - 1,9,3.00,Australia - A-League
 Sydney FC,4 out of 13,31%,4,0,0,10 - 5,12,3.00,Australia - A-League
 Central Coast,2 out of 13,15%,2,0,0,6 - 2,6,3.00,Australia - A-League
@@ -99,78 +102,52 @@ Macarthur FC,7 out of 13,54%,5,0,2,17 - 12,15,2.14,Australia - A-League
 Melbourne V.,7 out of 13,54%,5,0,2,17 - 12,15,2.14,Australia - A-League
 Perth Glory,4 out of 13,31%,2,1,1,6 - 6,7,1.75,Australia - A-League
 Brisbane Roar,3 out of 13,23%,1,1,1,10 - 10,4,1.33,Australia - A-League
-ABB,2 out of 7,29%,2,0,0,2 - 0,6,3.00,Bolivia - Primera Div. - Apertura
-Always Ready,5 out of 8,62%,4,1,0,18 - 4,13,2.60,Bolivia - Primera Div. - Apertura
-Bolivar,4 out of 6,67%,2,2,0,7 - 2,8,2.00,Bolivia - Primera Div. - Apertura
-SA Bulo Bulo,2 out of 8,25%,1,1,0,3 - 1,4,2.00,Bolivia - Primera Div. - Apertura
-U. de Vinto,2 out of 6,33%,1,1,0,3 - 1,4,2.00,Bolivia - Primera Div. - Apertura
-I. Petrolero,2 out of 7,29%,1,1,0,2 - 1,4,2.00,Bolivia - Primera Div. - Apertura
-GV San Jose,3 out of 7,43%,2,0,1,6 - 6,6,2.00,Bolivia - Primera Div. - Apertura
-The Strongest,4 out of 8,50%,2,1,1,8 - 5,7,1.75,Bolivia - Primera Div. - Apertura
-Nacional Potosi,3 out of 7,43%,1,2,0,4 - 3,5,1.67,Bolivia - Primera Div. - Apertura
-Oriente P.,2 out of 7,29%,1,0,1,4 - 3,3,1.50,Bolivia - Primera Div. - Apertura
-Blooming,4 out of 6,67%,1,2,1,6 - 9,5,1.25,Bolivia - Primera Div. - Apertura
-Real Tomayapo,1 out of 7,14%,0,1,0,1 - 1,1,1.00,Bolivia - Primera Div. - Apertura
-Aurora,3 out of 8,38%,1,0,2,8 - 10,3,1.00,Bolivia - Primera Div. - Apertura
-Guabira,4 out of 8,50%,0,3,1,5 - 7,3,0.75,Bolivia - Primera Div. - Apertura
-Real Oruro,2 out of 8,25%,0,1,1,4 - 5,1,0.50,Bolivia - Primera Div. - Apertura
-Wilstermann,0 out of 7,0%,0,0,0,0 - 0,0,0,Bolivia - Primera Div. - Apertura
-Real Tomayapo,2 out of 15,13%,2,0,0,7 - 1,6,3.00,Bolivia - Primera Div. - Clausura
-Blooming,4 out of 15,27%,4,0,0,4 - 0,12,3.00,Bolivia - Primera Div. - Clausura
-Always Ready,4 out of 15,27%,3,1,0,11 - 4,10,2.50,Bolivia - Primera Div. - Clausura
-SA Bulo Bulo,4 out of 15,27%,3,1,0,8 - 3,10,2.50,Bolivia - Primera Div. - Clausura
-Bolivar,11 out of 15,73%,8,2,1,28 - 10,26,2.36,Bolivia - Primera Div. - Clausura
-Royal Pari,3 out of 15,20%,2,1,0,8 - 2,7,2.33,Bolivia - Primera Div. - Clausura
-Santa Cruz,4 out of 15,27%,3,0,1,7 - 3,9,2.25,Bolivia - Primera Div. - Clausura
-Wilstermann,6 out of 15,40%,4,1,1,9 - 5,13,2.17,Bolivia - Primera Div. - Clausura
-U. de Vinto,6 out of 15,40%,4,1,1,10 - 8,13,2.17,Bolivia - Primera Div. - Clausura
-The Strongest,7 out of 15,47%,5,0,2,15 - 12,15,2.14,Bolivia - Primera Div. - Clausura
-I. Petrolero,7 out of 15,47%,3,3,1,12 - 9,12,1.71,Bolivia - Primera Div. - Clausura
-Aurora,10 out of 15,67%,4,5,1,18 - 13,17,1.70,Bolivia - Primera Div. - Clausura
-Nacional Potosi,6 out of 15,40%,3,1,2,13 - 11,10,1.67,Bolivia - Primera Div. - Clausura
-Gualberto V. SJ,6 out of 15,40%,3,1,2,10 - 10,10,1.67,Bolivia - Primera Div. - Clausura
-Oriente P.,3 out of 15,20%,1,0,2,4 - 6,3,1.00,Bolivia - Primera Div. - Clausura
-Guabira,6 out of 15,40%,1,2,3,10 - 12,5,0.83,Bolivia - Primera Div. - Clausura
-Cruzeiro,3 out of 7,43%,3,0,0,8 - 0,9,3.00,Brazil - Serie A
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Austria - Bundesliga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Austria - 2. Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Belgium - First Division A
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Brazil - Serie A
+Cruzeiro,3 out of 8,38%,3,0,0,8 - 0,9,3.00,Brazil - Serie A
 Bragantino,4 out of 7,57%,4,0,0,7 - 2,12,3.00,Brazil - Serie A
-Flamengo,3 out of 6,50%,3,0,0,6 - 1,9,3.00,Brazil - Serie A
-Palmeiras,4 out of 6,67%,4,0,0,6 - 2,12,3.00,Brazil - Serie A
+Flamengo,3 out of 7,43%,3,0,0,6 - 1,9,3.00,Brazil - Serie A
+Palmeiras,4 out of 7,57%,4,0,0,6 - 2,12,3.00,Brazil - Serie A
 Botafogo,3 out of 8,38%,3,0,0,4 - 0,9,3.00,Brazil - Serie A
 Atletico MG,2 out of 8,25%,2,0,0,2 - 0,6,3.00,Brazil - Serie A
 Bahia,3 out of 7,43%,2,1,0,6 - 2,7,2.33,Brazil - Serie A
+Mirassol,4 out of 8,50%,2,2,0,6 - 2,8,2.00,Brazil - Serie A
 Fluminense,3 out of 7,43%,2,0,1,6 - 3,6,2.00,Brazil - Serie A
 Santos,3 out of 8,38%,2,0,1,5 - 4,6,2.00,Brazil - Serie A
-Mirassol,3 out of 7,43%,1,2,0,4 - 2,5,1.67,Brazil - Serie A
+Internacional,2 out of 8,25%,1,1,0,3 - 2,4,2.00,Brazil - Serie A
+Sao Paulo,3 out of 8,38%,1,2,0,5 - 4,5,1.67,Brazil - Serie A
 Corinthians,2 out of 8,25%,1,0,1,2 - 2,3,1.50,Brazil - Serie A
 Gremio,3 out of 7,43%,1,1,1,4 - 3,4,1.33,Brazil - Serie A
 Ceara,3 out of 7,43%,1,1,1,4 - 4,4,1.33,Brazil - Serie A
 Vasco da Gama,3 out of 6,50%,1,0,2,5 - 5,3,1.00,Brazil - Serie A
-Sao Paulo,2 out of 7,29%,0,2,0,4 - 4,2,1.00,Brazil - Serie A
 Vitoria,1 out of 8,12%,0,1,0,2 - 2,1,1.00,Brazil - Serie A
-Internacional,1 out of 7,14%,0,1,0,1 - 1,1,1.00,Brazil - Serie A
 Fortaleza,1 out of 6,17%,0,1,0,1 - 1,1,1.00,Brazil - Serie A
-Sport Recife,2 out of 7,29%,0,0,2,2 - 4,0,0.00,Brazil - Serie A
+Sport Recife,2 out of 8,25%,0,0,2,2 - 4,0,0.00,Brazil - Serie A
 Juventude,1 out of 6,17%,0,0,1,1 - 3,0,0.00,Brazil - Serie A
-Goias,2 out of 8,25%,2,0,0,2 - 0,6,3.00,Brazil - Serie B
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Brazil - Serie B
+Goias,2 out of 9,22%,2,0,0,2 - 0,6,3.00,Brazil - Serie B
 Botafogo SP,1 out of 8,12%,1,0,0,1 - 0,3,3.00,Brazil - Serie B
 Coritiba,5 out of 10,50%,4,0,1,6 - 3,12,2.40,Brazil - Serie B
 Novorizontino,3 out of 8,38%,2,1,0,4 - 1,7,2.33,Brazil - Serie B
 Cuiaba,3 out of 9,33%,2,1,0,4 - 1,7,2.33,Brazil - Serie B
 Chapecoense,3 out of 9,33%,2,1,0,4 - 1,7,2.33,Brazil - Serie B
 Athletic Club,4 out of 9,44%,3,0,1,8 - 5,9,2.25,Brazil - Serie B
+Criciuma,6 out of 9,67%,3,3,0,7 - 3,12,2.00,Brazil - Serie B
 Vila Nova,3 out of 9,33%,2,0,1,5 - 3,6,2.00,Brazil - Serie B
-Criciuma,5 out of 8,62%,2,3,0,5 - 3,9,1.80,Brazil - Serie B
 Athletico PR,6 out of 8,75%,3,1,2,10 - 9,10,1.67,Brazil - Serie B
 Atletico GO,3 out of 9,33%,1,2,0,4 - 3,5,1.67,Brazil - Serie B
-Avai,5 out of 8,62%,2,2,1,7 - 5,8,1.60,Brazil - Serie B
-America MG,2 out of 8,25%,1,0,1,4 - 3,3,1.50,Brazil - Serie B
 Operario PR,2 out of 9,22%,1,0,1,4 - 4,3,1.50,Brazil - Serie B
-Paysandu,3 out of 9,33%,1,1,1,4 - 5,4,1.33,Brazil - Serie B
-Volta Redonda,1 out of 9,11%,0,1,0,1 - 1,1,1.00,Brazil - Serie B
+Avai,6 out of 9,67%,2,2,2,8 - 7,8,1.33,Brazil - Serie B
+Paysandu,4 out of 10,40%,1,2,1,5 - 6,5,1.25,Brazil - Serie B
+Volta Redonda,1 out of 10,10%,0,1,0,1 - 1,1,1.00,Brazil - Serie B
+America MG,3 out of 9,33%,1,0,2,5 - 6,3,1.00,Brazil - Serie B
 Remo,3 out of 8,38%,0,2,1,3 - 4,2,0.67,Brazil - Serie B
 CRB,3 out of 10,30%,0,2,1,3 - 4,2,0.67,Brazil - Serie B
 Amazonas,3 out of 8,38%,0,2,1,3 - 5,2,0.67,Brazil - Serie B
 Ferroviaria,2 out of 10,20%,0,0,2,2 - 4,0,0.00,Brazil - Serie B
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Brazil - Serie C
 Londrina,3 out of 6,50%,3,0,0,8 - 0,9,3.00,Brazil - Serie C
 Ypiranga,2 out of 6,33%,2,0,0,4 - 0,6,3.00,Brazil - Serie C
 Ponte Preta,3 out of 6,50%,3,0,0,3 - 0,9,3.00,Brazil - Serie C
@@ -191,6 +168,7 @@ Anapolis,0 out of 6,0%,0,0,0,0 - 0,0,0,Brazil - Serie C
 Itabaiana,0 out of 7,0%,0,0,0,0 - 0,0,0,Brazil - Serie C
 Tombense,0 out of 7,0%,0,0,0,0 - 0,0,0,Brazil - Serie C
 Confianca,1 out of 7,14%,0,0,1,2 - 3,0,0.00,Brazil - Serie C
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Brazil - Serie D
 ASA,3 out of 5,60%,3,0,0,9 - 1,9,3.00,Brazil - Serie D
 Aguia de Maraba,2 out of 4,50%,2,0,0,5 - 1,6,3.00,Brazil - Serie D
 Inter Limeira,2 out of 5,40%,2,0,0,4 - 1,6,3.00,Brazil - Serie D
@@ -255,6 +233,7 @@ Goiania,5,9,1,2,6,8,12,-4,Brazil - Serie D
 Porto Velho,5,9,1,2,6,6,8,-2,Brazil - Serie D
 Penedense,4,9,0,4,5,4,12,-8,Brazil - Serie D
 Humaita,1,10,0,1,9,12,30,-18,Brazil - Serie D
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Bulgaria - Parva Liga
 Botev Vratsa,1 out of 1,100%,0,1,0,2 - 2,1,1.00,Bulgaria - Parva Liga
 Cherno More,1 out of 1,100%,0,1,0,1 - 1,1,1.00,Bulgaria - Parva Liga
 Beroe,0 out of 1,0%,0,0,0,0 - 0,0,0,Bulgaria - Parva Liga
@@ -263,6 +242,7 @@ Montana,0 out of 1,0%,0,0,0,0 - 0,0,0,Bulgaria - Parva Liga
 Septemvri Sofia,0 out of 1,0%,0,0,0,0 - 0,0,0,Bulgaria - Parva Liga
 CSKA Sofia,0 out of 1,0%,0,0,0,0 - 0,0,0,Bulgaria - Parva Liga
 Arda,0 out of 1,0%,0,0,0,0 - 0,0,0,Bulgaria - Parva Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,China - Super League
 Changchun Yatai,1 out of 8,12%,1,0,0,3 - 1,3,3.00,China - Super League
 Shenzhen P. C.,1 out of 8,12%,1,0,0,1 - 0,3,3.00,China - Super League
 Shanghai Port,6 out of 8,75%,5,1,0,17 - 7,16,2.67,China - Super League
@@ -279,6 +259,7 @@ Meizhou Hakka,2 out of 8,25%,0,2,0,3 - 3,2,1.00,China - Super League
 Qingdao Hainiu,4 out of 9,44%,0,1,3,5 - 10,1,0.25,China - Super League
 Qingdao West C.,0 out of 8,0%,0,0,0,0 - 0,0,0,China - Super League
 Wuhan Three T.,1 out of 8,12%,0,0,1,1 - 3,0,0.00,China - Super League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,China - League One
 Chongqing T.,5 out of 8,62%,5,0,0,17 - 6,15,3.00,China - League One
 S. Gongfu,4 out of 8,50%,4,0,0,9 - 1,12,3.00,China - League One
 Shanghai Jiadin,2 out of 8,25%,2,0,0,3 - 1,6,3.00,China - League One
@@ -295,6 +276,7 @@ Dingnan,2 out of 7,29%,0,2,0,2 - 2,2,1.00,China - League One
 Shenzhen J.,4 out of 9,44%,1,0,3,6 - 12,3,0.75,China - League One
 Guangxi Pingguo,3 out of 9,33%,0,1,2,4 - 6,1,0.33,China - League One
 Yanbian Longdin,0 out of 8,0%,0,0,0,0 - 0,0,0,China - League One
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,China - League Two
 Guangxi H.,7 out of 10,70%,7,0,0,17 - 1,21,3.00,China - League Two
 Jiangxi Lushan,6 out of 10,60%,6,0,0,10 - 0,18,3.00,China - League Two
 Wuxi Wugou,5 out of 10,50%,5,0,0,12 - 3,15,3.00,China - League Two
@@ -319,6 +301,7 @@ Guangdong M.,2 out of 10,20%,0,2,0,3 - 3,2,1.00,China - League Two
 Guangxi Lanhang,2 out of 10,20%,0,2,0,3 - 3,2,1.00,China - League Two
 Ganzhou Ruishi,1 out of 10,10%,0,1,0,1 - 1,1,1.00,China - League Two
 Taian Tiankuang,3 out of 10,30%,1,0,2,4 - 7,3,1.00,China - League Two
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Colombia - Primera A - Apertura
 Millonarios,4 out of 10,40%,4,0,0,8 - 1,12,3.00,Colombia - Primera A - Apertura
 Deportes Tolima,3 out of 10,30%,3,0,0,8 - 2,9,3.00,Colombia - Primera A - Apertura
 Envigado,2 out of 10,20%,2,0,0,5 - 3,6,3.00,Colombia - Primera A - Apertura
@@ -339,6 +322,7 @@ Llaneros,3 out of 10,30%,1,1,1,7 - 7,4,1.33,Colombia - Primera A - Apertura
 D. Pereira,4 out of 10,40%,1,2,1,7 - 8,5,1.25,Colombia - Primera A - Apertura
 Union Magdalena,4 out of 10,40%,1,1,2,4 - 5,4,1.00,Colombia - Primera A - Apertura
 La Equidad,2 out of 10,20%,0,0,2,2 - 5,0,0.00,Colombia - Primera A - Apertura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Colombia - Primera B - Apertura
 Inter Palmira,2 out of 8,25%,2,0,0,5 - 0,6,3.00,Colombia - Primera B - Apertura
 Bogota,1 out of 8,12%,1,0,0,2 - 1,3,3.00,Colombia - Primera B - Apertura
 Cucuta,6 out of 8,75%,5,1,0,10 - 3,16,2.67,Colombia - Primera B - Apertura
@@ -355,6 +339,9 @@ D. Quindio,4 out of 8,50%,1,2,1,4 - 6,5,1.25,Colombia - Primera B - Apertura
 Boca Juniors,1 out of 8,12%,0,1,0,1 - 1,1,1.00,Colombia - Primera B - Apertura
 Atletico Cali,1 out of 8,12%,0,0,1,1 - 2,0,0.00,Colombia - Primera B - Apertura
 Leones,1 out of 8,12%,0,0,1,1 - 3,0,0.00,Colombia - Primera B - Apertura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Costa Rica - Primera Div. - Apertura
+Herediano,0 out of 1,0%,0,0,0,0 - 0,0,0,Costa Rica - Primera Div. - Apertura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Costa Rica - Primera Div. - Clausura
 Herediano,4 out of 11,36%,4,0,0,6 - 1,12,3.00,Costa Rica - Primera Div. - Clausura
 Santos Guapiles,3 out of 11,27%,3,0,0,5 - 0,9,3.00,Costa Rica - Primera Div. - Clausura
 Zeledon,2 out of 11,18%,2,0,0,3 - 0,6,3.00,Costa Rica - Primera Div. - Clausura
@@ -367,6 +354,8 @@ San Carlos,3 out of 11,27%,2,0,1,4 - 2,6,2.00,Costa Rica - Primera Div. - Clausu
 Puntarenas,7 out of 11,64%,3,4,0,10 - 6,13,1.86,Costa Rica - Primera Div. - Clausura
 Guanacasteca,3 out of 11,27%,0,2,1,4 - 5,2,0.67,Costa Rica - Primera Div. - Clausura
 Santa Ana,2 out of 11,18%,0,1,1,2 - 3,1,0.50,Costa Rica - Primera Div. - Clausura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Croatia - 1. HNL
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Croatia - 1. NL
 Sesvete,6 out of 16,38%,6,0,0,13 - 2,18,3.00,Croatia - 1. NL
 Rudes,2 out of 17,12%,2,0,0,7 - 2,6,3.00,Croatia - 1. NL
 Dugopolje,1 out of 17,6%,1,0,0,2 - 0,3,3.00,Croatia - 1. NL
@@ -379,6 +368,7 @@ Jarun,10 out of 17,59%,6,2,2,13 - 6,20,2.00,Croatia - 1. NL
 C. Zmijavci,5 out of 17,29%,3,1,1,7 - 5,10,2.00,Croatia - 1. NL
 Dubrava Zagreb,6 out of 16,38%,3,0,3,8 - 9,9,1.50,Croatia - 1. NL
 Zrinski,2 out of 17,12%,0,2,0,5 - 5,2,1.00,Croatia - 1. NL
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,CzechRepublic - 1. Liga
 Viktoria Plzen,1 out of 1,100%,1,0,0,5 - 1,3,3.00,CzechRepublic - 1. Liga
 Sigma Olomouc,1 out of 1,100%,1,0,0,1 - 0,3,3.00,CzechRepublic - 1. Liga
 Hradec Kralove,1 out of 1,100%,0,1,0,2 - 2,1,1.00,CzechRepublic - 1. Liga
@@ -387,6 +377,7 @@ Sparta Prague,0 out of 1,0%,0,0,0,0 - 0,0,0,CzechRepublic - 1. Liga
 Dukla Praha,0 out of 1,0%,0,0,0,0 - 0,0,0,CzechRepublic - 1. Liga
 Zlin,0 out of 1,0%,0,0,0,0 - 0,0,0,CzechRepublic - 1. Liga
 Banik Ostrava,0 out of 1,0%,0,0,0,0 - 0,0,0,CzechRepublic - 1. Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,CzechRepublic - FNL
 Zbrojovka Brno,1 out of 1,100%,1,0,0,2 - 0,3,3.00,CzechRepublic - FNL
 Vikto Zizkov,1 out of 1,100%,1,0,0,2 - 1,3,3.00,CzechRepublic - FNL
 Slavia Prague B,1 out of 1,100%,1,0,0,1 - 0,3,3.00,CzechRepublic - FNL
@@ -394,18 +385,22 @@ Opava,1 out of 1,100%,1,0,0,1 - 0,3,3.00,CzechRepublic - FNL
 Banik Ostrava B,1 out of 1,100%,1,0,0,1 - 0,3,3.00,CzechRepublic - FNL
 Prostejov,0 out of 1,0%,0,0,0,0 - 0,0,0,CzechRepublic - FNL
 Jihlava,0 out of 1,0%,0,0,0,0 - 0,0,0,CzechRepublic - FNL
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Denmark - Superligaen
 Odense BK,1 out of 1,100%,0,1,0,3 - 3,1,1.00,Denmark - Superligaen
 AGF Aarhus,1 out of 1,100%,0,1,0,1 - 1,1,1.00,Denmark - Superligaen
 Randers FC,1 out of 1,100%,0,1,0,1 - 1,1,1.00,Denmark - Superligaen
 Silkeborg,0 out of 1,0%,0,0,0,0 - 0,0,0,Denmark - Superligaen
 Nordsjaelland,0 out of 1,0%,0,0,0,0 - 0,0,0,Denmark - Superligaen
 FC Kobenhavn,0 out of 1,0%,0,0,0,0 - 0,0,0,Denmark - Superligaen
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Denmark - 1st Division
 Lyngby,1 out of 1,100%,1,0,0,2 - 0,3,3.00,Denmark - 1st Division
 B 93,1 out of 1,100%,0,1,0,1 - 1,1,1.00,Denmark - 1st Division
 Aarhus Fremad,0 out of 1,0%,0,0,0,0 - 0,0,0,Denmark - 1st Division
 Aalborg BK,0 out of 1,0%,0,0,0,0 - 0,0,0,Denmark - 1st Division
 Hobro,0 out of 1,0%,0,0,0,0 - 0,0,0,Denmark - 1st Division
 Middelfart,1 out of 1,100%,0,0,1,1 - 2,0,0.00,Denmark - 1st Division
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Denmark - 2nd Division
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Ecuador - Liga Pro
 U. Catolica,2 out of 11,18%,2,0,0,7 - 0,6,3.00,Ecuador - Liga Pro
 LDU Quito,3 out of 10,30%,3,0,0,7 - 1,9,3.00,Ecuador - Liga Pro
 Libertad,2 out of 10,20%,2,0,0,2 - 0,6,3.00,Ecuador - Liga Pro
@@ -422,18 +417,20 @@ El Nacional,5 out of 11,45%,2,3,0,9 - 6,9,1.80,Ecuador - Liga Pro
 Cuniburo,3 out of 11,27%,1,2,0,6 - 5,5,1.67,Ecuador - Liga Pro
 Tecnico U.,5 out of 10,50%,2,0,3,6 - 9,6,1.20,Ecuador - Liga Pro
 Mushuc Runa,1 out of 11,9%,0,1,0,1 - 1,1,1.00,Ecuador - Liga Pro
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Ecuador - Serie B
 Leones Norte,2 out of 9,22%,2,0,0,3 - 0,6,3.00,Ecuador - Serie B
-I. Juniors,1 out of 9,11%,1,0,0,2 - 0,3,3.00,Ecuador - Serie B
-Vinotinto,1 out of 9,11%,1,0,0,2 - 1,3,3.00,Ecuador - Serie B
+I. Juniors,2 out of 10,20%,2,0,0,3 - 0,6,3.00,Ecuador - Serie B
+Vinotinto,1 out of 10,10%,1,0,0,2 - 1,3,3.00,Ecuador - Serie B
 Nueve Octubre,5 out of 9,56%,4,1,0,7 - 3,13,2.60,Ecuador - Serie B
 Cumbaya,3 out of 9,33%,2,1,0,4 - 1,7,2.33,Ecuador - Serie B
-Guayaquil City,4 out of 9,44%,2,2,0,4 - 2,8,2.00,Ecuador - Serie B
+Guayaquil City,4 out of 10,40%,2,2,0,4 - 2,8,2.00,Ecuador - Serie B
 Gualaceo,2 out of 9,22%,1,1,0,3 - 1,4,2.00,Ecuador - Serie B
 22 de Julio,2 out of 10,20%,1,1,0,3 - 2,4,2.00,Ecuador - Serie B
-San Antonio,6 out of 9,67%,3,2,1,7 - 7,11,1.83,Ecuador - Serie B
+San Antonio,6 out of 10,60%,3,2,1,7 - 7,11,1.83,Ecuador - Serie B
 Vargas Torres,5 out of 9,56%,0,3,2,8 - 10,3,0.60,Ecuador - Serie B
 Imbabura,4 out of 9,44%,0,2,2,5 - 8,2,0.50,Ecuador - Serie B
 Chacaritas,1 out of 10,10%,0,0,1,1 - 4,0,0.00,Ecuador - Serie B
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,England - Premier League
 Newcastle Utd,5 out of 19,26%,4,1,0,11 - 1,13,2.60,England - Premier League
 Nottm Forest,13 out of 19,68%,10,2,1,29 - 14,32,2.46,England - Premier League
 Arsenal,11 out of 19,58%,8,3,0,25 - 7,27,2.45,England - Premier League
@@ -454,102 +451,11 @@ Tottenham,10 out of 19,53%,5,2,3,24 - 13,17,1.70,England - Premier League
 Ipswich Town,9 out of 19,47%,3,3,3,17 - 19,12,1.33,England - Premier League
 Southampton,5 out of 19,26%,1,0,4,6 - 12,3,0.60,England - Premier League
 Leicester City,4 out of 19,21%,0,2,2,6 - 11,2,0.50,England - Premier League
-Burnley,11 out of 23,48%,11,0,0,27 - 2,33,3.00,England - Championship
-Leeds Utd,8 out of 23,35%,8,0,0,15 - 0,24,3.00,England - Championship
-QP Rangers,6 out of 23,26%,5,1,0,10 - 3,16,2.67,England - Championship
-Swansea City,8 out of 23,35%,7,0,1,13 - 8,21,2.63,England - Championship
-Sheffield Utd,13 out of 23,57%,11,1,1,21 - 6,34,2.62,England - Championship
-Blackburn,9 out of 23,39%,7,2,0,13 - 4,23,2.56,England - Championship
-Plymouth,3 out of 23,13%,2,1,0,6 - 4,7,2.33,England - Championship
-Watford,6 out of 23,26%,4,1,1,15 - 8,13,2.17,England - Championship
-Hull City,10 out of 23,43%,6,3,1,14 - 6,21,2.10,England - Championship
-Bristol City,8 out of 23,35%,4,4,0,14 - 6,16,2.00,England - Championship
-Sheffield Wed,7 out of 23,30%,4,2,1,12 - 5,14,2.00,England - Championship
-Sunderland,11 out of 23,48%,7,1,3,17 - 11,22,2.00,England - Championship
-Coventry City,11 out of 23,48%,6,3,2,18 - 12,21,1.91,England - Championship
-Millwall,10 out of 23,43%,5,4,1,10 - 7,19,1.90,England - Championship
-Derby County,8 out of 23,35%,4,2,2,14 - 11,14,1.75,England - Championship
-Norwich City,8 out of 23,35%,4,2,2,10 - 8,14,1.75,England - Championship
-Middlesbrough,11 out of 23,48%,6,1,4,18 - 11,19,1.73,England - Championship
-Stoke City,7 out of 23,30%,3,2,2,8 - 6,11,1.57,England - Championship
-West Brom,9 out of 23,39%,3,5,1,13 - 9,14,1.56,England - Championship
-Cardiff City,7 out of 23,30%,2,4,1,10 - 11,10,1.43,England - Championship
-Portsmouth,6 out of 23,26%,2,2,2,13 - 11,8,1.33,England - Championship
-Preston,10 out of 23,43%,3,4,3,15 - 15,13,1.30,England - Championship
-Luton Town,8 out of 23,35%,3,1,4,11 - 13,10,1.25,England - Championship
-Oxford Utd,8 out of 23,35%,2,2,4,8 - 10,8,1.00,England - Championship
-Stevenage,6 out of 23,26%,6,0,0,8 - 2,18,3.00,England - League One
-Charlton,9 out of 23,39%,8,1,0,18 - 3,25,2.78,England - League One
-Bolton,8 out of 23,35%,7,1,0,17 - 6,22,2.75,England - League One
-Birmingham City,15 out of 23,65%,12,2,1,25 - 10,38,2.53,England - League One
-Wycombe,11 out of 23,48%,8,3,0,26 - 9,27,2.45,England - League One
-Leyton Orient,10 out of 23,43%,8,0,2,28 - 11,24,2.40,England - League One
-Wrexham,15 out of 23,65%,11,3,1,24 - 11,36,2.40,England - League One
-Barnsley,12 out of 23,52%,9,1,2,26 - 14,28,2.33,England - League One
-Wigan Athletic,9 out of 23,39%,6,3,0,15 - 5,21,2.33,England - League One
-Exeter City,8 out of 23,35%,6,0,2,12 - 8,18,2.25,England - League One
-Reading,9 out of 23,39%,6,2,1,20 - 9,20,2.22,England - League One
-Mansfield,10 out of 23,43%,7,1,2,20 - 12,22,2.20,England - League One
-Blackpool,13 out of 23,57%,9,1,3,29 - 13,28,2.15,England - League One
-Stockport,13 out of 23,57%,8,4,1,22 - 7,28,2.15,England - League One
-Northampton,8 out of 23,35%,5,2,1,14 - 6,17,2.13,England - League One
-Huddersfield,12 out of 23,52%,8,0,4,22 - 11,24,2.00,England - League One
-Lincoln City,9 out of 23,39%,5,3,1,15 - 8,18,2.00,England - League One
-Crawley Town,8 out of 23,35%,5,1,2,18 - 14,16,2.00,England - League One
-Shrewsbury,5 out of 23,22%,3,1,1,12 - 9,10,2.00,England - League One
-Burton Albion,8 out of 23,35%,4,3,1,10 - 7,15,1.88,England - League One
-Cambridge Utd,9 out of 23,39%,4,3,2,14 - 10,15,1.67,England - League One
-Rotherham,9 out of 23,39%,4,2,3,11 - 11,14,1.56,England - League One
-Peterborough,6 out of 23,26%,2,1,3,7 - 9,7,1.17,England - League One
-Bristol Rovers,6 out of 23,26%,2,1,3,6 - 10,7,1.17,England - League One
-Port Vale,11 out of 23,48%,10,1,0,19 - 5,31,2.82,England - League Two
-Notts County,9 out of 23,39%,7,2,0,19 - 5,23,2.56,England - League Two
-Doncaster,15 out of 23,65%,12,2,1,31 - 14,38,2.53,England - League Two
-Chesterfield,11 out of 23,48%,9,0,2,28 - 8,27,2.45,England - League Two
-Bromley,11 out of 23,48%,8,2,1,18 - 7,26,2.36,England - League Two
-Grimsby,11 out of 23,48%,8,2,1,20 - 10,26,2.36,England - League Two
-Fleetwood,7 out of 23,30%,5,1,1,18 - 9,16,2.29,England - League Two
-Salford City,11 out of 23,48%,7,4,0,20 - 9,25,2.27,England - League Two
-Walsall,12 out of 23,52%,8,3,1,23 - 8,27,2.25,England - League Two
-Accrington,9 out of 23,39%,6,2,1,14 - 6,20,2.22,England - League Two
-Colchester Utd,9 out of 23,39%,6,2,1,13 - 7,20,2.22,England - League Two
-AFC Wimbledon,11 out of 23,48%,7,3,1,18 - 8,24,2.18,England - League Two
-Morecambe,6 out of 23,26%,4,1,1,10 - 7,13,2.17,England - League Two
-Swindon Town,8 out of 23,35%,5,2,1,21 - 9,17,2.13,England - League Two
-Crewe Alexandra,8 out of 23,35%,5,2,1,11 - 5,17,2.13,England - League Two
-Barrow,9 out of 23,39%,5,3,1,14 - 8,18,2.00,England - League Two
-Carlisle Utd,8 out of 23,35%,5,0,3,13 - 9,15,1.88,England - League Two
-Milton Keynes,10 out of 23,43%,5,3,2,19 - 13,18,1.80,England - League Two
-Bradford,9 out of 23,39%,4,4,1,17 - 13,16,1.78,England - League Two
-Cheltenham,10 out of 23,43%,5,2,3,20 - 16,17,1.70,England - League Two
-Gillingham,10 out of 23,43%,4,5,1,11 - 8,17,1.70,England - League Two
-Harrogate,5 out of 23,22%,2,2,1,8 - 6,8,1.60,England - League Two
-Newport,7 out of 23,30%,3,1,3,12 - 9,10,1.43,England - League Two
-Tranmere,5 out of 23,22%,2,1,2,6 - 8,7,1.40,England - League Two
-Solihull Moors,7 out of 23,30%,7,0,0,15 - 3,21,3.00,England - National League
-Maidenhead Utd,7 out of 23,30%,6,1,0,13 - 2,19,2.71,England - National League
-Halifax Town,12 out of 23,52%,10,2,0,22 - 8,32,2.67,England - National League
-York City,14 out of 23,61%,11,2,1,29 - 8,35,2.50,England - National League
-Yeovil Town,9 out of 23,39%,7,1,1,17 - 4,22,2.44,England - National League
-Barnet,15 out of 23,65%,12,0,3,32 - 12,36,2.40,England - National League
-Southend Utd,10 out of 23,43%,7,3,0,20 - 7,24,2.40,England - National League
-Altrincham,11 out of 23,48%,8,2,1,23 - 10,26,2.36,England - National League
-Gateshead FC,12 out of 23,52%,8,3,1,29 - 11,27,2.25,England - National League
-Boston Utd,9 out of 23,39%,6,1,2,18 - 10,19,2.11,England - National League
-Forest Green,10 out of 23,43%,6,3,1,20 - 8,21,2.10,England - National League
-Oldham,12 out of 23,52%,7,4,1,18 - 9,25,2.08,England - National League
-Rochdale,13 out of 23,57%,7,5,1,21 - 11,26,2.00,England - National League
-Eastleigh,10 out of 23,43%,5,4,1,16 - 11,19,1.90,England - National League
-Sutton Utd,10 out of 23,43%,5,4,1,16 - 12,19,1.90,England - National League
-Tamworth,8 out of 23,35%,4,2,2,12 - 9,14,1.75,England - National League
-AFC Fylde,4 out of 23,17%,2,1,1,7 - 7,7,1.75,England - National League
-Wealdstone,8 out of 23,35%,3,4,1,14 - 11,13,1.63,England - National League
-Aldershot Town,8 out of 23,35%,3,4,1,10 - 8,13,1.63,England - National League
-Dagenham & R.,10 out of 23,43%,3,6,1,11 - 8,15,1.50,England - National League
-Woking,9 out of 23,39%,2,6,1,15 - 12,12,1.33,England - National League
-Hartlepool,12 out of 23,52%,4,4,4,17 - 17,16,1.33,England - National League
-Braintree Town,11 out of 23,48%,3,3,5,19 - 22,12,1.09,England - National League
-Ebbsfleet Utd,3 out of 23,13%,0,2,1,5 - 7,2,0.67,England - National League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,England - Championship
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,England - League One
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,England - League Two
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,England - National League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,FaroeIslands - Premier League
 HB Torshavn,5 out of 8,62%,5,0,0,14 - 3,15,3.00,FaroeIslands - Premier League
 Klaksvik,8 out of 8,100%,7,1,0,22 - 3,22,2.75,FaroeIslands - Premier League
 NSI Runavik,7 out of 8,88%,6,1,0,35 - 7,19,2.71,FaroeIslands - Premier League
@@ -560,6 +466,7 @@ B68 Toftir,2 out of 8,25%,1,1,0,4 - 1,4,2.00,FaroeIslands - Premier League
 Suduroy,2 out of 8,25%,1,0,1,3 - 3,3,1.50,FaroeIslands - Premier League
 TB Tvoroyri,2 out of 7,29%,0,1,1,4 - 5,1,0.50,FaroeIslands - Premier League
 07 Vestur,2 out of 8,25%,0,0,2,4 - 6,0,0.00,FaroeIslands - Premier League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Finland - Veikkausliiga
 Ilves,5 out of 9,56%,5,0,0,15 - 0,15,3.00,Finland - Veikkausliiga
 Inter Turku,5 out of 8,62%,4,1,0,7 - 2,13,2.60,Finland - Veikkausliiga
 SJK,3 out of 7,43%,2,1,0,6 - 4,7,2.33,Finland - Veikkausliiga
@@ -572,6 +479,7 @@ Haka,1 out of 8,12%,0,1,0,1 - 1,1,1.00,Finland - Veikkausliiga
 KTP,3 out of 7,43%,1,0,2,6 - 7,3,1.00,Finland - Veikkausliiga
 Gnistan,3 out of 9,33%,1,0,2,4 - 9,3,1.00,Finland - Veikkausliiga
 Oulu,5 out of 8,62%,1,0,4,9 - 12,3,0.60,Finland - Veikkausliiga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Finland - Ykkonen
 Klubi-04,5 out of 8,62%,4,1,0,15 - 5,13,2.60,Finland - Ykkonen
 TPS,5 out of 8,62%,4,1,0,15 - 6,13,2.60,Finland - Ykkonen
 Lahti,5 out of 8,62%,4,1,0,10 - 3,13,2.60,Finland - Ykkonen
@@ -581,7 +489,8 @@ SJK Akatemia,4 out of 8,50%,1,1,2,8 - 7,4,1.00,Finland - Ykkonen
 JIPPO,4 out of 8,50%,0,3,1,5 - 6,3,0.75,Finland - Ykkonen
 JaPS,2 out of 8,25%,0,1,1,3 - 5,1,0.50,Finland - Ykkonen
 KaPa,4 out of 8,50%,0,1,3,9 - 15,1,0.25,Finland - Ykkonen
-SalPa,1 out of 7,14%,0,0,1,1 - 3,0,0.00,Finland - Ykkonen
+SalPa,1 out of 8,12%,0,0,1,1 - 3,0,0.00,Finland - Ykkonen
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Finland - Kakkonen
 PKKU,3 out of 7,43%,3,0,0,9 - 2,9,3.00,Finland - Kakkonen
 Tampere Utd,3 out of 8,38%,3,0,0,9 - 3,9,3.00,Finland - Kakkonen
 Rovaniemi,2 out of 7,29%,2,0,0,5 - 0,6,3.00,Finland - Kakkonen
@@ -594,16 +503,18 @@ Inter Turku B,6 out of 8,75%,3,2,1,18 - 15,11,1.83,Finland - Kakkonen
 JJK,3 out of 7,43%,1,1,1,4 - 4,4,1.33,Finland - Kakkonen
 KuPS Ak.,4 out of 7,57%,1,1,2,7 - 6,4,1.00,Finland - Kakkonen
 KPV Kokkola,2 out of 8,25%,0,1,1,2 - 4,1,0.50,Finland - Kakkonen
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Finland - Kakkonen - A
 PuiU Helsinki,3 out of 7,43%,3,0,0,7 - 1,9,3.00,Finland - Kakkonen - A
 Honka,7 out of 7,100%,6,1,0,32 - 6,19,2.71,Finland - Kakkonen - A
 MYPA,4 out of 7,57%,3,1,0,19 - 3,10,2.50,Finland - Kakkonen - A
 VJS,5 out of 7,71%,4,0,1,17 - 5,12,2.40,Finland - Kakkonen - A
 GrIFK,2 out of 7,29%,1,1,0,4 - 3,4,2.00,Finland - Kakkonen - A
+Reipas,4 out of 8,50%,2,1,1,13 - 9,7,1.75,Finland - Kakkonen - A
 HaPK,2 out of 7,29%,1,0,1,3 - 2,3,1.50,Finland - Kakkonen - A
-Reipas,3 out of 7,43%,1,1,1,8 - 8,4,1.33,Finland - Kakkonen - A
 PEPO,3 out of 7,43%,1,1,1,5 - 7,4,1.33,Finland - Kakkonen - A
 Vaajakoski,3 out of 7,43%,1,0,2,9 - 8,3,1.00,Finland - Kakkonen - A
 JPS,0 out of 7,0%,0,0,0,0 - 0,0,0,Finland - Kakkonen - A
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Finland - Kakkonen - B
 Kiffen,4 out of 7,57%,4,0,0,15 - 4,12,3.00,Finland - Kakkonen - B
 P-Iirot,4 out of 7,57%,4,0,0,12 - 2,12,3.00,Finland - Kakkonen - B
 HJS,3 out of 7,43%,3,0,0,8 - 0,9,3.00,Finland - Kakkonen - B
@@ -614,8 +525,9 @@ HPS,4 out of 7,57%,1,0,3,7 - 11,3,0.75,Finland - Kakkonen - B
 Atlantis B,2 out of 7,29%,0,1,1,3 - 5,1,0.50,Finland - Kakkonen - B
 NJS,0 out of 7,0%,0,0,0,0 - 0,0,0,Finland - Kakkonen - B
 PPJ,0 out of 7,0%,0,0,0,0 - 0,0,0,Finland - Kakkonen - B
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Finland - Kakkonen - C
 GBK Kokkola,4 out of 6,67%,4,0,0,9 - 5,12,3.00,Finland - Kakkonen - C
-JS Hercules,1 out of 6,17%,1,0,0,3 - 2,3,3.00,Finland - Kakkonen - C
+JS Hercules,1 out of 7,14%,1,0,0,3 - 2,3,3.00,Finland - Kakkonen - C
 VPS B,3 out of 7,43%,2,1,0,7 - 2,7,2.33,Finland - Kakkonen - C
 JBK,3 out of 7,43%,2,1,0,6 - 2,7,2.33,Finland - Kakkonen - C
 SJK Akatemia B,4 out of 6,67%,3,0,1,15 - 8,9,2.25,Finland - Kakkonen - C
@@ -623,6 +535,7 @@ TP-47,4 out of 6,67%,2,2,0,11 - 6,8,2.00,Finland - Kakkonen - C
 Narpes Kraft,3 out of 7,43%,1,1,1,6 - 5,4,1.33,Finland - Kakkonen - C
 OsPa,3 out of 6,50%,1,0,2,5 - 6,3,1.00,Finland - Kakkonen - C
 VIFK,3 out of 6,50%,0,1,2,7 - 9,1,0.33,Finland - Kakkonen - C
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,France - Ligue 1
 Paris SG,11 out of 17,65%,10,1,0,36 - 13,31,2.82,France - Ligue 1
 Marseille,9 out of 17,53%,8,1,0,26 - 6,25,2.78,France - Ligue 1
 Le Havre,5 out of 17,29%,4,1,0,9 - 2,13,2.60,France - Ligue 1
@@ -641,6 +554,7 @@ Nice,12 out of 17,71%,6,3,3,26 - 17,21,1.75,France - Ligue 1
 Auxerre,9 out of 17,53%,4,1,4,17 - 15,13,1.44,France - Ligue 1
 Saint-Etienne,5 out of 17,29%,2,1,2,7 - 7,7,1.40,France - Ligue 1
 Montpellier,1 out of 17,6%,0,0,1,1 - 2,0,0.00,France - Ligue 1
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,France - Ligue 2
 Metz,8 out of 17,47%,7,1,0,21 - 9,22,2.75,France - Ligue 2
 Martigues,6 out of 17,35%,5,1,0,11 - 3,16,2.67,France - Ligue 2
 Lorient,6 out of 17,35%,5,1,0,10 - 5,16,2.67,France - Ligue 2
@@ -659,6 +573,7 @@ SC Bastia,6 out of 17,35%,2,3,1,8 - 6,9,1.50,France - Ligue 2
 Pau FC,6 out of 17,35%,2,3,1,9 - 8,9,1.50,France - Ligue 2
 Caen,5 out of 17,29%,2,1,2,8 - 7,7,1.40,France - Ligue 2
 Rodez Aveyron,10 out of 17,59%,3,4,3,23 - 17,13,1.30,France - Ligue 2
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,France - National
 Orleans,5 out of 16,31%,5,0,0,10 - 2,15,3.00,France - National
 Concarneau,2 out of 16,12%,2,0,0,3 - 0,6,3.00,France - National
 Le Mans,9 out of 16,56%,8,1,0,20 - 6,25,2.78,France - National
@@ -676,6 +591,7 @@ Versailles,5 out of 16,31%,2,2,1,13 - 10,8,1.60,France - National
 Rouen,8 out of 16,50%,3,3,2,12 - 10,12,1.50,France - National
 Paris 13 A.,6 out of 16,38%,2,3,1,10 - 8,9,1.50,France - National
 Nimes,5 out of 16,31%,1,2,2,6 - 7,5,1.00,France - National
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Georgia - Erovnuli Liga
 Dila Gori,5 out of 9,56%,5,0,0,9 - 2,15,3.00,Georgia - Erovnuli Liga
 Torpedo Kutaisi,4 out of 9,44%,4,0,0,7 - 2,12,3.00,Georgia - Erovnuli Liga
 Telavi,1 out of 9,11%,1,0,0,2 - 1,3,3.00,Georgia - Erovnuli Liga
@@ -686,6 +602,7 @@ Dinamo Tbilisi,3 out of 10,30%,2,0,1,7 - 3,6,2.00,Georgia - Erovnuli Liga
 Samgurali,4 out of 9,44%,2,1,1,9 - 6,7,1.75,Georgia - Erovnuli Liga
 Gareji Sagarejo,4 out of 9,44%,2,1,1,5 - 4,7,1.75,Georgia - Erovnuli Liga
 Dinamo Batumi,4 out of 9,44%,1,3,0,5 - 3,6,1.50,Georgia - Erovnuli Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Germany - Bundesliga
 Bayern Munich,11 out of 17,65%,9,2,0,35 - 8,29,2.64,Germany - Bundesliga
 FSV Mainz,8 out of 17,47%,7,0,1,24 - 9,21,2.63,Germany - Bundesliga
 Sankt Pauli,5 out of 17,29%,4,1,0,9 - 1,13,2.60,Germany - Bundesliga
@@ -704,12 +621,16 @@ Hoffenheim,4 out of 17,24%,2,1,1,6 - 5,7,1.75,Germany - Bundesliga
 Holstein Kiel,6 out of 17,35%,2,4,0,10 - 7,10,1.67,Germany - Bundesliga
 RB Leipzig,8 out of 17,47%,4,1,3,16 - 13,13,1.63,Germany - Bundesliga
 Bochum,4 out of 17,24%,1,1,2,6 - 7,4,1.00,Germany - Bundesliga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Germany - 2. Bundesliga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Germany - 3. Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Guatemala - Liga Nacional - Apertura
 Xelaju,1 out of 1,100%,1,0,0,1 - 0,3,3.00,Guatemala - Liga Nacional - Apertura
 Mixco,1 out of 1,100%,1,0,0,1 - 0,3,3.00,Guatemala - Liga Nacional - Apertura
 Mictlan,0 out of 1,0%,0,0,0,0 - 0,0,0,Guatemala - Liga Nacional - Apertura
 Municipal,0 out of 1,0%,0,0,0,0 - 0,0,0,Guatemala - Liga Nacional - Apertura
 Guastatoya,0 out of 1,0%,0,0,0,0 - 0,0,0,Guatemala - Liga Nacional - Apertura
 Marquense,0 out of 1,0%,0,0,0,0 - 0,0,0,Guatemala - Liga Nacional - Apertura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Guatemala - Liga Nacional - Clausura
 Xinabajul,1 out of 10,10%,1,0,0,2 - 1,3,3.00,Guatemala - Liga Nacional - Clausura
 Comunicaciones,1 out of 10,10%,1,0,0,1 - 0,3,3.00,Guatemala - Liga Nacional - Clausura
 Guastatoya,3 out of 10,30%,2,1,0,5 - 2,7,2.33,Guatemala - Liga Nacional - Clausura
@@ -721,11 +642,13 @@ Mixco,4 out of 10,40%,1,3,0,5 - 4,6,1.50,Guatemala - Liga Nacional - Clausura
 Xelaju,2 out of 10,20%,0,1,1,3 - 4,1,0.50,Guatemala - Liga Nacional - Clausura
 Malacateco,4 out of 10,40%,0,1,3,5 - 9,1,0.25,Guatemala - Liga Nacional - Clausura
 Marquense,0 out of 10,0%,0,0,0,0 - 0,0,0,Guatemala - Liga Nacional - Clausura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Hungary - NB I
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Iceland - Urvalsdeild
 IBV,2 out of 7,29%,2,0,0,6 - 2,6,3.00,Iceland - Urvalsdeild
 KA Akureyri,1 out of 8,12%,1,0,0,2 - 1,3,3.00,Iceland - Urvalsdeild
 Valur,5 out of 8,62%,4,0,1,12 - 5,12,2.40,Iceland - Urvalsdeild
 Fram,3 out of 8,38%,2,1,0,5 - 3,7,2.33,Iceland - Urvalsdeild
-IA Akranes,4 out of 8,50%,3,0,1,8 - 5,9,2.25,Iceland - Urvalsdeild
+IA Akranes,4 out of 9,44%,3,0,1,8 - 5,9,2.25,Iceland - Urvalsdeild
 Vikingur R.,4 out of 7,57%,2,2,0,6 - 3,8,2.00,Iceland - Urvalsdeild
 Breidablik,5 out of 7,71%,3,1,1,8 - 6,10,2.00,Iceland - Urvalsdeild
 Vestri,4 out of 7,57%,2,1,1,6 - 3,7,1.75,Iceland - Urvalsdeild
@@ -733,6 +656,7 @@ Stjarnan,4 out of 7,57%,1,2,1,6 - 5,5,1.25,Iceland - Urvalsdeild
 Hafnarfjordur,3 out of 8,38%,1,0,2,6 - 6,3,1.00,Iceland - Urvalsdeild
 KR Reykjavik,3 out of 8,38%,0,2,1,7 - 8,2,0.67,Iceland - Urvalsdeild
 Afturelding,0 out of 7,0%,0,0,0,0 - 0,0,0,Iceland - Urvalsdeild
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Iceland - 1. Deild
 Grindavik,2 out of 6,33%,2,0,0,10 - 4,6,3.00,Iceland - 1. Deild
 Selfoss,2 out of 7,29%,2,0,0,4 - 0,6,3.00,Iceland - 1. Deild
 Fylkir,1 out of 6,17%,1,0,0,4 - 1,3,3.00,Iceland - 1. Deild
@@ -745,6 +669,7 @@ IR Reykjavik,5 out of 7,71%,2,3,0,9 - 5,9,1.80,Iceland - 1. Deild
 Fjolnir,4 out of 7,57%,2,1,1,12 - 9,7,1.75,Iceland - 1. Deild
 Keflavik,2 out of 5,40%,1,0,1,5 - 5,3,1.50,Iceland - 1. Deild
 Volsungur,3 out of 8,38%,1,0,2,6 - 8,3,1.00,Iceland - 1. Deild
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Ireland - Premier Division
 Derry City,5 out of 12,42%,5,0,0,8 - 3,15,3.00,Ireland - Premier Division
 Shamrock Rovers,3 out of 13,23%,2,1,0,4 - 2,7,2.33,Ireland - Premier Division
 Bohemians,4 out of 12,33%,3,0,1,7 - 2,9,2.25,Ireland - Premier Division
@@ -755,6 +680,7 @@ Sligo Rovers,5 out of 11,45%,2,2,1,9 - 5,8,1.60,Ireland - Premier Division
 Drogheda Utd,5 out of 13,38%,2,2,1,6 - 5,8,1.60,Ireland - Premier Division
 St. Patricks,4 out of 12,33%,2,0,2,5 - 4,6,1.50,Ireland - Premier Division
 Cork City,5 out of 12,42%,0,2,3,6 - 9,2,0.40,Ireland - Premier Division
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Ireland - First Division
 UC Dublin,6 out of 11,55%,6,0,0,10 - 2,18,3.00,Ireland - First Division
 Dundalk,9 out of 12,75%,8,1,0,19 - 5,25,2.78,Ireland - First Division
 Bray Wanderers,6 out of 11,55%,5,0,1,9 - 2,15,2.50,Ireland - First Division
@@ -765,6 +691,7 @@ Wexford,5 out of 11,45%,3,2,0,8 - 3,11,2.20,Ireland - First Division
 Kerry,3 out of 12,25%,2,0,1,6 - 5,6,2.00,Ireland - First Division
 Finn Harps,3 out of 11,27%,2,0,1,3 - 3,6,2.00,Ireland - First Division
 Longford Town,4 out of 11,36%,1,2,1,4 - 4,5,1.25,Ireland - First Division
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Israel - Ligat HaAl
 Maccabi Netanya,5 out of 18,28%,5,0,0,11 - 3,15,3.00,Israel - Ligat HaAl
 B. Jerusalem,8 out of 18,44%,7,1,0,19 - 5,22,2.75,Israel - Ligat HaAl
 Sakhnin,5 out of 17,29%,4,1,0,6 - 2,13,2.60,Israel - Ligat HaAl
@@ -779,6 +706,7 @@ Kiryat Shmona,6 out of 16,38%,4,1,1,7 - 3,13,2.17,Israel - Ligat HaAl
 Ashdod,9 out of 17,53%,4,2,3,17 - 15,14,1.56,Israel - Ligat HaAl
 H. Jerusalem,8 out of 16,50%,3,3,2,15 - 12,12,1.50,Israel - Ligat HaAl
 Hapoel Hadera,8 out of 17,47%,3,3,2,10 - 11,12,1.50,Israel - Ligat HaAl
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Italy - Serie A
 Genoa,5 out of 19,26%,5,0,0,9 - 2,15,3.00,Italy - Serie A
 Atalanta,12 out of 19,63%,11,0,1,35 - 3,33,2.75,Italy - Serie A
 Lazio,12 out of 19,63%,11,0,1,24 - 8,33,2.75,Italy - Serie A
@@ -799,6 +727,7 @@ Cagliari,5 out of 19,26%,2,1,2,9 - 9,7,1.40,Italy - Serie A
 Empoli,9 out of 19,47%,3,3,3,15 - 14,12,1.33,Italy - Serie A
 Parma,5 out of 19,26%,0,3,2,8 - 10,3,0.60,Italy - Serie A
 Venezia,7 out of 19,37%,0,4,3,8 - 12,4,0.57,Italy - Serie A
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Italy - Serie B
 Pisa,10 out of 19,53%,8,1,1,22 - 11,25,2.50,Italy - Serie B
 Cesena,6 out of 19,32%,5,0,1,8 - 3,15,2.50,Italy - Serie B
 Cremonese,11 out of 19,58%,8,3,0,26 - 11,27,2.45,Italy - Serie B
@@ -819,6 +748,7 @@ Sampdoria,7 out of 19,37%,1,6,0,11 - 9,9,1.29,Italy - Serie B
 Cosenza,7 out of 19,37%,2,3,2,10 - 10,9,1.29,Italy - Serie B
 Mantova,5 out of 19,26%,1,3,1,8 - 9,6,1.20,Italy - Serie B
 Carrarese,6 out of 19,32%,1,4,1,9 - 10,7,1.17,Italy - Serie B
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Italy - Serie C - Group A
 Renate,9 out of 19,47%,8,1,0,14 - 4,25,2.78,Italy - Serie C - Group A
 Vicenza,11 out of 19,58%,9,2,0,17 - 5,29,2.64,Italy - Serie C - Group A
 Trento,5 out of 19,26%,4,1,0,8 - 3,13,2.60,Italy - Serie C - Group A
@@ -839,6 +769,7 @@ Novara,7 out of 19,37%,3,3,1,10 - 7,12,1.71,Italy - Serie C - Group A
 Pro Patria,7 out of 19,37%,2,2,3,9 - 10,8,1.14,Italy - Serie C - Group A
 Clodiense,5 out of 19,26%,1,2,2,8 - 9,5,1.00,Italy - Serie C - Group A
 Lecco,5 out of 19,26%,0,3,2,6 - 8,3,0.60,Italy - Serie C - Group A
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Italy - Serie C - Group B
 Ternana,10 out of 19,53%,10,0,0,20 - 4,30,3.00,Italy - Serie C - Group B
 Pescara,9 out of 19,47%,9,0,0,18 - 5,27,3.00,Italy - Serie C - Group B
 Arezzo,11 out of 19,58%,10,0,1,18 - 5,30,2.73,Italy - Serie C - Group B
@@ -859,6 +790,7 @@ Lucchese,7 out of 19,37%,3,2,2,11 - 11,11,1.57,Italy - Serie C - Group B
 Pineto,12 out of 19,63%,4,5,3,18 - 17,17,1.42,Italy - Serie C - Group B
 AC Milan B,5 out of 19,26%,2,1,2,8 - 7,7,1.40,Italy - Serie C - Group B
 Perugia,4 out of 19,21%,1,2,1,5 - 5,5,1.25,Italy - Serie C - Group B
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Japan - J1 League
 Vissel Kobe,6 out of 12,50%,6,0,0,11 - 4,18,3.00,Japan - J1 League
 Avispa Fukuoka,4 out of 10,40%,4,0,0,4 - 0,12,3.00,Japan - J1 League
 Gamba Osaka,3 out of 13,23%,3,0,0,3 - 0,9,3.00,Japan - J1 League
@@ -868,7 +800,7 @@ Machida Zelvia,10 out of 13,77%,8,2,0,19 - 7,26,2.60,Japan - J1 League
 Kashima Antlers,5 out of 11,45%,4,0,1,9 - 3,12,2.40,Japan - J1 League
 Fagiano Okayama,3 out of 11,27%,2,1,0,3 - 1,7,2.33,Japan - J1 League
 FC Tokyo,4 out of 12,33%,3,0,1,9 - 5,9,2.25,Japan - J1 League
-Shonan Bellmare,4 out of 11,36%,3,0,1,6 - 3,9,2.25,Japan - J1 League
+Shonan Bellmare,4 out of 12,33%,3,0,1,6 - 3,9,2.25,Japan - J1 League
 Kyoto Sanga,5 out of 13,38%,3,2,0,9 - 4,11,2.20,Japan - J1 League
 Yokohama M.,3 out of 11,27%,2,0,1,5 - 2,6,2.00,Japan - J1 League
 Nagoya G.,4 out of 13,31%,2,1,1,7 - 4,7,1.75,Japan - J1 League
@@ -879,6 +811,7 @@ Albirex Niigata,6 out of 12,50%,2,2,2,7 - 7,8,1.33,Japan - J1 League
 Urawa RD,4 out of 11,36%,1,2,1,6 - 5,5,1.25,Japan - J1 League
 Cerezo Osaka,4 out of 12,33%,1,1,2,10 - 9,4,1.00,Japan - J1 League
 Yokohama FC,4 out of 11,36%,1,0,3,4 - 6,3,0.75,Japan - J1 League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Japan - J2 League
 Mito Hollyhock,6 out of 10,60%,6,0,0,10 - 2,18,3.00,Japan - J2 League
 Vegalta Sendai,7 out of 12,58%,7,0,0,12 - 5,21,3.00,Japan - J2 League
 JEF Utd Chiba,6 out of 12,50%,5,1,0,13 - 6,16,2.67,Japan - J2 League
@@ -899,6 +832,7 @@ M. Yamagata,7 out of 13,54%,3,2,2,13 - 10,11,1.57,Japan - J2 League
 R. Yamaguchi,2 out of 11,18%,1,0,1,2 - 2,3,1.50,Japan - J2 League
 R. Kumamoto,5 out of 11,45%,2,1,2,8 - 7,7,1.40,Japan - J2 League
 Ehime FC,6 out of 12,50%,1,4,1,9 - 12,7,1.17,Japan - J2 League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Japan - J3 League
 Osaka,4 out of 10,40%,4,0,0,8 - 2,12,3.00,Japan - J3 League
 V. Hachinohe,5 out of 10,50%,5,0,0,5 - 0,15,3.00,Japan - J3 League
 T. Miyazaki,4 out of 10,40%,3,1,0,6 - 3,10,2.50,Japan - J3 League
@@ -919,6 +853,7 @@ FC Ryukyu,6 out of 11,55%,1,3,2,10 - 10,6,1.00,Japan - J3 League
 Gifu,4 out of 10,40%,1,1,2,8 - 9,4,1.00,Japan - J3 League
 Gainare Tottori,0 out of 11,0%,0,0,0,0 - 0,0,0,Japan - J3 League
 AC Numazu,1 out of 10,10%,0,0,1,3 - 4,0,0.00,Japan - J3 League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Latvia - Virsliga
 Riga FC,10 out of 11,91%,9,1,0,27 - 6,28,2.80,Latvia - Virsliga
 RFS,8 out of 12,67%,7,0,1,21 - 9,21,2.63,Latvia - Virsliga
 Liepaja,5 out of 11,45%,4,0,1,12 - 8,12,2.40,Latvia - Virsliga
@@ -929,6 +864,7 @@ Grobina,3 out of 12,25%,1,1,1,4 - 4,4,1.33,Latvia - Virsliga
 Daugavpils,6 out of 12,50%,2,2,2,11 - 12,8,1.33,Latvia - Virsliga
 FS Jelgava,2 out of 11,18%,0,2,0,2 - 2,2,1.00,Latvia - Virsliga
 Metta,3 out of 12,25%,1,0,2,3 - 6,3,1.00,Latvia - Virsliga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Latvia - 1. Liga
 Riga Mariners,3 out of 6,50%,3,0,0,10 - 3,9,3.00,Latvia - 1. Liga
 Leevon PPK,1 out of 7,14%,1,0,0,4 - 0,3,3.00,Latvia - 1. Liga
 Tukums B,1 out of 7,14%,1,0,0,1 - 0,3,3.00,Latvia - 1. Liga
@@ -943,6 +879,7 @@ AFA Olaine,3 out of 6,50%,1,0,2,7 - 9,3,1.00,Latvia - 1. Liga
 RFS B,0 out of 4,0%,0,0,0,0 - 0,0,0,Latvia - 1. Liga
 Marupe,0 out of 5,0%,0,0,0,0 - 0,0,0,Latvia - 1. Liga
 Riga FC B,1 out of 6,17%,0,0,1,1 - 2,0,0.00,Latvia - 1. Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Lithuania - A Lyga
 Kauno Zalgiris,7 out of 10,70%,7,0,0,18 - 5,21,3.00,Lithuania - A Lyga
 Dziugas Telsiai,5 out of 11,45%,5,0,0,7 - 0,15,3.00,Lithuania - A Lyga
 Hegelmann L.,3 out of 9,33%,3,0,0,6 - 0,9,3.00,Lithuania - A Lyga
@@ -953,6 +890,7 @@ Banga,4 out of 11,36%,2,1,1,4 - 3,7,1.75,Lithuania - A Lyga
 Riteriai,2 out of 10,20%,1,0,1,4 - 3,3,1.50,Lithuania - A Lyga
 Dainava,3 out of 10,30%,1,1,1,5 - 4,4,1.33,Lithuania - A Lyga
 Panevezys,5 out of 10,50%,1,2,2,7 - 7,5,1.00,Lithuania - A Lyga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Lithuania - 1st League
 TransINVEST,5 out of 7,71%,5,0,0,19 - 4,15,3.00,Lithuania - 1st League
 Neptuna K.,5 out of 7,71%,5,0,0,18 - 4,15,3.00,Lithuania - 1st League
 BFA Vilnius,4 out of 7,57%,4,0,0,9 - 1,12,3.00,Lithuania - 1st League
@@ -969,6 +907,7 @@ Ekranas,3 out of 8,38%,2,0,1,5 - 4,6,2.00,Lithuania - 1st League
 Atmosfera,3 out of 6,50%,2,0,1,4 - 3,6,2.00,Lithuania - 1st League
 Kauno Z. B,2 out of 8,25%,0,1,1,2 - 3,1,0.50,Lithuania - 1st League
 Hegelmann B,0 out of 7,0%,0,0,0,0 - 0,0,0,Lithuania - 1st League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Mexico - Liga MX - Apertura
 Atlas,1 out of 1,100%,1,0,0,3 - 2,3,3.00,Mexico - Liga MX - Apertura
 A. San Luis,1 out of 1,100%,1,0,0,1 - 0,3,3.00,Mexico - Liga MX - Apertura
 Monterrey,1 out of 2,50%,1,0,0,1 - 0,3,3.00,Mexico - Liga MX - Apertura
@@ -984,6 +923,7 @@ Queretaro,0 out of 2,0%,0,0,0,0 - 0,0,0,Mexico - Liga MX - Apertura
 Tijuana,0 out of 1,0%,0,0,0,0 - 0,0,0,Mexico - Liga MX - Apertura
 Puebla,0 out of 1,0%,0,0,0,0 - 0,0,0,Mexico - Liga MX - Apertura
 Necaxa,1 out of 1,100%,0,0,1,1 - 3,0,0.00,Mexico - Liga MX - Apertura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Mexico - Liga MX - Clausura
 CF America,5 out of 8,62%,5,0,0,12 - 3,15,3.00,Mexico - Liga MX - Clausura
 Tigres,2 out of 8,25%,2,0,0,5 - 2,6,3.00,Mexico - Liga MX - Clausura
 Toluca,6 out of 9,67%,5,1,0,16 - 5,16,2.67,Mexico - Liga MX - Clausura
@@ -1002,6 +942,7 @@ Puebla,3 out of 9,33%,1,0,2,5 - 5,3,1.00,Mexico - Liga MX - Clausura
 Pumas UNAM,3 out of 8,38%,1,0,2,7 - 8,3,1.00,Mexico - Liga MX - Clausura
 Santos Laguna,1 out of 9,11%,0,0,1,2 - 4,0,0.00,Mexico - Liga MX - Clausura
 A. San Luis,2 out of 8,25%,0,0,2,2 - 5,0,0.00,Mexico - Liga MX - Clausura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Netherlands - Eredivisie
 NEC Nijmegen,5 out of 17,29%,5,0,0,11 - 0,15,3.00,Netherlands - Eredivisie
 Heerenveen,2 out of 17,12%,2,0,0,6 - 3,6,3.00,Netherlands - Eredivisie
 Ajax Amsterdam,9 out of 17,53%,8,1,0,16 - 2,25,2.78,Netherlands - Eredivisie
@@ -1020,6 +961,7 @@ Go Ahead Eagles,10 out of 17,59%,4,3,3,21 - 20,15,1.50,Netherlands - Eredivisie
 Almere City,6 out of 17,35%,2,2,2,8 - 7,8,1.33,Netherlands - Eredivisie
 NAC Breda,8 out of 17,47%,2,3,3,12 - 13,9,1.13,Netherlands - Eredivisie
 RKC Waalwijk,2 out of 17,12%,0,1,1,3 - 4,1,0.50,Netherlands - Eredivisie
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Netherlands - Eerste Divisie
 FC Emmen,8 out of 19,42%,8,0,0,20 - 4,24,3.00,Netherlands - Eerste Divisie
 VVV,6 out of 19,32%,6,0,0,18 - 6,18,3.00,Netherlands - Eerste Divisie
 FC Volendam,9 out of 19,47%,8,1,0,20 - 8,25,2.78,Netherlands - Eerste Divisie
@@ -1040,6 +982,7 @@ Jong Ajax,8 out of 19,42%,3,2,3,13 - 13,11,1.38,Netherlands - Eerste Divisie
 TOP Oss,3 out of 19,16%,0,2,1,5 - 6,2,0.67,Netherlands - Eerste Divisie
 MVV Maastricht,2 out of 19,11%,0,1,1,3 - 4,1,0.50,Netherlands - Eerste Divisie
 Jong Utrecht,3 out of 19,16%,0,1,2,3 - 9,1,0.33,Netherlands - Eerste Divisie
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Northern Ireland - NIFL Premiership
 Glenavon,7 out of 19,37%,6,1,0,17 - 5,19,2.71,Northern Ireland - NIFL Premiership
 Ballymena Utd,7 out of 20,35%,6,1,0,13 - 3,19,2.71,Northern Ireland - NIFL Premiership
 Crusaders,10 out of 18,56%,8,1,1,15 - 5,25,2.50,Northern Ireland - NIFL Premiership
@@ -1052,6 +995,7 @@ Glentoran,8 out of 21,38%,5,2,1,17 - 7,17,2.13,Northern Ireland - NIFL Premiersh
 Loughgall,2 out of 19,11%,1,1,0,3 - 2,4,2.00,Northern Ireland - NIFL Premiership
 Cliftonville,7 out of 20,35%,3,3,1,16 - 9,12,1.71,Northern Ireland - NIFL Premiership
 Carrick Rangers,4 out of 18,22%,1,2,1,5 - 5,5,1.25,Northern Ireland - NIFL Premiership
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Norway - Eliteserien
 Stromsgodset,2 out of 7,29%,2,0,0,8 - 2,6,3.00,Norway - Eliteserien
 Brann,2 out of 7,29%,2,0,0,6 - 2,6,3.00,Norway - Eliteserien
 Sarpsborg 08,2 out of 7,29%,2,0,0,5 - 1,6,3.00,Norway - Eliteserien
@@ -1068,6 +1012,7 @@ Sandefjord,2 out of 7,29%,1,0,1,2 - 3,3,1.50,Norway - Eliteserien
 Bryne,5 out of 7,71%,1,2,2,7 - 7,5,1.00,Norway - Eliteserien
 Kristiansund,3 out of 9,33%,1,0,2,3 - 5,3,1.00,Norway - Eliteserien
 Haugesund,1 out of 8,12%,0,0,1,1 - 3,0,0.00,Norway - Eliteserien
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Norway - 1st Division
 Ranheim,3 out of 6,50%,3,0,0,7 - 2,9,3.00,Norway - 1st Division
 Lillestrom,5 out of 7,71%,4,1,0,15 - 1,13,2.60,Norway - 1st Division
 Kongsvinger,3 out of 6,50%,2,1,0,8 - 3,7,2.33,Norway - 1st Division
@@ -1084,6 +1029,7 @@ Aalesund,3 out of 6,50%,1,1,1,6 - 6,4,1.33,Norway - 1st Division
 Skeid,3 out of 7,43%,1,0,2,8 - 7,3,1.00,Norway - 1st Division
 Moss,1 out of 6,17%,0,1,0,2 - 2,1,1.00,Norway - 1st Division
 Raufoss,3 out of 6,50%,0,2,1,5 - 6,2,0.67,Norway - 1st Division
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Norway - Division 3
 Sotra,5 out of 7,71%,5,0,0,10 - 2,15,3.00,Norway - Division 3
 Eik Tonsberg,2 out of 7,29%,2,0,0,4 - 1,6,3.00,Norway - Division 3
 Sandviken,1 out of 7,14%,1,0,0,2 - 1,3,3.00,Norway - Division 3
@@ -1098,6 +1044,7 @@ Traef,1 out of 7,14%,0,1,0,1 - 1,1,1.00,Norway - Division 3
 Flekkeroy,0 out of 7,0%,0,0,0,0 - 0,0,0,Norway - Division 3
 Brann B,1 out of 7,14%,0,0,1,1 - 2,0,0.00,Norway - Division 3
 Lysekloster,2 out of 7,29%,0,0,2,2 - 4,0,0.00,Norway - Division 3
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Paraguay - Primera Div. - Apertura
 Guarani,7 out of 11,64%,7,0,0,12 - 2,21,3.00,Paraguay - Primera Div. - Apertura
 S. Ameliano,3 out of 11,27%,3,0,0,6 - 2,9,3.00,Paraguay - Primera Div. - Apertura
 Libertad,7 out of 11,64%,5,2,0,15 - 4,17,2.43,Paraguay - Primera Div. - Apertura
@@ -1110,6 +1057,7 @@ S. Luqueno,2 out of 11,18%,1,1,0,3 - 2,4,2.00,Paraguay - Primera Div. - Apertura
 A. Tembetary,2 out of 11,18%,1,1,0,2 - 1,4,2.00,Paraguay - Primera Div. - Apertura
 Olimpia,5 out of 11,45%,2,1,2,5 - 5,7,1.40,Paraguay - Primera Div. - Apertura
 D. Recoleta,6 out of 11,55%,2,2,2,12 - 11,8,1.33,Paraguay - Primera Div. - Apertura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Paraguay - Primera Div. - Clausura
 S. Trinidense,1 out of 2,50%,1,0,0,4 - 2,3,3.00,Paraguay - Primera Div. - Clausura
 2 de Mayo,1 out of 2,50%,1,0,0,1 - 0,3,3.00,Paraguay - Primera Div. - Clausura
 S. Luqueno,1 out of 2,50%,1,0,0,1 - 0,3,3.00,Paraguay - Primera Div. - Clausura
@@ -1122,6 +1070,7 @@ D. Recoleta,0 out of 1,0%,0,0,0,0 - 0,0,0,Paraguay - Primera Div. - Clausura
 Olimpia,1 out of 1,100%,0,0,1,3 - 4,0,0.00,Paraguay - Primera Div. - Clausura
 A. Tembetary,1 out of 2,50%,0,0,1,1 - 3,0,0.00,Paraguay - Primera Div. - Clausura
 S. Ameliano,1 out of 1,100%,0,0,1,1 - 3,0,0.00,Paraguay - Primera Div. - Clausura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Paraguay - Division Intermedia
 12 de Junio VH,5 out of 9,56%,5,0,0,9 - 0,15,3.00,Paraguay - Division Intermedia
 Rubio Nu,2 out of 9,22%,2,0,0,5 - 3,6,3.00,Paraguay - Division Intermedia
 D. Capiata,4 out of 9,44%,3,1,0,8 - 1,10,2.50,Paraguay - Division Intermedia
@@ -1138,6 +1087,7 @@ Guarani de Fram,4 out of 9,44%,0,4,0,4 - 4,4,1.00,Paraguay - Division Intermedia
 Pastoreo,2 out of 9,22%,0,2,0,2 - 2,2,1.00,Paraguay - Division Intermedia
 Resistencia,5 out of 9,56%,1,2,2,7 - 9,5,1.00,Paraguay - Division Intermedia
 F. de la Mora,0 out of 9,0%,0,0,0,0 - 0,0,0,Paraguay - Division Intermedia
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Peru - Liga 1 - Apertura
 Cajamarca,2 out of 9,22%,2,0,0,3 - 1,6,3.00,Peru - Liga 1 - Apertura
 Comerciantes U.,1 out of 9,11%,1,0,0,2 - 0,3,3.00,Peru - Liga 1 - Apertura
 Sport Huancayo,2 out of 9,22%,2,0,0,2 - 0,6,3.00,Peru - Liga 1 - Apertura
@@ -1157,6 +1107,7 @@ Sport Boys,3 out of 9,33%,1,1,1,6 - 3,4,1.33,Peru - Liga 1 - Apertura
 FBC Melgar,5 out of 9,56%,1,3,1,6 - 8,6,1.20,Peru - Liga 1 - Apertura
 Atletico Grau,5 out of 9,56%,1,1,3,9 - 10,4,0.80,Peru - Liga 1 - Apertura
 Juan Pablo II,1 out of 9,11%,0,0,1,2 - 3,0,0.00,Peru - Liga 1 - Apertura
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Poland - Ekstraklasa
 T. Nieciecza,1 out of 1,100%,1,0,0,4 - 0,3,3.00,Poland - Ekstraklasa
 Cracovia Krakow,1 out of 1,100%,1,0,0,4 - 1,3,3.00,Poland - Ekstraklasa
 Rakow C.,1 out of 1,100%,1,0,0,1 - 0,3,3.00,Poland - Ekstraklasa
@@ -1165,6 +1116,7 @@ Arka Gdynia,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - Ekstraklasa
 Lechia Gdansk,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - Ekstraklasa
 Korona Kielce,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - Ekstraklasa
 Zaglebie Lubin,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - Ekstraklasa
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Poland - 1. Liga
 Wisla Krakow,1 out of 1,100%,1,0,0,4 - 0,3,3.00,Poland - 1. Liga
 Polonia Bytom,1 out of 1,100%,1,0,0,3 - 0,3,3.00,Poland - 1. Liga
 Ruch Chorzow,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - 1. Liga
@@ -1174,6 +1126,7 @@ Miedz Legnica,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - 1. Liga
 Stal Rzeszow,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - 1. Liga
 Znicz Pruszkow,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - 1. Liga
 Wieczysta K.,0 out of 1,0%,0,0,0,0 - 0,0,0,Poland - 1. Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Portugal - Liga Portugal
 FC Porto,8 out of 17,47%,8,0,0,19 - 1,24,3.00,Portugal - Liga Portugal
 Sporting Braga,10 out of 17,59%,9,0,1,16 - 4,27,2.70,Portugal - Liga Portugal
 Estoril,5 out of 17,29%,4,1,0,15 - 7,13,2.60,Portugal - Liga Portugal
@@ -1192,6 +1145,7 @@ Moreirense,7 out of 17,41%,4,1,2,12 - 9,13,1.86,Portugal - Liga Portugal
 AVS,4 out of 17,24%,2,1,1,5 - 5,7,1.75,Portugal - Liga Portugal
 Arouca,9 out of 17,53%,4,2,3,13 - 14,14,1.56,Portugal - Liga Portugal
 Gil Vicente,7 out of 17,41%,3,1,3,12 - 12,10,1.43,Portugal - Liga Portugal
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Portugal - Liga Portugal 2
 Chaves,6 out of 17,35%,6,0,0,11 - 3,18,3.00,Portugal - Liga Portugal 2
 Vizela,10 out of 17,59%,8,1,1,18 - 7,25,2.50,Portugal - Liga Portugal 2
 Alverca,9 out of 17,53%,6,3,0,16 - 6,21,2.33,Portugal - Liga Portugal 2
@@ -1210,6 +1164,7 @@ Academico Viseu,10 out of 17,59%,3,6,1,18 - 11,15,1.50,Portugal - Liga Portugal 
 Leixoes,7 out of 17,41%,3,1,3,9 - 9,10,1.43,Portugal - Liga Portugal 2
 Felgueiras,8 out of 17,47%,2,5,1,12 - 8,11,1.38,Portugal - Liga Portugal 2
 Mafra,5 out of 17,29%,1,1,3,7 - 8,4,0.80,Portugal - Liga Portugal 2
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Romania - Liga 1
 U. Cluj,1 out of 1,100%,1,0,0,4 - 1,3,3.00,Romania - Liga 1
 Rapid Bucharest,1 out of 1,100%,1,0,0,2 - 0,3,3.00,Romania - Liga 1
 FCSB,1 out of 1,100%,1,0,0,1 - 0,3,3.00,Romania - Liga 1
@@ -1226,6 +1181,7 @@ Otelul,0 out of 1,0%,0,0,0,0 - 0,0,0,Romania - Liga 1
 Arges,0 out of 1,0%,0,0,0,0 - 0,0,0,Romania - Liga 1
 Metaloglobus,0 out of 1,0%,0,0,0,0 - 0,0,0,Romania - Liga 1
 Csikszereda,1 out of 1,100%,0,0,1,1 - 6,0,0.00,Romania - Liga 1
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Scotland - Premiership
 Celtic,13 out of 19,68%,12,1,0,46 - 9,37,2.85,Scotland - Premiership
 Hearts,6 out of 19,32%,5,1,0,14 - 4,16,2.67,Scotland - Premiership
 Aberdeen,7 out of 19,37%,5,1,1,10 - 6,16,2.29,Scotland - Premiership
@@ -1238,6 +1194,7 @@ Ross County,7 out of 19,37%,4,1,2,13 - 8,13,1.86,Scotland - Premiership
 Hibernian,9 out of 19,47%,3,4,2,14 - 13,13,1.44,Scotland - Premiership
 St. Johnstone,6 out of 19,32%,2,2,2,9 - 8,8,1.33,Scotland - Premiership
 Kilmarnock,3 out of 19,16%,1,0,2,5 - 5,3,1.00,Scotland - Premiership
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Scotland - Championship
 Livingston,8 out of 18,44%,8,0,0,18 - 5,24,3.00,Scotland - Championship
 Queens Park,4 out of 18,22%,4,0,0,9 - 1,12,3.00,Scotland - Championship
 Partick Thistle,6 out of 18,33%,6,0,0,8 - 0,18,3.00,Scotland - Championship
@@ -1248,6 +1205,7 @@ Hamilton,7 out of 18,39%,4,2,1,14 - 9,14,2.00,Scotland - Championship
 Raith Rovers,7 out of 18,39%,4,1,2,18 - 10,13,1.86,Scotland - Championship
 Airdrieonians,3 out of 18,17%,1,2,0,8 - 3,5,1.67,Scotland - Championship
 Greenock Morton,8 out of 18,44%,3,3,2,14 - 12,12,1.50,Scotland - Championship
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Serbia - Super Liga
 Partizan,1 out of 1,100%,1,0,0,1 - 0,3,3.00,Serbia - Super Liga
 S. Subotica,0 out of 1,0%,0,0,0,0 - 0,0,0,Serbia - Super Liga
 R. Surdulica,0 out of 1,0%,0,0,0,0 - 0,0,0,Serbia - Super Liga
@@ -1255,6 +1213,8 @@ IMT N. Beograd,0 out of 1,0%,0,0,0,0 - 0,0,0,Serbia - Super Liga
 Napredak,0 out of 1,0%,0,0,0,0 - 0,0,0,Serbia - Super Liga
 Javor Ivanjica,0 out of 1,0%,0,0,0,0 - 0,0,0,Serbia - Super Liga
 Radnicki Nis,1 out of 1,100%,0,0,1,1 - 2,0,0.00,Serbia - Super Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Slovakia - Fortuna Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,South Africa - Premier Division 
 Mamelodi S.,7 out of 14,50%,7,0,0,16 - 2,21,3.00,South Africa - Premier Division 
 Orlando Pirates,8 out of 14,57%,8,0,0,11 - 2,24,3.00,South Africa - Premier Division 
 Kaizer Chiefs,2 out of 14,14%,2,0,0,4 - 1,6,3.00,South Africa - Premier Division 
@@ -1270,18 +1230,20 @@ Cape Town City,3 out of 14,21%,2,0,1,4 - 2,6,2.00,South Africa - Premier Divisio
 Magesi,3 out of 14,21%,2,0,1,3 - 3,6,2.00,South Africa - Premier Division 
 Marumo G.,6 out of 14,43%,3,2,1,8 - 6,11,1.83,South Africa - Premier Division 
 Chippa Utd,3 out of 14,21%,1,1,1,4 - 3,4,1.33,South Africa - Premier Division 
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,South Korea - K League 1
 Jeonbuk,8 out of 11,73%,8,0,0,16 - 2,24,3.00,South Korea - K League 1
-Seoul,5 out of 11,45%,4,1,0,7 - 2,13,2.60,South Korea - K League 1
+Seoul,5 out of 12,42%,4,1,0,7 - 2,13,2.60,South Korea - K League 1
 Jeju Utd,3 out of 11,27%,2,1,0,5 - 2,7,2.33,South Korea - K League 1
-Daejeon Citizen,8 out of 11,73%,5,3,0,18 - 9,18,2.25,South Korea - K League 1
+Daejeon Citizen,8 out of 12,67%,5,3,0,18 - 9,18,2.25,South Korea - K League 1
 Ulsan,6 out of 11,55%,4,1,1,8 - 5,13,2.17,South Korea - K League 1
-Gangwon,8 out of 11,73%,5,1,2,12 - 7,16,2.00,South Korea - K League 1
+Gangwon,8 out of 12,67%,5,1,2,12 - 7,16,2.00,South Korea - K League 1
 Gwangju,8 out of 11,73%,4,3,1,11 - 8,15,1.88,South Korea - K League 1
 Anyang,5 out of 11,45%,3,0,2,7 - 5,9,1.80,South Korea - K League 1
 Gimcheon Sangmu,4 out of 12,33%,2,0,2,9 - 6,6,1.50,South Korea - K League 1
 Suwon City,2 out of 11,18%,1,0,1,7 - 4,3,1.50,South Korea - K League 1
 Pohang Steelers,4 out of 11,36%,1,2,1,5 - 4,5,1.25,South Korea - K League 1
 Daegu,3 out of 12,25%,0,2,1,5 - 6,2,0.67,South Korea - K League 1
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,South Korea - K League 2
 Busan IPark,6 out of 10,60%,5,1,0,13 - 3,16,2.67,South Korea - K League 2
 Suwon Bluewings,6 out of 10,60%,5,1,0,14 - 8,16,2.67,South Korea - K League 2
 Incheon Utd,7 out of 10,70%,6,0,1,14 - 4,18,2.57,South Korea - K League 2
@@ -1296,6 +1258,23 @@ Cheongju,4 out of 12,33%,2,1,1,5 - 3,7,1.75,South Korea - K League 2
 Hwaseong,4 out of 10,40%,2,1,1,9 - 8,7,1.75,South Korea - K League 2
 Cheonan City,2 out of 11,18%,1,0,1,2 - 2,3,1.50,South Korea - K League 2
 Seoul E-Land,6 out of 11,55%,2,2,2,9 - 10,8,1.33,South Korea - K League 2
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,South Korea - K League 3
+Siheung Citizen,5 out of 9,56%,5,0,0,13 - 3,15,3.00,South Korea - K League 3
+Daejeon Korail,4 out of 9,44%,4,0,0,12 - 3,12,3.00,South Korea - K League 3
+Gimhae,7 out of 10,70%,7,0,0,11 - 2,21,3.00,South Korea - K League 3
+Gyeongju HNP,4 out of 9,44%,4,0,0,11 - 5,12,3.00,South Korea - K League 3
+Busan Transport,4 out of 7,57%,4,0,0,8 - 2,12,3.00,South Korea - K League 3
+Yeoju Sejong,3 out of 6,50%,3,0,0,5 - 0,9,3.00,South Korea - K League 3
+Paju Citizen,4 out of 9,44%,3,1,0,5 - 1,10,2.50,South Korea - K League 3
+Pocheon,7 out of 9,78%,5,1,1,15 - 5,16,2.29,South Korea - K League 3
+Changwon,4 out of 9,44%,3,0,1,7 - 3,9,2.25,South Korea - K League 3
+Chuncheon,4 out of 9,44%,3,0,1,6 - 3,9,2.25,South Korea - K League 3
+Yangpyeong,3 out of 9,33%,2,0,1,3 - 2,6,2.00,South Korea - K League 3
+Gangneung City,4 out of 8,50%,1,2,1,5 - 6,5,1.25,South Korea - K League 3
+Jeonbuk Motors,2 out of 8,25%,0,1,1,3 - 5,1,0.50,South Korea - K League 3
+Mokpo City,4 out of 8,50%,0,1,3,4 - 9,1,0.25,South Korea - K League 3
+Ulsan Citizen,3 out of 8,38%,0,0,3,3 - 6,0,0.00,South Korea - K League 3
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Spain - La Liga
 Getafe,6 out of 19,32%,6,0,0,14 - 3,18,3.00,Spain - La Liga
 Villarreal,9 out of 19,47%,8,1,0,16 - 8,25,2.78,Spain - La Liga
 Athletic Bilbao,7 out of 19,37%,6,1,0,12 - 4,19,2.71,Spain - La Liga
@@ -1316,6 +1295,7 @@ Osasuna,6 out of 19,32%,2,3,1,9 - 8,9,1.50,Spain - La Liga
 Valencia,8 out of 19,42%,2,4,2,13 - 14,10,1.25,Spain - La Liga
 Leganes,8 out of 19,42%,2,4,2,9 - 10,10,1.25,Spain - La Liga
 Valladolid,2 out of 19,11%,0,0,2,3 - 6,0,0.00,Spain - La Liga
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Spain - La Liga 2
 Huesca,6 out of 21,29%,5,1,0,10 - 2,16,2.67,Spain - La Liga 2
 Mirandes,9 out of 21,43%,7,2,0,18 - 6,23,2.56,Spain - La Liga 2
 Deportivo,9 out of 21,43%,6,3,0,19 - 9,21,2.33,Spain - La Liga 2
@@ -1338,6 +1318,7 @@ Sporting Gijon,8 out of 21,38%,3,3,2,14 - 11,12,1.50,Spain - La Liga 2
 Malaga,5 out of 21,24%,2,1,2,9 - 8,7,1.40,Spain - La Liga 2
 Tenerife,5 out of 21,24%,0,4,1,7 - 8,4,0.80,Spain - La Liga 2
 Cartagena,7 out of 21,33%,1,1,5,11 - 18,4,0.57,Spain - La Liga 2
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Sweden - Allsvenskan
 Degerfors,3 out of 8,38%,3,0,0,11 - 4,9,3.00,Sweden - Allsvenskan
 Hammarby,3 out of 7,43%,3,0,0,7 - 0,9,3.00,Sweden - Allsvenskan
 IFK Goteborg,4 out of 8,50%,4,0,0,8 - 2,12,3.00,Sweden - Allsvenskan
@@ -1354,6 +1335,7 @@ Halmstad,2 out of 7,29%,1,1,0,2 - 1,4,2.00,Sweden - Allsvenskan
 Norrkoping,4 out of 7,57%,2,1,1,9 - 7,7,1.75,Sweden - Allsvenskan
 Sirius,5 out of 8,62%,0,2,3,7 - 11,2,0.40,Sweden - Allsvenskan
 Varnamo,0 out of 8,0%,0,0,0,0 - 0,0,0,Sweden - Allsvenskan
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Sweden - Superettan
 GIF Sundsvall,4 out of 7,57%,4,0,0,6 - 1,12,3.00,Sweden - Superettan
 Vasteras,2 out of 8,25%,2,0,0,5 - 0,6,3.00,Sweden - Superettan
 Landskrona,3 out of 7,43%,3,0,0,6 - 2,9,3.00,Sweden - Superettan
@@ -1370,6 +1352,7 @@ Orgryte,6 out of 7,86%,2,3,1,10 - 9,9,1.50,Sweden - Superettan
 Utsikten,5 out of 7,71%,1,3,1,8 - 7,6,1.20,Sweden - Superettan
 Umea,1 out of 7,14%,0,1,0,2 - 2,1,1.00,Sweden - Superettan
 Orebro,2 out of 8,25%,0,1,1,5 - 6,1,0.50,Sweden - Superettan
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Sweden - Sodra
 Ljungskile,3 out of 7,43%,3,0,0,9 - 1,9,3.00,Sweden - Sodra
 Olympic,2 out of 8,25%,2,0,0,6 - 2,6,3.00,Sweden - Sodra
 Jonkopings,2 out of 7,29%,2,0,0,4 - 0,6,3.00,Sweden - Sodra
@@ -1386,6 +1369,9 @@ Eskilsminne,4 out of 8,50%,1,2,1,6 - 5,5,1.25,Sweden - Sodra
 Trollhattan,5 out of 8,62%,1,3,1,9 - 8,6,1.20,Sweden - Sodra
 IFK Skovde,1 out of 7,14%,0,0,1,1 - 2,0,0.00,Sweden - Sodra
 Husqvarna,2 out of 7,29%,0,0,2,2 - 6,0,0.00,Sweden - Sodra
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Switzerland - Super League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Switzerland - Challenge League
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Thailand - Thai League 1
 Khon Kaen Utd,2 out of 15,13%,2,0,0,3 - 1,6,3.00,Thailand - Thai League 1
 Buriram Utd,8 out of 15,53%,7,1,0,25 - 4,22,2.75,Thailand - Thai League 1
 Bangkok Utd,10 out of 15,67%,8,1,1,22 - 10,25,2.50,Thailand - Thai League 1
@@ -1402,6 +1388,7 @@ Uthai Thani,6 out of 15,40%,2,2,2,10 - 10,8,1.33,Thailand - Thai League 1
 N. Bua Pitchaya,3 out of 15,20%,1,1,1,3 - 3,4,1.33,Thailand - Thai League 1
 Chiangrai Utd,4 out of 15,27%,1,1,2,8 - 8,4,1.00,Thailand - Thai League 1
 Sukhothai,5 out of 15,33%,1,2,2,7 - 9,5,1.00,Thailand - Thai League 1
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Turkey - Super Lig
 Galatasaray,14 out of 18,78%,13,1,0,38 - 10,40,2.86,Turkey - Super Lig
 Basaksehir,7 out of 18,39%,6,1,0,13 - 5,19,2.71,Turkey - Super Lig
 Samsunspor,6 out of 18,33%,5,1,0,9 - 2,16,2.67,Turkey - Super Lig
@@ -1421,6 +1408,7 @@ Antalyaspor,3 out of 18,17%,1,0,2,7 - 11,3,1.00,Turkey - Super Lig
 Hatayspor,7 out of 18,39%,2,0,5,16 - 18,6,0.86,Turkey - Super Lig
 Sivasspor,2 out of 18,11%,0,0,2,3 - 5,0,0.00,Turkey - Super Lig
 Adana Demirspor,2 out of 18,11%,0,0,2,3 - 6,0,0.00,Turkey - Super Lig
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,USA - MLS
 San Diego,5 out of 11,45%,5,0,0,14 - 7,15,3.00,USA - MLS
 Austin,4 out of 11,36%,4,0,0,6 - 1,12,3.00,USA - MLS
 CF Montreal,2 out of 13,15%,2,0,0,4 - 1,6,3.00,USA - MLS
@@ -1451,6 +1439,7 @@ Sporting KC,5 out of 11,45%,2,0,3,10 - 11,6,1.20,USA - MLS
 Atlanta Utd,1 out of 11,9%,0,1,0,2 - 2,1,1.00,USA - MLS
 St. Louis City,4 out of 12,33%,1,1,2,7 - 8,4,1.00,USA - MLS
 LA Galaxy,2 out of 13,15%,0,0,2,3 - 5,0,0.00,USA - MLS
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,USL Championship
 North Carolina,3 out of 8,38%,3,0,0,4 - 0,9,3.00,USL Championship
 Orange County,1 out of 7,14%,1,0,0,3 - 0,3,3.00,USL Championship
 San Antonio,2 out of 7,29%,2,0,0,4 - 2,6,3.00,USL Championship
@@ -1475,13 +1464,14 @@ Colorado S.,3 out of 10,30%,1,1,1,5 - 5,4,1.33,USL Championship
 Detroit City,4 out of 10,40%,1,2,1,7 - 6,5,1.25,USL Championship
 Lexington,3 out of 8,38%,1,0,2,3 - 7,3,1.00,USL Championship
 Birmingham L.,2 out of 8,25%,0,1,1,3 - 5,1,0.50,USL Championship
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,USA - USL League One
 Spokane V.,4 out of 7,57%,4,0,0,8 - 1,12,3.00,USA - USL League One
 Richmond K.,2 out of 8,25%,2,0,0,8 - 5,6,3.00,USA - USL League One
 Greenville,1 out of 8,12%,1,0,0,3 - 0,3,3.00,USA - USL League One
 Forward Madison,1 out of 7,14%,1,0,0,2 - 1,3,3.00,USA - USL League One
 One Knoxville,4 out of 9,44%,3,1,0,5 - 1,10,2.50,USA - USL League One
 Union Omaha,5 out of 10,50%,3,0,2,8 - 7,9,1.80,USA - USL League One
-Tormenta,3 out of 6,50%,1,2,0,6 - 5,5,1.67,USA - USL League One
+Tormenta,3 out of 7,43%,1,2,0,6 - 5,5,1.67,USA - USL League One
 Naples,5 out of 8,62%,2,1,2,7 - 6,7,1.40,USA - USL League One
 Chattanooga RW,5 out of 7,71%,2,1,2,8 - 8,7,1.40,USA - USL League One
 Charlotte I.,3 out of 8,38%,1,1,1,4 - 3,4,1.33,USA - USL League One
@@ -1489,6 +1479,7 @@ Alta,3 out of 6,50%,1,1,1,5 - 5,4,1.33,USA - USL League One
 Portland Hearts,3 out of 9,33%,1,1,1,4 - 4,4,1.33,USA - USL League One
 Texoma,1 out of 6,17%,0,1,0,1 - 1,1,1.00,USA - USL League One
 Westchester SC,3 out of 8,38%,0,1,2,3 - 6,1,0.33,USA - USL League One
+,Matches,Perc.,W,D,L,Goals,Pts,PPG,Venezuela - Primera Division - Apertura
 UCV,5 out of 7,71%,5,0,0,7 - 0,15,3.00,Venezuela - Primera Division - Apertura
 Carabobo,4 out of 7,57%,4,0,0,7 - 1,12,3.00,Venezuela - Primera Division - Apertura
 D. La Guaira,3 out of 7,43%,3,0,0,6 - 2,9,3.00,Venezuela - Primera Division - Apertura
