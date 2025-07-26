@@ -1,4 +1,3 @@
-// useRecentGames.ts
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
@@ -51,6 +50,10 @@ const fetchCSVData = async (): Promise<string> => {
   throw new Error('Não foi possível carregar os dados dos jogos recentes de nenhuma fonte disponível');
 };
 
+const normalizeTeamName = (name: string): string => {
+  return name.toLowerCase().trim();
+};
+
 const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
   console.log('=== PARSE RECENT GAMES CSV ===');
 
@@ -74,16 +77,16 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
 
       if (scoreRaw.includes('-')) {
         const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
-        homeGoals = parseInt(homeStr);
-        awayGoals = parseInt(awayStr);
+        homeGoals = parseInt(homeStr) || 0;
+        awayGoals = parseInt(awayStr) || 0;
       }
 
       return {
         Date: row.Date || row.Data || '',
         Team_Home: row.HomeTeam || row.Team_Home || '',
         Team_Away: row.AwayTeam || row.Team_Away || '',
-        Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
-        Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
+        Goals_Home: homeGoals,
+        Goals_Away: awayGoals,
         Result: row.FullTimeResult || row.Result || row.Resultado || '',
         Score: scoreRaw.trim(),
         HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
@@ -97,6 +100,12 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
 
   console.log(`✅ Processados ${matches.length} jogos`);
   return matches;
+};
+
+const safeDateCompare = (a: RecentGameMatch, b: RecentGameMatch): number => {
+  const dateA = new Date(a.Date).getTime() || 0;
+  const dateB = new Date(b.Date).getTime() || 0;
+  return dateB - dateA;
 };
 
 export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
@@ -113,37 +122,37 @@ export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
       let filteredMatches: RecentGameMatch[] = [];
 
       if (homeTeam) {
-        const homeTeamLower = homeTeam.toLowerCase();
-        const homeGames = allMatches.filter(match =>
-          match.Team_Home.toLowerCase() === homeTeamLower ||
-          match.Team_Home.toLowerCase().includes(homeTeamLower)
+        const homeTeamNorm = normalizeTeamName(homeTeam);
+        const homeGames = allMatches.filter(match => 
+          normalizeTeamName(match.Team_Home) === homeTeamNorm
         );
         filteredMatches = [...filteredMatches, ...homeGames];
         console.log(`🏠 Jogos do ${homeTeam} em casa: ${homeGames.length}`);
       }
 
       if (awayTeam) {
-        const awayTeamLower = awayTeam.toLowerCase();
-        const awayGames = allMatches.filter(match =>
-          match.Team_Away.toLowerCase() === awayTeamLower ||
-          match.Team_Away.toLowerCase().includes(awayTeamLower)
+        const awayTeamNorm = normalizeTeamName(awayTeam);
+        const awayGames = allMatches.filter(match => 
+          normalizeTeamName(match.Team_Away) === awayTeamNorm
         );
         filteredMatches = [...filteredMatches, ...awayGames];
         console.log(`🚌 Jogos do ${awayTeam} fora: ${awayGames.length}`);
       }
 
-      const uniqueMatches = filteredMatches.filter((match, index, self) =>
-        index === self.findIndex(m =>
-          m.Date === match.Date &&
-          m.Team_Home === match.Team_Home &&
-          m.Team_Away === match.Team_Away
-        )
-      );
+      // Remove duplicates while preserving original order
+      const uniqueMatches = filteredMatches.reduce((acc, current) => {
+        const isDuplicate = acc.some(match => 
+          match.Date === current.Date &&
+          match.Team_Home === current.Team_Home &&
+          match.Team_Away === current.Team_Away
+        );
+        return isDuplicate ? acc : [...acc, current];
+      }, [] as RecentGameMatch[]);
 
       console.log(`🎯 Jogos únicos encontrados: ${uniqueMatches.length}`);
 
       return uniqueMatches
-        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+        .sort(safeDateCompare)
         .slice(0, 6);
     },
     staleTime: 10 * 60 * 1000,
