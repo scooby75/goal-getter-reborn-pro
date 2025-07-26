@@ -22,6 +22,7 @@ export type GameStats = {
   losses: number;
 };
 
+// Normaliza string para facilitar comparações (minusculo, sem acento e trim)
 const normalize = (str: string): string =>
   str
     .toLowerCase()
@@ -29,12 +30,13 @@ const normalize = (str: string): string =>
     .replace(/[\u0300-\u036f]/g, '')
     .trim();
 
+// Função para buscar CSV
 const fetchCSVData = async (): Promise<string> => {
   const url = '/Data/all_leagues_results.csv';
   const response = await fetch(url, {
     method: 'GET',
     headers: {
-      'Accept': 'text/csv,text/plain,*/*',
+      Accept: 'text/csv,text/plain,*/*',
       'Cache-Control': 'no-cache',
     },
     mode: url.startsWith('http') ? 'cors' : 'same-origin',
@@ -50,41 +52,55 @@ const fetchCSVData = async (): Promise<string> => {
   return csvText;
 };
 
+// Parse CSV robusto baseado no código original
 const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
   const result = Papa.parse(csvText, {
     header: true,
     skipEmptyLines: true,
   });
 
+  if (result.errors.length) {
+    console.error('Erros ao parsear CSV:', result.errors);
+    return [];
+  }
+
   const rows = result.data as any[];
 
-  const matches: RecentGameMatch[] = rows.map((row) => {
-    const scoreRaw = row.Score || '';
-    let homeGoals = 0;
-    let awayGoals = 0;
+  const matches: RecentGameMatch[] = rows
+    .map((row, index) => {
+      try {
+        const scoreRaw = row.Score || '';
+        let homeGoals = 0;
+        let awayGoals = 0;
 
-    if (scoreRaw.includes('-')) {
-      const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
-      homeGoals = parseInt(homeStr) || 0;
-      awayGoals = parseInt(awayStr) || 0;
-    }
+        if (scoreRaw.includes('-')) {
+          const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
+          homeGoals = parseInt(homeStr);
+          awayGoals = parseInt(awayStr);
+        }
 
-    return {
-      Date: row.Date || '',
-      Team_Home: row.HomeTeam || '',
-      Team_Away: row.AwayTeam || '',
-      Goals_Home: homeGoals,
-      Goals_Away: awayGoals,
-      Result: row.FullTimeResult || '',
-      Score: scoreRaw,
-      HT_Score: row.HT_Score || '',
-      League: row.League || 'Indefinida',
-    };
-  }).filter(m => m.Date && m.Team_Home && m.Team_Away);
+        return {
+          Date: row.Date || '',
+          Team_Home: row.HomeTeam || '',
+          Team_Away: row.AwayTeam || '',
+          Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
+          Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
+          Result: row.FullTimeResult || '',
+          Score: scoreRaw.trim(),
+          HT_Score: row.HT_Score || '',
+          League: row.League || 'Indefinida',
+        };
+      } catch (error) {
+        console.warn(`Erro ao processar linha ${index + 1}:`, error);
+        return null;
+      }
+    })
+    .filter(Boolean);
 
   return matches;
 };
 
+// Cálculo de estatísticas (média gols, vitórias, empates, derrotas)
 const calculateStats = (games: RecentGameMatch[], type: 'home' | 'away'): GameStats => {
   let goalsFor = 0;
   let goalsAgainst = 0;
@@ -95,6 +111,7 @@ const calculateStats = (games: RecentGameMatch[], type: 'home' | 'away'): GameSt
   games.forEach(game => {
     const gf = type === 'home' ? game.Goals_Home : game.Goals_Away;
     const ga = type === 'home' ? game.Goals_Away : game.Goals_Home;
+
     goalsFor += gf;
     goalsAgainst += ga;
 
@@ -116,8 +133,8 @@ const calculateStats = (games: RecentGameMatch[], type: 'home' | 'away'): GameSt
 export const useRecentGames = (
   homeTeam?: string,
   awayTeam?: string,
-  homeLimit: number = 6,
-  awayLimit: number = 6
+  homeLimit = 6,
+  awayLimit = 6
 ) => {
   return useQuery<{
     homeGames: RecentGameMatch[];
@@ -130,19 +147,23 @@ export const useRecentGames = (
       const csvText = await fetchCSVData();
       const allMatches = parseRecentGamesCSV(csvText);
 
+      if (!Array.isArray(allMatches)) {
+        throw new Error('allMatches não é um array');
+      }
+
       const homeTeamNorm = homeTeam ? normalize(homeTeam) : '';
       const awayTeamNorm = awayTeam ? normalize(awayTeam) : '';
 
       const homeGames = homeTeam
         ? allMatches
-            .filter(m => normalize(m.Team_Home) === homeTeamNorm)
+            .filter(m => normalize(m.Team_Home).includes(homeTeamNorm))
             .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
             .slice(0, homeLimit)
         : [];
 
       const awayGames = awayTeam
         ? allMatches
-            .filter(m => normalize(m.Team_Away) === awayTeamNorm)
+            .filter(m => normalize(m.Team_Away).includes(awayTeamNorm))
             .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
             .slice(0, awayLimit)
         : [];
