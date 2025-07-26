@@ -65,17 +65,25 @@ const normalize = (str: string): string =>
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   console.log('=== PARSE CSV ===');
 
+  if (!csvText || typeof csvText !== 'string') return [];
+
   const result = Papa.parse(csvText, {
     header: true,
     skipEmptyLines: true,
   });
 
-  if (result.errors.length) {
-    console.error('Erros ao parsear CSV:', result.errors);
+  if (!result || !result.data || typeof result.data !== 'object') {
+    console.error('Resultado de parse inválido:', result);
     return [];
   }
 
-  const rows = result.data as any[];
+  if (result.errors && result.errors.length) {
+    console.error('Erros ao parsear CSV:', result.errors);
+    // Continua tentativa mesmo com erros, contanto que haja dados
+  }
+
+  // Garante que rows seja sempre um array
+  const rows = Array.isArray(result.data) ? result.data : [];
 
   const matches: HeadToHeadMatch[] = rows
     .map((row, index) => {
@@ -117,7 +125,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         return null;
       }
     })
-    .filter(Boolean);
+    .filter(Boolean); // Remove nulos
 
   console.log(`✅ Processados ${matches.length} confrontos`);
   return matches;
@@ -132,12 +140,9 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
 
       const csvText = await fetchCSVData();
 
-      const allMatches = parseHeadToHeadCSV(csvText);
-
-      if (!Array.isArray(allMatches)) {
-        console.error('allMatches não é um array:', allMatches);
-        return [];
-      }
+      const allMatchesRaw = parseHeadToHeadCSV(csvText);
+      // Garantia total: allMatches é sempre array
+      const allMatches: HeadToHeadMatch[] = Array.isArray(allMatchesRaw) ? allMatchesRaw : [];
 
       // Normaliza nomes para evitar problemas com maiúsculas/acentos
       const t1Norm = team1 ? normalize(team1) : '';
