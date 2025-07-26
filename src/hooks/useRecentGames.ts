@@ -110,41 +110,40 @@ export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
 
       console.log(`📊 Total de jogos carregados: ${allMatches.length}`);
 
-      let filteredMatches: RecentGameMatch[] = [];
+      const filteredHomeGames: RecentGameMatch[] = homeTeam
+        ? allMatches
+            .filter(
+              (match) =>
+                match.Team_Home.toLowerCase() === homeTeam.toLowerCase()
+            )
+            .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+            .slice(0, 6)
+        : [];
 
-      if (homeTeam) {
-        const homeTeamLower = homeTeam.toLowerCase();
-        const homeGames = allMatches.filter(match =>
-          match.Team_Home.toLowerCase() === homeTeamLower ||
-          match.Team_Home.toLowerCase().includes(homeTeamLower)
-        );
-        filteredMatches = [...filteredMatches, ...homeGames];
-        console.log(`🏠 Jogos do ${homeTeam} em casa: ${homeGames.length}`);
-      }
+      const filteredAwayGames: RecentGameMatch[] = awayTeam
+        ? allMatches
+            .filter(
+              (match) =>
+                match.Team_Away.toLowerCase() === awayTeam.toLowerCase()
+            )
+            .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+            .slice(0, 6)
+        : [];
 
-      if (awayTeam) {
-        const awayTeamLower = awayTeam.toLowerCase();
-        const awayGames = allMatches.filter(match =>
-          match.Team_Away.toLowerCase() === awayTeamLower ||
-          match.Team_Away.toLowerCase().includes(awayTeamLower)
-        );
-        filteredMatches = [...filteredMatches, ...awayGames];
-        console.log(`🚌 Jogos do ${awayTeam} fora: ${awayGames.length}`);
-      }
-
-      const uniqueMatches = filteredMatches.filter((match, index, self) =>
-        index === self.findIndex(m =>
-          m.Date === match.Date &&
-          m.Team_Home === match.Team_Home &&
-          m.Team_Away === match.Team_Away
-        )
+      const uniqueMatches = [...filteredHomeGames, ...filteredAwayGames].filter(
+        (match, index, self) =>
+          index ===
+          self.findIndex(
+            (m) =>
+              m.Date === match.Date &&
+              m.Team_Home === match.Team_Home &&
+              m.Team_Away === match.Team_Away
+          )
       );
 
-      console.log(`🎯 Jogos únicos encontrados: ${uniqueMatches.length}`);
+      console.log(`🎯 Total de jogos retornados (6 casa + 6 fora): ${uniqueMatches.length}`);
 
-      return uniqueMatches
-        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
-        .slice(0, 6);
+      return uniqueMatches;
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
