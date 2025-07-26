@@ -17,7 +17,7 @@ export type RecentGameMatch = {
 
 const CSV_URLS = [
   '/Data/all_leagues_results.csv',       // Dados mais recentes
-  '/Data/all_leagues_results_2004.csv'  // Dados históricos
+  '/Data/all_leagues_results_2004.csv'   // Dados históricos
 ];
 
 const fetchCSVData = async (): Promise<string[]> => {
@@ -73,9 +73,9 @@ const parseCSV = (csvTexts: string[]): RecentGameMatch[] => {
         console.warn(`CSV parsing warnings for source ${index}:`, errors);
       }
 
-      const matches = data.map((row: any) => {
+      const matches = data.map((row: any): RecentGameMatch => {
         const score = row.score || row.ft_score || '';
-        const scoreParts = score.split('-').map((v: string) => parseInt(v.trim(), 10) || [0, 0];
+        const scoreParts = score.split('-').map((v: string) => parseInt(v.trim(), 10));
         const [homeGoals = 0, awayGoals = 0] = scoreParts;
 
         return {
@@ -90,7 +90,7 @@ const parseCSV = (csvTexts: string[]): RecentGameMatch[] => {
           league: row.league || 'Unknown',
           season: row.season || (index === 1 ? '2004' : undefined),
         };
-      }).filter((match: RecentGameMatch) => 
+      }).filter(match =>
         match.date && match.homeTeam && match.awayTeam
       );
 
@@ -103,7 +103,11 @@ const parseCSV = (csvTexts: string[]): RecentGameMatch[] => {
   return allMatches;
 };
 
-export const useRecentGames = (teamName?: string, limit = 6, includeHistorical = false) => {
+export const useRecentGames = (
+  teamName?: string,
+  limit = 6,
+  includeHistorical = false
+) => {
   return useQuery<RecentGameMatch[]>({
     queryKey: ['recentGames', teamName, limit, includeHistorical],
     queryFn: async () => {
@@ -115,6 +119,7 @@ export const useRecentGames = (teamName?: string, limit = 6, includeHistorical =
         allMatches = allMatches.filter(match => !match.season || match.season !== '2004');
       }
 
+      // Se nenhum time for especificado, retorna os mais recentes
       if (!teamName) {
         return allMatches
           .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -131,7 +136,7 @@ export const useRecentGames = (teamName?: string, limit = 6, includeHistorical =
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .slice(0, limit);
     },
-    staleTime: 15 * 60 * 1000, // 15 minutes
+    staleTime: 15 * 60 * 1000, // 15 minutos
     retry: 1,
     enabled: !!teamName,
   });
