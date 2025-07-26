@@ -1,149 +1,135 @@
-// useRecentGames.ts
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
 export type RecentGameMatch = {
-  date: string;
-  homeTeam: string;
-  awayTeam: string;
-  homeGoals: number;
-  awayGoals: number;
-  result: string;
-  score: string;
-  htScore?: string;
-  league: string;
-  season?: string;
+  Date: string;
+  Team_Home: string;
+  Team_Away: string;
+  Goals_Home: number;
+  Goals_Away: number;
+  Result: string;
+  Score?: string;
+  HT_Score?: string;
+  Status?: string;
+  League?: string;
 };
 
-const CSV_URLS = [
-  '/Data/all_leagues_results.csv',        // Dados mais recentes
-  '/Data/all_leagues_results_2004.csv'    // Dados históricos
-];
+const fetchCSVData = async (): Promise<string> => {
+  const url = '/Data/all_leagues_results.csv';
+  console.log('📡 Buscando dados de:', url);
 
-// 🔄 Função para buscar os CSVs
-const fetchCSVData = async (): Promise<string[]> => {
   try {
-    const fetchPromises = CSV_URLS.map(async (url) => {
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Accept': 'text/csv',
-          'Cache-Control': 'no-cache',
-        },
-      });
-
-      if (!response.ok) {
-        console.warn(`Erro ao buscar ${url}, status: ${response.status}`);
-        return '';
-      }
-
-      const csvText = await response.text();
-      return csvText && csvText.trim().length > 100 ? csvText : '';
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'text/csv,text/plain,*/*',
+        'Cache-Control': 'no-cache',
+      },
+      mode: url.startsWith('http') ? 'cors' : 'same-origin',
     });
 
-    const results = await Promise.all(fetchPromises);
-    const validResults = results.filter(text => text !== '');
-
-    if (validResults.length === 0) {
-      throw new Error('Todas as fontes CSV falharam');
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar CSV: ${response.statusText}`);
     }
 
-    return validResults;
+    const csvText = await response.text();
+
+    if (csvText.length < 100) {
+      throw new Error('CSV retornado está vazio ou muito pequeno');
+    }
+
+    console.log(`✅ CSV carregado: ${csvText.length} caracteres`);
+    return csvText;
   } catch (error) {
-    console.error('Erro ao buscar dados CSV:', error);
-    throw new Error('Erro ao carregar dados de jogos');
+    console.error('❌ Erro ao carregar CSV:', error);
+    throw error;
   }
 };
 
-// 🔄 Função para interpretar os CSVs em objetos de jogos
-const parseCSV = (csvTexts: string[]): RecentGameMatch[] => {
-  const allMatches: RecentGameMatch[] = [];
-
-  csvTexts.forEach((csvText, index) => {
-    try {
-      const { data, errors } = Papa.parse(csvText, {
-        header: true,
-        skipEmptyLines: true,
-        transformHeader: header =>
-          header.trim()
-            .toLowerCase()
-            .replace(/\s+/g, '_')
-            .replace(/[^a-z0-9_]/g, ''),
-      });
-
-      if (errors.length) {
-        console.warn(`Erros ao parsear CSV ${index}:`, errors);
-      }
-
-      const matches = data.map((row: any) => {
-        const rawScore = row.score || row.ft_score || '';
-        const scoreParts = rawScore.split('-').map((v: string) => parseInt(v.trim(), 10));
-        const [homeGoals = 0, awayGoals = 0] = scoreParts;
-
-        return {
-          date: row.date?.trim() || '',
-          homeTeam: (row.home_team || row.team_home || '').trim(),
-          awayTeam: (row.away_team || row.team_away || '').trim(),
-          homeGoals: Number.isInteger(homeGoals) ? homeGoals : 0,
-          awayGoals: Number.isInteger(awayGoals) ? awayGoals : 0,
-          result: row.result || row.full_time_result || '',
-          score: rawScore,
-          htScore: row.ht_score || row.ht || '',
-          league: row.league || 'Unknown',
-          season: row.season || (index === 1 ? '2004' : undefined),
-        };
-      }).filter((match: RecentGameMatch) =>
-        match.date && match.homeTeam && match.awayTeam
-      );
-
-      allMatches.push(...matches);
-    } catch (error) {
-      console.error(`Falha ao interpretar CSV ${index}:`, error);
-    }
+const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
+  const result = Papa.parse(csvText, {
+    header: true,
+    skipEmptyLines: true,
   });
 
-  return allMatches;
+  if (result.errors.length) {
+    console.warn('⚠️ Erros ao parsear CSV:', result.errors);
+  }
+
+  const rows = result.data as any[];
+
+  const matches: RecentGameMatch[] = rows.map((row) => {
+    const scoreRaw = row.Score || row['Score'] || '';
+    let homeGoals = 0;
+    let awayGoals = 0;
+
+    if (scoreRaw.includes('-')) {
+      const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
+      homeGoals = parseInt(homeStr) || 0;
+      awayGoals = parseInt(awayStr) || 0;
+    }
+
+    return {
+      Date: row.Date || row.Data || '',
+      Team_Home: row.HomeTeam || row.Team_Home || '',
+      Team_Away: row.AwayTeam || row.Team_Away || '',
+      Goals_Home: homeGoals,
+      Goals_Away: awayGoals,
+      Result: row.FullTimeResult || row.Result || row.Resultado || '',
+      Score: scoreRaw,
+      HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
+      League: row.League || 'Indefinida',
+    };
+  }).filter(m => m.Date && m.Team_Home && m.Team_Away);
+
+  console.log(`✅ ${matches.length} jogos processados`);
+  return matches;
 };
 
-// 🧠 Hook para uso nos componentes React
-export const useRecentGames = (
-  teamName?: string,
-  limit = 6,
-  includeHistorical = false
-) => {
+export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
   return useQuery<RecentGameMatch[]>({
-    queryKey: ['recentGames', teamName, limit, includeHistorical],
+    queryKey: ['recentGames', homeTeam, awayTeam],
     queryFn: async () => {
-      const csvTexts = await fetchCSVData();
-      let allMatches = parseCSV(csvTexts);
+      const csvText = await fetchCSVData();
+      const allMatches = parseRecentGamesCSV(csvText);
 
-      // 🔍 Se histórico não for incluído, removemos os antigos
-      if (!includeHistorical) {
-        allMatches = allMatches.filter(match => match.season !== '2004');
+      let filtered: RecentGameMatch[] = [];
+
+      if (homeTeam) {
+        const name = homeTeam.toLowerCase().trim();
+        const homeMatches = allMatches.filter(match =>
+          match.Team_Home.toLowerCase() === name ||
+          match.Team_Home.toLowerCase().includes(name)
+        );
+        filtered.push(...homeMatches);
+        console.log(`🏠 ${homeTeam} em casa: ${homeMatches.length} jogos`);
       }
 
-      // 🧪 Se nenhum time for especificado, retorna jogos recentes
-      if (!teamName) {
-        return allMatches
-          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-          .slice(0, limit);
+      if (awayTeam) {
+        const name = awayTeam.toLowerCase().trim();
+        const awayMatches = allMatches.filter(match =>
+          match.Team_Away.toLowerCase() === name ||
+          match.Team_Away.toLowerCase().includes(name)
+        );
+        filtered.push(...awayMatches);
+        console.log(`🚌 ${awayTeam} fora: ${awayMatches.length} jogos`);
       }
 
-      // 🔠 Padroniza comparação do nome do time
-      const teamNormalized = teamName.trim().toLowerCase();
-
-      const filteredMatches = allMatches.filter(match =>
-        match.homeTeam.trim().toLowerCase() === teamNormalized ||
-        match.awayTeam.trim().toLowerCase() === teamNormalized
+      // Evita duplicatas de partidas
+      const uniqueMatches = filtered.filter((match, i, arr) =>
+        arr.findIndex(m =>
+          m.Date === match.Date &&
+          m.Team_Home === match.Team_Home &&
+          m.Team_Away === match.Team_Away
+        ) === i
       );
 
-      return filteredMatches
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .slice(0, limit);
+      return uniqueMatches
+        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+        .slice(0, 6);
     },
-    staleTime: 15 * 60 * 1000, // 15 minutos
-    retry: 1,
-    // ✅ sempre ativado se carregamento for necessário
-    enabled: true,
+    staleTime: 10 * 60 * 1000,
+    retry: 2,
+    enabled: !!homeTeam || !!awayTeam,
   });
 };
