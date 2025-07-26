@@ -144,7 +144,7 @@ export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
 
       return uniqueMatches
         .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
-        .slice(0, 15);
+        .slice(0, 6);
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
