@@ -19,6 +19,7 @@ const fetchCSVData = async (): Promise<string> => {
 
   const urls = [
     '/Data/all_leagues_results.csv',
+    '/Data/all_leagues_results_2024.csv',
   ];
 
   for (const url of urls) {
