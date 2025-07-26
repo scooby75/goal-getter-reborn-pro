@@ -1,3 +1,4 @@
+// useRecentGames.ts
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
@@ -15,74 +16,138 @@ export type RecentGameMatch = {
 };
 
 const fetchCSVData = async (): Promise<string> => {
-  const response = await fetch('/Data/all_leagues_results.csv');
-  if (!response.ok) throw new Error('Falha ao carregar dados');
-  return await response.text();
-};
+  console.log('=== FETCH RECENT GAMES CSV DATA ===');
 
-const normalizeTeamName = (name: string): string => {
-  return name
-    .toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove acentos
-    .trim();
+  const urls = ['/Data/all_leagues_results.csv'];
+
+  for (const url of urls) {
+    try {
+      console.log(`🔄 Tentando URL: ${url}`);
+
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'text/csv,text/plain,*/*',
+          'Cache-Control': 'no-cache',
+        },
+        mode: url.startsWith('http') ? 'cors' : 'same-origin',
+      });
+
+      if (response.ok) {
+        const csvText = await response.text();
+        if (csvText && csvText.trim().length > 100) {
+          console.log(`✅ CSV carregado com sucesso de: ${url}`);
+          console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
+          return csvText;
+        }
+      }
+
+      console.warn(`❌ Falha na URL: ${url} - Status: ${response.status}`);
+    } catch (error) {
+      console.warn(`❌ Erro na URL: ${url}`, error);
+    }
+  }
+
+  throw new Error('Não foi possível carregar os dados dos jogos recentes de nenhuma fonte disponível');
 };
 
 const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
-  const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-  
-  return (result.data as any[]).map((row) => {
+  console.log('=== PARSE RECENT GAMES CSV ===');
+
+  const result = Papa.parse(csvText, {
+    header: true,
+    skipEmptyLines: true,
+  });
+
+  if (result.errors.length) {
+    console.error('Erros ao parsear CSV:', result.errors);
+    return [];
+  }
+
+  const rows = result.data as any[];
+
+  const matches: RecentGameMatch[] = rows.map((row, index) => {
     try {
-      const scoreParts = (row.Score || '0-0').split('-').map(v => parseInt(v.trim()) || 0);
+      const scoreRaw = row.Score || row['Score'] || '';
+      let homeGoals = 0;
+      let awayGoals = 0;
+
+      if (scoreRaw.includes('-')) {
+        const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
+        homeGoals = parseInt(homeStr);
+        awayGoals = parseInt(awayStr);
+      }
+
       return {
-        Date: row.Date || '',
-        Team_Home: row.Team_Home || row.HomeTeam || '',
-        Team_Away: row.Team_Away || row.AwayTeam || '',
-        Goals_Home: scoreParts[0],
-        Goals_Away: scoreParts[1],
-        Result: row.Result || (scoreParts[0] > scoreParts[1] ? 'H' : scoreParts[0] < scoreParts[1] ? 'A' : 'D'),
-        Score: row.Score || '',
-        HT_Score: row.HT_Score || '',
-        League: row.League || 'Indefinida'
+        Date: row.Date || row.Data || '',
+        Team_Home: row.HomeTeam || row.Team_Home || '',
+        Team_Away: row.AwayTeam || row.Team_Away || '',
+        Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
+        Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
+        Result: row.FullTimeResult || row.Result || row.Resultado || '',
+        Score: scoreRaw.trim(),
+        HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
+        League: row.League || 'Indefinida',
       };
     } catch (error) {
+      console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
       return null;
     }
   }).filter(Boolean) as RecentGameMatch[];
+
+  console.log(`✅ Processados ${matches.length} jogos`);
+  return matches;
 };
 
 export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
   return useQuery<RecentGameMatch[]>({
     queryKey: ['recentGames', homeTeam, awayTeam],
     queryFn: async () => {
+      console.log('🔍 Buscando jogos recentes para:', { homeTeam, awayTeam });
+
       const csvText = await fetchCSVData();
       const allMatches = parseRecentGamesCSV(csvText);
+
+      console.log(`📊 Total de jogos carregados: ${allMatches.length}`);
 
       let filteredMatches: RecentGameMatch[] = [];
 
       if (homeTeam) {
-        const homeNorm = normalizeTeamName(homeTeam);
-        filteredMatches.push(...allMatches.filter(m => 
-          normalizeTeamName(m.Team_Home).includes(homeNorm)
-        ));
+        const homeTeamLower = homeTeam.toLowerCase();
+        const homeGames = allMatches.filter(match =>
+          match.Team_Home.toLowerCase() === homeTeamLower ||
+          match.Team_Home.toLowerCase().includes(homeTeamLower)
+        );
+        filteredMatches = [...filteredMatches, ...homeGames];
+        console.log(`🏠 Jogos do ${homeTeam} em casa: ${homeGames.length}`);
       }
 
       if (awayTeam) {
-        const awayNorm = normalizeTeamName(awayTeam);
-        filteredMatches.push(...allMatches.filter(m => 
-          normalizeTeamName(m.Team_Away).includes(awayNorm)
-        ));
+        const awayTeamLower = awayTeam.toLowerCase();
+        const awayGames = allMatches.filter(match =>
+          match.Team_Away.toLowerCase() === awayTeamLower ||
+          match.Team_Away.toLowerCase().includes(awayTeamLower)
+        );
+        filteredMatches = [...filteredMatches, ...awayGames];
+        console.log(`🚌 Jogos do ${awayTeam} fora: ${awayGames.length}`);
       }
 
-      // Remove duplicates and sort by date (newest first)
-      const uniqueMatches = [...new Map(
-        filteredMatches.map(m => 
-          [m.Date + m.Team_Home + m.Team_Away, m]
-        ).values()
-      ].sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime());
+      const uniqueMatches = filteredMatches.filter((match, index, self) =>
+        index === self.findIndex(m =>
+          m.Date === match.Date &&
+          m.Team_Home === match.Team_Home &&
+          m.Team_Away === match.Team_Away
+        )
+      );
 
-      return uniqueMatches.slice(0, 8); // Retorna até 8 jogos mais recentes
+      console.log(`🎯 Jogos únicos encontrados: ${uniqueMatches.length}`);
+
+      return uniqueMatches
+        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+        .slice(0, 6);
     },
     staleTime: 10 * 60 * 1000,
-    enabled: !!homeTeam || !!awayTeam
+    retry: 2,
+    enabled: !!homeTeam || !!awayTeam,
   });
 };
