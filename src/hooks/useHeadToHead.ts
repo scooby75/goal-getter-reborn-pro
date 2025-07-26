@@ -13,21 +13,18 @@ export type HeadToHeadMatch = {
   League?: string;
 };
 
-// CSV source URLs
-const CSV_URLS = [
-  '/Data/all_leagues_results.csv',
-  '/Data/all_leagues_results_2024.csv',
-];
-
-// Enhanced fetch function with timeout
+// Função para buscar CSV com múltiplas tentativas
 const fetchCSVData = async (): Promise<string> => {
   console.log('=== FETCH CSV DATA ===');
 
-  for (const url of CSV_URLS) {
+  const urls = [
+    '/Data/all_leagues_results.csv',
+    '/Data/all_leagues_results_2024.csv',
+  ];
+
+  for (const url of urls) {
     try {
-      console.log(`🔄 Attempting URL: ${url}`);
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
+      console.log(`🔄 Tentando URL: ${url}`);
 
       const response = await fetch(url, {
         method: 'GET',
@@ -36,194 +33,133 @@ const fetchCSVData = async (): Promise<string> => {
           'Cache-Control': 'no-cache',
         },
         mode: url.startsWith('http') ? 'cors' : 'same-origin',
-        signal: controller.signal,
       });
 
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        console.warn(`❌ Failed URL: ${url} - Status: ${response.status}`);
-        continue;
+      if (response.ok) {
+        const csvText = await response.text();
+        if (csvText && csvText.trim().length > 100) {
+          console.log(`✅ CSV carregado com sucesso de: ${url}`);
+          console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
+          return csvText;
+        }
       }
 
-      const csvText = await response.text();
-      if (csvText?.trim().length > 100) {
-        console.log(`✅ Successfully loaded CSV from: ${url}`);
-        console.log(`📊 CSV size: ${csvText.length} characters`);
-        return csvText;
-      }
-
-      console.warn(`⚠️ Empty or too small CSV from URL: ${url}`);
+      console.warn(`❌ Falha na URL: ${url} - Status: ${response.status}`);
     } catch (error) {
-      console.warn(`❌ Error fetching URL: ${url}`, error);
+      console.warn(`❌ Erro na URL: ${url}`, error);
     }
   }
 
-  throw new Error('Failed to load match data from all available sources');
+  throw new Error('Não foi possível carregar os dados dos confrontos de nenhuma fonte disponível');
 };
 
-// Normalization utility with memoization
-const normalize = (() => {
-  const cache = new Map<string, string>();
-  return (str: string): string => {
-    if (!str) return '';
-    if (cache.has(str)) return cache.get(str)!;
-    
-    const normalized = str
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .trim();
-    
-    cache.set(str, normalized);
-    return normalized;
-  };
-})();
-
-// Improved CSV parser with better validation
+// Função para parsear o CSV
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   console.log('=== PARSE CSV ===');
 
-  if (!csvText || typeof csvText !== 'string') {
-    console.error('Invalid csvText:', csvText);
+  const result = Papa.parse(csvText, {
+    header: true,
+    skipEmptyLines: true,
+  });
+
+  if (result.errors.length) {
+    console.error('Erros ao parsear CSV:', result.errors);
     return [];
   }
 
-  try {
-    const result = Papa.parse<Record<string, string>>(csvText, {
-      header: true,
-      skipEmptyLines: true,
-      transform: (value) => value?.trim() || '',
-    });
+  const rows = result.data as any[];
 
-    if (!result?.data) {
-      console.error('Invalid parse result:', result);
-      return [];
-    }
+  const matches: HeadToHeadMatch[] = rows.map((row, index) => {
+    try {
+      let homeGoals = 0;
+      let awayGoals = 0;
 
-    if (result.errors?.length) {
-      console.error('CSV parse errors:', result.errors);
-    }
-
-    const rows = Array.isArray(result.data) ? result.data : [];
-    console.log(`CSV rows read: ${rows.length}`);
-
-    return rows.reduce<HeadToHeadMatch[]>((matches, row, index) => {
-      try {
-        let homeGoals = 0;
-        let awayGoals = 0;
-        const scoreRaw = row.Score || '';
-
-        // Parse score if available
-        if (typeof scoreRaw === 'string' && scoreRaw.includes('-')) {
-          const [homeStr, awayStr] = scoreRaw.split('-').map(s => s.trim());
-          homeGoals = parseInt(homeStr, 10) || 0;
-          awayGoals = parseInt(awayStr, 10) || 0;
+      if (row.Score) {
+        const scoreParts = row.Score.split('-').map((s: string) => s.trim());
+        if (scoreParts.length === 2) {
+          homeGoals = parseInt(scoreParts[0], 10);
+          awayGoals = parseInt(scoreParts[1], 10);
         }
-
-        // Determine match result
-        let resultStr = '';
-        if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
-          resultStr = homeGoals > awayGoals ? 'H' 
-                   : homeGoals < awayGoals ? 'A' 
-                   : 'D';
-        }
-
-        matches.push({
-          Date: row.Date || row.Data || '',
-          Team_Home: row.HomeTeam || row.Team_Home || '',
-          Team_Away: row.AwayTeam || row.Team_Away || '',
-          Goals_Home: homeGoals,
-          Goals_Away: awayGoals,
-          Result: resultStr,
-          Score: scoreRaw,
-          HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
-          League: row.League || 'Unknown',
-        });
-      } catch (error) {
-        console.warn(`❌ Error processing row ${index + 1}:`, error);
       }
-      return matches;
-    }, []);
-  } catch (error) {
-    console.error('Failed to parse CSV:', error);
-    return [];
-  }
+
+      let result = '';
+      if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
+        if (homeGoals > awayGoals) result = 'H';
+        else if (homeGoals < awayGoals) result = 'A';
+        else result = 'D';
+      }
+
+      return {
+        Date: row.Date || row.Data || '',
+        Team_Home: row.HomeTeam || row.Team_Home || '',
+        Team_Away: row.AwayTeam || row.Team_Away || '',
+        Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
+        Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
+        Result: result,
+        Score: row.Score || '',
+        HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
+        League: row.League || 'Indefinida',
+      };
+    } catch (error) {
+      console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
+      return null;
+    }
+  }).filter(Boolean) as HeadToHeadMatch[];
+
+  console.log(`✅ Processados ${matches.length} confrontos`);
+  return matches;
 };
 
-// Date handling utility with format validation
-const safeDate = (dateStr: string): Date => {
-  // Try common date formats
-  const formats = [
-    'YYYY-MM-DD', 
-    'DD/MM/YYYY',
-    'MM/DD/YYYY'
-  ];
-  
-  for (const format of formats) {
-    const date = new Date(dateStr);
-    if (!isNaN(date.getTime())) return date;
-  }
-  
-  return new Date(0); // Fallback to epoch
-};
-
-// Main hook with robust error handling
+// Hook principal
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
     queryFn: async () => {
-      console.log('🔍 Fetching matches for:', { team1, team2 });
+      console.log('🔍 Buscando confrontos para:', { team1, team2 });
 
-      try {
-        const csvText = await fetchCSVData();
-        const allMatches = parseHeadToHeadCSV(csvText) || [];
-        console.log(`📊 Total matches loaded: ${allMatches.length}`);
+      const csvText = await fetchCSVData();
+      const allMatches = parseHeadToHeadCSV(csvText);
 
-        // Runtime type checking
-        if (!Array.isArray(allMatches)) {
-          console.error('Expected array but got:', typeof allMatches);
-          return [];
-        }
+      console.log(`📊 Total de confrontos carregados: ${allMatches.length}`);
 
-        if (!team1 && !team2) {
-          console.log('🔄 No teams specified, returning first 50 matches');
-          return allMatches.slice(0, 6);
-        }
+      if (team1 && team2) {
+        const t1 = team1.toLowerCase();
+        const t2 = team2.toLowerCase();
 
-        const t1Norm = team1 ? normalize(team1) : '';
-        const t2Norm = team2 ? normalize(team2) : '';
-        console.log('Normalized teams:', { t1Norm, t2Norm });
+        const filtered = allMatches.filter(match => {
+          const h = match.Team_Home.toLowerCase();
+          const a = match.Team_Away.toLowerCase();
 
-        // More flexible filtering
-        const filteredMatches = allMatches.filter(match => {
-          if (!match || typeof match !== 'object') return false;
-          
-          const homeNorm = normalize(match.Team_Home || '');
-          const awayNorm = normalize(match.Team_Away || '');
-
-          if (t1Norm && t2Norm) {
-            return (homeNorm.includes(t1Norm) && awayNorm.includes(t2Norm)) ||
-                   (homeNorm.includes(t2Norm) && awayNorm.includes(t1Norm));
-          }
-          
-          const searchTeam = t1Norm || t2Norm;
-          return homeNorm.includes(searchTeam) || awayNorm.includes(searchTeam);
+          // Apenas confrontos com team1 como mandante
+          return (
+            (h === t1 && a === t2) ||
+            (h.includes(t1) && a.includes(t2))
+          );
         });
 
-        console.log(`🎯 Filtered matches found: ${filteredMatches.length}`);
-        
-        return filteredMatches
-          .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
-          .slice(0, team1 && team2 ? 6 : 10);
-      } catch (error) {
-        console.error('Error in useHeadToHead:', error);
-        return [];
+        console.log(`🎯 Confrontos diretos (team1 em casa): ${filtered.length}`);
+        return filtered
+          .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+          .slice(0, 6);
       }
+
+      if (team1 || team2) {
+        const selectedTeam = (team1 || team2 || '').toLowerCase();
+        const filtered = allMatches.filter(match =>
+          match.Team_Home.toLowerCase().includes(selectedTeam) ||
+          match.Team_Away.toLowerCase().includes(selectedTeam)
+        );
+
+        console.log(`🎯 Jogos do time encontrados: ${filtered.length}`);
+        return filtered
+          .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+          .slice(0, 6);
+      }
+
+      return allMatches.slice(0, 50); // fallback padrão
     },
-    staleTime: 10 * 60 * 1000, // 10 minutes
+    staleTime: 10 * 60 * 1000,
     retry: 2,
-    enabled: !!((team1?.trim() || team2?.trim())),
-    initialData: [] // Ensure initial data is always an array
+    enabled: !!team1 || !!team2,
   });
 };
