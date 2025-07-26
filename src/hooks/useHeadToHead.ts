@@ -23,8 +23,6 @@ const fetchCSVData = async (): Promise<string> => {
 
   for (const url of urls) {
     try {
-      console.log(`🔄 Tentando URL: ${url}`);
-
       const response = await fetch(url, {
         headers: {
           'Accept': 'text/csv,text/plain,*/*',
@@ -36,7 +34,6 @@ const fetchCSVData = async (): Promise<string> => {
       if (response.ok) {
         const csvText = await response.text();
         if (csvText.trim().length > 100) {
-          console.log(`✅ CSV carregado com sucesso de: ${url}`);
           return csvText;
         }
       }
@@ -54,13 +51,7 @@ const normalize = (str: string): string =>
   str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
 
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
-  console.log('=== PARSE CSV ===');
   const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-
-  if (!Array.isArray(result.data)) {
-    console.error('Erro no parse: resultado inválido', result);
-    return [];
-  }
 
   return result.data.map((row: any, i) => {
     try {
@@ -68,7 +59,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
       let [homeGoals, awayGoals] = [0, 0];
 
       if (typeof scoreRaw === 'string' && scoreRaw.includes('-')) {
-        const [h, a] = scoreRaw.split('-').map(v => parseInt(v.trim()));
+        const [h, a] = scoreRaw.split('-').map((v) => parseInt(v.trim()));
         homeGoals = isNaN(h) ? 0 : h;
         awayGoals = isNaN(a) ? 0 : a;
       }
@@ -86,7 +77,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         Goals_Away: awayGoals,
         Result: resultStr,
         Score: scoreRaw.trim(),
-        HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
+        HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
         League: row.League || 'Indefinida',
       };
     } catch (err) {
@@ -112,18 +103,16 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       const t2 = normalize(team2 || '');
 
       if (team1 && team2) {
-        const filtered = matches.filter(m =>
-          normalize(m.Team_Home) === t1 && normalize(m.Team_Away) === t2
+        const filtered = matches.filter(
+          (m) => normalize(m.Team_Home) === t1 && normalize(m.Team_Away) === t2
         );
-        console.log(`🎯 Confrontos diretos (team1 em casa): ${filtered.length}`);
         return filtered.sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime()).slice(0, 6);
       }
 
       if (team1 || team2) {
         const selected = t1 || t2;
-        const filtered = matches.filter(m =>
-          normalize(m.Team_Home).includes(selected) ||
-          normalize(m.Team_Away).includes(selected)
+        const filtered = matches.filter(
+          (m) => normalize(m.Team_Home).includes(selected) || normalize(m.Team_Away).includes(selected)
         );
         return filtered.sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime()).slice(0, 10);
       }
