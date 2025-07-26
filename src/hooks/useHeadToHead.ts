@@ -140,7 +140,7 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
         console.log(`🎯 Confrontos diretos (team1 em casa): ${filtered.length}`);
         return filtered
           .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
-          .slice(0, 10);
+          .slice(0, 6);
       }
 
       if (team1 || team2) {
