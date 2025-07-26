@@ -1,3 +1,4 @@
+// useRecentGames.ts
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
@@ -34,7 +35,7 @@ const fetchCSVData = async (): Promise<string> => {
 
       if (response.ok) {
         const csvText = await response.text();
-        if (csvText.trim().length > 100) {
+        if (csvText && csvText.trim().length > 100) {
           console.log(`✅ CSV carregado com sucesso de: ${url}`);
           console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
           return csvText;
@@ -51,21 +52,28 @@ const fetchCSVData = async (): Promise<string> => {
 };
 
 const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
-  const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+  console.log('=== PARSE RECENT GAMES CSV ===');
+
+  const result = Papa.parse(csvText, {
+    header: true,
+    skipEmptyLines: true,
+  });
 
   if (result.errors.length) {
     console.error('Erros ao parsear CSV:', result.errors);
     return [];
   }
 
-  return result.data.map((row: any, index: number) => {
+  const rows = result.data as any[];
+
+  const matches: RecentGameMatch[] = rows.map((row, index) => {
     try {
       const scoreRaw = row.Score || row['Score'] || '';
       let homeGoals = 0;
       let awayGoals = 0;
 
       if (scoreRaw.includes('-')) {
-        const [homeStr, awayStr] = scoreRaw.split('-').map((v) => v.trim());
+        const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
         homeGoals = parseInt(homeStr);
         awayGoals = parseInt(awayStr);
       }
@@ -86,35 +94,57 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
       return null;
     }
   }).filter(Boolean) as RecentGameMatch[];
-};
 
-const safeDate = (dateStr: string): Date => {
-  const date = new Date(dateStr);
-  return isNaN(date.getTime()) ? new Date(0) : date;
+  console.log(`✅ Processados ${matches.length} jogos`);
+  return matches;
 };
 
 export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
-  return useQuery<{ homeRecentGames: RecentGameMatch[]; awayRecentGames: RecentGameMatch[] }>({
+  return useQuery<RecentGameMatch[]>({
     queryKey: ['recentGames', homeTeam, awayTeam],
     queryFn: async () => {
+      console.log('🔍 Buscando jogos recentes para:', { homeTeam, awayTeam });
+
       const csvText = await fetchCSVData();
       const allMatches = parseRecentGamesCSV(csvText);
 
-      const homeRecentGames = homeTeam
-        ? allMatches
-            .filter((m) => m.Team_Home.toLowerCase() === homeTeam.toLowerCase())
-            .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
-            .slice(0, 6)
-        : [];
+      console.log(`📊 Total de jogos carregados: ${allMatches.length}`);
 
-      const awayRecentGames = awayTeam
-        ? allMatches
-            .filter((m) => m.Team_Away.toLowerCase() === awayTeam.toLowerCase())
-            .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
-            .slice(0, 6)
-        : [];
+      let filteredMatches: RecentGameMatch[] = [];
 
-      return { homeRecentGames, awayRecentGames };
+      if (homeTeam) {
+        const homeTeamLower = homeTeam.toLowerCase();
+        const homeGames = allMatches.filter(match =>
+          match.Team_Home.toLowerCase() === homeTeamLower ||
+          match.Team_Home.toLowerCase().includes(homeTeamLower)
+        );
+        filteredMatches = [...filteredMatches, ...homeGames];
+        console.log(`🏠 Jogos do ${homeTeam} em casa: ${homeGames.length}`);
+      }
+
+      if (awayTeam) {
+        const awayTeamLower = awayTeam.toLowerCase();
+        const awayGames = allMatches.filter(match =>
+          match.Team_Away.toLowerCase() === awayTeamLower ||
+          match.Team_Away.toLowerCase().includes(awayTeamLower)
+        );
+        filteredMatches = [...filteredMatches, ...awayGames];
+        console.log(`🚌 Jogos do ${awayTeam} fora: ${awayGames.length}`);
+      }
+
+      const uniqueMatches = filteredMatches.filter((match, index, self) =>
+        index === self.findIndex(m =>
+          m.Date === match.Date &&
+          m.Team_Home === match.Team_Home &&
+          m.Team_Away === match.Team_Away
+        )
+      );
+
+      console.log(`🎯 Jogos únicos encontrados: ${uniqueMatches.length}`);
+
+      return uniqueMatches
+        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+        .slice(0, 6);
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
