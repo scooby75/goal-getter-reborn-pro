@@ -53,7 +53,15 @@ const fetchCSVData = async (): Promise<string> => {
   throw new Error('Não foi possível carregar os dados dos confrontos de nenhuma fonte disponível');
 };
 
-// Função para parsear o CSV
+// Normaliza string para evitar erros e facilitar comparações
+const normalize = (str: string): string =>
+  str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+
+// Função para parsear o CSV com validações e tratamento defensivo
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   console.log('=== PARSE CSV ===');
 
@@ -69,48 +77,53 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
 
   const rows = result.data as any[];
 
-  const matches: HeadToHeadMatch[] = rows.map((row, index) => {
-    try {
-      let homeGoals = 0;
-      let awayGoals = 0;
+  const matches: HeadToHeadMatch[] = rows
+    .map((row, index) => {
+      try {
+        let homeGoals = 0;
+        let awayGoals = 0;
 
-      if (row.Score) {
-        const scoreParts = row.Score.split('-').map((s: string) => s.trim());
-        if (scoreParts.length === 2) {
-          homeGoals = parseInt(scoreParts[0], 10);
-          awayGoals = parseInt(scoreParts[1], 10);
+        const scoreRaw = row.Score || '';
+
+        if (scoreRaw.includes('-')) {
+          const scoreParts = scoreRaw.split('-').map((s: string) => s.trim());
+          if (scoreParts.length === 2) {
+            homeGoals = parseInt(scoreParts[0], 10);
+            awayGoals = parseInt(scoreParts[1], 10);
+          }
         }
-      }
 
-      let result = '';
-      if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
-        if (homeGoals > awayGoals) result = 'H';
-        else if (homeGoals < awayGoals) result = 'A';
-        else result = 'D';
-      }
+        // Calcula resultado padrão H / A / D
+        let result = '';
+        if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
+          if (homeGoals > awayGoals) result = 'H';
+          else if (homeGoals < awayGoals) result = 'A';
+          else result = 'D';
+        }
 
-      return {
-        Date: row.Date || row.Data || '',
-        Team_Home: row.HomeTeam || row.Team_Home || '',
-        Team_Away: row.AwayTeam || row.Team_Away || '',
-        Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
-        Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
-        Result: result,
-        Score: row.Score || '',
-        HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
-        League: row.League || 'Indefinida',
-      };
-    } catch (error) {
-      console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
-      return null;
-    }
-  }).filter(Boolean) as HeadToHeadMatch[];
+        return {
+          Date: row.Date || row.Data || '',
+          Team_Home: row.HomeTeam || row.Team_Home || '',
+          Team_Away: row.AwayTeam || row.Team_Away || '',
+          Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
+          Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
+          Result: result,
+          Score: scoreRaw.trim(),
+          HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
+          League: row.League || 'Indefinida',
+        };
+      } catch (error) {
+        console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
+        return null;
+      }
+    })
+    .filter(Boolean);
 
   console.log(`✅ Processados ${matches.length} confrontos`);
   return matches;
 };
 
-// Hook principal
+// Hook principal com validações reforçadas e logs para debug
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
@@ -118,45 +131,57 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       console.log('🔍 Buscando confrontos para:', { team1, team2 });
 
       const csvText = await fetchCSVData();
+
       const allMatches = parseHeadToHeadCSV(csvText);
 
-      console.log(`📊 Total de confrontos carregados: ${allMatches.length}`);
+      if (!Array.isArray(allMatches)) {
+        console.error('allMatches não é um array:', allMatches);
+        return [];
+      }
+
+      // Normaliza nomes para evitar problemas com maiúsculas/acentos
+      const t1Norm = team1 ? normalize(team1) : '';
+      const t2Norm = team2 ? normalize(team2) : '';
 
       if (team1 && team2) {
-        const t1 = team1.toLowerCase();
-        const t2 = team2.toLowerCase();
-
+        // Filtra confrontos diretos (team1 em casa, team2 fora)
         const filtered = allMatches.filter(match => {
-          const h = match.Team_Home.toLowerCase();
-          const a = match.Team_Away.toLowerCase();
+          const h = normalize(match.Team_Home);
+          const a = normalize(match.Team_Away);
 
-          // Apenas confrontos com team1 como mandante
+          // Igualdade exata ou inclusiva para nomes flexíveis
           return (
-            (h === t1 && a === t2) ||
-            (h.includes(t1) && a.includes(t2))
+            (h === t1Norm && a === t2Norm) ||
+            (h.includes(t1Norm) && a.includes(t2Norm))
           );
         });
 
         console.log(`🎯 Confrontos diretos (team1 em casa): ${filtered.length}`);
+
         return filtered
           .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
           .slice(0, 6);
       }
 
       if (team1 || team2) {
-        const selectedTeam = (team1 || team2 || '').toLowerCase();
-        const filtered = allMatches.filter(match =>
-          match.Team_Home.toLowerCase().includes(selectedTeam) ||
-          match.Team_Away.toLowerCase().includes(selectedTeam)
-        );
+        // Filtra confrontos com qualquer um dos times
+        const selectedTeam = normalize(team1 || team2 || '');
+
+        const filtered = allMatches.filter(match => {
+          const h = normalize(match.Team_Home);
+          const a = normalize(match.Team_Away);
+          return h.includes(selectedTeam) || a.includes(selectedTeam);
+        });
 
         console.log(`🎯 Jogos do time encontrados: ${filtered.length}`);
+
         return filtered
           .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
           .slice(0, 10);
       }
 
-      return allMatches.slice(0, 50); // fallback padrão
+      // Fallback: retorna os primeiros 50 registros
+      return allMatches.slice(0, 50);
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
