@@ -18,7 +18,10 @@ export type RecentGameMatch = {
 const fetchCSVData = async (): Promise<string> => {
   console.log('=== FETCH RECENT GAMES CSV DATA ===');
 
-  const urls = ['/Data/all_leagues_results.csv'];
+  const urls = [
+    '/Data/all_leagues_results_2024.csv',  
+    '/Data/all_leagues_results.csv'
+  ];
 
   for (const url of urls) {
     try {
