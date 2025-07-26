@@ -1,4 +1,3 @@
-// useRecentGames.ts
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
@@ -99,8 +98,9 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
   return matches;
 };
 
+// Hook retorna jogos separados: homeRecentGames e awayRecentGames
 export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
-  return useQuery<RecentGameMatch[]>({
+  return useQuery<{ homeRecentGames: RecentGameMatch[]; awayRecentGames: RecentGameMatch[] }>({
     queryKey: ['recentGames', homeTeam, awayTeam],
     queryFn: async () => {
       console.log('🔍 Buscando jogos recentes para:', { homeTeam, awayTeam });
@@ -110,41 +110,24 @@ export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
 
       console.log(`📊 Total de jogos carregados: ${allMatches.length}`);
 
-      let filteredMatches: RecentGameMatch[] = [];
+      const homeTeamLower = homeTeam?.toLowerCase() || '';
+      const awayTeamLower = awayTeam?.toLowerCase() || '';
 
-      if (homeTeam) {
-        const homeTeamLower = homeTeam.toLowerCase();
-        const homeGames = allMatches.filter(match =>
-          match.Team_Home.toLowerCase() === homeTeamLower ||
-          match.Team_Home.toLowerCase().includes(homeTeamLower)
-        );
-        filteredMatches = [...filteredMatches, ...homeGames];
-        console.log(`🏠 Jogos do ${homeTeam} em casa: ${homeGames.length}`);
-      }
-
-      if (awayTeam) {
-        const awayTeamLower = awayTeam.toLowerCase();
-        const awayGames = allMatches.filter(match =>
-          match.Team_Away.toLowerCase() === awayTeamLower ||
-          match.Team_Away.toLowerCase().includes(awayTeamLower)
-        );
-        filteredMatches = [...filteredMatches, ...awayGames];
-        console.log(`🚌 Jogos do ${awayTeam} fora: ${awayGames.length}`);
-      }
-
-      const uniqueMatches = filteredMatches.filter((match, index, self) =>
-        index === self.findIndex(m =>
-          m.Date === match.Date &&
-          m.Team_Home === match.Team_Home &&
-          m.Team_Away === match.Team_Away
-        )
-      );
-
-      console.log(`🎯 Jogos únicos encontrados: ${uniqueMatches.length}`);
-
-      return uniqueMatches
+      const homeRecentGames = allMatches
+        .filter(match => match.Team_Home.toLowerCase() === homeTeamLower)
         .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
         .slice(0, 6);
+
+      console.log(`🏠 Últimos 6 jogos do ${homeTeam} em casa: ${homeRecentGames.length}`);
+
+      const awayRecentGames = allMatches
+        .filter(match => match.Team_Away.toLowerCase() === awayTeamLower)
+        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
+        .slice(0, 6);
+
+      console.log(`🚌 Últimos 6 jogos do ${awayTeam} fora: ${awayRecentGames.length}`);
+
+      return { homeRecentGames, awayRecentGames };
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
