@@ -21,7 +21,10 @@ const fetchCSVData = async (): Promise<string> => {
 
   for (const url of urls) {
     try {
+      console.log(`🔄 Tentando URL: ${url}`);
+
       const response = await fetch(url, {
+        method: 'GET',
         headers: {
           'Accept': 'text/csv,text/plain,*/*',
           'Cache-Control': 'no-cache',
@@ -33,6 +36,7 @@ const fetchCSVData = async (): Promise<string> => {
         const csvText = await response.text();
         if (csvText.trim().length > 100) {
           console.log(`✅ CSV carregado com sucesso de: ${url}`);
+          console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
           return csvText;
         }
       }
@@ -43,46 +47,50 @@ const fetchCSVData = async (): Promise<string> => {
     }
   }
 
-  throw new Error('Não foi possível carregar os dados dos jogos recentes');
+  throw new Error('Não foi possível carregar os dados dos jogos recentes de nenhuma fonte disponível');
 };
 
 const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
-  console.log('=== PARSE RECENT GAMES CSV ===');
-
   const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
 
-  if (!Array.isArray(result.data)) {
-    console.error('Erro no parse CSV:', result.errors);
+  if (result.errors.length) {
+    console.error('Erros ao parsear CSV:', result.errors);
     return [];
   }
 
-  return result.data.map((row: any, i) => {
+  return result.data.map((row: any, index: number) => {
     try {
-      const scoreRaw = row.Score || '';
-      let [homeGoals, awayGoals] = [0, 0];
+      const scoreRaw = row.Score || row['Score'] || '';
+      let homeGoals = 0;
+      let awayGoals = 0;
 
       if (scoreRaw.includes('-')) {
-        const [h, a] = scoreRaw.split('-').map(v => parseInt(v.trim()));
-        homeGoals = isNaN(h) ? 0 : h;
-        awayGoals = isNaN(a) ? 0 : a;
+        const [homeStr, awayStr] = scoreRaw.split('-').map((v) => v.trim());
+        homeGoals = parseInt(homeStr);
+        awayGoals = parseInt(awayStr);
       }
 
       return {
         Date: row.Date || row.Data || '',
         Team_Home: row.HomeTeam || row.Team_Home || '',
         Team_Away: row.AwayTeam || row.Team_Away || '',
-        Goals_Home: homeGoals,
-        Goals_Away: awayGoals,
-        Result: row.FullTimeResult || row.Result || '',
+        Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
+        Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
+        Result: row.FullTimeResult || row.Result || row.Resultado || '',
         Score: scoreRaw.trim(),
-        HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
+        HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
         League: row.League || 'Indefinida',
       };
-    } catch (err) {
-      console.warn(`❌ Erro ao processar linha ${i + 1}:`, err);
+    } catch (error) {
+      console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
       return null;
     }
   }).filter(Boolean) as RecentGameMatch[];
+};
+
+const safeDate = (dateStr: string): Date => {
+  const date = new Date(dateStr);
+  return isNaN(date.getTime()) ? new Date(0) : date;
 };
 
 export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
@@ -92,15 +100,19 @@ export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
       const csvText = await fetchCSVData();
       const allMatches = parseRecentGamesCSV(csvText);
 
-      const homeRecentGames = allMatches
-        .filter(m => m.Team_Home.toLowerCase() === (homeTeam?.toLowerCase() || ''))
-        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
-        .slice(0, 6);
+      const homeRecentGames = homeTeam
+        ? allMatches
+            .filter((m) => m.Team_Home.toLowerCase() === homeTeam.toLowerCase())
+            .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
+            .slice(0, 6)
+        : [];
 
-      const awayRecentGames = allMatches
-        .filter(m => m.Team_Away.toLowerCase() === (awayTeam?.toLowerCase() || ''))
-        .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
-        .slice(0, 6);
+      const awayRecentGames = awayTeam
+        ? allMatches
+            .filter((m) => m.Team_Away.toLowerCase() === awayTeam.toLowerCase())
+            .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
+            .slice(0, 6)
+        : [];
 
       return { homeRecentGames, awayRecentGames };
     },
