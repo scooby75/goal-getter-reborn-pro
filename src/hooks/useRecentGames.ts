@@ -21,10 +21,7 @@ const fetchCSVData = async (): Promise<string> => {
 
   for (const url of urls) {
     try {
-      console.log(`🔄 Tentando URL: ${url}`);
-
       const response = await fetch(url, {
-        method: 'GET',
         headers: {
           'Accept': 'text/csv,text/plain,*/*',
           'Cache-Control': 'no-cache',
@@ -34,9 +31,8 @@ const fetchCSVData = async (): Promise<string> => {
 
       if (response.ok) {
         const csvText = await response.text();
-        if (csvText && csvText.trim().length > 100) {
+        if (csvText.trim().length > 100) {
           console.log(`✅ CSV carregado com sucesso de: ${url}`);
-          console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
           return csvText;
         }
       }
@@ -47,85 +43,64 @@ const fetchCSVData = async (): Promise<string> => {
     }
   }
 
-  throw new Error('Não foi possível carregar os dados dos jogos recentes de nenhuma fonte disponível');
+  throw new Error('Não foi possível carregar os dados dos jogos recentes');
 };
 
 const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
   console.log('=== PARSE RECENT GAMES CSV ===');
 
-  const result = Papa.parse(csvText, {
-    header: true,
-    skipEmptyLines: true,
-  });
+  const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
 
-  if (result.errors.length) {
-    console.error('Erros ao parsear CSV:', result.errors);
+  if (!Array.isArray(result.data)) {
+    console.error('Erro no parse CSV:', result.errors);
     return [];
   }
 
-  const rows = result.data as any[];
-
-  const matches: RecentGameMatch[] = rows.map((row, index) => {
+  return result.data.map((row: any, i) => {
     try {
-      const scoreRaw = row.Score || row['Score'] || '';
-      let homeGoals = 0;
-      let awayGoals = 0;
+      const scoreRaw = row.Score || '';
+      let [homeGoals, awayGoals] = [0, 0];
 
       if (scoreRaw.includes('-')) {
-        const [homeStr, awayStr] = scoreRaw.split('-').map(v => v.trim());
-        homeGoals = parseInt(homeStr);
-        awayGoals = parseInt(awayStr);
+        const [h, a] = scoreRaw.split('-').map(v => parseInt(v.trim()));
+        homeGoals = isNaN(h) ? 0 : h;
+        awayGoals = isNaN(a) ? 0 : a;
       }
 
       return {
         Date: row.Date || row.Data || '',
         Team_Home: row.HomeTeam || row.Team_Home || '',
         Team_Away: row.AwayTeam || row.Team_Away || '',
-        Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
-        Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
-        Result: row.FullTimeResult || row.Result || row.Resultado || '',
+        Goals_Home: homeGoals,
+        Goals_Away: awayGoals,
+        Result: row.FullTimeResult || row.Result || '',
         Score: scoreRaw.trim(),
-        HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
+        HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
         League: row.League || 'Indefinida',
       };
-    } catch (error) {
-      console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
+    } catch (err) {
+      console.warn(`❌ Erro ao processar linha ${i + 1}:`, err);
       return null;
     }
   }).filter(Boolean) as RecentGameMatch[];
-
-  console.log(`✅ Processados ${matches.length} jogos`);
-  return matches;
 };
 
-// Hook retorna jogos separados: homeRecentGames e awayRecentGames
 export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
   return useQuery<{ homeRecentGames: RecentGameMatch[]; awayRecentGames: RecentGameMatch[] }>({
     queryKey: ['recentGames', homeTeam, awayTeam],
     queryFn: async () => {
-      console.log('🔍 Buscando jogos recentes para:', { homeTeam, awayTeam });
-
       const csvText = await fetchCSVData();
       const allMatches = parseRecentGamesCSV(csvText);
 
-      console.log(`📊 Total de jogos carregados: ${allMatches.length}`);
-
-      const homeTeamLower = homeTeam?.toLowerCase() || '';
-      const awayTeamLower = awayTeam?.toLowerCase() || '';
-
       const homeRecentGames = allMatches
-        .filter(match => match.Team_Home.toLowerCase() === homeTeamLower)
+        .filter(m => m.Team_Home.toLowerCase() === (homeTeam?.toLowerCase() || ''))
         .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
         .slice(0, 6);
-
-      console.log(`🏠 Últimos 6 jogos do ${homeTeam} em casa: ${homeRecentGames.length}`);
 
       const awayRecentGames = allMatches
-        .filter(match => match.Team_Away.toLowerCase() === awayTeamLower)
+        .filter(m => m.Team_Away.toLowerCase() === (awayTeam?.toLowerCase() || ''))
         .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
         .slice(0, 6);
-
-      console.log(`🚌 Últimos 6 jogos do ${awayTeam} fora: ${awayRecentGames.length}`);
 
       return { homeRecentGames, awayRecentGames };
     },
