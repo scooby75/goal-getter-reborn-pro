@@ -13,57 +13,16 @@ export type HeadToHeadMatch = {
   League?: string;
 };
 
-// Função para buscar CSV com múltiplas tentativas, com logs
-const fetchCSVData = async (): Promise<string> => {
-  console.log('=== FETCH CSV DATA ===');
-
-  const urls = [
-    '/Data/all_leagues_results.csv',
-    '/Data/all_leagues_results_2024.csv',
-  ];
-
-  for (const url of urls) {
-    try {
-      console.log(`🔄 Tentando URL: ${url}`);
-
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Accept': 'text/csv,text/plain,*/*',
-          'Cache-Control': 'no-cache',
-        },
-        mode: url.startsWith('http') ? 'cors' : 'same-origin',
-      });
-
-      if (response.ok) {
-        const csvText = await response.text();
-        if (csvText && csvText.trim().length > 100) {
-          console.log(`✅ CSV carregado com sucesso de: ${url}`);
-          console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
-          return csvText;
-        } else {
-          console.warn(`⚠️ CSV vazio ou muito pequeno da URL: ${url}`);
-        }
-      } else {
-        console.warn(`❌ Falha na URL: ${url} - Status: ${response.status}`);
-      }
-    } catch (error) {
-      console.warn(`❌ Erro na URL: ${url}`, error);
-    }
-  }
-
-  throw new Error('Não foi possível carregar os dados dos confrontos de nenhuma fonte disponível');
-};
-
-// Normaliza string para evitar erros e facilitar comparações
+// Normaliza string removendo acentos, espaços e hífens para comparação mais segura
 const normalize = (str: string): string =>
   str
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[-\s]/g, '')  // remove hífen e espaços
     .trim();
 
-// Função para parsear o CSV com validações e tratamento defensivo
+// Parse CSV para o formato HeadToHeadMatch
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   console.log('=== PARSE CSV ===');
 
@@ -84,10 +43,8 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
 
   if (result.errors && result.errors.length) {
     console.error('Erros ao parsear CSV:', result.errors);
-    // Continua mesmo com erros se houver dados
   }
 
-  // Garante que rows seja sempre um array
   const rows = Array.isArray(result.data) ? result.data : [];
   console.log(`Linhas lidas no CSV: ${rows.length}`);
 
@@ -97,7 +54,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         let homeGoals = 0;
         let awayGoals = 0;
 
-        const scoreRaw = row.Score || '';
+        const scoreRaw = row.Score || '' || row.score || '';
 
         if (typeof scoreRaw === 'string' && scoreRaw.includes('-')) {
           const scoreParts = scoreRaw.split('-').map((s: string) => s.trim());
@@ -107,7 +64,6 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
           }
         }
 
-        // Calcula resultado padrão H / A / D
         let resultStr = '';
         if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
           if (homeGoals > awayGoals) resultStr = 'H';
@@ -131,7 +87,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         return null;
       }
     })
-    .filter(Boolean); // Remove nulos
+    .filter(Boolean) as HeadToHeadMatch[];
 
   console.log(`✅ Processados ${matches.length} confrontos`);
   return matches;
@@ -143,34 +99,65 @@ const safeDate = (d: string): Date => {
   return isNaN(date.getTime()) ? new Date(0) : date;
 };
 
-// Hook principal com validações reforçadas, logs para debug e proteção contra erros de tipo
+// Função para buscar e juntar os dois CSVs
+const fetchAndParseAllCSVData = async (): Promise<HeadToHeadMatch[]> => {
+  console.log('=== FETCH E PARSE DOS CSVs ===');
+
+  const urls = [
+    '/Data/all_leagues_results.csv',
+    '/Data/all_leagues_results_2024.csv',
+  ];
+
+  let allMatches: HeadToHeadMatch[] = [];
+
+  for (const url of urls) {
+    try {
+      console.log(`🔄 Tentando URL: ${url}`);
+
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'text/csv,text/plain,*/*',
+          'Cache-Control': 'no-cache',
+        },
+        mode: url.startsWith('http') ? 'cors' : 'same-origin',
+      });
+
+      if (response.ok) {
+        const csvText = await response.text();
+        if (csvText && csvText.trim().length > 100) {
+          console.log(`✅ CSV carregado com sucesso de: ${url} (tamanho: ${csvText.length})`);
+
+          const parsedMatches = parseHeadToHeadCSV(csvText);
+          allMatches = allMatches.concat(parsedMatches);
+        } else {
+          console.warn(`⚠️ CSV vazio ou muito pequeno da URL: ${url}`);
+        }
+      } else {
+        console.warn(`❌ Falha na URL: ${url} - Status: ${response.status}`);
+      }
+    } catch (error) {
+      console.warn(`❌ Erro na URL: ${url}`, error);
+    }
+  }
+
+  console.log(`📊 Total de confrontos juntados: ${allMatches.length}`);
+
+  return allMatches;
+};
+
+// Hook principal para buscar e filtrar confrontos
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
     queryFn: async () => {
       console.log('🔍 Buscando confrontos para:', { team1, team2 });
 
-      const csvText = await fetchCSVData();
-
-      if (!csvText || typeof csvText !== 'string') {
-        console.error('csvText inválido no queryFn:', csvText);
-        return [];
-      }
-
-      const allMatchesRaw = parseHeadToHeadCSV(csvText);
-      if (!Array.isArray(allMatchesRaw)) {
-        console.error('parseHeadToHeadCSV retornou não-array:', allMatchesRaw);
-        return [];
-      }
-
-      const allMatches: HeadToHeadMatch[] = allMatchesRaw;
-
-      console.log(`📊 Total de confrontos carregados: ${allMatches.length}`);
+      const allMatches = await fetchAndParseAllCSVData();
 
       const t1Norm = team1 ? normalize(team1) : '';
       const t2Norm = team2 ? normalize(team2) : '';
 
-      // Debug dos inputs normalizados
       console.log('Time 1 normalizado:', t1Norm);
       console.log('Time 2 normalizado:', t2Norm);
 
@@ -178,11 +165,13 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
         const filtered = allMatches.filter(match => {
           const h = normalize(match.Team_Home);
           const a = normalize(match.Team_Away);
-
-          return (h === t1Norm && a === t2Norm) || (h.includes(t1Norm) && a.includes(t2Norm));
+          return (
+            (h === t1Norm && a === t2Norm) || // time1 mandante, time2 visitante
+            (h === t2Norm && a === t1Norm)    // time2 mandante, time1 visitante
+          );
         });
 
-        console.log(`🎯 Confrontos diretos (team1 em casa): ${filtered.length}`);
+        console.log(`🎯 Confrontos diretos (ambos os lados): ${filtered.length}`);
 
         return filtered
           .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
@@ -195,7 +184,7 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
         const filtered = allMatches.filter(match => {
           const h = normalize(match.Team_Home);
           const a = normalize(match.Team_Away);
-          return h.includes(selectedTeam) || a.includes(selectedTeam);
+          return h === selectedTeam || a === selectedTeam;
         });
 
         console.log(`🎯 Jogos do time encontrados: ${filtered.length}`);
