@@ -3,10 +3,17 @@ import Papa from 'papaparse';
 
 export type GameMatch = {
   League: string;
+  Month?: string;
   Date: string;
-  'Home Team': string;
-  'Away Team': string;
+  'Original Date'?: string;
+  Team_Home: string;
   Score: string;
+  Team_Away: string;
+  'HT Score'?: string;
+  'Over 2.5'?: string;
+  'Total Goals'?: string;
+  'Both Teams Scored'?: string;
+  Status?: string;
 };
 
 const normalizeTeamName = (name: string) =>
@@ -21,8 +28,9 @@ const parseCSVFile = async (url: string): Promise<GameMatch[]> => {
       header: true,
       skipEmptyLines: true,
       complete: (results) => {
+        // Filtra linhas válidas que possuem times e placar
         const validRows = results.data.filter(
-          (row) => row['Home Team'] && row['Away Team'] && row.Score
+          (row) => row.Team_Home && row.Team_Away && row.Score
         );
         resolve(validRows);
       },
@@ -64,10 +72,11 @@ export const filterH2HMatches = (
   const t1 = normalizeTeamName(team1);
   const t2 = normalizeTeamName(team2);
 
+  // Filtra partidas onde team1 x team2 ou team2 x team1, bidirecional
   const h2h = allGames.filter(
     (g) =>
-      normalizeTeamName(g['Home Team']) === t1 &&
-      normalizeTeamName(g['Away Team']) === t2
+      (normalizeTeamName(g.Team_Home) === t1 && normalizeTeamName(g.Team_Away) === t2) ||
+      (normalizeTeamName(g.Team_Home) === t2 && normalizeTeamName(g.Team_Away) === t1)
   );
 
   console.log(`🎯 Confrontos diretos encontrados (${t1} x ${t2}): ${h2h.length}`);
