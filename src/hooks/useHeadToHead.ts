@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
-export type GameMatch = {
+export type HeadToHeadMatch = {
   League: string;
   Month?: string;
   Date: string;
@@ -19,16 +19,15 @@ export type GameMatch = {
 const normalizeTeamName = (name: string) =>
   name?.trim().toLowerCase().replace(/\s+/g, ' ') ?? '';
 
-const parseCSVFile = async (url: string): Promise<GameMatch[]> => {
+const parseCSVFile = async (url: string): Promise<HeadToHeadMatch[]> => {
   const response = await fetch(url);
   const text = await response.text();
 
   return new Promise((resolve, reject) => {
-    Papa.parse<GameMatch>(text, {
+    Papa.parse<HeadToHeadMatch>(text, {
       header: true,
       skipEmptyLines: true,
       complete: (results) => {
-        // Filtra linhas válidas que possuem times e placar
         const validRows = results.data.filter(
           (row) => row.Team_Home && row.Team_Away && row.Score
         );
@@ -46,7 +45,7 @@ export const useAllMatches = () => {
       '/Data/all_leagues_results_2024.csv',
     ];
 
-    const allGames: GameMatch[] = [];
+    const allGames: HeadToHeadMatch[] = [];
 
     for (const url of urls) {
       try {
@@ -64,21 +63,27 @@ export const useAllMatches = () => {
   });
 };
 
-export const filterH2HMatches = (
-  allGames: GameMatch[],
-  team1: string,
-  team2: string
-): GameMatch[] => {
-  const t1 = normalizeTeamName(team1);
-  const t2 = normalizeTeamName(team2);
+// Novo hook para H2H, usando useAllMatches internamente
+export const useHeadToHead = (team1: string, team2: string) => {
+  const allMatchesQuery = useAllMatches();
 
-  // Filtra partidas onde team1 x team2 ou team2 x team1, bidirecional
-  const h2h = allGames.filter(
-    (g) =>
-      (normalizeTeamName(g.Team_Home) === t1 && normalizeTeamName(g.Team_Away) === t2) ||
-      (normalizeTeamName(g.Team_Home) === t2 && normalizeTeamName(g.Team_Away) === t1)
-  );
+  const filteredMatches = React.useMemo(() => {
+    if (!allMatchesQuery.data) return [];
 
-  console.log(`🎯 Confrontos diretos encontrados (${t1} x ${t2}): ${h2h.length}`);
-  return h2h;
+    const t1 = normalizeTeamName(team1);
+    const t2 = normalizeTeamName(team2);
+
+    return allMatchesQuery.data.filter(
+      (g) =>
+        (normalizeTeamName(g.Team_Home) === t1 && normalizeTeamName(g.Team_Away) === t2) ||
+        (normalizeTeamName(g.Team_Home) === t2 && normalizeTeamName(g.Team_Away) === t1)
+    );
+  }, [allMatchesQuery.data, team1, team2]);
+
+  return {
+    data: filteredMatches,
+    isLoading: allMatchesQuery.isLoading,
+    isError: allMatchesQuery.isError,
+    error: allMatchesQuery.error,
+  };
 };
