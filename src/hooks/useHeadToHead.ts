@@ -1,3 +1,4 @@
+import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
@@ -29,7 +30,11 @@ const parseCSVFile = async (url: string): Promise<HeadToHeadMatch[]> => {
       skipEmptyLines: true,
       complete: (results) => {
         const validRows = results.data.filter(
-          (row) => row.Team_Home && row.Team_Away && row.Score
+          (row) =>
+            row.Team_Home &&
+            row.Team_Away &&
+            row.Score &&
+            /^\d+\s*-\s*\d+$/.test(row.Score)
         );
         resolve(validRows);
       },
@@ -53,7 +58,7 @@ export const useAllMatches = () => {
         allGames.push(...games);
         console.log(`✅ CSV carregado com sucesso de: ${url}`);
         console.log(`📊 Tamanho do CSV: ${games.length} partidas`);
-      } catch (error) {
+      } catch (error: unknown) {
         console.error(`❌ Erro ao carregar CSV de ${url}`, error);
       }
     }
@@ -63,7 +68,6 @@ export const useAllMatches = () => {
   });
 };
 
-// Novo hook para H2H, usando useAllMatches internamente
 export const useHeadToHead = (team1: string, team2: string) => {
   const allMatchesQuery = useAllMatches();
 
@@ -75,8 +79,10 @@ export const useHeadToHead = (team1: string, team2: string) => {
 
     return allMatchesQuery.data.filter(
       (g) =>
-        (normalizeTeamName(g.Team_Home) === t1 && normalizeTeamName(g.Team_Away) === t2) ||
-        (normalizeTeamName(g.Team_Home) === t2 && normalizeTeamName(g.Team_Away) === t1)
+        (normalizeTeamName(g.Team_Home ?? '') === t1 &&
+         normalizeTeamName(g.Team_Away ?? '') === t2) ||
+        (normalizeTeamName(g.Team_Home ?? '') === t2 &&
+         normalizeTeamName(g.Team_Away ?? '') === t1)
     );
   }, [allMatchesQuery.data, team1, team2]);
 
@@ -85,5 +91,5 @@ export const useHeadToHead = (team1: string, team2: string) => {
     isLoading: allMatchesQuery.isLoading,
     isError: allMatchesQuery.isError,
     error: allMatchesQuery.error,
-  };
+  } as const;
 };
