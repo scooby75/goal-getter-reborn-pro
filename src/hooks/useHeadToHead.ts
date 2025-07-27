@@ -13,7 +13,7 @@ export type HeadToHeadMatch = {
   League?: string;
 };
 
-// Função para normalizar strings (sem acento, espaço ou hífen)
+// Normaliza nomes de times
 const normalize = (str: string): string =>
   str
     .toLowerCase()
@@ -22,7 +22,15 @@ const normalize = (str: string): string =>
     .replace(/[-\s]/g, '')
     .trim();
 
-// Função para transformar CSV em array de jogos
+// Extrai gols de uma string como "1-0" ou "1 - 0"
+const extractGoals = (scoreStr: string): [number, number] => {
+  const clean = (scoreStr || '').replace(/\s/g, '');
+  const parts = clean.split('-');
+  const home = parseInt(parts[0] || '0', 10);
+  const away = parseInt(parts[1] || '0', 10);
+  return [isNaN(home) ? 0 : home, isNaN(away) ? 0 : away];
+};
+
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   if (!csvText || typeof csvText !== 'string') return [];
 
@@ -35,31 +43,21 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
 
   const rows = Array.isArray(result.data) ? result.data : [];
 
-  const matches: HeadToHeadMatch[] = rows
+  return rows
     .map((row, index) => {
       try {
-        const scoreRaw = (row.Score || row.score || '').trim().replace(/\s+/g, '');
-        const htScoreRaw = (row.HT_Score || row['HT Score'] || row.HTScore || '').trim().replace(/\s+/g, '');
+        const scoreRaw =
+          (row.Score || row.score || '').toString().trim() || '';
+        const htScoreRaw =
+          (row.HT_Score || row['HT Score'] || row.HTScore || '').toString().trim() || '';
 
-        let homeGoals = 0;
-        let awayGoals = 0;
-
-        if (scoreRaw.includes('-')) {
-          const parts = scoreRaw.split('-');
-          if (parts.length === 2) {
-            const h = parseInt(parts[0], 10);
-            const a = parseInt(parts[1], 10);
-            homeGoals = isNaN(h) ? 0 : h;
-            awayGoals = isNaN(a) ? 0 : a;
-          }
-        }
+        const [homeGoals, awayGoals] = extractGoals(scoreRaw);
+        const [htHomeGoals, htAwayGoals] = extractGoals(htScoreRaw);
 
         let resultStr = '';
-        if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
-          if (homeGoals > awayGoals) resultStr = 'H';
-          else if (homeGoals < awayGoals) resultStr = 'A';
-          else resultStr = 'D';
-        }
+        if (homeGoals > awayGoals) resultStr = 'H';
+        else if (homeGoals < awayGoals) resultStr = 'A';
+        else resultStr = 'D';
 
         return {
           Date: row.Date || row.Data || '',
@@ -68,27 +66,23 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
           Goals_Home: homeGoals,
           Goals_Away: awayGoals,
           Result: resultStr,
-          Score: scoreRaw || '',
-          HT_Score: htScoreRaw || '',
+          Score: `${homeGoals} - ${awayGoals}`,
+          HT_Score: htScoreRaw ? `${htHomeGoals} - ${htAwayGoals}` : '',
           League: row.League || 'Indefinida',
         };
       } catch (error) {
-        console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
+        console.warn(`Erro ao processar linha ${index + 1}:`, error);
         return null;
       }
     })
     .filter(Boolean) as HeadToHeadMatch[];
-
-  return matches;
 };
 
-// Garante datas válidas para ordenação
 const safeDate = (d: string): Date => {
   const date = new Date(d);
   return isNaN(date.getTime()) ? new Date(0) : date;
 };
 
-// Busca e junta os dois arquivos CSV
 const fetchAndParseAllCSVData = async (): Promise<HeadToHeadMatch[]> => {
   const urls = [
     '/Data/all_leagues_results.csv',
@@ -123,7 +117,6 @@ const fetchAndParseAllCSVData = async (): Promise<HeadToHeadMatch[]> => {
   return allMatches;
 };
 
-// Hook principal
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
@@ -138,8 +131,8 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
           const h = normalize(match.Team_Home);
           const a = normalize(match.Team_Away);
           return (
-            (h === t1Norm && a === t2Norm) || // team1 mandante
-            (h === t2Norm && a === t1Norm)    // team2 mandante
+            (h === t1Norm && a === t2Norm) ||
+            (h === t2Norm && a === t1Norm)
           );
         });
 
