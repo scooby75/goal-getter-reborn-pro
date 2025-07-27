@@ -13,7 +13,7 @@ export type HeadToHeadMatch = {
   League?: string;
 };
 
-// Função para buscar CSV com múltiplas tentativas, com logs
+// Função para buscar e combinar múltiplos CSVs
 const fetchCSVData = async (): Promise<string> => {
   console.log('=== FETCH CSV DATA ===');
 
@@ -22,7 +22,9 @@ const fetchCSVData = async (): Promise<string> => {
     '/Data/all_leagues_results_2024.csv',
   ];
 
-  for (const url of urls) {
+  let allText = '';
+  for (let i = 0; i < urls.length; i++) {
+    const url = urls[i];
     try {
       console.log(`🔄 Tentando URL: ${url}`);
 
@@ -40,7 +42,15 @@ const fetchCSVData = async (): Promise<string> => {
         if (csvText && csvText.trim().length > 100) {
           console.log(`✅ CSV carregado com sucesso de: ${url}`);
           console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
-          return csvText;
+
+          const lines = csvText.trim().split('\n');
+
+          // Mantém cabeçalho apenas no primeiro arquivo
+          if (i === 0) {
+            allText += lines.join('\n');
+          } else {
+            allText += '\n' + lines.slice(1).join('\n');
+          }
         } else {
           console.warn(`⚠️ CSV vazio ou muito pequeno da URL: ${url}`);
         }
@@ -52,7 +62,11 @@ const fetchCSVData = async (): Promise<string> => {
     }
   }
 
-  throw new Error('Não foi possível carregar os dados dos confrontos de nenhuma fonte disponível');
+  if (!allText) {
+    throw new Error('Não foi possível carregar os dados dos confrontos de nenhuma fonte disponível');
+  }
+
+  return allText;
 };
 
 // Normaliza string para evitar erros e facilitar comparações
@@ -63,7 +77,7 @@ const normalize = (str: string): string =>
     .replace(/[\u0300-\u036f]/g, '')
     .trim();
 
-// Função para parsear o CSV com validações e tratamento defensivo
+// Parse do CSV
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   console.log('=== PARSE CSV ===');
 
@@ -84,10 +98,8 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
 
   if (result.errors && result.errors.length) {
     console.error('Erros ao parsear CSV:', result.errors);
-    // Continua mesmo com erros se houver dados
   }
 
-  // Garante que rows seja sempre um array
   const rows = Array.isArray(result.data) ? result.data : [];
   console.log(`Linhas lidas no CSV: ${rows.length}`);
 
@@ -107,7 +119,6 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
           }
         }
 
-        // Calcula resultado padrão H / A / D
         let resultStr = '';
         if (!isNaN(homeGoals) && !isNaN(awayGoals)) {
           if (homeGoals > awayGoals) resultStr = 'H';
@@ -131,19 +142,17 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         return null;
       }
     })
-    .filter(Boolean); // Remove nulos
+    .filter(Boolean);
 
   console.log(`✅ Processados ${matches.length} confrontos`);
   return matches;
 };
 
-// Função para garantir datas válidas na ordenação
 const safeDate = (d: string): Date => {
   const date = new Date(d);
   return isNaN(date.getTime()) ? new Date(0) : date;
 };
 
-// Hook principal com validações reforçadas, logs para debug e proteção contra erros de tipo
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
@@ -170,7 +179,6 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       const t1Norm = team1 ? normalize(team1) : '';
       const t2Norm = team2 ? normalize(team2) : '';
 
-      // Debug dos inputs normalizados
       console.log('Time 1 normalizado:', t1Norm);
       console.log('Time 2 normalizado:', t2Norm);
 
@@ -205,8 +213,8 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
           .slice(0, 10);
       }
 
-      console.log('🔄 Nenhum time especificado, retornando os primeiros 50 confrontos');
-      return allMatches.slice(0, 50);
+      console.log('🔄 Nenhum time especificado, retornando os primeiros 6 confrontos');
+      return allMatches.slice(0, 6);
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
