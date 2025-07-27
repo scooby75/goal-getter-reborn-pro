@@ -19,7 +19,7 @@ const normalize = (str: string): string =>
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[-\s]/g, '') // remove hífen e espaços
+    .replace(/[-\s]/g, '')
     .trim();
 
 // Parse CSV para o formato HeadToHeadMatch
@@ -51,16 +51,19 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   const matches: HeadToHeadMatch[] = rows
     .map((row, index) => {
       try {
+        const scoreRaw = (row.Score || row.score || '').trim();
+        const htScoreRaw = (row.HT_Score || row['HT Score'] || row.HTScore || '').trim();
+
         let homeGoals = 0;
         let awayGoals = 0;
 
-        const scoreRaw = row.Score || '' || row.score || '';
-
-        if (typeof scoreRaw === 'string' && scoreRaw.includes('-')) {
-          const scoreParts = scoreRaw.split('-').map((s: string) => s.trim());
-          if (scoreParts.length === 2) {
-            homeGoals = parseInt(scoreParts[0], 10);
-            awayGoals = parseInt(scoreParts[1], 10);
+        if (scoreRaw && scoreRaw.includes('-')) {
+          const parts = scoreRaw.split('-').map((s: string) => s.trim());
+          if (parts.length === 2) {
+            const h = parseInt(parts[0], 10);
+            const a = parseInt(parts[1], 10);
+            homeGoals = isNaN(h) ? 0 : h;
+            awayGoals = isNaN(a) ? 0 : a;
           }
         }
 
@@ -75,11 +78,11 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
           Date: row.Date || row.Data || '',
           Team_Home: row.HomeTeam || row.Team_Home || '',
           Team_Away: row.AwayTeam || row.Team_Away || '',
-          Goals_Home: isNaN(homeGoals) ? 0 : homeGoals,
-          Goals_Away: isNaN(awayGoals) ? 0 : awayGoals,
+          Goals_Home: homeGoals,
+          Goals_Away: awayGoals,
           Result: resultStr,
-          Score: (scoreRaw || '').trim(),
-          HT_Score: row.HT_Score || row['HT Score'] || row.HTScore || '',
+          Score: scoreRaw || '',
+          HT_Score: htScoreRaw || '',
           League: row.League || 'Indefinida',
         };
       } catch (error) {
@@ -142,7 +145,6 @@ const fetchAndParseAllCSVData = async (): Promise<HeadToHeadMatch[]> => {
   }
 
   console.log(`📊 Total de confrontos juntados: ${allMatches.length}`);
-
   return allMatches;
 };
 
@@ -161,15 +163,17 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       console.log('Time 1 normalizado:', t1Norm);
       console.log('Time 2 normalizado:', t2Norm);
 
-      // ✅ AJUSTE AQUI: Apenas partidas com team1 mandante
       if (team1 && team2) {
         const filtered = allMatches.filter(match => {
           const h = normalize(match.Team_Home);
           const a = normalize(match.Team_Away);
-          return h === t1Norm && a === t2Norm;
+          return (
+            (h === t1Norm && a === t2Norm) || // time1 mandante, time2 visitante
+            (h === t2Norm && a === t1Norm)    // time2 mandante, time1 visitante
+          );
         });
 
-        console.log(`🎯 Confrontos diretos (apenas com ${team1} em casa): ${filtered.length}`);
+        console.log(`🎯 Confrontos diretos (ambos os lados): ${filtered.length}`);
 
         return filtered
           .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
