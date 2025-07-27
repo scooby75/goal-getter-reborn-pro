@@ -87,6 +87,7 @@ const fetchAndParseAllCSVData = async (): Promise<HeadToHeadMatch[]> => {
   const urls = [
     '/Data/all_leagues_results.csv',
     '/Data/all_leagues_results_2024.csv',
+    '/Data/all_leagues_results_2023.csv',
   ];
 
   let allMatches: HeadToHeadMatch[] = [];
