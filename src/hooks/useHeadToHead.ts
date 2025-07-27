@@ -13,7 +13,7 @@ export type HeadToHeadMatch = {
   League?: string;
 };
 
-// Função para buscar e combinar múltiplos CSVs
+// ✅ Função modificada para buscar e combinar vários arquivos CSV
 const fetchCSVData = async (): Promise<string> => {
   console.log('=== FETCH CSV DATA ===');
 
@@ -22,9 +22,10 @@ const fetchCSVData = async (): Promise<string> => {
     '/Data/all_leagues_results_2024.csv',
   ];
 
-  let allText = '';
-  for (let i = 0; i < urls.length; i++) {
-    const url = urls[i];
+  let combinedCSV = '';
+  let filesCarregados = 0;
+
+  for (const url of urls) {
     try {
       console.log(`🔄 Tentando URL: ${url}`);
 
@@ -39,18 +40,19 @@ const fetchCSVData = async (): Promise<string> => {
 
       if (response.ok) {
         const csvText = await response.text();
+
         if (csvText && csvText.trim().length > 100) {
           console.log(`✅ CSV carregado com sucesso de: ${url}`);
           console.log(`📊 Tamanho do CSV: ${csvText.length} caracteres`);
 
           const lines = csvText.trim().split('\n');
-
-          // Mantém cabeçalho apenas no primeiro arquivo
-          if (i === 0) {
-            allText += lines.join('\n');
+          if (filesCarregados === 0) {
+            combinedCSV += csvText.trim() + '\n';
           } else {
-            allText += '\n' + lines.slice(1).join('\n');
+            combinedCSV += lines.slice(1).join('\n') + '\n';
           }
+
+          filesCarregados++;
         } else {
           console.warn(`⚠️ CSV vazio ou muito pequeno da URL: ${url}`);
         }
@@ -62,11 +64,12 @@ const fetchCSVData = async (): Promise<string> => {
     }
   }
 
-  if (!allText) {
-    throw new Error('Não foi possível carregar os dados dos confrontos de nenhuma fonte disponível');
+  if (!combinedCSV || combinedCSV.trim().length < 100) {
+    throw new Error('Não foi possível carregar os dados de nenhuma fonte válida.');
   }
 
-  return allText;
+  console.log(`📦 Arquivos CSV combinados: ${filesCarregados}`);
+  return combinedCSV.trim();
 };
 
 // Normaliza string para evitar erros e facilitar comparações
@@ -77,7 +80,7 @@ const normalize = (str: string): string =>
     .replace(/[\u0300-\u036f]/g, '')
     .trim();
 
-// Parse do CSV
+// Função para parsear o CSV com validações e tratamento defensivo
 const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   console.log('=== PARSE CSV ===');
 
@@ -142,17 +145,19 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
         return null;
       }
     })
-    .filter(Boolean);
+    .filter(Boolean) as HeadToHeadMatch[];
 
   console.log(`✅ Processados ${matches.length} confrontos`);
   return matches;
 };
 
+// Função para garantir datas válidas na ordenação
 const safeDate = (d: string): Date => {
   const date = new Date(d);
   return isNaN(date.getTime()) ? new Date(0) : date;
 };
 
+// Hook principal com validações reforçadas, logs para debug e proteção contra erros de tipo
 export const useHeadToHead = (team1?: string, team2?: string) => {
   return useQuery<HeadToHeadMatch[]>({
     queryKey: ['headToHead', team1, team2],
@@ -213,8 +218,8 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
           .slice(0, 10);
       }
 
-      console.log('🔄 Nenhum time especificado, retornando os primeiros 6 confrontos');
-      return allMatches.slice(0, 6);
+      console.log('🔄 Nenhum time especificado, retornando os primeiros 50 confrontos');
+      return allMatches.slice(0, 50);
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
