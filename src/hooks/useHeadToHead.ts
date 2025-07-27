@@ -76,9 +76,17 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
     .filter(Boolean) as HeadToHeadMatch[];
 };
 
+// ✅ Interpreta datas no formato dd/mm/yyyy ou dd-mm-yyyy
 const safeDate = (d: string): Date => {
-  const date = new Date(d);
-  return isNaN(date.getTime()) ? new Date(0) : date;
+  if (!d) return new Date(0);
+
+  const parts = d.includes('/') ? d.split('/') : d.split('-');
+  if (parts.length !== 3) return new Date(0);
+
+  const [day, month, year] = parts.map(p => parseInt(p, 10));
+  const fullYear = year < 100 ? 2000 + year : year;
+
+  return new Date(fullYear, month - 1, day);
 };
 
 const fetchAndParseAllCSVData = async (): Promise<HeadToHeadMatch[]> => {
@@ -126,7 +134,7 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       const t2Norm = team2 ? normalize(team2) : '';
 
       if (team1 && team2) {
-        // Filtrar apenas partidas com team1 em casa e team2 fora
+        // Apenas jogos com team1 como mandante e team2 como visitante
         const filtered = allMatches.filter(match => {
           const h = normalize(match.Team_Home);
           const a = normalize(match.Team_Away);
@@ -162,7 +170,9 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
           .slice(0, 10);
       }
 
-      return allMatches.slice(0, 50);
+      return allMatches
+        .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
+        .slice(0, 50);
     },
     staleTime: 10 * 60 * 1000,
     retry: 2,
