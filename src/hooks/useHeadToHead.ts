@@ -19,7 +19,7 @@ const normalize = (str: string): string =>
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[-\s]/g, '')  // remove hífen e espaços
+    .replace(/[-\s]/g, '') // remove hífen e espaços
     .trim();
 
 // Parse CSV para o formato HeadToHeadMatch
@@ -161,17 +161,15 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       console.log('Time 1 normalizado:', t1Norm);
       console.log('Time 2 normalizado:', t2Norm);
 
+      // ✅ AJUSTE AQUI: Apenas partidas com team1 mandante
       if (team1 && team2) {
         const filtered = allMatches.filter(match => {
           const h = normalize(match.Team_Home);
           const a = normalize(match.Team_Away);
-          return (
-            (h === t1Norm && a === t2Norm) || // time1 mandante, time2 visitante
-            (h === t2Norm && a === t1Norm)    // time2 mandante, time1 visitante
-          );
+          return h === t1Norm && a === t2Norm;
         });
 
-        console.log(`🎯 Confrontos diretos (ambos os lados): ${filtered.length}`);
+        console.log(`🎯 Confrontos diretos (apenas com ${team1} em casa): ${filtered.length}`);
 
         return filtered
           .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
