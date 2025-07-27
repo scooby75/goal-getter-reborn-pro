@@ -46,10 +46,8 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
   return rows
     .map((row, index) => {
       try {
-        const scoreRaw =
-          (row.Score || row.score || '').toString().trim() || '';
-        const htScoreRaw =
-          (row.HT_Score || row['HT Score'] || row.HTScore || '').toString().trim() || '';
+        const scoreRaw = (row.Score || row.score || '').toString().trim() || '';
+        const htScoreRaw = (row.HT_Score || row['HT Score'] || row.HTScore || '').toString().trim() || '';
 
         const [homeGoals, awayGoals] = extractGoals(scoreRaw);
         const [htHomeGoals, htAwayGoals] = extractGoals(htScoreRaw);
@@ -128,13 +126,11 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
       const t2Norm = team2 ? normalize(team2) : '';
 
       if (team1 && team2) {
+        // Filtrar apenas partidas com team1 em casa e team2 fora
         const filtered = allMatches.filter(match => {
           const h = normalize(match.Team_Home);
           const a = normalize(match.Team_Away);
-          return (
-            (h === t1Norm && a === t2Norm) ||
-            (h === t2Norm && a === t1Norm)
-          );
+          return h === t1Norm && a === t2Norm;
         });
 
         return filtered
@@ -142,12 +138,23 @@ export const useHeadToHead = (team1?: string, team2?: string) => {
           .slice(0, 6);
       }
 
-      if (team1 || team2) {
-        const selectedTeam = normalize(team1 || team2 || '');
+      if (team1 && !team2) {
+        // Apenas jogos do team1 como mandante
         const filtered = allMatches.filter(match => {
           const h = normalize(match.Team_Home);
+          return h === t1Norm;
+        });
+
+        return filtered
+          .sort((a, b) => safeDate(b.Date).getTime() - safeDate(a.Date).getTime())
+          .slice(0, 10);
+      }
+
+      if (!team1 && team2) {
+        // Apenas jogos do team2 como visitante
+        const filtered = allMatches.filter(match => {
           const a = normalize(match.Team_Away);
-          return h === selectedTeam || a === selectedTeam;
+          return a === t2Norm;
         });
 
         return filtered
