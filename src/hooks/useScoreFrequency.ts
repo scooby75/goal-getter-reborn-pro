@@ -30,30 +30,38 @@ export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData 
   const [leagueMismatch, setLeagueMismatch] = useState(false);
 
   const parseCSV = (csv: string, scoreType: 'HT' | 'FT'): ScoreItem[] => {
-    const lines = csv.split('\n').filter(line => line.trim() !== '');
-    if (lines.length < 2) return [];
+    try {
+      const lines = csv.split('\n').filter(line => line.trim() !== '');
+      if (lines.length < 2) return [];
 
-    const headers = lines[0].split(',').map(h => h.trim());
-    
-    // Mapeamento das colunas específicas
-    const leagueIndex = headers.indexOf('League');
-    const scoreIndex = headers.indexOf(scoreType === 'HT' ? 'HT_Score' : 'FT_Score');
-    const matchesIndex = headers.indexOf('Matches');
-    const percentageIndex = headers.indexOf('Percentage');
+      // Extrai cabeçalhos e encontra índices das colunas
+      const headers = lines[0].split('\t').map(h => h.trim()); // Usando tabulação como delimitador
+      
+      const leagueIndex = headers.indexOf('League');
+      const scoreIndex = headers.indexOf(scoreType === 'HT' ? 'HT_Score' : 'FT_Score');
+      const matchesIndex = headers.indexOf('Matches');
+      const percentageIndex = headers.indexOf('Percentage');
 
-    return lines.slice(1)
-      .map(line => {
-        const cols = line.split(',');
-        return {
-          league: cols[leagueIndex]?.trim() || '',
-          score: cols[scoreIndex]?.trim() || '',
-          count: parseInt(cols[matchesIndex]?.trim() || '0', 10),
-          percentage: cols[percentageIndex]?.includes('%') 
-            ? cols[percentageIndex].trim() 
-            : `${cols[percentageIndex]?.trim()}%`,
-        };
-      })
-      .filter(item => item.score && !isNaN(item.count) && item.count > 0);
+      // Validação dos índices
+      if ([leagueIndex, scoreIndex, matchesIndex, percentageIndex].includes(-1)) {
+        throw new Error('Estrutura do CSV inválida');
+      }
+
+      return lines.slice(1)
+        .map(line => {
+          const cols = line.split('\t'); // Usando tabulação como delimitador
+          return {
+            league: cols[leagueIndex]?.trim() || '',
+            score: cols[scoreIndex]?.trim() || '',
+            count: parseInt(cols[matchesIndex]?.trim() || '0', 10),
+            percentage: cols[percentageIndex]?.trim() || '0%',
+          };
+        })
+        .filter(item => item.score && !isNaN(item.count) && item.count > 0);
+    } catch (err) {
+      console.error('Erro ao parsear CSV:', err);
+      return [];
+    }
   };
 
   useEffect(() => {
@@ -63,37 +71,26 @@ export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData 
         setError(null);
         setLeagueMismatch(false);
 
-        // Verificar se há times selecionados
-        if (!homeTeam || !awayTeam) {
-          setData({ htFrequency: [], ftFrequency: [] });
-          setIsLoading(false);
-          return;
-        }
-
-        // Verificar se os times são da mesma liga
-        if (homeTeam.league !== awayTeam.league) {
+        // Verificação de times da mesma liga
+        if (homeTeam && awayTeam && homeTeam.league !== awayTeam.league) {
           setLeagueMismatch(true);
-          setData({ htFrequency: [], ftFrequency: [] });
           setIsLoading(false);
           return;
         }
 
-        // Normalizar o nome da liga para corresponder aos dados do CSV
-        const leagueMap: Record<string, string> = {
-          'Brazil - Serie A': 'Brasileirão',
-          'Premier League': 'Premier League',
-          // Adicione outros mapeamentos conforme necessário
-        };
-
-        const targetLeague = leagueMap[homeTeam.league] || homeTeam.league;
+        const targetLeague = homeTeam?.league || awayTeam?.league;
+        if (!targetLeague) {
+          setIsLoading(false);
+          return;
+        }
 
         const [htRes, ftRes] = await Promise.all([
-          fetch('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/c3394f75ca7389fb5e489ddace66cb8cfdb4650f/public/Data/half_time_scores.csv'),
-          fetch('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/c3394f75ca7389fb5e489ddace66cb8cfdb4650f/public/Data/full_time_scores.csv'),
+          fetch('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/half_time_scores.csv'),
+          fetch('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/full_time_scores.csv'),
         ]);
 
         if (!htRes.ok || !ftRes.ok) {
-          throw new Error('Erro ao carregar dados históricos');
+          throw new Error('Erro ao carregar dados');
         }
 
         const [htText, ftText] = await Promise.all([
@@ -101,20 +98,20 @@ export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData 
           ftRes.text(),
         ]);
 
-        // Filtrar apenas os dados da liga específica
-        const filterByLeague = (items: ScoreItem[]) => 
-          items.filter(item => item.league === targetLeague)
-               .sort((a, b) => b.count - a.count)
-               .slice(0, 10); // Limitar a top 10 resultados
+        // Filtra e ordena os dados
+        const filterAndSort = (items: ScoreItem[]) => 
+          items
+            .filter(item => item.league === targetLeague)
+            .sort((a, b) => b.count - a.count);
 
         setData({
-          htFrequency: filterByLeague(parseCSV(htText, 'HT')),
-          ftFrequency: filterByLeague(parseCSV(ftText, 'FT')),
+          htFrequency: filterAndSort(parseCSV(htText, 'HT')),
+          ftFrequency: filterAndSort(parseCSV(ftText, 'FT')),
         });
 
       } catch (err) {
-        console.error('Erro ao processar dados:', err);
-        setError('Erro ao carregar dados de placares');
+        console.error('Erro ao buscar dados:', err);
+        setError(err instanceof Error ? err.message : 'Erro desconhecido');
       } finally {
         setIsLoading(false);
       }
@@ -126,7 +123,7 @@ export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData 
   return {
     ...data,
     isLoading,
-    error: leagueMismatch ? 'Times de ligas diferentes - dados não disponíveis' : error,
+    error,
     leagueMismatch,
   };
 };
