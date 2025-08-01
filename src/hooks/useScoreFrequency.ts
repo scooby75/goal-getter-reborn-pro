@@ -23,8 +23,8 @@ export const useScoreFrequency = (): ScoreFrequencyData => {
     const fetchData = async () => {
       try {
         const [htRes, ftRes] = await Promise.all([
-          fetch('/Data/half_time_scores.csv'),
-          fetch('/Data/full_time_scores.csv'),
+          fetch('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/half_time_scores.csv'),
+          fetch('https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/full_time_scores.csv'),
         ]);
 
         if (!htRes.ok || !ftRes.ok) {
@@ -40,13 +40,14 @@ export const useScoreFrequency = (): ScoreFrequencyData => {
             .split('\n')
             .slice(1) // remove cabeçalho
             .map(line => {
-              const [_, score, count, percentage] = line.split(',');
+              const parts = line.split(',');
               return {
-                score: score.trim(),
-                count: parseInt(count.trim(), 10),
-                percentage: percentage.replace('%', '').trim(),
+                score: parts[1].trim(),
+                count: parseInt(parts[2].trim(), 10),
+                percentage: parts[3].replace('%', '').trim(),
               };
-            });
+            })
+            .sort((a, b) => b.count - a.count); // ordena por maior número de jogos
         };
 
         setHtFrequency(parseCSV(htText));
