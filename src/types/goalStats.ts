@@ -1,3 +1,11 @@
+export interface TableTeamData {
+  Team_Home: string;
+  Ranking: string;
+  GD: string;
+  Pts?: string;
+  Liga?: string;
+  // Outras colunas que existam no CSV
+}
 
 export interface TeamStats {
   Team: string;
@@ -17,6 +25,9 @@ export interface TeamStats {
   "2nd half"?: number;
   "Avg. minute"?: number;
   scoredFirstPerc?: number;
+  // Adicionando campos opcionais para tabela de classificação
+  ranking?: string | number;
+  goalDifference?: string | number;
 }
 
 export interface LeagueAverageData {
@@ -64,6 +75,9 @@ export interface GoalStatsData {
   homeStats: TeamStats[];
   awayStats: TeamStats[];
   overallStats: TeamStats[];
+  // Adicionando dados das tabelas de classificação
+  homeTableData?: TableTeamData[];
+  awayTableData?: TableTeamData[];
   leagueAverage: {
     "1.5+": number;
     "2.5+": number;
