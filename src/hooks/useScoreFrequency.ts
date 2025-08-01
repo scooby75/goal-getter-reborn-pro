@@ -36,13 +36,11 @@ export function useScoreFrequency(
 
       try {
         const [htRes, ftRes] = await Promise.all([
-          fetch(
-            'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/half_time_scores.csv'
-          ),
-          fetch(
-            'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/full_time_scores.csv'
-          ),
+          fetch('half_time_scores.csv'),
+          fetch('full_time_scores.csv')
         ]);
+
+        if (!htRes.ok || !ftRes.ok) throw new Error('Failed to fetch data');
 
         const [htText, ftText] = await Promise.all([htRes.text(), ftRes.text()]);
 
@@ -54,11 +52,18 @@ export function useScoreFrequency(
 
           return (parsed.data as any[])
             .filter((row) => row.League === homeTeam.league)
-            .map((row) => ({
-              score: type === 'HT' ? row.HT_Score : row.FT_Score,
-              count: Number(row.Matches),
-              percentage: row.Percentage,
-            }));
+            .map((row) => {
+              const percentageValue = row.Percentage.includes('%') 
+                ? row.Percentage 
+                : `${row.Percentage}%`;
+              
+              return {
+                score: type === 'HT' ? row.HT_Score : row.FT_Score,
+                count: Number(row.Matches),
+                percentage: percentageValue,
+              };
+            })
+            .sort((a, b) => b.count - a.count);
         };
 
         const htData = parseCsv(htText, 'HT');
@@ -67,8 +72,8 @@ export function useScoreFrequency(
         setHtFrequency(htData);
         setFtFrequency(ftData);
       } catch (err) {
-        console.error(err);
-        setError('Erro ao carregar os dados.');
+        console.error('Error loading score frequency data:', err);
+        setError('Erro ao carregar os dados de frequência de placar.');
       } finally {
         setIsLoading(false);
       }
