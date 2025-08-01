@@ -1,10 +1,15 @@
 export interface TableTeamData {
-  Team_Home: string;
   Ranking: string;
-  GD: string;
-  Pts?: string;
-  Liga?: string;
-  // Outras colunas que existam no CSV
+  Team_Home: string;
+  GP: string;
+  W: string;
+  D: string;
+  L: string;
+  GF: string;
+  GA: string;
+  GD: string;  // Saldo de Gols
+  Pts: string;
+  Liga: string;
 }
 
 export interface TeamStats {
