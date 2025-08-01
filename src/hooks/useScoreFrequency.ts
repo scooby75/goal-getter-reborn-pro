@@ -29,32 +29,32 @@ export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData 
     leagueMismatch: false,
   });
 
-  const parseCSV = (text: string, scoreType: 'HT' | 'FT'): ScoreItem[] => {
+  const parseCSV = (text: string): ScoreItem[] => {
     const lines = text.split('\n').filter(line => line.trim() !== '');
     if (lines.length < 2) return [];
 
-    // Detecta delimitador (vírgula ou tab)
-    const delimiter = lines[0].includes('\t') ? '\t' : ',';
-    const headers = lines[0].split(delimiter).map(h => h.trim());
+    // Remove BOM character if exists
+    const headerLine = lines[0].replace(/^\uFEFF/, '');
+    const headers = headerLine.split(',').map(h => h.trim());
 
-    const getIndex = (names: string[]) => 
-      names.reduce((acc, name) => 
-        acc !== -1 ? acc : headers.findIndex(h => h.toLowerCase() === name.toLowerCase()), -1);
+    const leagueIndex = headers.indexOf('League');
+    const scoreIndex = headers.indexOf('FT_Score');
+    const matchesIndex = headers.indexOf('Matches');
+    const percentageIndex = headers.indexOf('Percentage');
 
-    const leagueIndex = getIndex(['league', 'liga']);
-    const scoreIndex = getIndex([scoreType === 'HT' ? 'ht_score' : 'ft_score', 'score']);
-    const matchesIndex = getIndex(['matches', 'jogos']);
-    const percentageIndex = getIndex(['percentage', 'porcentagem']);
+    // Validate headers
+    if ([leagueIndex, scoreIndex, matchesIndex, percentageIndex].includes(-1)) {
+      console.error('Cabeçalhos do CSV não correspondem ao esperado:', headers);
+      return [];
+    }
 
     return lines.slice(1).map(line => {
-      const cols = line.split(delimiter);
+      const cols = line.split(',');
       return {
         league: cols[leagueIndex]?.trim() || '',
         score: cols[scoreIndex]?.trim() || '',
         count: parseInt(cols[matchesIndex]?.trim() || '0', 10),
-        percentage: cols[percentageIndex]?.trim().includes('%') 
-          ? cols[percentageIndex].trim() 
-          : `${cols[percentageIndex]?.trim()}%`,
+        percentage: cols[percentageIndex]?.trim() || '0%',
       };
     }).filter(item => item.score && !isNaN(item.count) && item.count > 0);
   };
@@ -75,14 +75,14 @@ export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData 
           return;
         }
 
-        // Carrega arquivos locais
+        // Carrega ambos arquivos simultaneamente
         const [htResponse, ftResponse] = await Promise.all([
           fetch('/Data/half_time_scores.csv'),
           fetch('/Data/full_time_scores.csv'),
         ]);
 
         if (!htResponse.ok || !ftResponse.ok) {
-          throw new Error('Arquivos CSV não encontrados');
+          throw new Error('Não foi possível carregar os arquivos de dados');
         }
 
         const [htText, ftText] = await Promise.all([
@@ -90,27 +90,35 @@ export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData 
           ftResponse.text(),
         ]);
 
-        console.log('Dados HT:', htText.substring(0, 200));
-        console.log('Dados FT:', ftText.substring(0, 200));
+        // DEBUG: Mostra parte dos dados crus
+        console.log('Dados HT (amostra):', htText.substring(0, 200));
+        console.log('Dados FT (amostra):', ftText.substring(0, 200));
 
-        const normalizeLeague = (name: string) => 
-          name.toLowerCase().replace(/\s+/g, '').replace('serie', '');
+        const normalizeLeagueName = (name: string) => {
+          return name.trim().toLowerCase()
+            .replace(/-/g, ' ')
+            .replace(/\s+/g, ' ')
+            .replace('serie a', '')
+            .trim();
+        };
+
+        const targetNormalized = normalizeLeagueName(targetLeague);
 
         const filterData = (items: ScoreItem[]) => 
           items
-            .filter(item => normalizeLeague(item.league) === normalizeLeague(targetLeague))
+            .filter(item => normalizeLeagueName(item.league) === targetNormalized)
             .sort((a, b) => b.count - a.count);
 
         setData({
-          htFrequency: filterData(parseCSV(htText, 'HT')),
-          ftFrequency: filterData(parseCSV(ftText, 'FT')),
+          htFrequency: filterData(parseCSV(htText)),
+          ftFrequency: filterData(parseCSV(ftText)),
           isLoading: false,
           error: null,
           leagueMismatch: false,
         });
 
       } catch (err) {
-        console.error('Erro ao carregar dados:', err);
+        console.error('Erro ao processar dados:', err);
         setData(prev => ({
           ...prev,
           isLoading: false,
