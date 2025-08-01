@@ -11,6 +11,14 @@ interface StatsDisplayProps {
   awayStats?: TeamStats;
 }
 
+const formatRanking = (rank: number | string | null) => {
+  if (!rank) return '-';
+  if (typeof rank === 'string') {
+    return rank.includes('°') ? rank : `${rank}°`;
+  }
+  return `${rank}°`;
+};
+
 export const StatsDisplay: React.FC<StatsDisplayProps> = ({
   homeTeam,
   awayTeam,
@@ -23,28 +31,44 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
   
   if (homeStats && homeTeam) {
     const homeTableData = homeData.find(team => 
-      team.Team.toLowerCase() === homeStats.Team.toLowerCase()
+      team.Team_Home && homeStats.Team && 
+      team.Team_Home.trim().toLowerCase() === homeStats.Team.trim().toLowerCase()
     );
     
+    console.log('Home Team Match:', {
+      searchingFor: homeStats.Team,
+      found: homeTableData?.Team_Home,
+      ranking: homeTableData?.Ranking,
+      GD: homeTableData?.GD
+    });
+
     statsToDisplay.push({
       ...homeStats,
       Team: `${homeStats.Team} (Casa)`,
       type: 'home',
-      ranking: homeTableData?.ranking || null,
+      ranking: homeTableData?.Ranking || null,
       goalDifference: homeTableData?.GD || null
     });
   }
   
   if (awayStats && awayTeam) {
     const awayTableData = awayData.find(team => 
-      team.Team.toLowerCase() === awayStats.Team.toLowerCase()
+      team.Team_Home && awayStats.Team && 
+      team.Team_Home.trim().toLowerCase() === awayStats.Team.trim().toLowerCase()
     );
     
+    console.log('Away Team Match:', {
+      searchingFor: awayStats.Team,
+      found: awayTableData?.Team_Home,
+      ranking: awayTableData?.Ranking,
+      GD: awayTableData?.GD
+    });
+
     statsToDisplay.push({
       ...awayStats,
       Team: `${awayStats.Team} (Visitante)`,
       type: 'away',
-      ranking: awayTableData?.ranking || null,
+      ranking: awayTableData?.Ranking || null,
       goalDifference: awayTableData?.GD || null
     });
   }
@@ -61,7 +85,6 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        {/* Tabela para desktop */}
         <div className="hidden md:block overflow-x-auto">
           <Table>
             <TableHeader>
@@ -98,17 +121,18 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                     </div>
                   </TableCell>
                   <TableCell className="text-center font-semibold">
-                    {stats.ranking || '-'}
+                    {formatRanking(stats.ranking)}
                   </TableCell>
                   <TableCell className="text-center font-semibold">
                     <span className={`inline-block px-2 py-1 rounded text-sm font-medium ${
                       stats.goalDifference === null ? '' :
-                      stats.goalDifference > 0 ? 'bg-green-100 text-green-800' :
-                      stats.goalDifference < 0 ? 'bg-red-100 text-red-800' :
+                      typeof stats.goalDifference === 'string' && stats.goalDifference.startsWith('+') ? 'bg-green-100 text-green-800' :
+                      typeof stats.goalDifference === 'number' && stats.goalDifference > 0 ? 'bg-green-100 text-green-800' :
+                      (typeof stats.goalDifference === 'number' || typeof stats.goalDifference === 'string') && stats.goalDifference < 0 ? 'bg-red-100 text-red-800' :
                       'bg-gray-100 text-gray-800'
                     }`}>
                       {stats.goalDifference !== null ? 
-                        (stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
+                        (typeof stats.goalDifference === 'number' && stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
                         : '-'
                       }
                     </span>
@@ -145,7 +169,6 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
           </Table>
         </div>
         
-        {/* Cards para mobile */}
         <div className="block md:hidden space-y-4">
           {statsToDisplay.map((stats, index) => (
             <Card key={index} className={`border-l-4 ${
@@ -159,22 +182,22 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                   <h3 className="font-semibold text-gray-800">{stats.Team}</h3>
                 </div>
                 
-                {/* Ranking e Saldo de Gols */}
                 <div className="grid grid-cols-2 gap-3 text-sm mb-4 pb-3 border-b">
                   <div className="text-center">
                     <div className="text-gray-600 text-xs">Ranking</div>
-                    <div className="font-bold text-lg">{stats.ranking || '-'}</div>
+                    <div className="font-bold text-lg">{formatRanking(stats.ranking)}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-gray-600 text-xs">Saldo de Gols</div>
                     <div className={`font-bold text-lg ${
                       stats.goalDifference === null ? '' :
-                      stats.goalDifference > 0 ? 'text-green-600' :
-                      stats.goalDifference < 0 ? 'text-red-600' :
+                      typeof stats.goalDifference === 'string' && stats.goalDifference.startsWith('+') ? 'text-green-600' :
+                      typeof stats.goalDifference === 'number' && stats.goalDifference > 0 ? 'text-green-600' :
+                      (typeof stats.goalDifference === 'number' || typeof stats.goalDifference === 'string') && stats.goalDifference < 0 ? 'text-red-600' :
                       'text-gray-600'
                     }`}>
                       {stats.goalDifference !== null ? 
-                        (stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
+                        (typeof stats.goalDifference === 'number' && stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
                         : '-'
                       }
                     </div>
@@ -251,7 +274,6 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                         </div>
                     </div>
                 </div>
-
               </CardContent>
             </Card>
           ))}
