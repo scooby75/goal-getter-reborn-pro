@@ -35,32 +35,28 @@ export const useScoreFrequency = (): ScoreFrequencyData => {
         const htText = await htRes.text();
         const ftText = await ftRes.text();
 
-        const parseCSV = (csv: string): ScoreItem[] => {
+        const parseHalfTimeCSV = (csv: string): ScoreItem[] => {
           const lines = csv.trim().split('\n');
           const header = lines[0].split(',');
           
-          // Encontrar os índices das colunas necessárias
-          const scoreIndex = header.findIndex(h => 
-            h.toLowerCase().includes('score') || h.toLowerCase().includes('placar')
-          );
-          const matchesIndex = header.findIndex(h => 
-            h.toLowerCase().includes('match') || h.toLowerCase().includes('partida') || h.toLowerCase().includes('jogos')
-          );
-          const percentageIndex = header.findIndex(h => 
-            h.toLowerCase().includes('percent') || h.toLowerCase().includes('porcentagem')
-          );
-
-          console.log('Header:', header);
-          console.log('Indices encontrados - Score:', scoreIndex, 'Matches:', matchesIndex, 'Percentage:', percentageIndex);
+          console.log('HT Header:', header);
+          
+          // Para half_time_scores.csv: League,HT_Score,Matches,Percentage
+          const leagueIndex = 0;
+          const scoreIndex = 1; // HT_Score
+          const matchesIndex = 2; // Matches
+          const percentageIndex = 3; // Percentage
 
           return lines.slice(1) // remove cabeçalho
             .map(line => {
               const cols = line.split(',');
+              const league = cols[leagueIndex]?.trim() || '';
               const score = cols[scoreIndex]?.trim() || '';
               const countStr = cols[matchesIndex]?.trim() || '0';
               const percentageStr = cols[percentageIndex]?.replace('%', '').trim() || '0';
               
               return {
+                league,
                 score: score,
                 count: parseInt(countStr, 10),
                 percentage: percentageStr,
@@ -70,11 +66,42 @@ export const useScoreFrequency = (): ScoreFrequencyData => {
             .sort((a, b) => b.count - a.count); // ordenar por número de jogos
         };
 
-        const htData = parseCSV(htText);
-        const ftData = parseCSV(ftText);
+        const parseFullTimeCSV = (csv: string): ScoreItem[] => {
+          const lines = csv.trim().split('\n');
+          const header = lines[0].split(',');
+          
+          console.log('FT Header:', header);
+          
+          // Para full_time_scores.csv: League,FT_Score,Matches,Percentage
+          const leagueIndex = 0;
+          const scoreIndex = 1; // FT_Score
+          const matchesIndex = 2; // Matches
+          const percentageIndex = 3; // Percentage
+
+          return lines.slice(1) // remove cabeçalho
+            .map(line => {
+              const cols = line.split(',');
+              const league = cols[leagueIndex]?.trim() || '';
+              const score = cols[scoreIndex]?.trim() || '';
+              const countStr = cols[matchesIndex]?.trim() || '0';
+              const percentageStr = cols[percentageIndex]?.replace('%', '').trim() || '0';
+              
+              return {
+                league,
+                score: score,
+                count: parseInt(countStr, 10),
+                percentage: percentageStr,
+              };
+            })
+            .filter(item => item.score && !isNaN(item.count) && item.count > 0)
+            .sort((a, b) => b.count - a.count); // ordenar por número de jogos
+        };
+
+        const htData = parseHalfTimeCSV(htText);
+        const ftData = parseFullTimeCSV(ftText);
         
-        console.log('HT Data sample:', htData.slice(0, 5));
-        console.log('FT Data sample:', ftData.slice(0, 5));
+        console.log('HT Data sample:', htData.slice(0, 10));
+        console.log('FT Data sample:', ftData.slice(0, 10));
 
         setHtFrequency(htData);
         setFtFrequency(ftData);
