@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
+
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrendingUp, Clock } from 'lucide-react';
-
-interface ScoreItem {
-  score: string;
-  count: number;
-  percentage: string;
-}
+import { useScoreFrequency } from '@/hooks/useScoreFrequency';
 
 interface ScoreFrequencyCardProps {
   type: 'HT' | 'FT';
@@ -19,50 +15,9 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
   title, 
   maxItems 
 }) => {
-  const [scores, setScores] = useState<ScoreItem[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const filePath =
-      type === 'HT'
-        ? 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/half_time_scores.csv'
-        : 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/full_time_scores.csv';
-
-    fetch(filePath)
-      .then((res) => {
-        if (!res.ok) throw new Error('Erro ao carregar CSV');
-        return res.text();
-      })
-      .then((csvText) => {
-        const lines = csvText.trim().split('\n');
-        const header = lines[0].split(',');
-        const scoreIndex = header.findIndex(h => h.toLowerCase().includes('score'));
-        const countIndex = header.findIndex(h => h.toLowerCase().includes('match'));
-        const percentIndex = header.findIndex(h => h.toLowerCase().includes('percent'));
-
-        const data: ScoreItem[] = lines
-          .slice(1)
-          .map((line) => {
-            const parts = line.split(',');
-            return {
-              score: parts[scoreIndex].trim(),
-              count: parseInt(parts[countIndex].trim(), 10),
-              percentage: parts[percentIndex].replace('%', '').trim(),
-            };
-          })
-          .filter(item => item.score && !isNaN(item.count))
-          .sort((a, b) => b.count - a.count)
-          .slice(0, maxItems);
-
-        setScores(data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setIsLoading(false);
-      });
-  }, [type, maxItems]);
+  const { htFrequency, ftFrequency, isLoading, error } = useScoreFrequency();
+  
+  const scores = type === 'HT' ? htFrequency.slice(0, maxItems) : ftFrequency.slice(0, maxItems);
 
   if (isLoading) {
     return (
@@ -90,7 +45,7 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-center text-red-500">Erro ao carregar dados: {error}</div>
+          <div className="text-center text-red-500">Erro ao carregar dados: {error.message}</div>
         </CardContent>
       </Card>
     );
@@ -122,6 +77,11 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
             </div>
           ))}
         </div>
+        {scores.length === 0 && (
+          <div className="text-center text-gray-500">
+            Nenhum dado de placar encontrado
+          </div>
+        )}
       </CardContent>
     </Card>
   );
