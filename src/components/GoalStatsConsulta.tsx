@@ -11,6 +11,7 @@ import { DixonColesScores } from './DixonColesScores';
 import { GoalMomentCard } from './GoalMomentCard';
 import { HeadToHeadCard } from './HeadToHeadCard';
 import { RecentGamesCard } from './RecentGamesCard';
+import { ScoreFrequencyCard } from './ScoreFrequencyCard';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { saveFiltersToUrl, getFiltersFromUrl } from '@/utils/urlParams';
@@ -406,6 +407,19 @@ export const GoalStatsConsulta = () => {
           </CardContent>
         </Card>
       )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <ScoreFrequencyCard 
+          type="HT" 
+          title="Frequência Placar HT (Liga)" 
+          maxItems={8} 
+        />
+        <ScoreFrequencyCard 
+          type="FT" 
+          title="Frequência Placar FT (Liga)" 
+          maxItems={6} 
+        />
+      </div>
 
       {(selectedHomeTeam || selectedAwayTeam) && (
         <LeagueAverageDisplay 

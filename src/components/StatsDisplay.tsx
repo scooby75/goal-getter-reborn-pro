@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { TeamStats } from '@/types/goalStats';
+import { useLeagueTables } from '@/hooks/useLeagueTables';
 
 interface StatsDisplayProps {
   homeTeam: string;
@@ -17,21 +17,35 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
   homeStats,
   awayStats,
 }) => {
+  const { homeData, awayData, isLoading: tablesLoading } = useLeagueTables();
+
   const statsToDisplay = [];
   
   if (homeStats && homeTeam) {
+    const homeTableData = homeData.find(team => 
+      team.Team.toLowerCase() === homeStats.Team.toLowerCase()
+    );
+    
     statsToDisplay.push({
       ...homeStats,
       Team: `${homeStats.Team} (Casa)`,
-      type: 'home'
+      type: 'home',
+      ranking: homeTableData?.ranking || null,
+      goalDifference: homeTableData?.GD || null
     });
   }
   
   if (awayStats && awayTeam) {
+    const awayTableData = awayData.find(team => 
+      team.Team.toLowerCase() === awayStats.Team.toLowerCase()
+    );
+    
     statsToDisplay.push({
       ...awayStats,
       Team: `${awayStats.Team} (Visitante)`,
-      type: 'away'
+      type: 'away',
+      ranking: awayTableData?.ranking || null,
+      goalDifference: awayTableData?.GD || null
     });
   }
 
@@ -53,6 +67,8 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
             <TableHeader>
               <TableRow className="bg-gray-50">
                 <TableHead className="font-bold text-gray-700">Equipe</TableHead>
+                <TableHead className="font-bold text-gray-700 text-center">Ranking</TableHead>
+                <TableHead className="font-bold text-gray-700 text-center">SG</TableHead>
                 <TableHead className="font-bold text-gray-700 text-center">GP</TableHead>
                 <TableHead className="font-bold text-gray-700 text-center">Avg</TableHead>
                 <TableHead className="font-bold text-gray-700 text-center">1.5+</TableHead>
@@ -80,6 +96,22 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                       }`}></span>
                       {stats.Team}
                     </div>
+                  </TableCell>
+                  <TableCell className="text-center font-semibold">
+                    {stats.ranking || '-'}
+                  </TableCell>
+                  <TableCell className="text-center font-semibold">
+                    <span className={`inline-block px-2 py-1 rounded text-sm font-medium ${
+                      stats.goalDifference === null ? '' :
+                      stats.goalDifference > 0 ? 'bg-green-100 text-green-800' :
+                      stats.goalDifference < 0 ? 'bg-red-100 text-red-800' :
+                      'bg-gray-100 text-gray-800'
+                    }`}>
+                      {stats.goalDifference !== null ? 
+                        (stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
+                        : '-'
+                      }
+                    </span>
                   </TableCell>
                   <TableCell className="text-center font-semibold">{stats.GP}</TableCell>
                   <TableCell className="text-center font-semibold">{stats.Avg.toFixed(2)}</TableCell>
@@ -126,6 +158,29 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                   }`}></span>
                   <h3 className="font-semibold text-gray-800">{stats.Team}</h3>
                 </div>
+                
+                {/* Ranking e Saldo de Gols */}
+                <div className="grid grid-cols-2 gap-3 text-sm mb-4 pb-3 border-b">
+                  <div className="text-center">
+                    <div className="text-gray-600 text-xs">Ranking</div>
+                    <div className="font-bold text-lg">{stats.ranking || '-'}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-600 text-xs">Saldo de Gols</div>
+                    <div className={`font-bold text-lg ${
+                      stats.goalDifference === null ? '' :
+                      stats.goalDifference > 0 ? 'text-green-600' :
+                      stats.goalDifference < 0 ? 'text-red-600' :
+                      'text-gray-600'
+                    }`}>
+                      {stats.goalDifference !== null ? 
+                        (stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
+                        : '-'
+                      }
+                    </div>
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-3 gap-3 text-sm mb-4">
                   <div className="text-center">
                     <div className="text-gray-600 text-xs">GP</div>
@@ -140,6 +195,7 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                     <div className="font-bold text-lg text-blue-600">{(stats.GP * stats.Avg).toFixed(0)}</div>
                   </div>
                 </div>
+                
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div className="text-center">
                     <div className="text-gray-600 text-xs">1.5+</div>
