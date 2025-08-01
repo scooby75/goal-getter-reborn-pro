@@ -11,11 +11,6 @@ interface ScoreFrequencyCardProps {
   maxItems?: number;
 }
 
-const formatPercentage = (value: string) => {
-  const num = parseFloat(value.replace('%', ''));
-  return `${num.toFixed(num % 1 === 0 ? 0 : 1)}%`;
-};
-
 export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({ 
   type, 
   title,
@@ -27,6 +22,12 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
     useScoreFrequency(homeTeam, awayTeam);
 
   const scores = type === 'HT' ? htFrequency : ftFrequency;
+
+  // Debug: Verifique os dados recebidos
+  React.useEffect(() => {
+    console.log(`Dados ${type}:`, scores);
+    console.log('Times:', { homeTeam, awayTeam });
+  }, [scores, type, homeTeam, awayTeam]);
 
   if (isLoading) {
     return (
@@ -55,14 +56,8 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
         </CardHeader>
         <CardContent>
           <div className="text-center text-red-500 py-2">
-            {error.includes('Não foi possível carregar') ? (
-              <>
-                <p>Erro ao carregar dados</p>
-                <p className="text-sm mt-1">Verifique a conexão ou os arquivos de dados</p>
-              </>
-            ) : (
-              error
-            )}
+            <p>{error}</p>
+            <p className="text-sm mt-1">Verifique o console para detalhes</p>
           </div>
         </CardContent>
       </Card>
@@ -106,7 +101,7 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
               >
                 <div className="font-bold text-gray-800">{item.score}</div>
                 <div className="text-sm text-primary font-medium">
-                  {formatPercentage(item.percentage)}
+                  {item.percentage}
                 </div>
                 <div className="text-xs text-gray-500 mt-1">
                   {item.count} {item.count === 1 ? 'jogo' : 'jogos'}
