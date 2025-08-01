@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrendingUp, Clock } from 'lucide-react';
 
-// Tipagem dos dados de placar
 interface ScoreItem {
   score: string;
   count: number;
@@ -25,9 +24,10 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const filePath = type === 'HT' 
-      ? '/Data/half_time_scores.csv' 
-      : '/Data/full_time_scores.csv';
+    const filePath =
+      type === 'HT'
+        ? 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/half_time_scores.csv'
+        : 'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/full_time_scores.csv';
 
     fetch(filePath)
       .then((res) => {
@@ -35,19 +35,27 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
         return res.text();
       })
       .then((csvText) => {
-        const lines = csvText.trim().split('\n').slice(1); // ignora cabeçalho
-        const data: ScoreItem[] = lines.map((line) => {
-          const parts = line.split(',');
-          return {
-            score: parts[1].trim(),
-            count: parseInt(parts[2].trim(), 10),
-            percentage: parts[3].replace('%', '').trim(),
-          };
-        });
+        const lines = csvText.trim().split('\n');
+        const header = lines[0].split(',');
+        const scoreIndex = header.findIndex(h => h.toLowerCase().includes('score'));
+        const countIndex = header.findIndex(h => h.toLowerCase().includes('match'));
+        const percentIndex = header.findIndex(h => h.toLowerCase().includes('percent'));
 
-        // Ordenar por maior número de partidas (count)
-        const sorted = data.sort((a, b) => b.count - a.count).slice(0, maxItems);
-        setScores(sorted);
+        const data: ScoreItem[] = lines
+          .slice(1)
+          .map((line) => {
+            const parts = line.split(',');
+            return {
+              score: parts[scoreIndex].trim(),
+              count: parseInt(parts[countIndex].trim(), 10),
+              percentage: parts[percentIndex].replace('%', '').trim(),
+            };
+          })
+          .filter(item => item.score && !isNaN(item.count))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, maxItems);
+
+        setScores(data);
         setIsLoading(false);
       })
       .catch((err) => {
