@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -20,7 +21,7 @@ const queryClient = new QueryClient({
       retry: 3,
       retryDelay: 1000,
       staleTime: 5 * 60 * 1000,   // 5 minutos
-      cacheTime: 10 * 60 * 1000,  // 10 minutos
+      gcTime: 10 * 60 * 1000,     // 10 minutos
     },
   },
 });

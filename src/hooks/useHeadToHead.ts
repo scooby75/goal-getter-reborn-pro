@@ -11,6 +11,7 @@ export type HeadToHeadMatch = {
   Score?: string;
   HT_Score?: string;
   League?: string;
+  Status?: string;
 };
 
 // Normaliza nomes de times
@@ -48,6 +49,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
       try {
         const scoreRaw = (row.Score || row.score || '').toString().trim() || '';
         const htScoreRaw = (row.HT_Score || row['HT Score'] || row.HTScore || '').toString().trim() || '';
+        const statusRaw = (row.Status || row.status || 'FT').toString().trim();
 
         const [homeGoals, awayGoals] = extractGoals(scoreRaw);
         const [htHomeGoals, htAwayGoals] = extractGoals(htScoreRaw);
@@ -67,6 +69,7 @@ const parseHeadToHeadCSV = (csvText: string): HeadToHeadMatch[] => {
           Score: `${homeGoals} - ${awayGoals}`,
           HT_Score: htScoreRaw ? `${htHomeGoals} - ${htAwayGoals}` : '',
           League: row.League || 'Indefinida',
+          Status: statusRaw || 'FT',
         };
       } catch (error) {
         console.warn(`Erro ao processar linha ${index + 1}:`, error);
