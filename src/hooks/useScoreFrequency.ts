@@ -35,35 +35,44 @@ export function useScoreFrequency(
       }
 
       try {
+        // Caminhos corrigidos para os arquivos CSV
+        const csvPaths = {
+          HT: '/Data/half_time_scores.csv',
+          FT: '/Data/full_time_scores.csv'
+        };
+
         const [htRes, ftRes] = await Promise.all([
-          fetch('half_time_scores.csv'),
-          fetch('full_time_scores.csv')
+          fetch(csvPaths.HT),
+          fetch(csvPaths.FT)
         ]);
 
-        if (!htRes.ok || !ftRes.ok) throw new Error('Failed to fetch data');
+        if (!htRes.ok) throw new Error(`Failed to load HT data: ${htRes.status}`);
+        if (!ftRes.ok) throw new Error(`Failed to load FT data: ${ftRes.status}`);
 
         const [htText, ftText] = await Promise.all([htRes.text(), ftRes.text()]);
 
         const parseCsv = (csvText: string, type: 'HT' | 'FT'): ScoreItem[] => {
-          const parsed = Papa.parse(csvText, {
+          const results = Papa.parse(csvText, {
             header: true,
             skipEmptyLines: true,
           });
 
-          return (parsed.data as any[])
+          return (results.data as any[])
             .filter((row) => row.League === homeTeam.league)
             .map((row) => {
-              const percentageValue = row.Percentage.includes('%') 
-                ? row.Percentage 
-                : `${row.Percentage}%`;
-              
+              // Garante que a porcentagem tenha o símbolo %
+              let percentage = row.Percentage;
+              if (!percentage.includes('%')) {
+                percentage = `${percentage}%`;
+              }
+
               return {
                 score: type === 'HT' ? row.HT_Score : row.FT_Score,
                 count: Number(row.Matches),
-                percentage: percentageValue,
+                percentage: percentage
               };
             })
-            .sort((a, b) => b.count - a.count);
+            .sort((a, b) => b.count - a.count); // Ordena do mais frequente para o menos
         };
 
         const htData = parseCsv(htText, 'HT');
@@ -72,8 +81,8 @@ export function useScoreFrequency(
         setHtFrequency(htData);
         setFtFrequency(ftData);
       } catch (err) {
-        console.error('Error loading score frequency data:', err);
-        setError('Erro ao carregar os dados de frequência de placar.');
+        console.error('Error loading score data:', err);
+        setError('Erro ao carregar os dados de placares. Verifique o console para mais detalhes.');
       } finally {
         setIsLoading(false);
       }
