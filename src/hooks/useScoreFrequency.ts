@@ -19,7 +19,10 @@ export function useScoreFrequency(
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!homeTeam || !awayTeam) return;
+      if (!homeTeam || !awayTeam || !homeTeam.league || !awayTeam.league) {
+        setIsLoading(false);
+        return;
+      }
 
       setIsLoading(true);
       setError(null);
@@ -43,29 +46,23 @@ export function useScoreFrequency(
 
         const [htText, ftText] = await Promise.all([htRes.text(), ftRes.text()]);
 
-        const parseCsv = (csvText: string): ScoreItem[] => {
+        const parseCsv = (csvText: string, type: 'HT' | 'FT'): ScoreItem[] => {
           const parsed = Papa.parse(csvText, {
             header: true,
             skipEmptyLines: true,
           });
 
           return (parsed.data as any[])
-            .filter((row) => {
-              const isRelevant =
-                row.League === homeTeam.league &&
-                ((row.Home === homeTeam.name && row.Away === awayTeam.name) ||
-                  (row.Home === awayTeam.name && row.Away === homeTeam.name));
-              return isRelevant;
-            })
+            .filter((row) => row.League === homeTeam.league)
             .map((row) => ({
-              score: row.Score,
-              count: Number(row.Count),
+              score: type === 'HT' ? row.HT_Score : row.FT_Score,
+              count: Number(row.Matches),
               percentage: row.Percentage,
             }));
         };
 
-        const htData = parseCsv(htText);
-        const ftData = parseCsv(ftText);
+        const htData = parseCsv(htText, 'HT');
+        const ftData = parseCsv(ftText, 'FT');
 
         setHtFrequency(htData);
         setFtFrequency(ftData);
