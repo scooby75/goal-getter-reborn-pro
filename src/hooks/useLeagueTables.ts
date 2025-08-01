@@ -5,14 +5,14 @@ interface LeagueTableData {
   Ranking: string;
   Team_Home: string;
   GD: string;
-  GP?: string;
-  W?: string;
-  D?: string;
-  L?: string;
-  GF?: string;
-  GA?: string;
-  Pts?: string;
-  Liga?: string;
+  GP: string;
+  W: string;
+  D: string;
+  L: string;
+  GF: string;
+  GA: string;
+  Pts: string;
+  Liga: string;
 }
 
 export const useLeagueTables = () => {
@@ -27,45 +27,15 @@ export const useLeagueTables = () => {
       setError(null);
       
       try {
-        // Carrega dados para times mandantes
-        const homeResponse = await fetch('/Data/tabela_ligas_home.csv');
-        if (!homeResponse.ok) {
-          throw new Error('Failed to load home team data');
-        }
-        const homeText = await homeResponse.text();
-        
-        const homeParsed = Papa.parse<LeagueTableData>(homeText, {
-          header: true,
-          skipEmptyLines: true,
-          transformHeader: header => header.trim(),
-          transform: value => value.trim()
-        });
+        // 1. Carrega dados para times mandantes
+        const [homeResult, awayResult] = await Promise.all([
+          fetchAndParseCSV('/Data/tabela_ligas_home.csv'),
+          fetchAndParseCSV('/Data/tabela_ligas_away.csv')
+        ]);
 
-        if (homeParsed.errors.length > 0) {
-          console.warn('Home CSV parsing warnings:', homeParsed.errors);
-        }
+        setHomeData(homeResult);
+        setAwayData(awayResult);
 
-        setHomeData(homeParsed.data);
-
-        // Carrega dados para times visitantes
-        const awayResponse = await fetch('/Data/tabela_ligas_away.csv');
-        if (!awayResponse.ok) {
-          throw new Error('Failed to load away team data');
-        }
-        const awayText = await awayResponse.text();
-        
-        const awayParsed = Papa.parse<LeagueTableData>(awayText, {
-          header: true,
-          skipEmptyLines: true,
-          transformHeader: header => header.trim(),
-          transform: value => value.trim()
-        });
-
-        if (awayParsed.errors.length > 0) {
-          console.warn('Away CSV parsing warnings:', awayParsed.errors);
-        }
-
-        setAwayData(awayParsed.data);
       } catch (error) {
         console.error('Error loading league tables:', error);
         setError(error instanceof Error ? error.message : 'Unknown error');
@@ -74,8 +44,56 @@ export const useLeagueTables = () => {
       }
     };
 
+    const fetchAndParseCSV = async (url: string): Promise<LeagueTableData[]> => {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to load data from ${url}`);
+      }
+      
+      const text = await response.text();
+      const result = Papa.parse<LeagueTableData>(text, {
+        header: true,
+        skipEmptyLines: true,
+        transformHeader: header => {
+          // Normaliza os cabeçalhos para garantir compatibilidade
+          const headersMap: Record<string, string> = {
+            'Femtine': 'Ranking',
+            'SC': 'GD',
+            // Adicione outros mapeamentos se necessário
+          };
+          return headersMap[header] || header.trim();
+        },
+        transform: value => value.trim(),
+        dynamicTyping: true
+      });
+
+      if (result.errors.length > 0) {
+        console.warn(`CSV parsing warnings for ${url}:`, result.errors);
+      }
+
+      // Validação básica dos dados
+      if (!result.data || result.data.length === 0) {
+        console.warn(`No data found in ${url}`);
+      }
+
+      return result.data;
+    };
+
     fetchData();
   }, []);
 
-  return { homeData, awayData, isLoading, error };
+  // Adiciona logs para depuração
+  useEffect(() => {
+    if (!isLoading) {
+      console.log('Home data loaded:', homeData.slice(0, 3));
+      console.log('Away data loaded:', awayData.slice(0, 3));
+    }
+  }, [isLoading, homeData, awayData]);
+
+  return { 
+    homeData, 
+    awayData, 
+    isLoading, 
+    error 
+  };
 };
