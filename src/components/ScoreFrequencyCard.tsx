@@ -23,15 +23,6 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
 
   const scores = type === 'HT' ? htFrequency : ftFrequency;
 
-  // Debug - remover após verificação
-  React.useEffect(() => {
-    console.log(`Dados ${type}:`, {
-      scores,
-      inputTeams: { home: homeTeam?.league, away: awayTeam?.league },
-      hasData: scores.length > 0
-    });
-  }, [scores, type]);
-
   if (isLoading) {
     return (
       <Card className="border rounded-lg shadow-sm min-h-[200px] flex flex-col">
