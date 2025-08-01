@@ -1,99 +1,103 @@
-import { useEffect, useState } from 'react';
+
+import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
-interface LeagueTableData {
-  Ranking: string;
-  Team_Home: string;
-  GD: string;
-  GP: string;
-  W: string;
-  D: string;
-  L: string;
-  GF: string;
-  GA: string;
-  Pts: string;
-  Liga: string;
+export interface LeagueTableData {
+  Team: string;
+  ranking: number;
+  GD: number;
+  League?: string;
 }
 
-export const useLeagueTables = () => {
-  const [homeData, setHomeData] = useState<LeagueTableData[]>([]);
-  const [awayData, setAwayData] = useState<LeagueTableData[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+const QUERY_CONFIG = {
+  retry: 2,
+  retryDelay: (attemptIndex: number) => Math.min(1000 * 2 ** attemptIndex, 10000),
+  staleTime: 10 * 60 * 1000,
+  gcTime: 20 * 60 * 1000,
+} as const;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      setError(null);
-      
-      try {
-        // 1. Carrega dados para times mandantes
-        const [homeResult, awayResult] = await Promise.all([
-          fetchAndParseCSV('/Data/tabela_ligas_home.csv'),
-          fetchAndParseCSV('/Data/tabela_ligas_away.csv')
-        ]);
-
-        setHomeData(homeResult);
-        setAwayData(awayResult);
-
-      } catch (error) {
-        console.error('Error loading league tables:', error);
-        setError(error instanceof Error ? error.message : 'Unknown error');
-      } finally {
-        setIsLoading(false);
+const fetchTableData = async (url: string): Promise<LeagueTableData[]> => {
+  try {
+    console.log(`Fetching table data from: ${url}`);
+    const response = await fetch(url, {
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
       }
-    };
+    });
 
-    const fetchAndParseCSV = async (url: string): Promise<LeagueTableData[]> => {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Failed to load data from ${url}`);
-      }
-      
-      const text = await response.text();
-      const result = Papa.parse<LeagueTableData>(text, {
-        header: true,
-        skipEmptyLines: true,
-        transformHeader: header => {
-          // Normaliza os cabeçalhos para garantir compatibilidade
-          const headersMap: Record<string, string> = {
-            'Femtine': 'Ranking',
-            'SC': 'GD',
-            // Adicione outros mapeamentos se necessário
-          };
-          return headersMap[header] || header.trim();
-        },
-        transform: value => value.trim(),
-        dynamicTyping: true
-      });
-
-      if (result.errors.length > 0) {
-        console.warn(`CSV parsing warnings for ${url}:`, result.errors);
-      }
-
-      // Validação básica dos dados
-      if (!result.data || result.data.length === 0) {
-        console.warn(`No data found in ${url}`);
-      }
-
-      return result.data;
-    };
-
-    fetchData();
-  }, []);
-
-  // Adiciona logs para depuração
-  useEffect(() => {
-    if (!isLoading) {
-      console.log('Home data loaded:', homeData.slice(0, 3));
-      console.log('Away data loaded:', awayData.slice(0, 3));
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  }, [isLoading, homeData, awayData]);
 
-  return { 
-    homeData, 
-    awayData, 
-    isLoading, 
-    error 
+    const csvText = await response.text();
+    console.log(`CSV preview for ${url}:`, csvText.substring(0, 300));
+    
+    const result = Papa.parse(csvText, {
+      header: true,
+      skipEmptyLines: true,
+      transform: (value, field) => {
+        return typeof value === 'string' ? value.trim() : value;
+      }
+    });
+
+    if (!result.data) {
+      throw new Error('Falha ao processar CSV');
+    }
+
+    console.log(`Headers for ${url}:`, Object.keys(result.data[0] || {}));
+    console.log(`Sample data for ${url}:`, result.data.slice(0, 3));
+
+    const processedData = result.data.map((row: any) => {
+      // Try different possible column names
+      const team = row.Team || row.team || row.TIME || row.time || '';
+      const ranking = parseInt(row.ranking || row.Ranking || row.RANKING || row.pos || row.Pos || row.POS || '0', 10) || 0;
+      const gd = parseInt(row.GD || row.gd || row.SG || row.sg || row['Saldo de Gols'] || '0', 10) || 0;
+      const league = row.League || row.league || row.Liga || row.liga || '';
+      
+      console.log(`Processing team: ${team}, ranking: ${ranking}, GD: ${gd}`);
+      
+      return {
+        Team: team,
+        ranking: ranking,
+        GD: gd,
+        League: league
+      };
+    }).filter(item => item.Team && item.Team.trim() !== '');
+
+    console.log(`Processed ${processedData.length} teams from ${url}`);
+    return processedData;
+  } catch (error) {
+    console.error(`Erro ao carregar tabela de ${url}:`, error);
+    throw new Error(`Falha ao carregar dados da tabela`);
+  }
+};
+
+export const useLeagueTables = () => {
+  const homeQuery = useQuery<LeagueTableData[], Error>({
+    queryKey: ['leagueTableHome'],
+    queryFn: () => fetchTableData('/Data/tabela_ligas_home.csv'),
+    ...QUERY_CONFIG
+  });
+
+  const awayQuery = useQuery<LeagueTableData[], Error>({
+    queryKey: ['leagueTableAway'],
+    queryFn: () => fetchTableData('/Data/tabela_ligas_away.csv'),
+    ...QUERY_CONFIG
+  });
+
+  console.log('Home table data loaded:', homeQuery.data?.slice(0, 3));
+  console.log('Away table data loaded:', awayQuery.data?.slice(0, 3));
+
+  return {
+    homeData: homeQuery.data || [],
+    awayData: awayQuery.data || [],
+    isLoading: homeQuery.isLoading || awayQuery.isLoading,
+    isError: homeQuery.isError || awayQuery.isError,
+    error: homeQuery.error || awayQuery.error,
+    refetch: () => {
+      homeQuery.refetch();
+      awayQuery.refetch();
+    }
   };
 };
