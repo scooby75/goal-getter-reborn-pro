@@ -414,14 +414,14 @@ export const GoalStatsConsulta = () => {
           title="Frequência Placar HT (Liga)" 
           homeTeam={selectedHomeTeam ? { name: selectedHomeTeam, league: homeTeamLeague || '' } : null}
           awayTeam={selectedAwayTeam ? { name: selectedAwayTeam, league: awayTeamLeague || '' } : null}
-          maxItems={8} 
+          maxItems={9} 
         />
         <ScoreFrequencyCard 
           type="FT" 
           title="Frequência Placar FT (Liga)" 
           homeTeam={selectedHomeTeam ? { name: selectedHomeTeam, league: homeTeamLeague || '' } : null}
           awayTeam={selectedAwayTeam ? { name: selectedAwayTeam, league: awayTeamLeague || '' } : null}
-          maxItems={6} 
+          maxItems={9} 
         />
       </div>
 
