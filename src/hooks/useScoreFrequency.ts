@@ -35,19 +35,23 @@ export const useScoreFrequency = (): ScoreFrequencyData => {
         const ftText = await ftRes.text();
 
         const parseCSV = (csv: string): ScoreItem[] => {
-          return csv
-            .trim()
-            .split('\n')
-            .slice(1) // remove cabeçalho
+          const lines = csv.trim().split('\n');
+          const header = lines[0].split(','); // League, HT_Score, Matches, Percentage
+          const scoreIndex = header.findIndex(h => h.includes('Score'));
+          const matchesIndex = header.findIndex(h => h.toLowerCase().includes('match'));
+          const percentageIndex = header.findIndex(h => h.toLowerCase().includes('percent'));
+
+          return lines.slice(1) // remove cabeçalho
             .map(line => {
-              const parts = line.split(',');
+              const cols = line.split(',');
               return {
-                score: parts[1].trim(),
-                count: parseInt(parts[2].trim(), 10),
-                percentage: parts[3].replace('%', '').trim(),
+                score: cols[scoreIndex].trim(),
+                count: parseInt(cols[matchesIndex].trim(), 10),
+                percentage: cols[percentageIndex].replace('%', '').trim(),
               };
             })
-            .sort((a, b) => b.count - a.count); // ordena por maior número de jogos
+            .filter(item => item.score && !isNaN(item.count))
+            .sort((a, b) => b.count - a.count); // ordenar por número de jogos
         };
 
         setHtFrequency(parseCSV(htText));
