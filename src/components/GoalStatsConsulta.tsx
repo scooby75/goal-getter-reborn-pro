@@ -179,43 +179,6 @@ export const GoalStatsConsulta = () => {
     }
   }, [selectedHomeTeam, selectedAwayTeam, selectedPrintTeam, useDixonColes]);
 
-  if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-[300px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg">
-          <AlertCircle className="h-8 w-8 mx-auto mb-3 text-red-500" />
-          <p className="text-red-600 font-semibold text-sm">Erro ao carregar dados: {error}</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[300px]">
-        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-6 rounded-lg shadow-lg">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-3 text-blue-600" />
-          <p className="text-blue-600 font-semibold text-sm">Carregando dados das equipes...</p>
-        </div>
-      </div>
-    );
-  }
-
-  const homeTeams = goalStatsData?.homeStats
-    ?.map(team => team.Team)
-    ?.filter(teamName => teamName && teamName.trim() !== '')
-    ?.sort() || [];
-    
-  const awayTeams = goalStatsData?.awayStats
-    ?.map(team => team.Team)
-    ?.filter(teamName => teamName && teamName.trim() !== '')
-    ?.sort() || [];
-
-  const printTeams = [...new Set([...homeTeams, ...awayTeams])].sort();
-
-  const selectedHomeStats = goalStatsData?.homeStats?.find(team => team.Team === selectedHomeTeam);
-  const selectedAwayStats = goalStatsData?.awayStats?.find(team => team.Team === selectedAwayTeam);
-
   const getTeamLeague = (teamName: string, isHome: boolean) => {
     const stats = isHome 
       ? goalStatsData?.homeStats?.find(team => team.Team === teamName)
@@ -257,6 +220,43 @@ export const GoalStatsConsulta = () => {
   const selectedAwayGoalMoments = goalStatsData?.awayGoalMoments?.find(
     team => team.Team === selectedAwayTeam
   );
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-[300px]">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-red-200 p-6 rounded-lg shadow-lg">
+          <AlertCircle className="h-8 w-8 mx-auto mb-3 text-red-500" />
+          <p className="text-red-600 font-semibold text-sm">Erro ao carregar dados: {error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[300px]">
+        <div className="text-center bg-white/95 backdrop-blur-sm border border-blue-200 p-6 rounded-lg shadow-lg">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-3 text-blue-600" />
+          <p className="text-blue-600 font-semibold text-sm">Carregando dados das equipes...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const homeTeams = goalStatsData?.homeStats
+    ?.map(team => team.Team)
+    ?.filter(teamName => teamName && teamName.trim() !== '')
+    ?.sort() || [];
+    
+  const awayTeams = goalStatsData?.awayStats
+    ?.map(team => team.Team)
+    ?.filter(teamName => teamName && teamName.trim() !== '')
+    ?.sort() || [];
+
+  const printTeams = [...new Set([...homeTeams, ...awayTeams])].sort();
+
+  const selectedHomeStats = goalStatsData?.homeStats?.find(team => team.Team === selectedHomeTeam);
+  const selectedAwayStats = goalStatsData?.awayStats?.find(team => team.Team === selectedAwayTeam);
 
   return (
     <div className="space-y-4 p-3 min-h-screen gradient-crypto">
@@ -412,11 +412,15 @@ export const GoalStatsConsulta = () => {
         <ScoreFrequencyCard 
           type="HT" 
           title="Frequência Placar HT (Liga)" 
+          homeTeam={selectedHomeTeam ? { name: selectedHomeTeam, league: homeTeamLeague || '' } : null}
+          awayTeam={selectedAwayTeam ? { name: selectedAwayTeam, league: awayTeamLeague || '' } : null}
           maxItems={8} 
         />
         <ScoreFrequencyCard 
           type="FT" 
           title="Frequência Placar FT (Liga)" 
+          homeTeam={selectedHomeTeam ? { name: selectedHomeTeam, league: homeTeamLeague || '' } : null}
+          awayTeam={selectedAwayTeam ? { name: selectedAwayTeam, league: awayTeamLeague || '' } : null}
           maxItems={6} 
         />
       </div>
