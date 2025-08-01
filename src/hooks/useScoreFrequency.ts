@@ -1,134 +1,84 @@
 import { useEffect, useState } from 'react';
+import Papa from 'papaparse';
 
 interface ScoreItem {
-  league: string;
   score: string;
   count: number;
   percentage: string;
 }
 
-interface TeamData {
-  name: string;
-  league: string;
-}
-
-interface ScoreFrequencyData {
-  htFrequency: ScoreItem[];
-  ftFrequency: ScoreItem[];
-  isLoading: boolean;
-  error: string | null;
-  leagueMismatch: boolean;
-}
-
-export const useScoreFrequency = (homeTeam: TeamData | null, awayTeam: TeamData | null): ScoreFrequencyData => {
-  const [data, setData] = useState<ScoreFrequencyData>({
-    htFrequency: [],
-    ftFrequency: [],
-    isLoading: true,
-    error: null,
-    leagueMismatch: false,
-  });
-
-  const parseCSV = (text: string): ScoreItem[] => {
-    const lines = text.split('\n').filter(line => line.trim() !== '');
-    if (lines.length < 2) return [];
-
-    // Remove BOM character if exists
-    const headerLine = lines[0].replace(/^\uFEFF/, '');
-    const headers = headerLine.split(',').map(h => h.trim());
-
-    const leagueIndex = headers.indexOf('League');
-    const scoreIndex = headers.indexOf('FT_Score');
-    const matchesIndex = headers.indexOf('Matches');
-    const percentageIndex = headers.indexOf('Percentage');
-
-    // Validate headers
-    if ([leagueIndex, scoreIndex, matchesIndex, percentageIndex].includes(-1)) {
-      console.error('Cabeçalhos do CSV não correspondem ao esperado:', headers);
-      return [];
-    }
-
-    return lines.slice(1).map(line => {
-      const cols = line.split(',');
-      return {
-        league: cols[leagueIndex]?.trim() || '',
-        score: cols[scoreIndex]?.trim() || '',
-        count: parseInt(cols[matchesIndex]?.trim() || '0', 10),
-        percentage: cols[percentageIndex]?.trim() || '0%',
-      };
-    }).filter(item => item.score && !isNaN(item.count) && item.count > 0);
-  };
+export function useScoreFrequency(
+  homeTeam: { name: string; league: string } | null,
+  awayTeam: { name: string; league: string } | null
+) {
+  const [htFrequency, setHtFrequency] = useState<ScoreItem[]>([]);
+  const [ftFrequency, setFtFrequency] = useState<ScoreItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [leagueMismatch, setLeagueMismatch] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!homeTeam || !awayTeam) return;
+
+      setIsLoading(true);
+      setError(null);
+      setLeagueMismatch(false);
+
+      if (homeTeam.league !== awayTeam.league) {
+        setLeagueMismatch(true);
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        setData(prev => ({ ...prev, isLoading: true, error: null }));
-
-        if (homeTeam && awayTeam && homeTeam.league !== awayTeam.league) {
-          setData(prev => ({ ...prev, leagueMismatch: true, isLoading: false }));
-          return;
-        }
-
-        const targetLeague = homeTeam?.league || awayTeam?.league;
-        if (!targetLeague) {
-          setData(prev => ({ ...prev, isLoading: false }));
-          return;
-        }
-
-        // Carrega ambos arquivos simultaneamente
-        const [htResponse, ftResponse] = await Promise.all([
-          fetch('/Data/half_time_scores.csv'),
-          fetch('/Data/full_time_scores.csv'),
+        const [htRes, ftRes] = await Promise.all([
+          fetch(
+            'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/half_time_scores.csv'
+          ),
+          fetch(
+            'https://raw.githubusercontent.com/scooby75/goal-getter-reborn-pro/main/public/Data/full_time_scores.csv'
+          ),
         ]);
 
-        if (!htResponse.ok || !ftResponse.ok) {
-          throw new Error('Não foi possível carregar os arquivos de dados');
-        }
+        const [htText, ftText] = await Promise.all([htRes.text(), ftRes.text()]);
 
-        const [htText, ftText] = await Promise.all([
-          htResponse.text(),
-          ftResponse.text(),
-        ]);
+        const parseCsv = (csvText: string): ScoreItem[] => {
+          const parsed = Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+          });
 
-        // DEBUG: Mostra parte dos dados crus
-        console.log('Dados HT (amostra):', htText.substring(0, 200));
-        console.log('Dados FT (amostra):', ftText.substring(0, 200));
-
-        const normalizeLeagueName = (name: string) => {
-          return name.trim().toLowerCase()
-            .replace(/-/g, ' ')
-            .replace(/\s+/g, ' ')
-            .replace('serie a', '')
-            .trim();
+          return (parsed.data as any[])
+            .filter((row) => {
+              const isRelevant =
+                row.League === homeTeam.league &&
+                ((row.Home === homeTeam.name && row.Away === awayTeam.name) ||
+                  (row.Home === awayTeam.name && row.Away === homeTeam.name));
+              return isRelevant;
+            })
+            .map((row) => ({
+              score: row.Score,
+              count: Number(row.Count),
+              percentage: row.Percentage,
+            }));
         };
 
-        const targetNormalized = normalizeLeagueName(targetLeague);
+        const htData = parseCsv(htText);
+        const ftData = parseCsv(ftText);
 
-        const filterData = (items: ScoreItem[]) => 
-          items
-            .filter(item => normalizeLeagueName(item.league) === targetNormalized)
-            .sort((a, b) => b.count - a.count);
-
-        setData({
-          htFrequency: filterData(parseCSV(htText)),
-          ftFrequency: filterData(parseCSV(ftText)),
-          isLoading: false,
-          error: null,
-          leagueMismatch: false,
-        });
-
+        setHtFrequency(htData);
+        setFtFrequency(ftData);
       } catch (err) {
-        console.error('Erro ao processar dados:', err);
-        setData(prev => ({
-          ...prev,
-          isLoading: false,
-          error: err instanceof Error ? err.message : 'Erro desconhecido',
-        }));
+        console.error(err);
+        setError('Erro ao carregar os dados.');
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchData();
   }, [homeTeam, awayTeam]);
 
-  return data;
-};
+  return { htFrequency, ftFrequency, isLoading, error, leagueMismatch };
+}
