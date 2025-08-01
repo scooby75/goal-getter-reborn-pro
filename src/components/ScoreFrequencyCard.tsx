@@ -11,6 +11,11 @@ interface ScoreFrequencyCardProps {
   maxItems?: number;
 }
 
+const formatPercentage = (value: string) => {
+  const num = parseFloat(value.replace('%', ''));
+  return `${num.toFixed(num % 1 === 0 ? 0 : 1)}%`;
+};
+
 export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({ 
   type, 
   title,
@@ -28,11 +33,7 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
       <Card className="border rounded-lg shadow-sm min-h-[200px] flex flex-col">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            {type === 'HT' ? (
-              <Clock className="h-5 w-5 text-blue-500" />
-            ) : (
-              <TrendingUp className="h-5 w-5 text-green-500" />
-            )}
+            {type === 'HT' ? <Clock className="h-5 w-5 text-blue-500" /> : <TrendingUp className="h-5 w-5 text-green-500" />}
             {title}
           </CardTitle>
         </CardHeader>
@@ -48,11 +49,7 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
       <Card className="border rounded-lg shadow-sm border-red-100 bg-red-50">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            {type === 'HT' ? (
-              <Clock className="h-5 w-5 text-blue-500" />
-            ) : (
-              <TrendingUp className="h-5 w-5 text-green-500" />
-            )}
+            {type === 'HT' ? <Clock className="h-5 w-5 text-blue-500" /> : <TrendingUp className="h-5 w-5 text-green-500" />}
             {title}
           </CardTitle>
         </CardHeader>
@@ -77,11 +74,7 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
       <Card className="border rounded-lg shadow-sm border-yellow-100 bg-yellow-50">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            {type === 'HT' ? (
-              <Clock className="h-5 w-5 text-blue-500" />
-            ) : (
-              <TrendingUp className="h-5 w-5 text-green-500" />
-            )}
+            {type === 'HT' ? <Clock className="h-5 w-5 text-blue-500" /> : <TrendingUp className="h-5 w-5 text-green-500" />}
             {title}
           </CardTitle>
         </CardHeader>
@@ -99,11 +92,7 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
     <Card className="border rounded-lg shadow-sm">
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
-          {type === 'HT' ? (
-            <Clock className="h-5 w-5 text-blue-500" />
-          ) : (
-            <TrendingUp className="h-5 w-5 text-green-500" />
-          )}
+          {type === 'HT' ? <Clock className="h-5 w-5 text-blue-500" /> : <TrendingUp className="h-5 w-5 text-green-500" />}
           {title}
         </CardTitle>
       </CardHeader>
@@ -117,7 +106,7 @@ export const ScoreFrequencyCard: React.FC<ScoreFrequencyCardProps> = ({
               >
                 <div className="font-bold text-gray-800">{item.score}</div>
                 <div className="text-sm text-primary font-medium">
-                  {item.percentage.includes('%') ? item.percentage : `${item.percentage}%`}
+                  {formatPercentage(item.percentage)}
                 </div>
                 <div className="text-xs text-gray-500 mt-1">
                   {item.count} {item.count === 1 ? 'jogo' : 'jogos'}
