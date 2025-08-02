@@ -42,10 +42,20 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
   };
 
   const parseDate = (dateString: string): number => {
-    const date = dateString.includes('/')
-      ? new Date(dateString.split('/').reverse().join('-'))
-      : new Date(dateString);
-    return date.getTime();
+    // Tenta converter a data considerando diferentes formatos
+    if (dateString.includes('/')) {
+      const [day, month, year] = dateString.split('/');
+      return new Date(`${year}-${month}-${day}`).getTime();
+    } else if (dateString.includes('-')) {
+      // Assume formato YYYY-MM-DD ou DD-MM-YYYY
+      const parts = dateString.split('-');
+      if (parts[0].length === 4) {
+        return new Date(dateString).getTime();
+      } else {
+        return new Date(`${parts[2]}-${parts[1]}-${parts[0]}`).getTime();
+      }
+    }
+    return new Date(dateString).getTime();
   };
 
   const getMatchResult = (match: RecentGameMatch, teamToCheck: string): string => {
@@ -72,6 +82,24 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
       return '';
     }
   };
+
+  // Ordena todos os jogos por data (mais recente primeiro) antes de filtrar
+  const sortedMatches = matches 
+    ? [...matches].sort((a, b) => parseDate(b.Date) - parseDate(a.Date))
+    : [];
+
+  // Filtra e mantém a ordenação
+  const homeMatches = homeTeam
+    ? sortedMatches.filter(match => 
+        match.Team_Home.toLowerCase().includes(homeTeam.toLowerCase())
+      )
+    : [];
+
+  const awayMatches = awayTeam
+    ? sortedMatches.filter(match => 
+        match.Team_Away.toLowerCase().includes(awayTeam.toLowerCase())
+      )
+    : [];
 
   if (isError || error) {
     return (
@@ -115,7 +143,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
     );
   }
 
-  if (!matches || matches.length === 0) {
+  if (!sortedMatches || sortedMatches.length === 0) {
     return (
       <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
         <CardHeader className="pb-3">
@@ -138,14 +166,6 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
       </Card>
     );
   }
-
-  const homeMatches = matches
-    .filter(match => homeTeam && match.Team_Home.toLowerCase().includes(homeTeam.toLowerCase()))
-    .sort((a, b) => parseDate(b.Date) - parseDate(a.Date));
-
-  const awayMatches = matches
-    .filter(match => awayTeam && match.Team_Away.toLowerCase().includes(awayTeam.toLowerCase()))
-    .sort((a, b) => parseDate(b.Date) - parseDate(a.Date));
 
   return (
     <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg z-10">
@@ -259,7 +279,7 @@ export const RecentGamesCard: React.FC<RecentGamesCardProps> = ({
         </div>
         <div className="text-center mt-4 pt-3 border-t border-gray-200 col-span-2">
           <p className="text-xs text-gray-500">
-            Mostrando {matches.length} jogo{matches.length !== 1 ? 's' : ''} recente{matches.length !== 1 ? 's' : ''}
+            Mostrando {sortedMatches.length} jogo{sortedMatches.length !== 1 ? 's' : ''} recente{sortedMatches.length !== 1 ? 's' : ''}
           </p>
         </div>
       </CardContent>
