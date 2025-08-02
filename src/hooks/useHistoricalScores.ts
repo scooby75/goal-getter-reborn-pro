@@ -7,9 +7,9 @@ interface MatchResult {
   league: string;
   team_home: string;
   team_away: string;
-  score_home: number;
-  score_away: number;
-  full_time_score: string;
+  score: string;
+  ht_score: string;
+  date: string;
 }
 
 interface ScoreFrequency {
@@ -60,27 +60,28 @@ const fetchHistoricalData = async (): Promise<MatchResult[]> => {
 
       if (result.data) {
         const processedData = result.data.map((row: any) => {
-          const league = row.league || row.League || '';
-          const teamHome = row.team_home || row.Team_Home || row.home_team || '';
-          const teamAway = row.team_away || row.Team_Away || row.away_team || '';
-          const scoreHome = parseInt(row.score_home || row.Score_Home || row.home_score || '0', 10) || 0;
-          const scoreAway = parseInt(row.score_away || row.Score_Away || row.away_score || '0', 10) || 0;
-          const fullTimeScore = `${scoreHome} - ${scoreAway}`;
+          const league = row.League || row.league || '';
+          const teamHome = row.Team_Home || row.team_home || '';
+          const teamAway = row.Team_Away || row.team_away || '';
+          const score = row.Score || row.score || '';
+          const htScore = row['HT Score'] || row.ht_score || '';
+          const date = row.Date || row.date || '';
 
           return {
             league,
             team_home: teamHome,
             team_away: teamAway,
-            score_home: scoreHome,
-            score_away: scoreAway,
-            full_time_score: fullTimeScore
+            score: score,
+            ht_score: htScore,
+            date: date
           };
         }).filter((match: MatchResult) => 
           match.league && 
           match.team_home && 
           match.team_away && 
-          !isNaN(match.score_home) && 
-          !isNaN(match.score_away)
+          match.score &&
+          match.score !== '' &&
+          match.score.includes('-')
         );
 
         allResults.push(...processedData);
@@ -103,33 +104,54 @@ const calculateScoreProbabilities = (
 ): ScoreFrequency[] => {
   console.log(`Calculating probabilities for: ${homeTeam} vs ${awayTeam} in ${league}`);
 
-  // Filtrar jogos relevantes - jogos dos times específicos na mesma liga
-  const relevantMatches = matches.filter(match => 
-    match.league === league && (
-      (match.team_home === homeTeam || match.team_away === homeTeam) ||
-      (match.team_home === awayTeam || match.team_away === awayTeam)
-    )
-  );
+  // Primeiro, filtrar apenas jogos da liga específica
+  const leagueMatches = matches.filter(match => match.league === league);
+  console.log(`Found ${leagueMatches.length} matches in ${league}`);
 
-  console.log(`Found ${relevantMatches.length} relevant historical matches`);
-
-  if (relevantMatches.length === 0) {
-    // Se não há jogos específicos, usar jogos da liga
-    const leagueMatches = matches.filter(match => match.league === league);
-    console.log(`Using ${leagueMatches.length} league matches for general patterns`);
-    return calculateGeneralScoreFrequencies(leagueMatches);
+  if (leagueMatches.length === 0) {
+    return [];
   }
 
-  // Contar frequência dos placares
+  // Tentar encontrar jogos diretos entre os times (head-to-head)
+  const headToHeadMatches = leagueMatches.filter(match => 
+    (match.team_home === homeTeam && match.team_away === awayTeam) ||
+    (match.team_home === awayTeam && match.team_away === homeTeam)
+  );
+
+  // Se há jogos diretos suficientes (pelo menos 5), usar apenas eles
+  if (headToHeadMatches.length >= 5) {
+    console.log(`Using ${headToHeadMatches.length} head-to-head matches`);
+    return calculateScoreFrequencies(headToHeadMatches);
+  }
+
+  // Se não há jogos diretos suficientes, buscar jogos envolvendo cada time
+  const teamMatches = leagueMatches.filter(match => 
+    match.team_home === homeTeam || match.team_away === homeTeam ||
+    match.team_home === awayTeam || match.team_away === awayTeam
+  );
+
+  // Se há jogos dos times suficientes (pelo menos 20), usar eles
+  if (teamMatches.length >= 20) {
+    console.log(`Using ${teamMatches.length} matches involving the teams`);
+    return calculateScoreFrequencies(teamMatches);
+  }
+
+  // Caso contrário, usar todos os jogos da liga (amostra geral)
+  console.log(`Using ${leagueMatches.length} general league matches`);
+  return calculateScoreFrequencies(leagueMatches);
+};
+
+const calculateScoreFrequencies = (matches: MatchResult[]): ScoreFrequency[] => {
   const scoreCount: { [key: string]: number } = {};
   
-  relevantMatches.forEach(match => {
-    const score = match.full_time_score;
-    scoreCount[score] = (scoreCount[score] || 0) + 1;
+  matches.forEach(match => {
+    const score = match.score.trim();
+    if (score && score.includes('-')) {
+      scoreCount[score] = (scoreCount[score] || 0) + 1;
+    }
   });
 
-  // Converter para array e calcular percentuais
-  const totalMatches = relevantMatches.length;
+  const totalMatches = matches.length;
   const scoreFrequencies: ScoreFrequency[] = Object.entries(scoreCount)
     .map(([score, count]) => ({
       score,
@@ -139,26 +161,8 @@ const calculateScoreProbabilities = (
     .sort((a, b) => b.percentage - a.percentage)
     .slice(0, 8); // Top 8 mais prováveis
 
+  console.log('Score frequencies calculated:', scoreFrequencies);
   return scoreFrequencies;
-};
-
-const calculateGeneralScoreFrequencies = (matches: MatchResult[]): ScoreFrequency[] => {
-  const scoreCount: { [key: string]: number } = {};
-  
-  matches.forEach(match => {
-    const score = match.full_time_score;
-    scoreCount[score] = (scoreCount[score] || 0) + 1;
-  });
-
-  const totalMatches = matches.length;
-  return Object.entries(scoreCount)
-    .map(([score, count]) => ({
-      score,
-      count,
-      percentage: (count / totalMatches) * 100
-    }))
-    .sort((a, b) => b.percentage - a.percentage)
-    .slice(0, 8);
 };
 
 export const useHistoricalScores = (homeTeam?: string, awayTeam?: string, league?: string) => {
