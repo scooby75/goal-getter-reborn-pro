@@ -11,12 +11,10 @@ interface StatsDisplayProps {
   awayStats?: TeamStats;
 }
 
-const formatRanking = (rank: number | string | null) => {
+const formatRanking = (rank: string | null) => {
   if (!rank) return '-';
-  if (typeof rank === 'string') {
-    return rank.includes('°') ? rank : `${rank}°`;
-  }
-  return `${rank}°`;
+  // If it already contains "°", return as is, otherwise add "°"
+  return rank.includes('°') ? rank : `${rank}°`;
 };
 
 export const StatsDisplay: React.FC<StatsDisplayProps> = ({
@@ -31,13 +29,13 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
   
   if (homeStats && homeTeam) {
     const homeTableData = homeData.find(team => 
-      team.Team_Home && homeStats.Team && 
-      team.Team_Home.trim().toLowerCase() === homeStats.Team.trim().toLowerCase()
+      team.Team && homeStats.Team && 
+      team.Team.trim().toLowerCase() === homeStats.Team.trim().toLowerCase()
     );
     
     console.log('Home Team Match:', {
       searchingFor: homeStats.Team,
-      found: homeTableData?.Team_Home,
+      found: homeTableData?.Team,
       ranking: homeTableData?.Ranking,
       GD: homeTableData?.GD
     });
@@ -53,13 +51,13 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
   
   if (awayStats && awayTeam) {
     const awayTableData = awayData.find(team => 
-      team.Team_Home && awayStats.Team && 
-      team.Team_Home.trim().toLowerCase() === awayStats.Team.trim().toLowerCase()
+      team.Team && awayStats.Team && 
+      team.Team.trim().toLowerCase() === awayStats.Team.trim().toLowerCase()
     );
     
     console.log('Away Team Match:', {
       searchingFor: awayStats.Team,
-      found: awayTableData?.Team_Home,
+      found: awayTableData?.Team,
       ranking: awayTableData?.Ranking,
       GD: awayTableData?.GD
     });
@@ -131,10 +129,7 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                       (typeof stats.goalDifference === 'number' || typeof stats.goalDifference === 'string') && stats.goalDifference < 0 ? 'bg-red-100 text-red-800' :
                       'bg-gray-100 text-gray-800'
                     }`}>
-                      {stats.goalDifference !== null ? 
-                        (typeof stats.goalDifference === 'number' && stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
-                        : '-'
-                      }
+                      {stats.goalDifference || '-'}
                     </span>
                   </TableCell>
                   <TableCell className="text-center font-semibold">{stats.GP}</TableCell>
@@ -196,10 +191,7 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
                       (typeof stats.goalDifference === 'number' || typeof stats.goalDifference === 'string') && stats.goalDifference < 0 ? 'text-red-600' :
                       'text-gray-600'
                     }`}>
-                      {stats.goalDifference !== null ? 
-                        (typeof stats.goalDifference === 'number' && stats.goalDifference > 0 ? `+${stats.goalDifference}` : stats.goalDifference) 
-                        : '-'
-                      }
+                      {stats.goalDifference || '-'}
                     </div>
                   </div>
                 </div>

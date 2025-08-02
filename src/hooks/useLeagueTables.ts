@@ -3,10 +3,17 @@ import { useQuery } from '@tanstack/react-query';
 import Papa from 'papaparse';
 
 export interface LeagueTableData {
+  Ranking: string;
   Team: string;
-  ranking: number;
-  GD: number;
-  League?: string;
+  GP: number;
+  W: number;
+  D: number;
+  L: number;
+  GF: number;
+  GA: number;
+  GD: string;
+  Pts: number;
+  Liga: string;
 }
 
 const QUERY_CONFIG = {
@@ -16,7 +23,7 @@ const QUERY_CONFIG = {
   gcTime: 20 * 60 * 1000,
 } as const;
 
-const fetchTableData = async (url: string): Promise<LeagueTableData[]> => {
+const fetchTableData = async (url: string, isAway: boolean = false): Promise<LeagueTableData[]> => {
   try {
     console.log(`Fetching table data from: ${url}`);
     const response = await fetch(url, {
@@ -49,19 +56,34 @@ const fetchTableData = async (url: string): Promise<LeagueTableData[]> => {
     console.log(`Sample data for ${url}:`, result.data.slice(0, 3));
 
     const processedData = result.data.map((row: any) => {
-      // Try different possible column names
-      const team = row.Team || row.team || row.TIME || row.time || '';
-      const ranking = parseInt(row.ranking || row.Ranking || row.RANKING || row.pos || row.Pos || row.POS || '0', 10) || 0;
-      const gd = parseInt(row.GD || row.gd || row.SG || row.sg || row['Saldo de Gols'] || '0', 10) || 0;
-      const league = row.League || row.league || row.Liga || row.liga || '';
+      // Use the correct column names based on CSV structure
+      const teamColumn = isAway ? 'Team_Away' : 'Team_Home';
+      const team = row[teamColumn] || '';
+      const ranking = row.Ranking || row.ranking || '';
+      const gd = row.GD || row.gd || '';
+      const liga = row.Liga || row.liga || '';
+      const gp = parseInt(row.GP || '0', 10) || 0;
+      const w = parseInt(row.W || '0', 10) || 0;
+      const d = parseInt(row.D || '0', 10) || 0;
+      const l = parseInt(row.L || '0', 10) || 0;
+      const gf = parseInt(row.GF || '0', 10) || 0;
+      const ga = parseInt(row.GA || '0', 10) || 0;
+      const pts = parseInt(row.Pts || '0', 10) || 0;
       
       console.log(`Processing team: ${team}, ranking: ${ranking}, GD: ${gd}`);
       
       return {
+        Ranking: ranking,
         Team: team,
-        ranking: ranking,
+        GP: gp,
+        W: w,
+        D: d,
+        L: l,
+        GF: gf,
+        GA: ga,
         GD: gd,
-        League: league
+        Pts: pts,
+        Liga: liga
       };
     }).filter(item => item.Team && item.Team.trim() !== '');
 
@@ -76,13 +98,13 @@ const fetchTableData = async (url: string): Promise<LeagueTableData[]> => {
 export const useLeagueTables = () => {
   const homeQuery = useQuery<LeagueTableData[], Error>({
     queryKey: ['leagueTableHome'],
-    queryFn: () => fetchTableData('/Data/tabela_ligas_home.csv'),
+    queryFn: () => fetchTableData('/Data/tabela_ligas_home.csv', false),
     ...QUERY_CONFIG
   });
 
   const awayQuery = useQuery<LeagueTableData[], Error>({
     queryKey: ['leagueTableAway'],
-    queryFn: () => fetchTableData('/Data/tabela_ligas_away.csv'),
+    queryFn: () => fetchTableData('/Data/tabela_ligas_away.csv', true),
     ...QUERY_CONFIG
   });
 
