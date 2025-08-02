@@ -87,7 +87,8 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
         Result: row.FullTimeResult || row.Result || row.Resultado || '',
         Score: scoreRaw.trim(),
         HT_Score: row.HT_Score || row.HTScore || row['HT Score'] || '',
-        League: row.League || 'Indefinida',
+        Status: row.Status || row['Match Status'] || '',
+        League: row.League || row['League Name'] || 'Indefinida',
       };
     } catch (error) {
       console.warn(`❌ Erro ao processar linha ${index + 1}:`, error);
@@ -99,6 +100,25 @@ const parseRecentGamesCSV = (csvText: string): RecentGameMatch[] => {
   return matches;
 };
 
+const parseDate = (dateString: string): number => {
+  if (!dateString) return 0;
+  
+  // Tenta converter a data considerando diferentes formatos
+  if (dateString.includes('/')) {
+    const [day, month, year] = dateString.split('/');
+    return new Date(`${year}-${month}-${day}`).getTime();
+  } else if (dateString.includes('-')) {
+    // Assume formato YYYY-MM-DD ou DD-MM-YYYY
+    const parts = dateString.split('-');
+    if (parts[0].length === 4) {
+      return new Date(dateString).getTime();
+    } else {
+      return new Date(`${parts[2]}-${parts[1]}-${parts[0]}`).getTime();
+    }
+  }
+  return new Date(dateString).getTime();
+};
+
 export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
   return useQuery<RecentGameMatch[]>({
     queryKey: ['recentGames', homeTeam, awayTeam],
@@ -108,44 +128,45 @@ export const useRecentGames = (homeTeam?: string, awayTeam?: string) => {
       const csvText = await fetchCSVData();
       const allMatches = parseRecentGamesCSV(csvText);
 
-      console.log(`📊 Total de jogos carregados: ${allMatches.length}`);
+      // Ordena todos os jogos por data (mais recente primeiro)
+      const sortedMatches = [...allMatches].sort((a, b) => parseDate(b.Date) - parseDate(a.Date));
+
+      console.log(`📊 Total de jogos carregados: ${sortedMatches.length}`);
 
       const filteredHomeGames: RecentGameMatch[] = homeTeam
-        ? allMatches
-            .filter(
-              (match) =>
-                match.Team_Home.toLowerCase() === homeTeam.toLowerCase()
+        ? sortedMatches
+            .filter(match => 
+              match.Team_Home.toLowerCase().includes(homeTeam.toLowerCase())
             )
-            .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
             .slice(0, 6)
         : [];
 
       const filteredAwayGames: RecentGameMatch[] = awayTeam
-        ? allMatches
-            .filter(
-              (match) =>
-                match.Team_Away.toLowerCase() === awayTeam.toLowerCase()
+        ? sortedMatches
+            .filter(match => 
+              match.Team_Away.toLowerCase().includes(awayTeam.toLowerCase())
             )
-            .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
             .slice(0, 6)
         : [];
 
-      const uniqueMatches = [...filteredHomeGames, ...filteredAwayGames].filter(
-        (match, index, self) =>
-          index ===
-          self.findIndex(
-            (m) =>
-              m.Date === match.Date &&
-              m.Team_Home === match.Team_Home &&
-              m.Team_Away === match.Team_Away
-          )
+      // Combina e remove duplicados mantendo a ordenação
+      const uniqueMatches = [...filteredHomeGames, ...filteredAwayGames].reduce(
+        (acc: RecentGameMatch[], current) => {
+          const isDuplicate = acc.some(
+            match =>
+              match.Date === current.Date &&
+              match.Team_Home === current.Team_Home &&
+              match.Team_Away === current.Team_Away
+          );
+          return isDuplicate ? acc : [...acc, current];
+        },
+        []
       );
 
-      console.log(`🎯 Total de jogos retornados (6 casa + 6 fora): ${uniqueMatches.length}`);
-
+      console.log(`🎯 Total de jogos retornados: ${uniqueMatches.length}`);
       return uniqueMatches;
     },
-    staleTime: 10 * 60 * 1000,
+    staleTime: 10 * 60 * 1000, // 10 minutos
     retry: 2,
     enabled: !!homeTeam || !!awayTeam,
   });
