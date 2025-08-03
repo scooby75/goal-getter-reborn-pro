@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MarkovChainPrediction } from './MarkovChainPrediction';
+import { AdvancedScorePrediction } from './AdvancedScorePrediction';
 import { TeamStats } from '@/types/goalStats';
 
 interface ProbableScoresProps {
@@ -13,7 +13,7 @@ export const ProbableScores: React.FC<ProbableScoresProps> = ({
   awayStats,
 }) => {
   return (
-    <MarkovChainPrediction 
+    <AdvancedScorePrediction 
       homeStats={homeStats} 
       awayStats={awayStats} 
     />
