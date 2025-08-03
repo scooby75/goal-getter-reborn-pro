@@ -59,10 +59,10 @@ export const EnhancedPoissonTab: React.FC<EnhancedPoissonTabProps> = ({
         <CardHeader>
           <CardTitle className="text-center text-2xl text-gray-800 flex items-center justify-center gap-2">
             <Target className="h-6 w-6 text-blue-600" />
-            Placares Mais Prováveis (Poisson Aprimorado)
+            Placares Mais Prováveis 
           </CardTitle>
           <div className="text-center text-sm text-gray-600">
-            Baseado nos últimos 6 jogos (casa vs fora) + confrontos diretos
+            
           </div>
         </CardHeader>
         <CardContent>
@@ -138,10 +138,7 @@ export const EnhancedPoissonTab: React.FC<EnhancedPoissonTabProps> = ({
               <span className="text-sm font-medium text-gray-700">Metodologia</span>
             </div>
             <div className="text-xs text-gray-600 space-y-1">
-              <p>• Análise dos últimos 6 jogos do {homeStats.Team} jogando em casa</p>
-              <p>• Análise dos últimos 6 jogos do {awayStats.Team} jogando fora de casa</p>
-              <p>• Incorporação do histórico de confrontos diretos (H2H)</p>
-              <p>• Aplicação do modelo estatístico de Poisson com pesos adaptativos</p>
+              
             </div>
           </div>
         </CardContent>
