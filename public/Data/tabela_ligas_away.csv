@@ -28,35 +28,35 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 27°,Gimnasia,8,1,1,6,2,11,-9,4,Argentina - Liga Profesional
 28°,Instituto,9,1,1,7,5,17,-12,4,Argentina - Liga Profesional
 29°,SM San Juan,7,0,2,5,1,7,-6,2,Argentina - Liga Profesional
-1°,Chacarita J.,12,7,4,1,16,4,+12,25,Argentina - Primera Nacional
-2°,Gimnasia Jujuy,12,6,4,2,12,6,+6,22,Argentina - Primera Nacional
-3°,SM Tucuman,12,6,3,3,12,9,+3,21,Argentina - Primera Nacional
-4°,G. Mendoza,11,5,5,1,11,5,+6,20,Argentina - Primera Nacional
-5°,San Telmo,12,5,5,2,14,11,+3,20,Argentina - Primera Nacional
-6°,E. Rio Cuarto,12,5,4,3,13,8,+5,19,Argentina - Primera Nacional
-7°,CA Estudiantes,12,5,3,4,10,9,+1,18,Argentina - Primera Nacional
-8°,D. de Belgrano,12,4,4,4,11,9,+2,16,Argentina - Primera Nacional
-9°,Deportivo Moron,12,3,6,3,8,8,0,15,Argentina - Primera Nacional
-10°,Temperley,12,3,6,3,7,8,-1,15,Argentina - Primera Nacional
-11°,Nueva Chicago,12,3,5,4,11,12,-1,14,Argentina - Primera Nacional
-12°,Atletico Mitre,11,4,2,5,8,10,-2,14,Argentina - Primera Nacional
-13°,Tristan Suarez,12,3,5,4,8,10,-2,14,Argentina - Primera Nacional
-14°,Deportivo Maipu,12,3,5,4,8,13,-5,14,Argentina - Primera Nacional
-15°,D. Madryn,12,2,7,3,11,11,0,13,Argentina - Primera Nacional
-16°,Chaco For Ever,12,3,4,5,11,12,-1,13,Argentina - Primera Nacional
-17°,Patronato,12,3,4,5,12,16,-4,13,Argentina - Primera Nacional
-18°,A. Atlanta,12,2,7,3,5,10,-5,13,Argentina - Primera Nacional
-19°,Racing Cordoba,12,3,3,6,10,20,-10,12,Argentina - Primera Nacional
-20°,San Miguel,12,2,4,6,8,14,-6,10,Argentina - Primera Nacional
-21°,Colon Santa Fe,12,3,1,8,12,19,-7,10,Argentina - Primera Nacional
-22°,Central Norte,12,3,1,8,5,15,-10,10,Argentina - Primera Nacional
-23°,Gimnasia y Tiro,12,1,6,5,4,8,-4,9,Argentina - Primera Nacional
-24°,Colegiales,12,2,3,7,5,14,-9,9,Argentina - Primera Nacional
-25°,Arsenal Sarandi,12,2,3,7,11,22,-11,9,Argentina - Primera Nacional
-26°,Almagro,12,1,5,6,10,16,-6,8,Argentina - Primera Nacional
-27°,Alvarado,11,1,5,5,6,12,-6,8,Argentina - Primera Nacional
-28°,Quilmes,12,1,5,6,5,13,-8,8,Argentina - Primera Nacional
-29°,Almirante Brown,12,2,2,8,9,19,-10,8,Argentina - Primera Nacional
+1°,Chacarita J.,13,7,5,1,16,4,+12,26,Argentina - Primera Nacional
+2°,G. Mendoza,12,6,5,1,13,5,+8,23,Argentina - Primera Nacional
+3°,Gimnasia Jujuy,13,6,5,2,13,7,+6,23,Argentina - Primera Nacional
+4°,CA Estudiantes,13,6,3,4,13,9,+4,21,Argentina - Primera Nacional
+5°,San Telmo,13,5,6,2,14,11,+3,21,Argentina - Primera Nacional
+6°,SM Tucuman,13,6,3,4,13,12,+1,21,Argentina - Primera Nacional
+7°,E. Rio Cuarto,13,5,4,4,14,10,+4,19,Argentina - Primera Nacional
+8°,Atletico Mitre,13,5,2,6,9,11,-2,17,Argentina - Primera Nacional
+9°,D. Madryn,13,3,7,3,14,12,+2,16,Argentina - Primera Nacional
+10°,Chaco For Ever,13,4,4,5,12,12,0,16,Argentina - Primera Nacional
+11°,D. de Belgrano,13,4,4,5,11,11,0,16,Argentina - Primera Nacional
+12°,Deportivo Moron,13,3,7,3,8,8,0,16,Argentina - Primera Nacional
+13°,Temperley,13,3,7,3,7,8,-1,16,Argentina - Primera Nacional
+14°,Nueva Chicago,13,3,5,5,12,14,-2,14,Argentina - Primera Nacional
+15°,Tristan Suarez,13,3,5,5,8,11,-3,14,Argentina - Primera Nacional
+16°,Deportivo Maipu,12,3,5,4,8,13,-5,14,Argentina - Primera Nacional
+17°,Patronato,13,3,4,6,12,17,-5,13,Argentina - Primera Nacional
+18°,A. Atlanta,13,2,7,4,6,12,-6,13,Argentina - Primera Nacional
+19°,Racing Cordoba,13,3,3,7,10,22,-12,12,Argentina - Primera Nacional
+20°,San Miguel,13,2,5,6,9,15,-6,11,Argentina - Primera Nacional
+21°,Almirante Brown,13,3,2,8,12,20,-8,11,Argentina - Primera Nacional
+22°,Central Norte,13,3,2,8,5,15,-10,11,Argentina - Primera Nacional
+23°,Colon Santa Fe,13,3,1,9,12,23,-11,10,Argentina - Primera Nacional
+24°,Gimnasia y Tiro,13,1,6,6,4,9,-5,9,Argentina - Primera Nacional
+25°,Colegiales,13,2,3,8,6,16,-10,9,Argentina - Primera Nacional
+26°,Arsenal Sarandi,13,2,3,8,12,25,-13,9,Argentina - Primera Nacional
+27°,CA Guemes,13,0,8,5,8,15,-7,8,Argentina - Primera Nacional
+28°,Alvarado,12,1,5,6,6,13,-7,8,Argentina - Primera Nacional
+29°,Almagro,13,1,5,7,10,18,-8,8,Argentina - Primera Nacional
 1°,Argentino Merlo,10,6,3,1,14,6,+8,21,Argentina - Primera B
 2°,Acassuso,10,5,3,2,13,10,+3,18,Argentina - Primera B
 3°,Midland,10,4,5,1,8,4,+4,17,Argentina - Primera B
@@ -78,45 +78,45 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 19°,Flandria,10,1,4,5,4,12,-8,7,Argentina - Primera B
 20°,Sacachispas,10,1,3,6,5,14,-9,6,Argentina - Primera B
 21°,Fenix,10,0,2,8,4,20,-16,2,Argentina - Primera B
-1°,Cipolletti,10,6,0,4,12,10,+2,18,Argentina - Torneo Federal
-2°,Kimberley,10,5,2,3,11,8,+3,17,Argentina - Torneo Federal
-3°,Olimpo Bahia B.,10,5,2,3,7,5,+2,17,Argentina - Torneo Federal
-4°,Douglas Haig,10,3,5,2,10,8,+2,14,Argentina - Torneo Federal
-5°,Atenas,9,4,1,4,9,9,0,13,Argentina - Torneo Federal
-6°,Ciudad Bolivar,9,3,3,3,8,6,+2,12,Argentina - Torneo Federal
-7°,Circulo D.,9,4,0,5,10,13,-3,12,Argentina - Torneo Federal
-8°,SM Mendoza,9,4,0,5,10,14,-4,12,Argentina - Torneo Federal
-9°,Villa Mitre,10,2,5,3,9,7,+2,11,Argentina - Torneo Federal
-10°,Bartolome Mitre,8,3,2,3,9,9,0,11,Argentina - Torneo Federal
-11°,SM Formosa,9,2,5,2,9,9,0,11,Argentina - Torneo Federal
-12°,S. Belgrano,9,3,2,4,8,10,-2,11,Argentina - Torneo Federal
-13°,Germinal,10,3,2,5,7,13,-6,11,Argentina - Torneo Federal
-14°,Sarmiento DLB,8,3,1,4,9,8,+1,10,Argentina - Torneo Federal
-15°,Costa Brava,8,2,4,2,5,5,0,10,Argentina - Torneo Federal
-16°,G. Chivilcoy,10,1,7,2,4,6,-2,10,Argentina - Torneo Federal
-17°,I. Chivilcoy,10,2,4,4,6,10,-4,10,Argentina - Torneo Federal
-18°,S. Las Parejas,10,2,4,4,11,16,-5,10,Argentina - Torneo Federal
-19°,Juventud U. U.,10,1,6,3,7,8,-1,9,Argentina - Torneo Federal
-20°,S. Estudiantes,9,2,3,4,6,8,-2,9,Argentina - Torneo Federal
-21°,El Linqueno,10,2,3,5,10,14,-4,9,Argentina - Torneo Federal
-22°,9 Julio Rafaela,10,2,3,5,6,12,-6,9,Argentina - Torneo Federal
-23°,Guillermo Brown,10,2,3,5,10,19,-9,9,Argentina - Torneo Federal
-24°,D. Belgrano VR,10,1,5,4,4,9,-5,8,Argentina - Torneo Federal
-25°,Santamarina,10,1,5,4,9,15,-6,8,Argentina - Torneo Federal
-26°,Sol de America,9,2,2,5,9,15,-6,8,Argentina - Torneo Federal
-27°,Sarmiento R.,9,2,2,5,3,13,-10,8,Argentina - Torneo Federal
-28°,A. Rafaela,9,1,4,4,7,12,-5,7,Argentina - Torneo Federal
-29°,D. Rincon,10,2,1,7,8,14,-6,7,Argentina - Torneo Federal
-1°,Alashkert,0,0,0,0,0,0,0,0,Armenia - Premier League
-2°,Ararat Yerevan,0,0,0,0,0,0,0,0,Armenia - Premier League
-3°,Ararat-Armenia,0,0,0,0,0,0,0,0,Armenia - Premier League
-4°,BKMA,0,0,0,0,0,0,0,0,Armenia - Premier League
-5°,Gandzasar,0,0,0,0,0,0,0,0,Armenia - Premier League
-6°,Noah,0,0,0,0,0,0,0,0,Armenia - Premier League
-7°,Pyunik,0,0,0,0,0,0,0,0,Armenia - Premier League
-8°,Shirak,0,0,0,0,0,0,0,0,Armenia - Premier League
-9°,Urartu,0,0,0,0,0,0,0,0,Armenia - Premier League
-10°,Van,0,0,0,0,0,0,0,0,Armenia - Premier League
+1°,Olimpo Bahia B.,11,5,3,3,8,6,+2,18,Argentina - Torneo Federal
+2°,Cipolletti,11,6,0,5,12,11,+1,18,Argentina - Torneo Federal
+3°,Kimberley,11,5,2,4,12,11,+1,17,Argentina - Torneo Federal
+4°,SM Formosa,10,3,5,2,11,10,+1,14,Argentina - Torneo Federal
+5°,Bartolome Mitre,9,4,2,3,10,9,+1,14,Argentina - Torneo Federal
+6°,Douglas Haig,11,3,5,3,10,9,+1,14,Argentina - Torneo Federal
+7°,Atenas,10,4,2,4,10,10,0,14,Argentina - Torneo Federal
+8°,Germinal,11,4,2,5,9,14,-5,14,Argentina - Torneo Federal
+9°,Circulo D.,10,4,1,5,10,13,-3,13,Argentina - Torneo Federal
+10°,S. Las Parejas,11,3,4,4,12,16,-4,13,Argentina - Torneo Federal
+11°,Ciudad Bolivar,9,3,3,3,8,6,+2,12,Argentina - Torneo Federal
+12°,SM Mendoza,9,4,0,5,10,14,-4,12,Argentina - Torneo Federal
+13°,Villa Mitre,11,2,5,4,9,8,+1,11,Argentina - Torneo Federal
+14°,Costa Brava,9,2,5,2,5,5,0,11,Argentina - Torneo Federal
+15°,G. Chivilcoy,11,1,8,2,5,7,-2,11,Argentina - Torneo Federal
+16°,S. Belgrano,10,3,2,5,8,12,-4,11,Argentina - Torneo Federal
+17°,D. Belgrano VR,11,2,5,4,5,9,-4,11,Argentina - Torneo Federal
+18°,Sarmiento R.,10,3,2,5,5,14,-9,11,Argentina - Torneo Federal
+19°,Sarmiento DLB,9,3,1,5,10,11,-1,10,Argentina - Torneo Federal
+20°,Juventud U. U.,11,1,7,3,7,8,-1,10,Argentina - Torneo Federal
+21°,Argentino MM,10,2,4,4,9,14,-5,10,Argentina - Torneo Federal
+22°,I. Chivilcoy,11,2,4,5,7,13,-6,10,Argentina - Torneo Federal
+23°,9 Julio Rafaela,11,2,4,5,6,12,-6,10,Argentina - Torneo Federal
+24°,Huracan Las H.,10,3,1,6,7,14,-7,10,Argentina - Torneo Federal
+25°,Guillermo Brown,11,2,4,5,10,19,-9,10,Argentina - Torneo Federal
+26°,S. Estudiantes,10,2,3,5,6,9,-3,9,Argentina - Torneo Federal
+27°,El Linqueno,11,2,3,6,10,15,-5,9,Argentina - Torneo Federal
+28°,Boca Unidos,11,2,2,7,10,16,-6,8,Argentina - Torneo Federal
+29°,Sol de America,9,2,2,5,9,15,-6,8,Argentina - Torneo Federal
+1°,Pyunik,2,1,1,0,2,1,+1,4,Armenia - Premier League
+2°,Van,1,1,0,0,1,0,+1,3,Armenia - Premier League
+3°,Ararat Yerevan,1,0,1,0,1,1,0,1,Armenia - Premier League
+4°,Urartu,1,0,1,0,1,1,0,1,Armenia - Premier League
+5°,Ararat-Armenia,1,0,1,0,0,0,0,1,Armenia - Premier League
+6°,Alashkert,0,0,0,0,0,0,0,0,Armenia - Premier League
+7°,BKMA,0,0,0,0,0,0,0,0,Armenia - Premier League
+8°,Noah,0,0,0,0,0,0,0,0,Armenia - Premier League
+9°,Gandzasar,1,0,0,1,0,1,-1,0,Armenia - Premier League
+10°,Shirak,1,0,0,1,0,4,-4,0,Armenia - Premier League
 1°,WS Wanderers,13,7,5,1,27,17,+10,26,Australia - A-League
 2°,Auckland,13,7,4,2,23,13,+10,25,Australia - A-League
 3°,Western United,13,7,2,4,32,23,+9,23,Australia - A-League
@@ -130,143 +130,143 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 11°,Brisbane Roar,13,3,4,6,20,25,-5,13,Australia - A-League
 12°,Wellington,13,4,1,8,16,26,-10,13,Australia - A-League
 13°,Perth Glory,13,2,3,8,11,27,-16,9,Australia - A-League
-1°,Altach,0,0,0,0,0,0,0,0,Austria - Bundesliga
-2°,Austria Wien,0,0,0,0,0,0,0,0,Austria - Bundesliga
-3°,BW Linz,0,0,0,0,0,0,0,0,Austria - Bundesliga
-4°,Grazer AK,0,0,0,0,0,0,0,0,Austria - Bundesliga
-5°,Hartberg,0,0,0,0,0,0,0,0,Austria - Bundesliga
-6°,LASK Linz,0,0,0,0,0,0,0,0,Austria - Bundesliga
-7°,Rapid Wien,0,0,0,0,0,0,0,0,Austria - Bundesliga
-8°,Ried,0,0,0,0,0,0,0,0,Austria - Bundesliga
-9°,Salzburg,0,0,0,0,0,0,0,0,Austria - Bundesliga
-10°,Sturm Graz,0,0,0,0,0,0,0,0,Austria - Bundesliga
-11°,Tirol,0,0,0,0,0,0,0,0,Austria - Bundesliga
-12°,Wolfsberger AC,0,0,0,0,0,0,0,0,Austria - Bundesliga
-1°,A. Klagenfurt,0,0,0,0,0,0,0,0,Austria - 2. Liga
-2°,A. Lustenau,0,0,0,0,0,0,0,0,Austria - 2. Liga
-3°,Admira Wacker,0,0,0,0,0,0,0,0,Austria - 2. Liga
-4°,Amstetten,0,0,0,0,0,0,0,0,Austria - 2. Liga
-5°,Austria Salzbur,0,0,0,0,0,0,0,0,Austria - 2. Liga
-6°,Austria Wien B,0,0,0,0,0,0,0,0,Austria - 2. Liga
-7°,Bregenz,0,0,0,0,0,0,0,0,Austria - 2. Liga
-8°,First Vienna,0,0,0,0,0,0,0,0,Austria - 2. Liga
-9°,Floridsdorfer,0,0,0,0,0,0,0,0,Austria - 2. Liga
-10°,Kapfenberger,0,0,0,0,0,0,0,0,Austria - 2. Liga
-11°,Liefering,0,0,0,0,0,0,0,0,Austria - 2. Liga
-12°,Rapid Wien B,0,0,0,0,0,0,0,0,Austria - 2. Liga
-13°,St. Polten,0,0,0,0,0,0,0,0,Austria - 2. Liga
-14°,Stripfing,0,0,0,0,0,0,0,0,Austria - 2. Liga
-15°,Sturm Graz B,0,0,0,0,0,0,0,0,Austria - 2. Liga
-16°,WSPG Wels,0,0,0,0,0,0,0,0,Austria - 2. Liga
-1°,Standard Liege,1,1,0,0,2,0,+2,3,Belgium - First Division A
-2°,Charleroi,1,0,1,0,2,2,0,1,Belgium - First Division A
-3°,KV Mechelen,1,0,1,0,1,1,0,1,Belgium - First Division A
-4°,Royale Union SG,1,0,1,0,1,1,0,1,Belgium - First Division A
-5°,Cercle Brugge,1,0,1,0,0,0,0,1,Belgium - First Division A
-6°,Anderlecht,0,0,0,0,0,0,0,0,Belgium - First Division A
-7°,Antwerp,0,0,0,0,0,0,0,0,Belgium - First Division A
-8°,Club Brugge,0,0,0,0,0,0,0,0,Belgium - First Division A
-9°,Dender,0,0,0,0,0,0,0,0,Belgium - First Division A
-10°,La Louviere,0,0,0,0,0,0,0,0,Belgium - First Division A
-11°,OH Leuven,0,0,0,0,0,0,0,0,Belgium - First Division A
-12°,Sint-Truiden,0,0,0,0,0,0,0,0,Belgium - First Division A
-13°,Zulte-Waregem,0,0,0,0,0,0,0,0,Belgium - First Division A
-14°,KRC Genk,1,0,0,1,1,2,-1,0,Belgium - First Division A
-15°,Gent,1,0,0,1,1,3,-2,0,Belgium - First Division A
-16°,Westerlo,1,0,0,1,2,5,-3,0,Belgium - First Division A
-1°,Anderlecht B,0,0,0,0,0,0,0,0,Belgium - First Division B
-2°,Beerschot,0,0,0,0,0,0,0,0,Belgium - First Division B
-3°,Beveren,0,0,0,0,0,0,0,0,Belgium - First Division B
-4°,Club Brugge B,0,0,0,0,0,0,0,0,Belgium - First Division B
-5°,Eupen,0,0,0,0,0,0,0,0,Belgium - First Division B
-6°,Francs Borains,0,0,0,0,0,0,0,0,Belgium - First Division B
-7°,Gent U21,0,0,0,0,0,0,0,0,Belgium - First Division B
-8°,Kortrijk,0,0,0,0,0,0,0,0,Belgium - First Division B
-9°,KRC Genk B,0,0,0,0,0,0,0,0,Belgium - First Division B
-10°,Lierse K.,0,0,0,0,0,0,0,0,Belgium - First Division B
-11°,Lokeren-Temse,0,0,0,0,0,0,0,0,Belgium - First Division B
-12°,Lommel SK,0,0,0,0,0,0,0,0,Belgium - First Division B
-13°,OC Charleroi,0,0,0,0,0,0,0,0,Belgium - First Division B
-14°,Patro Eisden,0,0,0,0,0,0,0,0,Belgium - First Division B
-15°,RFC Liege,0,0,0,0,0,0,0,0,Belgium - First Division B
-16°,RWDM,0,0,0,0,0,0,0,0,Belgium - First Division B
-17°,Seraing,0,0,0,0,0,0,0,0,Belgium - First Division B
-1°,Always Ready,8,4,3,1,22,13,+9,15,Bolivia - Primera Div. - Apertura
-2°,The Strongest,8,4,1,3,16,17,-1,13,Bolivia - Primera Div. - Apertura
-3°,Bolivar,6,3,2,1,12,6,+6,11,Bolivia - Primera Div. - Apertura
-4°,Aurora,8,2,2,4,13,17,-4,8,Bolivia - Primera Div. - Apertura
-5°,ABB,7,2,2,3,9,14,-5,8,Bolivia - Primera Div. - Apertura
-6°,Nacional Potosi,7,1,4,2,6,8,-2,7,Bolivia - Primera Div. - Apertura
-7°,U. de Vinto,6,1,3,2,6,7,-1,6,Bolivia - Primera Div. - Apertura
-8°,Blooming,6,1,3,2,9,13,-4,6,Bolivia - Primera Div. - Apertura
-9°,Real Oruro,8,1,3,4,11,17,-6,6,Bolivia - Primera Div. - Apertura
+1°,Altach,1,1,0,0,2,0,+2,3,Austria - Bundesliga
+2°,Sturm Graz,1,1,0,0,2,0,+2,3,Austria - Bundesliga
+3°,Wolfsberger AC,1,1,0,0,2,0,+2,3,Austria - Bundesliga
+4°,Rapid Wien,1,1,0,0,2,1,+1,3,Austria - Bundesliga
+5°,Hartberg,2,1,0,1,3,4,-1,3,Austria - Bundesliga
+6°,Austria Wien,1,0,1,0,2,2,0,1,Austria - Bundesliga
+7°,Salzburg,1,0,1,0,2,2,0,1,Austria - Bundesliga
+8°,Tirol,0,0,0,0,0,0,0,0,Austria - Bundesliga
+9°,BW Linz,1,0,0,1,0,1,-1,0,Austria - Bundesliga
+10°,Ried,1,0,0,1,0,1,-1,0,Austria - Bundesliga
+11°,LASK Linz,1,0,0,1,1,3,-2,0,Austria - Bundesliga
+12°,Grazer AK,1,0,0,1,0,5,-5,0,Austria - Bundesliga
+1°,A. Lustenau,1,1,0,0,4,0,+4,3,Austria - 2. Liga
+2°,St. Polten,1,1,0,0,4,1,+3,3,Austria - 2. Liga
+3°,Floridsdorfer,1,1,0,0,3,0,+3,3,Austria - 2. Liga
+4°,Admira Wacker,1,1,0,0,2,0,+2,3,Austria - 2. Liga
+5°,First Vienna,1,1,0,0,2,0,+2,3,Austria - 2. Liga
+6°,Austria Wien B,1,1,0,0,3,2,+1,3,Austria - 2. Liga
+7°,A. Klagenfurt,1,1,0,0,2,1,+1,3,Austria - 2. Liga
+8°,Stripfing,1,0,1,0,4,4,0,1,Austria - 2. Liga
+9°,Amstetten,1,0,1,0,2,2,0,1,Austria - 2. Liga
+10°,Liefering,1,0,1,0,1,1,0,1,Austria - 2. Liga
+11°,Rapid Wien B,1,0,1,0,1,1,0,1,Austria - 2. Liga
+12°,WSPG Wels,1,0,0,1,0,1,-1,0,Austria - 2. Liga
+13°,Bregenz,1,0,0,1,2,4,-2,0,Austria - 2. Liga
+14°,Kapfenberger,1,0,0,1,0,2,-2,0,Austria - 2. Liga
+15°,Sturm Graz B,1,0,0,1,0,2,-2,0,Austria - 2. Liga
+16°,Austria Salzbur,1,0,0,1,0,3,-3,0,Austria - 2. Liga
+1°,Royale Union SG,2,1,1,0,4,3,+1,4,Belgium - First Division A
+2°,KV Mechelen,2,1,1,0,2,1,+1,4,Belgium - First Division A
+3°,Anderlecht,1,1,0,0,2,0,+2,3,Belgium - First Division A
+4°,Standard Liege,1,1,0,0,2,0,+2,3,Belgium - First Division A
+5°,Zulte-Waregem,2,1,0,1,4,5,-1,3,Belgium - First Division A
+6°,Antwerp,1,0,1,0,1,1,0,1,Belgium - First Division A
+7°,Sint-Truiden,1,0,1,0,1,1,0,1,Belgium - First Division A
+8°,Charleroi,2,0,1,1,2,3,-1,1,Belgium - First Division A
+9°,Dender,2,0,1,1,1,3,-2,1,Belgium - First Division A
+10°,Cercle Brugge,2,0,1,1,0,2,-2,1,Belgium - First Division A
+11°,Club Brugge,1,0,0,1,1,2,-1,0,Belgium - First Division A
+12°,La Louviere,1,0,0,1,0,1,-1,0,Belgium - First Division A
+13°,KRC Genk,2,0,0,2,2,4,-2,0,Belgium - First Division A
+14°,Gent,1,0,0,1,1,3,-2,0,Belgium - First Division A
+15°,Westerlo,1,0,0,1,2,5,-3,0,Belgium - First Division A
+16°,OH Leuven,2,0,0,2,1,8,-7,0,Belgium - First Division A
+1°,Gent U21,1,1,0,0,4,1,+3,3,Belgium - First Division B
+2°,Kortrijk,1,1,0,0,3,1,+2,3,Belgium - First Division B
+3°,Beveren,1,1,0,0,2,0,+2,3,Belgium - First Division B
+4°,Beerschot,1,1,0,0,2,1,+1,3,Belgium - First Division B
+5°,Lommel SK,1,0,1,0,3,3,0,1,Belgium - First Division B
+6°,Francs Borains,1,0,1,0,1,1,0,1,Belgium - First Division B
+7°,Anderlecht B,0,0,0,0,0,0,0,0,Belgium - First Division B
+8°,Club Brugge B,0,0,0,0,0,0,0,0,Belgium - First Division B
+9°,Eupen,0,0,0,0,0,0,0,0,Belgium - First Division B
+10°,KRC Genk B,0,0,0,0,0,0,0,0,Belgium - First Division B
+11°,Lierse K.,0,0,0,0,0,0,0,0,Belgium - First Division B
+12°,OC Charleroi,0,0,0,0,0,0,0,0,Belgium - First Division B
+13°,Patro Eisden,0,0,0,0,0,0,0,0,Belgium - First Division B
+14°,RWDM,0,0,0,0,0,0,0,0,Belgium - First Division B
+15°,Seraing,0,0,0,0,0,0,0,0,Belgium - First Division B
+16°,Lokeren-Temse,1,0,0,1,1,2,-1,0,Belgium - First Division B
+17°,RFC Liege,1,0,0,1,0,2,-2,0,Belgium - First Division B
+1°,The Strongest,9,5,1,3,18,17,+1,16,Bolivia - Primera Div. - Apertura
+2°,Always Ready,9,4,3,2,22,14,+8,15,Bolivia - Primera Div. - Apertura
+3°,Bolivar,8,4,2,2,14,9,+5,14,Bolivia - Primera Div. - Apertura
+4°,Real Oruro,9,2,3,4,13,18,-5,9,Bolivia - Primera Div. - Apertura
+5°,Aurora,9,2,2,5,13,20,-7,8,Bolivia - Primera Div. - Apertura
+6°,ABB,8,2,2,4,9,18,-9,8,Bolivia - Primera Div. - Apertura
+7°,Nacional Potosi,8,1,4,3,6,9,-3,7,Bolivia - Primera Div. - Apertura
+8°,U. de Vinto,7,1,3,3,6,10,-4,6,Bolivia - Primera Div. - Apertura
+9°,Blooming,7,1,3,3,11,16,-5,6,Bolivia - Primera Div. - Apertura
 10°,SA Bulo Bulo,8,1,3,4,10,18,-8,6,Bolivia - Primera Div. - Apertura
-11°,GV San Jose,7,2,0,5,7,17,-10,6,Bolivia - Primera Div. - Apertura
-12°,I. Petrolero,7,1,2,4,8,20,-12,5,Bolivia - Primera Div. - Apertura
-13°,Oriente P.,8,1,1,6,10,24,-14,4,Bolivia - Primera Div. - Apertura
-14°,Real Tomayapo,7,0,3,4,3,13,-10,3,Bolivia - Primera Div. - Apertura
+11°,Guabira,9,1,3,5,10,21,-11,6,Bolivia - Primera Div. - Apertura
+12°,GV San Jose,8,2,0,6,8,19,-11,6,Bolivia - Primera Div. - Apertura
+13°,I. Petrolero,8,1,2,5,9,22,-13,5,Bolivia - Primera Div. - Apertura
+14°,Oriente P.,9,1,1,7,11,26,-15,4,Bolivia - Primera Div. - Apertura
 15°,Wilstermann,7,1,0,6,6,18,-12,3,Bolivia - Primera Div. - Apertura
-16°,Guabira,8,0,3,5,8,21,-13,3,Bolivia - Primera Div. - Apertura
-1°,Palmeiras,7,6,0,1,11,6,+5,18,Brazil - Serie A
-2°,Flamengo,7,4,1,2,9,5,+4,13,Brazil - Serie A
-3°,Bragantino,8,4,1,3,10,9,+1,13,Brazil - Serie A
-4°,Cruzeiro,8,3,3,2,9,5,+4,12,Brazil - Serie A
-5°,Botafogo,8,3,2,3,4,3,+1,11,Brazil - Serie A
-6°,Mirassol,8,2,4,2,10,8,+2,10,Brazil - Serie A
-7°,Bahia,7,2,2,3,7,8,-1,8,Brazil - Serie A
-8°,Ceara,8,2,2,4,8,10,-2,8,Brazil - Serie A
-9°,Atletico MG,9,2,2,5,8,12,-4,8,Brazil - Serie A
-10°,Sao Paulo,8,1,4,3,7,10,-3,7,Brazil - Serie A
-11°,Fluminense,8,2,1,5,8,12,-4,7,Brazil - Serie A
-12°,Santos,9,2,1,6,8,14,-6,7,Brazil - Serie A
-13°,Internacional,8,1,4,3,7,14,-7,7,Brazil - Serie A
-14°,Corinthians,9,1,4,4,5,13,-8,7,Brazil - Serie A
-15°,Vitoria,9,0,5,4,5,10,-5,5,Brazil - Serie A
-16°,Gremio,8,1,2,5,7,15,-8,5,Brazil - Serie A
-17°,Vasco da Gama,7,1,1,5,7,12,-5,4,Brazil - Serie A
-18°,Fortaleza,7,0,3,4,3,13,-10,3,Brazil - Serie A
-19°,Sport Recife,8,0,2,6,5,14,-9,2,Brazil - Serie A
-20°,Juventude,7,0,0,7,1,24,-23,0,Brazil - Serie A
+16°,Real Tomayapo,8,0,3,5,3,18,-15,3,Bolivia - Primera Div. - Apertura
+1°,Palmeiras,8,6,1,1,13,8,+5,19,Brazil - Serie A
+2°,Cruzeiro,9,4,3,2,11,5,+6,15,Brazil - Serie A
+3°,Botafogo,9,4,2,3,9,3,+6,14,Brazil - Serie A
+4°,Flamengo,8,4,2,2,10,6,+4,14,Brazil - Serie A
+5°,Bragantino,9,4,1,4,11,11,0,13,Brazil - Serie A
+6°,Mirassol,9,2,4,3,11,10,+1,10,Brazil - Serie A
+7°,Sao Paulo,9,2,4,3,9,11,-2,10,Brazil - Serie A
+8°,Internacional,9,2,4,3,10,15,-5,10,Brazil - Serie A
+9°,Santos,10,3,1,6,10,15,-5,10,Brazil - Serie A
+10°,Bahia,8,2,3,3,7,8,-1,9,Brazil - Serie A
+11°,Atletico MG,10,2,3,5,9,13,-4,9,Brazil - Serie A
+12°,Ceara,9,2,2,5,9,12,-3,8,Brazil - Serie A
+13°,Fluminense,9,2,2,5,11,15,-4,8,Brazil - Serie A
+14°,Corinthians,10,1,4,5,6,15,-9,7,Brazil - Serie A
+15°,Vitoria,10,0,5,5,5,12,-7,5,Brazil - Serie A
+16°,Sport Recife,9,1,2,6,6,14,-8,5,Brazil - Serie A
+17°,Gremio,9,1,2,6,7,16,-9,5,Brazil - Serie A
+18°,Vasco da Gama,8,1,1,6,9,15,-6,4,Brazil - Serie A
+19°,Fortaleza,8,0,4,4,4,14,-10,4,Brazil - Serie A
+20°,Juventude,8,0,0,8,2,27,-25,0,Brazil - Serie A
 1°,Coritiba,11,5,3,3,9,7,+2,18,Brazil - Serie B
-2°,Goias,9,5,1,3,8,7,+1,16,Brazil - Serie B
+2°,Goias,10,5,2,3,10,9,+1,17,Brazil - Serie B
 3°,Athletic Club,10,4,1,5,11,14,-3,13,Brazil - Serie B
-4°,Criciuma,9,3,3,3,9,8,+1,12,Brazil - Serie B
-5°,Athletico PR,9,3,2,4,14,15,-1,11,Brazil - Serie B
-6°,Chapecoense,10,3,2,5,7,8,-1,11,Brazil - Serie B
-7°,Paysandu,10,2,4,4,10,11,-1,10,Brazil - Serie B
-8°,Novorizontino,9,2,4,3,5,9,-4,10,Brazil - Serie B
-9°,Remo,9,1,6,2,10,12,-2,9,Brazil - Serie B
-10°,Avai,9,2,3,4,11,15,-4,9,Brazil - Serie B
-11°,Cuiaba,10,2,3,5,7,13,-6,9,Brazil - Serie B
-12°,Vila Nova,10,2,2,6,9,13,-4,8,Brazil - Serie B
-13°,Operario PR,10,2,2,6,7,13,-6,8,Brazil - Serie B
-14°,Ferroviaria,10,1,4,5,8,13,-5,7,Brazil - Serie B
-15°,Atletico GO,9,1,4,4,6,12,-6,7,Brazil - Serie B
-16°,Botafogo SP,9,2,1,6,6,17,-11,7,Brazil - Serie B
-17°,CRB,10,1,3,6,7,14,-7,6,Brazil - Serie B
-18°,America MG,9,2,0,7,7,15,-8,6,Brazil - Serie B
-19°,Amazonas,9,0,3,6,7,18,-11,3,Brazil - Serie B
-20°,Volta Redonda,10,0,3,7,4,15,-11,3,Brazil - Serie B
-1°,Ponte Preta,7,4,1,2,7,6,+1,13,Brazil - Serie C
-2°,ABC,8,2,6,0,7,5,+2,12,Brazil - Serie C
-3°,Nautico,7,3,2,2,9,4,+5,11,Brazil - Serie C
-4°,Brusque,7,3,2,2,11,8,+3,11,Brazil - Serie C
-5°,Sao Bernardo,7,3,2,2,6,4,+2,11,Brazil - Serie C
-6°,Londrina,6,3,1,2,10,6,+4,10,Brazil - Serie C
-7°,Caxias,7,3,0,4,10,12,-2,9,Brazil - Serie C
-8°,Ypiranga,7,2,2,3,6,6,0,8,Brazil - Serie C
-9°,Maringa,8,1,5,2,12,13,-1,8,Brazil - Serie C
+4°,Criciuma,10,3,3,4,9,9,0,12,Brazil - Serie B
+5°,Remo,10,2,6,2,11,12,-1,12,Brazil - Serie B
+6°,Chapecoense,11,3,3,5,7,8,-1,12,Brazil - Serie B
+7°,Paysandu,11,2,5,4,11,12,-1,11,Brazil - Serie B
+8°,Athletico PR,10,3,2,5,16,19,-3,11,Brazil - Serie B
+9°,Vila Nova,11,3,2,6,10,13,-3,11,Brazil - Serie B
+10°,Novorizontino,10,2,5,3,5,9,-4,11,Brazil - Serie B
+11°,Ferroviaria,11,2,4,5,10,13,-3,10,Brazil - Serie B
+12°,Avai,10,2,4,4,12,16,-4,10,Brazil - Serie B
+13°,Cuiaba,11,2,3,6,7,15,-8,9,Brazil - Serie B
+14°,Atletico GO,10,1,5,4,7,13,-6,8,Brazil - Serie B
+15°,Operario PR,11,2,2,7,8,15,-7,8,Brazil - Serie B
+16°,Botafogo SP,10,2,1,7,6,19,-13,7,Brazil - Serie B
+17°,CRB,11,1,3,7,9,17,-8,6,Brazil - Serie B
+18°,America MG,10,2,0,8,8,17,-9,6,Brazil - Serie B
+19°,Amazonas,10,0,3,7,8,20,-12,3,Brazil - Serie B
+20°,Volta Redonda,11,0,3,8,4,17,-13,3,Brazil - Serie B
+1°,Nautico,8,4,2,2,11,4,+7,14,Brazil - Serie C
+2°,Sao Bernardo,8,4,2,2,7,4,+3,14,Brazil - Serie C
+3°,Ponte Preta,8,4,1,3,8,8,0,13,Brazil - Serie C
+4°,ABC,9,2,6,1,7,6,+1,12,Brazil - Serie C
+5°,Caxias,8,4,0,4,11,12,-1,12,Brazil - Serie C
+6°,Brusque,8,3,2,3,12,10,+2,11,Brazil - Serie C
+7°,Londrina,7,3,1,3,10,7,+3,10,Brazil - Serie C
+8°,Maringa,9,1,6,2,13,14,-1,9,Brazil - Serie C
+9°,Ypiranga,8,2,2,4,7,8,-1,8,Brazil - Serie C
 10°,Ituano,7,2,2,3,7,10,-3,8,Brazil - Serie C
-11°,Figueirense,7,1,3,3,8,9,-1,6,Brazil - Serie C
-12°,CSA,7,1,3,3,5,7,-2,6,Brazil - Serie C
-13°,Floresta,7,1,3,3,4,7,-3,6,Brazil - Serie C
-14°,Anapolis,7,1,3,3,7,12,-5,6,Brazil - Serie C
-15°,Botafogo PB,6,1,2,3,5,5,0,5,Brazil - Serie C
-16°,Guarani,6,1,2,3,3,6,-3,5,Brazil - Serie C
-17°,Retro,7,1,1,5,3,8,-5,4,Brazil - Serie C
-18°,Confianca,8,0,4,4,4,11,-7,4,Brazil - Serie C
-19°,Tombense,7,0,3,4,4,9,-5,3,Brazil - Serie C
-20°,Itabaiana,7,0,0,7,3,12,-9,0,Brazil - Serie C
+11°,Figueirense,8,1,4,3,8,9,-1,7,Brazil - Serie C
+12°,Floresta,8,1,4,3,5,8,-3,7,Brazil - Serie C
+13°,Confianca,9,1,4,4,6,12,-6,7,Brazil - Serie C
+14°,CSA,8,1,3,4,5,8,-3,6,Brazil - Serie C
+15°,Guarani,7,1,3,3,4,7,-3,6,Brazil - Serie C
+16°,Anapolis,8,1,3,4,7,14,-7,6,Brazil - Serie C
+17°,Botafogo PB,7,1,2,4,6,7,-1,5,Brazil - Serie C
+18°,Retro,8,1,1,6,3,11,-8,4,Brazil - Serie C
+19°,Tombense,9,0,3,6,4,12,-8,3,Brazil - Serie C
+20°,Itabaiana,8,0,1,7,3,12,-9,1,Brazil - Serie C
 1°,ASA,7,4,2,1,10,2,+8,14,Brazil - Serie D
 2°,EC Sao Jose,7,4,2,1,11,5,+6,14,Brazil - Serie D
 3°,Altos,7,4,2,1,12,7,+5,14,Brazil - Serie D
@@ -296,117 +296,117 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 27°,Capital,7,2,1,4,5,7,-2,7,Brazil - Serie D
 28°,Marcilio Dias,7,1,4,2,9,12,-3,7,Brazil - Serie D
 29°,Lagarto,7,2,1,4,7,10,-3,7,Brazil - Serie D
-1°,Levski Sofia,1,1,0,0,2,1,+1,3,Bulgaria - Parva Liga
-2°,Ludogorets,1,1,0,0,1,0,+1,3,Bulgaria - Parva Liga
-3°,Botev Vratsa,1,0,1,0,2,2,0,1,Bulgaria - Parva Liga
-4°,Cherno More,1,0,1,0,1,1,0,1,Bulgaria - Parva Liga
-5°,CSKA 1948 Sofia,1,0,1,0,1,1,0,1,Bulgaria - Parva Liga
-6°,CSKA Sofia,1,0,1,0,1,1,0,1,Bulgaria - Parva Liga
-7°,Lok. Plovdiv,1,0,1,0,1,1,0,1,Bulgaria - Parva Liga
-8°,Lokomotiv Sofia,1,0,1,0,1,1,0,1,Bulgaria - Parva Liga
-9°,Spartak Varna,1,0,1,0,1,1,0,1,Bulgaria - Parva Liga
-10°,Beroe,1,0,1,0,0,0,0,1,Bulgaria - Parva Liga
-11°,Botev Plovdiv,1,0,0,1,1,2,-1,0,Bulgaria - Parva Liga
-12°,Slavia Sofia,1,0,0,1,1,2,-1,0,Bulgaria - Parva Liga
-13°,Arda,1,0,0,1,0,1,-1,0,Bulgaria - Parva Liga
-14°,Dobrudzha,1,0,0,1,0,1,-1,0,Bulgaria - Parva Liga
-15°,Montana,1,0,0,1,0,5,-5,0,Bulgaria - Parva Liga
-16°,Septemvri Sofia,1,0,0,1,0,5,-5,0,Bulgaria - Parva Liga
-1°,Forge,8,5,3,0,15,4,+11,18,Canada - Premier League
-2°,A. Ottawa,9,5,3,1,16,8,+8,18,Canada - Premier League
-3°,Cavalry,8,3,3,2,10,7,+3,12,Canada - Premier League
-4°,York Utd,8,3,1,4,13,12,+1,10,Canada - Premier League
-5°,HFX Wanderers,8,3,1,4,10,12,-2,10,Canada - Premier League
-6°,Vancouver FC,8,1,2,5,10,17,-7,5,Canada - Premier League
-7°,Valour,8,1,1,6,9,22,-13,4,Canada - Premier League
-8°,Pacific,6,0,2,4,3,13,-10,2,Canada - Premier League
-1°,Coquimbo Unido,9,6,2,1,15,5,+10,20,Chile - Liga de Primera
-2°,Palestino,8,4,3,1,12,6,+6,15,Chile - Liga de Primera
-3°,U. de Chile,9,3,2,4,13,12,+1,11,Chile - Liga de Primera
-4°,Cobresal,8,3,2,3,9,11,-2,11,Chile - Liga de Primera
-5°,Nublense,8,3,2,3,7,14,-7,11,Chile - Liga de Primera
-6°,OHiggins,9,3,2,4,6,13,-7,11,Chile - Liga de Primera
-7°,Audax Italiano,8,3,1,4,9,10,-1,10,Chile - Liga de Primera
-8°,Colo-Colo,9,2,2,5,10,13,-3,8,Chile - Liga de Primera
-9°,U. Catolica,9,1,5,3,7,10,-3,8,Chile - Liga de Primera
-10°,Union La Calera,8,2,2,4,5,8,-3,8,Chile - Liga de Primera
-11°,Everton,7,2,1,4,7,16,-9,7,Chile - Liga de Primera
-12°,Huachipato,9,1,2,6,8,20,-12,5,Chile - Liga de Primera
-13°,D. Limache,8,0,4,4,8,15,-7,4,Chile - Liga de Primera
-14°,La Serena,9,1,1,7,10,19,-9,4,Chile - Liga de Primera
-15°,Union Espanola,8,1,0,7,6,15,-9,3,Chile - Liga de Primera
-16°,D. Iquique,9,0,2,7,9,21,-12,2,Chile - Liga de Primera
-1°,Rangers,9,5,3,1,12,7,+5,18,Chile - Liga de Ascenso
-2°,San Marcos,9,6,0,3,15,13,+2,18,Chile - Liga de Ascenso
-3°,Concepcion,11,5,1,5,17,16,+1,16,Chile - Liga de Ascenso
-4°,U. Concepcion,8,4,2,2,8,5,+3,14,Chile - Liga de Ascenso
-5°,S. Morning,9,4,2,3,11,12,-1,14,Chile - Liga de Ascenso
-6°,Copiapo,10,4,2,4,5,6,-1,14,Chile - Liga de Ascenso
+1°,Ludogorets,2,2,0,0,4,0,+4,6,Bulgaria - Parva Liga
+2°,Lokomotiv Sofia,2,1,1,0,2,1,+1,4,Bulgaria - Parva Liga
+3°,Beroe,3,1,1,1,3,6,-3,4,Bulgaria - Parva Liga
+4°,Arda,2,1,0,1,5,1,+4,3,Bulgaria - Parva Liga
+5°,Levski Sofia,1,1,0,0,2,1,+1,3,Bulgaria - Parva Liga
+6°,Botev Vratsa,3,0,3,0,3,3,0,3,Bulgaria - Parva Liga
+7°,Cherno More,2,0,2,0,1,1,0,2,Bulgaria - Parva Liga
+8°,Lok. Plovdiv,2,0,2,0,1,1,0,2,Bulgaria - Parva Liga
+9°,CSKA 1948 Sofia,2,0,1,1,2,3,-1,1,Bulgaria - Parva Liga
+10°,Spartak Varna,2,0,1,1,2,3,-1,1,Bulgaria - Parva Liga
+11°,CSKA Sofia,2,0,1,1,1,2,-1,1,Bulgaria - Parva Liga
+12°,Botev Plovdiv,1,0,0,1,1,2,-1,0,Bulgaria - Parva Liga
+13°,Dobrudzha,2,0,0,2,1,3,-2,0,Bulgaria - Parva Liga
+14°,Slavia Sofia,2,0,0,2,1,4,-3,0,Bulgaria - Parva Liga
+15°,Septemvri Sofia,2,0,0,2,1,7,-6,0,Bulgaria - Parva Liga
+16°,Montana,2,0,0,2,0,8,-8,0,Bulgaria - Parva Liga
+1°,Forge,9,6,3,0,17,5,+12,21,Canada - Premier League
+2°,A. Ottawa,10,6,3,1,18,9,+9,21,Canada - Premier League
+3°,Cavalry,9,3,3,3,10,8,+2,12,Canada - Premier League
+4°,York Utd,9,3,2,4,13,12,+1,11,Canada - Premier League
+5°,HFX Wanderers,9,3,2,4,10,12,-2,11,Canada - Premier League
+6°,Vancouver FC,9,2,2,5,12,18,-6,8,Canada - Premier League
+7°,Pacific,7,1,2,4,6,15,-9,5,Canada - Premier League
+8°,Valour,9,1,1,7,9,27,-18,4,Canada - Premier League
+1°,Coquimbo Unido,10,7,2,1,17,6,+11,23,Chile - Liga de Primera
+2°,Palestino,9,4,4,1,13,7,+6,16,Chile - Liga de Primera
+3°,Cobresal,9,4,2,3,10,11,-1,14,Chile - Liga de Primera
+4°,OHiggins,10,3,3,4,9,16,-7,12,Chile - Liga de Primera
+5°,U. de Chile,9,3,2,4,13,12,+1,11,Chile - Liga de Primera
+6°,Nublense,8,3,2,3,7,14,-7,11,Chile - Liga de Primera
+7°,Audax Italiano,9,3,1,5,9,14,-5,10,Chile - Liga de Primera
+8°,Colo-Colo,10,2,3,5,11,14,-3,9,Chile - Liga de Primera
+9°,U. Catolica,10,1,6,3,9,12,-3,9,Chile - Liga de Primera
+10°,Union La Calera,10,2,2,6,5,10,-5,8,Chile - Liga de Primera
+11°,Everton,8,2,1,5,7,17,-10,7,Chile - Liga de Primera
+12°,Huachipato,10,1,3,6,10,22,-12,6,Chile - Liga de Primera
+13°,D. Limache,9,0,4,5,9,17,-8,4,Chile - Liga de Primera
+14°,La Serena,10,1,1,8,10,20,-10,4,Chile - Liga de Primera
+15°,Union Espanola,9,1,0,8,7,19,-12,3,Chile - Liga de Primera
+16°,D. Iquique,10,0,2,8,9,23,-14,2,Chile - Liga de Primera
+1°,Rangers,10,5,3,2,13,11,+2,18,Chile - Liga de Ascenso
+2°,San Marcos,10,6,0,4,15,14,+1,18,Chile - Liga de Ascenso
+3°,U. Concepcion,10,5,2,3,10,7,+3,17,Chile - Liga de Ascenso
+4°,Concepcion,11,5,1,5,17,16,+1,16,Chile - Liga de Ascenso
+5°,S. Morning,10,4,3,3,11,12,-1,15,Chile - Liga de Ascenso
+6°,Copiapo,11,4,2,5,5,7,-2,14,Chile - Liga de Ascenso
 7°,San Luis,10,4,2,4,12,15,-3,14,Chile - Liga de Ascenso
 8°,S. Wanderers,9,3,4,2,12,13,-1,13,Chile - Liga de Ascenso
-9°,Cobreloa,9,2,4,3,7,14,-7,10,Chile - Liga de Ascenso
-10°,Curico Unido,8,2,3,3,7,8,-1,9,Chile - Liga de Ascenso
-11°,Antofagasta,9,2,3,4,6,14,-8,9,Chile - Liga de Ascenso
-12°,Recoleta,9,1,5,3,5,11,-6,8,Chile - Liga de Ascenso
-13°,U. San Felipe,8,1,3,4,10,14,-4,6,Chile - Liga de Ascenso
-14°,CD Santa Cruz,8,1,3,4,10,15,-5,6,Chile - Liga de Ascenso
-15°,Deportes Temuco,9,1,3,5,9,16,-7,6,Chile - Liga de Ascenso
-16°,Magallanes,9,0,3,6,4,18,-14,3,Chile - Liga de Ascenso
-1°,Shanghai Port,8,6,2,0,22,11,+11,20,China - Super League
-2°,S. Shenhua,9,6,1,2,17,9,+8,19,China - Super League
-3°,Chengdu,9,5,2,2,19,10,+9,17,China - Super League
-4°,Beijing Guoan,9,4,4,1,19,12,+7,16,China - Super League
-5°,Tianjin T.,10,4,2,4,14,17,-3,14,China - Super League
-6°,Shandong T.,9,3,2,4,17,20,-3,11,China - Super League
-7°,Yunnan Yukun,10,2,3,5,12,18,-6,9,China - Super League
-8°,Henan SL,9,2,2,5,10,12,-2,8,China - Super League
-9°,Zhejiang,9,2,1,6,13,15,-2,7,China - Super League
-10°,Qingdao West C.,9,1,4,4,10,16,-6,7,China - Super League
-11°,Wuhan Three T.,9,2,1,6,9,17,-8,7,China - Super League
-12°,Dalian Yingbo,9,1,4,4,8,16,-8,7,China - Super League
-13°,Meizhou Hakka,9,0,4,5,8,17,-9,4,China - Super League
-14°,Shenzhen P. C.,9,1,1,7,4,24,-20,4,China - Super League
-15°,Changchun Yatai,8,1,0,7,8,19,-11,3,China - Super League
-16°,Qingdao Hainiu,9,0,1,8,5,19,-14,1,China - Super League
-1°,Liaoning Tieren,9,5,3,1,18,9,+9,18,China - League One
-2°,Chongqing T.,8,5,1,2,21,14,+7,16,China - League One
-3°,Guangdong GZP,8,5,1,2,14,9,+5,16,China - League One
-4°,S. Gongfu,8,4,1,3,12,11,+1,13,China - League One
-5°,Suzhou Dongwu,10,3,3,4,12,12,0,12,China - League One
-6°,Nanjing City,9,3,2,4,12,14,-2,11,China - League One
-7°,Nantong Zhiyun,9,3,2,4,8,11,-3,11,China - League One
-8°,Shanghai Jiadin,9,2,2,5,4,14,-10,8,China - League One
-9°,Dingnan,8,1,4,3,6,11,-5,7,China - League One
-10°,Foshan Nanshi,9,2,1,6,7,14,-7,7,China - League One
-11°,Dalian Kuncheng,8,1,3,4,9,14,-5,6,China - League One
-12°,Shaanxi Union,9,1,3,5,8,13,-5,6,China - League One
+9°,Curico Unido,10,2,5,3,7,8,-1,11,Chile - Liga de Ascenso
+10°,Recoleta,10,2,5,3,7,11,-4,11,Chile - Liga de Ascenso
+11°,Antofagasta,10,2,4,4,8,16,-8,10,Chile - Liga de Ascenso
+12°,Cobreloa,10,2,4,4,7,17,-10,10,Chile - Liga de Ascenso
+13°,U. San Felipe,10,1,4,5,11,16,-5,7,Chile - Liga de Ascenso
+14°,Deportes Temuco,10,1,4,5,9,16,-7,7,Chile - Liga de Ascenso
+15°,CD Santa Cruz,9,1,3,5,10,16,-6,6,Chile - Liga de Ascenso
+16°,Magallanes,10,1,3,6,5,18,-13,6,Chile - Liga de Ascenso
+1°,Shanghai Port,10,8,2,0,28,14,+14,26,China - Super League
+2°,Chengdu,10,6,2,2,21,10,+11,20,China - Super League
+3°,S. Shenhua,10,6,2,2,21,13,+8,20,China - Super League
+4°,Beijing Guoan,10,5,4,1,23,15,+8,19,China - Super League
+5°,Tianjin T.,11,4,3,4,16,19,-3,15,China - Super League
+6°,Shandong T.,10,3,2,5,18,22,-4,11,China - Super League
+7°,Zhejiang,10,3,1,6,17,17,0,10,China - Super League
+8°,Yunnan Yukun,11,2,3,6,13,23,-10,9,China - Super League
+9°,Henan SL,10,2,2,6,11,14,-3,8,China - Super League
+10°,Qingdao West C.,10,1,5,4,10,16,-6,8,China - Super League
+11°,Meizhou Hakka,10,1,4,5,10,18,-8,7,China - Super League
+12°,Wuhan Three T.,9,2,1,6,9,17,-8,7,China - Super League
+13°,Dalian Yingbo,9,1,4,4,8,16,-8,7,China - Super League
+14°,Changchun Yatai,10,1,1,8,9,21,-12,4,China - Super League
+15°,Shenzhen P. C.,10,1,1,8,5,28,-23,4,China - Super League
+16°,Qingdao Hainiu,10,0,1,9,5,21,-16,1,China - Super League
+1°,Liaoning Tieren,10,6,3,1,21,11,+10,21,China - League One
+2°,Chongqing T.,9,6,1,2,24,14,+10,19,China - League One
+3°,Guangdong GZP,9,5,2,2,16,11,+5,17,China - League One
+4°,S. Gongfu,10,4,3,3,14,13,+1,15,China - League One
+5°,Nantong Zhiyun,11,4,3,4,11,12,-1,15,China - League One
+6°,Suzhou Dongwu,10,3,3,4,12,12,0,12,China - League One
+7°,Nanjing City,10,3,3,4,13,15,-2,12,China - League One
+8°,Dingnan,9,2,4,3,8,11,-3,10,China - League One
+9°,Dalian Kuncheng,9,2,3,4,13,14,-1,9,China - League One
+10°,Shanghai Jiadin,10,2,2,6,4,15,-11,8,China - League One
+11°,Shaanxi Union,10,1,4,5,11,16,-5,7,China - League One
+12°,Foshan Nanshi,10,2,1,7,7,17,-10,7,China - League One
 13°,Qingdao RL,10,1,3,6,5,11,-6,6,China - League One
-14°,Yanbian Longdin,8,0,4,4,5,13,-8,4,China - League One
-15°,Shenzhen J.,10,1,1,8,9,24,-15,4,China - League One
-16°,Guangxi Pingguo,9,0,3,6,5,13,-8,3,China - League One
-1°,Guangxi H.,10,9,1,0,22,3,+19,28,China - League Two
+14°,Guangxi Pingguo,10,1,3,6,6,13,-7,6,China - League One
+15°,Yanbian Longdin,9,0,5,4,5,13,-8,5,China - League One
+16°,Shenzhen J.,11,1,1,9,11,27,-16,4,China - League One
+1°,Guangxi H.,11,10,1,0,25,3,+22,31,China - League Two
 2°,Shenzhen 2028,11,8,2,1,14,6,+8,26,China - League Two
-3°,C. Rongcheng B,10,6,2,2,19,7,+12,20,China - League Two
+3°,C. Rongcheng B,11,6,2,3,20,11,+9,20,China - League Two
 4°,Wuxi Wugou,11,6,2,3,16,11,+5,20,China - League Two
 5°,Jiangxi Lushan,11,6,2,3,13,9,+4,20,China - League Two
-6°,Changchun Xidu,11,4,5,2,8,7,+1,17,China - League Two
-7°,Shandong T. B,10,4,4,2,12,11,+1,16,China - League Two
-8°,Wuhan TT B,11,4,3,4,14,11,+3,15,China - League Two
-9°,G. Dandelion,11,4,3,4,12,9,+3,15,China - League Two
-10°,Nantong Haimen,10,4,3,3,11,13,-2,15,China - League Two
-11°,Hangzhou Linpin,10,3,4,3,11,14,-3,13,China - League Two
-12°,G. Zhucheng,10,4,1,5,14,18,-4,13,China - League Two
+6°,Shandong T. B,11,5,4,2,15,12,+3,19,China - League Two
+7°,Changchun Xidu,11,4,5,2,8,7,+1,17,China - League Two
+8°,G. Zhucheng,11,5,1,5,16,18,-2,16,China - League Two
+9°,Wuhan TT B,11,4,3,4,14,11,+3,15,China - League Two
+10°,G. Dandelion,11,4,3,4,12,9,+3,15,China - League Two
+11°,Nantong Haimen,11,4,3,4,11,14,-3,15,China - League Two
+12°,Hangzhou Linpin,11,3,5,3,11,14,-3,14,China - League Two
 13°,L. Longyuan,11,3,4,4,11,16,-5,13,China - League Two
 14°,Taian Tiankuang,11,3,3,5,10,14,-4,12,China - League Two
 15°,Wenzhou Pro.,10,3,3,4,6,11,-5,12,China - League Two
-16°,Shanghai Port B,10,2,5,3,8,9,-1,11,China - League Two
-17°,Hubei Istar,10,2,3,5,12,18,-6,9,China - League Two
-18°,Kunming City,11,2,3,6,9,20,-11,9,China - League Two
-19°,Guangdong M.,10,0,6,4,4,12,-8,6,China - League Two
-20°,Shanxi Ronghai,11,1,3,7,6,23,-17,6,China - League Two
-21°,Quanzhou Yassin,10,1,2,7,5,15,-10,5,China - League Two
-22°,Ganzhou Ruishi,10,0,5,5,5,17,-12,5,China - League Two
-23°,Beijing IT,10,1,1,8,8,16,-8,4,China - League Two
+16°,Shanghai Port B,11,2,5,4,10,13,-3,11,China - League Two
+17°,Guangdong M.,11,1,6,4,6,13,-7,9,China - League Two
+18°,Hubei Istar,11,2,3,6,12,20,-8,9,China - League Two
+19°,Kunming City,11,2,3,6,9,20,-11,9,China - League Two
+20°,Beijing IT,11,2,1,8,10,16,-6,7,China - League Two
+21°,Shanxi Ronghai,11,1,3,7,6,23,-17,6,China - League Two
+22°,Quanzhou Yassin,11,1,2,8,7,18,-11,5,China - League Two
+23°,Ganzhou Ruishi,11,0,5,6,5,18,-13,5,China - League Two
 24°,Guangxi Lanhang,11,0,4,7,7,19,-12,4,China - League Two
 1°,Junior,10,4,4,2,12,9,+3,16,Colombia - Primera A - Apertura
 2°,Santa Fe,10,5,1,4,14,13,+1,16,Colombia - Primera A - Apertura
@@ -444,16 +444,16 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 14°,Barranquilla,8,1,1,6,4,18,-14,4,Colombia - Primera B - Apertura
 15°,Boca Juniors,8,0,2,6,3,10,-7,2,Colombia - Primera B - Apertura
 16°,Atletico Cali,8,0,1,7,7,18,-11,1,Colombia - Primera B - Apertura
-1°,Alajuelense,1,1,0,0,2,1,+1,3,Costa Rica - Primera Div. - Apertura
-2°,San Carlos,1,1,0,0,2,1,+1,3,Costa Rica - Primera Div. - Apertura
-3°,Saprissa,1,1,0,0,1,0,+1,3,Costa Rica - Primera Div. - Apertura
-4°,Herediano,1,0,1,0,0,0,0,1,Costa Rica - Primera Div. - Apertura
-5°,Guadalupe,0,0,0,0,0,0,0,0,Costa Rica - Primera Div. - Apertura
-6°,M. Liberia,0,0,0,0,0,0,0,0,Costa Rica - Primera Div. - Apertura
-7°,Puntarenas,0,0,0,0,0,0,0,0,Costa Rica - Primera Div. - Apertura
-8°,Sporting SJ,0,0,0,0,0,0,0,0,Costa Rica - Primera Div. - Apertura
-9°,Zeledon,0,0,0,0,0,0,0,0,Costa Rica - Primera Div. - Apertura
-10°,Cartagines,1,0,0,1,0,1,-1,0,Costa Rica - Primera Div. - Apertura
+1°,Herediano,2,1,1,0,1,0,+1,4,Costa Rica - Primera Div. - Apertura
+2°,M. Liberia,1,1,0,0,2,0,+2,3,Costa Rica - Primera Div. - Apertura
+3°,Alajuelense,1,1,0,0,2,1,+1,3,Costa Rica - Primera Div. - Apertura
+4°,Puntarenas,2,1,0,1,5,5,0,3,Costa Rica - Primera Div. - Apertura
+5°,Cartagines,2,1,0,1,1,1,0,3,Costa Rica - Primera Div. - Apertura
+6°,San Carlos,2,1,0,1,2,3,-1,3,Costa Rica - Primera Div. - Apertura
+7°,Saprissa,2,1,0,1,1,3,-2,3,Costa Rica - Primera Div. - Apertura
+8°,Zeledon,1,0,1,0,2,2,0,1,Costa Rica - Primera Div. - Apertura
+9°,Sporting SJ,1,0,0,1,1,2,-1,0,Costa Rica - Primera Div. - Apertura
+10°,Guadalupe,1,0,0,1,0,1,-1,0,Costa Rica - Primera Div. - Apertura
 1°,Alajuelense,11,5,6,0,14,7,+7,21,Costa Rica - Primera Div. - Clausura
 2°,Herediano,11,5,5,1,15,8,+7,20,Costa Rica - Primera Div. - Clausura
 3°,Puntarenas,11,4,6,1,12,8,+4,18,Costa Rica - Primera Div. - Clausura
@@ -466,16 +466,16 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 10°,San Carlos,11,2,3,6,8,13,-5,9,Costa Rica - Primera Div. - Clausura
 11°,Santa Ana,11,1,2,8,10,27,-17,5,Costa Rica - Primera Div. - Clausura
 12°,Guanacasteca,11,0,4,7,6,21,-15,4,Costa Rica - Primera Div. - Clausura
-1°,Dinamo Zagreb,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-2°,Gorica,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-3°,Hajduk Split,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-4°,Istra,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-5°,Lok. Zagreb,0,0,0,0,0,0,0,0,Croatia - 1. HNL
+1°,Dinamo Zagreb,1,1,0,0,2,0,+2,3,Croatia - 1. HNL
+2°,Lok. Zagreb,1,0,1,0,2,2,0,1,Croatia - 1. HNL
+3°,Rijeka,1,0,1,0,0,0,0,1,Croatia - 1. HNL
+4°,Gorica,2,0,1,1,1,3,-2,1,Croatia - 1. HNL
+5°,Hajduk Split,0,0,0,0,0,0,0,0,Croatia - 1. HNL
 6°,Osijek,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-7°,Rijeka,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-8°,Slaven Belupo,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-9°,Varazdin,0,0,0,0,0,0,0,0,Croatia - 1. HNL
-10°,Vukovar,0,0,0,0,0,0,0,0,Croatia - 1. HNL
+7°,Istra,1,0,0,1,1,2,-1,0,Croatia - 1. HNL
+8°,Varazdin,1,0,0,1,1,3,-2,0,Croatia - 1. HNL
+9°,Slaven Belupo,1,0,0,1,0,2,-2,0,Croatia - 1. HNL
+10°,Vukovar,2,0,0,2,0,4,-4,0,Croatia - 1. HNL
 1°,Bijelo Brdo,0,0,0,0,0,0,0,0,Croatia - 1. NL
 2°,C. Zmijavci,0,0,0,0,0,0,0,0,Croatia - 1. NL
 3°,Cibalia,0,0,0,0,0,0,0,0,Croatia - 1. NL
@@ -502,455 +502,460 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 12°,O. Aradippou,16,4,1,11,11,31,-20,13,Cyprus - Division 1
 13°,Karmiotissa,16,3,3,10,11,31,-20,12,Cyprus - Division 1
 14°,Omonia 29th May,17,1,3,13,10,33,-23,6,Cyprus - Division 1
-1°,Viktoria Plzen,1,1,0,0,5,1,+4,3,CzechRepublic - 1. Liga
-2°,Zlin,1,1,0,0,3,1,+2,3,CzechRepublic - 1. Liga
-3°,Slavia Prague,1,1,0,0,2,0,+2,3,CzechRepublic - 1. Liga
-4°,Karvina,1,1,0,0,2,1,+1,3,CzechRepublic - 1. Liga
-5°,Sigma Olomouc,1,1,0,0,1,0,+1,3,CzechRepublic - 1. Liga
-6°,Slovan Liberec,1,0,1,0,3,3,0,1,CzechRepublic - 1. Liga
-7°,Hradec Kralove,1,0,1,0,2,2,0,1,CzechRepublic - 1. Liga
-8°,Jablonec,1,0,1,0,1,1,0,1,CzechRepublic - 1. Liga
-9°,Slovacko,1,0,1,0,1,1,0,1,CzechRepublic - 1. Liga
-10°,Sparta Prague,1,0,1,0,1,1,0,1,CzechRepublic - 1. Liga
-11°,Dukla Praha,2,0,1,1,0,2,-2,1,CzechRepublic - 1. Liga
-12°,Bohemians,0,0,0,0,0,0,0,0,CzechRepublic - 1. Liga
-13°,Teplice,0,0,0,0,0,0,0,0,CzechRepublic - 1. Liga
-14°,Mlada Boleslav,1,0,0,1,2,3,-1,0,CzechRepublic - 1. Liga
-15°,Pardubice,1,0,0,1,1,2,-1,0,CzechRepublic - 1. Liga
-16°,Banik Ostrava,1,0,0,1,0,1,-1,0,CzechRepublic - 1. Liga
-1°,Zbrojovka Brno,2,2,0,0,9,2,+7,6,CzechRepublic - FNL
-2°,Banik Ostrava B,2,1,1,0,3,2,+1,4,CzechRepublic - FNL
-3°,Opava,2,1,1,0,1,0,+1,4,CzechRepublic - FNL
-4°,Jihlava,2,1,0,1,4,2,+2,3,CzechRepublic - FNL
-5°,Taborsko,1,1,0,0,2,0,+2,3,CzechRepublic - FNL
-6°,Usti nad Labem,1,1,0,0,3,2,+1,3,CzechRepublic - FNL
-7°,Artis Brno,1,1,0,0,2,1,+1,3,CzechRepublic - FNL
-8°,Vikto Zizkov,2,1,0,1,4,4,0,3,CzechRepublic - FNL
-9°,Slavia Prague B,2,1,0,1,1,1,0,3,CzechRepublic - FNL
-10°,Han. Kromeriz,0,0,0,0,0,0,0,0,CzechRepublic - FNL
-11°,Prostejov,1,0,0,1,0,1,-1,0,CzechRepublic - FNL
-12°,Chrudim,1,0,0,1,1,3,-2,0,CzechRepublic - FNL
-13°,Pribram,1,0,0,1,0,2,-2,0,CzechRepublic - FNL
-14°,C. Budejovice,1,0,0,1,0,3,-3,0,CzechRepublic - FNL
-15°,Sparta Prague B,1,0,0,1,0,3,-3,0,CzechRepublic - FNL
-16°,Vlasim,2,0,0,2,2,7,-5,0,CzechRepublic - FNL
-1°,Randers FC,2,1,1,0,3,2,+1,4,Denmark - Superligaen
-2°,Fredericia,1,1,0,0,2,0,+2,3,Denmark - Superligaen
-3°,FC Kobenhavn,1,1,0,0,3,2,+1,3,Denmark - Superligaen
-4°,Nordsjaelland,1,1,0,0,3,2,+1,3,Denmark - Superligaen
+1°,Zlin,2,2,0,0,4,1,+3,6,CzechRepublic - 1. Liga
+2°,Slavia Prague,2,2,0,0,3,0,+3,6,CzechRepublic - 1. Liga
+3°,Karvina,2,2,0,0,4,2,+2,6,CzechRepublic - 1. Liga
+4°,Sparta Prague,2,1,1,0,4,2,+2,4,CzechRepublic - 1. Liga
+5°,Jablonec,2,1,1,0,2,1,+1,4,CzechRepublic - 1. Liga
+6°,Viktoria Plzen,1,1,0,0,5,1,+4,3,CzechRepublic - 1. Liga
+7°,Sigma Olomouc,2,1,0,1,1,1,0,3,CzechRepublic - 1. Liga
+8°,Slovacko,2,0,2,0,2,2,0,2,CzechRepublic - 1. Liga
+9°,Slovan Liberec,2,0,1,1,4,5,-1,1,CzechRepublic - 1. Liga
+10°,Pardubice,2,0,1,1,2,3,-1,1,CzechRepublic - 1. Liga
+11°,Banik Ostrava,2,0,1,1,1,2,-1,1,CzechRepublic - 1. Liga
+12°,Hradec Kralove,2,0,1,1,2,4,-2,1,CzechRepublic - 1. Liga
+13°,Dukla Praha,3,0,1,2,0,4,-4,1,CzechRepublic - 1. Liga
+14°,Mlada Boleslav,2,0,0,2,4,6,-2,0,CzechRepublic - 1. Liga
+15°,Bohemians,1,0,0,1,0,3,-3,0,CzechRepublic - 1. Liga
+16°,Teplice,1,0,0,1,0,3,-3,0,CzechRepublic - 1. Liga
+1°,Zbrojovka Brno,3,2,1,0,11,4,+7,7,CzechRepublic - FNL
+2°,Banik Ostrava B,3,2,1,0,6,4,+2,7,CzechRepublic - FNL
+3°,Slavia Prague B,3,2,0,1,4,3,+1,6,CzechRepublic - FNL
+4°,Jihlava,3,1,1,1,5,3,+2,4,CzechRepublic - FNL
+5°,Opava,2,1,1,0,1,0,+1,4,CzechRepublic - FNL
+6°,Vikto Zizkov,3,1,1,1,6,6,0,4,CzechRepublic - FNL
+7°,Taborsko,2,1,0,1,3,2,+1,3,CzechRepublic - FNL
+8°,Usti nad Labem,2,1,0,1,4,4,0,3,CzechRepublic - FNL
+9°,Artis Brno,2,1,0,1,2,6,-4,3,CzechRepublic - FNL
+10°,Vlasim,3,0,1,2,2,7,-5,1,CzechRepublic - FNL
+11°,Prostejov,2,0,0,2,0,2,-2,0,CzechRepublic - FNL
+12°,Chrudim,2,0,0,2,3,6,-3,0,CzechRepublic - FNL
+13°,Pribram,2,0,0,2,1,4,-3,0,CzechRepublic - FNL
+14°,Han. Kromeriz,2,0,0,2,0,6,-6,0,CzechRepublic - FNL
+15°,Sparta Prague B,2,0,0,2,0,6,-6,0,CzechRepublic - FNL
+16°,C. Budejovice,2,0,0,2,1,9,-8,0,CzechRepublic - FNL
+1°,FC Kobenhavn,2,2,0,0,5,2,+3,6,Denmark - Superligaen
+2°,Fredericia,2,1,1,0,5,3,+2,4,Denmark - Superligaen
+3°,AGF Aarhus,2,1,1,0,4,3,+1,4,Denmark - Superligaen
+4°,Randers FC,3,1,1,1,5,5,0,4,Denmark - Superligaen
 5°,Brondby IF,1,1,0,0,1,0,+1,3,Denmark - Superligaen
-6°,Odense BK,1,0,1,0,3,3,0,1,Denmark - Superligaen
-7°,AGF Aarhus,1,0,1,0,1,1,0,1,Denmark - Superligaen
-8°,FC Midtjylland,0,0,0,0,0,0,0,0,Denmark - Superligaen
-9°,Viborg,1,0,0,1,1,3,-2,0,Denmark - Superligaen
-10°,Vejle BK,1,0,0,1,0,2,-2,0,Denmark - Superligaen
-11°,Silkeborg,1,0,0,1,0,3,-3,0,Denmark - Superligaen
-12°,SonderjyskE,1,0,0,1,2,6,-4,0,Denmark - Superligaen
-1°,Lyngby,1,1,0,0,2,0,+2,3,Denmark - 1st Division
-2°,B 93,2,0,2,0,2,2,0,2,Denmark - 1st Division
-3°,Aalborg BK,2,0,1,1,2,3,-1,1,Denmark - 1st Division
-4°,Aarhus Fremad,2,0,1,1,1,2,-1,1,Denmark - 1st Division
-5°,Middelfart,2,0,1,1,1,2,-1,1,Denmark - 1st Division
-6°,AC Horsens,0,0,0,0,0,0,0,0,Denmark - 1st Division
-7°,Esbjerg,0,0,0,0,0,0,0,0,Denmark - 1st Division
-8°,HB Koge,0,0,0,0,0,0,0,0,Denmark - 1st Division
-9°,Hillerod,0,0,0,0,0,0,0,0,Denmark - 1st Division
-10°,Hvidovre,1,0,0,1,1,2,-1,0,Denmark - 1st Division
-11°,Kolding IF,1,0,0,1,1,2,-1,0,Denmark - 1st Division
-12°,Hobro,1,0,0,1,0,2,-2,0,Denmark - 1st Division
-1°,AB Copenhagen,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-2°,Brabrand,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-3°,Fremad Amager,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-4°,Hellerup IK,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-5°,Helsingor,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-6°,Ishoj,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-7°,Naestved,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-8°,Roskilde,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-9°,Skive,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-10°,Thisted,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-11°,Vendsyssel,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-12°,VSK Arhus,0,0,0,0,0,0,0,0,Denmark - 2nd Division
-1°,Pyramids FC,15,10,2,3,26,15,+11,32,Egypt - Premier League
-2°,Al Ahly,12,7,4,1,17,8,+9,25,Egypt - Premier League
-3°,Zamalek,13,6,5,2,22,12,+10,23,Egypt - Premier League
-4°,National Bank,14,6,4,4,21,17,+4,22,Egypt - Premier League
-5°,Ceramica C.,12,6,3,3,17,12,+5,21,Egypt - Premier League
-6°,Al Masry,13,5,5,3,15,11,+4,20,Egypt - Premier League
-7°,El Geish,11,5,3,3,9,10,-1,18,Egypt - Premier League
-8°,ZED FC,11,4,5,2,12,7,+5,17,Egypt - Premier League
-9°,El Gouna,13,4,4,5,11,14,-3,16,Egypt - Premier League
-10°,Smouha,13,4,3,6,8,11,-3,15,Egypt - Premier League
-11°,Al Ittihad,14,2,8,4,8,12,-4,14,Egypt - Premier League
-12°,Petrojet,11,3,4,4,12,17,-5,13,Egypt - Premier League
-13°,ENPPI,13,2,6,5,10,15,-5,12,Egypt - Premier League
-14°,Modern Sport,13,2,5,6,12,19,-7,11,Egypt - Premier League
-15°,Pharco,10,3,2,5,6,16,-10,11,Egypt - Premier League
-16°,Ismaily,12,2,4,6,8,12,-4,10,Egypt - Premier League
-17°,Ghazl El M.,12,2,3,7,10,17,-7,9,Egypt - Premier League
-18°,Haras El Hodood,13,2,3,8,9,24,-15,9,Egypt - Premier League
-1°,I. del Valle,12,9,2,1,26,10,+16,29,Ecuador - Liga Pro
-2°,Barcelona SC,11,6,2,3,20,14,+6,20,Ecuador - Liga Pro
-3°,LDU Quito,11,5,2,4,14,11,+3,17,Ecuador - Liga Pro
-4°,D. Cuenca,11,4,3,4,10,13,-3,15,Ecuador - Liga Pro
-5°,Orense,11,4,2,5,10,15,-5,14,Ecuador - Liga Pro
-6°,Libertad,11,2,7,2,13,14,-1,13,Ecuador - Liga Pro
-7°,U. Catolica,12,3,3,6,21,20,+1,12,Ecuador - Liga Pro
-8°,Macara,10,3,3,4,11,10,+1,12,Ecuador - Liga Pro
-9°,Aucas,10,3,3,4,9,12,-3,12,Ecuador - Liga Pro
-10°,Emelec,11,3,3,5,11,16,-5,12,Ecuador - Liga Pro
-11°,El Nacional,11,2,5,4,15,18,-3,11,Ecuador - Liga Pro
-12°,Tecnico U.,11,3,2,6,10,18,-8,11,Ecuador - Liga Pro
-13°,Cuniburo,11,2,4,5,11,16,-5,10,Ecuador - Liga Pro
-14°,Delfin,11,2,3,6,11,23,-12,9,Ecuador - Liga Pro
-15°,Manta,11,1,3,7,7,18,-11,6,Ecuador - Liga Pro
-16°,Mushuc Runa,11,0,3,8,7,17,-10,3,Ecuador - Liga Pro
+6°,Viborg,2,1,0,1,3,3,0,3,Denmark - Superligaen
+7°,Nordsjaelland,3,1,0,2,7,9,-2,3,Denmark - Superligaen
+8°,FC Midtjylland,1,0,1,0,0,0,0,1,Denmark - Superligaen
+9°,Odense BK,2,0,1,1,3,7,-4,1,Denmark - Superligaen
+10°,Vejle BK,2,0,0,2,1,4,-3,0,Denmark - Superligaen
+11°,Silkeborg,2,0,0,2,0,4,-4,0,Denmark - Superligaen
+12°,SonderjyskE,2,0,0,2,2,7,-5,0,Denmark - Superligaen
+1°,Lyngby,2,2,0,0,4,0,+4,6,Denmark - 1st Division
+2°,B 93,3,1,2,0,6,3,+3,5,Denmark - 1st Division
+3°,Aalborg BK,3,1,1,1,4,3,+1,4,Denmark - 1st Division
+4°,Kolding IF,2,1,0,1,3,2,+1,3,Denmark - 1st Division
+5°,Esbjerg,1,1,0,0,1,0,+1,3,Denmark - 1st Division
+6°,Hvidovre,2,1,0,1,3,3,0,3,Denmark - 1st Division
+7°,Hillerod,2,1,0,1,3,4,-1,3,Denmark - 1st Division
+8°,AC Horsens,1,0,1,0,0,0,0,1,Denmark - 1st Division
+9°,Aarhus Fremad,2,0,1,1,1,2,-1,1,Denmark - 1st Division
+10°,Hobro,2,0,1,1,1,3,-2,1,Denmark - 1st Division
+11°,Middelfart,3,0,1,2,1,4,-3,1,Denmark - 1st Division
+12°,HB Koge,1,0,0,1,1,3,-2,0,Denmark - 1st Division
+1°,Skive,1,1,0,0,4,0,+4,3,Denmark - 2nd Division
+2°,Vendsyssel,1,1,0,0,3,1,+2,3,Denmark - 2nd Division
+3°,Helsingor,1,1,0,0,2,1,+1,3,Denmark - 2nd Division
+4°,Thisted,1,1,0,0,2,1,+1,3,Denmark - 2nd Division
+5°,Ishoj,1,0,1,0,1,1,0,1,Denmark - 2nd Division
+6°,AB Copenhagen,0,0,0,0,0,0,0,0,Denmark - 2nd Division
+7°,Brabrand,1,0,0,1,1,2,-1,0,Denmark - 2nd Division
+8°,Fremad Amager,1,0,0,1,1,2,-1,0,Denmark - 2nd Division
+9°,Naestved,1,0,0,1,1,2,-1,0,Denmark - 2nd Division
+10°,Hellerup IK,1,0,0,1,0,1,-1,0,Denmark - 2nd Division
+11°,Roskilde,1,0,0,1,0,1,-1,0,Denmark - 2nd Division
+12°,VSK Arhus,1,0,0,1,0,5,-5,0,Denmark - 2nd Division
+1°,Zamalek,1,1,0,0,2,0,+2,3,Egypt - Premier League
+2°,ZED FC,1,1,0,0,2,0,+2,3,Egypt - Premier League
+3°,El Gouna,1,1,0,0,1,0,+1,3,Egypt - Premier League
+4°,Al Ahly,1,0,1,0,2,2,0,1,Egypt - Premier League
+5°,El Geish,1,0,1,0,1,1,0,1,Egypt - Premier League
+6°,ENPPI,1,0,1,0,0,0,0,1,Egypt - Premier League
+7°,Ghazl El M.,1,0,1,0,0,0,0,1,Egypt - Premier League
+8°,Petrojet,1,0,1,0,0,0,0,1,Egypt - Premier League
+9°,Pyramids FC,1,0,1,0,0,0,0,1,Egypt - Premier League
+10°,Al Masry,0,0,0,0,0,0,0,0,Egypt - Premier League
+11°,Al Mokawloon,0,0,0,0,0,0,0,0,Egypt - Premier League
+12°,Ceramica C.,0,0,0,0,0,0,0,0,Egypt - Premier League
+13°,Haras El Hodood,0,0,0,0,0,0,0,0,Egypt - Premier League
+14°,Ismaily,0,0,0,0,0,0,0,0,Egypt - Premier League
+15°,Kahraba Ismaili,0,0,0,0,0,0,0,0,Egypt - Premier League
+16°,Modern Sport,0,0,0,0,0,0,0,0,Egypt - Premier League
+17°,National Bank,0,0,0,0,0,0,0,0,Egypt - Premier League
+18°,Pharco,0,0,0,0,0,0,0,0,Egypt - Premier League
+19°,Smouha,0,0,0,0,0,0,0,0,Egypt - Premier League
+20°,Wadi Degla,0,0,0,0,0,0,0,0,Egypt - Premier League
+21°,Al Ittihad,1,0,0,1,1,3,-2,0,Egypt - Premier League
+1°,I. del Valle,13,9,3,1,26,10,+16,30,Ecuador - Liga Pro
+2°,Barcelona SC,12,7,2,3,22,15,+7,23,Ecuador - Liga Pro
+3°,LDU Quito,12,5,2,5,14,12,+2,17,Ecuador - Liga Pro
+4°,Libertad,12,3,7,2,15,15,0,16,Ecuador - Liga Pro
+5°,D. Cuenca,11,4,3,4,10,13,-3,15,Ecuador - Liga Pro
+6°,Emelec,12,4,3,5,13,17,-4,15,Ecuador - Liga Pro
+7°,Tecnico U.,12,4,2,6,11,18,-7,14,Ecuador - Liga Pro
+8°,Orense,12,4,2,6,10,17,-7,14,Ecuador - Liga Pro
+9°,U. Catolica,13,3,4,6,22,21,+1,13,Ecuador - Liga Pro
+10°,Macara,11,3,4,4,12,11,+1,13,Ecuador - Liga Pro
+11°,Aucas,11,3,3,5,11,18,-7,12,Ecuador - Liga Pro
+12°,El Nacional,12,2,5,5,15,19,-4,11,Ecuador - Liga Pro
+13°,Cuniburo,12,2,5,5,14,19,-5,11,Ecuador - Liga Pro
+14°,Delfin,12,2,4,6,11,23,-12,10,Ecuador - Liga Pro
+15°,Manta,12,1,3,8,8,21,-13,6,Ecuador - Liga Pro
+16°,Mushuc Runa,12,0,3,9,8,19,-11,3,Ecuador - Liga Pro
 1°,Nueve Octubre,10,4,3,3,9,8,+1,15,Ecuador - Serie B
-2°,San Antonio,10,3,3,4,7,10,-3,12,Ecuador - Serie B
-3°,Guayaquil City,10,2,5,3,8,9,-1,11,Ecuador - Serie B
-4°,Gualaceo,10,2,5,3,9,14,-5,11,Ecuador - Serie B
-5°,Cumbaya,10,3,2,5,7,12,-5,11,Ecuador - Serie B
-6°,Leones Norte,10,2,4,4,7,8,-1,10,Ecuador - Serie B
-7°,I. Juniors,10,3,1,6,8,15,-7,10,Ecuador - Serie B
-8°,22 de Julio,10,1,3,6,8,25,-17,6,Ecuador - Serie B
-9°,Vargas Torres,10,0,5,5,10,15,-5,5,Ecuador - Serie B
-10°,Vinotinto,10,1,2,7,7,16,-9,5,Ecuador - Serie B
-11°,Imbabura,10,0,2,8,9,20,-11,2,Ecuador - Serie B
-12°,Chacaritas,10,0,1,9,4,28,-24,1,Ecuador - Serie B
-1°,Liverpool,19,11,5,3,44,25,+19,38,England - Premier League
-2°,Arsenal,19,9,8,2,34,17,+17,35,England - Premier League
-3°,Nottm Forest,19,10,3,6,32,30,+2,33,England - Premier League
-4°,Manchester City,19,8,5,6,29,21,+8,29,England - Premier League
-5°,Brighton,19,8,5,6,36,33,+3,29,England - Premier League
-6°,Bournemouth,19,7,7,5,35,30,+5,28,England - Premier League
-7°,Chelsea,19,8,4,7,29,25,+4,28,England - Premier League
-8°,Fulham,19,8,4,7,27,24,+3,28,England - Premier League
-9°,Crystal Palace,19,7,7,5,27,25,+2,28,England - Premier League
-10°,Newcastle Utd,19,8,4,7,28,27,+1,28,England - Premier League
-11°,Aston Villa,19,8,2,9,24,31,-7,26,England - Premier League
-12°,Brentford,19,7,4,8,26,22,+4,25,England - Premier League
-13°,Everton,19,6,6,7,16,21,-5,24,England - Premier League
-14°,West Ham Utd,19,6,5,8,23,28,-5,23,England - Premier League
-15°,Wolverhampton,19,6,3,10,27,37,-10,21,England - Premier League
-16°,Manchester Utd,19,4,6,9,21,26,-5,18,England - Premier League
-17°,Tottenham,19,5,2,12,29,30,-1,17,England - Premier League
-18°,Ipswich Town,19,3,6,10,22,38,-16,15,England - Premier League
-19°,Leicester City,19,2,4,13,18,46,-28,10,England - Premier League
-20°,Southampton,19,1,3,15,13,39,-26,6,England - Premier League
-1°,Birmingham City,0,0,0,0,0,0,0,0,England - Championship
-2°,Blackburn,0,0,0,0,0,0,0,0,England - Championship
-3°,Bristol City,0,0,0,0,0,0,0,0,England - Championship
-4°,Charlton,0,0,0,0,0,0,0,0,England - Championship
-5°,Coventry City,0,0,0,0,0,0,0,0,England - Championship
-6°,Derby County,0,0,0,0,0,0,0,0,England - Championship
-7°,Hull City,0,0,0,0,0,0,0,0,England - Championship
-8°,Ipswich Town,0,0,0,0,0,0,0,0,England - Championship
-9°,Leicester City,0,0,0,0,0,0,0,0,England - Championship
-10°,Middlesbrough,0,0,0,0,0,0,0,0,England - Championship
-11°,Millwall,0,0,0,0,0,0,0,0,England - Championship
+2°,Guayaquil City,11,3,5,3,9,9,0,14,Ecuador - Serie B
+3°,Leones Norte,11,3,4,4,9,9,0,13,Ecuador - Serie B
+4°,San Antonio,10,3,3,4,7,10,-3,12,Ecuador - Serie B
+5°,Gualaceo,10,2,5,3,9,14,-5,11,Ecuador - Serie B
+6°,Cumbaya,10,3,2,5,7,12,-5,11,Ecuador - Serie B
+7°,I. Juniors,11,3,2,6,8,15,-7,11,Ecuador - Serie B
+8°,Vinotinto,11,2,2,7,8,16,-8,8,Ecuador - Serie B
+9°,22 de Julio,11,1,3,7,8,27,-19,6,Ecuador - Serie B
+10°,Vargas Torres,10,0,5,5,10,15,-5,5,Ecuador - Serie B
+11°,Chacaritas,11,1,1,9,7,29,-22,4,Ecuador - Serie B
+12°,Imbabura,10,0,2,8,9,20,-11,2,Ecuador - Serie B
+1°,Arsenal,0,0,0,0,0,0,0,0,England - Premier League
+2°,Aston Villa,0,0,0,0,0,0,0,0,England - Premier League
+3°,Bournemouth,0,0,0,0,0,0,0,0,England - Premier League
+4°,Brentford,0,0,0,0,0,0,0,0,England - Premier League
+5°,Brighton,0,0,0,0,0,0,0,0,England - Premier League
+6°,Burnley,0,0,0,0,0,0,0,0,England - Premier League
+7°,Chelsea,0,0,0,0,0,0,0,0,England - Premier League
+8°,Crystal Palace,0,0,0,0,0,0,0,0,England - Premier League
+9°,Everton,0,0,0,0,0,0,0,0,England - Premier League
+10°,Fulham,0,0,0,0,0,0,0,0,England - Premier League
+11°,Leeds Utd,0,0,0,0,0,0,0,0,England - Premier League
+12°,Liverpool,0,0,0,0,0,0,0,0,England - Premier League
+13°,Manchester City,0,0,0,0,0,0,0,0,England - Premier League
+14°,Manchester Utd,0,0,0,0,0,0,0,0,England - Premier League
+15°,Newcastle Utd,0,0,0,0,0,0,0,0,England - Premier League
+16°,Nottm Forest,0,0,0,0,0,0,0,0,England - Premier League
+17°,Sunderland,0,0,0,0,0,0,0,0,England - Premier League
+18°,Tottenham,0,0,0,0,0,0,0,0,England - Premier League
+19°,West Ham Utd,0,0,0,0,0,0,0,0,England - Premier League
+20°,Wolverhampton,0,0,0,0,0,0,0,0,England - Premier League
+1°,Bristol City,1,1,0,0,4,1,+3,3,England - Championship
+2°,Millwall,1,1,0,0,2,1,+1,3,England - Championship
+3°,Portsmouth,1,1,0,0,1,0,+1,3,England - Championship
+4°,Ipswich Town,1,0,1,0,1,1,0,1,England - Championship
+5°,Preston,1,0,1,0,1,1,0,1,England - Championship
+6°,Hull City,1,0,1,0,0,0,0,1,England - Championship
+7°,Birmingham City,0,0,0,0,0,0,0,0,England - Championship
+8°,Charlton,0,0,0,0,0,0,0,0,England - Championship
+9°,Coventry City,0,0,0,0,0,0,0,0,England - Championship
+10°,Leicester City,0,0,0,0,0,0,0,0,England - Championship
+11°,Middlesbrough,0,0,0,0,0,0,0,0,England - Championship
 12°,Norwich City,0,0,0,0,0,0,0,0,England - Championship
 13°,Oxford Utd,0,0,0,0,0,0,0,0,England - Championship
-14°,Portsmouth,0,0,0,0,0,0,0,0,England - Championship
-15°,Preston,0,0,0,0,0,0,0,0,England - Championship
-16°,QP Rangers,0,0,0,0,0,0,0,0,England - Championship
-17°,Sheffield Utd,0,0,0,0,0,0,0,0,England - Championship
-18°,Sheffield Wed,0,0,0,0,0,0,0,0,England - Championship
-19°,Southampton,0,0,0,0,0,0,0,0,England - Championship
-20°,Stoke City,0,0,0,0,0,0,0,0,England - Championship
-21°,Swansea City,0,0,0,0,0,0,0,0,England - Championship
-22°,Watford,0,0,0,0,0,0,0,0,England - Championship
-23°,West Brom,0,0,0,0,0,0,0,0,England - Championship
-24°,Wrexham,0,0,0,0,0,0,0,0,England - Championship
-1°,AFC Wimbledon,0,0,0,0,0,0,0,0,England - League One
-2°,Barnsley,0,0,0,0,0,0,0,0,England - League One
-3°,Blackpool,0,0,0,0,0,0,0,0,England - League One
-4°,Bolton,0,0,0,0,0,0,0,0,England - League One
-5°,Bradford,0,0,0,0,0,0,0,0,England - League One
-6°,Burton Albion,0,0,0,0,0,0,0,0,England - League One
-7°,Cardiff City,0,0,0,0,0,0,0,0,England - League One
-8°,Doncaster,0,0,0,0,0,0,0,0,England - League One
-9°,Exeter City,0,0,0,0,0,0,0,0,England - League One
-10°,Huddersfield,0,0,0,0,0,0,0,0,England - League One
-11°,Leyton Orient,0,0,0,0,0,0,0,0,England - League One
-12°,Lincoln City,0,0,0,0,0,0,0,0,England - League One
-13°,Luton Town,0,0,0,0,0,0,0,0,England - League One
-14°,Mansfield,0,0,0,0,0,0,0,0,England - League One
-15°,Northampton,0,0,0,0,0,0,0,0,England - League One
-16°,Peterborough,0,0,0,0,0,0,0,0,England - League One
-17°,Plymouth,0,0,0,0,0,0,0,0,England - League One
-18°,Port Vale,0,0,0,0,0,0,0,0,England - League One
-19°,Reading,0,0,0,0,0,0,0,0,England - League One
-20°,Rotherham,0,0,0,0,0,0,0,0,England - League One
-21°,Stevenage,0,0,0,0,0,0,0,0,England - League One
-22°,Stockport,0,0,0,0,0,0,0,0,England - League One
-23°,Wigan Athletic,0,0,0,0,0,0,0,0,England - League One
-24°,Wycombe,0,0,0,0,0,0,0,0,England - League One
-1°,Accrington,0,0,0,0,0,0,0,0,England - League Two
-2°,Barnet,0,0,0,0,0,0,0,0,England - League Two
-3°,Barrow,0,0,0,0,0,0,0,0,England - League Two
-4°,Bristol Rovers,0,0,0,0,0,0,0,0,England - League Two
-5°,Bromley,0,0,0,0,0,0,0,0,England - League Two
-6°,Cambridge Utd,0,0,0,0,0,0,0,0,England - League Two
-7°,Cheltenham,0,0,0,0,0,0,0,0,England - League Two
-8°,Chesterfield,0,0,0,0,0,0,0,0,England - League Two
-9°,Colchester Utd,0,0,0,0,0,0,0,0,England - League Two
-10°,Crawley Town,0,0,0,0,0,0,0,0,England - League Two
-11°,Crewe Alexandra,0,0,0,0,0,0,0,0,England - League Two
-12°,Fleetwood,0,0,0,0,0,0,0,0,England - League Two
-13°,Gillingham,0,0,0,0,0,0,0,0,England - League Two
-14°,Grimsby,0,0,0,0,0,0,0,0,England - League Two
-15°,Harrogate,0,0,0,0,0,0,0,0,England - League Two
-16°,Milton Keynes,0,0,0,0,0,0,0,0,England - League Two
-17°,Newport,0,0,0,0,0,0,0,0,England - League Two
-18°,Notts County,0,0,0,0,0,0,0,0,England - League Two
-19°,Oldham,0,0,0,0,0,0,0,0,England - League Two
-20°,Salford City,0,0,0,0,0,0,0,0,England - League Two
-21°,Shrewsbury,0,0,0,0,0,0,0,0,England - League Two
-22°,Swindon Town,0,0,0,0,0,0,0,0,England - League Two
-23°,Tranmere,0,0,0,0,0,0,0,0,England - League Two
-24°,Walsall,0,0,0,0,0,0,0,0,England - League Two
-1°,Aldershot Town,0,0,0,0,0,0,0,0,England - National League
-2°,Altrincham,0,0,0,0,0,0,0,0,England - National League
-3°,Boreham Wood,0,0,0,0,0,0,0,0,England - National League
-4°,Boston Utd,0,0,0,0,0,0,0,0,England - National League
-5°,Brackley Town,0,0,0,0,0,0,0,0,England - National League
-6°,Braintree Town,0,0,0,0,0,0,0,0,England - National League
-7°,Carlisle Utd,0,0,0,0,0,0,0,0,England - National League
-8°,Eastleigh,0,0,0,0,0,0,0,0,England - National League
-9°,Forest Green,0,0,0,0,0,0,0,0,England - National League
-10°,Gateshead FC,0,0,0,0,0,0,0,0,England - National League
-11°,Halifax Town,0,0,0,0,0,0,0,0,England - National League
-12°,Hartlepool,0,0,0,0,0,0,0,0,England - National League
-13°,Morecambe,0,0,0,0,0,0,0,0,England - National League
-14°,Rochdale,0,0,0,0,0,0,0,0,England - National League
-15°,Scunthorpe,0,0,0,0,0,0,0,0,England - National League
-16°,Solihull Moors,0,0,0,0,0,0,0,0,England - National League
-17°,Southend Utd,0,0,0,0,0,0,0,0,England - National League
-18°,Sutton Utd,0,0,0,0,0,0,0,0,England - National League
-19°,Tamworth,0,0,0,0,0,0,0,0,England - National League
-20°,Truro City,0,0,0,0,0,0,0,0,England - National League
-21°,Wealdstone,0,0,0,0,0,0,0,0,England - National League
-22°,Woking,0,0,0,0,0,0,0,0,England - National League
-23°,Yeovil Town,0,0,0,0,0,0,0,0,England - National League
-24°,York City,0,0,0,0,0,0,0,0,England - National League
-1°,Klaksvik,8,7,1,0,22,3,+19,22,FaroeIslands - Premier League
-2°,NSI Runavik,8,6,1,1,37,10,+27,19,FaroeIslands - Premier League
-3°,HB Torshavn,8,6,1,1,18,10,+8,19,FaroeIslands - Premier League
-4°,Vikingur,9,4,2,3,11,8,+3,14,FaroeIslands - Premier League
-5°,B36 Torshavn,7,4,0,3,15,13,+2,12,FaroeIslands - Premier League
-6°,Streymur,9,3,3,3,10,14,-4,12,FaroeIslands - Premier League
-7°,B68 Toftir,8,1,2,5,9,22,-13,5,FaroeIslands - Premier League
-8°,TB Tvoroyri,8,1,1,6,8,29,-21,4,FaroeIslands - Premier League
-9°,Suduroy,8,1,0,7,4,18,-14,3,FaroeIslands - Premier League
-10°,07 Vestur,8,0,1,7,8,19,-11,1,FaroeIslands - Premier League
-1°,Inter Turku,8,5,3,0,15,7,+8,18,Finland - Veikkausliiga
-2°,Ilves,9,5,1,3,19,8,+11,16,Finland - Veikkausliiga
-3°,HJK Helsinki,9,5,1,3,20,10,+10,16,Finland - Veikkausliiga
-4°,VPS,9,3,2,4,19,17,+2,11,Finland - Veikkausliiga
-5°,SJK,8,3,2,3,13,16,-3,11,Finland - Veikkausliiga
-6°,KuPS,8,2,4,2,9,10,-1,10,Finland - Veikkausliiga
-7°,Jaro,9,3,1,5,11,14,-3,10,Finland - Veikkausliiga
-8°,Mariehamn,8,2,3,3,7,13,-6,9,Finland - Veikkausliiga
-9°,Gnistan,9,2,3,4,10,18,-8,9,Finland - Veikkausliiga
-10°,Haka,8,1,4,3,9,13,-4,7,Finland - Veikkausliiga
-11°,Oulu,9,2,1,6,11,16,-5,7,Finland - Veikkausliiga
-12°,KTP,8,2,0,6,11,23,-12,6,Finland - Veikkausliiga
+14°,QP Rangers,0,0,0,0,0,0,0,0,England - Championship
+15°,Sheffield Utd,0,0,0,0,0,0,0,0,England - Championship
+16°,Southampton,0,0,0,0,0,0,0,0,England - Championship
+17°,Stoke City,0,0,0,0,0,0,0,0,England - Championship
+18°,West Brom,0,0,0,0,0,0,0,0,England - Championship
+19°,Sheffield Wed,1,0,0,1,1,2,-1,0,England - Championship
+20°,Wrexham,1,0,0,1,1,2,-1,0,England - Championship
+21°,Blackburn,1,0,0,1,0,1,-1,0,England - Championship
+22°,Swansea City,1,0,0,1,0,1,-1,0,England - Championship
+23°,Watford,1,0,0,1,0,1,-1,0,England - Championship
+24°,Derby County,1,0,0,1,1,3,-2,0,England - Championship
+1°,Barnsley,1,1,0,0,3,1,+2,3,England - League One
+2°,Huddersfield,1,1,0,0,2,0,+2,3,England - League One
+3°,Luton Town,1,1,0,0,2,0,+2,3,England - League One
+4°,Stevenage,1,1,0,0,3,2,+1,3,England - League One
+5°,Doncaster,1,1,0,0,2,1,+1,3,England - League One
+6°,Stockport,1,1,0,0,2,1,+1,3,England - League One
+7°,Bradford,1,0,1,0,0,0,0,1,England - League One
+8°,Cardiff City,1,0,1,0,0,0,0,1,England - League One
+9°,Burton Albion,1,0,0,1,2,3,-1,0,England - League One
+10°,Mansfield,1,0,0,1,1,2,-1,0,England - League One
+11°,Peterborough,1,0,0,1,1,2,-1,0,England - League One
+12°,Port Vale,1,0,0,1,1,2,-1,0,England - League One
+13°,Wycombe,1,0,0,1,1,2,-1,0,England - League One
+14°,AFC Wimbledon,1,0,0,1,0,1,-1,0,England - League One
+15°,Exeter City,1,0,0,1,0,1,-1,0,England - League One
+16°,Rotherham,1,0,0,1,0,1,-1,0,England - League One
+17°,Northampton,1,0,0,1,1,3,-2,0,England - League One
+18°,Bolton,1,0,0,1,0,2,-2,0,England - League One
+19°,Lincoln City,1,0,0,1,0,2,-2,0,England - League One
+20°,Plymouth,1,0,0,1,0,2,-2,0,England - League One
+21°,Reading,1,0,0,1,0,2,-2,0,England - League One
+22°,Wigan Athletic,1,0,0,1,0,2,-2,0,England - League One
+23°,Blackpool,1,0,0,1,1,4,-3,0,England - League One
+24°,Leyton Orient,1,0,0,1,0,3,-3,0,England - League One
+1°,Crewe Alexandra,1,1,0,0,3,1,+2,3,England - League Two
+2°,Chesterfield,1,1,0,0,2,0,+2,3,England - League Two
+3°,Fleetwood,1,1,0,0,2,0,+2,3,England - League Two
+4°,Milton Keynes,1,1,0,0,2,0,+2,3,England - League Two
+5°,Newport,1,1,0,0,2,1,+1,3,England - League Two
+6°,Salford City,1,1,0,0,2,1,+1,3,England - League Two
+7°,Harrogate,1,1,0,0,1,0,+1,3,England - League Two
+8°,Grimsby,1,0,1,0,3,3,0,1,England - League Two
+9°,Colchester Utd,1,0,1,0,1,1,0,1,England - League Two
+10°,Gillingham,1,0,1,0,1,1,0,1,England - League Two
+11°,Notts County,1,0,1,0,1,1,0,1,England - League Two
+12°,Tranmere,1,0,1,0,1,1,0,1,England - League Two
+13°,Bromley,1,0,1,0,0,0,0,1,England - League Two
+14°,Oldham,1,0,1,0,0,0,0,1,England - League Two
+15°,Cambridge Utd,1,0,0,1,2,3,-1,0,England - League Two
+16°,Bristol Rovers,1,0,0,1,1,2,-1,0,England - League Two
+17°,Swindon Town,1,0,0,1,1,2,-1,0,England - League Two
+18°,Barrow,1,0,0,1,0,1,-1,0,England - League Two
+19°,Cheltenham,1,0,0,1,0,1,-1,0,England - League Two
+20°,Walsall,1,0,0,1,0,1,-1,0,England - League Two
+21°,Accrington,1,0,0,1,0,2,-2,0,England - League Two
+22°,Barnet,1,0,0,1,0,2,-2,0,England - League Two
+23°,Crawley Town,1,0,0,1,0,3,-3,0,England - League Two
+24°,Shrewsbury,1,0,0,1,0,4,-4,0,England - League Two
+1°,Southend Utd,1,1,0,0,3,0,+3,3,England - National League
+2°,Carlisle Utd,1,1,0,0,2,0,+2,3,England - National League
+3°,Rochdale,1,1,0,0,2,0,+2,3,England - National League
+4°,Scunthorpe,1,1,0,0,2,1,+1,3,England - National League
+5°,Forest Green,1,0,1,0,2,2,0,1,England - National League
+6°,Sutton Utd,1,0,1,0,2,2,0,1,England - National League
+7°,Hartlepool,1,0,1,0,0,0,0,1,England - National League
+8°,Altrincham,0,0,0,0,0,0,0,0,England - National League
+9°,Boreham Wood,0,0,0,0,0,0,0,0,England - National League
+10°,Boston Utd,0,0,0,0,0,0,0,0,England - National League
+11°,Brackley Town,0,0,0,0,0,0,0,0,England - National League
+12°,Braintree Town,0,0,0,0,0,0,0,0,England - National League
+13°,Gateshead FC,0,0,0,0,0,0,0,0,England - National League
+14°,Morecambe,0,0,0,0,0,0,0,0,England - National League
+15°,Solihull Moors,0,0,0,0,0,0,0,0,England - National League
+16°,Tamworth,0,0,0,0,0,0,0,0,England - National League
+17°,Wealdstone,0,0,0,0,0,0,0,0,England - National League
+18°,Woking,0,0,0,0,0,0,0,0,England - National League
+19°,Yeovil Town,0,0,0,0,0,0,0,0,England - National League
+20°,York City,0,0,0,0,0,0,0,0,England - National League
+21°,Aldershot Town,1,0,0,1,2,3,-1,0,England - National League
+22°,Eastleigh,1,0,0,1,0,1,-1,0,England - National League
+23°,Truro City,1,0,0,1,0,2,-2,0,England - National League
+24°,Halifax Town,1,0,0,1,0,3,-3,0,England - National League
+1°,NSI Runavik,9,7,1,1,40,11,+29,22,FaroeIslands - Premier League
+2°,Klaksvik,8,7,1,0,22,3,+19,22,FaroeIslands - Premier League
+3°,HB Torshavn,9,7,1,1,20,11,+9,22,FaroeIslands - Premier League
+4°,Vikingur,10,5,2,3,13,9,+4,17,FaroeIslands - Premier League
+5°,B36 Torshavn,8,4,0,4,17,17,0,12,FaroeIslands - Premier League
+6°,Streymur,10,3,3,4,11,16,-5,12,FaroeIslands - Premier League
+7°,Suduroy,9,2,0,7,7,20,-13,6,FaroeIslands - Premier League
+8°,B68 Toftir,9,1,2,6,9,29,-20,5,FaroeIslands - Premier League
+9°,TB Tvoroyri,8,1,1,6,8,29,-21,4,FaroeIslands - Premier League
+10°,07 Vestur,9,0,1,8,8,20,-12,1,FaroeIslands - Premier League
+1°,Inter Turku,9,6,3,0,19,8,+11,21,Finland - Veikkausliiga
+2°,HJK Helsinki,9,5,1,3,20,10,+10,16,Finland - Veikkausliiga
+3°,Ilves,10,5,1,4,20,13,+7,16,Finland - Veikkausliiga
+4°,SJK,9,4,2,3,15,17,-2,14,Finland - Veikkausliiga
+5°,KuPS,9,3,4,2,11,10,+1,13,Finland - Veikkausliiga
+6°,Jaro,10,4,1,5,12,14,-2,13,Finland - Veikkausliiga
+7°,Gnistan,11,3,4,4,17,22,-5,13,Finland - Veikkausliiga
+8°,VPS,9,3,2,4,19,17,+2,11,Finland - Veikkausliiga
+9°,Mariehamn,9,2,4,3,8,14,-6,10,Finland - Veikkausliiga
+10°,Oulu,10,2,1,7,13,19,-6,7,Finland - Veikkausliiga
+11°,Haka,10,1,4,5,12,18,-6,7,Finland - Veikkausliiga
+12°,KTP,9,2,0,7,11,26,-15,6,Finland - Veikkausliiga
 1°,TPS,9,6,1,2,24,16,+8,19,Finland - Ykkonen
-2°,Lahti,9,4,3,2,14,10,+4,15,Finland - Ykkonen
-3°,Ekenas IF,8,4,2,2,12,10,+2,14,Finland - Ykkonen
-4°,Klubi-04,8,4,1,3,17,13,+4,13,Finland - Ykkonen
-5°,PK-35,8,2,4,2,11,10,+1,10,Finland - Ykkonen
-6°,JIPPO,9,0,6,3,9,13,-4,6,Finland - Ykkonen
-7°,SJK Akatemia,8,1,2,5,11,14,-3,5,Finland - Ykkonen
-8°,JaPS,8,1,2,5,13,21,-8,5,Finland - Ykkonen
+2°,Klubi-04,9,5,1,3,20,13,+7,16,Finland - Ykkonen
+3°,Lahti,9,4,3,2,14,10,+4,15,Finland - Ykkonen
+4°,Ekenas IF,9,4,2,3,13,13,0,14,Finland - Ykkonen
+5°,PK-35,9,3,4,2,13,11,+2,13,Finland - Ykkonen
+6°,JaPS,9,2,2,5,16,21,-5,8,Finland - Ykkonen
+7°,JIPPO,9,0,6,3,9,13,-4,6,Finland - Ykkonen
+8°,SJK Akatemia,9,1,2,6,12,17,-5,5,Finland - Ykkonen
 9°,KaPa,9,0,2,7,14,29,-15,2,Finland - Ykkonen
 10°,SalPa,9,0,0,9,8,26,-18,0,Finland - Ykkonen
-1°,Inter Turku B,8,3,2,3,19,19,0,11,Finland - Kakkonen
-2°,PKKU,8,3,1,4,15,15,0,10,Finland - Kakkonen
-3°,OLS Oulu,8,2,4,2,13,13,0,10,Finland - Kakkonen
-4°,Mikkelin,8,3,1,4,13,14,-1,10,Finland - Kakkonen
-5°,Jazz Pori,8,3,1,4,8,11,-3,10,Finland - Kakkonen
-6°,Tampere Utd,8,3,0,5,12,16,-4,9,Finland - Kakkonen
-7°,Atlantis,8,2,2,4,9,16,-7,8,Finland - Kakkonen
-8°,KuPS Ak.,8,2,1,5,12,18,-6,7,Finland - Kakkonen
-9°,Rovaniemi,8,2,1,5,8,17,-9,7,Finland - Kakkonen
-10°,JJK,8,1,1,6,5,13,-8,4,Finland - Kakkonen
-11°,EPS,8,1,1,6,5,21,-16,4,Finland - Kakkonen
-12°,KPV Kokkola,8,0,3,5,6,18,-12,3,Finland - Kakkonen
-1°,Honka,8,7,1,0,34,7,+27,22,Finland - Kakkonen - A
-2°,VJS,8,5,1,2,22,10,+12,16,Finland - Kakkonen - A
-3°,Reipas,8,3,2,3,19,19,0,11,Finland - Kakkonen - A
-4°,MYPA,7,3,1,3,21,10,+11,10,Finland - Kakkonen - A
-5°,GrIFK,8,2,3,3,13,14,-1,9,Finland - Kakkonen - A
-6°,Vaajakoski,8,3,0,5,17,22,-5,9,Finland - Kakkonen - A
-7°,PuiU Helsinki,7,3,0,4,10,16,-6,9,Finland - Kakkonen - A
-8°,PEPO,7,2,2,3,9,16,-7,8,Finland - Kakkonen - A
-9°,HaPK,7,1,0,6,4,25,-21,3,Finland - Kakkonen - A
-10°,JPS,7,0,1,6,7,29,-22,1,Finland - Kakkonen - A
-1°,TPV,8,6,1,1,19,15,+4,19,Finland - Kakkonen - B
-2°,HJS,8,5,2,1,16,7,+9,17,Finland - Kakkonen - B
-3°,P-Iirot,7,5,1,1,18,7,+11,16,Finland - Kakkonen - B
-4°,Ilves B,7,4,2,1,14,9,+5,14,Finland - Kakkonen - B
+1°,Mikkelin,9,4,1,4,19,15,+4,13,Finland - Kakkonen
+2°,Inter Turku B,10,3,3,4,22,24,-2,12,Finland - Kakkonen
+3°,PKKU,9,3,2,4,17,17,0,11,Finland - Kakkonen
+4°,OLS Oulu,10,2,5,3,16,17,-1,11,Finland - Kakkonen
+5°,Tampere Utd,10,3,2,5,13,17,-4,11,Finland - Kakkonen
+6°,Jazz Pori,9,3,1,5,10,15,-5,10,Finland - Kakkonen
+7°,Atlantis,9,2,2,5,10,19,-9,8,Finland - Kakkonen
+8°,JJK,9,2,1,6,7,14,-7,7,Finland - Kakkonen
+9°,KuPS Ak.,9,2,1,6,12,23,-11,7,Finland - Kakkonen
+10°,Rovaniemi,10,2,1,7,9,24,-15,7,Finland - Kakkonen
+11°,KPV Kokkola,10,1,3,6,12,23,-11,6,Finland - Kakkonen
+12°,EPS,9,1,1,7,5,22,-17,4,Finland - Kakkonen
+1°,Honka,9,8,1,0,38,7,+31,25,Finland - Kakkonen - A
+2°,VJS,9,6,1,2,25,11,+14,19,Finland - Kakkonen - A
+3°,PuiU Helsinki,8,4,0,4,11,16,-5,12,Finland - Kakkonen - A
+4°,Reipas,8,3,2,3,19,19,0,11,Finland - Kakkonen - A
+5°,MYPA,9,3,1,5,23,20,+3,10,Finland - Kakkonen - A
+6°,GrIFK,8,2,3,3,13,14,-1,9,Finland - Kakkonen - A
+7°,Vaajakoski,9,3,0,6,18,25,-7,9,Finland - Kakkonen - A
+8°,PEPO,9,2,2,5,9,21,-12,8,Finland - Kakkonen - A
+9°,HaPK,8,1,0,7,4,30,-26,3,Finland - Kakkonen - A
+10°,JPS,8,0,1,7,7,33,-26,1,Finland - Kakkonen - A
+1°,TPV,9,7,1,1,21,16,+5,22,Finland - Kakkonen - B
+2°,Ilves B,8,5,2,1,19,10,+9,17,Finland - Kakkonen - B
+3°,HJS,9,5,2,2,17,9,+8,17,Finland - Kakkonen - B
+4°,P-Iirot,9,5,1,3,18,11,+7,16,Finland - Kakkonen - B
 5°,Kiffen,8,4,0,4,16,12,+4,12,Finland - Kakkonen - B
-6°,MuSa,7,3,1,3,17,18,-1,10,Finland - Kakkonen - B
-7°,HPS,7,1,2,4,9,16,-7,5,Finland - Kakkonen - B
-8°,NJS,7,1,2,4,8,22,-14,5,Finland - Kakkonen - B
-9°,PPJ,8,0,2,6,6,18,-12,2,Finland - Kakkonen - B
+6°,MuSa,8,3,1,4,17,21,-4,10,Finland - Kakkonen - B
+7°,HPS,8,2,2,4,11,17,-6,8,Finland - Kakkonen - B
+8°,NJS,9,2,2,5,14,25,-11,8,Finland - Kakkonen - B
+9°,PPJ,9,1,2,6,10,18,-8,5,Finland - Kakkonen - B
 10°,Atlantis B,8,0,2,6,9,31,-22,2,Finland - Kakkonen - B
-1°,GBK Kokkola,6,4,0,2,10,14,-4,12,Finland - Kakkonen - C
-2°,VPS B,8,3,2,3,14,13,+1,11,Finland - Kakkonen - C
-3°,SJK Akatemia B,6,3,0,3,17,16,+1,9,Finland - Kakkonen - C
-4°,OsPa,7,3,0,4,16,17,-1,9,Finland - Kakkonen - C
-5°,JS Hercules,7,3,0,4,15,25,-10,9,Finland - Kakkonen - C
-6°,TP-47,6,2,2,2,12,14,-2,8,Finland - Kakkonen - C
-7°,Narpes Kraft,7,2,1,4,11,14,-3,7,Finland - Kakkonen - C
-8°,JBK,7,2,1,4,9,13,-4,7,Finland - Kakkonen - C
-9°,VIFK,7,0,1,6,12,26,-14,1,Finland - Kakkonen - C
+1°,GBK Kokkola,7,5,0,2,13,15,-2,15,Finland - Kakkonen - C
+2°,SJK Akatemia B,7,4,0,3,19,17,+2,12,Finland - Kakkonen - C
+3°,VPS B,8,3,2,3,14,13,+1,11,Finland - Kakkonen - C
+4°,TP-47,8,3,2,3,14,23,-9,11,Finland - Kakkonen - C
+5°,JBK,8,3,1,4,12,13,-1,10,Finland - Kakkonen - C
+6°,OsPa,7,3,0,4,16,17,-1,9,Finland - Kakkonen - C
+7°,JS Hercules,8,3,0,5,16,27,-11,9,Finland - Kakkonen - C
+8°,Narpes Kraft,7,2,1,4,11,14,-3,7,Finland - Kakkonen - C
+9°,VIFK,8,0,1,7,14,36,-22,1,Finland - Kakkonen - C
 10°,Kuopion Elo,0,0,0,0,0,0,0,0,Finland - Kakkonen - C
-1°,Paris SG,17,12,4,1,47,19,+28,40,France - Ligue 1
-2°,Marseille,17,10,1,6,33,24,+9,31,France - Ligue 1
-3°,Lens,17,8,5,4,23,17,+6,29,France - Ligue 1
-4°,Lille,17,6,5,6,21,18,+3,23,France - Ligue 1
-5°,Nice,17,6,5,6,28,26,+2,23,France - Ligue 1
-6°,Le Havre,17,7,2,8,25,30,-5,23,France - Ligue 1
-7°,Lyon,17,6,4,7,28,25,+3,22,France - Ligue 1
-8°,Toulouse,17,6,4,7,24,21,+3,22,France - Ligue 1
-9°,Monaco,17,6,4,7,25,25,0,22,France - Ligue 1
-10°,Strasbourg,17,6,4,7,23,24,-1,22,France - Ligue 1
-11°,Angers,17,5,4,8,14,20,-6,19,France - Ligue 1
-12°,Reims,17,4,5,8,16,22,-6,17,France - Ligue 1
-13°,Brest,17,5,2,10,21,38,-17,17,France - Ligue 1
-14°,Auxerre,17,4,3,10,24,34,-10,15,France - Ligue 1
-15°,Nantes,17,3,6,8,20,34,-14,15,France - Ligue 1
-16°,Rennes,17,4,1,12,26,33,-7,13,France - Ligue 1
-17°,Saint-Etienne,17,2,3,12,15,44,-29,9,France - Ligue 1
-18°,Montpellier,17,1,0,16,6,38,-32,3,France - Ligue 1
-1°,Metz,17,8,5,4,27,19,+8,29,France - Ligue 2
-2°,Paris FC,17,8,4,5,21,17,+4,28,France - Ligue 2
-3°,Lorient,17,7,4,6,19,19,0,25,France - Ligue 2
-4°,Guingamp,17,8,1,8,24,26,-2,25,France - Ligue 2
-5°,Laval,17,6,5,6,20,20,0,23,France - Ligue 2
-6°,Annecy,17,5,5,7,18,27,-9,20,France - Ligue 2
-7°,Martigues,17,6,2,9,16,29,-13,20,France - Ligue 2
-8°,Troyes,17,6,1,10,18,21,-3,19,France - Ligue 2
-9°,USL Dunkerque,17,5,4,8,19,26,-7,19,France - Ligue 2
-10°,Grenoble,17,5,2,10,18,27,-9,17,France - Ligue 2
-11°,Rodez Aveyron,17,3,7,7,28,28,0,16,France - Ligue 2
-12°,Clermont,17,4,4,9,13,27,-14,16,France - Ligue 2
-13°,Red Star,17,3,6,8,18,29,-11,15,France - Ligue 2
-14°,SC Bastia,17,2,8,7,14,23,-9,14,France - Ligue 2
-15°,Pau FC,17,2,7,8,19,34,-15,13,France - Ligue 2
-16°,AC Ajaccio,17,3,3,11,8,25,-17,12,France - Ligue 2
-17°,Caen,17,2,2,13,16,34,-18,8,France - Ligue 2
-18°,Amiens,17,2,2,13,12,30,-18,8,France - Ligue 2
-1°,Nancy,16,9,4,3,30,17,+13,31,France - National
-2°,Le Mans,16,9,2,5,26,19,+7,29,France - National
-3°,Boulogne,16,7,5,4,20,18,+2,26,France - National
-4°,Dijon,16,5,7,4,18,18,0,22,France - National
-5°,Orleans,16,6,4,6,15,16,-1,22,France - National
-6°,Bourg-en-Bresse,16,6,3,7,14,17,-3,21,France - National
-7°,Aubagne,16,5,3,8,18,18,0,18,France - National
-8°,Valenciennes,16,4,6,6,16,19,-3,18,France - National
-9°,Sochaux,16,3,8,5,13,16,-3,17,France - National
-10°,Quevilly Rouen,16,4,5,7,16,26,-10,17,France - National
-11°,Villefranche,16,3,7,6,15,19,-4,16,France - National
-12°,Rouen,16,3,6,7,17,20,-3,15,France - National
-13°,Versailles,16,3,6,7,19,24,-5,15,France - National
-14°,Concarneau,16,4,3,9,19,28,-9,15,France - National
-15°,Paris 13 A.,16,2,8,6,16,22,-6,14,France - National
-16°,Chateauroux,16,1,5,10,14,35,-21,8,France - National
-17°,Nimes,16,1,4,11,8,25,-17,7,France - National
-1°,Dila Gori,9,6,1,2,13,7,+6,19,Georgia - Erovnuli Liga
+1°,Angers,0,0,0,0,0,0,0,0,France - Ligue 1
+2°,Auxerre,0,0,0,0,0,0,0,0,France - Ligue 1
+3°,Brest,0,0,0,0,0,0,0,0,France - Ligue 1
+4°,Le Havre,0,0,0,0,0,0,0,0,France - Ligue 1
+5°,Lens,0,0,0,0,0,0,0,0,France - Ligue 1
+6°,Lille,0,0,0,0,0,0,0,0,France - Ligue 1
+7°,Lorient,0,0,0,0,0,0,0,0,France - Ligue 1
+8°,Lyon,0,0,0,0,0,0,0,0,France - Ligue 1
+9°,Marseille,0,0,0,0,0,0,0,0,France - Ligue 1
+10°,Metz,0,0,0,0,0,0,0,0,France - Ligue 1
+11°,Monaco,0,0,0,0,0,0,0,0,France - Ligue 1
+12°,Nantes,0,0,0,0,0,0,0,0,France - Ligue 1
+13°,Nice,0,0,0,0,0,0,0,0,France - Ligue 1
+14°,Paris FC,0,0,0,0,0,0,0,0,France - Ligue 1
+15°,Paris SG,0,0,0,0,0,0,0,0,France - Ligue 1
+16°,Rennes,0,0,0,0,0,0,0,0,France - Ligue 1
+17°,Strasbourg,0,0,0,0,0,0,0,0,France - Ligue 1
+18°,Toulouse,0,0,0,0,0,0,0,0,France - Ligue 1
+1°,Le Mans,1,0,1,0,3,3,0,1,France - Ligue 2
+2°,Saint-Etienne,1,0,1,0,3,3,0,1,France - Ligue 2
+3°,Clermont,1,0,1,0,2,2,0,1,France - Ligue 2
+4°,Reims,1,0,1,0,2,2,0,1,France - Ligue 2
+5°,Red Star,1,0,1,0,1,1,0,1,France - Ligue 2
+6°,Nancy,1,0,1,0,0,0,0,1,France - Ligue 2
+7°,AC Ajaccio,0,0,0,0,0,0,0,0,France - Ligue 2
+8°,Amiens,0,0,0,0,0,0,0,0,France - Ligue 2
+9°,Guingamp,0,0,0,0,0,0,0,0,France - Ligue 2
+10°,Laval,0,0,0,0,0,0,0,0,France - Ligue 2
+11°,Montpellier,0,0,0,0,0,0,0,0,France - Ligue 2
+12°,Pau FC,0,0,0,0,0,0,0,0,France - Ligue 2
+13°,Rodez Aveyron,0,0,0,0,0,0,0,0,France - Ligue 2
+14°,SC Bastia,0,0,0,0,0,0,0,0,France - Ligue 2
+15°,Troyes,0,0,0,0,0,0,0,0,France - Ligue 2
+16°,USL Dunkerque,0,0,0,0,0,0,0,0,France - Ligue 2
+17°,Grenoble,1,0,0,1,1,2,-1,0,France - Ligue 2
+18°,Annecy,1,0,0,1,0,2,-2,0,France - Ligue 2
+1°,Dijon,1,1,0,0,2,1,+1,3,France - National
+2°,Sochaux,1,1,0,0,1,0,+1,3,France - National
+3°,Versailles,1,1,0,0,1,0,+1,3,France - National
+4°,Concarneau,1,0,1,0,0,0,0,1,France - National
+5°,Fleury-Merogis,1,0,1,0,0,0,0,1,France - National
+6°,Valenciennes,1,0,1,0,0,0,0,1,France - National
+7°,AC Ajaccio,0,0,0,0,0,0,0,0,France - National
+8°,Boulogne,0,0,0,0,0,0,0,0,France - National
+9°,Bourg-en-Bresse,0,0,0,0,0,0,0,0,France - National
+10°,Caen,0,0,0,0,0,0,0,0,France - National
+11°,Chateauroux,0,0,0,0,0,0,0,0,France - National
+12°,Le Puy,0,0,0,0,0,0,0,0,France - National
+13°,Orleans,0,0,0,0,0,0,0,0,France - National
+14°,Paris 13 A.,0,0,0,0,0,0,0,0,France - National
+15°,Rouen,0,0,0,0,0,0,0,0,France - National
+16°,Stade Briochin,0,0,0,0,0,0,0,0,France - National
+17°,Villefranche,0,0,0,0,0,0,0,0,France - National
+18°,Quevilly Rouen,1,0,0,1,0,1,-1,0,France - National
+19°,Aubagne,1,0,0,1,0,3,-3,0,France - National
+1°,Dila Gori,10,7,1,2,14,7,+7,22,Georgia - Erovnuli Liga
 2°,Iberia,9,5,4,0,11,6,+5,19,Georgia - Erovnuli Liga
-3°,Torpedo Kutaisi,9,4,2,3,10,10,0,14,Georgia - Erovnuli Liga
-4°,Gagra,8,4,0,4,9,9,0,12,Georgia - Erovnuli Liga
-5°,Dinamo Batumi,9,2,5,2,8,9,-1,11,Georgia - Erovnuli Liga
-6°,Dinamo Tbilisi,10,2,4,4,9,9,0,10,Georgia - Erovnuli Liga
-7°,Gareji Sagarejo,9,2,2,5,8,11,-3,8,Georgia - Erovnuli Liga
-8°,Samgurali,9,2,1,6,13,16,-3,7,Georgia - Erovnuli Liga
-9°,Kolkheti Poti,9,1,1,7,4,19,-15,4,Georgia - Erovnuli Liga
-10°,Telavi,9,1,1,7,4,24,-20,4,Georgia - Erovnuli Liga
-1°,Bayern Munich,17,11,5,1,46,16,+30,38,Germany - Bundesliga
-2°,Leverkusen,17,9,8,0,36,21,+15,35,Germany - Bundesliga
-3°,Werder Bremen,17,9,3,5,33,31,+2,30,Germany - Bundesliga
-4°,Wolfsburg,17,8,3,6,29,24,+5,27,Germany - Bundesliga
-5°,Stuttgart,17,7,6,4,29,26,+3,27,Germany - Bundesliga
-6°,FSV Mainz,17,8,2,7,31,25,+6,26,Germany - Bundesliga
-7°,E. Frankfurt,17,7,5,5,27,24,+3,26,Germany - Bundesliga
-8°,Freiburg,17,7,4,6,17,27,-10,25,Germany - Bundesliga
-9°,Dortmund,17,6,3,8,27,32,-5,21,Germany - Bundesliga
-10°,Monchengladbach,17,6,3,8,26,31,-5,21,Germany - Bundesliga
-11°,RB Leipzig,17,5,6,6,20,25,-5,21,Germany - Bundesliga
-12°,FC Augsburg,17,5,5,7,17,31,-14,20,Germany - Bundesliga
-13°,Union Berlin,17,5,4,8,17,28,-11,19,Germany - Bundesliga
-14°,Sankt Pauli,17,5,3,9,18,22,-4,18,Germany - Bundesliga
-15°,Heidenheim,17,5,3,9,24,31,-7,18,Germany - Bundesliga
-16°,Hoffenheim,17,3,6,8,21,32,-11,15,Germany - Bundesliga
-17°,Bochum,17,3,3,11,17,34,-17,12,Germany - Bundesliga
-18°,Holstein Kiel,17,2,5,10,25,39,-14,11,Germany - Bundesliga
-1°,Bielefeld,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-2°,Bochum,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-3°,Braunschweig,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-4°,Darmstadt,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-5°,Dusseldorf,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-6°,Dynamo Dresden,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-7°,Elversberg,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-8°,FC Nurnberg,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-9°,Greuther Furth,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-10°,Hannover 96,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-11°,Hertha Berlin,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-12°,Holstein Kiel,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-13°,Kaiserslautern,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-14°,Karlsruher SC,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-15°,Magdeburg,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-16°,Paderborn,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-17°,Preuss. Munster,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-18°,Schalke 04,0,0,0,0,0,0,0,0,Germany - 2. Bundesliga
-1°,1860 Munchen,0,0,0,0,0,0,0,0,Germany - 3. Liga
-2°,Alemannia A.,0,0,0,0,0,0,0,0,Germany - 3. Liga
-3°,Energie Cottbus,0,0,0,0,0,0,0,0,Germany - 3. Liga
-4°,Erzgebirge Aue,0,0,0,0,0,0,0,0,Germany - 3. Liga
-5°,FC Ingolstadt,0,0,0,0,0,0,0,0,Germany - 3. Liga
-6°,Hansa Rostock,0,0,0,0,0,0,0,0,Germany - 3. Liga
-7°,Havelse,0,0,0,0,0,0,0,0,Germany - 3. Liga
-8°,Hoffenheim B,0,0,0,0,0,0,0,0,Germany - 3. Liga
-9°,Mannheim,0,0,0,0,0,0,0,0,Germany - 3. Liga
-10°,MSV Duisburg,0,0,0,0,0,0,0,0,Germany - 3. Liga
-11°,Osnabruck,0,0,0,0,0,0,0,0,Germany - 3. Liga
-12°,Regensburg,0,0,0,0,0,0,0,0,Germany - 3. Liga
-13°,RW Essen,0,0,0,0,0,0,0,0,Germany - 3. Liga
-14°,Saarbrucken,0,0,0,0,0,0,0,0,Germany - 3. Liga
-15°,Schweinfurt,0,0,0,0,0,0,0,0,Germany - 3. Liga
-16°,Ulm,0,0,0,0,0,0,0,0,Germany - 3. Liga
-17°,Verl,0,0,0,0,0,0,0,0,Germany - 3. Liga
-18°,VfB Stuttgart B,0,0,0,0,0,0,0,0,Germany - 3. Liga
-19°,Viktoria Koln,0,0,0,0,0,0,0,0,Germany - 3. Liga
-20°,Wehen Wiesbaden,0,0,0,0,0,0,0,0,Germany - 3. Liga
-1°,Olympiakos,16,11,2,3,26,9,+17,35,Greece - Super League
-2°,PAOK,16,9,2,5,32,21,+11,29,Greece - Super League
-3°,Levadiakos,18,7,6,5,25,20,+5,27,Greece - Super League
-4°,Panaitolikos,18,6,7,5,15,15,0,25,Greece - Super League
-5°,Atromitos,13,7,2,4,19,15,+4,23,Greece - Super League
-6°,AEK Athens,16,7,2,7,18,16,+2,23,Greece - Super League
-7°,Panathinaikos,16,6,5,5,18,21,-3,23,Greece - Super League
-8°,Volos,18,7,2,9,20,28,-8,23,Greece - Super League
-9°,OFI Crete,13,5,3,5,17,18,-1,18,Greece - Super League
-10°,A. Kallithea,18,4,5,9,16,25,-9,17,Greece - Super League
-11°,Asteras T.,13,4,4,5,13,16,-3,16,Greece - Super League
-12°,Aris,13,4,3,6,14,20,-6,15,Greece - Super League
-13°,Panserraikos,18,4,1,13,15,35,-20,13,Greece - Super League
-14°,Lamia,18,1,5,12,8,34,-26,8,Greece - Super League
-1°,Antigua GFC,1,1,0,0,2,0,+2,3,Guatemala - Liga Nacional - Apertura
-2°,Coban Imperial,1,1,0,0,1,0,+1,3,Guatemala - Liga Nacional - Apertura
-3°,Mixco,1,1,0,0,1,0,+1,3,Guatemala - Liga Nacional - Apertura
-4°,Xelaju,1,1,0,0,1,0,+1,3,Guatemala - Liga Nacional - Apertura
-5°,Malacateco,1,0,1,0,2,2,0,1,Guatemala - Liga Nacional - Apertura
-6°,Municipal,1,0,1,0,2,2,0,1,Guatemala - Liga Nacional - Apertura
-7°,Achuapa,1,0,1,0,0,0,0,1,Guatemala - Liga Nacional - Apertura
-8°,Aurora,1,0,0,1,1,2,-1,0,Guatemala - Liga Nacional - Apertura
-9°,Comunicaciones,1,0,0,1,0,1,-1,0,Guatemala - Liga Nacional - Apertura
-10°,Guastatoya,1,0,0,1,0,1,-1,0,Guatemala - Liga Nacional - Apertura
-11°,Mictlan,1,0,0,1,0,2,-2,0,Guatemala - Liga Nacional - Apertura
-12°,Marquense,1,0,0,1,0,3,-3,0,Guatemala - Liga Nacional - Apertura
+3°,Torpedo Kutaisi,10,4,3,3,10,10,0,15,Georgia - Erovnuli Liga
+4°,Dinamo Batumi,10,3,5,2,9,9,0,14,Georgia - Erovnuli Liga
+5°,Dinamo Tbilisi,11,3,4,4,13,10,+3,13,Georgia - Erovnuli Liga
+6°,Gagra,9,4,0,5,10,11,-1,12,Georgia - Erovnuli Liga
+7°,Samgurali,10,2,2,6,14,17,-3,8,Georgia - Erovnuli Liga
+8°,Gareji Sagarejo,10,2,2,6,8,13,-5,8,Georgia - Erovnuli Liga
+9°,Telavi,10,2,1,7,7,26,-19,7,Georgia - Erovnuli Liga
+10°,Kolkheti Poti,11,1,2,8,5,22,-17,5,Georgia - Erovnuli Liga
+1°,Bayern Munich,0,0,0,0,0,0,0,0,Germany - Bundesliga
+2°,Dortmund,0,0,0,0,0,0,0,0,Germany - Bundesliga
+3°,E. Frankfurt,0,0,0,0,0,0,0,0,Germany - Bundesliga
+4°,FC Augsburg,0,0,0,0,0,0,0,0,Germany - Bundesliga
+5°,FC Koln,0,0,0,0,0,0,0,0,Germany - Bundesliga
+6°,Freiburg,0,0,0,0,0,0,0,0,Germany - Bundesliga
+7°,FSV Mainz,0,0,0,0,0,0,0,0,Germany - Bundesliga
+8°,Hamburger SV,0,0,0,0,0,0,0,0,Germany - Bundesliga
+9°,Heidenheim,0,0,0,0,0,0,0,0,Germany - Bundesliga
+10°,Hoffenheim,0,0,0,0,0,0,0,0,Germany - Bundesliga
+11°,Leverkusen,0,0,0,0,0,0,0,0,Germany - Bundesliga
+12°,Monchengladbach,0,0,0,0,0,0,0,0,Germany - Bundesliga
+13°,RB Leipzig,0,0,0,0,0,0,0,0,Germany - Bundesliga
+14°,Sankt Pauli,0,0,0,0,0,0,0,0,Germany - Bundesliga
+15°,Stuttgart,0,0,0,0,0,0,0,0,Germany - Bundesliga
+16°,Union Berlin,0,0,0,0,0,0,0,0,Germany - Bundesliga
+17°,Werder Bremen,0,0,0,0,0,0,0,0,Germany - Bundesliga
+18°,Wolfsburg,0,0,0,0,0,0,0,0,Germany - Bundesliga
+1°,Bielefeld,1,1,0,0,2,0,+2,3,Germany - 2. Bundesliga
+2°,Hannover 96,1,1,0,0,2,0,+2,3,Germany - 2. Bundesliga
+3°,Magdeburg,1,1,0,0,2,1,+1,3,Germany - 2. Bundesliga
+4°,Braunschweig,1,1,0,0,1,0,+1,3,Germany - 2. Bundesliga
+5°,Darmstadt,1,1,0,0,1,0,+1,3,Germany - 2. Bundesliga
+6°,Paderborn,1,0,1,0,1,1,0,1,Germany - 2. Bundesliga
+7°,Karlsruher SC,1,0,1,0,0,0,0,1,Germany - 2. Bundesliga
+8°,Dynamo Dresden,1,0,0,1,2,3,-1,0,Germany - 2. Bundesliga
+9°,Greuther Furth,1,0,0,1,2,3,-1,0,Germany - 2. Bundesliga
+10°,Preuss. Munster,1,0,0,1,2,3,-1,0,Germany - 2. Bundesliga
+11°,Hertha Berlin,1,0,0,1,1,2,-1,0,Germany - 2. Bundesliga
+12°,Holstein Kiel,1,0,0,1,1,2,-1,0,Germany - 2. Bundesliga
+13°,FC Nurnberg,1,0,0,1,0,1,-1,0,Germany - 2. Bundesliga
+14°,Kaiserslautern,1,0,0,1,0,1,-1,0,Germany - 2. Bundesliga
+15°,Schalke 04,1,0,0,1,0,1,-1,0,Germany - 2. Bundesliga
+16°,Elversberg,1,0,0,1,0,2,-2,0,Germany - 2. Bundesliga
+17°,Bochum,1,0,0,1,1,4,-3,0,Germany - 2. Bundesliga
+18°,Dusseldorf,1,0,0,1,1,5,-4,0,Germany - 2. Bundesliga
+1°,MSV Duisburg,1,1,0,0,4,0,+4,3,Germany - 3. Liga
+2°,Hoffenheim B,1,1,0,0,4,2,+2,3,Germany - 3. Liga
+3°,Energie Cottbus,1,1,0,0,2,0,+2,3,Germany - 3. Liga
+4°,Saarbrucken,1,0,1,0,3,3,0,1,Germany - 3. Liga
+5°,Verl,1,0,1,0,2,2,0,1,Germany - 3. Liga
+6°,Wehen Wiesbaden,1,0,1,0,2,2,0,1,Germany - 3. Liga
+7°,1860 Munchen,1,0,1,0,1,1,0,1,Germany - 3. Liga
+8°,Regensburg,1,0,1,0,1,1,0,1,Germany - 3. Liga
+9°,RW Essen,1,0,1,0,1,1,0,1,Germany - 3. Liga
+10°,Alemannia A.,1,0,1,0,0,0,0,1,Germany - 3. Liga
+11°,Hansa Rostock,1,0,1,0,0,0,0,1,Germany - 3. Liga
+12°,Havelse,1,0,1,0,0,0,0,1,Germany - 3. Liga
+13°,FC Ingolstadt,1,0,0,1,1,2,-1,0,Germany - 3. Liga
+14°,VfB Stuttgart B,1,0,0,1,1,2,-1,0,Germany - 3. Liga
+15°,Viktoria Koln,1,0,0,1,1,2,-1,0,Germany - 3. Liga
+16°,Erzgebirge Aue,1,0,0,1,0,1,-1,0,Germany - 3. Liga
+17°,Mannheim,1,0,0,1,0,1,-1,0,Germany - 3. Liga
+18°,Osnabruck,1,0,0,1,1,3,-2,0,Germany - 3. Liga
+19°,Ulm,1,0,0,1,1,3,-2,0,Germany - 3. Liga
+20°,Schweinfurt,1,0,0,1,0,2,-2,0,Germany - 3. Liga
+1°,AEK Athens,0,0,0,0,0,0,0,0,Greece - Super League
+2°,Aris,0,0,0,0,0,0,0,0,Greece - Super League
+3°,Asteras T.,0,0,0,0,0,0,0,0,Greece - Super League
+4°,Atromitos,0,0,0,0,0,0,0,0,Greece - Super League
+5°,Kifisia,0,0,0,0,0,0,0,0,Greece - Super League
+6°,Larissa,0,0,0,0,0,0,0,0,Greece - Super League
+7°,Levadiakos,0,0,0,0,0,0,0,0,Greece - Super League
+8°,OFI Crete,0,0,0,0,0,0,0,0,Greece - Super League
+9°,Olympiakos,0,0,0,0,0,0,0,0,Greece - Super League
+10°,Panaitolikos,0,0,0,0,0,0,0,0,Greece - Super League
+11°,Panathinaikos,0,0,0,0,0,0,0,0,Greece - Super League
+12°,Panserraikos,0,0,0,0,0,0,0,0,Greece - Super League
+13°,PAOK,0,0,0,0,0,0,0,0,Greece - Super League
+14°,Volos,0,0,0,0,0,0,0,0,Greece - Super League
+1°,Mixco,2,2,0,0,3,1,+2,6,Guatemala - Liga Nacional - Apertura
+2°,Malacateco,2,1,1,0,4,3,+1,4,Guatemala - Liga Nacional - Apertura
+3°,Municipal,2,1,1,0,3,2,+1,4,Guatemala - Liga Nacional - Apertura
+4°,Aurora,2,1,0,1,3,3,0,3,Guatemala - Liga Nacional - Apertura
+5°,Antigua GFC,2,1,0,1,2,2,0,3,Guatemala - Liga Nacional - Apertura
+6°,Xelaju,2,1,0,1,2,2,0,3,Guatemala - Liga Nacional - Apertura
+7°,Coban Imperial,2,1,0,1,1,1,0,3,Guatemala - Liga Nacional - Apertura
+8°,Achuapa,1,0,1,0,0,0,0,1,Guatemala - Liga Nacional - Apertura
+9°,Guastatoya,2,0,1,1,2,3,-1,1,Guatemala - Liga Nacional - Apertura
+10°,Comunicaciones,2,0,1,1,1,2,-1,1,Guatemala - Liga Nacional - Apertura
+11°,Marquense,2,0,1,1,1,4,-3,1,Guatemala - Liga Nacional - Apertura
+12°,Mictlan,3,0,1,2,0,4,-4,1,Guatemala - Liga Nacional - Apertura
 1°,Municipal,10,3,3,4,10,9,+1,12,Guatemala - Liga Nacional - Clausura
 2°,Antigua GFC,10,3,3,4,9,14,-5,12,Guatemala - Liga Nacional - Clausura
 3°,Comunicaciones,10,2,5,3,10,11,-1,11,Guatemala - Liga Nacional - Clausura
@@ -971,80 +976,80 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 7°,HK Rangers,12,3,3,6,21,29,-8,12,Hong Kong - Premier League
 8°,North District,12,2,0,10,15,38,-23,6,Hong Kong - Premier League
 9°,Hong Kong FC,12,0,1,11,10,34,-24,1,Hong Kong - Premier League
-1°,Debrecen,1,0,1,0,3,3,0,1,Hungary - NB I
-2°,Gyor,1,0,1,0,3,3,0,1,Hungary - NB I
-3°,Ferencvaros,1,0,1,0,1,1,0,1,Hungary - NB I
-4°,Kisvarda,1,0,1,0,1,1,0,1,Hungary - NB I
-5°,MTK Budapest,0,0,0,0,0,0,0,0,Hungary - NB I
-6°,Nyiregyhaza,0,0,0,0,0,0,0,0,Hungary - NB I
-7°,Paks,0,0,0,0,0,0,0,0,Hungary - NB I
-8°,Puskas A.,0,0,0,0,0,0,0,0,Hungary - NB I
-9°,Ujpest,0,0,0,0,0,0,0,0,Hungary - NB I
-10°,Zalaegerszegi,0,0,0,0,0,0,0,0,Hungary - NB I
-11°,Kazincbarcika,1,0,0,1,1,2,-1,0,Hungary - NB I
-12°,DVTK,1,0,0,1,1,3,-2,0,Hungary - NB I
-1°,Breidablik,8,4,2,2,13,10,+3,14,Iceland - Urvalsdeild
-2°,Valur,8,4,1,3,17,14,+3,13,Iceland - Urvalsdeild
-3°,Vikingur R.,8,2,4,2,9,9,0,10,Iceland - Urvalsdeild
-4°,IA Akranes,9,3,0,6,11,22,-11,9,Iceland - Urvalsdeild
-5°,Fram,8,2,2,4,10,14,-4,8,Iceland - Urvalsdeild
-6°,Vestri,7,2,1,4,6,7,-1,7,Iceland - Urvalsdeild
-7°,IBV,8,2,1,5,7,15,-8,7,Iceland - Urvalsdeild
-8°,KA Akureyri,8,2,1,5,5,18,-13,7,Iceland - Urvalsdeild
-9°,Stjarnan,7,1,2,4,7,11,-4,5,Iceland - Urvalsdeild
-10°,Afturelding,8,1,1,6,4,15,-11,4,Iceland - Urvalsdeild
+1°,Paks,2,2,0,0,7,2,+5,6,Hungary - NB I
+2°,Ferencvaros,2,1,1,0,5,2,+3,4,Hungary - NB I
+3°,Debrecen,2,1,1,0,5,4,+1,4,Hungary - NB I
+4°,Gyor,2,0,2,0,4,4,0,2,Hungary - NB I
+5°,Zalaegerszegi,1,0,1,0,2,2,0,1,Hungary - NB I
+6°,Kisvarda,1,0,1,0,1,1,0,1,Hungary - NB I
+7°,Ujpest,1,0,1,0,1,1,0,1,Hungary - NB I
+8°,Nyiregyhaza,1,0,0,1,2,3,-1,0,Hungary - NB I
+9°,Puskas A.,1,0,0,1,1,2,-1,0,Hungary - NB I
+10°,MTK Budapest,1,0,0,1,0,1,-1,0,Hungary - NB I
+11°,Kazincbarcika,2,0,0,2,1,5,-4,0,Hungary - NB I
+12°,DVTK,2,0,0,2,1,8,-7,0,Hungary - NB I
+1°,Valur,9,4,2,3,19,16,+3,14,Iceland - Urvalsdeild
+2°,Breidablik,9,4,2,3,14,12,+2,14,Iceland - Urvalsdeild
+3°,Vikingur R.,9,2,5,2,11,11,0,11,Iceland - Urvalsdeild
+4°,Stjarnan,9,2,3,4,12,14,-2,9,Iceland - Urvalsdeild
+5°,IA Akranes,10,3,0,7,13,25,-12,9,Iceland - Urvalsdeild
+6°,Vestri,8,2,2,4,7,8,-1,8,Iceland - Urvalsdeild
+7°,Fram,9,2,2,5,12,17,-5,8,Iceland - Urvalsdeild
+8°,KA Akureyri,9,2,2,5,6,19,-13,8,Iceland - Urvalsdeild
+9°,IBV,9,2,1,6,7,16,-9,7,Iceland - Urvalsdeild
+10°,Afturelding,9,1,1,7,5,17,-12,4,Iceland - Urvalsdeild
 11°,Hafnarfjordur,9,1,0,8,11,20,-9,3,Iceland - Urvalsdeild
-12°,KR Reykjavik,8,0,3,5,15,25,-10,3,Iceland - Urvalsdeild
-1°,Njardvik,8,4,4,0,19,8,+11,16,Iceland - 1. Deild
-2°,IR Reykjavik,8,4,4,0,12,6,+6,16,Iceland - 1. Deild
-3°,Throttur R.,7,5,1,1,11,6,+5,16,Iceland - 1. Deild
-4°,HK Kopavogur,8,4,2,2,12,10,+2,14,Iceland - 1. Deild
-5°,Thor Akureyri,7,4,1,2,19,13,+6,13,Iceland - 1. Deild
-6°,Keflavik,6,3,1,2,13,10,+3,10,Iceland - 1. Deild
-7°,Grindavik,7,3,1,3,16,17,-1,10,Iceland - 1. Deild
-8°,Volsungur,9,3,1,5,14,21,-7,10,Iceland - 1. Deild
-9°,Fjolnir,8,2,3,3,17,18,-1,9,Iceland - 1. Deild
+12°,KR Reykjavik,9,0,3,6,16,27,-11,3,Iceland - Urvalsdeild
+1°,Throttur R.,8,5,2,1,13,8,+5,17,Iceland - 1. Deild
+2°,Njardvik,8,4,4,0,19,8,+11,16,Iceland - 1. Deild
+3°,Thor Akureyri,8,5,1,2,21,14,+7,16,Iceland - 1. Deild
+4°,IR Reykjavik,8,4,4,0,12,6,+6,16,Iceland - 1. Deild
+5°,HK Kopavogur,8,4,2,2,12,10,+2,14,Iceland - 1. Deild
+6°,Keflavik,7,3,1,3,13,13,0,10,Iceland - 1. Deild
+7°,Fjolnir,9,2,4,3,20,21,-1,10,Iceland - 1. Deild
+8°,Grindavik,7,3,1,3,16,17,-1,10,Iceland - 1. Deild
+9°,Volsungur,9,3,1,5,14,21,-7,10,Iceland - 1. Deild
 10°,Fylkir,7,1,3,3,10,13,-3,6,Iceland - 1. Deild
-11°,Selfoss,8,2,0,6,7,17,-10,6,Iceland - 1. Deild
-12°,Leiknir R.,7,1,2,4,5,14,-9,5,Iceland - 1. Deild
-1°,Shamrock Rovers,13,6,4,3,19,16,+3,22,Ireland - Premier Division
-2°,Bohemians,13,5,2,6,14,14,0,17,Ireland - Premier Division
-3°,Derry City,12,5,2,5,11,14,-3,17,Ireland - Premier Division
-4°,Shelbourne,12,3,7,2,13,13,0,16,Ireland - Premier Division
-5°,Drogheda Utd,13,3,7,3,12,15,-3,16,Ireland - Premier Division
-6°,Waterford,13,5,1,7,17,24,-7,16,Ireland - Premier Division
-7°,Galway Utd,13,2,6,5,12,17,-5,12,Ireland - Premier Division
-8°,Sligo Rovers,12,3,2,7,17,24,-7,11,Ireland - Premier Division
-9°,St. Patricks,12,3,2,7,9,16,-7,11,Ireland - Premier Division
-10°,Cork City,12,0,2,10,12,28,-16,2,Ireland - Premier Division
-1°,Dundalk,12,8,2,2,19,8,+11,26,Ireland - First Division
-2°,UC Dublin,12,7,1,4,15,12,+3,22,Ireland - First Division
-3°,Cobh Ramblers,13,6,3,4,21,15,+6,21,Ireland - First Division
-4°,Bray Wanderers,12,6,1,5,15,16,-1,19,Ireland - First Division
-5°,Wexford,12,4,4,4,15,14,+1,16,Ireland - First Division
-6°,Treaty Utd,12,2,5,5,15,15,0,11,Ireland - First Division
-7°,Finn Harps,11,2,5,4,10,16,-6,11,Ireland - First Division
-8°,Athlone Town,12,2,2,8,8,18,-10,8,Ireland - First Division
-9°,Kerry,12,2,2,8,15,27,-12,8,Ireland - First Division
-10°,Longford Town,11,1,4,6,7,24,-17,7,Ireland - First Division
-1°,Arema,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-2°,Bali Utd,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-3°,Bhayangkara S.,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-4°,Borneo,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-5°,Dewa Utd,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-6°,Madura Utd,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-7°,Malut United,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-8°,Persebaya S.,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-9°,Persib,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-10°,Persija,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-11°,Persijap,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-12°,Persik Kediri,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-13°,Persis Solo,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-14°,Persita,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-15°,PSBS Biak N.,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-16°,PSIM Yogyakarta,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-17°,PSM,0,0,0,0,0,0,0,0,Indonesia - Liga 1
-18°,Semen Padang,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+11°,Selfoss,9,2,0,7,8,19,-11,6,Iceland - 1. Deild
+12°,Leiknir R.,8,1,2,5,7,17,-10,5,Iceland - 1. Deild
+1°,Shamrock Rovers,14,6,5,3,19,16,+3,23,Ireland - Premier Division
+2°,Shelbourne,13,4,7,2,15,13,+2,19,Ireland - Premier Division
+3°,Drogheda Utd,14,4,7,3,13,15,-2,19,Ireland - Premier Division
+4°,Bohemians,14,5,3,6,16,16,0,18,Ireland - Premier Division
+5°,Derry City,13,5,2,6,11,16,-5,17,Ireland - Premier Division
+6°,Waterford,14,5,2,7,17,24,-7,17,Ireland - Premier Division
+7°,St. Patricks,13,4,2,7,11,16,-5,14,Ireland - Premier Division
+8°,Galway Utd,14,2,6,6,12,18,-6,12,Ireland - Premier Division
+9°,Sligo Rovers,13,3,2,8,17,27,-10,11,Ireland - Premier Division
+10°,Cork City,13,0,3,10,12,28,-16,3,Ireland - Premier Division
+1°,Dundalk,13,9,2,2,20,8,+12,29,Ireland - First Division
+2°,UC Dublin,13,8,1,4,17,13,+4,25,Ireland - First Division
+3°,Cobh Ramblers,14,7,3,4,23,15,+8,24,Ireland - First Division
+4°,Bray Wanderers,13,6,2,5,17,18,-1,20,Ireland - First Division
+5°,Wexford,14,4,4,6,15,19,-4,16,Ireland - First Division
+6°,Finn Harps,13,3,5,5,12,18,-6,14,Ireland - First Division
+7°,Treaty Utd,14,2,5,7,17,20,-3,11,Ireland - First Division
+8°,Kerry,13,2,3,8,16,28,-12,9,Ireland - First Division
+9°,Athlone Town,14,2,2,10,9,28,-19,8,Ireland - First Division
+10°,Longford Town,13,1,4,8,9,31,-22,7,Ireland - First Division
+1°,Malut United,1,1,0,0,3,1,+2,3,Indonesia - Liga 1
+2°,Persis Solo,1,1,0,0,2,1,+1,3,Indonesia - Liga 1
+3°,PSIM Yogyakarta,1,1,0,0,1,0,+1,3,Indonesia - Liga 1
+4°,Persijap,1,0,1,0,1,1,0,1,Indonesia - Liga 1
+5°,Persik Kediri,1,0,1,0,1,1,0,1,Indonesia - Liga 1
+6°,Arema,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+7°,Bali Utd,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+8°,Borneo,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+9°,Dewa Utd,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+10°,Madura Utd,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+11°,Persebaya S.,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+12°,Persib,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+13°,Persija,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+14°,PSM,0,0,0,0,0,0,0,0,Indonesia - Liga 1
+15°,Bhayangkara S.,1,0,0,1,0,1,-1,0,Indonesia - Liga 1
+16°,Semen Padang,1,0,0,1,0,2,-2,0,Indonesia - Liga 1
+17°,PSBS Biak N.,1,0,0,1,1,4,-3,0,Indonesia - Liga 1
+18°,Persita,1,0,0,1,0,4,-4,0,Indonesia - Liga 1
 1°,M. Tel Aviv,18,13,3,2,46,21,+25,42,Israel - Ligat HaAl
 2°,H. Beer Sheva,18,11,4,3,28,12,+16,37,Israel - Ligat HaAl
 3°,Maccabi Haifa,18,10,5,3,37,22,+15,35,Israel - Ligat HaAl
@@ -1075,46 +1080,46 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 14°,Maccabi Jaffa,19,2,9,8,18,27,-9,15,Israel - Leumit League
 15°,Hapoel Afula,19,1,6,12,11,32,-21,9,Israel - Leumit League
 16°,H. Umm al-Fahm,19,0,4,15,18,43,-25,4,Israel - Leumit League
-1°,Atalanta,19,13,3,3,42,13,+29,42,Italy - Serie A
-2°,Inter Milan,19,11,5,3,39,14,+25,38,Italy - Serie A
-3°,Napoli,19,10,7,2,27,14,+13,37,Italy - Serie A
-4°,Lazio,19,11,2,6,28,23,+5,35,Italy - Serie A
-5°,Juventus,19,7,9,3,27,20,+7,30,Italy - Serie A
-6°,AC Milan,19,9,2,8,31,27,+4,29,Italy - Serie A
-7°,AS Roma,19,7,7,5,19,20,-1,28,Italy - Serie A
-8°,Fiorentina,19,7,4,8,28,23,+5,25,Italy - Serie A
-9°,Bologna,19,6,7,6,24,29,-5,25,Italy - Serie A
-10°,Genoa,19,5,6,8,16,24,-8,21,Italy - Serie A
-11°,Como,19,5,5,9,21,26,-5,20,Italy - Serie A
-12°,Udinese,19,5,5,9,19,29,-10,20,Italy - Serie A
-13°,Hellas Verona,19,6,2,11,19,30,-11,20,Italy - Serie A
-14°,Torino,19,4,7,8,22,27,-5,19,Italy - Serie A
-15°,Empoli,19,4,6,9,23,33,-10,18,Italy - Serie A
-16°,Lecce,19,4,4,11,14,27,-13,16,Italy - Serie A
-17°,Parma,19,2,9,8,19,30,-11,15,Italy - Serie A
-18°,Cagliari,19,3,5,11,16,28,-12,14,Italy - Serie A
-19°,Monza,19,2,4,13,15,38,-23,10,Italy - Serie A
-20°,Venezia,19,0,9,10,15,34,-19,9,Italy - Serie A
-1°,Sassuolo,19,11,5,3,35,21,+14,38,Italy - Serie B
-2°,Pisa,19,10,3,6,27,18,+9,33,Italy - Serie B
-3°,Cremonese,19,9,5,5,32,21,+11,32,Italy - Serie B
-4°,Spezia,19,5,11,3,23,16,+7,26,Italy - Serie B
-5°,Cittadella,19,7,3,9,16,28,-12,24,Italy - Serie B
-6°,Palermo,19,6,5,8,26,24,+2,23,Italy - Serie B
-7°,Catanzaro,19,4,11,4,20,24,-4,23,Italy - Serie B
-8°,Brescia,19,5,7,7,17,22,-5,22,Italy - Serie B
-9°,Cesena,19,6,4,9,19,26,-7,22,Italy - Serie B
-10°,Sudtirol,19,6,3,10,25,30,-5,21,Italy - Serie B
-11°,Juve Stabia,19,4,9,6,17,23,-6,21,Italy - Serie B
-12°,Frosinone,19,5,6,8,16,23,-7,21,Italy - Serie B
-13°,Reggiana,19,5,5,9,20,28,-8,20,Italy - Serie B
-14°,Modena,19,4,7,8,21,26,-5,19,Italy - Serie B
-15°,Bari,19,3,9,7,17,21,-4,18,Italy - Serie B
-16°,Sampdoria,19,2,10,7,25,34,-9,16,Italy - Serie B
-17°,Mantova,19,2,7,10,23,37,-14,13,Italy - Serie B
-18°,Cosenza,19,2,6,11,19,36,-17,12,Italy - Serie B
-19°,Salernitana,19,2,5,12,10,25,-15,11,Italy - Serie B
-20°,Carrarese,19,1,7,11,15,31,-16,10,Italy - Serie B
+1°,AC Milan,0,0,0,0,0,0,0,0,Italy - Serie A
+2°,AS Roma,0,0,0,0,0,0,0,0,Italy - Serie A
+3°,Atalanta,0,0,0,0,0,0,0,0,Italy - Serie A
+4°,Bologna,0,0,0,0,0,0,0,0,Italy - Serie A
+5°,Cagliari,0,0,0,0,0,0,0,0,Italy - Serie A
+6°,Como,0,0,0,0,0,0,0,0,Italy - Serie A
+7°,Cremonese,0,0,0,0,0,0,0,0,Italy - Serie A
+8°,Fiorentina,0,0,0,0,0,0,0,0,Italy - Serie A
+9°,Genoa,0,0,0,0,0,0,0,0,Italy - Serie A
+10°,Hellas Verona,0,0,0,0,0,0,0,0,Italy - Serie A
+11°,Inter Milan,0,0,0,0,0,0,0,0,Italy - Serie A
+12°,Juventus,0,0,0,0,0,0,0,0,Italy - Serie A
+13°,Lazio,0,0,0,0,0,0,0,0,Italy - Serie A
+14°,Lecce,0,0,0,0,0,0,0,0,Italy - Serie A
+15°,Napoli,0,0,0,0,0,0,0,0,Italy - Serie A
+16°,Parma,0,0,0,0,0,0,0,0,Italy - Serie A
+17°,Pisa,0,0,0,0,0,0,0,0,Italy - Serie A
+18°,Sassuolo,0,0,0,0,0,0,0,0,Italy - Serie A
+19°,Torino,0,0,0,0,0,0,0,0,Italy - Serie A
+20°,Udinese,0,0,0,0,0,0,0,0,Italy - Serie A
+1°,Avellino,0,0,0,0,0,0,0,0,Italy - Serie B
+2°,Bari,0,0,0,0,0,0,0,0,Italy - Serie B
+3°,Carrarese,0,0,0,0,0,0,0,0,Italy - Serie B
+4°,Catanzaro,0,0,0,0,0,0,0,0,Italy - Serie B
+5°,Cesena,0,0,0,0,0,0,0,0,Italy - Serie B
+6°,Empoli,0,0,0,0,0,0,0,0,Italy - Serie B
+7°,Entella,0,0,0,0,0,0,0,0,Italy - Serie B
+8°,Frosinone,0,0,0,0,0,0,0,0,Italy - Serie B
+9°,Juve Stabia,0,0,0,0,0,0,0,0,Italy - Serie B
+10°,Mantova,0,0,0,0,0,0,0,0,Italy - Serie B
+11°,Modena,0,0,0,0,0,0,0,0,Italy - Serie B
+12°,Monza,0,0,0,0,0,0,0,0,Italy - Serie B
+13°,Padova,0,0,0,0,0,0,0,0,Italy - Serie B
+14°,Palermo,0,0,0,0,0,0,0,0,Italy - Serie B
+15°,Pescara,0,0,0,0,0,0,0,0,Italy - Serie B
+16°,Reggiana,0,0,0,0,0,0,0,0,Italy - Serie B
+17°,Sampdoria,0,0,0,0,0,0,0,0,Italy - Serie B
+18°,Spezia,0,0,0,0,0,0,0,0,Italy - Serie B
+19°,Sudtirol,0,0,0,0,0,0,0,0,Italy - Serie B
+20°,Venezia,0,0,0,0,0,0,0,0,Italy - Serie B
 1°,Padova,19,11,4,4,29,14,+15,37,Italy - Serie C - Group A
 2°,Vicenza,19,9,5,5,21,17,+4,32,Italy - Serie C - Group A
 3°,Virtus Verona,19,8,6,5,26,20,+6,30,Italy - Serie C - Group A
@@ -1171,44 +1176,44 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 14°,Humble Lions,18,1,4,13,14,41,-27,7,Jamaica - Premier League
 1°,Machida Zelvia,13,8,3,2,21,11,+10,27,Japan - J1 League
 2°,Kashiwa Reysol,13,7,4,2,19,11,+8,25,Japan - J1 League
-3°,S. Hiroshima,13,7,2,4,17,8,+9,23,Japan - J1 League
-4°,Vissel Kobe,12,7,2,3,17,12,+5,23,Japan - J1 League
-5°,Kyoto Sanga,13,6,3,4,22,19,+3,21,Japan - J1 League
-6°,K. Frontale,12,4,4,4,15,13,+2,16,Japan - J1 League
-7°,Kashima Antlers,11,5,0,6,13,12,+1,15,Japan - J1 League
-8°,Avispa Fukuoka,11,4,2,5,7,10,-3,14,Japan - J1 League
-9°,Cerezo Osaka,12,3,4,5,20,21,-1,13,Japan - J1 League
-10°,Gamba Osaka,13,3,4,6,12,20,-8,13,Japan - J1 League
-11°,Fagiano Okayama,11,3,3,5,7,11,-4,12,Japan - J1 League
-12°,Tokyo Verdy,12,2,6,4,6,12,-6,12,Japan - J1 League
-13°,FC Tokyo,12,3,2,7,12,18,-6,11,Japan - J1 League
-14°,Shimizu S-Pulse,12,3,2,7,11,18,-7,11,Japan - J1 League
-15°,Shonan Bellmare,12,3,2,7,8,23,-15,11,Japan - J1 League
-16°,Urawa RD,11,1,6,4,12,14,-2,9,Japan - J1 League
+3°,Kyoto Sanga,14,7,3,4,24,20,+4,24,Japan - J1 League
+4°,S. Hiroshima,13,7,2,4,17,8,+9,23,Japan - J1 League
+5°,Vissel Kobe,13,7,2,4,17,14,+3,23,Japan - J1 League
+6°,Kashima Antlers,12,6,0,6,14,12,+2,18,Japan - J1 League
+7°,Avispa Fukuoka,12,5,2,5,12,12,0,17,Japan - J1 League
+8°,K. Frontale,12,4,4,4,15,13,+2,16,Japan - J1 League
+9°,Fagiano Okayama,12,4,3,5,10,11,-1,15,Japan - J1 League
+10°,Cerezo Osaka,12,3,4,5,20,21,-1,13,Japan - J1 League
+11°,Gamba Osaka,13,3,4,6,12,20,-8,13,Japan - J1 League
+12°,Urawa RD,12,2,6,4,14,15,-1,12,Japan - J1 League
+13°,Tokyo Verdy,12,2,6,4,6,12,-6,12,Japan - J1 League
+14°,Shimizu S-Pulse,13,3,3,7,11,18,-7,12,Japan - J1 League
+15°,FC Tokyo,12,3,2,7,12,18,-6,11,Japan - J1 League
+16°,Shonan Bellmare,13,3,2,8,8,25,-17,11,Japan - J1 League
 17°,Nagoya G.,13,2,3,8,12,23,-11,9,Japan - J1 League
-18°,Yokohama M.,11,2,2,7,10,15,-5,8,Japan - J1 League
-19°,Albirex Niigata,12,2,2,8,10,20,-10,8,Japan - J1 League
+18°,Yokohama M.,12,2,2,8,10,16,-6,8,Japan - J1 League
+19°,Albirex Niigata,13,2,2,9,11,23,-12,8,Japan - J1 League
 20°,Yokohama FC,11,1,2,8,6,15,-9,5,Japan - J1 League
-1°,Vegalta Sendai,12,7,3,2,15,12,+3,24,Japan - J2 League
-2°,JEF Utd Chiba,12,6,3,3,16,11,+5,21,Japan - J2 League
-3°,Tokushima V.,12,5,5,2,12,5,+7,20,Japan - J2 League
-4°,FC Imabari,10,5,4,1,13,7,+6,19,Japan - J2 League
-5°,Mito Hollyhock,10,6,1,3,13,9,+4,19,Japan - J2 League
-6°,V-V. Nagasaki,12,4,5,3,19,21,-2,17,Japan - J2 League
-7°,Ventforet Kofu,12,4,4,4,12,9,+3,16,Japan - J2 League
-8°,Omiya Ardija,11,4,3,4,13,10,+3,15,Japan - J2 League
-9°,M. Yamagata,13,4,3,6,18,18,0,15,Japan - J2 League
-10°,Sagan Tosu,10,4,2,4,9,8,+1,14,Japan - J2 League
-11°,Blaublitz Akita,12,4,2,6,15,22,-7,14,Japan - J2 League
-12°,C. Sapporo,13,4,2,7,14,23,-9,14,Japan - J2 League
-13°,Fujieda MYFC,11,3,4,4,13,12,+1,13,Japan - J2 League
-14°,Jubilo Iwata,11,3,4,4,16,18,-2,13,Japan - J2 League
-15°,Iwaki,11,3,3,5,12,18,-6,12,Japan - J2 League
-16°,Ehime FC,12,1,8,3,13,21,-8,11,Japan - J2 League
-17°,Oita Trinita,12,2,4,6,10,16,-6,10,Japan - J2 League
-18°,Kataller Toyama,12,2,4,6,8,16,-8,10,Japan - J2 League
-19°,R. Kumamoto,11,2,3,6,13,19,-6,9,Japan - J2 League
-20°,R. Yamaguchi,11,1,3,7,7,16,-9,6,Japan - J2 League
+1°,Vegalta Sendai,13,7,4,2,15,12,+3,25,Japan - J2 League
+2°,JEF Utd Chiba,13,7,3,3,17,11,+6,24,Japan - J2 League
+3°,Tokushima V.,13,6,5,2,14,5,+9,23,Japan - J2 League
+4°,FC Imabari,11,6,4,1,14,7,+7,22,Japan - J2 League
+5°,Mito Hollyhock,12,7,1,4,16,12,+4,22,Japan - J2 League
+6°,Ventforet Kofu,13,5,4,4,13,9,+4,19,Japan - J2 League
+7°,Omiya Ardija,12,5,3,4,15,10,+5,18,Japan - J2 League
+8°,M. Yamagata,14,5,3,6,21,19,+2,18,Japan - J2 League
+9°,Sagan Tosu,12,5,2,5,10,9,+1,17,Japan - J2 League
+10°,V-V. Nagasaki,12,4,5,3,19,21,-2,17,Japan - J2 League
+11°,Blaublitz Akita,13,5,2,6,19,23,-4,17,Japan - J2 League
+12°,Fujieda MYFC,12,3,5,4,13,12,+1,14,Japan - J2 League
+13°,C. Sapporo,14,4,2,8,15,25,-10,14,Japan - J2 League
+14°,Jubilo Iwata,12,3,4,5,17,21,-4,13,Japan - J2 League
+15°,Iwaki,12,3,4,5,14,20,-6,13,Japan - J2 League
+16°,Kataller Toyama,13,2,5,6,10,18,-8,11,Japan - J2 League
+17°,Ehime FC,13,1,8,4,13,22,-9,11,Japan - J2 League
+18°,Oita Trinita,12,2,4,6,10,16,-6,10,Japan - J2 League
+19°,R. Kumamoto,12,2,3,7,15,22,-7,9,Japan - J2 League
+20°,R. Yamaguchi,12,1,4,7,9,18,-9,7,Japan - J2 League
 1°,Tochigi City,11,6,2,3,16,9,+7,20,Japan - J3 League
 2°,Kagoshima Utd,11,4,5,2,15,13,+2,17,Japan - J3 League
 3°,V. Hachinohe,10,5,2,3,8,6,+2,17,Japan - J3 League
@@ -1231,52 +1236,52 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 20°,Gainare Tottori,12,1,1,10,5,19,-14,4,Japan - J3 League
 1°,Kairat Almaty,11,7,3,1,21,10,+11,24,Kazakhstan - Premier League
 2°,FC Astana,9,6,2,1,13,3,+10,20,Kazakhstan - Premier League
-3°,Aktobe,9,5,2,2,15,7,+8,17,Kazakhstan - Premier League
-4°,Tobol,8,4,3,1,11,7,+4,15,Kazakhstan - Premier League
+3°,Tobol,9,5,3,1,13,7,+6,18,Kazakhstan - Premier League
+4°,Aktobe,10,5,2,3,16,9,+7,17,Kazakhstan - Premier League
 5°,Okzhetpes,10,4,3,3,13,13,0,15,Kazakhstan - Premier League
-6°,Yelimay Semey,9,3,4,2,11,8,+3,13,Kazakhstan - Premier League
-7°,Zhenys,8,2,5,1,10,9,+1,11,Kazakhstan - Premier League
-8°,Ordabasy,8,3,2,3,10,10,0,11,Kazakhstan - Premier League
-9°,Kyzylzhar,9,2,3,4,10,12,-2,9,Kazakhstan - Premier League
-10°,Ulytau,10,2,2,6,4,12,-8,8,Kazakhstan - Premier League
-11°,Zhetysu,10,1,4,5,8,17,-9,7,Kazakhstan - Premier League
+6°,Yelimay Semey,10,3,5,2,12,9,+3,14,Kazakhstan - Premier League
+7°,Zhenys,9,3,5,1,12,9,+3,14,Kazakhstan - Premier League
+8°,Ordabasy,9,3,3,3,11,11,0,12,Kazakhstan - Premier League
+9°,Kyzylzhar,10,2,4,4,11,13,-2,10,Kazakhstan - Premier League
+10°,Zhetysu,11,2,4,5,10,18,-8,10,Kazakhstan - Premier League
+11°,Ulytau,11,2,2,7,4,13,-9,8,Kazakhstan - Premier League
 12°,Kaisar K.,7,1,1,5,7,19,-12,4,Kazakhstan - Premier League
-13°,Turan,8,1,0,7,6,21,-15,3,Kazakhstan - Premier League
-14°,Atyrau,8,1,0,7,3,18,-15,3,Kazakhstan - Premier League
-1°,Riga FC,11,10,1,0,30,8,+22,31,Latvia - Virsliga
-2°,RFS,12,8,1,3,31,15,+16,25,Latvia - Virsliga
-3°,Auda,12,4,3,5,13,15,-2,15,Latvia - Virsliga
-4°,Liepaja,11,4,1,6,17,23,-6,13,Latvia - Virsliga
-5°,Daugavpils,12,2,5,5,15,24,-9,11,Latvia - Virsliga
-6°,Tukums,13,2,2,9,11,26,-15,8,Latvia - Virsliga
-7°,Metta,13,2,2,9,11,28,-17,8,Latvia - Virsliga
-8°,Super Nova,11,1,4,6,10,16,-6,7,Latvia - Virsliga
-9°,Grobina,13,1,3,9,7,27,-20,6,Latvia - Virsliga
-10°,FS Jelgava,12,0,4,8,2,16,-14,4,Latvia - Virsliga
-1°,JFK Ventspils,7,5,2,0,12,6,+6,17,Latvia - 1. Liga
-2°,Riga Mariners,6,5,1,0,21,7,+14,16,Latvia - 1. Liga
-3°,Alberts JDFS,7,4,2,1,16,9,+7,14,Latvia - 1. Liga
-4°,Ogre United,9,4,2,3,16,13,+3,14,Latvia - 1. Liga
-5°,Skanste,7,3,1,3,9,13,-4,10,Latvia - 1. Liga
-6°,Marupe,6,3,0,3,9,8,+1,9,Latvia - 1. Liga
-7°,Leevon PPK,8,2,2,4,10,11,-1,8,Latvia - 1. Liga
-8°,Rezekne,7,2,2,3,10,22,-12,8,Latvia - 1. Liga
-9°,RFS B,5,1,4,0,7,6,+1,7,Latvia - 1. Liga
-10°,Smiltene,7,1,1,5,7,13,-6,4,Latvia - 1. Liga
-11°,Tukums B,7,1,1,5,4,15,-11,4,Latvia - 1. Liga
-12°,AFA Olaine,7,1,0,6,9,27,-18,3,Latvia - 1. Liga
-13°,Riga FC B,7,0,2,5,3,15,-12,2,Latvia - 1. Liga
+13°,Atyrau,9,1,1,7,5,20,-15,4,Kazakhstan - Premier League
+14°,Turan,10,1,1,8,7,23,-16,4,Kazakhstan - Premier League
+1°,Riga FC,12,11,1,0,31,8,+23,34,Latvia - Virsliga
+2°,RFS,13,9,1,3,34,17,+17,28,Latvia - Virsliga
+3°,Liepaja,12,5,1,6,19,24,-5,16,Latvia - Virsliga
+4°,Auda,13,4,3,6,13,16,-3,15,Latvia - Virsliga
+5°,Daugavpils,14,2,6,6,17,27,-10,12,Latvia - Virsliga
+6°,Metta,14,3,2,9,12,28,-16,11,Latvia - Virsliga
+7°,Tukums,13,2,2,9,11,26,-15,8,Latvia - Virsliga
+8°,Super Nova,12,1,4,7,11,20,-9,7,Latvia - Virsliga
+9°,Grobina,14,1,3,10,7,29,-22,6,Latvia - Virsliga
+10°,FS Jelgava,13,0,5,8,4,18,-14,5,Latvia - Virsliga
+1°,Riga Mariners,7,6,1,0,24,9,+15,19,Latvia - 1. Liga
+2°,Ogre United,10,5,2,3,20,13,+7,17,Latvia - 1. Liga
+3°,JFK Ventspils,8,5,2,1,12,9,+3,17,Latvia - 1. Liga
+4°,Alberts JDFS,8,4,3,1,16,9,+7,15,Latvia - 1. Liga
+5°,Skanste,8,4,1,3,11,14,-3,13,Latvia - 1. Liga
+6°,Marupe,8,4,0,4,11,11,0,12,Latvia - 1. Liga
+7°,Rezekne,8,2,3,3,11,23,-12,9,Latvia - 1. Liga
+8°,Leevon PPK,9,2,2,5,11,13,-2,8,Latvia - 1. Liga
+9°,RFS B,6,1,4,1,8,8,0,7,Latvia - 1. Liga
+10°,Smiltene,8,2,1,5,9,13,-4,7,Latvia - 1. Liga
+11°,Tukums B,8,1,1,6,4,16,-12,4,Latvia - 1. Liga
+12°,AFA Olaine,8,1,0,7,10,35,-25,3,Latvia - 1. Liga
+13°,Riga FC B,8,0,2,6,3,16,-13,2,Latvia - 1. Liga
 14°,Augsdaugava,8,0,2,6,2,16,-14,2,Latvia - 1. Liga
-1°,Kauno Zalgiris,10,7,3,0,18,5,+13,24,Lithuania - A Lyga
-2°,Dziugas Telsiai,12,7,0,5,13,14,-1,21,Lithuania - A Lyga
-3°,Suduva,10,5,3,2,15,12,+3,18,Lithuania - A Lyga
-4°,Siauliai,12,5,2,5,13,16,-3,17,Lithuania - A Lyga
-5°,Hegelmann L.,9,4,1,4,13,16,-3,13,Lithuania - A Lyga
-6°,Panevezys,10,3,3,4,14,15,-1,12,Lithuania - A Lyga
+1°,Kauno Zalgiris,11,8,3,0,20,6,+14,27,Lithuania - A Lyga
+2°,Dziugas Telsiai,13,8,0,5,14,14,0,24,Lithuania - A Lyga
+3°,Suduva,12,5,4,3,17,15,+2,19,Lithuania - A Lyga
+4°,Siauliai,13,5,2,6,13,17,-4,17,Lithuania - A Lyga
+5°,Hegelmann L.,10,5,1,4,14,16,-2,16,Lithuania - A Lyga
+6°,Panevezys,11,4,3,4,17,16,+1,15,Lithuania - A Lyga
 7°,Banga,11,3,3,5,7,12,-5,12,Lithuania - A Lyga
-8°,Zalgiris,9,2,3,4,12,17,-5,9,Lithuania - A Lyga
-9°,Riteriai,11,1,3,7,10,23,-13,6,Lithuania - A Lyga
-10°,Dainava,11,1,2,8,9,23,-14,5,Lithuania - A Lyga
+8°,Zalgiris,10,2,4,4,14,19,-5,10,Lithuania - A Lyga
+9°,Dainava,12,2,2,8,10,23,-13,8,Lithuania - A Lyga
+10°,Riteriai,12,1,3,8,10,25,-15,6,Lithuania - A Lyga
 1°,TransINVEST,7,6,0,1,23,9,+14,18,Lithuania - 1st League
 2°,Neptuna K.,7,5,1,1,19,8,+11,16,Lithuania - 1st League
 3°,Zalgiris B,8,4,3,1,17,9,+8,15,Lithuania - 1st League
@@ -1293,19 +1298,19 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 14°,Ekranas,8,2,0,6,6,19,-13,6,Lithuania - 1st League
 15°,Panevezys B,8,1,1,6,9,25,-16,4,Lithuania - 1st League
 16°,Kauno Z. B,8,0,1,7,5,18,-13,1,Lithuania - 1st League
-1°,DPMM FC,0,0,0,0,0,0,0,0,Malaysia - Super League
-2°,Imigresen,0,0,0,0,0,0,0,0,Malaysia - Super League
-3°,Johor Darul,0,0,0,0,0,0,0,0,Malaysia - Super League
-4°,Kelantan United,0,0,0,0,0,0,0,0,Malaysia - Super League
-5°,Kuala Lumpur,0,0,0,0,0,0,0,0,Malaysia - Super League
+1°,Kuala Lumpur,1,1,0,0,3,0,+3,3,Malaysia - Super League
+2°,Terengganu,1,1,0,0,3,0,+3,3,Malaysia - Super League
+3°,DPMM FC,1,0,1,0,2,2,0,1,Malaysia - Super League
+4°,Imigresen,0,0,0,0,0,0,0,0,Malaysia - Super League
+5°,Johor Darul,0,0,0,0,0,0,0,0,Malaysia - Super League
 6°,Kuching,0,0,0,0,0,0,0,0,Malaysia - Super League
 7°,Melaka,0,0,0,0,0,0,0,0,Malaysia - Super League
 8°,Negeri Sembilan,0,0,0,0,0,0,0,0,Malaysia - Super League
 9°,PDRM,0,0,0,0,0,0,0,0,Malaysia - Super League
 10°,Pulau Pinang,0,0,0,0,0,0,0,0,Malaysia - Super League
 11°,Sabah,0,0,0,0,0,0,0,0,Malaysia - Super League
-12°,Selangor,0,0,0,0,0,0,0,0,Malaysia - Super League
-13°,Terengganu,0,0,0,0,0,0,0,0,Malaysia - Super League
+12°,Selangor,1,0,0,1,0,3,-3,0,Malaysia - Super League
+13°,Kelantan United,1,0,0,1,0,4,-4,0,Malaysia - Super League
 1°,Hamrun Spartans,15,8,3,4,28,13,+15,27,Malta - Premier League
 2°,Marsaxlokk,14,8,3,3,23,10,+13,27,Malta - Premier League
 3°,Hibernians,15,8,3,4,23,18,+5,27,Malta - Premier League
@@ -1318,24 +1323,24 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 10°,Gzira Utd,11,4,2,5,11,15,-4,14,Malta - Premier League
 11°,Naxxar Lions,14,2,3,9,16,29,-13,9,Malta - Premier League
 12°,Balzan,14,1,3,10,10,25,-15,6,Malta - Premier League
-1°,Toluca,1,1,0,0,4,2,+2,3,Mexico - Liga MX - Apertura
-2°,Tigres,1,1,0,0,4,3,+1,3,Mexico - Liga MX - Apertura
-3°,Pachuca,1,1,0,0,3,2,+1,3,Mexico - Liga MX - Apertura
-4°,A. San Luis,2,1,0,1,4,4,0,3,Mexico - Liga MX - Apertura
-5°,Atlas,2,1,0,1,4,5,-1,3,Mexico - Liga MX - Apertura
-6°,Pumas UNAM,2,1,0,1,2,3,-1,3,Mexico - Liga MX - Apertura
-7°,Monterrey,2,1,0,1,1,3,-2,3,Mexico - Liga MX - Apertura
-8°,CF America,2,0,2,0,2,2,0,2,Mexico - Liga MX - Apertura
-9°,Cruz Azul,1,0,1,0,3,3,0,1,Mexico - Liga MX - Apertura
+1°,Pachuca,2,2,0,0,6,2,+4,6,Mexico - Liga MX - Apertura
+2°,Toluca,2,2,0,0,6,2,+4,6,Mexico - Liga MX - Apertura
+3°,Monterrey,3,2,0,1,4,4,0,6,Mexico - Liga MX - Apertura
+4°,Cruz Azul,2,1,1,0,5,4,+1,4,Mexico - Liga MX - Apertura
+5°,Tigres,1,1,0,0,4,3,+1,3,Mexico - Liga MX - Apertura
+6°,A. San Luis,2,1,0,1,4,4,0,3,Mexico - Liga MX - Apertura
+7°,Atlas,2,1,0,1,4,5,-1,3,Mexico - Liga MX - Apertura
+8°,Pumas UNAM,2,1,0,1,2,3,-1,3,Mexico - Liga MX - Apertura
+9°,CF America,2,0,2,0,2,2,0,2,Mexico - Liga MX - Apertura
 10°,Juarez,2,0,1,1,1,2,-1,1,Mexico - Liga MX - Apertura
 11°,Mazatlan,2,0,1,1,0,1,-1,1,Mexico - Liga MX - Apertura
-12°,Puebla,1,0,0,1,1,2,-1,0,Mexico - Liga MX - Apertura
-13°,Guadalajara,1,0,0,1,0,1,-1,0,Mexico - Liga MX - Apertura
+12°,Tijuana,2,0,1,1,3,5,-2,1,Mexico - Liga MX - Apertura
+13°,Necaxa,2,0,1,1,2,4,-2,1,Mexico - Liga MX - Apertura
 14°,Santos Laguna,1,0,0,1,0,1,-1,0,Mexico - Liga MX - Apertura
-15°,Necaxa,1,0,0,1,1,3,-2,0,Mexico - Liga MX - Apertura
-16°,Tijuana,1,0,0,1,1,3,-2,0,Mexico - Liga MX - Apertura
-17°,Club Leon,1,0,0,1,1,4,-3,0,Mexico - Liga MX - Apertura
-18°,Queretaro,2,0,0,2,1,4,-3,0,Mexico - Liga MX - Apertura
+15°,Guadalajara,2,0,0,2,0,2,-2,0,Mexico - Liga MX - Apertura
+16°,Club Leon,1,0,0,1,1,4,-3,0,Mexico - Liga MX - Apertura
+17°,Queretaro,3,0,0,3,1,5,-4,0,Mexico - Liga MX - Apertura
+18°,Puebla,2,0,0,2,1,9,-8,0,Mexico - Liga MX - Apertura
 1°,Toluca,9,5,2,2,20,13,+7,17,Mexico - Liga MX - Clausura
 2°,CF America,8,5,1,2,12,5,+7,16,Mexico - Liga MX - Clausura
 3°,Necaxa,9,5,1,3,18,13,+5,16,Mexico - Liga MX - Clausura
@@ -1354,114 +1359,114 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 16°,Puebla,9,1,2,6,7,13,-6,5,Mexico - Liga MX - Clausura
 17°,Mazatlan,8,1,1,6,5,15,-10,4,Mexico - Liga MX - Clausura
 18°,Santos Laguna,9,0,1,8,7,19,-12,1,Mexico - Liga MX - Clausura
-1°,PSV Eindhoven,17,12,1,4,48,24,+24,37,Netherlands - Eredivisie
-2°,Ajax Amsterdam,17,11,3,3,29,18,+11,36,Netherlands - Eredivisie
-3°,FC Utrecht,17,9,7,1,34,21,+13,34,Netherlands - Eredivisie
-4°,Feyenoord,17,9,5,3,38,20,+18,32,Netherlands - Eredivisie
-5°,AZ Alkmaar,17,8,5,4,28,20,+8,29,Netherlands - Eredivisie
-6°,Sparta,17,5,6,6,19,19,0,21,Netherlands - Eredivisie
-7°,FC Twente,17,5,5,7,26,28,-2,20,Netherlands - Eredivisie
-8°,NEC Nijmegen,17,6,1,10,15,22,-7,19,Netherlands - Eredivisie
-9°,Go Ahead Eagles,17,4,5,8,25,33,-8,17,Netherlands - Eredivisie
-10°,Fortuna Sittard,17,3,7,7,20,30,-10,16,Netherlands - Eredivisie
-11°,PEC Zwolle,17,3,7,7,19,31,-12,16,Netherlands - Eredivisie
-12°,Willem II,17,3,5,9,14,29,-15,14,Netherlands - Eredivisie
-13°,Heracles Almelo,17,3,4,10,13,36,-23,13,Netherlands - Eredivisie
-14°,Almere City,17,2,5,10,10,28,-18,11,Netherlands - Eredivisie
-15°,NAC Breda,17,2,3,12,13,36,-23,9,Netherlands - Eredivisie
-16°,FC Groningen,17,2,3,12,13,39,-26,9,Netherlands - Eredivisie
-17°,RKC Waalwijk,17,1,4,12,19,43,-24,7,Netherlands - Eredivisie
-18°,Heerenveen,17,2,1,14,12,42,-30,7,Netherlands - Eredivisie
-1°,FC Volendam,19,11,4,4,37,28,+9,37,Netherlands - Eerste Divisie
-2°,Cambuur,19,11,3,5,36,24,+12,36,Netherlands - Eerste Divisie
-3°,ADO Den Haag,19,8,7,4,37,22,+15,31,Netherlands - Eerste Divisie
-4°,FC Eindhoven,19,9,4,6,35,28,+7,31,Netherlands - Eerste Divisie
-5°,FC Emmen,19,10,1,8,26,25,+1,31,Netherlands - Eerste Divisie
-6°,Excelsior,19,8,5,6,33,24,+9,29,Netherlands - Eerste Divisie
-7°,Jong AZ,19,8,4,7,30,33,-3,28,Netherlands - Eerste Divisie
-8°,FC Dordrecht,19,8,1,10,20,29,-9,25,Netherlands - Eerste Divisie
-9°,Telstar,19,6,4,9,25,31,-6,22,Netherlands - Eerste Divisie
-10°,FC Den Bosch,19,6,4,9,21,29,-8,22,Netherlands - Eerste Divisie
-11°,De Graafschap,19,5,6,8,27,31,-4,21,Netherlands - Eerste Divisie
-12°,VVV,19,6,3,10,22,39,-17,21,Netherlands - Eerste Divisie
-13°,Helmond Sport,19,5,4,10,23,37,-14,19,Netherlands - Eerste Divisie
-14°,Vitesse Arnhem,19,4,6,9,28,42,-14,18,Netherlands - Eerste Divisie
-15°,Roda JC,19,4,5,10,23,37,-14,17,Netherlands - Eerste Divisie
-16°,Jong PSV,19,4,3,12,22,38,-16,15,Netherlands - Eerste Divisie
-17°,Jong Ajax,19,3,3,13,17,35,-18,12,Netherlands - Eerste Divisie
-18°,TOP Oss,19,0,10,9,11,30,-19,10,Netherlands - Eerste Divisie
-19°,MVV Maastricht,19,1,6,12,14,35,-21,9,Netherlands - Eerste Divisie
-20°,Jong Utrecht,19,1,5,13,14,48,-34,8,Netherlands - Eerste Divisie
-1°,Larne,20,11,5,4,29,18,+11,38,Northern Ireland - NIFL Premiership
-2°,Linfield,18,11,4,3,32,13,+19,37,Northern Ireland - NIFL Premiership
-3°,Glentoran,21,10,4,7,33,24,+9,34,Northern Ireland - NIFL Premiership
-4°,Crusaders,18,8,2,8,17,17,0,26,Northern Ireland - NIFL Premiership
-5°,Dungannon,18,7,3,8,24,23,+1,24,Northern Ireland - NIFL Premiership
-6°,Coleraine,19,6,6,7,25,25,0,24,Northern Ireland - NIFL Premiership
-7°,Glenavon,19,6,5,8,20,23,-3,23,Northern Ireland - NIFL Premiership
-8°,Ballymena Utd,20,7,2,11,22,30,-8,23,Northern Ireland - NIFL Premiership
-9°,Cliftonville,20,6,4,10,28,30,-2,22,Northern Ireland - NIFL Premiership
-10°,Portadown,18,5,3,10,20,26,-6,18,Northern Ireland - NIFL Premiership
-11°,Loughgall,19,2,4,13,14,40,-26,10,Northern Ireland - NIFL Premiership
-12°,Carrick Rangers,18,1,6,11,12,35,-23,9,Northern Ireland - NIFL Premiership
-1°,Viking,9,6,1,2,21,13,+8,19,Norway - Eliteserien
-2°,Tromso,8,5,1,2,17,15,+2,16,Norway - Eliteserien
-3°,Bodo/Glimt,7,4,2,1,14,7,+7,14,Norway - Eliteserien
-4°,Sarpsborg 08,8,3,4,1,12,8,+4,13,Norway - Eliteserien
-5°,KFUM Oslo,8,3,2,3,12,10,+2,11,Norway - Eliteserien
-6°,Rosenborg,8,3,2,3,9,13,-4,11,Norway - Eliteserien
-7°,Kristiansund,9,3,2,4,11,19,-8,11,Norway - Eliteserien
-8°,Molde,8,3,1,4,12,12,0,10,Norway - Eliteserien
-9°,Brann,7,3,1,3,9,12,-3,10,Norway - Eliteserien
+1°,Go Ahead Eagles,1,0,1,0,2,2,0,1,Netherlands - Eredivisie
+2°,FC Volendam,1,0,1,0,1,1,0,1,Netherlands - Eredivisie
+3°,Ajax Amsterdam,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+4°,AZ Alkmaar,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+5°,FC Utrecht,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+6°,Feyenoord,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+7°,Fortuna Sittard,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+8°,Heerenveen,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+9°,NEC Nijmegen,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+10°,PEC Zwolle,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+11°,PSV Eindhoven,0,0,0,0,0,0,0,0,Netherlands - Eredivisie
+12°,FC Twente,1,0,0,1,0,1,-1,0,Netherlands - Eredivisie
+13°,NAC Breda,1,0,0,1,0,2,-2,0,Netherlands - Eredivisie
+14°,Telstar,1,0,0,1,0,2,-2,0,Netherlands - Eredivisie
+15°,FC Groningen,1,0,0,1,1,4,-3,0,Netherlands - Eredivisie
+16°,Heracles Almelo,1,0,0,1,0,4,-4,0,Netherlands - Eredivisie
+17°,Sparta,1,0,0,1,1,6,-5,0,Netherlands - Eredivisie
+18°,Excelsior,1,0,0,1,0,5,-5,0,Netherlands - Eredivisie
+1°,Roda JC,1,1,0,0,3,1,+2,3,Netherlands - Eerste Divisie
+2°,RKC Waalwijk,1,1,0,0,3,2,+1,3,Netherlands - Eerste Divisie
+3°,ADO Den Haag,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+4°,Almere City,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+5°,De Graafschap,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+6°,FC Den Bosch,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+7°,FC Dordrecht,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+8°,FC Eindhoven,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+9°,Helmond Sport,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+10°,Jong AZ,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+11°,Jong PSV,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+12°,TOP Oss,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+13°,Vitesse Arnhem,0,0,0,0,0,0,0,0,Netherlands - Eerste Divisie
+14°,VVV,1,0,0,1,2,3,-1,0,Netherlands - Eerste Divisie
+15°,Cambuur,1,0,0,1,0,1,-1,0,Netherlands - Eerste Divisie
+16°,Jong Utrecht,1,0,0,1,0,1,-1,0,Netherlands - Eerste Divisie
+17°,FC Emmen,1,0,0,1,1,3,-2,0,Netherlands - Eerste Divisie
+18°,Jong Ajax,1,0,0,1,0,2,-2,0,Netherlands - Eerste Divisie
+19°,Willem II,1,0,0,1,1,5,-4,0,Netherlands - Eerste Divisie
+20°,MVV Maastricht,1,0,0,1,0,4,-4,0,Netherlands - Eerste Divisie
+1°,Ballymena Utd,1,1,0,0,2,0,+2,3,Northern Ireland - NIFL Premiership
+2°,Carrick Rangers,1,1,0,0,4,3,+1,3,Northern Ireland - NIFL Premiership
+3°,Glentoran,1,1,0,0,1,0,+1,3,Northern Ireland - NIFL Premiership
+4°,Bangor,0,0,0,0,0,0,0,0,Northern Ireland - NIFL Premiership
+5°,Coleraine,0,0,0,0,0,0,0,0,Northern Ireland - NIFL Premiership
+6°,Crusaders,0,0,0,0,0,0,0,0,Northern Ireland - NIFL Premiership
+7°,Glenavon,0,0,0,0,0,0,0,0,Northern Ireland - NIFL Premiership
+8°,Linfield,0,0,0,0,0,0,0,0,Northern Ireland - NIFL Premiership
+9°,Portadown,0,0,0,0,0,0,0,0,Northern Ireland - NIFL Premiership
+10°,Larne,1,0,0,1,0,1,-1,0,Northern Ireland - NIFL Premiership
+11°,Cliftonville,1,0,0,1,1,3,-2,0,Northern Ireland - NIFL Premiership
+12°,Dungannon,1,0,0,1,0,3,-3,0,Northern Ireland - NIFL Premiership
+1°,Viking,10,7,1,2,23,14,+9,22,Norway - Eliteserien
+2°,Bodo/Glimt,8,5,2,1,17,8,+9,17,Norway - Eliteserien
+3°,Tromso,9,5,2,2,18,16,+2,17,Norway - Eliteserien
+4°,Sarpsborg 08,9,3,4,2,14,11,+3,13,Norway - Eliteserien
+5°,Brann,8,4,1,3,13,13,0,13,Norway - Eliteserien
+6°,KFUM Oslo,9,3,3,3,12,10,+2,12,Norway - Eliteserien
+7°,Rosenborg,9,3,2,4,10,17,-7,11,Norway - Eliteserien
+8°,Kristiansund,9,3,2,4,11,19,-8,11,Norway - Eliteserien
+9°,Molde,8,3,1,4,12,12,0,10,Norway - Eliteserien
 10°,Valerenga,9,3,1,5,10,15,-5,10,Norway - Eliteserien
-11°,HamKam,8,2,2,4,8,13,-5,8,Norway - Eliteserien
-12°,Fredrikstad,7,1,3,3,6,10,-4,6,Norway - Eliteserien
+11°,HamKam,9,2,2,5,8,14,-6,8,Norway - Eliteserien
+12°,Fredrikstad,8,1,4,3,6,10,-4,7,Norway - Eliteserien
 13°,Stromsgodset,9,2,0,7,14,21,-7,6,Norway - Eliteserien
-14°,Bryne,7,1,2,4,8,13,-5,5,Norway - Eliteserien
-15°,Sandefjord,7,1,0,6,6,15,-9,3,Norway - Eliteserien
-16°,Haugesund,8,0,0,8,4,22,-18,0,Norway - Eliteserien
-1°,Lillestrom,8,5,3,0,22,5,+17,18,Norway - 1st Division
-2°,Start,8,5,3,0,16,6,+10,18,Norway - 1st Division
-3°,Egersund,8,4,1,3,12,8,+4,13,Norway - 1st Division
-4°,Ranheim,7,4,1,2,12,9,+3,13,Norway - 1st Division
-5°,Lyn,7,3,1,3,13,8,+5,10,Norway - 1st Division
-6°,Sogndal,8,3,1,4,13,13,0,10,Norway - 1st Division
-7°,Kongsvinger,7,2,3,2,12,10,+2,9,Norway - 1st Division
-8°,Hodd,8,2,3,3,9,16,-7,9,Norway - 1st Division
-9°,Aalesund,7,1,4,2,10,13,-3,7,Norway - 1st Division
-10°,Stabaek,8,1,3,4,8,16,-8,6,Norway - 1st Division
-11°,Skeid,8,1,2,5,12,14,-2,5,Norway - 1st Division
-12°,Asane,8,1,2,5,9,15,-6,5,Norway - 1st Division
-13°,Mjondalen,7,1,2,4,7,13,-6,5,Norway - 1st Division
-14°,Raufoss,7,0,4,3,10,14,-4,4,Norway - 1st Division
-15°,Odd,7,1,1,5,8,13,-5,4,Norway - 1st Division
-16°,Moss,7,0,1,6,5,20,-15,1,Norway - 1st Division
-1°,Sotra,7,5,2,0,11,3,+8,17,Norway - Division 3
-2°,Sandnes Ulf,7,4,2,1,20,11,+9,14,Norway - Division 3
+14°,Bryne,8,1,2,5,8,15,-7,5,Norway - Eliteserien
+15°,Sandefjord,8,1,0,7,7,17,-10,3,Norway - Eliteserien
+16°,Haugesund,9,0,0,9,4,24,-20,0,Norway - Eliteserien
+1°,Lillestrom,10,7,3,0,26,6,+20,24,Norway - 1st Division
+2°,Start,9,6,3,0,18,6,+12,21,Norway - 1st Division
+3°,Lyn,9,5,1,3,18,8,+10,16,Norway - 1st Division
+4°,Egersund,9,5,1,3,14,8,+6,16,Norway - 1st Division
+5°,Ranheim,8,4,1,3,13,11,+2,13,Norway - 1st Division
+6°,Sogndal,9,4,1,4,16,15,+1,13,Norway - 1st Division
+7°,Kongsvinger,9,2,4,3,15,15,0,10,Norway - 1st Division
+8°,Aalesund,9,2,4,3,13,19,-6,10,Norway - 1st Division
+9°,Hodd,10,2,3,5,11,20,-9,9,Norway - 1st Division
+10°,Asane,9,2,2,5,11,16,-5,8,Norway - 1st Division
+11°,Mjondalen,9,2,2,5,9,18,-9,8,Norway - 1st Division
+12°,Raufoss,8,1,4,3,12,15,-3,7,Norway - 1st Division
+13°,Skeid,9,1,3,5,13,15,-2,6,Norway - 1st Division
+14°,Stabaek,9,1,3,5,9,18,-9,6,Norway - 1st Division
+15°,Odd,9,1,1,7,8,16,-8,4,Norway - 1st Division
+16°,Moss,9,0,3,6,8,23,-15,3,Norway - 1st Division
+1°,Sandnes Ulf,8,5,2,1,22,11,+11,17,Norway - Division 3
+2°,Sotra,7,5,2,0,11,3,+8,17,Norway - Division 3
 3°,Jerv,7,4,1,2,14,13,+1,13,Norway - Division 3
-4°,V. Haugesund,7,2,3,2,9,10,-1,9,Norway - Division 3
-5°,Eik Tonsberg,7,2,2,3,9,15,-6,8,Norway - Division 3
-6°,Arendal,7,1,4,2,9,9,0,7,Norway - Division 3
-7°,Notodden,7,1,4,2,7,15,-8,7,Norway - Division 3
-8°,Brattvag,7,1,3,3,14,16,-2,6,Norway - Division 3
+4°,Arendal,8,2,4,2,12,10,+2,10,Norway - Division 3
+5°,V. Haugesund,7,2,3,2,9,10,-1,9,Norway - Division 3
+6°,Eik Tonsberg,7,2,2,3,9,15,-6,8,Norway - Division 3
+7°,Brattvag,8,1,4,3,15,17,-2,7,Norway - Division 3
+8°,Notodden,7,1,4,2,7,15,-8,7,Norway - Division 3
 9°,Pors Grenland,7,1,3,3,13,16,-3,6,Norway - Division 3
-10°,Brann B,7,2,0,5,11,20,-9,6,Norway - Division 3
-11°,Traef,7,1,2,4,4,11,-7,5,Norway - Division 3
-12°,Sandviken,7,1,2,4,8,20,-12,5,Norway - Division 3
-13°,Lysekloster,7,0,3,4,8,13,-5,3,Norway - Division 3
-14°,Flekkeroy,7,0,2,5,10,22,-12,2,Norway - Division 3
-1°,Sileks,16,10,3,3,27,10,+17,33,North Macedonia - First League
-2°,Shkendija,16,8,6,2,20,13,+7,30,North Macedonia - First League
-3°,Vardar,17,8,3,6,20,17,+3,27,North Macedonia - First League
-4°,Gostivar,16,5,6,5,14,16,-2,21,North Macedonia - First League
-5°,Rabotnicki,16,4,8,4,15,13,+2,20,North Macedonia - First League
-6°,Struga,16,4,7,5,19,21,-2,19,North Macedonia - First League
-7°,Shkupi,16,4,3,9,21,26,-5,15,North Macedonia - First League
-8°,Pelister,17,4,3,10,13,26,-13,15,North Macedonia - First League
-9°,Brera Strumica,17,3,4,10,17,33,-16,13,North Macedonia - First League
-10°,Tikves,17,1,8,8,11,18,-7,11,North Macedonia - First League
-11°,Besa,17,2,4,11,14,30,-16,10,North Macedonia - First League
-12°,Voska Sport,17,2,2,13,13,39,-26,8,North Macedonia - First League
+10°,Lysekloster,8,1,3,4,10,13,-3,6,Norway - Division 3
+11°,Traef,8,1,3,4,6,13,-7,6,Norway - Division 3
+12°,Brann B,8,2,0,6,11,25,-14,6,Norway - Division 3
+13°,Sandviken,7,1,2,4,8,20,-12,5,Norway - Division 3
+14°,Flekkeroy,8,0,2,6,10,25,-15,2,Norway - Division 3
+1°,Aresimi,1,0,1,0,1,1,0,1,North Macedonia - First League
+2°,Rabotnicki,1,0,1,0,0,0,0,1,North Macedonia - First League
+3°,FK Bashkimi Kum,0,0,0,0,0,0,0,0,North Macedonia - First League
+4°,Shkendija,0,0,0,0,0,0,0,0,North Macedonia - First League
+5°,Sileks,0,0,0,0,0,0,0,0,North Macedonia - First League
+6°,Struga,0,0,0,0,0,0,0,0,North Macedonia - First League
+7°,Tikves,0,0,0,0,0,0,0,0,North Macedonia - First League
+8°,Vardar,0,0,0,0,0,0,0,0,North Macedonia - First League
+9°,Makedonija,1,0,0,1,0,2,-2,0,North Macedonia - First League
+10°,Pelister,1,0,0,1,1,4,-3,0,North Macedonia - First League
+11°,Shkupi,1,0,0,1,1,5,-4,0,North Macedonia - First League
+12°,Brera Strumica,1,0,0,1,0,5,-5,0,North Macedonia - First League
 1°,Guarani,11,8,1,2,16,7,+9,25,Paraguay - Primera Div. - Apertura
 2°,Libertad,11,5,5,1,17,7,+10,20,Paraguay - Primera Div. - Apertura
 3°,Cerro Porteno,11,5,3,3,18,9,+9,18,Paraguay - Primera Div. - Apertura
@@ -1474,18 +1479,18 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 10°,Nacional,11,3,1,7,11,16,-5,10,Paraguay - Primera Div. - Apertura
 11°,A. Tembetary,11,1,6,4,5,11,-6,9,Paraguay - Primera Div. - Apertura
 12°,S. Luqueno,11,1,4,6,7,20,-13,7,Paraguay - Primera Div. - Apertura
-1°,Cerro Porteno,2,2,0,0,4,1,+3,6,Paraguay - Primera Div. - Clausura
-2°,S. Trinidense,3,1,2,0,4,2,+2,5,Paraguay - Primera Div. - Clausura
-3°,Libertad,2,1,1,0,2,0,+2,4,Paraguay - Primera Div. - Clausura
-4°,Nacional,3,1,1,1,3,3,0,4,Paraguay - Primera Div. - Clausura
-5°,S. Luqueno,3,1,1,1,3,3,0,4,Paraguay - Primera Div. - Clausura
-6°,D. Recoleta,2,1,0,1,3,3,0,3,Paraguay - Primera Div. - Clausura
-7°,Guarani,2,1,0,1,1,1,0,3,Paraguay - Primera Div. - Clausura
-8°,2 de Mayo,3,1,0,2,4,6,-2,3,Paraguay - Primera Div. - Clausura
-9°,Olimpia,2,0,1,1,4,5,-1,1,Paraguay - Primera Div. - Clausura
-10°,A. Tembetary,3,0,0,3,2,7,-5,0,Paraguay - Primera Div. - Clausura
+1°,Cerro Porteno,3,3,0,0,7,3,+4,9,Paraguay - Primera Div. - Clausura
+2°,S. Trinidense,4,2,2,0,6,2,+4,8,Paraguay - Primera Div. - Clausura
+3°,Libertad,3,2,1,0,6,0,+6,7,Paraguay - Primera Div. - Clausura
+4°,Guarani,3,2,0,1,4,3,+1,6,Paraguay - Primera Div. - Clausura
+5°,Nacional,4,1,2,1,3,3,0,5,Paraguay - Primera Div. - Clausura
+6°,2 de Mayo,4,1,1,2,5,7,-2,4,Paraguay - Primera Div. - Clausura
+7°,S. Luqueno,4,1,1,2,3,5,-2,4,Paraguay - Primera Div. - Clausura
+8°,D. Recoleta,2,1,0,1,3,3,0,3,Paraguay - Primera Div. - Clausura
+9°,G. Caballero,4,1,0,3,2,8,-6,3,Paraguay - Primera Div. - Clausura
+10°,Olimpia,3,0,1,2,4,9,-5,1,Paraguay - Primera Div. - Clausura
 11°,S. Ameliano,2,0,0,2,2,7,-5,0,Paraguay - Primera Div. - Clausura
-12°,G. Caballero,3,0,0,3,1,8,-7,0,Paraguay - Primera Div. - Clausura
+12°,A. Tembetary,4,0,0,4,3,12,-9,0,Paraguay - Primera Div. - Clausura
 1°,12 de Junio VH,9,6,2,1,14,5,+9,20,Paraguay - Division Intermedia
 2°,D. Capiata,9,4,3,2,11,5,+6,15,Paraguay - Division Intermedia
 3°,Rubio Nu,9,3,5,1,11,7,+4,14,Paraguay - Division Intermedia
@@ -1531,143 +1536,143 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 8°,DH Cebu,8,3,2,3,16,12,+4,11,Philippines - PFL
 9°,Mendiola,9,1,1,7,8,39,-31,4,Philippines - PFL
 10°,PFF Development,10,0,3,7,4,29,-25,3,Philippines - PFL
-1°,Cracovia Krakow,1,1,0,0,4,1,+3,3,Poland - Ekstraklasa
-2°,T. Nieciecza,2,1,0,1,4,2,+2,3,Poland - Ekstraklasa
+1°,T. Nieciecza,3,2,0,1,5,2,+3,6,Poland - Ekstraklasa
+2°,Wisla Plock,2,1,1,0,3,2,+1,4,Poland - Ekstraklasa
 3°,Legia Warsaw,1,1,0,0,2,0,+2,3,Poland - Ekstraklasa
 4°,Lech Poznan,1,1,0,0,4,3,+1,3,Poland - Ekstraklasa
-5°,Wisla Plock,1,1,0,0,2,1,+1,3,Poland - Ekstraklasa
-6°,Gornik Zabrze,1,1,0,0,1,0,+1,3,Poland - Ekstraklasa
-7°,Rakow C.,1,1,0,0,1,0,+1,3,Poland - Ekstraklasa
-8°,Radomiak Radom,1,0,1,0,1,1,0,1,Poland - Ekstraklasa
+5°,Cracovia Krakow,2,1,0,1,6,6,0,3,Poland - Ekstraklasa
+6°,Gornik Zabrze,2,1,0,1,2,2,0,3,Poland - Ekstraklasa
+7°,Rakow C.,2,1,0,1,2,3,-1,3,Poland - Ekstraklasa
+8°,Lechia Gdansk,2,0,1,1,3,4,-1,1,Poland - Ekstraklasa
 9°,Zaglebie Lubin,2,0,1,1,2,3,-1,1,Poland - Ekstraklasa
-10°,Jagiellonia,0,0,0,0,0,0,0,0,Poland - Ekstraklasa
-11°,Katowice,0,0,0,0,0,0,0,0,Poland - Ekstraklasa
-12°,Piast Gliwice,0,0,0,0,0,0,0,0,Poland - Ekstraklasa
-13°,Widzew Lodz,1,0,0,1,2,3,-1,0,Poland - Ekstraklasa
-14°,Lechia Gdansk,1,0,0,1,1,2,-1,0,Poland - Ekstraklasa
-15°,Arka Gdynia,1,0,0,1,0,1,-1,0,Poland - Ekstraklasa
-16°,Korona Kielce,1,0,0,1,0,2,-2,0,Poland - Ekstraklasa
-17°,Motor Lublin,1,0,0,1,1,4,-3,0,Poland - Ekstraklasa
-18°,Pogon Szczecin,1,0,0,1,1,5,-4,0,Poland - Ekstraklasa
-1°,Polonia Bytom,2,2,0,0,4,0,+4,6,Poland - 1. Liga
-2°,Wisla Krakow,1,1,0,0,4,0,+4,3,Poland - 1. Liga
-3°,Stal Mielec,1,1,0,0,5,4,+1,3,Poland - 1. Liga
-4°,Tychy,1,1,0,0,2,1,+1,3,Poland - 1. Liga
-5°,Pogon Grodzisk,1,0,1,0,1,1,0,1,Poland - 1. Liga
-6°,Polonia Warszaw,1,0,1,0,1,1,0,1,Poland - 1. Liga
-7°,Ruch Chorzow,1,0,1,0,1,1,0,1,Poland - 1. Liga
-8°,Wieczysta K.,1,0,1,0,1,1,0,1,Poland - 1. Liga
-9°,Chrobry Glogow,0,0,0,0,0,0,0,0,Poland - 1. Liga
-10°,Puszcza Niepolo,0,0,0,0,0,0,0,0,Poland - 1. Liga
-11°,Gornik Leczna,1,0,0,1,1,2,-1,0,Poland - 1. Liga
-12°,Pogon Siedlce,1,0,0,1,1,2,-1,0,Poland - 1. Liga
-13°,Slask Wroclaw,1,0,0,1,1,2,-1,0,Poland - 1. Liga
-14°,Stal Rzeszow,1,0,0,1,1,2,-1,0,Poland - 1. Liga
-15°,Znicz Pruszkow,1,0,0,1,0,1,-1,0,Poland - 1. Liga
-16°,Miedz Legnica,2,0,0,2,4,6,-2,0,Poland - 1. Liga
-17°,Odra Opole,1,0,0,1,0,3,-3,0,Poland - 1. Liga
-18°,LKS Lodz,1,0,0,1,0,5,-5,0,Poland - 1. Liga
-1°,Sporting CP,17,11,5,1,48,14,+34,38,Portugal - Liga Portugal
-2°,Benfica,17,11,3,3,32,16,+16,36,Portugal - Liga Portugal
-3°,Sporting Braga,17,10,4,3,22,11,+11,34,Portugal - Liga Portugal
-4°,FC Porto,17,9,2,6,26,19,+7,29,Portugal - Liga Portugal
-5°,Santa Clara,17,7,4,6,18,18,0,25,Portugal - Liga Portugal
-6°,Guimaraes,17,5,7,5,18,18,0,22,Portugal - Liga Portugal
-7°,Estoril,17,5,6,6,25,30,-5,21,Portugal - Liga Portugal
-8°,Famalicao,17,5,4,8,24,27,-3,19,Portugal - Liga Portugal
-9°,Boavista,17,5,3,9,16,28,-12,18,Portugal - Liga Portugal
-10°,Casa Pia,17,4,5,8,17,25,-8,17,Portugal - Liga Portugal
-11°,Arouca,17,4,5,8,19,30,-11,17,Portugal - Liga Portugal
-12°,Farense,17,3,7,7,15,22,-7,16,Portugal - Liga Portugal
-13°,Moreirense,17,4,2,11,20,29,-9,14,Portugal - Liga Portugal
-14°,Gil Vicente,17,3,5,9,16,28,-12,14,Portugal - Liga Portugal
-15°,Rio Ave,17,3,3,11,14,31,-17,12,Portugal - Liga Portugal
-16°,AVS,17,2,6,9,12,34,-22,12,Portugal - Liga Portugal
-17°,Nacional,17,2,4,11,9,23,-14,10,Portugal - Liga Portugal
-18°,Estrela Amadora,17,2,4,11,6,26,-20,10,Portugal - Liga Portugal
-1°,Vizela,17,9,5,3,24,15,+9,32,Portugal - Liga Portugal 2
-2°,Tondela,17,7,9,1,30,17,+13,30,Portugal - Liga Portugal 2
-3°,Uniao de Leiria,17,9,2,6,30,18,+12,29,Portugal - Liga Portugal 2
-4°,Alverca,17,7,6,4,25,18,+7,27,Portugal - Liga Portugal 2
-5°,Torreense,17,7,6,4,23,19,+4,27,Portugal - Liga Portugal 2
-6°,Chaves,17,7,5,5,18,16,+2,26,Portugal - Liga Portugal 2
-7°,Maritimo,17,7,5,5,23,26,-3,26,Portugal - Liga Portugal 2
-8°,Benfica B,17,6,6,5,28,22,+6,24,Portugal - Liga Portugal 2
-9°,Penafiel,17,6,3,8,21,26,-5,21,Portugal - Liga Portugal 2
-10°,Feirense,17,5,5,7,11,18,-7,20,Portugal - Liga Portugal 2
-11°,Felgueiras,17,4,7,6,21,21,0,19,Portugal - Liga Portugal 2
-12°,Pacos Ferreira,17,5,3,9,15,22,-7,18,Portugal - Liga Portugal 2
-13°,Academico Viseu,17,3,7,7,22,26,-4,16,Portugal - Liga Portugal 2
-14°,FC Porto B,17,3,6,8,17,23,-6,15,Portugal - Liga Portugal 2
-15°,Oliveirense,17,4,3,10,17,37,-20,15,Portugal - Liga Portugal 2
-16°,Leixoes,17,3,5,9,11,25,-14,14,Portugal - Liga Portugal 2
-17°,Portimonense,17,3,4,10,14,27,-13,13,Portugal - Liga Portugal 2
-18°,Mafra,17,1,3,13,11,32,-21,6,Portugal - Liga Portugal 2
-1°,Al Sadd,11,8,1,2,32,14,+18,25,Qatar - Stars League
-2°,Al Duhail,11,8,1,2,26,8,+18,25,Qatar - Stars League
-3°,Al Gharafa,11,5,4,2,19,14,+5,19,Qatar - Stars League
-4°,Al Ahli Doha,11,5,2,4,20,23,-3,17,Qatar - Stars League
-5°,Al Rayyan,11,5,0,6,23,20,+3,15,Qatar - Stars League
-6°,Qatar SC,11,4,3,4,15,19,-4,15,Qatar - Stars League
-7°,Al Shamal,11,4,2,5,16,13,+3,14,Qatar - Stars League
-8°,Al Wakrah,11,4,1,6,13,19,-6,13,Qatar - Stars League
-9°,Al Shahaniya,11,3,1,7,15,24,-9,10,Qatar - Stars League
-10°,Umm Salal,11,3,1,7,13,23,-10,10,Qatar - Stars League
-11°,Al Khor,11,2,2,7,9,22,-13,8,Qatar - Stars League
-12°,Al Arabi,11,1,3,7,14,28,-14,6,Qatar - Stars League
-1°,Rapid Bucharest,2,2,0,0,4,0,+4,6,Romania - Liga 1
-2°,Petrolul,2,1,1,0,3,0,+3,4,Romania - Liga 1
-3°,Farul Constanta,2,1,1,0,3,2,+1,4,Romania - Liga 1
-4°,U. Cluj,2,1,0,1,5,3,+2,3,Romania - Liga 1
-5°,FCSB,1,1,0,0,1,0,+1,3,Romania - Liga 1
-6°,Arges,2,1,0,1,3,3,0,3,Romania - Liga 1
-7°,Univ. Craiova,1,0,1,0,3,3,0,1,Romania - Liga 1
-8°,Metaloglobus,1,0,1,0,2,2,0,1,Romania - Liga 1
-9°,CFR Cluj,1,0,1,0,1,1,0,1,Romania - Liga 1
-10°,UTA Arad,1,0,1,0,1,1,0,1,Romania - Liga 1
-11°,Botosani,1,0,1,0,0,0,0,1,Romania - Liga 1
-12°,Din. Bucharest,2,0,1,1,3,4,-1,1,Romania - Liga 1
-13°,Hermannstadt,2,0,1,1,1,2,-1,1,Romania - Liga 1
-14°,Otelul,1,0,0,1,2,3,-1,0,Romania - Liga 1
-15°,Csikszereda,1,0,0,1,1,6,-5,0,Romania - Liga 1
-16°,Unirea Slobozia,2,0,0,2,1,6,-5,0,Romania - Liga 1
-1°,Aberdeen,0,0,0,0,0,0,0,0,Scotland - Premiership
-2°,Celtic,0,0,0,0,0,0,0,0,Scotland - Premiership
-3°,Dundee FC,0,0,0,0,0,0,0,0,Scotland - Premiership
-4°,Dundee Utd,0,0,0,0,0,0,0,0,Scotland - Premiership
-5°,Falkirk,0,0,0,0,0,0,0,0,Scotland - Premiership
-6°,Hearts,0,0,0,0,0,0,0,0,Scotland - Premiership
-7°,Hibernian,0,0,0,0,0,0,0,0,Scotland - Premiership
-8°,Kilmarnock,0,0,0,0,0,0,0,0,Scotland - Premiership
-9°,Livingston,0,0,0,0,0,0,0,0,Scotland - Premiership
-10°,Motherwell,0,0,0,0,0,0,0,0,Scotland - Premiership
-11°,Rangers,0,0,0,0,0,0,0,0,Scotland - Premiership
-12°,St. Mirren,0,0,0,0,0,0,0,0,Scotland - Premiership
-1°,Airdrieonians,0,0,0,0,0,0,0,0,Scotland - Championship
-2°,Arbroath,0,0,0,0,0,0,0,0,Scotland - Championship
-3°,Ayr Utd,0,0,0,0,0,0,0,0,Scotland - Championship
-4°,Dunfermline,0,0,0,0,0,0,0,0,Scotland - Championship
-5°,Greenock Morton,0,0,0,0,0,0,0,0,Scotland - Championship
-6°,Partick Thistle,0,0,0,0,0,0,0,0,Scotland - Championship
-7°,Queens Park,0,0,0,0,0,0,0,0,Scotland - Championship
-8°,Raith Rovers,0,0,0,0,0,0,0,0,Scotland - Championship
-9°,Ross County,0,0,0,0,0,0,0,0,Scotland - Championship
-10°,St. Johnstone,0,0,0,0,0,0,0,0,Scotland - Championship
-1°,Cukaricki,1,1,0,0,3,1,+2,3,Serbia - Super Liga
-2°,S. Subotica,1,1,0,0,3,1,+2,3,Serbia - Super Liga
-3°,Vojvodina,1,1,0,0,3,1,+2,3,Serbia - Super Liga
-4°,Partizan,1,1,0,0,1,0,+1,3,Serbia - Super Liga
-5°,Novi Pazar,1,0,1,0,2,2,0,1,Serbia - Super Liga
-6°,IMT N. Beograd,1,0,1,0,1,1,0,1,Serbia - Super Liga
-7°,Z. Pancevo,1,0,1,0,1,1,0,1,Serbia - Super Liga
-8°,Backa Topola,1,0,1,0,0,0,0,1,Serbia - Super Liga
-9°,Radnicki 1923,0,0,0,0,0,0,0,0,Serbia - Super Liga
-10°,Red Star,0,0,0,0,0,0,0,0,Serbia - Super Liga
-11°,Radnicki Nis,1,0,0,1,1,2,-1,0,Serbia - Super Liga
-12°,Napredak,1,0,0,1,0,1,-1,0,Serbia - Super Liga
-13°,Mladost Lucani,1,0,0,1,1,3,-2,0,Serbia - Super Liga
-14°,R. Surdulica,1,0,0,1,0,2,-2,0,Serbia - Super Liga
-15°,Javor Ivanjica,1,0,0,1,0,4,-4,0,Serbia - Super Liga
+10°,Arka Gdynia,2,0,1,1,0,1,-1,1,Poland - Ekstraklasa
+11°,Korona Kielce,2,0,1,1,1,3,-2,1,Poland - Ekstraklasa
+12°,Motor Lublin,2,0,1,1,4,7,-3,1,Poland - Ekstraklasa
+13°,Radomiak Radom,2,0,1,1,1,4,-3,1,Poland - Ekstraklasa
+14°,Pogon Szczecin,3,0,1,2,3,8,-5,1,Poland - Ekstraklasa
+15°,Jagiellonia,0,0,0,0,0,0,0,0,Poland - Ekstraklasa
+16°,Widzew Lodz,1,0,0,1,2,3,-1,0,Poland - Ekstraklasa
+17°,Piast Gliwice,1,0,0,1,0,2,-2,0,Poland - Ekstraklasa
+18°,Katowice,2,0,0,2,1,6,-5,0,Poland - Ekstraklasa
+1°,Polonia Warszaw,3,2,1,0,8,3,+5,7,Poland - 1. Liga
+2°,Wisla Krakow,2,2,0,0,8,3,+5,6,Poland - 1. Liga
+3°,Polonia Bytom,3,2,0,1,4,5,-1,6,Poland - 1. Liga
+4°,Tychy,2,1,1,0,2,1,+1,4,Poland - 1. Liga
+5°,Wieczysta K.,2,1,1,0,2,1,+1,4,Poland - 1. Liga
+6°,Stal Mielec,1,1,0,0,5,4,+1,3,Poland - 1. Liga
+7°,Pogon Siedlce,2,1,0,1,3,2,+1,3,Poland - 1. Liga
+8°,Stal Rzeszow,2,1,0,1,2,2,0,3,Poland - 1. Liga
+9°,Odra Opole,2,1,0,1,1,3,-2,3,Poland - 1. Liga
+10°,Chrobry Glogow,1,0,1,0,2,2,0,1,Poland - 1. Liga
+11°,Puszcza Niepolo,1,0,1,0,2,2,0,1,Poland - 1. Liga
+12°,Pogon Grodzisk,2,0,1,1,3,4,-1,1,Poland - 1. Liga
+13°,Gornik Leczna,2,0,1,1,2,3,-1,1,Poland - 1. Liga
+14°,Ruch Chorzow,2,0,1,1,2,4,-2,1,Poland - 1. Liga
+15°,Slask Wroclaw,1,0,0,1,1,2,-1,0,Poland - 1. Liga
+16°,Znicz Pruszkow,2,0,0,2,0,5,-5,0,Poland - 1. Liga
+17°,LKS Lodz,2,0,0,2,1,7,-6,0,Poland - 1. Liga
+18°,Miedz Legnica,4,0,0,4,5,13,-8,0,Poland - 1. Liga
+1°,Gil Vicente,1,1,0,0,2,0,+2,3,Portugal - Liga Portugal
+2°,Sporting CP,1,1,0,0,2,0,+2,3,Portugal - Liga Portugal
+3°,Estrela Amadora,1,0,1,0,1,1,0,1,Portugal - Liga Portugal
+4°,Arouca,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+5°,Benfica,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+6°,Casa Pia,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+7°,Estoril,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+8°,Famalicao,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+9°,FC Porto,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+10°,Moreirense,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+11°,Nacional,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+12°,Rio Ave,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+13°,Sporting Braga,0,0,0,0,0,0,0,0,Portugal - Liga Portugal
+14°,Alverca,1,0,0,1,1,2,-1,0,Portugal - Liga Portugal
+15°,AVS,1,0,0,1,1,3,-2,0,Portugal - Liga Portugal
+16°,Guimaraes,1,0,0,1,0,3,-3,0,Portugal - Liga Portugal
+17°,Santa Clara,1,0,0,1,0,3,-3,0,Portugal - Liga Portugal
+18°,Tondela,1,0,0,1,0,3,-3,0,Portugal - Liga Portugal
+1°,Vizela,1,1,0,0,2,1,+1,3,Portugal - Liga Portugal 2
+2°,Lusitania FC,1,1,0,0,1,0,+1,3,Portugal - Liga Portugal 2
+3°,Sporting CP B,1,1,0,0,1,0,+1,3,Portugal - Liga Portugal 2
+4°,Benfica B,1,0,1,0,1,1,0,1,Portugal - Liga Portugal 2
+5°,Farense,1,0,1,0,1,1,0,1,Portugal - Liga Portugal 2
+6°,Feirense,1,0,1,0,0,0,0,1,Portugal - Liga Portugal 2
+7°,Chaves,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+8°,FC Porto B,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+9°,Leixoes,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+10°,Maritimo,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+11°,Oliveirense,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+12°,Pacos Ferreira,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+13°,Portimonense,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+14°,Torreense,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+15°,Uniao de Leiria,0,0,0,0,0,0,0,0,Portugal - Liga Portugal 2
+16°,Academico Viseu,1,0,0,1,2,3,-1,0,Portugal - Liga Portugal 2
+17°,Penafiel,1,0,0,1,1,2,-1,0,Portugal - Liga Portugal 2
+18°,Felgueiras,1,0,0,1,0,3,-3,0,Portugal - Liga Portugal 2
+1°,Al Ahli Doha,0,0,0,0,0,0,0,0,Qatar - Stars League
+2°,Al Arabi,0,0,0,0,0,0,0,0,Qatar - Stars League
+3°,Al Duhail,0,0,0,0,0,0,0,0,Qatar - Stars League
+4°,Al Gharafa,0,0,0,0,0,0,0,0,Qatar - Stars League
+5°,Al Rayyan,0,0,0,0,0,0,0,0,Qatar - Stars League
+6°,Al Sadd,0,0,0,0,0,0,0,0,Qatar - Stars League
+7°,Al Sailiya,0,0,0,0,0,0,0,0,Qatar - Stars League
+8°,Al Shahaniya,0,0,0,0,0,0,0,0,Qatar - Stars League
+9°,Al Shamal,0,0,0,0,0,0,0,0,Qatar - Stars League
+10°,Al Wakrah,0,0,0,0,0,0,0,0,Qatar - Stars League
+11°,Qatar SC,0,0,0,0,0,0,0,0,Qatar - Stars League
+12°,Umm Salal,0,0,0,0,0,0,0,0,Qatar - Stars League
+1°,Rapid Bucharest,3,2,1,0,5,1,+4,7,Romania - Liga 1
+2°,Petrolul,3,1,2,0,4,1,+3,5,Romania - Liga 1
+3°,U. Cluj,3,1,1,1,7,5,+2,4,Romania - Liga 1
+4°,Univ. Craiova,2,1,1,0,6,5,+1,4,Romania - Liga 1
+5°,UTA Arad,2,1,1,0,3,2,+1,4,Romania - Liga 1
+6°,Din. Bucharest,3,1,1,1,4,4,0,4,Romania - Liga 1
+7°,Farul Constanta,3,1,1,1,4,4,0,4,Romania - Liga 1
+8°,FCSB,2,1,0,1,4,4,0,3,Romania - Liga 1
+9°,Arges,3,1,0,2,4,6,-2,3,Romania - Liga 1
+10°,Unirea Slobozia,3,1,0,2,2,6,-4,3,Romania - Liga 1
+11°,CFR Cluj,1,0,1,0,1,1,0,1,Romania - Liga 1
+12°,Metaloglobus,2,0,1,1,3,4,-1,1,Romania - Liga 1
+13°,Otelul,2,0,1,1,2,3,-1,1,Romania - Liga 1
+14°,Botosani,2,0,1,1,1,2,-1,1,Romania - Liga 1
+15°,Hermannstadt,3,0,1,2,1,3,-2,1,Romania - Liga 1
+16°,Csikszereda,2,0,0,2,2,9,-7,0,Romania - Liga 1
+1°,Celtic,1,1,0,0,2,0,+2,3,Scotland - Premiership
+2°,Hearts,1,1,0,0,3,2,+1,3,Scotland - Premiership
+3°,Hibernian,1,1,0,0,2,1,+1,3,Scotland - Premiership
+4°,Dundee Utd,1,0,1,0,2,2,0,1,Scotland - Premiership
+5°,Kilmarnock,1,0,1,0,2,2,0,1,Scotland - Premiership
+6°,Livingston,1,0,1,0,2,2,0,1,Scotland - Premiership
+7°,Dundee FC,1,0,1,0,1,1,0,1,Scotland - Premiership
+8°,Rangers,1,0,1,0,1,1,0,1,Scotland - Premiership
+9°,Motherwell,1,0,1,0,0,0,0,1,Scotland - Premiership
+10°,St. Mirren,1,0,0,1,0,1,-1,0,Scotland - Premiership
+11°,Falkirk,1,0,0,1,1,3,-2,0,Scotland - Premiership
+12°,Aberdeen,1,0,0,1,0,2,-2,0,Scotland - Premiership
+1°,Arbroath,1,1,0,0,3,1,+2,3,Scotland - Championship
+2°,Raith Rovers,1,1,0,0,1,0,+1,3,Scotland - Championship
+3°,St. Johnstone,1,1,0,0,1,0,+1,3,Scotland - Championship
+4°,Ross County,1,0,1,0,2,2,0,1,Scotland - Championship
+5°,Ayr Utd,1,0,1,0,1,1,0,1,Scotland - Championship
+6°,Greenock Morton,1,0,1,0,1,1,0,1,Scotland - Championship
+7°,Queens Park,1,0,1,0,1,1,0,1,Scotland - Championship
+8°,Dunfermline,1,0,1,0,0,0,0,1,Scotland - Championship
+9°,Airdrieonians,1,0,0,1,0,2,-2,0,Scotland - Championship
+10°,Partick Thistle,1,0,0,1,1,5,-4,0,Scotland - Championship
+1°,Partizan,2,2,0,0,8,2,+6,6,Serbia - Super Liga
+2°,Vojvodina,2,2,0,0,5,2,+3,6,Serbia - Super Liga
+3°,Z. Pancevo,2,1,1,0,5,2,+3,4,Serbia - Super Liga
+4°,Novi Pazar,2,1,1,0,5,4,+1,4,Serbia - Super Liga
+5°,IMT N. Beograd,2,1,1,0,3,2,+1,4,Serbia - Super Liga
+6°,Cukaricki,2,1,0,1,4,4,0,3,Serbia - Super Liga
+7°,S. Subotica,2,1,0,1,3,3,0,3,Serbia - Super Liga
+8°,Radnicki 1923,2,0,1,1,3,4,-1,1,Serbia - Super Liga
+9°,Radnicki Nis,2,0,1,1,2,3,-1,1,Serbia - Super Liga
+10°,Backa Topola,2,0,1,1,0,1,-1,1,Serbia - Super Liga
+11°,Napredak,2,0,1,1,0,1,-1,1,Serbia - Super Liga
+12°,Mladost Lucani,2,0,1,1,2,4,-2,1,Serbia - Super Liga
+13°,Red Star,0,0,0,0,0,0,0,0,Serbia - Super Liga
+14°,R. Surdulica,2,0,0,2,0,3,-3,0,Serbia - Super Liga
+15°,Javor Ivanjica,2,0,0,2,0,5,-5,0,Serbia - Super Liga
 16°,OFK Beograd,1,0,0,1,1,7,-6,0,Serbia - Super Liga
 1°,Lion City,16,11,4,1,49,14,+35,37,Singapore - Premier League
 2°,Tampines Rovers,16,10,3,3,46,19,+27,33,Singapore - Premier League
@@ -1678,352 +1683,351 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 7°,A. Niigata (S),16,5,1,10,21,40,-19,16,Singapore - Premier League
 8°,Hougang,16,2,4,10,25,42,-17,10,Singapore - Premier League
 9°,Tanjong Pagar,16,0,3,13,17,60,-43,3,Singapore - Premier League
-1°,NK Olimpija,1,1,0,0,3,0,+3,3,Slovenia - Prva Liga
-2°,Aluminij,1,1,0,0,2,1,+1,3,Slovenia - Prva Liga
-3°,Maribor,1,1,0,0,2,1,+1,3,Slovenia - Prva Liga
-4°,NK Celje,1,1,0,0,2,1,+1,3,Slovenia - Prva Liga
-5°,Koper,0,0,0,0,0,0,0,0,Slovenia - Prva Liga
-6°,Domzale,1,0,0,1,2,3,-1,0,Slovenia - Prva Liga
-7°,Bravo,1,0,0,1,1,2,-1,0,Slovenia - Prva Liga
+1°,Aluminij,3,2,1,0,5,3,+2,7,Slovenia - Prva Liga
+2°,NK Celje,2,2,0,0,7,1,+6,6,Slovenia - Prva Liga
+3°,NK Olimpija,2,2,0,0,6,1,+5,6,Slovenia - Prva Liga
+4°,Maribor,2,2,0,0,4,1,+3,6,Slovenia - Prva Liga
+5°,Bravo,2,1,0,1,4,3,+1,3,Slovenia - Prva Liga
+6°,Radomlje,2,1,0,1,2,3,-1,3,Slovenia - Prva Liga
+7°,Koper,1,0,1,0,2,2,0,1,Slovenia - Prva Liga
 8°,Primorje,1,0,0,1,0,2,-2,0,Slovenia - Prva Liga
-9°,Radomlje,1,0,0,1,0,2,-2,0,Slovenia - Prva Liga
-10°,Mura,2,0,0,2,0,3,-3,0,Slovenia - Prva Liga
-1°,Trencin,1,1,0,0,2,1,+1,3,Slovakia - Fortuna Liga
-2°,S. Bratislava,1,0,1,0,2,2,0,1,Slovakia - Fortuna Liga
-3°,Z. Michalovce,1,0,1,0,1,1,0,1,Slovakia - Fortuna Liga
-4°,Zilina,1,0,1,0,0,0,0,1,Slovakia - Fortuna Liga
-5°,DAC Streda,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
-6°,Komarno,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
-7°,Podbrezova,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
-8°,Presov,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
-9°,Skalica,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
-10°,Spartak Trnava,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
-11°,FC Kosice,1,0,0,1,1,3,-2,0,Slovakia - Fortuna Liga
-12°,Ruzomberok,1,0,0,1,0,3,-3,0,Slovakia - Fortuna Liga
-1°,Mamelodi S.,14,10,1,3,25,10,+15,31,South Africa - Premier Division 
-2°,Orlando Pirates,14,9,2,3,15,11,+4,29,South Africa - Premier Division 
-3°,Stellenbosch,14,7,4,3,20,11,+9,25,South Africa - Premier Division 
-4°,Sekhukhune,14,6,4,4,18,15,+3,22,South Africa - Premier Division 
-5°,AmaZulu,14,4,2,8,13,18,-5,14,South Africa - Premier Division 
-6°,Golden Arrows,14,3,5,6,7,17,-10,14,South Africa - Premier Division 
-7°,Marumo G.,14,4,2,8,12,26,-14,14,South Africa - Premier Division 
-8°,TS Galaxy,14,2,7,5,15,19,-4,13,South Africa - Premier Division 
-9°,Kaizer Chiefs,14,3,4,7,11,16,-5,13,South Africa - Premier Division 
-10°,Polokwane,14,2,6,6,5,14,-9,12,South Africa - Premier Division 
-11°,SuperSport Utd,14,2,5,7,11,17,-6,11,South Africa - Premier Division 
-12°,Richards Bay,14,3,2,9,8,17,-9,11,South Africa - Premier Division 
-13°,Chippa Utd,14,2,4,8,9,16,-7,10,South Africa - Premier Division 
-14°,Magesi,14,2,4,8,5,16,-11,10,South Africa - Premier Division 
-15°,Cape Town City,14,2,2,10,6,20,-14,8,South Africa - Premier Division 
-16°,Royal AM,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+9°,Domzale,2,0,0,2,2,5,-3,0,Slovenia - Prva Liga
+10°,Mura,3,0,0,3,0,6,-6,0,Slovenia - Prva Liga
+1°,Trencin,2,2,0,0,3,1,+2,6,Slovakia - Fortuna Liga
+2°,Zilina,2,1,1,0,4,2,+2,4,Slovakia - Fortuna Liga
+3°,Spartak Trnava,1,1,0,0,1,0,+1,3,Slovakia - Fortuna Liga
+4°,S. Bratislava,1,0,1,0,2,2,0,1,Slovakia - Fortuna Liga
+5°,Z. Michalovce,1,0,1,0,1,1,0,1,Slovakia - Fortuna Liga
+6°,Podbrezova,2,0,1,1,3,6,-3,1,Slovakia - Fortuna Liga
+7°,DAC Streda,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
+8°,Skalica,0,0,0,0,0,0,0,0,Slovakia - Fortuna Liga
+9°,FC Kosice,1,0,0,1,1,3,-2,0,Slovakia - Fortuna Liga
+10°,Komarno,1,0,0,1,1,3,-2,0,Slovakia - Fortuna Liga
+11°,Presov,2,0,0,2,0,2,-2,0,Slovakia - Fortuna Liga
+12°,Ruzomberok,2,0,0,2,0,5,-5,0,Slovakia - Fortuna Liga
+1°,Durban City,1,1,0,0,2,0,+2,3,South Africa - Premier Division 
+2°,Kaizer Chiefs,1,1,0,0,2,0,+2,3,South Africa - Premier Division 
+3°,Marumo G.,1,1,0,0,2,1,+1,3,South Africa - Premier Division 
+4°,Sekhukhune,1,1,0,0,1,0,+1,3,South Africa - Premier Division 
+5°,Mamelodi S.,1,0,1,0,1,1,0,1,South Africa - Premier Division 
+6°,Magesi,1,0,1,0,0,0,0,1,South Africa - Premier Division 
+7°,AmaZulu,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+8°,Chippa Utd,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+9°,Orlando Pirates,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+10°,Polokwane,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+11°,Richards Bay,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+12°,Siwelele,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+13°,Stellenbosch,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+14°,TS Galaxy,0,0,0,0,0,0,0,0,South Africa - Premier Division 
+15°,Orbit College,1,0,0,1,0,1,-1,0,South Africa - Premier Division 
+16°,Golden Arrows,1,0,0,1,1,3,-2,0,South Africa - Premier Division 
 1°,Jeonbuk,12,10,1,1,21,6,+15,31,South Korea - K League 1
 2°,Daejeon Citizen,12,6,5,1,23,16,+7,23,South Korea - K League 1
 3°,Seoul,13,5,5,3,11,9,+2,20,South Korea - K League 1
-4°,Gimcheon Sangmu,12,5,3,4,21,16,+5,18,South Korea - K League 1
+4°,Gimcheon Sangmu,13,5,4,4,21,16,+5,19,South Korea - K League 1
 5°,Pohang Steelers,12,4,4,4,16,17,-1,16,South Korea - K League 1
 6°,Gangwon,12,5,1,6,12,13,-1,16,South Korea - K League 1
 7°,Ulsan,12,4,4,4,12,13,-1,16,South Korea - K League 1
-8°,Gwangju,11,4,4,3,11,12,-1,16,South Korea - K League 1
-9°,Anyang,12,4,0,8,12,17,-5,12,South Korea - K League 1
-10°,Jeju Utd,12,2,4,6,11,17,-6,10,South Korea - K League 1
-11°,Suwon City,11,1,4,6,11,16,-5,7,South Korea - K League 1
-12°,Daegu,12,0,3,9,11,27,-16,3,South Korea - K League 1
-1°,Jeonnam,13,5,6,2,17,14,+3,21,South Korea - K League 2
-2°,Incheon Utd,10,6,2,2,19,10,+9,20,South Korea - K League 2
-3°,Suwon Bluewings,10,6,2,2,23,18,+5,20,South Korea - K League 2
-4°,Busan IPark,10,5,3,2,14,8,+6,18,South Korea - K League 2
-5°,Bucheon FC,11,5,2,4,16,16,0,17,South Korea - K League 2
-6°,Seoul E-Land,12,4,4,4,17,18,-1,16,South Korea - K League 2
-7°,Gimpo,10,3,4,3,10,9,+1,13,South Korea - K League 2
-8°,Seongnam,11,3,4,4,8,9,-1,13,South Korea - K League 2
-9°,Asan,11,3,3,5,14,15,-1,12,South Korea - K League 2
-10°,Ansan Greeners,11,2,5,4,10,15,-5,11,South Korea - K League 2
-11°,Cheongju,12,3,2,7,14,23,-9,11,South Korea - K League 2
-12°,Hwaseong,11,2,2,7,13,21,-8,8,South Korea - K League 2
-13°,Gyeongnam,11,2,1,8,5,21,-16,7,South Korea - K League 2
-14°,Cheonan City,11,1,2,8,5,18,-13,5,South Korea - K League 2
-1°,FC Barcelona,19,14,3,2,50,19,+31,45,Spain - La Liga
-2°,Villarreal,19,11,3,5,28,24,+4,36,Spain - La Liga
-3°,Real Madrid,19,10,5,4,33,19,+14,35,Spain - La Liga
-4°,Athletic Bilbao,19,8,7,4,22,16,+6,31,Spain - La Liga
-5°,Atletico Madrid,19,8,6,5,26,15,+11,30,Spain - La Liga
-6°,Rayo Vallecano,19,7,5,7,17,19,-2,26,Spain - La Liga
-7°,Real Betis,19,7,5,7,25,29,-4,26,Spain - La Liga
-8°,Getafe,19,7,2,10,19,20,-1,23,Spain - La Liga
-9°,Mallorca,19,6,3,10,15,23,-8,21,Spain - La Liga
-10°,Celta Vigo,19,5,4,10,27,36,-9,19,Spain - La Liga
-11°,Real Sociedad,19,5,4,10,15,26,-11,19,Spain - La Liga
-12°,Alaves,19,4,6,9,24,31,-7,18,Spain - La Liga
-13°,Sevilla FC,19,4,5,10,25,32,-7,17,Spain - La Liga
-14°,Girona,19,4,5,10,17,30,-13,17,Spain - La Liga
-15°,Osasuna,19,2,10,7,15,29,-14,16,Spain - La Liga
-16°,Las Palmas,19,4,3,12,19,32,-13,15,Spain - La Liga
-17°,Leganes,19,2,9,8,16,29,-13,15,Spain - La Liga
-18°,Valencia,19,2,9,8,18,34,-16,15,Spain - La Liga
-19°,Espanyol,19,3,3,13,17,31,-14,12,Spain - La Liga
-20°,Valladolid,19,1,0,18,15,58,-43,3,Spain - La Liga
-1°,Levante,21,9,6,6,27,22,+5,33,Spain - La Liga 2
-2°,Racing,21,9,5,7,29,31,-2,32,Spain - La Liga 2
-3°,Real Oviedo,21,7,9,5,22,22,0,30,Spain - La Liga 2
-4°,Elche,21,7,8,6,22,19,+3,29,Spain - La Liga 2
-5°,Granada,21,8,4,9,29,33,-4,28,Spain - La Liga 2
-6°,Deportivo,21,7,6,8,30,27,+3,27,Spain - La Liga 2
-7°,Mirandes,21,7,4,10,23,25,-2,25,Spain - La Liga 2
-8°,Huesca,21,6,5,10,19,24,-5,23,Spain - La Liga 2
-9°,Almeria,21,6,5,10,30,36,-6,23,Spain - La Liga 2
-10°,Real Zaragoza,21,6,5,10,28,36,-8,23,Spain - La Liga 2
-11°,Cordoba,21,6,5,10,22,37,-15,23,Spain - La Liga 2
-12°,Sporting Gijon,21,4,9,8,27,29,-2,21,Spain - La Liga 2
-13°,Castellon,21,5,6,10,29,35,-6,21,Spain - La Liga 2
-14°,Cadiz,21,5,6,10,26,32,-6,21,Spain - La Liga 2
-15°,Burgos,21,5,6,10,15,25,-10,21,Spain - La Liga 2
-16°,Eldense,21,5,5,11,18,32,-14,20,Spain - La Liga 2
-17°,Eibar,21,4,7,10,17,22,-5,19,Spain - La Liga 2
-18°,Albacete,21,4,7,10,22,32,-10,19,Spain - La Liga 2
-19°,Malaga,21,2,10,9,20,30,-10,16,Spain - La Liga 2
-20°,Racing Ferrol,21,3,5,13,10,35,-25,14,Spain - La Liga 2
-21°,Tenerife,21,1,5,15,14,36,-22,8,Spain - La Liga 2
-22°,Cartagena,21,2,2,17,20,50,-30,8,Spain - La Liga 2
-1°,Mjallby,9,6,2,1,18,9,+9,20,Sweden - Allsvenskan
-2°,GAIS,9,4,4,1,15,7,+8,16,Sweden - Allsvenskan
-3°,Malmo FF,10,4,4,2,13,9,+4,16,Sweden - Allsvenskan
-4°,IFK Goteborg,9,5,0,4,14,16,-2,15,Sweden - Allsvenskan
-5°,AIK,10,4,3,3,10,12,-2,15,Sweden - Allsvenskan
-6°,Hammarby,8,4,2,2,14,9,+5,14,Sweden - Allsvenskan
-7°,Brommapojkarna,9,4,1,4,15,12,+3,13,Sweden - Allsvenskan
-8°,Elfsborg,8,4,1,3,9,7,+2,13,Sweden - Allsvenskan
-9°,Djurgarden,8,4,0,4,10,10,0,12,Sweden - Allsvenskan
-10°,Hacken,8,3,2,3,8,10,-2,11,Sweden - Allsvenskan
-11°,Norrkoping,8,2,3,3,11,13,-2,9,Sweden - Allsvenskan
-12°,Degerfors,8,3,0,5,13,19,-6,9,Sweden - Allsvenskan
-13°,Oster,9,2,2,5,7,12,-5,8,Sweden - Allsvenskan
-14°,Sirius,9,1,3,5,14,19,-5,6,Sweden - Allsvenskan
-15°,Halmstad,8,1,1,6,3,17,-14,4,Sweden - Allsvenskan
-16°,Varnamo,8,0,1,7,6,17,-11,1,Sweden - Allsvenskan
-1°,Oddevold,7,5,2,0,13,4,+9,17,Sweden - Superettan
-2°,GIF Sundsvall,7,5,1,1,8,3,+5,16,Sweden - Superettan
-3°,Brage,8,3,4,1,13,10,+3,13,Sweden - Superettan
-4°,Vasteras,8,4,1,3,14,12,+2,13,Sweden - Superettan
-5°,Kalmar,8,2,6,0,13,7,+6,12,Sweden - Superettan
-6°,Helsingborg,8,3,3,2,11,9,+2,12,Sweden - Superettan
-7°,Landskrona,8,3,2,3,14,14,0,11,Sweden - Superettan
-8°,Varberg BoIS,8,3,2,3,13,13,0,11,Sweden - Superettan
-9°,Sandviken,8,3,2,3,9,14,-5,11,Sweden - Superettan
-10°,Orgryte,7,2,3,2,12,12,0,9,Sweden - Superettan
-11°,Ostersunds,9,2,3,4,6,13,-7,9,Sweden - Superettan
-12°,Falkenberg,8,2,2,4,11,14,-3,8,Sweden - Superettan
-13°,Utsikten,8,1,4,3,11,12,-1,7,Sweden - Superettan
+8°,Gwangju,12,4,4,4,11,13,-2,16,South Korea - K League 1
+9°,Anyang,13,4,0,9,13,19,-6,12,South Korea - K League 1
+10°,Suwon City,13,2,4,7,16,21,-5,10,South Korea - K League 1
+11°,Jeju Utd,13,2,4,7,11,18,-7,10,South Korea - K League 1
+12°,Daegu,13,0,4,9,13,29,-16,4,South Korea - K League 1
+1°,Incheon Utd,12,7,3,2,21,10,+11,24,South Korea - K League 2
+2°,Suwon Bluewings,11,7,2,2,25,19,+6,23,South Korea - K League 2
+3°,Jeonnam,13,5,6,2,17,14,+3,21,South Korea - K League 2
+4°,Bucheon FC,12,6,2,4,17,16,+1,20,South Korea - K League 2
+5°,Busan IPark,11,5,3,3,14,9,+5,18,South Korea - K League 2
+6°,Gimpo,12,4,5,3,11,9,+2,17,South Korea - K League 2
+7°,Seongnam,12,4,4,4,11,11,0,16,South Korea - K League 2
+8°,Seoul E-Land,12,4,4,4,17,18,-1,16,South Korea - K League 2
+9°,Cheongju,13,4,2,7,16,24,-8,14,South Korea - K League 2
+10°,Asan,12,3,4,5,16,17,-1,13,South Korea - K League 2
+11°,Ansan Greeners,12,2,5,5,11,18,-7,11,South Korea - K League 2
+12°,Hwaseong,12,2,3,7,13,21,-8,9,South Korea - K League 2
+13°,Cheonan City,12,2,2,8,9,21,-12,8,South Korea - K League 2
+14°,Gyeongnam,12,2,2,8,7,23,-16,8,South Korea - K League 2
+1°,Alaves,0,0,0,0,0,0,0,0,Spain - La Liga
+2°,Athletic Bilbao,0,0,0,0,0,0,0,0,Spain - La Liga
+3°,Atletico Madrid,0,0,0,0,0,0,0,0,Spain - La Liga
+4°,Celta Vigo,0,0,0,0,0,0,0,0,Spain - La Liga
+5°,Elche,0,0,0,0,0,0,0,0,Spain - La Liga
+6°,Espanyol,0,0,0,0,0,0,0,0,Spain - La Liga
+7°,FC Barcelona,0,0,0,0,0,0,0,0,Spain - La Liga
+8°,Getafe,0,0,0,0,0,0,0,0,Spain - La Liga
+9°,Girona,0,0,0,0,0,0,0,0,Spain - La Liga
+10°,Levante,0,0,0,0,0,0,0,0,Spain - La Liga
+11°,Mallorca,0,0,0,0,0,0,0,0,Spain - La Liga
+12°,Osasuna,0,0,0,0,0,0,0,0,Spain - La Liga
+13°,Rayo Vallecano,0,0,0,0,0,0,0,0,Spain - La Liga
+14°,Real Betis,0,0,0,0,0,0,0,0,Spain - La Liga
+15°,Real Madrid,0,0,0,0,0,0,0,0,Spain - La Liga
+16°,Real Oviedo,0,0,0,0,0,0,0,0,Spain - La Liga
+17°,Real Sociedad,0,0,0,0,0,0,0,0,Spain - La Liga
+18°,Sevilla FC,0,0,0,0,0,0,0,0,Spain - La Liga
+19°,Valencia,0,0,0,0,0,0,0,0,Spain - La Liga
+20°,Villarreal,0,0,0,0,0,0,0,0,Spain - La Liga
+1°,Albacete,0,0,0,0,0,0,0,0,Spain - La Liga 2
+2°,Almeria,0,0,0,0,0,0,0,0,Spain - La Liga 2
+3°,Burgos,0,0,0,0,0,0,0,0,Spain - La Liga 2
+4°,Cadiz,0,0,0,0,0,0,0,0,Spain - La Liga 2
+5°,Castellon,0,0,0,0,0,0,0,0,Spain - La Liga 2
+6°,Ceuta,0,0,0,0,0,0,0,0,Spain - La Liga 2
+7°,Cordoba,0,0,0,0,0,0,0,0,Spain - La Liga 2
+8°,Deportivo,0,0,0,0,0,0,0,0,Spain - La Liga 2
+9°,Eibar,0,0,0,0,0,0,0,0,Spain - La Liga 2
+10°,FC Andorra,0,0,0,0,0,0,0,0,Spain - La Liga 2
+11°,Granada,0,0,0,0,0,0,0,0,Spain - La Liga 2
+12°,Huesca,0,0,0,0,0,0,0,0,Spain - La Liga 2
+13°,Las Palmas,0,0,0,0,0,0,0,0,Spain - La Liga 2
+14°,Leganes,0,0,0,0,0,0,0,0,Spain - La Liga 2
+15°,Leonesa,0,0,0,0,0,0,0,0,Spain - La Liga 2
+16°,Malaga,0,0,0,0,0,0,0,0,Spain - La Liga 2
+17°,Mirandes,0,0,0,0,0,0,0,0,Spain - La Liga 2
+18°,Racing,0,0,0,0,0,0,0,0,Spain - La Liga 2
+19°,Real Sociedad B,0,0,0,0,0,0,0,0,Spain - La Liga 2
+20°,Real Zaragoza,0,0,0,0,0,0,0,0,Spain - La Liga 2
+21°,Sporting Gijon,0,0,0,0,0,0,0,0,Spain - La Liga 2
+22°,Valladolid,0,0,0,0,0,0,0,0,Spain - La Liga 2
+1°,Mjallby,10,7,2,1,21,10,+11,23,Sweden - Allsvenskan
+2°,IFK Goteborg,10,6,0,4,15,16,-1,18,Sweden - Allsvenskan
+3°,GAIS,10,4,5,1,17,9,+8,17,Sweden - Allsvenskan
+4°,Hammarby,9,5,2,2,16,9,+7,17,Sweden - Allsvenskan
+5°,Malmo FF,10,4,4,2,13,9,+4,16,Sweden - Allsvenskan
+6°,Elfsborg,9,5,1,3,11,8,+3,16,Sweden - Allsvenskan
+7°,AIK,10,4,3,3,10,12,-2,15,Sweden - Allsvenskan
+8°,Brommapojkarna,10,4,2,4,16,13,+3,14,Sweden - Allsvenskan
+9°,Djurgarden,9,4,1,4,10,10,0,13,Sweden - Allsvenskan
+10°,Hacken,9,3,3,3,8,10,-2,12,Sweden - Allsvenskan
+11°,Norrkoping,9,2,3,4,15,19,-4,9,Sweden - Allsvenskan
+12°,Sirius,10,2,3,5,15,19,-4,9,Sweden - Allsvenskan
+13°,Oster,10,2,3,5,8,13,-5,9,Sweden - Allsvenskan
+14°,Degerfors,9,3,0,6,13,22,-9,9,Sweden - Allsvenskan
+15°,Halmstad,9,1,2,6,4,18,-14,5,Sweden - Allsvenskan
+16°,Varnamo,9,0,2,7,8,19,-11,2,Sweden - Allsvenskan
+1°,Oddevold,9,5,4,0,13,4,+9,19,Sweden - Superettan
+2°,Brage,10,5,4,1,19,12,+7,19,Sweden - Superettan
+3°,Vasteras,9,5,1,3,16,13,+3,16,Sweden - Superettan
+4°,GIF Sundsvall,8,5,1,2,9,7,+2,16,Sweden - Superettan
+5°,Kalmar,9,2,7,0,13,7,+6,13,Sweden - Superettan
+6°,Helsingborg,9,3,4,2,13,11,+2,13,Sweden - Superettan
+7°,Orgryte,8,3,3,2,14,13,+1,12,Sweden - Superettan
+8°,Landskrona,8,3,2,3,14,14,0,11,Sweden - Superettan
+9°,Falkenberg,9,3,2,4,13,14,-1,11,Sweden - Superettan
+10°,Varberg BoIS,9,3,2,4,13,15,-2,11,Sweden - Superettan
+11°,Sandviken,9,3,2,4,9,15,-6,11,Sweden - Superettan
+12°,Ostersunds,10,2,3,5,6,15,-9,9,Sweden - Superettan
+13°,Utsikten,9,1,4,4,11,15,-4,7,Sweden - Superettan
 14°,Trelleborg,9,2,1,6,5,18,-13,7,Sweden - Superettan
-15°,Orebro,9,0,3,6,10,19,-9,3,Sweden - Superettan
-16°,Umea,8,0,2,6,6,20,-14,2,Sweden - Superettan
-1°,Rosengard,8,5,1,2,12,11,+1,16,Sweden - Sodra
-2°,Ljungskile,7,4,2,1,17,7,+10,14,Sweden - Sodra
-3°,Norrby,7,3,2,2,7,4,+3,11,Sweden - Sodra
-4°,Ariana,8,2,5,1,10,8,+2,11,Sweden - Sodra
-5°,Angelholm,8,2,4,2,15,11,+4,10,Sweden - Sodra
-6°,Hassleholms IF,7,3,1,3,9,9,0,10,Sweden - Sodra
-7°,Jonkopings,7,3,1,3,6,6,0,10,Sweden - Sodra
-8°,Lund,8,3,1,4,13,14,-1,10,Sweden - Sodra
-9°,Skovde AIK,8,3,1,4,10,18,-8,10,Sweden - Sodra
-10°,Oskarshamns,8,2,3,3,10,13,-3,9,Sweden - Sodra
+15°,Umea,9,1,2,6,8,20,-12,5,Sweden - Superettan
+16°,Orebro,9,0,3,6,10,19,-9,3,Sweden - Superettan
+1°,Ljungskile,9,5,3,1,23,9,+14,18,Sweden - Sodra
+2°,Rosengard,9,5,2,2,13,12,+1,17,Sweden - Sodra
+3°,Norrby,8,4,2,2,11,4,+7,14,Sweden - Sodra
+4°,Jonkopings,8,4,1,3,7,6,+1,13,Sweden - Sodra
+5°,Angelholm,9,2,5,2,15,11,+4,11,Sweden - Sodra
+6°,Ariana,9,2,5,2,11,10,+1,11,Sweden - Sodra
+7°,Lund,8,3,1,4,13,14,-1,10,Sweden - Sodra
+8°,Hassleholms IF,8,3,1,4,10,11,-1,10,Sweden - Sodra
+9°,Skovde AIK,9,3,1,5,11,22,-11,10,Sweden - Sodra
+10°,Oskarshamns,9,2,3,4,10,16,-6,9,Sweden - Sodra
 11°,Olympic,8,2,2,4,8,12,-4,8,Sweden - Sodra
-12°,Eskilsminne,8,1,4,3,8,10,-2,7,Sweden - Sodra
-13°,Trollhattan,8,1,3,4,10,17,-7,6,Sweden - Sodra
-14°,Torslanda,7,1,1,5,10,11,-1,4,Sweden - Sodra
-15°,IFK Skovde,7,0,2,5,6,25,-19,2,Sweden - Sodra
-16°,Husqvarna,7,0,1,6,8,25,-17,1,Sweden - Sodra
-1°,Luzern,1,1,0,0,3,2,+1,3,Switzerland - Super League
-2°,Sion,1,1,0,0,3,2,+1,3,Switzerland - Super League
-3°,Thun,1,1,0,0,2,1,+1,3,Switzerland - Super League
-4°,BSC Young Boys,0,0,0,0,0,0,0,0,Switzerland - Super League
-5°,FC Zurich,0,0,0,0,0,0,0,0,Switzerland - Super League
-6°,Grasshopper,0,0,0,0,0,0,0,0,Switzerland - Super League
-7°,Lausanne Sport,0,0,0,0,0,0,0,0,Switzerland - Super League
-8°,Lugano,0,0,0,0,0,0,0,0,Switzerland - Super League
-9°,St. Gallen,0,0,0,0,0,0,0,0,Switzerland - Super League
-10°,Winterthur,1,0,0,1,2,3,-1,0,Switzerland - Super League
-11°,FC Basel,1,0,0,1,1,2,-1,0,Switzerland - Super League
-12°,Servette,1,0,0,1,1,3,-2,0,Switzerland - Super League
-1°,Stade Nyonnais,1,0,1,0,1,1,0,1,Switzerland - Challenge League
-2°,Wil,1,0,1,0,1,1,0,1,Switzerland - Challenge League
-3°,Aarau,0,0,0,0,0,0,0,0,Switzerland - Challenge League
-4°,Bellinzona,0,0,0,0,0,0,0,0,Switzerland - Challenge League
-5°,Lausanne Ouchy,0,0,0,0,0,0,0,0,Switzerland - Challenge League
-6°,Neuchatel Xamax,0,0,0,0,0,0,0,0,Switzerland - Challenge League
-7°,Rapperswil,0,0,0,0,0,0,0,0,Switzerland - Challenge League
-8°,Vaduz,0,0,0,0,0,0,0,0,Switzerland - Challenge League
-9°,Yverdon,1,0,0,1,1,2,-1,0,Switzerland - Challenge League
-10°,Etoile Carouge,1,0,0,1,0,1,-1,0,Switzerland - Challenge League
-1°,Buriram Utd,15,10,3,2,36,13,+23,33,Thailand - Thai League 1
-2°,Bangkok Utd,15,10,2,3,30,17,+13,32,Thailand - Thai League 1
-3°,Port FC,15,6,4,5,22,21,+1,22,Thailand - Thai League 1
-4°,Pathum Utd,15,5,6,4,23,21,+2,21,Thailand - Thai League 1
-5°,Ratchaburi,15,6,3,6,32,31,+1,21,Thailand - Thai League 1
-6°,Muang Thong Utd,15,3,4,8,19,25,-6,13,Thailand - Thai League 1
-7°,Prachuap,15,3,4,8,17,25,-8,13,Thailand - Thai League 1
-8°,Lamphun Warrior,15,2,6,7,14,21,-7,12,Thailand - Thai League 1
-9°,Uthai Thani,15,3,3,9,14,23,-9,12,Thailand - Thai League 1
-10°,Rayong,15,3,3,9,15,33,-18,12,Thailand - Thai League 1
-11°,Nakhon Pathom,15,2,5,8,14,25,-11,11,Thailand - Thai League 1
-12°,N. Ratchasima,15,2,5,8,12,28,-16,11,Thailand - Thai League 1
-13°,Sukhothai,15,1,7,7,17,31,-14,10,Thailand - Thai League 1
-14°,Khon Kaen Utd,15,2,2,11,7,40,-33,8,Thailand - Thai League 1
-15°,Chiangrai Utd,15,2,1,12,15,38,-23,7,Thailand - Thai League 1
-16°,N. Bua Pitchaya,15,1,3,11,13,40,-27,6,Thailand - Thai League 1
-1°,Kanchanaburi,16,7,8,1,31,21,+10,29,Thailand - Thai League 2
-2°,Phrae Utd,16,8,3,5,25,22,+3,27,Thailand - Thai League 2
-3°,Chonburi,16,7,4,5,19,16,+3,25,Thailand - Thai League 2
-4°,Ayutthaya Utd,16,6,5,5,22,18,+4,23,Thailand - Thai League 2
-5°,Bangkok FC,16,6,1,9,23,32,-9,19,Thailand - Thai League 2
-6°,Mahasarakham,16,4,6,6,15,17,-2,18,Thailand - Thai League 2
-7°,Kasetsart,16,4,6,6,20,25,-5,18,Thailand - Thai League 2
-8°,Lampang,16,4,5,7,18,22,-4,17,Thailand - Thai League 2
-9°,Chiangmai Utd,16,4,5,7,19,26,-7,17,Thailand - Thai League 2
-10°,Pattaya United,16,4,3,9,20,25,-5,15,Thailand - Thai League 2
-11°,Chanthaburi,16,3,5,8,17,29,-12,14,Thailand - Thai League 2
-12°,Sisaket Utd,16,3,5,8,10,25,-15,14,Thailand - Thai League 2
-13°,Police Tero,16,3,2,11,19,34,-15,11,Thailand - Thai League 2
-14°,Nakhon Si,16,2,4,10,14,30,-16,10,Thailand - Thai League 2
-15°,Chainat,16,1,5,10,9,18,-9,8,Thailand - Thai League 2
-16°,Suphanburi,16,2,2,12,17,40,-23,8,Thailand - Thai League 2
-17°,Trat FC,16,1,3,12,8,28,-20,6,Thailand - Thai League 2
-18°,Samut Prakan,0,0,0,0,0,0,0,0,Thailand - Thai League 2
-1°,Galatasaray,18,15,2,1,45,16,+29,47,Turkey - Super Lig
-2°,Fenerbahce,18,12,4,2,48,21,+27,40,Turkey - Super Lig
-3°,Samsunspor,18,8,5,5,23,20,+3,29,Turkey - Super Lig
-4°,Besiktas,18,6,9,3,25,14,+11,27,Turkey - Super Lig
-5°,Kasimpasa,18,6,7,5,31,30,+1,25,Turkey - Super Lig
-6°,Basaksehir,18,7,2,9,26,33,-7,23,Turkey - Super Lig
-7°,Eyupspor,18,5,5,8,19,24,-5,20,Turkey - Super Lig
-8°,Rizespor,18,6,0,12,19,33,-14,18,Turkey - Super Lig
-9°,Bodrumspor,18,4,5,9,11,24,-13,17,Turkey - Super Lig
-10°,Trabzonspor,18,3,7,8,18,23,-5,16,Turkey - Super Lig
-11°,Alanyaspor,18,4,4,10,17,29,-12,16,Turkey - Super Lig
-12°,Kayserispor,18,3,7,8,17,31,-14,16,Turkey - Super Lig
-13°,Goztepe,18,3,5,10,23,34,-11,14,Turkey - Super Lig
-14°,Konyaspor,18,4,2,12,19,31,-12,14,Turkey - Super Lig
-15°,Gaziantep,18,2,5,11,21,36,-15,11,Turkey - Super Lig
-16°,Antalyaspor,18,2,4,12,14,40,-26,10,Turkey - Super Lig
-17°,Hatayspor,18,2,3,13,23,43,-20,9,Turkey - Super Lig
-18°,Sivasspor,18,2,2,14,15,38,-23,8,Turkey - Super Lig
-19°,Adana Demirspor,18,2,2,14,20,50,-30,8,Turkey - Super Lig
-1°,Kocaelispor,19,9,5,5,29,24,+5,32,Turkey - 1
-2°,Erzurum BB,19,9,3,7,27,17,+10,30,Turkey - 1
-3°,Keciorengucu,19,8,5,6,22,25,-3,29,Turkey - 1
-4°,Genclerbirligi,19,7,7,5,31,23,+8,28,Turkey - 1
-5°,F. Karagumruk,19,8,4,7,25,22,+3,28,Turkey - 1
-6°,Boluspor,19,7,6,6,33,24,+9,27,Turkey - 1
-7°,Manisa BB,19,8,1,10,28,29,-1,25,Turkey - 1
-8°,Igdir,19,6,6,7,25,22,+3,24,Turkey - 1
-9°,Amed SK,19,5,9,5,15,18,-3,24,Turkey - 1
-10°,Bandirmaspor,19,5,9,5,21,27,-6,24,Turkey - 1
-11°,Erokspor,19,6,5,8,23,27,-4,23,Turkey - 1
-12°,Umraniyespor,19,6,3,10,20,26,-6,21,Turkey - 1
-13°,Pendikspor,19,6,3,10,22,32,-10,21,Turkey - 1
-14°,Istanbulspor,19,6,2,11,21,25,-4,20,Turkey - 1
-15°,Corum,19,5,5,9,18,24,-6,20,Turkey - 1
-16°,Sanliurfaspor,19,4,4,11,21,29,-8,16,Turkey - 1
-17°,Sakaryaspor,19,3,7,9,18,35,-17,16,Turkey - 1
-18°,Ankaragucu,19,4,3,12,20,29,-9,15,Turkey - 1
-19°,Adanaspor,19,3,4,12,14,35,-21,13,Turkey - 1
-20°,Y. Malatyaspor,19,0,0,19,6,79,-73,0,Turkey - 1
-1°,Shabab Al Ahli,13,8,4,1,27,12,+15,28,UAE - Pro League
-2°,Al Sharjah,13,7,2,4,21,14,+7,23,UAE - Pro League
-3°,Al Wahda,13,6,4,3,22,16,+6,22,UAE - Pro League
-4°,Al Ain,13,5,4,4,28,21,+7,19,UAE - Pro League
-5°,Al Wasl,13,5,4,4,22,21,+1,19,UAE - Pro League
-6°,Al Jazira,13,4,5,4,25,23,+2,17,UAE - Pro League
-7°,Al Bataeh,13,5,2,6,15,18,-3,17,UAE - Pro League
-8°,Khorfakkan,13,5,1,7,20,32,-12,16,UAE - Pro League
-9°,Al Nasr,13,4,3,6,22,28,-6,15,UAE - Pro League
-10°,Ittihad Kalba,13,3,5,5,17,20,-3,14,UAE - Pro League
-11°,Bani Yas,13,4,1,8,13,26,-13,13,UAE - Pro League
-12°,Ajman,13,3,2,8,11,24,-13,11,UAE - Pro League
-13°,Dibba Al Hisn,13,2,3,8,17,27,-10,9,UAE - Pro League
-14°,Al Urooba,13,2,0,11,8,32,-24,6,UAE - Pro League
-1°,Dynamo Kyiv,0,0,0,0,0,0,0,0,Ukraine - Premier League
-2°,Episentr,0,0,0,0,0,0,0,0,Ukraine - Premier League
-3°,Karpaty Lviv,0,0,0,0,0,0,0,0,Ukraine - Premier League
-4°,Kolos Kovalivka,0,0,0,0,0,0,0,0,Ukraine - Premier League
-5°,Kryvbas KR,0,0,0,0,0,0,0,0,Ukraine - Premier League
-6°,Kudrivka,0,0,0,0,0,0,0,0,Ukraine - Premier League
-7°,LNZ Cherkasy,0,0,0,0,0,0,0,0,Ukraine - Premier League
-8°,Metalist 1925,0,0,0,0,0,0,0,0,Ukraine - Premier League
-9°,Obolon,0,0,0,0,0,0,0,0,Ukraine - Premier League
-10°,Oleksandria,0,0,0,0,0,0,0,0,Ukraine - Premier League
-11°,Polessya,0,0,0,0,0,0,0,0,Ukraine - Premier League
-12°,Rukh Lviv,0,0,0,0,0,0,0,0,Ukraine - Premier League
-13°,Shakhtar,0,0,0,0,0,0,0,0,Ukraine - Premier League
-14°,SK Poltava,0,0,0,0,0,0,0,0,Ukraine - Premier League
-15°,Veres,0,0,0,0,0,0,0,0,Ukraine - Premier League
-16°,Zorya Luhansk,0,0,0,0,0,0,0,0,Ukraine - Premier League
+12°,Torslanda,8,2,1,5,11,11,0,7,Sweden - Sodra
+13°,Eskilsminne,9,1,4,4,8,13,-5,7,Sweden - Sodra
+14°,Trollhattan,9,1,4,4,11,18,-7,7,Sweden - Sodra
+15°,IFK Skovde,8,0,3,5,6,25,-19,3,Sweden - Sodra
+16°,Husqvarna,8,0,2,6,11,28,-17,2,Sweden - Sodra
+1°,Thun,2,2,0,0,4,2,+2,6,Switzerland - Super League
+2°,FC Zurich,2,1,1,0,3,2,+1,4,Switzerland - Super League
+3°,Sion,2,1,1,0,3,2,+1,4,Switzerland - Super League
+4°,St. Gallen,1,1,0,0,4,1,+3,3,Switzerland - Super League
+5°,Luzern,1,1,0,0,3,2,+1,3,Switzerland - Super League
+6°,Grasshopper,2,0,1,1,2,3,-1,1,Switzerland - Super League
+7°,BSC Young Boys,2,0,1,1,2,5,-3,1,Switzerland - Super League
+8°,Lausanne Sport,1,0,0,1,1,2,-1,0,Switzerland - Super League
+9°,Servette,1,0,0,1,1,3,-2,0,Switzerland - Super League
+10°,FC Basel,2,0,0,2,2,5,-3,0,Switzerland - Super League
+11°,Lugano,1,0,0,1,0,4,-4,0,Switzerland - Super League
+12°,Winterthur,2,0,0,2,2,8,-6,0,Switzerland - Super League
+1°,Neuchatel Xamax,2,1,0,1,5,3,+2,3,Switzerland - Challenge League
+2°,Yverdon,2,1,0,1,4,2,+2,3,Switzerland - Challenge League
+3°,Aarau,1,1,0,0,3,1,+2,3,Switzerland - Challenge League
+4°,Bellinzona,1,0,1,0,2,2,0,1,Switzerland - Challenge League
+5°,Vaduz,1,0,1,0,1,1,0,1,Switzerland - Challenge League
+6°,Wil,1,0,1,0,1,1,0,1,Switzerland - Challenge League
+7°,Stade Nyonnais,2,0,1,1,1,4,-3,1,Switzerland - Challenge League
+8°,Lausanne Ouchy,1,0,0,1,2,3,-1,0,Switzerland - Challenge League
+9°,Rapperswil,1,0,0,1,0,1,-1,0,Switzerland - Challenge League
+10°,Etoile Carouge,2,0,0,2,0,2,-2,0,Switzerland - Challenge League
+1°,Ayutthaya Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+2°,Bangkok Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+3°,Buriram Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+4°,Chiangrai Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+5°,Chonburi,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+6°,Kanchanaburi,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+7°,Lamphun Warrior,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+8°,Muang Thong Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+9°,N. Ratchasima,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+10°,Pathum Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+11°,Port FC,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+12°,Prachuap,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+13°,Ratchaburi,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+14°,Rayong,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+15°,Sukhothai,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+16°,Uthai Thani,0,0,0,0,0,0,0,0,Thailand - Thai League 1
+1°,Bangkok FC,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+2°,Chainat,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+3°,Chanthaburi,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+4°,Chiangmai Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+5°,Kasetsart,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+6°,Khon Kaen Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+7°,Lampang,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+8°,Mahasarakham,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+9°,N. Bua Pitchaya,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+10°,Nakhon Pathom,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+11°,Nakhon Si,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+12°,Pattani,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+13°,Phrae Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+14°,Police Tero,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+15°,Rasi Salai Unit,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+16°,Sisaket Utd,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+17°,Songkhla,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+18°,Trat FC,0,0,0,0,0,0,0,0,Thailand - Thai League 2
+1°,Konyaspor,1,1,0,0,4,1,+3,3,Turkey - Super Lig
+2°,Galatasaray,1,1,0,0,3,0,+3,3,Turkey - Super Lig
+3°,Goztepe,1,1,0,0,3,0,+3,3,Turkey - Super Lig
+4°,Alanyaspor,0,0,0,0,0,0,0,0,Turkey - Super Lig
+5°,Antalyaspor,0,0,0,0,0,0,0,0,Turkey - Super Lig
+6°,Basaksehir,0,0,0,0,0,0,0,0,Turkey - Super Lig
+7°,Besiktas,0,0,0,0,0,0,0,0,Turkey - Super Lig
+8°,Eyupspor,0,0,0,0,0,0,0,0,Turkey - Super Lig
+9°,F. Karagumruk,0,0,0,0,0,0,0,0,Turkey - Super Lig
+10°,Fenerbahce,0,0,0,0,0,0,0,0,Turkey - Super Lig
+11°,Gaziantep,0,0,0,0,0,0,0,0,Turkey - Super Lig
+12°,Kayserispor,0,0,0,0,0,0,0,0,Turkey - Super Lig
+13°,Rizespor,0,0,0,0,0,0,0,0,Turkey - Super Lig
+14°,Samsunspor,0,0,0,0,0,0,0,0,Turkey - Super Lig
+15°,Trabzonspor,0,0,0,0,0,0,0,0,Turkey - Super Lig
+16°,Genclerbirligi,1,0,0,1,1,2,-1,0,Turkey - Super Lig
+17°,Kasimpasa,1,0,0,1,1,2,-1,0,Turkey - Super Lig
+18°,Kocaelispor,1,0,0,1,0,1,-1,0,Turkey - Super Lig
+1°,Keciorengucu,1,1,0,0,3,1,+2,3,Turkey - 1
+2°,Van Spor,1,1,0,0,3,2,+1,3,Turkey - 1
+3°,Adana Demirspor,1,0,1,0,2,2,0,1,Turkey - 1
+4°,Pendikspor,1,0,1,0,1,1,0,1,Turkey - 1
+5°,Sakaryaspor,1,0,1,0,1,1,0,1,Turkey - 1
+6°,Serik Belediyes,1,0,1,0,0,0,0,1,Turkey - 1
+7°,Bandirmaspor,0,0,0,0,0,0,0,0,Turkey - 1
+8°,Bodrumspor,0,0,0,0,0,0,0,0,Turkey - 1
+9°,Boluspor,0,0,0,0,0,0,0,0,Turkey - 1
+10°,Corum,0,0,0,0,0,0,0,0,Turkey - 1
+11°,Erokspor,0,0,0,0,0,0,0,0,Turkey - 1
+12°,Erzurum BB,0,0,0,0,0,0,0,0,Turkey - 1
+13°,Hatayspor,0,0,0,0,0,0,0,0,Turkey - 1
+14°,Igdir,0,0,0,0,0,0,0,0,Turkey - 1
+15°,Istanbulspor,0,0,0,0,0,0,0,0,Turkey - 1
+16°,Umraniyespor,0,0,0,0,0,0,0,0,Turkey - 1
+17°,Manisa BB,1,0,0,1,1,2,-1,0,Turkey - 1
+18°,Sariyer,1,0,0,1,1,2,-1,0,Turkey - 1
+19°,Amed SK,1,0,0,1,0,2,-2,0,Turkey - 1
+20°,Sivasspor,1,0,0,1,0,2,-2,0,Turkey - 1
+1°,Ajman,0,0,0,0,0,0,0,0,UAE - Pro League
+2°,Al Ain,0,0,0,0,0,0,0,0,UAE - Pro League
+3°,Al Bataeh,0,0,0,0,0,0,0,0,UAE - Pro League
+4°,Al Dhafra,0,0,0,0,0,0,0,0,UAE - Pro League
+5°,Al Jazira,0,0,0,0,0,0,0,0,UAE - Pro League
+6°,Al Nasr,0,0,0,0,0,0,0,0,UAE - Pro League
+7°,Al Sharjah,0,0,0,0,0,0,0,0,UAE - Pro League
+8°,Al Wahda,0,0,0,0,0,0,0,0,UAE - Pro League
+9°,Al Wasl,0,0,0,0,0,0,0,0,UAE - Pro League
+10°,Bani Yas,0,0,0,0,0,0,0,0,UAE - Pro League
+11°,D. Al Fujairah,0,0,0,0,0,0,0,0,UAE - Pro League
+12°,Ittihad Kalba,0,0,0,0,0,0,0,0,UAE - Pro League
+13°,Khorfakkan,0,0,0,0,0,0,0,0,UAE - Pro League
+14°,Shabab Al Ahli,0,0,0,0,0,0,0,0,UAE - Pro League
+1°,Dynamo Kyiv,2,2,0,0,6,1,+5,6,Ukraine - Premier League
+2°,Shakhtar,2,1,1,0,4,3,+1,4,Ukraine - Premier League
+3°,Polessya,1,1,0,0,2,0,+2,3,Ukraine - Premier League
+4°,Kolos Kovalivka,1,1,0,0,1,0,+1,3,Ukraine - Premier League
+5°,LNZ Cherkasy,1,0,1,0,0,0,0,1,Ukraine - Premier League
+6°,Obolon,1,0,1,0,0,0,0,1,Ukraine - Premier League
+7°,Karpaty Lviv,0,0,0,0,0,0,0,0,Ukraine - Premier League
+8°,Rukh Lviv,0,0,0,0,0,0,0,0,Ukraine - Premier League
+9°,Zorya Luhansk,0,0,0,0,0,0,0,0,Ukraine - Premier League
+10°,Kryvbas KR,1,0,0,1,1,2,-1,0,Ukraine - Premier League
+11°,Kudrivka,1,0,0,1,1,2,-1,0,Ukraine - Premier League
+12°,SK Poltava,1,0,0,1,1,2,-1,0,Ukraine - Premier League
+13°,Episentr,1,0,0,1,0,1,-1,0,Ukraine - Premier League
+14°,Veres,1,0,0,1,0,1,-1,0,Ukraine - Premier League
+15°,Metalist 1925,1,0,0,1,0,2,-2,0,Ukraine - Premier League
+16°,Oleksandria,2,0,0,2,1,4,-3,0,Ukraine - Premier League
 1°,Cincinnati,14,8,2,4,18,17,+1,26,USA - MLS
-2°,Orlando City,13,6,5,2,22,14,+8,23,USA - MLS
-3°,Minnesota Utd,13,6,5,2,19,14,+5,23,USA - MLS
-4°,Chicago Fire,13,7,1,5,33,26,+7,22,USA - MLS
-5°,Vancouver,13,6,4,3,17,13,+4,22,USA - MLS
-6°,Inter Miami,11,6,3,2,25,18,+7,21,USA - MLS
-7°,San Diego,11,7,0,4,24,19,+5,21,USA - MLS
+2°,San Diego,12,8,0,4,26,19,+7,24,USA - MLS
+3°,Orlando City,13,6,5,2,22,14,+8,23,USA - MLS
+4°,Minnesota Utd,13,6,5,2,19,14,+5,23,USA - MLS
+5°,Chicago Fire,13,7,1,5,33,26,+7,22,USA - MLS
+6°,Vancouver,14,6,4,4,18,15,+3,22,USA - MLS
+7°,Inter Miami,12,6,3,3,26,22,+4,21,USA - MLS
 8°,Philadelphia,12,6,2,4,14,10,+4,20,USA - MLS
 9°,New England,13,4,5,4,19,17,+2,17,USA - MLS
-10°,Nashville SC,12,5,2,5,16,17,-1,17,USA - MLS
-11°,Dallas,12,4,5,3,20,23,-3,17,USA - MLS
+10°,Dallas,12,4,5,3,20,23,-3,17,USA - MLS
+11°,Nashville SC,13,5,2,6,17,20,-3,17,USA - MLS
 12°,Columbus Crew,11,4,4,3,17,20,-3,16,USA - MLS
-13°,Austin,12,5,1,6,13,18,-5,16,USA - MLS
-14°,Portland,11,4,2,5,14,16,-2,14,USA - MLS
-15°,New York City,13,3,5,5,15,19,-4,14,USA - MLS
-16°,SJ Earthquakes,13,4,2,7,18,23,-5,14,USA - MLS
-17°,Houston Dynamo,11,3,4,4,15,16,-1,13,USA - MLS
-18°,Seattle,12,3,4,5,12,21,-9,13,USA - MLS
-19°,CF Montreal,14,3,3,8,15,22,-7,12,USA - MLS
-20°,Real Salt Lake,12,3,3,6,11,18,-7,12,USA - MLS
-21°,Toronto,11,3,2,6,15,18,-3,11,USA - MLS
-22°,Sporting KC,12,3,2,7,16,21,-5,11,USA - MLS
-23°,Los Angeles FC,9,2,4,3,16,18,-2,10,USA - MLS
-24°,Charlotte,13,3,1,9,18,27,-9,10,USA - MLS
-25°,Colorado Rapids,12,2,4,6,14,23,-9,10,USA - MLS
-26°,DC United,12,2,2,8,11,27,-16,8,USA - MLS
+13°,Seattle,13,4,4,5,16,21,-5,16,USA - MLS
+14°,Austin,12,5,1,6,13,18,-5,16,USA - MLS
+15°,Houston Dynamo,12,3,5,4,17,18,-1,14,USA - MLS
+16°,New York City,13,3,5,5,15,19,-4,14,USA - MLS
+17°,Portland,12,4,2,6,14,18,-4,14,USA - MLS
+18°,SJ Earthquakes,13,4,2,7,18,23,-5,14,USA - MLS
+19°,Charlotte,14,4,1,9,19,27,-8,13,USA - MLS
+20°,Colorado Rapids,13,3,4,6,16,24,-8,13,USA - MLS
+21°,Toronto,12,3,3,6,16,19,-3,12,USA - MLS
+22°,CF Montreal,14,3,3,8,15,22,-7,12,USA - MLS
+23°,Real Salt Lake,13,3,3,7,12,20,-8,12,USA - MLS
+24°,Los Angeles FC,10,2,5,3,18,20,-2,11,USA - MLS
+25°,Sporting KC,12,3,2,7,16,21,-5,11,USA - MLS
+26°,DC United,13,2,2,9,11,29,-18,8,USA - MLS
 27°,New York RB,13,1,4,8,8,18,-10,7,USA - MLS
 28°,St. Louis City,12,1,2,9,9,22,-13,5,USA - MLS
 29°,LA Galaxy,13,0,5,8,14,30,-16,5,USA - MLS
-1°,Louisville City,9,5,3,1,15,8,+7,18,USL Championship
-2°,Charleston,9,5,2,2,15,9,+6,17,USL Championship
-3°,FC Tulsa,8,4,3,1,13,7,+6,15,USL Championship
-4°,Phoenix Rising,10,4,3,3,16,20,-4,15,USL Championship
-5°,Oakland Roots,8,4,0,4,13,14,-1,12,USL Championship
-6°,New Mexico,9,4,0,5,12,14,-2,12,USL Championship
-7°,Detroit City,10,3,3,4,12,15,-3,12,USL Championship
-8°,El Paso,9,3,3,3,9,12,-3,12,USL Championship
-9°,San Antonio,7,3,2,2,9,12,-3,11,USL Championship
-10°,Sacramento R.,7,3,1,3,8,6,+2,10,USL Championship
-11°,North Carolina,8,3,1,4,8,8,0,10,USL Championship
-12°,Rhode Island,9,3,1,5,10,11,-1,10,USL Championship
-13°,Colorado S.,10,2,4,4,14,17,-3,10,USL Championship
-14°,Loudoun Utd,8,3,1,4,10,13,-3,10,USL Championship
-15°,Birmingham L.,8,2,3,3,12,15,-3,9,USL Championship
-16°,Indy Eleven,7,2,2,3,10,13,-3,8,USL Championship
-17°,Miami FC,7,2,2,3,6,10,-4,8,USL Championship
-18°,Tampa Bay,9,2,1,6,7,11,-4,7,USL Championship
-19°,Pittsburgh,9,1,3,5,4,9,-5,6,USL Championship
-20°,Lexington,8,1,3,4,7,14,-7,6,USL Championship
-21°,Monterey Bay,10,1,3,6,5,12,-7,6,USL Championship
-22°,Hartford A.,7,1,2,4,8,14,-6,5,USL Championship
-23°,Las Vegas L.,7,1,2,4,4,16,-12,5,USL Championship
-24°,Orange County,7,1,1,5,5,9,-4,4,USL Championship
-1°,One Knoxville,9,4,3,2,11,9,+2,15,USA - USL League One
-2°,Spokane V.,7,4,1,2,8,7,+1,13,USA - USL League One
-3°,Charlotte I.,9,3,3,3,16,15,+1,12,USA - USL League One
-4°,Union Omaha,10,3,1,6,10,16,-6,10,USA - USL League One
-5°,Chattanooga RW,7,2,3,2,10,10,0,9,USA - USL League One
-6°,Portland Hearts,9,1,6,2,8,9,-1,9,USA - USL League One
-7°,Westchester SC,8,2,3,3,13,15,-2,9,USA - USL League One
-8°,Richmond K.,8,2,2,4,11,13,-2,8,USA - USL League One
-9°,Naples,8,2,2,4,10,13,-3,8,USA - USL League One
-10°,Alta,6,2,1,3,11,12,-1,7,USA - USL League One
-11°,Texoma,6,1,4,1,6,8,-2,7,USA - USL League One
-12°,Tormenta,7,1,3,3,9,13,-4,6,USA - USL League One
-13°,Forward Madison,7,1,3,3,6,10,-4,6,USA - USL League One
-14°,Greenville,8,1,1,6,8,13,-5,4,USA - USL League One
+1°,FC Tulsa,9,5,3,1,16,9,+7,18,USL Championship
+2°,Louisville City,9,5,3,1,15,8,+7,18,USL Championship
+3°,Charleston,10,5,2,3,16,13,+3,17,USL Championship
+4°,Phoenix Rising,11,4,3,4,16,22,-6,15,USL Championship
+5°,Sacramento R.,8,4,1,3,11,7,+4,13,USL Championship
+6°,Colorado S.,11,3,4,4,16,18,-2,13,USL Championship
+7°,El Paso,10,3,4,3,9,12,-3,13,USL Championship
+8°,Oakland Roots,8,4,0,4,13,14,-1,12,USL Championship
+9°,San Antonio,8,3,3,2,10,13,-3,12,USL Championship
+10°,Detroit City,11,3,3,5,12,16,-4,12,USL Championship
+11°,New Mexico,10,4,0,6,14,19,-5,12,USL Championship
+12°,Loudoun Utd,10,3,2,5,12,16,-4,11,USL Championship
+13°,Birmingham L.,9,2,4,3,15,18,-3,10,USL Championship
+14°,Tampa Bay,11,3,1,7,11,14,-3,10,USL Championship
+15°,Rhode Island,10,3,1,6,10,13,-3,10,USL Championship
+16°,North Carolina,9,3,1,5,9,12,-3,10,USL Championship
+17°,Hartford A.,8,2,2,4,12,15,-3,8,USL Championship
+18°,Indy Eleven,8,2,2,4,10,14,-4,8,USL Championship
+19°,Miami FC,8,2,2,4,6,12,-6,8,USL Championship
+20°,Pittsburgh,9,1,3,5,4,9,-5,6,USL Championship
+21°,Monterey Bay,11,1,3,7,5,13,-8,6,USL Championship
+22°,Lexington,9,1,3,5,8,17,-9,6,USL Championship
+23°,Orange County,8,1,2,5,6,10,-4,5,USL Championship
+24°,Las Vegas L.,8,1,2,5,4,22,-18,5,USL Championship
+1°,One Knoxville,10,4,4,2,13,11,+2,16,USA - USL League One
+2°,Chattanooga RW,9,3,4,2,15,13,+2,13,USA - USL League One
+3°,Spokane V.,7,4,1,2,8,7,+1,13,USA - USL League One
+4°,Charlotte I.,9,3,3,3,16,15,+1,12,USA - USL League One
+5°,Naples,9,3,2,4,12,14,-2,11,USA - USL League One
+6°,Union Omaha,11,3,1,7,11,18,-7,10,USA - USL League One
+7°,Richmond K.,9,2,3,4,11,13,-2,9,USA - USL League One
+8°,Portland Hearts,10,1,6,3,8,10,-2,9,USA - USL League One
+9°,Westchester SC,9,2,3,4,14,17,-3,9,USA - USL League One
+10°,Alta,8,2,2,4,11,14,-3,8,USA - USL League One
+11°,Texoma,8,1,5,2,10,13,-3,8,USA - USL League One
+12°,Greenville,10,2,2,6,15,19,-4,8,USA - USL League One
+13°,Tormenta,9,1,4,4,13,18,-5,7,USA - USL League One
+14°,Forward Madison,8,1,3,4,7,12,-5,6,USA - USL League One
 1°,UCV,7,5,1,1,9,3,+6,16,Venezuela - Primera Division - Apertura
 2°,D. La Guaira,7,4,2,1,11,7,+4,14,Venezuela - Primera Division - Apertura
 3°,Carabobo,7,4,2,1,8,5,+3,14,Venezuela - Primera Division - Apertura
@@ -2038,20 +2042,20 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 12°,Yaracuyanos,6,0,2,4,4,12,-8,2,Venezuela - Primera Division - Apertura
 13°,E. Merida,6,0,1,5,5,12,-7,1,Venezuela - Primera Division - Apertura
 14°,Rayo Zuliano,6,0,0,6,5,13,-8,0,Venezuela - Primera Division - Apertura
-1°,Nam Dinh,13,7,5,1,21,7,+14,26,Vietnam - V League
-2°,Ha Noi,13,7,4,2,23,10,+13,25,Vietnam - V League
-3°,Cong An Nhan,13,6,4,3,25,12,+13,22,Vietnam - V League
-4°,Viettel,13,5,5,3,21,16,+5,20,Vietnam - V League
-5°,Hong Linh Ha T.,13,4,6,3,12,11,+1,18,Vietnam - V League
-6°,Thanh Hoa,13,4,3,6,14,15,-1,15,Vietnam - V League
-7°,Binh Duong,13,4,1,8,12,21,-9,13,Vietnam - V League
-8°,Ho Chi Minh,13,2,6,5,11,22,-11,12,Vietnam - V League
-9°,Quang Nam,13,1,8,4,13,16,-3,11,Vietnam - V League
-10°,Hai Phong,13,2,5,6,11,17,-6,11,Vietnam - V League
-11°,Song Lam Nghe,13,1,6,6,10,20,-10,9,Vietnam - V League
-12°,Binh Dinh,13,2,3,8,8,19,-11,9,Vietnam - V League
-13°,Gia Lai,13,2,2,9,15,27,-12,8,Vietnam - V League
-14°,Da Nang,13,1,4,8,11,29,-18,7,Vietnam - V League
+1°,Binh Duong,0,0,0,0,0,0,0,0,Vietnam - V League
+2°,Cong An Nhan,0,0,0,0,0,0,0,0,Vietnam - V League
+3°,Da Nang,0,0,0,0,0,0,0,0,Vietnam - V League
+4°,Gia Lai,0,0,0,0,0,0,0,0,Vietnam - V League
+5°,Ha Noi,0,0,0,0,0,0,0,0,Vietnam - V League
+6°,Hai Phong,0,0,0,0,0,0,0,0,Vietnam - V League
+7°,Ho Chi Minh,0,0,0,0,0,0,0,0,Vietnam - V League
+8°,Hong Linh Ha T.,0,0,0,0,0,0,0,0,Vietnam - V League
+9°,Nam Dinh,0,0,0,0,0,0,0,0,Vietnam - V League
+10°,Phu Dong,0,0,0,0,0,0,0,0,Vietnam - V League
+11°,Quang Nam,0,0,0,0,0,0,0,0,Vietnam - V League
+12°,Song Lam Nghe,0,0,0,0,0,0,0,0,Vietnam - V League
+13°,Thanh Hoa,0,0,0,0,0,0,0,0,Vietnam - V League
+14°,Viettel,0,0,0,0,0,0,0,0,Vietnam - V League
 1°,Phu Dong,10,9,1,0,18,2,+16,28,Vietnam - V League 2
 2°,PVF-CAND,10,6,3,1,13,5,+8,21,Vietnam - V League 2
 3°,Binh Phuoc,10,6,3,1,11,5,+6,21,Vietnam - V League 2
@@ -2063,15 +2067,15 @@ Ranking,Team_Away,GP,W,D,L,GF,GA,GD,Pts,Liga
 9°,Ho Chi Minh B,10,1,4,5,4,12,-8,7,Vietnam - V League 2
 10°,Hoa Binh,10,1,3,6,6,12,-6,6,Vietnam - V League 2
 11°,Ba Ria Vung Tau,10,2,0,8,7,21,-14,6,Vietnam - V League 2
-1°,The New Saints,16,12,0,4,42,16,+26,36,Wales - Cymru Premier
-2°,Penybont,16,9,2,5,28,21,+7,29,Wales - Cymru Premier
-3°,Caernarfon,16,7,4,5,23,21,+2,25,Wales - Cymru Premier
-4°,Haverfordwest,16,6,6,4,17,14,+3,24,Wales - Cymru Premier
-5°,Barry,16,6,4,6,25,29,-4,22,Wales - Cymru Premier
-6°,Connahs Quay,16,5,4,7,22,19,+3,19,Wales - Cymru Premier
-7°,Cardiff MU,16,5,3,8,18,21,-3,18,Wales - Cymru Premier
-8°,Briton Ferry,16,5,1,10,23,35,-12,16,Wales - Cymru Premier
-9°,Bala Town,16,2,9,5,20,26,-6,15,Wales - Cymru Premier
-10°,Flint,16,4,2,10,20,43,-23,14,Wales - Cymru Premier
-11°,Newtown,16,3,4,9,14,27,-13,13,Wales - Cymru Premier
-12°,Aberystwyth,16,3,0,13,13,41,-28,9,Wales - Cymru Premier
+1°,Briton Ferry,1,1,0,0,3,0,+3,3,Wales - Cymru Premier
+2°,Barry,1,1,0,0,2,0,+2,3,Wales - Cymru Premier
+3°,Penybont,1,1,0,0,1,0,+1,3,Wales - Cymru Premier
+4°,Caernarfon,1,0,1,0,2,2,0,1,Wales - Cymru Premier
+5°,Connahs Quay,1,0,1,0,1,1,0,1,Wales - Cymru Premier
+6°,Flint,1,0,1,0,1,1,0,1,Wales - Cymru Premier
+7°,Bala Town,0,0,0,0,0,0,0,0,Wales - Cymru Premier
+8°,Cardiff MU,0,0,0,0,0,0,0,0,Wales - Cymru Premier
+9°,Colwyn Bay,0,0,0,0,0,0,0,0,Wales - Cymru Premier
+10°,Haverfordwest,0,0,0,0,0,0,0,0,Wales - Cymru Premier
+11°,Llanelli Town,0,0,0,0,0,0,0,0,Wales - Cymru Premier
+12°,The New Saints,0,0,0,0,0,0,0,0,Wales - Cymru Premier
