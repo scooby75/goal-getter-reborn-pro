@@ -23,10 +23,10 @@ Argentina - Primera B,3 - 1,2,1%
 Argentina - Primera B,3 - 0,2,1%
 Argentina - Primera B,3 - 2,1,0%
 Argentina - Primera B,1 - 2,1,0%
-Armenia - Premier League,0 - 0,4,50%
-Armenia - Premier League,1 - 0,2,25%
-Armenia - Premier League,0 - 1,1,12%
-Armenia - Premier League,2 - 0,1,12%
+Armenia - Premier League,0 - 0,8,53%
+Armenia - Premier League,1 - 0,3,20%
+Armenia - Premier League,0 - 1,2,13%
+Armenia - Premier League,2 - 0,2,13%
 Australia - A-League,0 - 0,42,25%
 Australia - A-League,1 - 0,31,18%
 Australia - A-League,0 - 1,21,12%
@@ -42,56 +42,61 @@ Australia - A-League,3 - 0,3,2%
 Australia - A-League,5 - 0,1,1%
 Australia - A-League,0 - 4,1,1%
 Australia - A-League,3 - 2,1,1%
-Austria - Bundesliga,0 - 0,3,25%
-Austria - Bundesliga,0 - 2,2,17%
-Austria - Bundesliga,1 - 1,2,17%
-Austria - Bundesliga,1 - 0,2,17%
-Austria - Bundesliga,2 - 2,1,8%
-Austria - Bundesliga,0 - 1,1,8%
-Austria - Bundesliga,2 - 0,1,8%
-Austria - 2. Liga,0 - 0,4,25%
-Austria - 2. Liga,0 - 3,2,12%
-Austria - 2. Liga,0 - 2,2,12%
-Austria - 2. Liga,0 - 1,2,12%
-Austria - 2. Liga,2 - 0,2,12%
-Austria - 2. Liga,1 - 3,1,6%
-Austria - 2. Liga,4 - 2,1,6%
-Austria - 2. Liga,1 - 1,1,6%
-Austria - 2. Liga,1 - 0,1,6%
-Belgium - First Division A,1 - 0,7,29%
-Belgium - First Division A,0 - 0,6,25%
-Belgium - First Division A,0 - 1,5,21%
-Belgium - First Division A,1 - 1,2,8%
-Belgium - First Division A,2 - 0,2,8%
-Belgium - First Division A,0 - 2,1,4%
-Belgium - First Division A,2 - 1,1,4%
-Bolivia - Primera Div. - Apertura,1 - 0,28,21%
-Bolivia - Primera Div. - Apertura,0 - 0,28,21%
-Bolivia - Primera Div. - Apertura,0 - 1,19,15%
-Bolivia - Primera Div. - Apertura,2 - 0,16,12%
-Bolivia - Primera Div. - Apertura,1 - 1,12,9%
-Bolivia - Primera Div. - Apertura,2 - 1,9,7%
-Bolivia - Primera Div. - Apertura,3 - 0,5,4%
-Bolivia - Primera Div. - Apertura,3 - 1,4,3%
-Bolivia - Primera Div. - Apertura,1 - 2,3,2%
-Bolivia - Primera Div. - Apertura,0 - 2,3,2%
-Bolivia - Primera Div. - Apertura,4 - 0,2,2%
+Austria - Bundesliga,0 - 0,5,22%
+Austria - Bundesliga,1 - 1,4,17%
+Austria - Bundesliga,0 - 1,4,17%
+Austria - Bundesliga,0 - 2,3,13%
+Austria - Bundesliga,2 - 0,3,13%
+Austria - Bundesliga,1 - 0,2,9%
+Austria - Bundesliga,1 - 3,1,4%
+Austria - Bundesliga,2 - 2,1,4%
+Austria - 2. Liga,0 - 0,10,31%
+Austria - 2. Liga,0 - 1,6,19%
+Austria - 2. Liga,0 - 3,3,9%
+Austria - 2. Liga,0 - 2,3,9%
+Austria - 2. Liga,2 - 0,3,9%
+Austria - 2. Liga,1 - 1,2,6%
+Austria - 2. Liga,1 - 0,2,6%
+Austria - 2. Liga,1 - 3,1,3%
+Austria - 2. Liga,4 - 2,1,3%
+Austria - 2. Liga,2 - 1,1,3%
+Belgium - First Division A,0 - 0,11,30%
+Belgium - First Division A,1 - 0,10,27%
+Belgium - First Division A,0 - 1,5,14%
+Belgium - First Division A,1 - 1,4,11%
+Belgium - First Division A,2 - 0,2,5%
+Belgium - First Division A,0 - 3,1,3%
+Belgium - First Division A,1 - 2,1,3%
+Belgium - First Division A,0 - 2,1,3%
+Belgium - First Division A,2 - 1,1,3%
+Belgium - First Division A,3 - 0,1,3%
+Bolivia - Primera Div. - Apertura,1 - 0,30,21%
+Bolivia - Primera Div. - Apertura,0 - 0,30,21%
+Bolivia - Primera Div. - Apertura,0 - 1,21,15%
+Bolivia - Primera Div. - Apertura,2 - 0,16,11%
+Bolivia - Primera Div. - Apertura,1 - 1,14,10%
+Bolivia - Primera Div. - Apertura,2 - 1,9,6%
+Bolivia - Primera Div. - Apertura,1 - 2,5,3%
+Bolivia - Primera Div. - Apertura,3 - 1,5,3%
+Bolivia - Primera Div. - Apertura,3 - 0,5,3%
+Bolivia - Primera Div. - Apertura,0 - 2,4,3%
+Bolivia - Primera Div. - Apertura,4 - 0,2,1%
 Bolivia - Primera Div. - Apertura,1 - 4,1,1%
 Bolivia - Primera Div. - Apertura,0 - 4,1,1%
-Brazil - Serie A,0 - 0,61,34%
-Brazil - Serie A,1 - 0,44,25%
-Brazil - Serie A,0 - 1,23,13%
-Brazil - Serie A,1 - 1,13,7%
-Brazil - Serie A,2 - 0,12,7%
-Brazil - Serie A,0 - 2,11,6%
-Brazil - Serie A,2 - 1,8,4%
-Brazil - Serie A,1 - 2,3,2%
-Brazil - Serie A,3 - 0,2,1%
+Brazil - Serie A,0 - 0,62,31%
+Brazil - Serie A,1 - 0,51,26%
+Brazil - Serie A,0 - 1,28,14%
+Brazil - Serie A,1 - 1,16,8%
+Brazil - Serie A,2 - 0,13,7%
+Brazil - Serie A,0 - 2,12,6%
+Brazil - Serie A,2 - 1,9,5%
+Brazil - Serie A,1 - 2,4,2%
+Brazil - Serie A,3 - 0,3,2%
 Brazil - Serie A,0 - 3,1,1%
-Brazil - Serie B,0 - 0,70,33%
-Brazil - Serie B,1 - 0,50,24%
-Brazil - Serie B,1 - 1,35,17%
-Brazil - Serie B,0 - 1,26,12%
+Brazil - Serie B,0 - 0,81,35%
+Brazil - Serie B,1 - 0,54,23%
+Brazil - Serie B,1 - 1,37,16%
+Brazil - Serie B,0 - 1,30,13%
 Brazil - Serie B,2 - 0,7,3%
 Brazil - Serie B,1 - 2,6,3%
 Brazil - Serie B,0 - 2,5,2%
@@ -100,87 +105,91 @@ Brazil - Serie B,3 - 0,2,1%
 Brazil - Serie B,1 - 3,1,0%
 Brazil - Serie B,3 - 1,1,0%
 Brazil - Serie B,4 - 0,1,0%
-Brazil - Serie C,0 - 0,61,38%
-Brazil - Serie C,1 - 0,31,19%
-Brazil - Serie C,0 - 1,28,18%
-Brazil - Serie C,1 - 1,12,8%
-Brazil - Serie C,2 - 0,8,5%
-Brazil - Serie C,2 - 1,6,4%
+Brazil - Serie C,0 - 0,70,39%
+Brazil - Serie C,1 - 0,36,20%
+Brazil - Serie C,0 - 1,31,17%
+Brazil - Serie C,1 - 1,12,7%
+Brazil - Serie C,2 - 0,8,4%
+Brazil - Serie C,2 - 1,6,3%
 Brazil - Serie C,1 - 2,5,3%
 Brazil - Serie C,0 - 2,5,3%
+Brazil - Serie C,2 - 2,3,2%
 Brazil - Serie C,2 - 3,1,1%
 Brazil - Serie C,3 - 2,1,1%
 Brazil - Serie C,3 - 1,1,1%
 Brazil - Serie C,3 - 0,1,1%
-Bulgaria - Parva Liga,0 - 0,9,28%
-Bulgaria - Parva Liga,1 - 0,7,22%
-Bulgaria - Parva Liga,1 - 1,5,16%
-Bulgaria - Parva Liga,0 - 1,3,9%
-Bulgaria - Parva Liga,2 - 0,3,9%
-Bulgaria - Parva Liga,0 - 2,2,6%
-Bulgaria - Parva Liga,1 - 2,1,3%
-Bulgaria - Parva Liga,2 - 1,1,3%
-Bulgaria - Parva Liga,3 - 0,1,3%
-Canada - Premier League,0 - 0,19,27%
-Canada - Premier League,1 - 0,17,24%
-Canada - Premier League,0 - 1,15,21%
-Canada - Premier League,1 - 1,9,13%
+Bulgaria - Parva Liga,0 - 0,14,31%
+Bulgaria - Parva Liga,1 - 0,10,22%
+Bulgaria - Parva Liga,1 - 1,5,11%
+Bulgaria - Parva Liga,0 - 1,4,9%
+Bulgaria - Parva Liga,2 - 0,4,9%
+Bulgaria - Parva Liga,0 - 2,3,7%
+Bulgaria - Parva Liga,1 - 2,2,4%
+Bulgaria - Parva Liga,2 - 1,2,4%
+Bulgaria - Parva Liga,3 - 0,1,2%
+Canada - Premier League,0 - 0,20,25%
+Canada - Premier League,1 - 0,19,24%
+Canada - Premier League,0 - 1,16,20%
+Canada - Premier League,1 - 1,9,11%
+Canada - Premier League,2 - 2,3,4%
 Canada - Premier League,0 - 3,2,3%
-Canada - Premier League,2 - 2,2,3%
+Canada - Premier League,0 - 2,2,3%
+Canada - Premier League,2 - 1,2,3%
 Canada - Premier League,2 - 0,2,3%
+Canada - Premier League,3 - 2,1,1%
 Canada - Premier League,1 - 2,1,1%
-Canada - Premier League,0 - 2,1,1%
 Canada - Premier League,3 - 1,1,1%
-Canada - Premier League,2 - 1,1,1%
 Canada - Premier League,3 - 0,1,1%
-Chile - Liga de Primera,0 - 0,53,35%
-Chile - Liga de Primera,0 - 1,33,22%
-Chile - Liga de Primera,1 - 0,21,14%
-Chile - Liga de Primera,1 - 1,14,9%
-Chile - Liga de Primera,2 - 0,9,6%
+Chile - Liga de Primera,0 - 0,59,36%
+Chile - Liga de Primera,0 - 1,34,21%
+Chile - Liga de Primera,1 - 0,27,16%
+Chile - Liga de Primera,1 - 1,15,9%
+Chile - Liga de Primera,2 - 0,9,5%
 Chile - Liga de Primera,1 - 2,8,5%
 Chile - Liga de Primera,0 - 2,3,2%
 Chile - Liga de Primera,3 - 0,3,2%
 Chile - Liga de Primera,3 - 1,2,1%
 Chile - Liga de Primera,2 - 1,2,1%
 Chile - Liga de Primera,5 - 0,1,1%
+Chile - Liga de Primera,1 - 3,1,1%
 Chile - Liga de Primera,0 - 3,1,1%
-Chile - Liga de Ascenso,0 - 0,66,41%
-Chile - Liga de Ascenso,1 - 0,29,18%
-Chile - Liga de Ascenso,0 - 1,18,11%
+Chile - Liga de Ascenso,0 - 0,72,41%
+Chile - Liga de Ascenso,1 - 0,32,18%
+Chile - Liga de Ascenso,0 - 1,22,12%
 Chile - Liga de Ascenso,1 - 1,15,9%
-Chile - Liga de Ascenso,2 - 0,13,8%
+Chile - Liga de Ascenso,2 - 0,15,9%
 Chile - Liga de Ascenso,1 - 2,4,2%
 Chile - Liga de Ascenso,2 - 1,4,2%
 Chile - Liga de Ascenso,0 - 2,3,2%
 Chile - Liga de Ascenso,3 - 0,3,2%
 Chile - Liga de Ascenso,0 - 3,2,1%
+Chile - Liga de Ascenso,1 - 4,1,1%
 Chile - Liga de Ascenso,3 - 2,1,1%
 Chile - Liga de Ascenso,2 - 2,1,1%
 Chile - Liga de Ascenso,3 - 1,1,1%
-China - Super League,1 - 0,36,22%
-China - Super League,0 - 0,32,20%
-China - Super League,0 - 1,29,18%
-China - Super League,1 - 1,13,8%
-China - Super League,0 - 2,11,7%
-China - Super League,2 - 0,10,6%
-China - Super League,2 - 1,9,6%
-China - Super League,1 - 2,4,2%
+China - Super League,1 - 0,41,23%
+China - Super League,0 - 0,36,20%
+China - Super League,0 - 1,30,17%
+China - Super League,1 - 1,15,8%
+China - Super League,0 - 2,12,7%
+China - Super League,2 - 0,11,6%
+China - Super League,2 - 1,9,5%
+China - Super League,1 - 2,5,3%
 China - Super League,3 - 1,4,2%
 China - Super League,0 - 3,3,2%
 China - Super League,2 - 2,3,2%
+China - Super League,3 - 0,3,2%
 China - Super League,0 - 4,2,1%
-China - Super League,3 - 0,2,1%
+China - Super League,4 - 0,2,1%
 China - Super League,1 - 3,1,1%
-China - Super League,4 - 0,1,1%
-China - League One,0 - 0,57,36%
-China - League One,1 - 1,21,13%
-China - League One,0 - 1,20,13%
-China - League One,1 - 0,18,11%
-China - League One,2 - 0,16,10%
+China - League One,0 - 0,60,36%
+China - League One,1 - 1,23,14%
+China - League One,0 - 1,21,13%
+China - League One,1 - 0,19,11%
+China - League One,2 - 0,18,11%
 China - League One,0 - 2,8,5%
 China - League One,2 - 1,6,4%
-China - League One,1 - 3,4,3%
+China - League One,1 - 3,4,2%
 China - League One,3 - 3,1,1%
 China - League One,0 - 3,1,1%
 China - League One,2 - 2,1,1%
@@ -188,10 +197,10 @@ China - League One,1 - 2,1,1%
 China - League One,4 - 1,1,1%
 China - League One,3 - 1,1,1%
 China - League One,3 - 0,1,1%
-China - League Two,0 - 0,91,35%
-China - League Two,0 - 1,49,19%
-China - League Two,1 - 0,47,18%
-China - League Two,1 - 1,24,9%
+China - League Two,0 - 0,95,35%
+China - League Two,1 - 0,51,19%
+China - League Two,0 - 1,50,18%
+China - League Two,1 - 1,25,9%
 China - League Two,2 - 0,18,7%
 China - League Two,0 - 2,11,4%
 China - League Two,1 - 2,9,3%
@@ -200,6 +209,7 @@ China - League Two,3 - 0,3,1%
 China - League Two,2 - 2,2,1%
 China - League Two,3 - 1,2,1%
 China - League Two,4 - 0,2,1%
+China - League Two,2 - 3,1,0%
 China - League Two,1 - 3,1,0%
 China - League Two,0 - 3,1,0%
 Colombia - Primera A - Apertura,0 - 0,72,36%
@@ -232,12 +242,12 @@ Colombia - Primera B - Apertura,3 - 1,2,2%
 Colombia - Primera B - Apertura,3 - 2,1,1%
 Colombia - Primera B - Apertura,4 - 1,1,1%
 Colombia - Primera B - Apertura,3 - 0,1,1%
-Costa Rica - Primera Div. - Apertura,0 - 0,5,33%
-Costa Rica - Primera Div. - Apertura,0 - 1,3,20%
-Costa Rica - Primera Div. - Apertura,0 - 2,2,13%
-Costa Rica - Primera Div. - Apertura,1 - 1,2,13%
-Costa Rica - Primera Div. - Apertura,1 - 0,2,13%
-Costa Rica - Primera Div. - Apertura,2 - 0,1,7%
+Costa Rica - Primera Div. - Apertura,0 - 0,7,29%
+Costa Rica - Primera Div. - Apertura,2 - 0,5,21%
+Costa Rica - Primera Div. - Apertura,0 - 1,4,17%
+Costa Rica - Primera Div. - Apertura,1 - 1,3,12%
+Costa Rica - Primera Div. - Apertura,1 - 0,3,12%
+Costa Rica - Primera Div. - Apertura,0 - 2,2,8%
 Costa Rica - Primera Div. - Clausura,0 - 0,43,33%
 Costa Rica - Primera Div. - Clausura,0 - 1,25,19%
 Costa Rica - Primera Div. - Clausura,1 - 0,21,16%
@@ -249,105 +259,138 @@ Costa Rica - Primera Div. - Clausura,1 - 2,3,2%
 Costa Rica - Primera Div. - Clausura,0 - 3,2,2%
 Costa Rica - Primera Div. - Clausura,3 - 0,2,2%
 Costa Rica - Primera Div. - Clausura,4 - 2,1,1%
-Croatia - 1. HNL,0 - 0,4,40%
-Croatia - 1. HNL,1 - 0,3,30%
-Croatia - 1. HNL,0 - 1,2,20%
-Croatia - 1. HNL,1 - 1,1,10%
-CzechRepublic - 1. Liga,1 - 0,11,37%
-CzechRepublic - 1. Liga,0 - 0,7,23%
-CzechRepublic - 1. Liga,1 - 1,5,17%
-CzechRepublic - 1. Liga,0 - 1,5,17%
-CzechRepublic - 1. Liga,1 - 3,1,3%
-CzechRepublic - 1. Liga,2 - 1,1,3%
-CzechRepublic - FNL,0 - 0,7,18%
-CzechRepublic - FNL,0 - 1,6,16%
-CzechRepublic - FNL,1 - 0,6,16%
-CzechRepublic - FNL,2 - 1,4,11%
-CzechRepublic - FNL,1 - 1,4,11%
-CzechRepublic - FNL,2 - 0,4,11%
-CzechRepublic - FNL,2 - 2,2,5%
-CzechRepublic - FNL,1 - 2,2,5%
-CzechRepublic - FNL,0 - 2,1,3%
-CzechRepublic - FNL,3 - 1,1,3%
-CzechRepublic - FNL,3 - 0,1,3%
-Denmark - Superligaen,0 - 1,5,21%
-Denmark - Superligaen,1 - 0,5,21%
-Denmark - Superligaen,2 - 1,3,12%
-Denmark - Superligaen,1 - 1,2,8%
-Denmark - Superligaen,2 - 0,2,8%
-Denmark - Superligaen,0 - 0,2,8%
-Denmark - Superligaen,1 - 3,1,4%
-Denmark - Superligaen,3 - 2,1,4%
-Denmark - Superligaen,2 - 2,1,4%
-Denmark - Superligaen,0 - 2,1,4%
-Denmark - Superligaen,3 - 1,1,4%
-Denmark - 1st Division,0 - 1,7,29%
-Denmark - 1st Division,0 - 0,5,21%
-Denmark - 1st Division,1 - 2,3,12%
-Denmark - 1st Division,1 - 1,3,12%
-Denmark - 1st Division,1 - 0,3,12%
-Denmark - 1st Division,0 - 2,1,4%
-Denmark - 1st Division,3 - 0,1,4%
-Denmark - 1st Division,2 - 0,1,4%
-Denmark - 2nd Division,0 - 0,4,36%
-Denmark - 2nd Division,1 - 0,3,27%
-Denmark - 2nd Division,0 - 2,2,18%
-Denmark - 2nd Division,0 - 1,1,9%
-Denmark - 2nd Division,2 - 0,1,9%
-Ecuador - Liga Pro,0 - 0,57,30%
-Ecuador - Liga Pro,1 - 0,41,21%
-Ecuador - Liga Pro,0 - 1,33,17%
-Ecuador - Liga Pro,1 - 1,19,10%
-Ecuador - Liga Pro,2 - 0,16,8%
+Croatia - 1. HNL,0 - 0,6,30%
+Croatia - 1. HNL,1 - 0,5,25%
+Croatia - 1. HNL,0 - 1,4,20%
+Croatia - 1. HNL,1 - 1,3,15%
+Croatia - 1. HNL,1 - 2,1,5%
+Croatia - 1. HNL,0 - 2,1,5%
+Croatia - 1. NL,0 - 1,3,25%
+Croatia - 1. NL,2 - 0,3,25%
+Croatia - 1. NL,0 - 0,3,25%
+Croatia - 1. NL,1 - 0,2,17%
+Croatia - 1. NL,0 - 2,1,8%
+CzechRepublic - 1. Liga,1 - 0,15,33%
+CzechRepublic - 1. Liga,0 - 0,9,20%
+CzechRepublic - 1. Liga,0 - 1,8,18%
+CzechRepublic - 1. Liga,1 - 1,7,16%
+CzechRepublic - 1. Liga,2 - 1,2,4%
+CzechRepublic - 1. Liga,1 - 3,1,2%
+CzechRepublic - 1. Liga,1 - 2,1,2%
+CzechRepublic - 1. Liga,0 - 2,1,2%
+CzechRepublic - 1. Liga,2 - 0,1,2%
+CzechRepublic - FNL,0 - 1,10,19%
+CzechRepublic - FNL,0 - 0,10,19%
+CzechRepublic - FNL,1 - 0,9,17%
+CzechRepublic - FNL,2 - 0,6,11%
+CzechRepublic - FNL,1 - 1,5,9%
+CzechRepublic - FNL,2 - 1,4,8%
+CzechRepublic - FNL,2 - 2,3,6%
+CzechRepublic - FNL,1 - 2,3,6%
+CzechRepublic - FNL,0 - 2,1,2%
+CzechRepublic - FNL,3 - 1,1,2%
+CzechRepublic - FNL,3 - 0,1,2%
+Denmark - Superligaen,1 - 0,8,22%
+Denmark - Superligaen,0 - 1,6,17%
+Denmark - Superligaen,0 - 0,6,17%
+Denmark - Superligaen,2 - 1,3,8%
+Denmark - Superligaen,1 - 1,3,8%
+Denmark - Superligaen,2 - 2,2,6%
+Denmark - Superligaen,0 - 2,2,6%
+Denmark - Superligaen,2 - 0,2,6%
+Denmark - Superligaen,1 - 3,1,3%
+Denmark - Superligaen,3 - 2,1,3%
+Denmark - Superligaen,1 - 2,1,3%
+Denmark - Superligaen,3 - 1,1,3%
+Denmark - 1st Division,0 - 1,11,26%
+Denmark - 1st Division,0 - 0,9,21%
+Denmark - 1st Division,1 - 0,7,17%
+Denmark - 1st Division,1 - 1,5,12%
+Denmark - 1st Division,1 - 2,4,10%
+Denmark - 1st Division,3 - 0,2,5%
+Denmark - 1st Division,2 - 0,2,5%
+Denmark - 1st Division,1 - 3,1,2%
+Denmark - 1st Division,0 - 2,1,2%
+Denmark - 2nd Division,0 - 0,8,35%
+Denmark - 2nd Division,1 - 0,6,26%
+Denmark - 2nd Division,0 - 2,3,13%
+Denmark - 2nd Division,0 - 1,2,9%
+Denmark - 2nd Division,2 - 0,2,9%
+Denmark - 2nd Division,2 - 2,1,4%
+Denmark - 2nd Division,1 - 1,1,4%
+Ecuador - Liga Pro,0 - 0,63,30%
+Ecuador - Liga Pro,1 - 0,44,21%
+Ecuador - Liga Pro,0 - 1,34,16%
+Ecuador - Liga Pro,1 - 1,23,11%
+Ecuador - Liga Pro,2 - 0,17,8%
 Ecuador - Liga Pro,1 - 2,6,3%
 Ecuador - Liga Pro,2 - 1,6,3%
-Ecuador - Liga Pro,0 - 2,4,2%
-Ecuador - Liga Pro,2 - 2,3,2%
+Ecuador - Liga Pro,0 - 2,5,2%
+Ecuador - Liga Pro,2 - 2,3,1%
 Ecuador - Liga Pro,3 - 1,2,1%
-Ecuador - Liga Pro,0 - 4,1,1%
-Ecuador - Liga Pro,1 - 3,1,1%
-Ecuador - Liga Pro,0 - 3,1,1%
-Ecuador - Liga Pro,4 - 1,1,1%
-Ecuador - Liga Pro,3 - 0,1,1%
-Ecuador - Serie B,0 - 0,42,33%
-Ecuador - Serie B,1 - 0,33,26%
-Ecuador - Serie B,0 - 1,21,17%
-Ecuador - Serie B,1 - 1,9,7%
-Ecuador - Serie B,2 - 0,7,6%
-Ecuador - Serie B,3 - 0,6,5%
+Ecuador - Liga Pro,0 - 4,1,0%
+Ecuador - Liga Pro,1 - 3,1,0%
+Ecuador - Liga Pro,0 - 3,1,0%
+Ecuador - Liga Pro,4 - 1,1,0%
+Ecuador - Liga Pro,3 - 0,1,0%
+Ecuador - Serie B,0 - 0,46,34%
+Ecuador - Serie B,1 - 0,34,25%
+Ecuador - Serie B,0 - 1,21,16%
+Ecuador - Serie B,1 - 1,10,7%
+Ecuador - Serie B,2 - 0,9,7%
+Ecuador - Serie B,3 - 0,6,4%
 Ecuador - Serie B,2 - 1,4,3%
 Ecuador - Serie B,1 - 2,3,2%
 Ecuador - Serie B,0 - 2,1,1%
-England - Championship,0 - 0,6,50%
-England - Championship,0 - 1,3,25%
-England - Championship,1 - 0,2,17%
-England - Championship,1 - 2,1,8%
-England - League One,1 - 0,8,33%
-England - League One,0 - 0,7,29%
-England - League One,2 - 0,3,12%
-England - League One,0 - 2,2,8%
-England - League One,0 - 1,2,8%
-England - League One,1 - 2,1,4%
-England - League One,2 - 1,1,4%
-England - League Two,0 - 0,11,46%
-England - League Two,2 - 0,4,17%
-England - League Two,0 - 1,3,12%
-England - League Two,1 - 0,3,12%
-England - League Two,1 - 3,1,4%
-England - League Two,2 - 1,1,4%
-England - League Two,1 - 1,1,4%
-England - National League,1 - 0,3,27%
-England - National League,0 - 0,3,27%
-England - National League,2 - 0,2,18%
-England - National League,1 - 2,1,9%
-England - National League,1 - 1,1,9%
-England - National League,0 - 1,1,9%
-FaroeIslands - Premier League,0 - 0,24,27%
-FaroeIslands - Premier League,0 - 1,14,16%
-FaroeIslands - Premier League,1 - 0,12,13%
-FaroeIslands - Premier League,1 - 1,9,10%
-FaroeIslands - Premier League,1 - 2,5,6%
-FaroeIslands - Premier League,0 - 2,5,6%
+England - Premier League,0 - 0,7,35%
+England - Premier League,1 - 0,6,30%
+England - Premier League,0 - 2,2,10%
+England - Premier League,0 - 1,2,10%
+England - Premier League,1 - 3,1,5%
+England - Premier League,3 - 0,1,5%
+England - Premier League,2 - 0,1,5%
+England - Championship,0 - 0,12,33%
+England - Championship,0 - 1,8,22%
+England - Championship,1 - 0,6,17%
+England - Championship,2 - 2,2,6%
+England - Championship,0 - 2,2,6%
+England - Championship,1 - 1,2,6%
+England - Championship,5 - 0,1,3%
+England - Championship,1 - 2,1,3%
+England - Championship,2 - 1,1,3%
+England - Championship,2 - 0,1,3%
+England - League One,0 - 0,22,37%
+England - League One,1 - 0,15,25%
+England - League One,0 - 1,9,15%
+England - League One,2 - 0,5,8%
+England - League One,0 - 2,3,5%
+England - League One,1 - 2,2,3%
+England - League One,2 - 1,2,3%
+England - League One,3 - 2,1,2%
+England - League Two,0 - 0,20,34%
+England - League Two,1 - 0,14,24%
+England - League Two,0 - 1,7,12%
+England - League Two,2 - 0,5,8%
+England - League Two,1 - 1,4,7%
+England - League Two,1 - 2,3,5%
+England - League Two,2 - 1,3,5%
+England - League Two,1 - 3,1,2%
+England - League Two,0 - 2,1,2%
+England - League Two,3 - 0,1,2%
+England - National League,0 - 0,16,29%
+England - National League,1 - 0,12,21%
+England - National League,1 - 1,8,14%
+England - National League,2 - 0,8,14%
+England - National League,0 - 1,7,12%
+England - National League,0 - 2,3,5%
+England - National League,1 - 2,1,2%
+England - National League,3 - 0,1,2%
+FaroeIslands - Premier League,0 - 0,28,28%
+FaroeIslands - Premier League,0 - 1,16,16%
+FaroeIslands - Premier League,1 - 0,14,14%
+FaroeIslands - Premier League,1 - 1,11,11%
+FaroeIslands - Premier League,1 - 2,5,5%
+FaroeIslands - Premier League,0 - 2,5,5%
 FaroeIslands - Premier League,0 - 3,4,4%
 FaroeIslands - Premier League,2 - 1,3,3%
 FaroeIslands - Premier League,4 - 0,3,3%
@@ -358,135 +401,151 @@ FaroeIslands - Premier League,5 - 0,1,1%
 FaroeIslands - Premier League,0 - 4,1,1%
 FaroeIslands - Premier League,2 - 3,1,1%
 FaroeIslands - Premier League,3 - 2,1,1%
-Finland - Veikkausliiga,0 - 0,32,28%
-Finland - Veikkausliiga,0 - 1,24,21%
-Finland - Veikkausliiga,1 - 0,18,16%
-Finland - Veikkausliiga,2 - 0,12,11%
-Finland - Veikkausliiga,1 - 1,11,10%
-Finland - Veikkausliiga,0 - 2,4,4%
-Finland - Veikkausliiga,2 - 1,4,4%
-Finland - Veikkausliiga,1 - 2,3,3%
-Finland - Veikkausliiga,3 - 0,3,3%
-Finland - Veikkausliiga,3 - 1,2,2%
+Finland - Veikkausliiga,0 - 0,36,29%
+Finland - Veikkausliiga,0 - 1,25,20%
+Finland - Veikkausliiga,1 - 0,20,16%
+Finland - Veikkausliiga,1 - 1,13,10%
+Finland - Veikkausliiga,2 - 0,12,10%
+Finland - Veikkausliiga,1 - 2,4,3%
+Finland - Veikkausliiga,0 - 2,4,3%
+Finland - Veikkausliiga,2 - 1,4,3%
+Finland - Veikkausliiga,3 - 1,3,2%
+Finland - Veikkausliiga,3 - 0,3,2%
+Finland - Veikkausliiga,0 - 3,1,1%
 Finland - Veikkausliiga,2 - 2,1,1%
-Finland - Ykkonen,1 - 0,19,21%
-Finland - Ykkonen,0 - 0,18,20%
-Finland - Ykkonen,0 - 1,12,13%
-Finland - Ykkonen,1 - 1,10,11%
-Finland - Ykkonen,1 - 2,7,8%
-Finland - Ykkonen,2 - 1,7,8%
-Finland - Ykkonen,0 - 2,6,7%
-Finland - Ykkonen,2 - 0,4,4%
-Finland - Ykkonen,2 - 2,2,2%
-Finland - Ykkonen,3 - 1,2,2%
-Finland - Ykkonen,0 - 5,1,1%
-Finland - Ykkonen,2 - 3,1,1%
-Finland - Ykkonen,1 - 3,1,1%
-Finland - Kakkonen,0 - 0,26,23%
-Finland - Kakkonen,1 - 1,18,16%
-Finland - Kakkonen,0 - 1,17,15%
-Finland - Kakkonen,1 - 0,17,15%
-Finland - Kakkonen,2 - 0,13,12%
-Finland - Kakkonen,0 - 2,5,4%
-Finland - Kakkonen,2 - 1,4,4%
-Finland - Kakkonen,3 - 0,4,4%
+Finland - Kakkonen,0 - 0,27,22%
+Finland - Kakkonen,0 - 1,21,17%
+Finland - Kakkonen,1 - 1,18,14%
+Finland - Kakkonen,1 - 0,17,14%
+Finland - Kakkonen,2 - 0,14,11%
+Finland - Kakkonen,0 - 2,8,6%
+Finland - Kakkonen,2 - 1,5,4%
+Finland - Kakkonen,1 - 2,4,3%
+Finland - Kakkonen,3 - 0,4,3%
 Finland - Kakkonen,0 - 3,2,2%
-Finland - Kakkonen,1 - 2,2,2%
 Finland - Kakkonen,5 - 1,1,1%
 Finland - Kakkonen,2 - 3,1,1%
 Finland - Kakkonen,2 - 2,1,1%
 Finland - Kakkonen,3 - 1,1,1%
 Finland - Kakkonen,4 - 0,1,1%
-Finland - Kakkonen - A,0 - 0,14,16%
-Finland - Kakkonen - A,1 - 1,13,15%
-Finland - Kakkonen - A,1 - 0,11,13%
-Finland - Kakkonen - A,0 - 1,9,11%
+Finland - Kakkonen - A,0 - 0,15,17%
+Finland - Kakkonen - A,1 - 1,13,14%
+Finland - Kakkonen - A,1 - 0,11,12%
+Finland - Kakkonen - A,0 - 1,9,10%
+Finland - Kakkonen - A,2 - 0,8,9%
 Finland - Kakkonen - A,0 - 2,7,8%
-Finland - Kakkonen - A,2 - 0,7,8%
-Finland - Kakkonen - A,2 - 1,6,7%
-Finland - Kakkonen - A,3 - 0,5,6%
-Finland - Kakkonen - A,0 - 3,3,4%
-Finland - Kakkonen - A,4 - 0,3,4%
+Finland - Kakkonen - A,2 - 1,7,8%
+Finland - Kakkonen - A,3 - 0,6,7%
+Finland - Kakkonen - A,4 - 0,4,4%
+Finland - Kakkonen - A,0 - 3,3,3%
 Finland - Kakkonen - A,2 - 2,2,2%
 Finland - Kakkonen - A,5 - 2,1,1%
 Finland - Kakkonen - A,1 - 4,1,1%
 Finland - Kakkonen - A,0 - 4,1,1%
 Finland - Kakkonen - A,2 - 3,1,1%
 Finland - Kakkonen - A,1 - 2,1,1%
-Finland - Kakkonen - B,0 - 0,17,20%
-Finland - Kakkonen - B,1 - 0,15,18%
-Finland - Kakkonen - B,0 - 1,10,12%
-Finland - Kakkonen - B,0 - 2,9,11%
-Finland - Kakkonen - B,1 - 1,8,9%
+Finland - Kakkonen - B,0 - 0,18,20%
+Finland - Kakkonen - B,1 - 0,17,19%
+Finland - Kakkonen - B,0 - 1,10,11%
+Finland - Kakkonen - B,0 - 2,9,10%
+Finland - Kakkonen - B,1 - 1,9,10%
 Finland - Kakkonen - B,2 - 0,7,8%
-Finland - Kakkonen - B,1 - 2,4,5%
-Finland - Kakkonen - B,3 - 0,4,5%
-Finland - Kakkonen - B,1 - 3,3,4%
-Finland - Kakkonen - B,0 - 3,3,4%
+Finland - Kakkonen - B,3 - 0,5,6%
+Finland - Kakkonen - B,1 - 2,4,4%
+Finland - Kakkonen - B,1 - 3,3,3%
+Finland - Kakkonen - B,0 - 3,3,3%
 Finland - Kakkonen - B,5 - 0,1,1%
 Finland - Kakkonen - B,2 - 2,1,1%
 Finland - Kakkonen - B,3 - 1,1,1%
 Finland - Kakkonen - B,2 - 1,1,1%
 Finland - Kakkonen - B,4 - 0,1,1%
-Finland - Kakkonen - C,0 - 1,11,16%
-Finland - Kakkonen - C,2 - 0,10,15%
-Finland - Kakkonen - C,1 - 1,8,12%
-Finland - Kakkonen - C,0 - 0,8,12%
+Finland - Kakkonen - C,0 - 1,11,15%
+Finland - Kakkonen - C,2 - 0,11,15%
+Finland - Kakkonen - C,1 - 1,9,12%
+Finland - Kakkonen - C,0 - 0,9,12%
 Finland - Kakkonen - C,1 - 0,7,10%
 Finland - Kakkonen - C,1 - 2,4,6%
 Finland - Kakkonen - C,3 - 0,4,6%
+Finland - Kakkonen - C,1 - 3,3,4%
 Finland - Kakkonen - C,2 - 2,3,4%
 Finland - Kakkonen - C,2 - 3,2,3%
-Finland - Kakkonen - C,1 - 3,2,3%
 Finland - Kakkonen - C,0 - 2,2,3%
 Finland - Kakkonen - C,2 - 1,2,3%
 Finland - Kakkonen - C,4 - 0,2,3%
 Finland - Kakkonen - C,0 - 3,1,1%
 Finland - Kakkonen - C,3 - 2,1,1%
 Finland - Kakkonen - C,4 - 1,1,1%
-France - Ligue 2,1 - 1,3,38%
-France - Ligue 2,2 - 2,1,12%
-France - Ligue 2,1 - 2,1,12%
-France - Ligue 2,0 - 2,1,12%
-France - Ligue 2,1 - 0,1,12%
-France - Ligue 2,0 - 0,1,12%
-France - National,0 - 0,5,62%
-France - National,1 - 0,2,25%
-France - National,0 - 1,1,12%
-Georgia - Erovnuli Liga,0 - 0,32,32%
-Georgia - Erovnuli Liga,1 - 0,22,22%
-Georgia - Erovnuli Liga,0 - 1,18,18%
-Georgia - Erovnuli Liga,1 - 1,10,10%
+France - Ligue 1,0 - 0,9,50%
+France - Ligue 1,1 - 0,3,17%
+France - Ligue 1,1 - 2,2,11%
+France - Ligue 1,2 - 1,2,11%
+France - Ligue 1,0 - 1,1,6%
+France - Ligue 1,2 - 0,1,6%
+France - Ligue 2,1 - 0,7,27%
+France - Ligue 2,0 - 0,7,27%
+France - Ligue 2,1 - 1,3,12%
+France - Ligue 2,0 - 1,3,12%
+France - Ligue 2,1 - 2,2,8%
+France - Ligue 2,2 - 2,1,4%
+France - Ligue 2,0 - 2,1,4%
+France - Ligue 2,2 - 1,1,4%
+France - Ligue 2,2 - 0,1,4%
+France - National,0 - 0,10,42%
+France - National,1 - 0,4,17%
+France - National,1 - 1,3,12%
+France - National,0 - 1,3,12%
+France - National,0 - 2,1,4%
+France - National,4 - 0,1,4%
+France - National,3 - 0,1,4%
+France - National,2 - 0,1,4%
+Georgia - Erovnuli Liga,0 - 0,36,33%
+Georgia - Erovnuli Liga,1 - 0,24,22%
+Georgia - Erovnuli Liga,0 - 1,18,17%
+Georgia - Erovnuli Liga,1 - 1,12,11%
 Georgia - Erovnuli Liga,2 - 1,4,4%
 Georgia - Erovnuli Liga,2 - 0,4,4%
 Georgia - Erovnuli Liga,2 - 2,3,3%
-Georgia - Erovnuli Liga,0 - 2,2,2%
+Georgia - Erovnuli Liga,0 - 2,3,3%
 Georgia - Erovnuli Liga,5 - 0,1,1%
 Georgia - Erovnuli Liga,0 - 3,1,1%
 Georgia - Erovnuli Liga,1 - 2,1,1%
 Georgia - Erovnuli Liga,3 - 1,1,1%
 Georgia - Erovnuli Liga,3 - 0,1,1%
-Germany - 2. Bundesliga,0 - 0,8,44%
-Germany - 2. Bundesliga,2 - 1,4,22%
-Germany - 2. Bundesliga,1 - 2,1,6%
-Germany - 2. Bundesliga,0 - 2,1,6%
-Germany - 2. Bundesliga,1 - 1,1,6%
-Germany - 2. Bundesliga,0 - 1,1,6%
-Germany - 2. Bundesliga,2 - 0,1,6%
-Germany - 2. Bundesliga,1 - 0,1,6%
-Germany - 3. Liga,0 - 0,8,40%
-Germany - 3. Liga,1 - 0,4,20%
-Germany - 3. Liga,2 - 0,3,15%
-Germany - 3. Liga,1 - 2,2,10%
-Germany - 3. Liga,0 - 2,1,5%
-Germany - 3. Liga,2 - 1,1,5%
-Germany - 3. Liga,1 - 1,1,5%
-Guatemala - Liga Nacional - Apertura,0 - 0,11,46%
-Guatemala - Liga Nacional - Apertura,1 - 0,5,21%
-Guatemala - Liga Nacional - Apertura,0 - 1,4,17%
-Guatemala - Liga Nacional - Apertura,1 - 1,2,8%
-Guatemala - Liga Nacional - Apertura,2 - 2,1,4%
-Guatemala - Liga Nacional - Apertura,0 - 2,1,4%
+Germany - Bundesliga,1 - 1,2,22%
+Germany - Bundesliga,2 - 0,2,22%
+Germany - Bundesliga,0 - 0,2,22%
+Germany - Bundesliga,0 - 3,1,11%
+Germany - Bundesliga,0 - 1,1,11%
+Germany - Bundesliga,3 - 0,1,11%
+Germany - 2. Bundesliga,0 - 0,10,37%
+Germany - 2. Bundesliga,2 - 1,4,15%
+Germany - 2. Bundesliga,0 - 1,3,11%
+Germany - 2. Bundesliga,2 - 0,3,11%
+Germany - 2. Bundesliga,1 - 0,3,11%
+Germany - 2. Bundesliga,0 - 2,2,7%
+Germany - 2. Bundesliga,1 - 2,1,4%
+Germany - 2. Bundesliga,1 - 1,1,4%
+Germany - 3. Liga,0 - 0,11,37%
+Germany - 3. Liga,1 - 0,7,23%
+Germany - 3. Liga,2 - 0,4,13%
+Germany - 3. Liga,1 - 2,2,7%
+Germany - 3. Liga,1 - 1,2,7%
+Germany - 3. Liga,0 - 2,1,3%
+Germany - 3. Liga,2 - 1,1,3%
+Germany - 3. Liga,0 - 1,1,3%
+Germany - 3. Liga,3 - 0,1,3%
+Greece - Super League,0 - 0,3,50%
+Greece - Super League,2 - 2,1,17%
+Greece - Super League,0 - 1,1,17%
+Greece - Super League,2 - 0,1,17%
+Guatemala - Liga Nacional - Apertura,0 - 0,12,33%
+Guatemala - Liga Nacional - Apertura,1 - 0,9,25%
+Guatemala - Liga Nacional - Apertura,0 - 1,6,17%
+Guatemala - Liga Nacional - Apertura,1 - 1,3,8%
+Guatemala - Liga Nacional - Apertura,2 - 2,2,6%
+Guatemala - Liga Nacional - Apertura,2 - 0,2,6%
+Guatemala - Liga Nacional - Apertura,0 - 2,1,3%
+Guatemala - Liga Nacional - Apertura,3 - 1,1,3%
 Guatemala - Liga Nacional - Clausura,0 - 0,44,40%
 Guatemala - Liga Nacional - Clausura,1 - 0,23,21%
 Guatemala - Liga Nacional - Clausura,0 - 1,12,11%
@@ -517,36 +576,37 @@ Hong Kong - Premier League,1 - 3,1,1%
 Hong Kong - Premier League,2 - 2,1,1%
 Hong Kong - Premier League,4 - 1,1,1%
 Hong Kong - Premier League,4 - 0,1,1%
-Hungary - NB I,2 - 0,3,17%
-Hungary - NB I,0 - 0,3,17%
-Hungary - NB I,1 - 2,2,11%
-Hungary - NB I,2 - 1,2,11%
-Hungary - NB I,1 - 1,2,11%
-Hungary - NB I,0 - 1,2,11%
-Hungary - NB I,1 - 4,1,6%
-Hungary - NB I,0 - 3,1,6%
-Hungary - NB I,4 - 0,1,6%
-Hungary - NB I,1 - 0,1,6%
-Iceland - Urvalsdeild,0 - 1,24,22%
-Iceland - Urvalsdeild,0 - 0,21,19%
-Iceland - Urvalsdeild,1 - 0,17,16%
-Iceland - Urvalsdeild,1 - 1,13,12%
-Iceland - Urvalsdeild,2 - 0,10,9%
-Iceland - Urvalsdeild,1 - 2,5,5%
-Iceland - Urvalsdeild,0 - 2,5,5%
-Iceland - Urvalsdeild,2 - 1,5,5%
+Hungary - NB I,0 - 0,5,18%
+Hungary - NB I,0 - 1,4,14%
+Hungary - NB I,1 - 2,3,11%
+Hungary - NB I,1 - 1,3,11%
+Hungary - NB I,2 - 0,3,11%
+Hungary - NB I,1 - 4,2,7%
+Hungary - NB I,0 - 2,2,7%
+Hungary - NB I,2 - 1,2,7%
+Hungary - NB I,1 - 0,2,7%
+Hungary - NB I,0 - 3,1,4%
+Hungary - NB I,4 - 0,1,4%
+Iceland - Urvalsdeild,0 - 1,27,23%
+Iceland - Urvalsdeild,0 - 0,23,19%
+Iceland - Urvalsdeild,1 - 0,17,14%
+Iceland - Urvalsdeild,1 - 1,13,11%
+Iceland - Urvalsdeild,2 - 0,13,11%
+Iceland - Urvalsdeild,2 - 1,7,6%
+Iceland - Urvalsdeild,0 - 2,6,5%
+Iceland - Urvalsdeild,1 - 2,5,4%
 Iceland - Urvalsdeild,1 - 3,2,2%
 Iceland - Urvalsdeild,2 - 2,2,2%
 Iceland - Urvalsdeild,3 - 1,2,2%
 Iceland - Urvalsdeild,3 - 0,2,2%
-Iceland - 1. Deild,1 - 0,21,22%
-Iceland - 1. Deild,0 - 1,16,17%
-Iceland - 1. Deild,0 - 0,15,16%
-Iceland - 1. Deild,1 - 1,10,10%
-Iceland - 1. Deild,0 - 2,7,7%
-Iceland - 1. Deild,2 - 0,7,7%
-Iceland - 1. Deild,1 - 2,6,6%
-Iceland - 1. Deild,0 - 3,3,3%
+Iceland - 1. Deild,1 - 0,23,20%
+Iceland - 1. Deild,0 - 0,19,17%
+Iceland - 1. Deild,0 - 1,18,16%
+Iceland - 1. Deild,1 - 1,11,10%
+Iceland - 1. Deild,2 - 0,10,9%
+Iceland - 1. Deild,1 - 2,9,8%
+Iceland - 1. Deild,0 - 2,7,6%
+Iceland - 1. Deild,0 - 3,4,4%
 Iceland - 1. Deild,2 - 1,3,3%
 Iceland - 1. Deild,2 - 2,2,2%
 Iceland - 1. Deild,3 - 0,2,2%
@@ -554,10 +614,11 @@ Iceland - 1. Deild,1 - 4,1,1%
 Iceland - 1. Deild,0 - 4,1,1%
 Iceland - 1. Deild,2 - 3,1,1%
 Iceland - 1. Deild,1 - 3,1,1%
-Ireland - Premier Division,0 - 0,38,28%
+Iceland - 1. Deild,3 - 1,1,1%
+Ireland - Premier Division,0 - 0,39,28%
+Ireland - Premier Division,1 - 0,27,19%
 Ireland - Premier Division,0 - 1,26,19%
-Ireland - Premier Division,1 - 0,25,19%
-Ireland - Premier Division,1 - 1,15,11%
+Ireland - Premier Division,1 - 1,16,12%
 Ireland - Premier Division,2 - 0,12,9%
 Ireland - Premier Division,2 - 1,7,5%
 Ireland - Premier Division,0 - 2,5,4%
@@ -567,120 +628,108 @@ Ireland - Premier Division,2 - 2,1,1%
 Ireland - Premier Division,1 - 2,1,1%
 Ireland - Premier Division,4 - 0,1,1%
 Ireland - Premier Division,3 - 0,1,1%
-Ireland - First Division,0 - 0,41,31%
-Ireland - First Division,1 - 0,26,19%
-Ireland - First Division,0 - 1,20,15%
-Ireland - First Division,1 - 1,11,8%
+Ireland - First Division,0 - 0,42,30%
+Ireland - First Division,1 - 0,27,19%
+Ireland - First Division,0 - 1,21,15%
+Ireland - First Division,1 - 1,12,9%
 Ireland - First Division,2 - 0,11,8%
-Ireland - First Division,0 - 2,9,7%
+Ireland - First Division,0 - 2,9,6%
 Ireland - First Division,1 - 2,4,3%
 Ireland - First Division,2 - 1,4,3%
 Ireland - First Division,3 - 0,4,3%
 Ireland - First Division,0 - 3,3,2%
+Ireland - First Division,0 - 4,1,1%
 Ireland - First Division,1 - 3,1,1%
-Israel - Ligat HaAl,0 - 0,69,29%
-Israel - Ligat HaAl,0 - 1,45,19%
-Israel - Ligat HaAl,1 - 0,43,18%
-Israel - Ligat HaAl,1 - 1,20,8%
-Israel - Ligat HaAl,0 - 2,15,6%
-Israel - Ligat HaAl,2 - 0,12,5%
-Israel - Ligat HaAl,2 - 1,8,3%
-Israel - Ligat HaAl,1 - 2,7,3%
-Israel - Ligat HaAl,0 - 3,5,2%
-Israel - Ligat HaAl,3 - 0,5,2%
-Israel - Ligat HaAl,2 - 2,4,2%
-Israel - Ligat HaAl,3 - 1,3,1%
-Israel - Ligat HaAl,5 - 0,1,0%
-Israel - Ligat HaAl,3 - 2,1,0%
-Israel - Ligat HaAl,4 - 1,1,0%
-Israel - Ligat HaAl,4 - 0,1,0%
-Italy - Serie C - Group A,0 - 0,125,33%
-Italy - Serie C - Group A,0 - 1,84,22%
-Italy - Serie C - Group A,1 - 0,78,21%
-Italy - Serie C - Group A,1 - 1,30,8%
-Italy - Serie C - Group A,2 - 0,22,6%
-Italy - Serie C - Group A,0 - 2,17,4%
-Italy - Serie C - Group A,1 - 2,9,2%
-Italy - Serie C - Group A,2 - 1,6,2%
-Italy - Serie C - Group A,3 - 0,3,1%
-Italy - Serie C - Group A,2 - 2,2,1%
-Italy - Serie C - Group A,3 - 1,2,1%
-Italy - Serie C - Group A,5 - 0,1,0%
-Italy - Serie C - Group A,0 - 3,1,0%
-Italy - Serie C - Group B,0 - 0,138,36%
-Italy - Serie C - Group B,0 - 1,69,18%
-Italy - Serie C - Group B,1 - 0,65,17%
-Italy - Serie C - Group B,1 - 1,39,10%
-Italy - Serie C - Group B,2 - 0,18,5%
-Italy - Serie C - Group B,0 - 2,15,4%
-Italy - Serie C - Group B,2 - 1,12,3%
-Italy - Serie C - Group B,1 - 2,7,2%
-Italy - Serie C - Group B,3 - 0,6,2%
-Italy - Serie C - Group B,3 - 1,5,1%
-Italy - Serie C - Group B,0 - 3,2,1%
-Italy - Serie C - Group B,2 - 2,2,1%
-Italy - Serie C - Group B,0 - 4,1,0%
-Italy - Serie C - Group B,1 - 3,1,0%
-Japan - J1 League,0 - 0,100,40%
-Japan - J1 League,1 - 0,44,18%
-Japan - J1 League,0 - 1,34,14%
-Japan - J1 League,1 - 1,32,13%
-Japan - J1 League,2 - 0,12,5%
-Japan - J1 League,2 - 1,9,4%
-Japan - J1 League,0 - 2,8,3%
-Japan - J1 League,2 - 2,2,1%
+Indonesia - Liga 1,0 - 1,8,30%
+Indonesia - Liga 1,0 - 0,7,26%
+Indonesia - Liga 1,1 - 0,6,22%
+Indonesia - Liga 1,2 - 1,2,7%
+Indonesia - Liga 1,1 - 1,2,7%
+Indonesia - Liga 1,2 - 0,2,7%
+Israel - Ligat HaAl,1 - 0,2,33%
+Israel - Ligat HaAl,0 - 0,2,33%
+Israel - Ligat HaAl,2 - 3,1,17%
+Israel - Ligat HaAl,1 - 2,1,17%
+Italy - Serie A,0 - 0,6,60%
+Italy - Serie A,0 - 1,2,20%
+Italy - Serie A,1 - 1,1,10%
+Italy - Serie A,2 - 0,1,10%
+Italy - Serie B,0 - 0,3,30%
+Italy - Serie B,2 - 1,2,20%
+Italy - Serie B,0 - 1,2,20%
+Italy - Serie B,1 - 1,1,10%
+Italy - Serie B,2 - 0,1,10%
+Italy - Serie B,1 - 0,1,10%
+Italy - Serie C - Group A,0 - 1,2,20%
+Italy - Serie C - Group A,2 - 0,2,20%
+Italy - Serie C - Group A,1 - 0,2,20%
+Italy - Serie C - Group A,0 - 0,2,20%
+Italy - Serie C - Group A,1 - 2,1,10%
+Italy - Serie C - Group A,1 - 1,1,10%
+Italy - Serie C - Group B,0 - 0,6,60%
+Italy - Serie C - Group B,1 - 0,2,20%
+Italy - Serie C - Group B,3 - 1,1,10%
+Italy - Serie C - Group B,1 - 1,1,10%
+Japan - J1 League,0 - 0,107,39%
+Japan - J1 League,1 - 0,48,18%
+Japan - J1 League,0 - 1,36,13%
+Japan - J1 League,1 - 1,35,13%
+Japan - J1 League,2 - 0,14,5%
+Japan - J1 League,0 - 2,10,4%
+Japan - J1 League,2 - 1,9,3%
+Japan - J1 League,2 - 2,3,1%
+Japan - J1 League,0 - 3,2,1%
 Japan - J1 League,1 - 2,2,1%
 Japan - J1 League,3 - 1,2,1%
 Japan - J1 League,3 - 0,2,1%
-Japan - J1 League,0 - 3,1,0%
 Japan - J1 League,3 - 2,1,0%
 Japan - J1 League,4 - 0,1,0%
-Japan - J2 League,0 - 0,85,34%
-Japan - J2 League,0 - 1,51,20%
-Japan - J2 League,1 - 0,45,18%
-Japan - J2 League,1 - 1,25,10%
-Japan - J2 League,2 - 0,13,5%
-Japan - J2 League,0 - 2,10,4%
-Japan - J2 League,1 - 2,5,2%
+Japan - J2 League,0 - 0,90,33%
+Japan - J2 League,0 - 1,54,20%
+Japan - J2 League,1 - 0,47,17%
+Japan - J2 League,1 - 1,29,11%
+Japan - J2 League,2 - 0,16,6%
+Japan - J2 League,0 - 2,12,4%
+Japan - J2 League,1 - 2,6,2%
 Japan - J2 League,2 - 1,5,2%
-Japan - J2 League,2 - 2,4,2%
+Japan - J2 League,2 - 2,4,1%
 Japan - J2 League,0 - 3,2,1%
 Japan - J2 League,3 - 1,2,1%
 Japan - J2 League,0 - 4,1,0%
 Japan - J2 League,2 - 3,1,0%
 Japan - J2 League,3 - 0,1,0%
-Japan - J3 League,0 - 0,79,36%
-Japan - J3 League,1 - 0,42,19%
-Japan - J3 League,1 - 1,32,15%
-Japan - J3 League,0 - 1,25,11%
-Japan - J3 League,2 - 0,11,5%
-Japan - J3 League,0 - 2,10,5%
-Japan - J3 League,1 - 2,6,3%
-Japan - J3 League,2 - 1,6,3%
+Japan - J3 League,0 - 0,85,35%
+Japan - J3 League,1 - 0,43,18%
+Japan - J3 League,1 - 1,34,14%
+Japan - J3 League,0 - 1,30,12%
+Japan - J3 League,2 - 0,14,6%
+Japan - J3 League,0 - 2,12,5%
+Japan - J3 League,2 - 1,7,3%
+Japan - J3 League,1 - 2,6,2%
 Japan - J3 League,2 - 2,3,1%
 Japan - J3 League,3 - 1,2,1%
 Japan - J3 League,3 - 0,2,1%
 Japan - J3 League,0 - 5,1,0%
 Japan - J3 League,4 - 0,1,0%
-Kazakhstan - Premier League,0 - 0,42,31%
-Kazakhstan - Premier League,1 - 0,29,21%
-Kazakhstan - Premier League,0 - 1,28,21%
-Kazakhstan - Premier League,2 - 0,11,8%
-Kazakhstan - Premier League,1 - 1,9,7%
+Kazakhstan - Premier League,0 - 0,47,32%
+Kazakhstan - Premier League,1 - 0,33,22%
+Kazakhstan - Premier League,0 - 1,30,20%
+Kazakhstan - Premier League,2 - 0,12,8%
+Kazakhstan - Premier League,1 - 1,8,5%
 Kazakhstan - Premier League,0 - 2,6,4%
+Kazakhstan - Premier League,2 - 1,3,2%
+Kazakhstan - Premier League,0 - 3,2,1%
 Kazakhstan - Premier League,1 - 2,2,1%
-Kazakhstan - Premier League,2 - 1,2,1%
 Kazakhstan - Premier League,3 - 0,2,1%
-Kazakhstan - Premier League,0 - 3,1,1%
 Kazakhstan - Premier League,3 - 2,1,1%
 Kazakhstan - Premier League,3 - 1,1,1%
 Kazakhstan - Premier League,4 - 0,1,1%
-Latvia - Virsliga,0 - 0,36,28%
+Latvia - Virsliga,0 - 0,37,28%
 Latvia - Virsliga,1 - 0,33,25%
-Latvia - Virsliga,0 - 1,14,11%
+Latvia - Virsliga,0 - 1,15,11%
 Latvia - Virsliga,0 - 2,11,8%
+Latvia - Virsliga,1 - 1,9,7%
 Latvia - Virsliga,1 - 2,7,5%
-Latvia - Virsliga,1 - 1,7,5%
 Latvia - Virsliga,2 - 0,7,5%
 Latvia - Virsliga,2 - 1,4,3%
 Latvia - Virsliga,0 - 3,3,2%
@@ -690,14 +739,14 @@ Latvia - Virsliga,3 - 2,1,1%
 Latvia - Virsliga,2 - 2,1,1%
 Latvia - Virsliga,3 - 1,1,1%
 Latvia - Virsliga,4 - 0,1,1%
-Latvia - 1. Liga,0 - 0,29,26%
-Latvia - 1. Liga,1 - 0,25,22%
-Latvia - 1. Liga,0 - 1,17,15%
-Latvia - 1. Liga,2 - 0,8,7%
-Latvia - 1. Liga,0 - 2,7,6%
+Latvia - 1. Liga,0 - 0,30,25%
+Latvia - 1. Liga,1 - 0,25,21%
+Latvia - 1. Liga,0 - 1,19,16%
+Latvia - 1. Liga,0 - 2,10,8%
+Latvia - 1. Liga,2 - 0,9,8%
 Latvia - 1. Liga,1 - 1,7,6%
 Latvia - 1. Liga,2 - 1,5,4%
-Latvia - 1. Liga,1 - 2,4,4%
+Latvia - 1. Liga,1 - 2,4,3%
 Latvia - 1. Liga,4 - 0,2,2%
 Latvia - 1. Liga,3 - 0,2,2%
 Latvia - 1. Liga,6 - 1,1,1%
@@ -706,17 +755,18 @@ Latvia - 1. Liga,5 - 0,1,1%
 Latvia - 1. Liga,0 - 3,1,1%
 Latvia - 1. Liga,4 - 2,1,1%
 Latvia - 1. Liga,3 - 1,1,1%
-Lithuania - A Lyga,0 - 0,32,28%
-Lithuania - A Lyga,1 - 0,29,25%
-Lithuania - A Lyga,0 - 1,22,19%
-Lithuania - A Lyga,1 - 1,7,6%
-Lithuania - A Lyga,0 - 2,6,5%
-Lithuania - A Lyga,2 - 0,6,5%
-Lithuania - A Lyga,2 - 2,3,3%
-Lithuania - A Lyga,1 - 2,3,3%
-Lithuania - A Lyga,2 - 1,3,3%
+Lithuania - A Lyga,0 - 0,35,27%
+Lithuania - A Lyga,1 - 0,30,23%
+Lithuania - A Lyga,0 - 1,26,20%
+Lithuania - A Lyga,1 - 1,8,6%
+Lithuania - A Lyga,0 - 2,7,5%
+Lithuania - A Lyga,2 - 0,7,5%
+Lithuania - A Lyga,1 - 2,4,3%
+Lithuania - A Lyga,2 - 2,3,2%
+Lithuania - A Lyga,2 - 1,3,2%
 Lithuania - A Lyga,1 - 3,1,1%
 Lithuania - A Lyga,0 - 3,1,1%
+Lithuania - A Lyga,3 - 1,1,1%
 Lithuania - A Lyga,4 - 0,1,1%
 Lithuania - A Lyga,3 - 0,1,1%
 Lithuania - 1st League,0 - 0,35,29%
@@ -735,16 +785,17 @@ Lithuania - 1st League,1 - 3,1,1%
 Lithuania - 1st League,0 - 3,1,1%
 Lithuania - 1st League,2 - 2,1,1%
 Lithuania - 1st League,4 - 0,1,1%
-Mexico - Liga MX - Apertura,0 - 0,11,31%
-Mexico - Liga MX - Apertura,0 - 1,5,14%
-Mexico - Liga MX - Apertura,1 - 0,5,14%
-Mexico - Liga MX - Apertura,2 - 0,4,11%
-Mexico - Liga MX - Apertura,2 - 1,3,9%
-Mexico - Liga MX - Apertura,1 - 1,3,9%
-Mexico - Liga MX - Apertura,1 - 3,1,3%
-Mexico - Liga MX - Apertura,0 - 3,1,3%
-Mexico - Liga MX - Apertura,2 - 2,1,3%
-Mexico - Liga MX - Apertura,0 - 2,1,3%
+Mexico - Liga MX - Apertura,0 - 0,13,25%
+Mexico - Liga MX - Apertura,0 - 1,11,21%
+Mexico - Liga MX - Apertura,1 - 1,8,15%
+Mexico - Liga MX - Apertura,1 - 0,6,11%
+Mexico - Liga MX - Apertura,2 - 0,5,9%
+Mexico - Liga MX - Apertura,2 - 1,4,8%
+Mexico - Liga MX - Apertura,0 - 2,2,4%
+Mexico - Liga MX - Apertura,1 - 3,1,2%
+Mexico - Liga MX - Apertura,0 - 3,1,2%
+Mexico - Liga MX - Apertura,2 - 2,1,2%
+Mexico - Liga MX - Apertura,3 - 1,1,2%
 Mexico - Liga MX - Clausura,0 - 0,38,25%
 Mexico - Liga MX - Clausura,1 - 0,30,20%
 Mexico - Liga MX - Clausura,1 - 1,27,18%
@@ -757,57 +808,68 @@ Mexico - Liga MX - Clausura,0 - 3,3,2%
 Mexico - Liga MX - Clausura,1 - 2,3,2%
 Mexico - Liga MX - Clausura,3 - 0,2,1%
 Mexico - Liga MX - Clausura,4 - 0,1,1%
-Netherlands - Eredivisie,1 - 0,6,67%
-Netherlands - Eredivisie,3 - 1,1,11%
-Netherlands - Eredivisie,1 - 1,1,11%
-Netherlands - Eredivisie,3 - 0,1,11%
-Netherlands - Eerste Divisie,1 - 0,4,44%
-Netherlands - Eerste Divisie,2 - 2,1,11%
-Netherlands - Eerste Divisie,0 - 2,1,11%
-Netherlands - Eerste Divisie,2 - 1,1,11%
-Netherlands - Eerste Divisie,1 - 1,1,11%
-Netherlands - Eerste Divisie,0 - 0,1,11%
-Northern Ireland - NIFL Premiership,0 - 1,2,33%
-Northern Ireland - NIFL Premiership,0 - 0,2,33%
-Northern Ireland - NIFL Premiership,3 - 2,1,17%
-Northern Ireland - NIFL Premiership,1 - 0,1,17%
-Norway - Eliteserien,0 - 0,33,24%
-Norway - Eliteserien,0 - 1,27,19%
-Norway - Eliteserien,1 - 0,26,19%
-Norway - Eliteserien,1 - 1,13,9%
-Norway - Eliteserien,2 - 0,12,9%
-Norway - Eliteserien,0 - 2,11,8%
-Norway - Eliteserien,2 - 1,5,4%
+Netherlands - Eredivisie,1 - 0,10,40%
+Netherlands - Eredivisie,1 - 1,5,20%
+Netherlands - Eredivisie,0 - 1,4,16%
+Netherlands - Eredivisie,2 - 0,2,8%
+Netherlands - Eredivisie,2 - 2,1,4%
+Netherlands - Eredivisie,1 - 2,1,4%
+Netherlands - Eredivisie,3 - 1,1,4%
+Netherlands - Eredivisie,3 - 0,1,4%
+Netherlands - Eerste Divisie,0 - 0,8,30%
+Netherlands - Eerste Divisie,1 - 0,7,26%
+Netherlands - Eerste Divisie,1 - 1,3,11%
+Netherlands - Eerste Divisie,0 - 1,3,11%
+Netherlands - Eerste Divisie,2 - 1,2,7%
+Netherlands - Eerste Divisie,1 - 3,1,4%
+Netherlands - Eerste Divisie,2 - 2,1,4%
+Netherlands - Eerste Divisie,0 - 2,1,4%
+Netherlands - Eerste Divisie,4 - 1,1,4%
+Northern Ireland - NIFL Premiership,0 - 0,5,24%
+Northern Ireland - NIFL Premiership,0 - 1,4,19%
+Northern Ireland - NIFL Premiership,1 - 0,4,19%
+Northern Ireland - NIFL Premiership,2 - 0,3,14%
+Northern Ireland - NIFL Premiership,1 - 2,2,10%
+Northern Ireland - NIFL Premiership,0 - 2,2,10%
+Northern Ireland - NIFL Premiership,3 - 2,1,5%
+Norway - Eliteserien,0 - 0,36,24%
+Norway - Eliteserien,0 - 1,30,20%
+Norway - Eliteserien,1 - 0,28,19%
+Norway - Eliteserien,1 - 1,14,9%
+Norway - Eliteserien,2 - 0,13,9%
+Norway - Eliteserien,0 - 2,11,7%
+Norway - Eliteserien,2 - 1,5,3%
 Norway - Eliteserien,3 - 1,3,2%
+Norway - Eliteserien,0 - 3,2,1%
 Norway - Eliteserien,1 - 2,2,1%
 Norway - Eliteserien,0 - 4,1,1%
 Norway - Eliteserien,2 - 3,1,1%
-Norway - Eliteserien,0 - 3,1,1%
 Norway - Eliteserien,4 - 2,1,1%
 Norway - Eliteserien,2 - 2,1,1%
 Norway - Eliteserien,4 - 0,1,1%
 Norway - Eliteserien,3 - 0,1,1%
-Norway - 1st Division,0 - 0,36,25%
-Norway - 1st Division,1 - 0,28,19%
-Norway - 1st Division,0 - 1,25,17%
-Norway - 1st Division,0 - 2,13,9%
+Norway - 1st Division,0 - 0,38,24%
+Norway - 1st Division,0 - 1,32,20%
+Norway - 1st Division,1 - 0,29,18%
+Norway - 1st Division,0 - 2,13,8%
 Norway - 1st Division,2 - 0,12,8%
-Norway - 1st Division,1 - 1,10,7%
-Norway - 1st Division,2 - 1,6,4%
-Norway - 1st Division,3 - 0,4,3%
+Norway - 1st Division,1 - 1,11,7%
+Norway - 1st Division,2 - 1,8,5%
+Norway - 1st Division,3 - 0,6,4%
 Norway - 1st Division,0 - 3,3,2%
 Norway - 1st Division,1 - 2,3,2%
 Norway - 1st Division,0 - 4,1,1%
 Norway - 1st Division,1 - 3,1,1%
+Norway - 1st Division,4 - 2,1,1%
 Norway - 1st Division,2 - 2,1,1%
 Norway - 1st Division,3 - 1,1,1%
-Norway - Division 3,0 - 0,22,21%
-Norway - Division 3,1 - 0,20,19%
-Norway - Division 3,1 - 1,18,17%
-Norway - Division 3,0 - 1,17,16%
-Norway - Division 3,2 - 0,10,10%
-Norway - Division 3,2 - 1,5,5%
-Norway - Division 3,1 - 2,3,3%
+Norway - Division 3,0 - 0,25,21%
+Norway - Division 3,1 - 0,24,20%
+Norway - Division 3,1 - 1,19,16%
+Norway - Division 3,0 - 1,19,16%
+Norway - Division 3,2 - 0,13,11%
+Norway - Division 3,2 - 1,5,4%
+Norway - Division 3,1 - 2,4,3%
 Norway - Division 3,3 - 0,3,3%
 Norway - Division 3,1 - 3,2,2%
 Norway - Division 3,2 - 2,1,1%
@@ -829,16 +891,17 @@ Paraguay - Primera Div. - Apertura,2 - 2,1,1%
 Paraguay - Primera Div. - Apertura,3 - 1,1,1%
 Paraguay - Primera Div. - Apertura,4 - 0,1,1%
 Paraguay - Primera Div. - Apertura,3 - 0,1,1%
-Paraguay - Primera Div. - Clausura,0 - 0,12,30%
-Paraguay - Primera Div. - Clausura,0 - 1,9,22%
-Paraguay - Primera Div. - Clausura,1 - 0,7,18%
-Paraguay - Primera Div. - Clausura,0 - 3,2,5%
-Paraguay - Primera Div. - Clausura,1 - 2,2,5%
-Paraguay - Primera Div. - Clausura,2 - 1,2,5%
-Paraguay - Primera Div. - Clausura,1 - 1,2,5%
-Paraguay - Primera Div. - Clausura,2 - 0,2,5%
+Paraguay - Primera Div. - Clausura,0 - 0,17,31%
+Paraguay - Primera Div. - Clausura,0 - 1,11,20%
+Paraguay - Primera Div. - Clausura,1 - 0,10,19%
+Paraguay - Primera Div. - Clausura,0 - 2,3,6%
+Paraguay - Primera Div. - Clausura,1 - 1,3,6%
+Paraguay - Primera Div. - Clausura,0 - 3,2,4%
+Paraguay - Primera Div. - Clausura,1 - 2,2,4%
+Paraguay - Primera Div. - Clausura,2 - 1,2,4%
+Paraguay - Primera Div. - Clausura,2 - 0,2,4%
 Paraguay - Primera Div. - Clausura,1 - 4,1,2%
-Paraguay - Primera Div. - Clausura,0 - 2,1,2%
+Paraguay - Primera Div. - Clausura,2 - 2,1,2%
 Paraguay - Division Intermedia,0 - 0,49,34%
 Paraguay - Division Intermedia,1 - 0,40,28%
 Paraguay - Division Intermedia,0 - 1,23,16%
@@ -866,113 +929,116 @@ Peru - Liga 1 - Apertura,5 - 0,1,1%
 Peru - Liga 1 - Apertura,1 - 4,1,1%
 Peru - Liga 1 - Apertura,4 - 1,1,1%
 Peru - Liga 1 - Apertura,3 - 0,1,1%
-Poland - Ekstraklasa,1 - 0,10,31%
-Poland - Ekstraklasa,0 - 0,7,22%
-Poland - Ekstraklasa,1 - 1,5,16%
-Poland - Ekstraklasa,1 - 2,2,6%
-Poland - Ekstraklasa,0 - 1,2,6%
-Poland - Ekstraklasa,2 - 0,2,6%
-Poland - Ekstraklasa,0 - 3,1,3%
-Poland - Ekstraklasa,2 - 2,1,3%
-Poland - Ekstraklasa,0 - 2,1,3%
-Poland - Ekstraklasa,2 - 1,1,3%
-Poland - 1. Liga,1 - 0,7,19%
-Poland - 1. Liga,0 - 1,6,17%
-Poland - 1. Liga,0 - 0,6,17%
-Poland - 1. Liga,1 - 1,5,14%
-Poland - 1. Liga,0 - 2,3,8%
-Poland - 1. Liga,2 - 1,3,8%
-Poland - 1. Liga,3 - 1,2,6%
-Poland - 1. Liga,2 - 0,2,6%
-Poland - 1. Liga,1 - 2,1,3%
-Poland - 1. Liga,4 - 0,1,3%
-Portugal - Liga Portugal,2 - 0,3,38%
-Portugal - Liga Portugal,1 - 0,2,25%
-Portugal - Liga Portugal,0 - 2,1,12%
-Portugal - Liga Portugal,1 - 1,1,12%
-Portugal - Liga Portugal,0 - 1,1,12%
-Portugal - Liga Portugal 2,1 - 1,3,33%
-Portugal - Liga Portugal 2,0 - 0,3,33%
-Portugal - Liga Portugal 2,1 - 0,2,22%
-Portugal - Liga Portugal 2,2 - 0,1,11%
-Romania - Liga 1,0 - 1,8,21%
-Romania - Liga 1,1 - 0,8,21%
-Romania - Liga 1,0 - 0,7,18%
-Romania - Liga 1,2 - 1,5,13%
-Romania - Liga 1,0 - 2,4,10%
-Romania - Liga 1,2 - 0,3,8%
-Romania - Liga 1,1 - 1,2,5%
-Romania - Liga 1,0 - 3,1,3%
-Romania - Liga 1,2 - 2,1,3%
-Scotland - Premiership,0 - 1,3,25%
-Scotland - Premiership,0 - 0,3,25%
-Scotland - Premiership,2 - 1,2,17%
-Scotland - Premiership,2 - 0,2,17%
-Scotland - Premiership,1 - 2,1,8%
-Scotland - Premiership,1 - 0,1,8%
-Scotland - Championship,0 - 1,5,50%
-Scotland - Championship,0 - 0,3,30%
-Scotland - Championship,3 - 1,1,10%
-Scotland - Championship,2 - 0,1,10%
-Serbia - Super Liga,1 - 0,8,28%
-Serbia - Super Liga,0 - 0,6,21%
-Serbia - Super Liga,1 - 1,4,14%
-Serbia - Super Liga,2 - 0,4,14%
-Serbia - Super Liga,0 - 1,3,10%
-Serbia - Super Liga,0 - 3,2,7%
-Serbia - Super Liga,1 - 3,1,3%
-Serbia - Super Liga,2 - 1,1,3%
-Singapore - Premier League,0 - 1,26,18%
-Singapore - Premier League,1 - 0,20,14%
-Singapore - Premier League,0 - 0,17,12%
-Singapore - Premier League,1 - 1,15,10%
-Singapore - Premier League,2 - 1,12,8%
-Singapore - Premier League,2 - 0,12,8%
-Singapore - Premier League,0 - 2,10,7%
-Singapore - Premier League,1 - 2,9,6%
-Singapore - Premier League,0 - 3,8,6%
-Singapore - Premier League,3 - 1,5,3%
-Singapore - Premier League,2 - 4,2,1%
-Singapore - Premier League,1 - 3,2,1%
-Singapore - Premier League,3 - 0,2,1%
-Singapore - Premier League,0 - 4,1,1%
-Singapore - Premier League,2 - 3,1,1%
-Singapore - Premier League,2 - 2,1,1%
-Singapore - Premier League,4 - 0,1,1%
-Slovenia - Prva Liga,1 - 0,7,35%
-Slovenia - Prva Liga,1 - 1,4,20%
-Slovenia - Prva Liga,0 - 1,3,15%
-Slovenia - Prva Liga,0 - 0,3,15%
-Slovenia - Prva Liga,0 - 2,2,10%
-Slovenia - Prva Liga,0 - 3,1,5%
-Slovakia - Fortuna Liga,1 - 0,5,33%
-Slovakia - Fortuna Liga,0 - 1,3,20%
-Slovakia - Fortuna Liga,1 - 1,2,13%
-Slovakia - Fortuna Liga,0 - 0,2,13%
-Slovakia - Fortuna Liga,0 - 3,1,7%
-Slovakia - Fortuna Liga,1 - 2,1,7%
-Slovakia - Fortuna Liga,2 - 1,1,7%
-South Africa - Premier Division ,0 - 1,3,38%
-South Africa - Premier Division ,0 - 0,3,38%
-South Africa - Premier Division ,2 - 0,1,12%
-South Africa - Premier Division ,1 - 0,1,12%
-South Korea - K League 1,0 - 0,53,35%
-South Korea - K League 1,0 - 1,31,21%
-South Korea - K League 1,1 - 0,28,19%
-South Korea - K League 1,1 - 1,12,8%
+Poland - Ekstraklasa,0 - 0,14,29%
+Poland - Ekstraklasa,1 - 0,12,25%
+Poland - Ekstraklasa,1 - 1,9,19%
+Poland - Ekstraklasa,2 - 1,3,6%
+Poland - Ekstraklasa,0 - 1,3,6%
+Poland - Ekstraklasa,1 - 2,2,4%
+Poland - Ekstraklasa,2 - 0,2,4%
+Poland - Ekstraklasa,0 - 3,1,2%
+Poland - Ekstraklasa,2 - 2,1,2%
+Poland - Ekstraklasa,0 - 2,1,2%
+Poland - 1. Liga,0 - 0,14,23%
+Poland - 1. Liga,1 - 0,12,19%
+Poland - 1. Liga,0 - 1,9,15%
+Poland - 1. Liga,0 - 2,6,10%
+Poland - 1. Liga,1 - 1,5,8%
+Poland - 1. Liga,2 - 0,5,8%
+Poland - 1. Liga,2 - 1,4,6%
+Poland - 1. Liga,3 - 1,3,5%
+Poland - 1. Liga,1 - 2,2,3%
+Poland - 1. Liga,0 - 3,1,2%
+Poland - 1. Liga,4 - 0,1,2%
+Portugal - Liga Portugal,1 - 0,5,20%
+Portugal - Liga Portugal,0 - 1,4,16%
+Portugal - Liga Portugal,2 - 0,4,16%
+Portugal - Liga Portugal,0 - 0,4,16%
+Portugal - Liga Portugal,1 - 2,2,8%
+Portugal - Liga Portugal,1 - 1,2,8%
+Portugal - Liga Portugal,3 - 0,2,8%
+Portugal - Liga Portugal,0 - 3,1,4%
+Portugal - Liga Portugal,0 - 2,1,4%
+Portugal - Liga Portugal 2,1 - 0,7,26%
+Portugal - Liga Portugal 2,0 - 0,7,26%
+Portugal - Liga Portugal 2,1 - 1,5,19%
+Portugal - Liga Portugal 2,0 - 1,3,11%
+Portugal - Liga Portugal 2,2 - 0,3,11%
+Portugal - Liga Portugal 2,0 - 2,2,7%
+Romania - Liga 1,0 - 1,12,22%
+Romania - Liga 1,0 - 0,12,22%
+Romania - Liga 1,1 - 0,11,20%
+Romania - Liga 1,2 - 1,6,11%
+Romania - Liga 1,0 - 2,4,7%
+Romania - Liga 1,2 - 0,4,7%
+Romania - Liga 1,1 - 1,3,5%
+Romania - Liga 1,0 - 3,1,2%
+Romania - Liga 1,2 - 2,1,2%
+Romania - Liga 1,1 - 2,1,2%
+Scotland - Premiership,0 - 0,5,31%
+Scotland - Premiership,0 - 1,4,25%
+Scotland - Premiership,2 - 1,2,12%
+Scotland - Premiership,2 - 0,2,12%
+Scotland - Premiership,1 - 0,2,12%
+Scotland - Premiership,1 - 2,1,6%
+Scotland - Championship,0 - 1,6,40%
+Scotland - Championship,0 - 0,4,27%
+Scotland - Championship,1 - 0,3,20%
+Scotland - Championship,3 - 1,1,7%
+Scotland - Championship,2 - 0,1,7%
+Serbia - Super Liga,1 - 0,12,27%
+Serbia - Super Liga,0 - 0,10,23%
+Serbia - Super Liga,1 - 1,6,14%
+Serbia - Super Liga,2 - 0,6,14%
+Serbia - Super Liga,0 - 1,5,11%
+Serbia - Super Liga,0 - 3,2,5%
+Serbia - Super Liga,1 - 3,1,2%
+Serbia - Super Liga,2 - 1,1,2%
+Serbia - Super Liga,3 - 0,1,2%
+Singapore - Premier League,2 - 1,1,33%
+Singapore - Premier League,1 - 1,1,33%
+Singapore - Premier League,0 - 0,1,33%
+Slovenia - Prva Liga,1 - 0,10,33%
+Slovenia - Prva Liga,0 - 1,5,17%
+Slovenia - Prva Liga,0 - 0,5,17%
+Slovenia - Prva Liga,1 - 1,4,13%
+Slovenia - Prva Liga,0 - 2,2,7%
+Slovenia - Prva Liga,0 - 4,1,3%
+Slovenia - Prva Liga,0 - 3,1,3%
+Slovenia - Prva Liga,2 - 1,1,3%
+Slovenia - Prva Liga,2 - 0,1,3%
+Slovakia - Fortuna Liga,1 - 0,8,30%
+Slovakia - Fortuna Liga,0 - 1,5,19%
+Slovakia - Fortuna Liga,1 - 1,4,15%
+Slovakia - Fortuna Liga,0 - 0,4,15%
+Slovakia - Fortuna Liga,0 - 3,2,7%
+Slovakia - Fortuna Liga,2 - 0,2,7%
+Slovakia - Fortuna Liga,1 - 2,1,4%
+Slovakia - Fortuna Liga,2 - 1,1,4%
+South Africa - Premier Division ,0 - 0,14,48%
+South Africa - Premier Division ,0 - 1,5,17%
+South Africa - Premier Division ,1 - 1,4,14%
+South Africa - Premier Division ,1 - 0,4,14%
+South Africa - Premier Division ,2 - 0,2,7%
+South Korea - K League 1,0 - 0,55,34%
+South Korea - K League 1,0 - 1,33,20%
+South Korea - K League 1,1 - 0,30,19%
+South Korea - K League 1,1 - 1,14,9%
 South Korea - K League 1,2 - 0,8,5%
-South Korea - K League 1,0 - 2,7,5%
-South Korea - K League 1,1 - 2,4,3%
-South Korea - K League 1,2 - 1,3,2%
+South Korea - K League 1,0 - 2,7,4%
+South Korea - K League 1,1 - 2,4,2%
+South Korea - K League 1,2 - 1,4,2%
+South Korea - K League 1,3 - 1,2,1%
 South Korea - K League 1,3 - 0,2,1%
 South Korea - K League 1,1 - 3,1,1%
+South Korea - K League 1,3 - 2,1,1%
 South Korea - K League 1,2 - 2,1,1%
-South Korea - K League 2,0 - 0,57,34%
-South Korea - K League 2,0 - 1,31,18%
-South Korea - K League 2,1 - 0,30,18%
-South Korea - K League 2,1 - 1,17,10%
-South Korea - K League 2,0 - 2,10,6%
-South Korea - K League 2,2 - 0,8,5%
+South Korea - K League 2,0 - 0,64,35%
+South Korea - K League 2,0 - 1,32,18%
+South Korea - K League 2,1 - 0,32,18%
+South Korea - K League 2,1 - 1,18,10%
+South Korea - K League 2,0 - 2,13,7%
+South Korea - K League 2,2 - 0,8,4%
 South Korea - K League 2,1 - 2,3,2%
 South Korea - K League 2,3 - 1,3,2%
 South Korea - K League 2,2 - 1,3,2%
@@ -981,28 +1047,43 @@ South Korea - K League 2,0 - 3,1,1%
 South Korea - K League 2,2 - 2,1,1%
 South Korea - K League 2,4 - 0,1,1%
 South Korea - K League 2,3 - 0,1,1%
-Sweden - Allsvenskan,0 - 0,53,35%
-Sweden - Allsvenskan,0 - 1,23,15%
-Sweden - Allsvenskan,1 - 0,23,15%
-Sweden - Allsvenskan,1 - 1,14,9%
-Sweden - Allsvenskan,2 - 0,13,9%
-Sweden - Allsvenskan,0 - 2,7,5%
-Sweden - Allsvenskan,1 - 2,5,3%
+Spain - La Liga,0 - 1,4,20%
+Spain - La Liga,0 - 0,4,20%
+Spain - La Liga,2 - 0,3,15%
+Spain - La Liga,1 - 0,3,15%
+Spain - La Liga,0 - 2,2,10%
+Spain - La Liga,1 - 1,2,10%
+Spain - La Liga,0 - 3,1,5%
+Spain - La Liga,4 - 0,1,5%
+Spain - La Liga 2,0 - 1,6,27%
+Spain - La Liga 2,0 - 0,6,27%
+Spain - La Liga 2,1 - 0,5,23%
+Spain - La Liga 2,1 - 1,2,9%
+Spain - La Liga 2,2 - 1,1,5%
+Spain - La Liga 2,3 - 0,1,5%
+Spain - La Liga 2,2 - 0,1,5%
+Sweden - Allsvenskan,0 - 0,56,33%
+Sweden - Allsvenskan,0 - 1,28,17%
+Sweden - Allsvenskan,1 - 0,27,16%
+Sweden - Allsvenskan,1 - 1,16,10%
+Sweden - Allsvenskan,2 - 0,13,8%
+Sweden - Allsvenskan,0 - 2,7,4%
+Sweden - Allsvenskan,1 - 2,6,4%
+Sweden - Allsvenskan,0 - 3,3,2%
 Sweden - Allsvenskan,2 - 1,3,2%
 Sweden - Allsvenskan,3 - 0,3,2%
-Sweden - Allsvenskan,0 - 3,2,1%
 Sweden - Allsvenskan,2 - 2,2,1%
 Sweden - Allsvenskan,3 - 4,1,1%
 Sweden - Allsvenskan,0 - 4,1,1%
 Sweden - Allsvenskan,1 - 3,1,1%
 Sweden - Allsvenskan,3 - 1,1,1%
-Sweden - Superettan,0 - 0,44,31%
-Sweden - Superettan,1 - 0,29,20%
-Sweden - Superettan,0 - 1,20,14%
-Sweden - Superettan,1 - 1,19,13%
-Sweden - Superettan,2 - 0,9,6%
-Sweden - Superettan,0 - 2,7,5%
-Sweden - Superettan,1 - 2,4,3%
+Sweden - Superettan,0 - 0,46,29%
+Sweden - Superettan,1 - 0,33,21%
+Sweden - Superettan,0 - 1,28,18%
+Sweden - Superettan,1 - 1,21,13%
+Sweden - Superettan,2 - 0,10,6%
+Sweden - Superettan,0 - 2,7,4%
+Sweden - Superettan,1 - 2,4,2%
 Sweden - Superettan,2 - 2,2,1%
 Sweden - Superettan,2 - 1,2,1%
 Sweden - Superettan,1 - 5,1,1%
@@ -1012,88 +1093,117 @@ Sweden - Superettan,0 - 3,1,1%
 Sweden - Superettan,3 - 2,1,1%
 Sweden - Superettan,4 - 0,1,1%
 Sweden - Superettan,3 - 0,1,1%
-Sweden - Sodra,0 - 0,35,26%
-Sweden - Sodra,1 - 0,32,24%
-Sweden - Sodra,0 - 1,26,19%
-Sweden - Sodra,1 - 1,10,7%
-Sweden - Sodra,2 - 0,10,7%
-Sweden - Sodra,1 - 2,5,4%
-Sweden - Sodra,3 - 0,5,4%
+Sweden - Sodra,1 - 0,36,24%
+Sweden - Sodra,0 - 0,35,23%
+Sweden - Sodra,0 - 1,29,19%
+Sweden - Sodra,1 - 1,13,9%
+Sweden - Sodra,2 - 0,12,8%
+Sweden - Sodra,1 - 2,5,3%
+Sweden - Sodra,3 - 0,5,3%
+Sweden - Sodra,0 - 3,4,3%
 Sweden - Sodra,0 - 2,4,3%
-Sweden - Sodra,0 - 3,3,2%
-Sweden - Sodra,2 - 1,2,1%
+Sweden - Sodra,2 - 1,4,3%
 Sweden - Sodra,6 - 0,1,1%
 Sweden - Sodra,0 - 4,1,1%
 Sweden - Sodra,1 - 3,1,1%
+Sweden - Sodra,3 - 2,1,1%
 Sweden - Sodra,3 - 1,1,1%
-Switzerland - Super League,0 - 1,4,21%
-Switzerland - Super League,1 - 0,4,21%
-Switzerland - Super League,1 - 1,3,16%
-Switzerland - Super League,2 - 0,2,11%
-Switzerland - Super League,0 - 0,2,11%
+Switzerland - Super League,0 - 1,5,23%
+Switzerland - Super League,1 - 0,5,23%
+Switzerland - Super League,1 - 1,3,14%
+Switzerland - Super League,2 - 0,2,9%
+Switzerland - Super League,0 - 0,2,9%
 Switzerland - Super League,1 - 3,1,5%
 Switzerland - Super League,2 - 2,1,5%
+Switzerland - Super League,0 - 2,1,5%
 Switzerland - Super League,2 - 1,1,5%
 Switzerland - Super League,3 - 0,1,5%
-Switzerland - Challenge League,1 - 0,5,36%
-Switzerland - Challenge League,1 - 1,3,21%
-Switzerland - Challenge League,0 - 0,2,14%
-Switzerland - Challenge League,1 - 2,1,7%
-Switzerland - Challenge League,0 - 2,1,7%
-Switzerland - Challenge League,0 - 1,1,7%
-Switzerland - Challenge League,2 - 0,1,7%
-Turkey - Super Lig,0 - 3,2,33%
-Turkey - Super Lig,0 - 0,2,33%
-Turkey - Super Lig,2 - 1,1,17%
-Turkey - Super Lig,1 - 0,1,17%
-Ukraine - Premier League,1 - 0,5,31%
-Ukraine - Premier League,0 - 0,5,31%
-Ukraine - Premier League,0 - 1,2,12%
-Ukraine - Premier League,1 - 2,1,6%
-Ukraine - Premier League,0 - 2,1,6%
-Ukraine - Premier League,2 - 1,1,6%
-Ukraine - Premier League,1 - 1,1,6%
-USA - MLS,0 - 0,98,26%
-USA - MLS,1 - 0,76,20%
-USA - MLS,0 - 1,59,16%
-USA - MLS,1 - 1,43,11%
+Switzerland - Challenge League,1 - 0,9,36%
+Switzerland - Challenge League,0 - 0,6,24%
+Switzerland - Challenge League,1 - 1,3,12%
+Switzerland - Challenge League,1 - 2,2,8%
+Switzerland - Challenge League,0 - 2,2,8%
+Switzerland - Challenge League,0 - 1,1,4%
+Switzerland - Challenge League,3 - 0,1,4%
+Switzerland - Challenge League,2 - 0,1,4%
+Thailand - Thai League 1,0 - 0,5,31%
+Thailand - Thai League 1,0 - 1,3,19%
+Thailand - Thai League 1,1 - 0,3,19%
+Thailand - Thai League 1,1 - 2,1,6%
+Thailand - Thai League 1,2 - 1,1,6%
+Thailand - Thai League 1,1 - 1,1,6%
+Thailand - Thai League 1,3 - 0,1,6%
+Thailand - Thai League 1,2 - 0,1,6%
+Turkey - Super Lig,0 - 0,7,33%
+Turkey - Super Lig,1 - 0,6,29%
+Turkey - Super Lig,1 - 1,3,14%
+Turkey - Super Lig,0 - 3,2,10%
+Turkey - Super Lig,0 - 1,2,10%
+Turkey - Super Lig,2 - 1,1,5%
+Turkey - 1,1 - 0,7,23%
+Turkey - 1,0 - 0,7,23%
+Turkey - 1,1 - 1,6,20%
+Turkey - 1,0 - 1,4,13%
+Turkey - 1,3 - 0,2,7%
+Turkey - 1,2 - 2,1,3%
+Turkey - 1,0 - 2,1,3%
+Turkey - 1,2 - 1,1,3%
+Turkey - 1,2 - 0,1,3%
+UAE - Pro League,0 - 0,7,50%
+UAE - Pro League,1 - 1,3,21%
+UAE - Pro League,1 - 0,2,14%
+UAE - Pro League,0 - 2,1,7%
+UAE - Pro League,2 - 0,1,7%
+Ukraine - Premier League,1 - 0,6,25%
+Ukraine - Premier League,0 - 0,6,25%
+Ukraine - Premier League,0 - 1,5,21%
+Ukraine - Premier League,1 - 2,3,12%
+Ukraine - Premier League,0 - 2,1,4%
+Ukraine - Premier League,2 - 1,1,4%
+Ukraine - Premier League,1 - 1,1,4%
+Ukraine - Premier League,2 - 0,1,4%
+USA - MLS,0 - 0,105,26%
+USA - MLS,1 - 0,84,21%
+USA - MLS,0 - 1,62,15%
+USA - MLS,1 - 1,49,12%
 USA - MLS,2 - 0,27,7%
-USA - MLS,0 - 2,16,4%
-USA - MLS,2 - 1,16,4%
-USA - MLS,1 - 2,13,3%
+USA - MLS,2 - 1,18,4%
+USA - MLS,0 - 2,17,4%
+USA - MLS,1 - 2,14,3%
 USA - MLS,3 - 0,8,2%
 USA - MLS,2 - 2,5,1%
+USA - MLS,1 - 3,4,1%
 USA - MLS,3 - 2,4,1%
-USA - MLS,1 - 3,3,1%
 USA - MLS,0 - 3,3,1%
 USA - MLS,3 - 1,3,1%
-USA - MLS,2 - 3,2,1%
+USA - MLS,2 - 3,2,0%
 USA - MLS,5 - 0,1,0%
 USA - MLS,0 - 4,1,0%
-USL Championship,0 - 0,66,30%
-USL Championship,1 - 0,40,18%
-USL Championship,0 - 1,34,15%
-USL Championship,1 - 1,28,13%
-USL Championship,2 - 0,14,6%
+USA - MLS,4 - 0,1,0%
+USL Championship,0 - 0,71,29%
+USL Championship,1 - 0,45,18%
+USL Championship,0 - 1,38,15%
+USL Championship,1 - 1,32,13%
+USL Championship,2 - 0,16,7%
 USL Championship,2 - 1,12,5%
 USL Championship,1 - 2,10,4%
-USL Championship,0 - 2,6,3%
+USL Championship,0 - 2,6,2%
 USL Championship,0 - 3,5,2%
+USL Championship,2 - 2,4,2%
 USL Championship,3 - 0,3,1%
-USL Championship,2 - 2,2,1%
+USL Championship,3 - 1,2,1%
 USL Championship,2 - 3,1,0%
-USL Championship,3 - 1,1,0%
 USL Championship,4 - 0,1,0%
-USA - USL League One,1 - 0,30,24%
-USA - USL League One,0 - 0,27,21%
-USA - USL League One,1 - 1,21,17%
-USA - USL League One,0 - 1,18,14%
-USA - USL League One,2 - 1,10,8%
-USA - USL League One,2 - 0,9,7%
+USA - USL League One,1 - 0,35,25%
+USA - USL League One,0 - 0,29,21%
+USA - USL League One,1 - 1,21,15%
+USA - USL League One,0 - 1,21,15%
+USA - USL League One,2 - 0,11,8%
+USA - USL League One,2 - 1,10,7%
 USA - USL League One,2 - 2,4,3%
-USA - USL League One,1 - 2,2,2%
-USA - USL League One,0 - 2,2,2%
-USA - USL League One,2 - 3,1,1%
+USA - USL League One,1 - 2,3,2%
+USA - USL League One,2 - 3,2,1%
+USA - USL League One,0 - 2,2,1%
 USA - USL League One,1 - 3,1,1%
 USA - USL League One,0 - 3,1,1%
 Venezuela - Primera Division - Apertura,0 - 0,29,32%
