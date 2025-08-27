@@ -29,6 +29,7 @@ Argentina - Liga Profesional,Gimnasia,9,55.6%,44.4%,50
 Argentina - Liga Profesional,Godoy Cruz,8,75.0%,25.0%,43
 Argentina - Liga Profesional,Velez Sarsfield,7,42.9%,57.1%,49
 Argentina - Liga Profesional,SM San Juan,5,40.0%,60.0%,49
+Argentina - Primera Nacional,,Scored,1st half,2nd half,Avg. minute
 Argentina - Primera Nacional,Chacarita J.,26,30.8%,69.2%,59
 Argentina - Primera Nacional,Racing Cordoba,23,52.2%,47.8%,42
 Argentina - Primera Nacional,Deportivo Moron,22,50.0%,50.0%,49
@@ -65,6 +66,7 @@ Argentina - Primera Nacional,Alvarado,11,36.4%,63.6%,48
 Argentina - Primera Nacional,Defensores U.,7,42.9%,57.1%,58
 Argentina - Primera Nacional,Colegiales,6,100.0%,0.0%,24
 Argentina - Primera Nacional,T. Remedios,4,25.0%,75.0%,58
+Argentina - Primera B,,Scored,1st half,2nd half,Avg. minute
 Argentina - Primera B,Dock Sud,29,51.7%,48.3%,47
 Argentina - Primera B,Liniers,27,29.6%,70.4%,60
 Argentina - Primera B,Real Pilar,27,37.0%,63.0%,55
@@ -86,14 +88,18 @@ Argentina - Primera B,S. Italiano,15,33.3%,66.7%,62
 Argentina - Primera B,Sacachispas,13,46.2%,53.8%,51
 Argentina - Primera B,Flandria,12,25.0%,75.0%,55
 Argentina - Primera B,Fenix,8,50.0%,50.0%,44
+Armenia - Premier League,,Scored,1st half,2nd half,Avg. minute
+Armenia - Premier League,Alashkert,5,60.0%,40.0%,44
+Armenia - Premier League,Urartu,4,50.0%,50.0%,47
+Armenia - Premier League,Pyunik,4,0.0%,100.0%,66
 Armenia - Premier League,Noah,4,50.0%,50.0%,58
-Armenia - Premier League,Urartu,2,50.0%,50.0%,46
-Armenia - Premier League,Pyunik,2,0.0%,100.0%,62
+Armenia - Premier League,BKMA,3,33.3%,66.7%,54
 Armenia - Premier League,Van,1,0.0%,100.0%,47
+Armenia - Premier League,Shirak,1,0.0%,100.0%,76
 Armenia - Premier League,Gandzasar,1,100.0%,0.0%,34
-Armenia - Premier League,BKMA,1,0.0%,100.0%,67
+Armenia - Premier League,Ararat-Armenia,1,0.0%,100.0%,90
 Armenia - Premier League,Ararat Yerevan,1,0.0%,100.0%,68
-Armenia - Premier League,Alashkert,1,100.0%,0.0%,41
+Australia - A-League,,Scored,1st half,2nd half,Avg. minute
 Australia - A-League,WS Wanderers,58,48.3%,51.7%,47
 Australia - A-League,Western United,55,47.3%,52.7%,48
 Australia - A-League,Sydney FC,53,34.0%,66.0%,57
@@ -107,122 +113,133 @@ Australia - A-League,Brisbane Roar,32,53.1%,46.9%,44
 Australia - A-League,Central Coast,29,41.4%,58.6%,50
 Australia - A-League,Wellington,27,48.1%,51.9%,48
 Australia - A-League,Perth Glory,22,50.0%,50.0%,45
-Austria - Bundesliga,Tirol,7,57.1%,42.9%,48
-Austria - Bundesliga,Salzburg,7,28.6%,71.4%,63
-Austria - Bundesliga,Sturm Graz,3,66.7%,33.3%,26
-Austria - Bundesliga,Rapid Wien,3,33.3%,66.7%,48
-Austria - Bundesliga,Hartberg,3,100.0%,0.0%,35
-Austria - Bundesliga,Altach,3,0.0%,100.0%,74
-Austria - Bundesliga,Wolfsberger AC,2,100.0%,0.0%,14
-Austria - Bundesliga,Ried,2,50.0%,50.0%,42
-Austria - Bundesliga,Grazer AK,2,50.0%,50.0%,38
-Austria - Bundesliga,Austria Wien,2,50.0%,50.0%,64
-Austria - Bundesliga,LASK Linz,1,0.0%,100.0%,50
-Austria - 2. Liga,St. Polten,8,37.5%,62.5%,48
-Austria - 2. Liga,Floridsdorfer,5,80.0%,20.0%,35
-Austria - 2. Liga,First Vienna,5,80.0%,20.0%,34
-Austria - 2. Liga,A. Lustenau,5,60.0%,40.0%,38
-Austria - 2. Liga,Sturm Graz B,4,100.0%,0.0%,33
-Austria - 2. Liga,Stripfing,4,50.0%,50.0%,40
-Austria - 2. Liga,Austria Wien B,4,75.0%,25.0%,20
+Austria - Bundesliga,,Scored,1st half,2nd half,Avg. minute
+Austria - Bundesliga,Salzburg,12,41.7%,58.3%,54
+Austria - Bundesliga,Tirol,8,62.5%,37.5%,47
+Austria - Bundesliga,Hartberg,7,57.1%,42.9%,44
+Austria - Bundesliga,Wolfsberger AC,6,66.7%,33.3%,29
+Austria - Bundesliga,Sturm Graz,6,83.3%,16.7%,28
+Austria - Bundesliga,Ried,5,40.0%,60.0%,43
+Austria - Bundesliga,Rapid Wien,5,60.0%,40.0%,39
+Austria - Bundesliga,Grazer AK,4,50.0%,50.0%,38
+Austria - Bundesliga,Austria Wien,4,50.0%,50.0%,56
+Austria - Bundesliga,Altach,4,25.0%,75.0%,58
+Austria - Bundesliga,LASK Linz,3,33.3%,66.7%,51
+Austria - 2. Liga,,Scored,1st half,2nd half,Avg. minute
+Austria - 2. Liga,St. Polten,10,30.0%,70.0%,53
+Austria - 2. Liga,A. Lustenau,9,33.3%,66.7%,52
+Austria - 2. Liga,Floridsdorfer,7,71.4%,28.6%,38
+Austria - 2. Liga,Sturm Graz B,7,57.1%,42.9%,52
+Austria - 2. Liga,Stripfing,7,71.4%,28.6%,35
+Austria - 2. Liga,Austria Salzbur,7,14.3%,85.7%,68
+Austria - 2. Liga,Austria Wien B,7,71.4%,28.6%,27
+Austria - 2. Liga,A. Klagenfurt,7,57.1%,42.9%,42
+Austria - 2. Liga,Admira Wacker,6,16.7%,83.3%,70
+Austria - 2. Liga,First Vienna,6,83.3%,16.7%,32
+Austria - 2. Liga,Kapfenberger,5,20.0%,80.0%,70
+Austria - 2. Liga,Bregenz,5,20.0%,80.0%,58
 Austria - 2. Liga,Amstetten,4,50.0%,50.0%,57
-Austria - 2. Liga,Admira Wacker,4,0.0%,100.0%,79
-Austria - 2. Liga,A. Klagenfurt,4,50.0%,50.0%,40
-Austria - 2. Liga,Bregenz,3,0.0%,100.0%,72
-Austria - 2. Liga,Rapid Wien B,2,50.0%,50.0%,36
-Austria - 2. Liga,Liefering,1,100.0%,0.0%,40
-Austria - 2. Liga,Austria Salzbur,1,0.0%,100.0%,56
-Belgium - First Division A,Royale Union SG,9,33.3%,66.7%,45
-Belgium - First Division A,Anderlecht,9,33.3%,66.7%,55
-Belgium - First Division A,Sint-Truiden,6,33.3%,66.7%,60
+Austria - 2. Liga,Rapid Wien B,4,50.0%,50.0%,46
+Austria - 2. Liga,Liefering,3,100.0%,0.0%,40
+Austria - 2. Liga,WSPG Wels,1,100.0%,0.0%,36
+Belgium - First Division A,,Scored,1st half,2nd half,Avg. minute
+Belgium - First Division A,Royale Union SG,12,33.3%,66.7%,48
+Belgium - First Division A,Anderlecht,11,27.3%,72.7%,59
+Belgium - First Division A,Sint-Truiden,10,30.0%,70.0%,62
+Belgium - First Division A,Antwerp,8,62.5%,37.5%,48
+Belgium - First Division A,Cercle Brugge,7,85.7%,14.3%,44
+Belgium - First Division A,KV Mechelen,6,66.7%,33.3%,31
+Belgium - First Division A,Westerlo,6,33.3%,66.7%,45
+Belgium - First Division A,Club Brugge,6,0.0%,100.0%,70
+Belgium - First Division A,KRC Genk,5,80.0%,20.0%,28
 Belgium - First Division A,Zulte-Waregem,5,40.0%,60.0%,62
-Belgium - First Division A,Westerlo,5,40.0%,60.0%,40
+Belgium - First Division A,OH Leuven,5,40.0%,60.0%,56
 Belgium - First Division A,Standard Liege,5,60.0%,40.0%,40
-Belgium - First Division A,Club Brugge,5,0.0%,100.0%,67
-Belgium - First Division A,Antwerp,5,60.0%,40.0%,53
-Belgium - First Division A,KV Mechelen,4,50.0%,50.0%,40
-Belgium - First Division A,Gent,4,0.0%,100.0%,85
-Belgium - First Division A,OH Leuven,3,33.3%,66.7%,56
-Belgium - First Division A,KRC Genk,3,66.7%,33.3%,36
-Belgium - First Division A,Charleroi,3,33.3%,66.7%,74
-Belgium - First Division A,La Louviere,1,100.0%,0.0%,16
+Belgium - First Division A,Gent,5,0.0%,100.0%,81
+Belgium - First Division A,Charleroi,4,50.0%,50.0%,64
+Belgium - First Division A,La Louviere,2,50.0%,50.0%,43
 Belgium - First Division A,Dender,1,0.0%,100.0%,85
-Bolivia - Primera Div. - Apertura,Always Ready,50,42.0%,58.0%,50
-Bolivia - Primera Div. - Apertura,The Strongest,49,40.8%,59.2%,53
-Bolivia - Primera Div. - Apertura,Bolivar,41,41.5%,58.5%,55
-Bolivia - Primera Div. - Apertura,Blooming,34,47.1%,52.9%,49
-Bolivia - Primera Div. - Apertura,Guabira,31,45.2%,54.8%,48
-Bolivia - Primera Div. - Apertura,SA Bulo Bulo,27,33.3%,66.7%,57
-Bolivia - Primera Div. - Apertura,GV San Jose,26,61.5%,38.5%,44
+Bolivia - Primera Div. - Apertura,,Scored,1st half,2nd half,Avg. minute
+Bolivia - Primera Div. - Apertura,Always Ready,52,42.3%,57.7%,50
+Bolivia - Primera Div. - Apertura,The Strongest,51,41.2%,58.8%,53
+Bolivia - Primera Div. - Apertura,Bolivar,43,44.2%,55.8%,54
+Bolivia - Primera Div. - Apertura,Blooming,36,47.2%,52.8%,49
+Bolivia - Primera Div. - Apertura,Aurora,32,43.8%,56.3%,54
+Bolivia - Primera Div. - Apertura,Guabira,32,43.8%,56.3%,49
+Bolivia - Primera Div. - Apertura,SA Bulo Bulo,31,32.3%,67.7%,58
+Bolivia - Primera Div. - Apertura,Real Oruro,28,53.6%,46.4%,48
+Bolivia - Primera Div. - Apertura,GV San Jose,27,63.0%,37.0%,44
 Bolivia - Primera Div. - Apertura,Oriente P.,26,42.3%,57.7%,52
-Bolivia - Primera Div. - Apertura,Aurora,26,42.3%,57.7%,55
-Bolivia - Primera Div. - Apertura,Real Oruro,25,56.0%,44.0%,48
-Bolivia - Primera Div. - Apertura,U. de Vinto,22,45.5%,54.5%,54
-Bolivia - Primera Div. - Apertura,Nacional Potosi,20,50.0%,50.0%,54
-Bolivia - Primera Div. - Apertura,I. Petrolero,19,31.6%,68.4%,54
-Bolivia - Primera Div. - Apertura,ABB,18,33.3%,66.7%,56
-Bolivia - Primera Div. - Apertura,Real Tomayapo,17,52.9%,47.1%,46
-Bolivia - Primera Div. - Apertura,Wilstermann,11,27.3%,72.7%,63
-Brazil - Serie A,Flamengo,33,36.4%,63.6%,54
-Brazil - Serie A,Cruzeiro,31,64.5%,35.5%,41
-Brazil - Serie A,Mirassol,28,39.3%,60.7%,52
-Brazil - Serie A,Bahia,23,43.5%,56.5%,57
-Brazil - Serie A,Palmeiras,23,30.4%,69.6%,58
-Brazil - Serie A,Botafogo,23,39.1%,60.9%,55
-Brazil - Serie A,Sao Paulo,22,50.0%,50.0%,51
-Brazil - Serie A,Bragantino,22,50.0%,50.0%,50
-Brazil - Serie A,Fluminense,21,33.3%,66.7%,60
-Brazil - Serie A,Internacional,21,52.4%,47.6%,49
+Bolivia - Primera Div. - Apertura,Nacional Potosi,25,52.0%,48.0%,52
+Bolivia - Primera Div. - Apertura,I. Petrolero,25,36.0%,64.0%,55
+Bolivia - Primera Div. - Apertura,U. de Vinto,23,47.8%,52.2%,54
+Bolivia - Primera Div. - Apertura,ABB,19,36.8%,63.2%,55
+Bolivia - Primera Div. - Apertura,Real Tomayapo,19,47.4%,52.6%,47
+Bolivia - Primera Div. - Apertura,Wilstermann,14,28.6%,71.4%,62
+Brazil - Serie A,,Scored,1st half,2nd half,Avg. minute
+Brazil - Serie A,Flamengo,44,38.6%,61.4%,49
+Brazil - Serie A,Cruzeiro,34,64.7%,35.3%,40
+Brazil - Serie A,Mirassol,30,40.0%,60.0%,51
+Brazil - Serie A,Vasco da Gama,27,37.0%,63.0%,53
+Brazil - Serie A,Bahia,27,48.1%,51.9%,53
+Brazil - Serie A,Palmeiras,27,33.3%,66.7%,56
+Brazil - Serie A,Sao Paulo,26,46.2%,53.8%,53
+Brazil - Serie A,Botafogo,26,38.5%,61.5%,57
+Brazil - Serie A,Bragantino,26,50.0%,50.0%,48
+Brazil - Serie A,Fluminense,25,36.0%,64.0%,58
+Brazil - Serie A,Internacional,23,52.2%,47.8%,50
+Brazil - Serie A,Corinthians,22,31.8%,68.2%,61
 Brazil - Serie A,Santos,20,45.0%,55.0%,58
-Brazil - Serie A,Vasco da Gama,19,47.4%,52.6%,50
-Brazil - Serie A,Atletico MG,19,26.3%,73.7%,64
-Brazil - Serie A,Ceara,18,44.4%,55.6%,47
-Brazil - Serie A,Corinthians,18,27.8%,72.2%,63
-Brazil - Serie A,Fortaleza,18,50.0%,50.0%,42
-Brazil - Serie A,Vitoria,16,25.0%,75.0%,58
-Brazil - Serie A,Gremio,16,62.5%,37.5%,46
-Brazil - Serie A,Juventude,13,61.5%,38.5%,40
-Brazil - Serie A,Sport Recife,10,50.0%,50.0%,47
-Brazil - Serie B,Avai,29,58.6%,41.4%,47
-Brazil - Serie B,Goias,28,46.4%,53.6%,54
-Brazil - Serie B,Chapecoense,28,53.6%,46.4%,44
-Brazil - Serie B,Criciuma,27,51.9%,48.1%,45
-Brazil - Serie B,Athletico PR,27,48.1%,51.9%,49
-Brazil - Serie B,Novorizontino,24,45.8%,54.2%,50
-Brazil - Serie B,Cuiaba,24,37.5%,62.5%,52
-Brazil - Serie B,Athletic Club,23,60.9%,39.1%,42
-Brazil - Serie B,Remo,23,56.5%,43.5%,48
-Brazil - Serie B,Operario PR,23,47.8%,52.2%,47
-Brazil - Serie B,CRB,22,45.5%,54.5%,45
-Brazil - Serie B,Ferroviaria,22,50.0%,50.0%,50
-Brazil - Serie B,Coritiba,22,54.5%,45.5%,47
-Brazil - Serie B,Amazonas,21,42.9%,57.1%,44
-Brazil - Serie B,Atletico GO,21,52.4%,47.6%,51
-Brazil - Serie B,America MG,21,47.6%,52.4%,51
-Brazil - Serie B,Vila Nova,20,50.0%,50.0%,48
-Brazil - Serie B,Paysandu,19,47.4%,52.6%,53
+Brazil - Serie A,Atletico MG,20,30.0%,70.0%,62
+Brazil - Serie A,Ceara,19,47.4%,52.6%,45
+Brazil - Serie A,Gremio,19,57.9%,42.1%,49
+Brazil - Serie A,Fortaleza,19,47.4%,52.6%,44
+Brazil - Serie A,Vitoria,18,27.8%,72.2%,56
+Brazil - Serie A,Juventude,18,61.1%,38.9%,41
+Brazil - Serie A,Sport Recife,12,50.0%,50.0%,44
+Brazil - Serie B,,Scored,1st half,2nd half,Avg. minute
+Brazil - Serie B,Chapecoense,34,47.1%,52.9%,46
+Brazil - Serie B,Criciuma,30,50.0%,50.0%,46
+Brazil - Serie B,Avai,30,56.7%,43.3%,49
+Brazil - Serie B,Athletico PR,29,44.8%,55.2%,51
+Brazil - Serie B,Goias,29,44.8%,55.2%,54
+Brazil - Serie B,Cuiaba,27,37.0%,63.0%,52
+Brazil - Serie B,Operario PR,25,48.0%,52.0%,47
+Brazil - Serie B,Novorizontino,25,44.0%,56.0%,51
+Brazil - Serie B,Ferroviaria,25,48.0%,52.0%,51
+Brazil - Serie B,Amazonas,25,40.0%,60.0%,47
+Brazil - Serie B,Athletic Club,24,58.3%,41.7%,43
+Brazil - Serie B,Atletico GO,24,50.0%,50.0%,52
+Brazil - Serie B,CRB,24,45.8%,54.2%,45
+Brazil - Serie B,Remo,24,58.3%,41.7%,47
+Brazil - Serie B,Coritiba,24,54.2%,45.8%,48
+Brazil - Serie B,America MG,23,43.5%,56.5%,54
+Brazil - Serie B,Vila Nova,22,50.0%,50.0%,48
+Brazil - Serie B,Paysandu,20,50.0%,50.0%,52
+Brazil - Serie B,Botafogo SP,17,35.3%,64.7%,50
 Brazil - Serie B,Volta Redonda,14,21.4%,78.6%,65
-Brazil - Serie B,Botafogo SP,14,42.9%,57.1%,46
+Brazil - Serie C,,Scored,1st half,2nd half,Avg. minute
+Brazil - Serie C,Londrina,27,48.1%,51.9%,48
 Brazil - Serie C,Caxias,26,53.8%,46.2%,51
-Brazil - Serie C,Londrina,24,50.0%,50.0%,44
-Brazil - Serie C,Nautico,20,55.0%,45.0%,46
-Brazil - Serie C,Maringa,20,35.0%,65.0%,60
-Brazil - Serie C,Botafogo PB,19,52.6%,47.4%,46
-Brazil - Serie C,Confianca,19,47.4%,52.6%,53
-Brazil - Serie C,Sao Bernardo,18,38.9%,61.1%,51
-Brazil - Serie C,CSA,18,55.6%,44.4%,50
-Brazil - Serie C,Figueirense,17,52.9%,47.1%,49
-Brazil - Serie C,Ponte Preta,16,25.0%,75.0%,62
-Brazil - Serie C,Brusque,16,56.3%,43.8%,46
-Brazil - Serie C,ABC,16,25.0%,75.0%,66
-Brazil - Serie C,Ituano,15,53.3%,46.7%,53
-Brazil - Serie C,Itabaiana,13,38.5%,61.5%,48
-Brazil - Serie C,Anapolis,13,53.8%,46.2%,46
-Brazil - Serie C,Guarani,13,61.5%,38.5%,44
-Brazil - Serie C,Ypiranga,13,61.5%,38.5%,44
+Brazil - Serie C,Maringa,23,39.1%,60.9%,59
+Brazil - Serie C,Botafogo PB,22,54.5%,45.5%,46
+Brazil - Serie C,Nautico,22,50.0%,50.0%,49
+Brazil - Serie C,Figueirense,21,52.4%,47.6%,50
+Brazil - Serie C,CSA,21,47.6%,52.4%,53
+Brazil - Serie C,ABC,20,30.0%,70.0%,63
+Brazil - Serie C,Confianca,20,45.0%,55.0%,54
+Brazil - Serie C,Sao Bernardo,19,36.8%,63.2%,51
+Brazil - Serie C,Ponte Preta,19,26.3%,73.7%,62
+Brazil - Serie C,Ituano,19,42.1%,57.9%,55
+Brazil - Serie C,Guarani,18,61.1%,38.9%,42
+Brazil - Serie C,Brusque,18,61.1%,38.9%,44
+Brazil - Serie C,Ypiranga,16,68.8%,31.3%,39
+Brazil - Serie C,Itabaiana,15,46.7%,53.3%,45
+Brazil - Serie C,Anapolis,14,50.0%,50.0%,47
 Brazil - Serie C,Floresta,13,53.8%,46.2%,43
 Brazil - Serie C,Tombense,12,66.7%,33.3%,37
-Brazil - Serie C,Retro,6,33.3%,66.7%,50
+Brazil - Serie C,Retro,7,28.6%,71.4%,50
+Brazil - Serie D,,Scored,1st half,2nd half,Avg. minute
 Brazil - Serie D,Manauara,21,42.9%,57.1%,48
 Brazil - Serie D,ASA,20,40.0%,60.0%,56
 Brazil - Serie D,Goiatuba EC,18,55.6%,44.4%,54
@@ -287,118 +304,126 @@ Brazil - Serie D,Goiania,5,40.0%,60.0%,47
 Brazil - Serie D,Guarany de Bage,4,25.0%,75.0%,62
 Brazil - Serie D,Treze,4,50.0%,50.0%,49
 Brazil - Serie D,Penedense,3,33.3%,66.7%,62
+Bulgaria - Parva Liga,,Scored,1st half,2nd half,Avg. minute
 Bulgaria - Parva Liga,Levski Sofia,11,36.4%,63.6%,54
+Bulgaria - Parva Liga,Cherno More,11,63.6%,36.4%,46
 Bulgaria - Parva Liga,Ludogorets,11,27.3%,72.7%,59
-Bulgaria - Parva Liga,Cherno More,7,57.1%,42.9%,50
+Bulgaria - Parva Liga,CSKA 1948 Sofia,8,62.5%,37.5%,44
 Bulgaria - Parva Liga,Arda,6,50.0%,50.0%,55
+Bulgaria - Parva Liga,Dobrudzha,6,50.0%,50.0%,46
+Bulgaria - Parva Liga,Lok. Plovdiv,6,33.3%,66.7%,64
 Bulgaria - Parva Liga,Lokomotiv Sofia,6,83.3%,16.7%,28
-Bulgaria - Parva Liga,CSKA 1948 Sofia,5,60.0%,40.0%,46
-Bulgaria - Parva Liga,Dobrudzha,5,40.0%,60.0%,54
-Bulgaria - Parva Liga,Septemvri Sofia,4,75.0%,25.0%,56
-Bulgaria - Parva Liga,Beroe,4,75.0%,25.0%,36
-Bulgaria - Parva Liga,Spartak Varna,3,0.0%,100.0%,74
-Bulgaria - Parva Liga,Lok. Plovdiv,3,66.7%,33.3%,49
-Bulgaria - Parva Liga,Slavia Sofia,3,33.3%,66.7%,36
-Bulgaria - Parva Liga,Botev Vratsa,3,66.7%,33.3%,32
-Bulgaria - Parva Liga,Botev Plovdiv,2,50.0%,50.0%,43
+Bulgaria - Parva Liga,Septemvri Sofia,6,83.3%,16.7%,46
+Bulgaria - Parva Liga,Slavia Sofia,6,50.0%,50.0%,39
+Bulgaria - Parva Liga,Botev Vratsa,5,80.0%,20.0%,28
+Bulgaria - Parva Liga,Beroe,5,60.0%,40.0%,38
+Bulgaria - Parva Liga,Spartak Varna,4,25.0%,75.0%,59
+Bulgaria - Parva Liga,Montana,4,50.0%,50.0%,43
+Bulgaria - Parva Liga,Botev Plovdiv,4,25.0%,75.0%,64
 Bulgaria - Parva Liga,CSKA Sofia,2,100.0%,0.0%,26
-Bulgaria - Parva Liga,Montana,1,100.0%,0.0%,23
-Canada - Premier League,A. Ottawa,37,32.4%,67.6%,54
-Canada - Premier League,Forge,35,48.6%,51.4%,49
-Canada - Premier League,York Utd,28,57.1%,42.9%,48
-Canada - Premier League,HFX Wanderers,22,27.3%,72.7%,61
-Canada - Premier League,Cavalry,22,27.3%,72.7%,57
-Canada - Premier League,Vancouver FC,19,52.6%,47.4%,49
-Canada - Premier League,Valour,19,36.8%,63.2%,50
-Canada - Premier League,Pacific,19,47.4%,52.6%,51
-Chile - Liga de Primera,U. de Chile,43,44.2%,55.8%,52
-Chile - Liga de Primera,Colo-Colo,30,43.3%,56.7%,52
-Chile - Liga de Primera,Coquimbo Unido,30,33.3%,66.7%,55
-Chile - Liga de Primera,Audax Italiano,30,33.3%,66.7%,54
-Chile - Liga de Primera,Huachipato,26,38.5%,61.5%,54
+Canada - Premier League,,Scored,1st half,2nd half,Avg. minute
+Canada - Premier League,A. Ottawa,39,30.8%,69.2%,55
+Canada - Premier League,Forge,38,50.0%,50.0%,49
+Canada - Premier League,York Utd,33,54.5%,45.5%,49
+Canada - Premier League,Cavalry,29,37.9%,62.1%,52
+Canada - Premier League,HFX Wanderers,28,32.1%,67.9%,59
+Canada - Premier League,Vancouver FC,23,52.2%,47.8%,49
+Canada - Premier League,Pacific,22,54.5%,45.5%,50
+Canada - Premier League,Valour,20,35.0%,65.0%,52
+Chile - Liga de Primera,,Scored,1st half,2nd half,Avg. minute
+Chile - Liga de Primera,U. de Chile,44,43.2%,56.8%,53
+Chile - Liga de Primera,Coquimbo Unido,33,30.3%,69.7%,56
+Chile - Liga de Primera,Audax Italiano,33,30.3%,69.7%,56
+Chile - Liga de Primera,Huachipato,32,34.4%,65.6%,57
+Chile - Liga de Primera,U. Catolica,31,51.6%,48.4%,49
+Chile - Liga de Primera,Colo-Colo,31,45.2%,54.8%,52
 Chile - Liga de Primera,Palestino,26,38.5%,61.5%,56
-Chile - Liga de Primera,U. Catolica,25,48.0%,52.0%,52
-Chile - Liga de Primera,Cobresal,23,56.5%,43.5%,49
-Chile - Liga de Primera,La Serena,23,34.8%,65.2%,57
-Chile - Liga de Primera,D. Limache,22,50.0%,50.0%,51
-Chile - Liga de Primera,OHiggins,21,33.3%,66.7%,55
-Chile - Liga de Primera,Everton,20,50.0%,50.0%,50
-Chile - Liga de Primera,D. Iquique,19,36.8%,63.2%,56
-Chile - Liga de Primera,Nublense,18,44.4%,55.6%,55
-Chile - Liga de Primera,Union Espanola,17,35.3%,64.7%,54
-Chile - Liga de Primera,Union La Calera,16,43.8%,56.3%,49
-Chile - Liga de Ascenso,S. Wanderers,31,58.1%,41.9%,45
-Chile - Liga de Ascenso,Antofagasta,30,56.7%,43.3%,48
-Chile - Liga de Ascenso,San Marcos,27,37.0%,63.0%,56
-Chile - Liga de Ascenso,Cobreloa,26,46.2%,53.8%,51
-Chile - Liga de Ascenso,Rangers,25,44.0%,56.0%,53
-Chile - Liga de Ascenso,Concepcion,24,37.5%,62.5%,53
-Chile - Liga de Ascenso,Recoleta,24,37.5%,62.5%,54
-Chile - Liga de Ascenso,Copiapo,24,58.3%,41.7%,43
+Chile - Liga de Primera,Cobresal,24,54.2%,45.8%,50
+Chile - Liga de Primera,D. Limache,24,50.0%,50.0%,52
+Chile - Liga de Primera,La Serena,24,33.3%,66.7%,58
+Chile - Liga de Primera,OHiggins,24,33.3%,66.7%,56
+Chile - Liga de Primera,D. Iquique,21,38.1%,61.9%,55
+Chile - Liga de Primera,Nublense,21,47.6%,52.4%,52
+Chile - Liga de Primera,Everton,21,47.6%,52.4%,50
+Chile - Liga de Primera,Union Espanola,19,36.8%,63.2%,55
+Chile - Liga de Primera,Union La Calera,17,47.1%,52.9%,49
+Chile - Liga de Ascenso,,Scored,1st half,2nd half,Avg. minute
+Chile - Liga de Ascenso,S. Wanderers,34,55.9%,44.1%,46
+Chile - Liga de Ascenso,Antofagasta,32,53.1%,46.9%,50
+Chile - Liga de Ascenso,Cobreloa,31,51.6%,48.4%,48
+Chile - Liga de Ascenso,San Marcos,30,36.7%,63.3%,55
+Chile - Liga de Ascenso,U. Concepcion,29,44.8%,55.2%,51
+Chile - Liga de Ascenso,Copiapo,27,59.3%,40.7%,42
+Chile - Liga de Ascenso,Rangers,26,46.2%,53.8%,52
+Chile - Liga de Ascenso,CD Santa Cruz,26,30.8%,69.2%,57
+Chile - Liga de Ascenso,Concepcion,26,34.6%,65.4%,55
+Chile - Liga de Ascenso,Recoleta,25,36.0%,64.0%,56
 Chile - Liga de Ascenso,Curico Unido,24,41.7%,58.3%,49
-Chile - Liga de Ascenso,CD Santa Cruz,23,30.4%,69.6%,57
-Chile - Liga de Ascenso,Deportes Temuco,23,34.8%,65.2%,50
-Chile - Liga de Ascenso,U. Concepcion,21,47.6%,52.4%,50
-Chile - Liga de Ascenso,U. San Felipe,20,45.0%,55.0%,48
-Chile - Liga de Ascenso,San Luis,19,26.3%,73.7%,62
-Chile - Liga de Ascenso,S. Morning,17,29.4%,70.6%,58
-Chile - Liga de Ascenso,Magallanes,14,50.0%,50.0%,48
-China - Super League,S. Shenhua,47,46.8%,53.2%,53
-China - Super League,Shanghai Port,47,57.4%,42.6%,47
-China - Super League,Beijing Guoan,44,52.3%,47.7%,46
-China - Super League,Zhejiang,43,41.9%,58.1%,55
-China - Super League,Chengdu,39,56.4%,43.6%,44
-China - Super League,Shandong T.,39,43.6%,56.4%,52
-China - Super League,Henan SL,32,37.5%,62.5%,55
-China - Super League,Yunnan Yukun,31,41.9%,58.1%,53
-China - Super League,Tianjin T.,27,48.1%,51.9%,49
-China - Super League,Meizhou Hakka,26,26.9%,73.1%,58
-China - Super League,Qingdao West C.,26,42.3%,57.7%,50
-China - Super League,Wuhan Three T.,26,42.3%,57.7%,54
-China - Super League,Shenzhen P. C.,25,32.0%,68.0%,54
+Chile - Liga de Ascenso,Deportes Temuco,24,37.5%,62.5%,48
+Chile - Liga de Ascenso,U. San Felipe,21,47.6%,52.4%,48
+Chile - Liga de Ascenso,San Luis,20,25.0%,75.0%,63
+Chile - Liga de Ascenso,S. Morning,18,27.8%,72.2%,59
+Chile - Liga de Ascenso,Magallanes,17,47.1%,52.9%,51
+China - Super League,,Scored,1st half,2nd half,Avg. minute
+China - Super League,Shanghai Port,52,59.6%,40.4%,45
+China - Super League,Beijing Guoan,51,51.0%,49.0%,47
+China - Super League,S. Shenhua,49,44.9%,55.1%,54
+China - Super League,Zhejiang,47,44.7%,55.3%,55
+China - Super League,Shandong T.,45,44.4%,55.6%,50
+China - Super League,Chengdu,44,52.3%,47.7%,45
+China - Super League,Henan SL,37,43.2%,56.8%,53
+China - Super League,Yunnan Yukun,34,44.1%,55.9%,52
+China - Super League,Tianjin T.,30,50.0%,50.0%,48
+China - Super League,Qingdao West C.,29,37.9%,62.1%,53
+China - Super League,Meizhou Hakka,28,28.6%,71.4%,58
+China - Super League,Wuhan Three T.,27,40.7%,59.3%,54
+China - Super League,Shenzhen P. C.,26,30.8%,69.2%,55
 China - Super League,Dalian Yingbo,21,57.1%,42.9%,45
 China - Super League,Qingdao Hainiu,20,45.0%,55.0%,48
-China - Super League,Changchun Yatai,16,37.5%,62.5%,52
-China - League One,Liaoning Tieren,46,43.5%,56.5%,51
-China - League One,Chongqing T.,39,51.3%,48.7%,52
-China - League One,Guangdong GZP,30,23.3%,76.7%,60
-China - League One,Shenzhen J.,29,62.1%,37.9%,40
-China - League One,S. Gongfu,29,51.7%,48.3%,46
+China - Super League,Changchun Yatai,18,38.9%,61.1%,51
+China - League One,,Scored,1st half,2nd half,Avg. minute
+China - League One,Liaoning Tieren,48,43.8%,56.3%,50
+China - League One,Chongqing T.,40,50.0%,50.0%,53
+China - League One,Guangdong GZP,35,22.9%,77.1%,60
+China - League One,Shenzhen J.,31,61.3%,38.7%,40
+China - League One,S. Gongfu,30,50.0%,50.0%,48
+China - League One,Shaanxi Union,29,55.2%,44.8%,49
+China - League One,Dingnan,28,25.0%,75.0%,62
 China - League One,Dalian Kuncheng,27,37.0%,63.0%,55
-China - League One,Dingnan,27,25.9%,74.1%,62
 China - League One,Nanjing City,27,55.6%,44.4%,50
-China - League One,Shaanxi Union,27,55.6%,44.4%,50
-China - League One,Nantong Zhiyun,24,50.0%,50.0%,47
-China - League One,Yanbian Longdin,22,40.9%,59.1%,47
+China - League One,Nantong Zhiyun,26,53.8%,46.2%,45
+China - League One,Yanbian Longdin,23,43.5%,56.5%,47
+China - League One,Foshan Nanshi,19,73.7%,26.3%,36
 China - League One,Shanghai Jiadin,19,36.8%,63.2%,49
 China - League One,Suzhou Dongwu,18,44.4%,55.6%,52
-China - League One,Foshan Nanshi,17,76.5%,23.5%,35
-China - League One,Guangxi Pingguo,13,61.5%,38.5%,46
-China - League One,Qingdao RL,12,50.0%,50.0%,51
-China - League Two,Guangxi H.,47,38.3%,61.7%,52
-China - League Two,C. Rongcheng B,39,38.5%,61.5%,51
-China - League Two,Nantong Haimen,38,42.1%,57.9%,52
-China - League Two,Shandong T. B,36,44.4%,55.6%,54
+China - League One,Guangxi Pingguo,16,62.5%,37.5%,46
+China - League One,Qingdao RL,13,46.2%,53.8%,53
+China - League Two,,Scored,1st half,2nd half,Avg. minute
+China - League Two,Guangxi H.,51,41.2%,58.8%,52
+China - League Two,Nantong Haimen,41,43.9%,56.1%,51
+China - League Two,C. Rongcheng B,40,40.0%,60.0%,51
+China - League Two,Shandong T. B,37,45.9%,54.1%,53
 China - League Two,G. Zhucheng,33,51.5%,48.5%,52
-China - League Two,G. Dandelion,31,51.6%,48.4%,47
-China - League Two,Wuxi Wugou,31,54.8%,45.2%,46
-China - League Two,Shenzhen 2028,30,50.0%,50.0%,48
-China - League Two,Jiangxi Lushan,25,40.0%,60.0%,54
-China - League Two,Shanghai Port B,25,40.0%,60.0%,54
-China - League Two,Hangzhou Linpin,24,54.2%,45.8%,44
-China - League Two,Hubei Istar,23,56.5%,43.5%,43
-China - League Two,Taian Tiankuang,22,36.4%,63.6%,53
-China - League Two,L. Longyuan,21,52.4%,47.6%,53
+China - League Two,Wuxi Wugou,33,51.5%,48.5%,48
+China - League Two,G. Dandelion,32,53.1%,46.9%,46
+China - League Two,Shenzhen 2028,30,50.0%,50.0%,47
+China - League Two,Jiangxi Lushan,26,42.3%,57.7%,52
+China - League Two,Hubei Istar,26,50.0%,50.0%,48
+China - League Two,Shanghai Port B,26,42.3%,57.7%,52
+China - League Two,Hangzhou Linpin,25,52.0%,48.0%,46
+China - League Two,L. Longyuan,24,50.0%,50.0%,52
+China - League Two,Taian Tiankuang,23,34.8%,65.2%,54
+China - League Two,Wuhan TT B,22,31.8%,68.2%,58
 China - League Two,Beijing IT,21,42.9%,57.1%,53
 China - League Two,Wenzhou Pro.,21,47.6%,52.4%,47
-China - League Two,Wuhan TT B,21,33.3%,66.7%,57
 China - League Two,Guangdong M.,20,55.0%,45.0%,46
+China - League Two,Shanxi Ronghai,19,57.9%,42.1%,40
 China - League Two,Changchun Xidu,19,63.2%,36.8%,45
 China - League Two,Ganzhou Ruishi,18,33.3%,66.7%,56
-China - League Two,Shanxi Ronghai,17,58.8%,41.2%,39
 China - League Two,Kunming City,15,33.3%,66.7%,52
 China - League Two,Quanzhou Yassin,13,46.2%,53.8%,52
 China - League Two,Guangxi Lanhang,10,70.0%,30.0%,39
+Colombia - Primera A - Apertura,,Scored,1st half,2nd half,Avg. minute
 Colombia - Primera A - Apertura,A. Nacional,37,54.1%,45.9%,48
 Colombia - Primera A - Apertura,Millonarios,30,50.0%,50.0%,50
 Colombia - Primera A - Apertura,Deportes Tolima,30,50.0%,50.0%,50
@@ -419,6 +444,7 @@ Colombia - Primera A - Apertura,Deportivo Cali,14,50.0%,50.0%,45
 Colombia - Primera A - Apertura,Boyaca Chico,14,42.9%,57.1%,57
 Colombia - Primera A - Apertura,Union Magdalena,14,28.6%,71.4%,64
 Colombia - Primera A - Apertura,La Equidad,13,38.5%,61.5%,48
+Colombia - Primera B - Apertura,,Scored,1st half,2nd half,Avg. minute
 Colombia - Primera B - Apertura,Real Cartagena,30,53.3%,46.7%,43
 Colombia - Primera B - Apertura,Cucuta,28,53.6%,46.4%,46
 Colombia - Primera B - Apertura,Jaguares de C.,26,53.8%,46.2%,51
@@ -435,16 +461,18 @@ Colombia - Primera B - Apertura,Atletico Cali,14,64.3%,35.7%,41
 Colombia - Primera B - Apertura,D. Quindio,13,61.5%,38.5%,34
 Colombia - Primera B - Apertura,Barranquilla,12,50.0%,50.0%,46
 Colombia - Primera B - Apertura,Boca Juniors,11,36.4%,63.6%,50
+Costa Rica - Primera Div. - Apertura,,Scored,1st half,2nd half,Avg. minute
+Costa Rica - Primera Div. - Apertura,M. Liberia,10,50.0%,50.0%,53
+Costa Rica - Primera Div. - Apertura,Zeledon,9,55.6%,44.4%,47
+Costa Rica - Primera Div. - Apertura,Saprissa,9,33.3%,66.7%,55
+Costa Rica - Primera Div. - Apertura,Herediano,7,28.6%,71.4%,56
 Costa Rica - Primera Div. - Apertura,Puntarenas,6,83.3%,16.7%,30
-Costa Rica - Primera Div. - Apertura,M. Liberia,5,40.0%,60.0%,57
-Costa Rica - Primera Div. - Apertura,Zeledon,4,50.0%,50.0%,52
+Costa Rica - Primera Div. - Apertura,San Carlos,5,40.0%,60.0%,46
 Costa Rica - Primera Div. - Apertura,Cartagines,4,50.0%,50.0%,62
-Costa Rica - Primera Div. - Apertura,Saprissa,3,33.3%,66.7%,66
-Costa Rica - Primera Div. - Apertura,Herediano,3,33.3%,66.7%,53
+Costa Rica - Primera Div. - Apertura,Sporting SJ,3,66.7%,33.3%,28
 Costa Rica - Primera Div. - Apertura,Guadalupe,3,0.0%,100.0%,73
 Costa Rica - Primera Div. - Apertura,Alajuelense,3,33.3%,66.7%,65
-Costa Rica - Primera Div. - Apertura,Sporting SJ,2,50.0%,50.0%,31
-Costa Rica - Primera Div. - Apertura,San Carlos,2,0.0%,100.0%,67
+Costa Rica - Primera Div. - Clausura,,Scored,1st half,2nd half,Avg. minute
 Costa Rica - Primera Div. - Clausura,Herediano,35,37.1%,62.9%,53
 Costa Rica - Primera Div. - Clausura,Puntarenas,29,55.2%,44.8%,43
 Costa Rica - Primera Div. - Clausura,Alajuelense,28,57.1%,42.9%,43
@@ -457,334 +485,459 @@ Costa Rica - Primera Div. - Clausura,Santa Ana,22,50.0%,50.0%,49
 Costa Rica - Primera Div. - Clausura,Zeledon,16,37.5%,62.5%,51
 Costa Rica - Primera Div. - Clausura,San Carlos,13,38.5%,61.5%,58
 Costa Rica - Primera Div. - Clausura,Guanacasteca,12,66.7%,33.3%,35
-Croatia - 1. HNL,Dinamo Zagreb,5,20.0%,80.0%,70
-Croatia - 1. HNL,Hajduk Split,4,25.0%,75.0%,61
-Croatia - 1. HNL,Slaven Belupo,3,33.3%,66.7%,68
-Croatia - 1. HNL,Lok. Zagreb,3,66.7%,33.3%,44
-Croatia - 1. HNL,Istra,3,0.0%,100.0%,57
-Croatia - 1. HNL,Varazdin,2,50.0%,50.0%,47
-Croatia - 1. HNL,Rijeka,2,0.0%,100.0%,90
-Croatia - 1. HNL,Gorica,1,100.0%,0.0%,23
-CzechRepublic - 1. Liga,Sparta Prague,8,25.0%,75.0%,57
+Croatia - 1. HNL,,Scored,1st half,2nd half,Avg. minute
+Croatia - 1. HNL,Dinamo Zagreb,10,40.0%,60.0%,58
+Croatia - 1. HNL,Hajduk Split,9,22.2%,77.8%,62
+Croatia - 1. HNL,Lok. Zagreb,6,66.7%,33.3%,36
+Croatia - 1. HNL,Gorica,6,50.0%,50.0%,45
+Croatia - 1. HNL,Varazdin,4,50.0%,50.0%,47
+Croatia - 1. HNL,Slaven Belupo,4,25.0%,75.0%,73
+Croatia - 1. HNL,Istra,4,25.0%,75.0%,53
+Croatia - 1. HNL,Vukovar,3,66.7%,33.3%,44
+Croatia - 1. HNL,Rijeka,3,33.3%,66.7%,62
+Croatia - 1. NL,,Scored,1st half,2nd half,Avg. minute
+Croatia - 1. NL,Orijent,8,37.5%,62.5%,46
+Croatia - 1. NL,Bijelo Brdo,5,40.0%,60.0%,47
+Croatia - 1. NL,Hrvace,4,50.0%,50.0%,60
+Croatia - 1. NL,Cibalia,3,0.0%,100.0%,68
+Croatia - 1. NL,C. Zmijavci,3,33.3%,66.7%,35
+Croatia - 1. NL,Karlovac,2,100.0%,0.0%,34
+Croatia - 1. NL,Dubrava Zagreb,2,100.0%,0.0%,24
+Croatia - 1. NL,Sesvete,1,0.0%,100.0%,90
+Croatia - 1. NL,Rudes,1,100.0%,0.0%,24
+Croatia - 1. NL,Jarun,1,0.0%,100.0%,50
+Croatia - 1. NL,Dugopolje,1,0.0%,100.0%,64
+CzechRepublic - 1. Liga,,Scored,1st half,2nd half,Avg. minute
+CzechRepublic - 1. Liga,Viktoria Plzen,14,57.1%,42.9%,42
+CzechRepublic - 1. Liga,Sparta Prague,13,30.8%,69.2%,52
+CzechRepublic - 1. Liga,Slavia Prague,12,25.0%,75.0%,59
+CzechRepublic - 1. Liga,Mlada Boleslav,10,50.0%,50.0%,42
+CzechRepublic - 1. Liga,Zlin,9,55.6%,44.4%,41
 CzechRepublic - 1. Liga,Slovan Liberec,8,25.0%,75.0%,58
-CzechRepublic - 1. Liga,Slavia Prague,8,25.0%,75.0%,57
-CzechRepublic - 1. Liga,Zlin,8,50.0%,50.0%,41
-CzechRepublic - 1. Liga,Mlada Boleslav,7,42.9%,57.1%,46
-CzechRepublic - 1. Liga,Viktoria Plzen,7,71.4%,28.6%,38
-CzechRepublic - 1. Liga,Karvina,6,33.3%,66.7%,57
-CzechRepublic - 1. Liga,Jablonec,5,60.0%,40.0%,41
-CzechRepublic - 1. Liga,Hradec Kralove,4,75.0%,25.0%,45
-CzechRepublic - 1. Liga,Pardubice,4,25.0%,75.0%,61
-CzechRepublic - 1. Liga,Teplice,4,50.0%,50.0%,47
-CzechRepublic - 1. Liga,Sigma Olomouc,3,0.0%,100.0%,77
-CzechRepublic - 1. Liga,Banik Ostrava,2,50.0%,50.0%,44
-CzechRepublic - 1. Liga,Slovacko,2,50.0%,50.0%,61
-CzechRepublic - 1. Liga,Dukla Praha,1,100.0%,0.0%,7
-CzechRepublic - 1. Liga,Bohemians,1,100.0%,0.0%,17
-CzechRepublic - FNL,Zbrojovka Brno,16,43.8%,56.3%,53
-CzechRepublic - FNL,Usti nad Labem,13,69.2%,30.8%,44
-CzechRepublic - FNL,Banik Ostrava B,11,45.5%,54.5%,55
-CzechRepublic - FNL,Slavia Prague B,11,36.4%,63.6%,53
-CzechRepublic - FNL,Opava,9,66.7%,33.3%,39
-CzechRepublic - FNL,Vikto Zizkov,9,66.7%,33.3%,34
-CzechRepublic - FNL,Taborsko,9,66.7%,33.3%,43
-CzechRepublic - FNL,Vlasim,7,71.4%,28.6%,46
-CzechRepublic - FNL,Chrudim,7,14.3%,85.7%,58
-CzechRepublic - FNL,Jihlava,7,57.1%,42.9%,40
-CzechRepublic - FNL,Prostejov,5,20.0%,80.0%,60
-CzechRepublic - FNL,Pribram,5,60.0%,40.0%,54
-CzechRepublic - FNL,Artis Brno,4,25.0%,75.0%,48
-CzechRepublic - FNL,Han. Kromeriz,3,66.7%,33.3%,37
-CzechRepublic - FNL,C. Budejovice,3,33.3%,66.7%,51
-CzechRepublic - FNL,Sparta Prague B,2,100.0%,0.0%,26
-Denmark - Superligaen,FC Midtjylland,12,58.3%,41.7%,49
-Denmark - Superligaen,Odense BK,9,66.7%,33.3%,39
-Denmark - Superligaen,FC Kobenhavn,9,44.4%,55.6%,51
-Denmark - Superligaen,Nordsjaelland,7,71.4%,28.6%,42
-Denmark - Superligaen,Fredericia,7,57.1%,42.9%,47
-Denmark - Superligaen,Viborg,6,50.0%,50.0%,52
+CzechRepublic - 1. Liga,Karvina,8,37.5%,62.5%,53
+CzechRepublic - 1. Liga,Hradec Kralove,7,71.4%,28.6%,48
+CzechRepublic - 1. Liga,Jablonec,7,71.4%,28.6%,35
+CzechRepublic - 1. Liga,Dukla Praha,5,100.0%,0.0%,30
+CzechRepublic - 1. Liga,Pardubice,5,40.0%,60.0%,51
+CzechRepublic - 1. Liga,Teplice,5,60.0%,40.0%,42
+CzechRepublic - 1. Liga,Banik Ostrava,4,25.0%,75.0%,54
+CzechRepublic - 1. Liga,Slovacko,4,25.0%,75.0%,75
+CzechRepublic - 1. Liga,Sigma Olomouc,4,0.0%,100.0%,78
+CzechRepublic - 1. Liga,Bohemians,3,66.7%,33.3%,47
+CzechRepublic - FNL,,Scored,1st half,2nd half,Avg. minute
+CzechRepublic - FNL,Zbrojovka Brno,18,38.9%,61.1%,55
+CzechRepublic - FNL,Usti nad Labem,14,64.3%,35.7%,47
+CzechRepublic - FNL,Banik Ostrava B,13,53.8%,46.2%,50
+CzechRepublic - FNL,Taborsko,13,61.5%,38.5%,46
+CzechRepublic - FNL,Opava,12,66.7%,33.3%,42
+CzechRepublic - FNL,Slavia Prague B,12,41.7%,58.3%,50
+CzechRepublic - FNL,Vikto Zizkov,10,60.0%,40.0%,38
+CzechRepublic - FNL,Jihlava,10,50.0%,50.0%,45
+CzechRepublic - FNL,Chrudim,9,33.3%,66.7%,51
+CzechRepublic - FNL,Pribram,9,66.7%,33.3%,48
+CzechRepublic - FNL,Vlasim,9,66.7%,33.3%,44
+CzechRepublic - FNL,Prostejov,7,28.6%,71.4%,59
+CzechRepublic - FNL,Artis Brno,6,33.3%,66.7%,46
+CzechRepublic - FNL,C. Budejovice,6,66.7%,33.3%,33
+CzechRepublic - FNL,Han. Kromeriz,5,40.0%,60.0%,51
+CzechRepublic - FNL,Sparta Prague B,5,60.0%,40.0%,46
+Denmark - Superligaen,,Scored,1st half,2nd half,Avg. minute
+Denmark - Superligaen,FC Midtjylland,18,44.4%,55.6%,54
+Denmark - Superligaen,FC Kobenhavn,13,30.8%,69.2%,59
+Denmark - Superligaen,Odense BK,11,72.7%,27.3%,37
+Denmark - Superligaen,Fredericia,11,45.5%,54.5%,50
+Denmark - Superligaen,AGF Aarhus,11,54.5%,45.5%,35
+Denmark - Superligaen,SonderjyskE,10,20.0%,80.0%,59
+Denmark - Superligaen,Silkeborg,9,55.6%,44.4%,45
+Denmark - Superligaen,Nordsjaelland,9,66.7%,33.3%,38
+Denmark - Superligaen,Viborg,8,62.5%,37.5%,46
+Denmark - Superligaen,Brondby IF,8,75.0%,25.0%,33
 Denmark - Superligaen,Vejle BK,6,50.0%,50.0%,46
-Denmark - Superligaen,SonderjyskE,6,33.3%,66.7%,53
 Denmark - Superligaen,Randers FC,6,50.0%,50.0%,36
-Denmark - Superligaen,Brondby IF,6,66.7%,33.3%,36
-Denmark - Superligaen,AGF Aarhus,5,60.0%,40.0%,28
-Denmark - Superligaen,Silkeborg,4,50.0%,50.0%,49
-Denmark - 1st Division,Kolding IF,7,85.7%,14.3%,28
-Denmark - 1st Division,Hillerod,7,57.1%,42.9%,46
-Denmark - 1st Division,B 93,7,71.4%,28.6%,41
-Denmark - 1st Division,Lyngby,6,33.3%,66.7%,56
-Denmark - 1st Division,HB Koge,5,40.0%,60.0%,46
-Denmark - 1st Division,Aalborg BK,5,60.0%,40.0%,51
-Denmark - 1st Division,Hvidovre,4,75.0%,25.0%,34
-Denmark - 1st Division,AC Horsens,4,25.0%,75.0%,50
-Denmark - 1st Division,Aarhus Fremad,4,50.0%,50.0%,41
-Denmark - 1st Division,Esbjerg,3,33.3%,66.7%,43
-Denmark - 1st Division,Hobro,2,100.0%,0.0%,24
-Denmark - 1st Division,Middelfart,1,100.0%,0.0%,12
+Denmark - 1st Division,,Scored,1st half,2nd half,Avg. minute
+Denmark - 1st Division,Kolding IF,12,75.0%,25.0%,39
+Denmark - 1st Division,Hillerod,12,66.7%,33.3%,41
+Denmark - 1st Division,Lyngby,10,30.0%,70.0%,58
+Denmark - 1st Division,Esbjerg,9,44.4%,55.6%,45
+Denmark - 1st Division,B 93,9,66.7%,33.3%,43
+Denmark - 1st Division,Aalborg BK,9,44.4%,55.6%,55
+Denmark - 1st Division,Hvidovre,8,75.0%,25.0%,40
+Denmark - 1st Division,HB Koge,8,25.0%,75.0%,53
+Denmark - 1st Division,Aarhus Fremad,8,37.5%,62.5%,57
+Denmark - 1st Division,Middelfart,7,71.4%,28.6%,40
+Denmark - 1st Division,AC Horsens,7,28.6%,71.4%,54
+Denmark - 1st Division,Hobro,6,66.7%,33.3%,39
+Denmark - 2nd Division,,Scored,1st half,2nd half,Avg. minute
+Denmark - 2nd Division,Thisted,9,55.6%,44.4%,47
+Denmark - 2nd Division,Roskilde,9,44.4%,55.6%,55
+Denmark - 2nd Division,Hellerup IK,8,37.5%,62.5%,52
+Denmark - 2nd Division,VSK Arhus,6,16.7%,83.3%,63
+Denmark - 2nd Division,Vendsyssel,6,33.3%,66.7%,62
 Denmark - 2nd Division,Skive,5,40.0%,60.0%,49
-Denmark - 2nd Division,Roskilde,5,20.0%,80.0%,67
-Denmark - 2nd Division,Vendsyssel,4,50.0%,50.0%,59
-Denmark - 2nd Division,Thisted,4,75.0%,25.0%,41
-Denmark - 2nd Division,VSK Arhus,2,0.0%,100.0%,78
-Denmark - 2nd Division,Naestved,2,0.0%,100.0%,86
-Denmark - 2nd Division,Helsingor,2,0.0%,100.0%,52
-Denmark - 2nd Division,Hellerup IK,2,50.0%,50.0%,52
+Denmark - 2nd Division,Naestved,5,0.0%,100.0%,76
+Denmark - 2nd Division,AB Copenhagen,5,60.0%,40.0%,45
+Denmark - 2nd Division,Ishoj,4,25.0%,75.0%,60
+Denmark - 2nd Division,Helsingor,3,33.3%,66.7%,40
+Denmark - 2nd Division,Brabrand,3,33.3%,66.7%,66
 Denmark - 2nd Division,Fremad Amager,2,50.0%,50.0%,59
-Denmark - 2nd Division,Brabrand,2,0.0%,100.0%,78
-Denmark - 2nd Division,Ishoj,1,0.0%,100.0%,57
-Denmark - 2nd Division,AB Copenhagen,1,0.0%,100.0%,89
-Ecuador - Liga Pro,U. Catolica,45,37.8%,62.2%,55
-Ecuador - Liga Pro,I. del Valle,43,58.1%,41.9%,43
-Ecuador - Liga Pro,LDU Quito,40,35.0%,65.0%,60
-Ecuador - Liga Pro,Barcelona SC,37,43.2%,56.8%,52
-Ecuador - Liga Pro,Libertad,36,30.6%,69.4%,55
-Ecuador - Liga Pro,Aucas,33,48.5%,51.5%,49
-Ecuador - Liga Pro,Manta,30,50.0%,50.0%,50
+Ecuador - Liga Pro,,Scored,1st half,2nd half,Avg. minute
+Ecuador - Liga Pro,U. Catolica,48,39.6%,60.4%,54
+Ecuador - Liga Pro,I. del Valle,46,58.7%,41.3%,43
+Ecuador - Liga Pro,LDU Quito,41,34.1%,65.9%,60
+Ecuador - Liga Pro,Libertad,40,32.5%,67.5%,53
+Ecuador - Liga Pro,Barcelona SC,38,42.1%,57.9%,53
+Ecuador - Liga Pro,Aucas,35,48.6%,51.4%,49
+Ecuador - Liga Pro,Manta,31,48.4%,51.6%,50
+Ecuador - Liga Pro,El Nacional,31,54.8%,45.2%,42
+Ecuador - Liga Pro,D. Cuenca,31,58.1%,41.9%,47
+Ecuador - Liga Pro,Orense,30,46.7%,53.3%,52
 Ecuador - Liga Pro,Cuniburo,29,48.3%,51.7%,45
-Ecuador - Liga Pro,D. Cuenca,28,57.1%,42.9%,46
-Ecuador - Liga Pro,El Nacional,27,51.9%,48.1%,43
-Ecuador - Liga Pro,Mushuc Runa,26,42.3%,57.7%,51
-Ecuador - Liga Pro,Orense,26,50.0%,50.0%,50
+Ecuador - Liga Pro,Mushuc Runa,28,42.9%,57.1%,51
+Ecuador - Liga Pro,Macara,25,40.0%,60.0%,51
+Ecuador - Liga Pro,Delfin,25,32.0%,68.0%,55
 Ecuador - Liga Pro,Tecnico U.,24,66.7%,33.3%,39
-Ecuador - Liga Pro,Delfin,24,29.2%,70.8%,56
-Ecuador - Liga Pro,Emelec,23,56.5%,43.5%,53
-Ecuador - Liga Pro,Macara,21,42.9%,57.1%,48
-Ecuador - Serie B,Vinotinto,33,36.4%,63.6%,55
+Ecuador - Liga Pro,Emelec,24,54.2%,45.8%,54
+Ecuador - Serie B,,Scored,1st half,2nd half,Avg. minute
+Ecuador - Serie B,Vinotinto,37,37.8%,62.2%,53
 Ecuador - Serie B,Guayaquil City,31,41.9%,58.1%,54
-Ecuador - Serie B,Gualaceo,27,33.3%,66.7%,54
-Ecuador - Serie B,Vargas Torres,26,53.8%,46.2%,43
-Ecuador - Serie B,Leones Norte,24,37.5%,62.5%,55
+Ecuador - Serie B,Gualaceo,28,35.7%,64.3%,53
+Ecuador - Serie B,Vargas Torres,27,51.9%,48.1%,44
+Ecuador - Serie B,Leones Norte,26,42.3%,57.7%,52
+Ecuador - Serie B,Nueve Octubre,23,43.5%,56.5%,51
 Ecuador - Serie B,Imbabura,23,52.2%,47.8%,44
 Ecuador - Serie B,I. Juniors,22,50.0%,50.0%,47
+Ecuador - Serie B,Chacaritas,21,57.1%,42.9%,43
 Ecuador - Serie B,San Antonio,20,45.0%,55.0%,51
-Ecuador - Serie B,Nueve Octubre,20,50.0%,50.0%,48
-Ecuador - Serie B,Chacaritas,20,55.0%,45.0%,46
-Ecuador - Serie B,Cumbaya,19,73.7%,26.3%,36
-Ecuador - Serie B,22 de Julio,19,15.8%,84.2%,68
-England - Championship,Bristol City,4,50.0%,50.0%,32
-England - Championship,Stoke City,3,0.0%,100.0%,83
-England - Championship,Millwall,2,0.0%,100.0%,67
-England - Championship,Southampton,2,0.0%,100.0%,90
-England - Championship,Leicester City,2,0.0%,100.0%,70
-England - Championship,Charlton,1,0.0%,100.0%,90
-England - Championship,Derby County,1,0.0%,100.0%,60
-England - Championship,Ipswich Town,1,0.0%,100.0%,90
-England - Championship,Middlesbrough,1,0.0%,100.0%,51
-England - Championship,Birmingham City,1,0.0%,100.0%,55
-England - Championship,Portsmouth,1,100.0%,0.0%,38
-England - Championship,Wrexham,1,100.0%,0.0%,22
-England - Championship,Preston,1,0.0%,100.0%,48
-England - Championship,QP Rangers,1,100.0%,0.0%,41
+Ecuador - Serie B,Cumbaya,20,75.0%,25.0%,36
+Ecuador - Serie B,22 de Julio,20,15.0%,85.0%,67
+England - Premier League,,Scored,1st half,2nd half,Avg. minute
+England - Premier League,Liverpool,7,28.6%,71.4%,62
+England - Premier League,Arsenal,6,50.0%,50.0%,48
+England - Premier League,Tottenham,5,60.0%,40.0%,43
+England - Premier League,Chelsea,5,60.0%,40.0%,37
+England - Premier League,Nottm Forest,4,75.0%,25.0%,37
+England - Premier League,Manchester City,4,50.0%,50.0%,53
+England - Premier League,Sunderland,3,0.0%,100.0%,75
+England - Premier League,Bournemouth,3,33.3%,66.7%,48
+England - Premier League,Fulham,2,0.0%,100.0%,82
+England - Premier League,Brentford,2,50.0%,50.0%,45
+England - Premier League,Burnley,2,0.0%,100.0%,68
+England - Premier League,Everton,2,50.0%,50.0%,38
+England - Premier League,Newcastle Utd,2,0.0%,100.0%,72
+England - Premier League,Crystal Palace,1,100.0%,0.0%,37
+England - Premier League,West Ham Utd,1,100.0%,0.0%,6
+England - Premier League,Brighton,1,0.0%,100.0%,55
+England - Premier League,Manchester Utd,1,0.0%,100.0%,58
+England - Premier League,Leeds Utd,1,0.0%,100.0%,84
+England - Championship,,Scored,1st half,2nd half,Avg. minute
+England - Championship,Coventry City,12,58.3%,41.7%,43
+England - Championship,Stoke City,8,12.5%,87.5%,62
+England - Championship,Middlesbrough,6,33.3%,66.7%,61
+England - Championship,West Brom,5,60.0%,40.0%,43
+England - Championship,Bristol City,5,60.0%,40.0%,33
+England - Championship,Derby County,5,40.0%,60.0%,51
+England - Championship,Wrexham,5,80.0%,20.0%,40
+England - Championship,Norwich City,4,50.0%,50.0%,40
+England - Championship,Blackburn,4,25.0%,75.0%,41
+England - Championship,Southampton,4,25.0%,75.0%,72
+England - Championship,Preston,4,50.0%,50.0%,38
+England - Championship,Leicester City,4,0.0%,100.0%,64
+England - Championship,Birmingham City,4,25.0%,75.0%,69
+England - Championship,Hull City,3,66.7%,33.3%,37
+England - Championship,Millwall,3,33.3%,66.7%,57
+England - Championship,Portsmouth,3,33.3%,66.7%,59
+England - Championship,QP Rangers,3,66.7%,33.3%,59
+England - Championship,Sheffield Wed,3,33.3%,66.7%,57
+England - Championship,Watford,3,100.0%,0.0%,26
+England - Championship,Ipswich Town,2,50.0%,50.0%,47
+England - Championship,Swansea City,2,0.0%,100.0%,74
+England - Championship,Oxford Utd,2,100.0%,0.0%,18
 England - Championship,Sheffield Utd,1,100.0%,0.0%,14
-England - Championship,Sheffield Wed,1,100.0%,0.0%,26
-England - Championship,West Brom,1,100.0%,0.0%,15
-England - Championship,Norwich City,1,0.0%,100.0%,55
-England - League One,Barnsley,6,33.3%,66.7%,56
-England - League One,Huddersfield,5,20.0%,80.0%,63
-England - League One,Stockport,4,50.0%,50.0%,48
-England - League One,Stevenage,4,75.0%,25.0%,38
-England - League One,Burton Albion,4,75.0%,25.0%,28
-England - League One,Exeter City,4,50.0%,50.0%,42
-England - League One,Luton Town,3,0.0%,100.0%,77
-England - League One,Wigan Athletic,3,66.7%,33.3%,39
-England - League One,Blackpool,3,66.7%,33.3%,36
-England - League One,Doncaster,3,0.0%,100.0%,85
-England - League One,Bolton,2,50.0%,50.0%,40
-England - League One,Bradford,2,100.0%,0.0%,10
-England - League One,Cardiff City,2,0.0%,100.0%,54
-England - League One,AFC Wimbledon,2,50.0%,50.0%,59
-England - League One,Lincoln City,2,50.0%,50.0%,44
-England - League One,Wycombe,2,0.0%,100.0%,71
-England - League One,Mansfield,2,0.0%,100.0%,66
-England - League One,Rotherham,2,100.0%,0.0%,21
-England - League One,Leyton Orient,2,50.0%,50.0%,39
-England - League One,Northampton,1,0.0%,100.0%,70
-England - League One,Peterborough,1,100.0%,0.0%,33
-England - League One,Plymouth,1,0.0%,100.0%,50
-England - League One,Port Vale,1,0.0%,100.0%,60
-England - League Two,Grimsby,6,33.3%,66.7%,58
-England - League Two,Tranmere,5,60.0%,40.0%,44
-England - League Two,Crewe Alexandra,5,100.0%,0.0%,28
-England - League Two,Fleetwood,4,75.0%,25.0%,33
-England - League Two,Harrogate,4,0.0%,100.0%,67
-England - League Two,Swindon Town,4,50.0%,50.0%,50
-England - League Two,Newport,3,0.0%,100.0%,62
-England - League Two,Salford City,3,66.7%,33.3%,36
-England - League Two,Chesterfield,3,33.3%,66.7%,53
-England - League Two,Cambridge Utd,3,33.3%,66.7%,42
-England - League Two,Notts County,2,0.0%,100.0%,68
-England - League Two,Milton Keynes,2,0.0%,100.0%,77
-England - League Two,Walsall,2,50.0%,50.0%,49
-England - League Two,Colchester Utd,2,50.0%,50.0%,48
-England - League Two,Bromley,2,50.0%,50.0%,63
-England - League Two,Gillingham,2,0.0%,100.0%,68
-England - League Two,Oldham,1,100.0%,0.0%,36
-England - League Two,Accrington,1,0.0%,100.0%,66
-England - League Two,Crawley Town,1,0.0%,100.0%,90
-England - League Two,Bristol Rovers,1,0.0%,100.0%,74
-England - National League,Southend Utd,3,33.3%,66.7%,38
-England - National League,Braintree Town,3,66.7%,33.3%,35
-England - National League,Altrincham,3,66.7%,33.3%,37
-England - National League,York City,2,50.0%,50.0%,34
-England - National League,Wealdstone,2,50.0%,50.0%,60
-England - National League,Sutton Utd,2,50.0%,50.0%,62
-England - National League,Solihull Moors,2,50.0%,50.0%,45
-England - National League,Scunthorpe,2,100.0%,0.0%,24
-England - National League,Rochdale,2,0.0%,100.0%,50
-England - National League,Forest Green,2,0.0%,100.0%,57
-England - National League,Carlisle Utd,2,0.0%,100.0%,69
-England - National League,Aldershot Town,2,0.0%,100.0%,66
-England - National League,Tamworth,1,100.0%,0.0%,36
-England - National League,Brackley Town,1,100.0%,0.0%,40
-FaroeIslands - Premier League,NSI Runavik,68,42.6%,57.4%,52
-FaroeIslands - Premier League,Klaksvik,59,52.5%,47.5%,46
-FaroeIslands - Premier League,HB Torshavn,42,31.0%,69.0%,55
-FaroeIslands - Premier League,B36 Torshavn,29,41.4%,58.6%,51
-FaroeIslands - Premier League,Vikingur,26,38.5%,61.5%,49
-FaroeIslands - Premier League,B68 Toftir,23,30.4%,69.6%,61
-FaroeIslands - Premier League,07 Vestur,21,71.4%,28.6%,38
-FaroeIslands - Premier League,TB Tvoroyri,18,44.4%,55.6%,50
-FaroeIslands - Premier League,Streymur,18,33.3%,66.7%,54
-FaroeIslands - Premier League,Suduroy,16,50.0%,50.0%,49
-Finland - Veikkausliiga,HJK Helsinki,45,37.8%,62.2%,52
-Finland - Veikkausliiga,Inter Turku,43,51.2%,48.8%,52
-Finland - Veikkausliiga,Ilves,40,32.5%,67.5%,54
-Finland - Veikkausliiga,SJK,37,37.8%,62.2%,53
-Finland - Veikkausliiga,KuPS,33,45.5%,54.5%,51
-Finland - Veikkausliiga,Gnistan,30,40.0%,60.0%,46
-Finland - Veikkausliiga,VPS,28,25.0%,75.0%,58
-Finland - Veikkausliiga,Oulu,25,32.0%,68.0%,55
-Finland - Veikkausliiga,Jaro,22,27.3%,72.7%,60
-Finland - Veikkausliiga,Haka,22,36.4%,63.6%,56
-Finland - Veikkausliiga,KTP,21,47.6%,52.4%,52
-Finland - Veikkausliiga,Mariehamn,19,31.6%,68.4%,56
-Finland - Ykkonen,TPS,49,59.2%,40.8%,43
-Finland - Ykkonen,Klubi-04,38,39.5%,60.5%,51
-Finland - Ykkonen,Lahti,35,48.6%,51.4%,50
-Finland - Ykkonen,Ekenas IF,34,47.1%,52.9%,52
-Finland - Ykkonen,SJK Akatemia,32,40.6%,59.4%,48
-Finland - Ykkonen,JaPS,31,32.3%,67.7%,52
-Finland - Ykkonen,PK-35,28,53.6%,46.4%,44
-Finland - Ykkonen,KaPa,26,38.5%,61.5%,51
-Finland - Ykkonen,JIPPO,26,46.2%,53.8%,46
-Finland - Ykkonen,SalPa,13,46.2%,53.8%,48
-Finland - Kakkonen,Inter Turku B,48,52.1%,47.9%,45
-Finland - Kakkonen,OLS Oulu,43,37.2%,62.8%,54
-Finland - Kakkonen,PKKU,35,37.1%,62.9%,57
-Finland - Kakkonen,Mikkelin,35,28.6%,71.4%,57
-Finland - Kakkonen,Jazz Pori,34,47.1%,52.9%,49
-Finland - Kakkonen,KuPS Ak.,33,39.4%,60.6%,54
-Finland - Kakkonen,KPV Kokkola,32,50.0%,50.0%,49
-Finland - Kakkonen,Tampere Utd,30,43.3%,56.7%,50
-Finland - Kakkonen,JJK,25,52.0%,48.0%,48
-Finland - Kakkonen,Rovaniemi,24,41.7%,58.3%,52
-Finland - Kakkonen,Atlantis,24,37.5%,62.5%,53
-Finland - Kakkonen,EPS,19,57.9%,42.1%,44
-Finland - Kakkonen - A,Honka,72,36.1%,63.9%,55
-Finland - Kakkonen - A,VJS,52,55.8%,44.2%,47
-Finland - Kakkonen - A,MYPA,44,40.9%,59.1%,53
-Finland - Kakkonen - A,Reipas,39,53.8%,46.2%,45
+England - Championship,Charlton,1,0.0%,100.0%,90
+England - League One,,Scored,1st half,2nd half,Avg. minute
+England - League One,Huddersfield,10,30.0%,70.0%,58
+England - League One,Mansfield,10,30.0%,70.0%,56
+England - League One,Stockport,9,55.6%,44.4%,47
+England - League One,Stevenage,8,37.5%,62.5%,60
+England - League One,Barnsley,8,37.5%,62.5%,54
+England - League One,Lincoln City,7,57.1%,42.9%,34
+England - League One,Wigan Athletic,7,71.4%,28.6%,40
+England - League One,Bradford,7,42.9%,57.1%,39
+England - League One,Cardiff City,7,14.3%,85.7%,61
+England - League One,Blackpool,6,83.3%,16.7%,27
+England - League One,Exeter City,6,33.3%,66.7%,55
+England - League One,AFC Wimbledon,6,50.0%,50.0%,53
+England - League One,Leyton Orient,6,33.3%,66.7%,54
+England - League One,Wycombe,5,20.0%,80.0%,62
+England - League One,Doncaster,5,0.0%,100.0%,73
+England - League One,Burton Albion,5,80.0%,20.0%,27
+England - League One,Bolton,5,20.0%,80.0%,62
+England - League One,Luton Town,5,20.0%,80.0%,65
+England - League One,Plymouth,4,0.0%,100.0%,64
+England - League One,Reading,4,50.0%,50.0%,64
+England - League One,Rotherham,4,50.0%,50.0%,46
+England - League One,Northampton,3,66.7%,33.3%,29
+England - League One,Peterborough,2,50.0%,50.0%,62
+England - League One,Port Vale,2,50.0%,50.0%,48
+England - League Two,,Scored,1st half,2nd half,Avg. minute
+England - League Two,Crewe Alexandra,10,80.0%,20.0%,29
+England - League Two,Grimsby,10,40.0%,60.0%,53
+England - League Two,Milton Keynes,10,40.0%,60.0%,51
+England - League Two,Chesterfield,9,33.3%,66.7%,57
+England - League Two,Notts County,9,44.4%,55.6%,47
+England - League Two,Bromley,8,50.0%,50.0%,52
+England - League Two,Gillingham,8,12.5%,87.5%,68
+England - League Two,Swindon Town,8,62.5%,37.5%,40
+England - League Two,Tranmere,8,37.5%,62.5%,52
+England - League Two,Fleetwood,8,62.5%,37.5%,40
+England - League Two,Harrogate,7,14.3%,85.7%,57
+England - League Two,Salford City,6,66.7%,33.3%,35
+England - League Two,Cambridge Utd,6,66.7%,33.3%,39
+England - League Two,Colchester Utd,5,40.0%,60.0%,50
+England - League Two,Newport,5,20.0%,80.0%,49
+England - League Two,Walsall,5,80.0%,20.0%,31
+England - League Two,Barrow,4,50.0%,50.0%,51
+England - League Two,Barnet,4,25.0%,75.0%,69
+England - League Two,Accrington,3,0.0%,100.0%,72
+England - League Two,Oldham,3,100.0%,0.0%,38
+England - League Two,Bristol Rovers,3,33.3%,66.7%,59
+England - League Two,Shrewsbury,2,50.0%,50.0%,61
+England - League Two,Crawley Town,2,50.0%,50.0%,68
+England - League Two,Cheltenham,1,0.0%,100.0%,73
+England - National League,,Scored,1st half,2nd half,Avg. minute
+England - National League,Aldershot Town,15,13.3%,86.7%,63
+England - National League,Carlisle Utd,12,25.0%,75.0%,54
+England - National League,Forest Green,11,27.3%,72.7%,58
+England - National League,Rochdale,10,30.0%,70.0%,50
+England - National League,Scunthorpe,9,55.6%,44.4%,38
+England - National League,Hartlepool,8,62.5%,37.5%,41
+England - National League,Gateshead FC,8,37.5%,62.5%,51
+England - National League,Southend Utd,7,42.9%,57.1%,38
+England - National League,Boreham Wood,7,42.9%,57.1%,60
+England - National League,Wealdstone,7,42.9%,57.1%,51
+England - National League,Altrincham,7,71.4%,28.6%,38
+England - National League,Tamworth,5,80.0%,20.0%,37
+England - National League,Boston Utd,5,20.0%,80.0%,53
+England - National League,York City,5,20.0%,80.0%,59
+England - National League,Braintree Town,5,60.0%,40.0%,45
+England - National League,Yeovil Town,5,80.0%,20.0%,42
+England - National League,Eastleigh,5,20.0%,80.0%,59
+England - National League,Brackley Town,5,40.0%,60.0%,51
+England - National League,Halifax Town,4,75.0%,25.0%,36
+England - National League,Solihull Moors,4,25.0%,75.0%,51
+England - National League,Sutton Utd,4,50.0%,50.0%,52
+England - National League,Woking,3,33.3%,66.7%,53
+England - National League,Morecambe,2,50.0%,50.0%,48
+England - National League,Truro City,1,100.0%,0.0%,34
+FaroeIslands - Premier League,,Scored,1st half,2nd half,Avg. minute
+FaroeIslands - Premier League,NSI Runavik,74,40.5%,59.5%,52
+FaroeIslands - Premier League,Klaksvik,62,51.6%,48.4%,47
+FaroeIslands - Premier League,HB Torshavn,45,28.9%,71.1%,56
+FaroeIslands - Premier League,Vikingur,30,36.7%,63.3%,50
+FaroeIslands - Premier League,B36 Torshavn,30,40.0%,60.0%,51
+FaroeIslands - Premier League,B68 Toftir,24,33.3%,66.7%,60
+FaroeIslands - Premier League,07 Vestur,24,66.7%,33.3%,42
+FaroeIslands - Premier League,Streymur,21,28.6%,71.4%,57
+FaroeIslands - Premier League,TB Tvoroyri,20,45.0%,55.0%,47
+FaroeIslands - Premier League,Suduroy,18,55.6%,44.4%,46
+Finland - Veikkausliiga,,Scored,1st half,2nd half,Avg. minute
+Finland - Veikkausliiga,HJK Helsinki,55,36.4%,63.6%,52
+Finland - Veikkausliiga,Ilves,45,31.1%,68.9%,55
+Finland - Veikkausliiga,SJK,44,40.9%,59.1%,52
+Finland - Veikkausliiga,Inter Turku,44,50.0%,50.0%,52
+Finland - Veikkausliiga,KuPS,38,42.1%,57.9%,53
+Finland - Veikkausliiga,Gnistan,33,39.4%,60.6%,47
+Finland - Veikkausliiga,VPS,31,25.8%,74.2%,57
+Finland - Veikkausliiga,Oulu,27,33.3%,66.7%,55
+Finland - Veikkausliiga,Haka,25,36.0%,64.0%,54
+Finland - Veikkausliiga,Mariehamn,24,29.2%,70.8%,57
+Finland - Veikkausliiga,KTP,23,52.2%,47.8%,49
+Finland - Veikkausliiga,Jaro,23,30.4%,69.6%,59
+Finland - Kakkonen,,Scored,1st half,2nd half,Avg. minute
+Finland - Kakkonen,Inter Turku B,50,50.0%,50.0%,45
+Finland - Kakkonen,OLS Oulu,46,39.1%,60.9%,53
+Finland - Kakkonen,PKKU,41,36.6%,63.4%,56
+Finland - Kakkonen,Mikkelin,39,30.8%,69.2%,56
+Finland - Kakkonen,KuPS Ak.,38,44.7%,55.3%,52
+Finland - Kakkonen,Jazz Pori,36,47.2%,52.8%,48
+Finland - Kakkonen,KPV Kokkola,35,48.6%,51.4%,49
+Finland - Kakkonen,Tampere Utd,31,41.9%,58.1%,51
+Finland - Kakkonen,JJK,28,50.0%,50.0%,49
+Finland - Kakkonen,Atlantis,28,42.9%,57.1%,50
+Finland - Kakkonen,Rovaniemi,27,44.4%,55.6%,50
+Finland - Kakkonen,EPS,24,58.3%,41.7%,44
+Finland - Kakkonen - A,,Scored,1st half,2nd half,Avg. minute
+Finland - Kakkonen - A,Honka,79,38.0%,62.0%,54
+Finland - Kakkonen - A,VJS,54,57.4%,42.6%,46
+Finland - Kakkonen - A,MYPA,47,38.3%,61.7%,55
+Finland - Kakkonen - A,Reipas,41,51.2%,48.8%,46
+Finland - Kakkonen - A,Vaajakoski,37,37.8%,62.2%,49
 Finland - Kakkonen - A,GrIFK,37,43.2%,56.8%,53
-Finland - Kakkonen - A,Vaajakoski,33,36.4%,63.6%,50
-Finland - Kakkonen - A,PuiU Helsinki,31,25.8%,74.2%,62
-Finland - Kakkonen - A,PEPO,24,54.2%,45.8%,47
+Finland - Kakkonen - A,PuiU Helsinki,32,28.1%,71.9%,60
+Finland - Kakkonen - A,PEPO,31,51.6%,48.4%,48
 Finland - Kakkonen - A,JPS,18,44.4%,55.6%,56
 Finland - Kakkonen - A,HaPK,13,69.2%,30.8%,41
-Finland - Kakkonen - B,Ilves B,43,44.2%,55.8%,47
-Finland - Kakkonen - B,TPV,42,52.4%,47.6%,47
-Finland - Kakkonen - B,HJS,35,37.1%,62.9%,52
-Finland - Kakkonen - B,PPJ,34,58.8%,41.2%,40
+Finland - Kakkonen - B,,Scored,1st half,2nd half,Avg. minute
+Finland - Kakkonen - B,TPV,53,47.2%,52.8%,49
+Finland - Kakkonen - B,Ilves B,45,42.2%,57.8%,48
+Finland - Kakkonen - B,HJS,39,35.9%,64.1%,52
+Finland - Kakkonen - B,PPJ,38,55.3%,44.7%,42
+Finland - Kakkonen - B,Kiffen,35,37.1%,62.9%,53
+Finland - Kakkonen - B,P-Iirot,34,47.1%,52.9%,51
 Finland - Kakkonen - B,MuSa,34,38.2%,61.8%,52
-Finland - Kakkonen - B,Kiffen,34,35.3%,64.7%,55
-Finland - Kakkonen - B,P-Iirot,33,48.5%,51.5%,51
-Finland - Kakkonen - B,NJS,27,29.6%,70.4%,53
+Finland - Kakkonen - B,NJS,28,32.1%,67.9%,52
 Finland - Kakkonen - B,HPS,23,43.5%,56.5%,53
 Finland - Kakkonen - B,Atlantis B,17,29.4%,70.6%,59
-Finland - Kakkonen - C,OsPa,47,44.7%,55.3%,49
+Finland - Kakkonen - C,,Scored,1st half,2nd half,Avg. minute
+Finland - Kakkonen - C,OsPa,50,44.0%,56.0%,50
+Finland - Kakkonen - C,VPS B,47,44.7%,55.3%,50
 Finland - Kakkonen - C,SJK Akatemia B,45,46.7%,53.3%,48
-Finland - Kakkonen - C,VPS B,43,44.2%,55.8%,50
-Finland - Kakkonen - C,TP-47,36,50.0%,50.0%,49
-Finland - Kakkonen - C,GBK Kokkola,30,36.7%,63.3%,54
+Finland - Kakkonen - C,TP-47,38,50.0%,50.0%,47
+Finland - Kakkonen - C,GBK Kokkola,33,42.4%,57.6%,51
+Finland - Kakkonen - C,JBK,28,57.1%,42.9%,47
 Finland - Kakkonen - C,VIFK,27,37.0%,63.0%,54
-Finland - Kakkonen - C,JBK,27,59.3%,40.7%,47
+Finland - Kakkonen - C,JS Hercules,26,38.5%,61.5%,51
 Finland - Kakkonen - C,Narpes Kraft,25,56.0%,44.0%,46
-Finland - Kakkonen - C,JS Hercules,24,37.5%,62.5%,51
-France - Ligue 2,Saint-Etienne,3,66.7%,33.3%,38
-France - Ligue 2,Le Mans,3,66.7%,33.3%,49
-France - Ligue 2,Laval,3,66.7%,33.3%,48
+France - Ligue 1,,Scored,1st half,2nd half,Avg. minute
+France - Ligue 1,Marseille,5,40.0%,60.0%,57
+France - Ligue 1,Lille,4,50.0%,50.0%,48
+France - Ligue 1,Lyon,4,75.0%,25.0%,46
+France - Ligue 1,Lorient,4,25.0%,75.0%,56
+France - Ligue 1,Nice,3,66.7%,33.3%,34
+France - Ligue 1,Monaco,3,33.3%,66.7%,56
+France - Ligue 1,Toulouse,3,0.0%,100.0%,69
+France - Ligue 1,Brest,3,33.3%,66.7%,53
+France - Ligue 1,Paris SG,2,0.0%,100.0%,58
+France - Ligue 1,Paris FC,2,50.0%,50.0%,43
+France - Ligue 1,Strasbourg,2,0.0%,100.0%,84
+France - Ligue 1,Lens,2,100.0%,0.0%,24
+France - Ligue 1,Le Havre,2,50.0%,50.0%,56
+France - Ligue 1,Auxerre,2,50.0%,50.0%,37
+France - Ligue 1,Rennes,1,0.0%,100.0%,90
+France - Ligue 1,Angers,1,100.0%,0.0%,9
+France - Ligue 2,,Scored,1st half,2nd half,Avg. minute
+France - Ligue 2,Saint-Etienne,8,37.5%,62.5%,49
+France - Ligue 2,Red Star,6,33.3%,66.7%,44
+France - Ligue 2,Pau FC,5,60.0%,40.0%,38
+France - Ligue 2,Laval,5,40.0%,60.0%,50
+France - Ligue 2,Le Mans,5,40.0%,60.0%,66
+France - Ligue 2,Amiens,5,40.0%,60.0%,53
+France - Ligue 2,USL Dunkerque,5,60.0%,40.0%,35
+France - Ligue 2,Clermont,4,50.0%,50.0%,44
+France - Ligue 2,Nancy,4,75.0%,25.0%,32
+France - Ligue 2,Reims,3,66.7%,33.3%,41
 France - Ligue 2,Guingamp,3,0.0%,100.0%,83
-France - Ligue 2,USL Dunkerque,2,50.0%,50.0%,36
-France - Ligue 2,Troyes,2,50.0%,50.0%,42
-France - Ligue 2,Reims,2,50.0%,50.0%,56
-France - Ligue 2,Pau FC,2,50.0%,50.0%,44
-France - Ligue 2,Clermont,2,100.0%,0.0%,22
-France - Ligue 2,Amiens,2,50.0%,50.0%,52
-France - Ligue 2,Red Star,1,100.0%,0.0%,11
-France - Ligue 2,Montpellier,1,100.0%,0.0%,38
-France - Ligue 2,Grenoble,1,100.0%,0.0%,34
-France - National,Caen,3,33.3%,66.7%,48
-France - National,Dijon,2,0.0%,100.0%,82
-France - National,Versailles,1,100.0%,0.0%,4
-France - National,Sochaux,1,0.0%,100.0%,89
-France - National,Paris 13 A.,1,100.0%,0.0%,14
-France - National,Orleans,1,0.0%,100.0%,49
-Georgia - Erovnuli Liga,Dila Gori,35,40.0%,60.0%,59
-Georgia - Erovnuli Liga,Iberia,31,48.4%,51.6%,49
+France - Ligue 2,Grenoble,3,33.3%,66.7%,57
+France - Ligue 2,Troyes,3,66.7%,33.3%,38
+France - Ligue 2,Annecy,3,100.0%,0.0%,20
+France - Ligue 2,Montpellier,3,33.3%,66.7%,61
+France - Ligue 2,Rodez Aveyron,1,100.0%,0.0%,27
+France - Ligue 2,SC Bastia,1,100.0%,0.0%,27
+France - National,,Scored,1st half,2nd half,Avg. minute
+France - National,Sochaux,7,71.4%,28.6%,49
+France - National,Versailles,5,40.0%,60.0%,47
+France - National,Caen,4,50.0%,50.0%,44
+France - National,Chateauroux,4,75.0%,25.0%,20
+France - National,Rouen,4,50.0%,50.0%,44
+France - National,Fleury-Merogis,4,75.0%,25.0%,36
+France - National,Paris 13 A.,3,33.3%,66.7%,51
+France - National,Dijon,3,33.3%,66.7%,55
+France - National,Aubagne,3,0.0%,100.0%,79
+France - National,Orleans,3,66.7%,33.3%,32
+France - National,Villefranche,3,33.3%,66.7%,65
+France - National,Valenciennes,3,0.0%,100.0%,78
+France - National,Le Puy,3,0.0%,100.0%,78
+France - National,Quevilly Rouen,2,50.0%,50.0%,57
+France - National,Concarneau,2,50.0%,50.0%,39
+France - National,Bourg-en-Bresse,2,0.0%,100.0%,82
+France - National,Stade Briochin,1,0.0%,100.0%,89
+Georgia - Erovnuli Liga,,Scored,1st half,2nd half,Avg. minute
+Georgia - Erovnuli Liga,Iberia,37,45.9%,54.1%,50
+Georgia - Erovnuli Liga,Dila Gori,36,38.9%,61.1%,59
+Georgia - Erovnuli Liga,Dinamo Tbilisi,31,54.8%,45.2%,47
 Georgia - Erovnuli Liga,Samgurali,29,58.6%,41.4%,43
-Georgia - Erovnuli Liga,Dinamo Tbilisi,28,57.1%,42.9%,46
-Georgia - Erovnuli Liga,Dinamo Batumi,23,56.5%,43.5%,45
-Georgia - Erovnuli Liga,Torpedo Kutaisi,22,45.5%,54.5%,47
-Georgia - Erovnuli Liga,Gagra,18,33.3%,66.7%,55
-Georgia - Erovnuli Liga,Gareji Sagarejo,17,41.2%,58.8%,52
-Georgia - Erovnuli Liga,Telavi,16,56.3%,43.8%,46
-Georgia - Erovnuli Liga,Kolkheti Poti,13,53.8%,46.2%,48
-Germany - 2. Bundesliga,Bielefeld,7,42.9%,57.1%,58
-Germany - 2. Bundesliga,Greuther Furth,5,60.0%,40.0%,33
+Georgia - Erovnuli Liga,Dinamo Batumi,24,58.3%,41.7%,44
+Georgia - Erovnuli Liga,Torpedo Kutaisi,23,43.5%,56.5%,47
+Georgia - Erovnuli Liga,Gagra,22,36.4%,63.6%,54
+Georgia - Erovnuli Liga,Gareji Sagarejo,19,42.1%,57.9%,50
+Georgia - Erovnuli Liga,Telavi,17,52.9%,47.1%,47
+Georgia - Erovnuli Liga,Kolkheti Poti,16,50.0%,50.0%,50
+Germany - Bundesliga,,Scored,1st half,2nd half,Avg. minute
+Germany - Bundesliga,Bayern Munich,6,50.0%,50.0%,53
+Germany - Bundesliga,E. Frankfurt,4,50.0%,50.0%,41
+Germany - Bundesliga,Wolfsburg,3,33.3%,66.7%,58
+Germany - Bundesliga,Sankt Pauli,3,0.0%,100.0%,75
+Germany - Bundesliga,FC Augsburg,3,100.0%,0.0%,40
+Germany - Bundesliga,Dortmund,3,33.3%,66.7%,58
+Germany - Bundesliga,Union Berlin,2,100.0%,0.0%,32
+Germany - Bundesliga,Hoffenheim,2,50.0%,50.0%,38
+Germany - Bundesliga,Werder Bremen,1,0.0%,100.0%,48
+Germany - Bundesliga,Stuttgart,1,0.0%,100.0%,86
+Germany - Bundesliga,Leverkusen,1,100.0%,0.0%,6
+Germany - Bundesliga,Heidenheim,1,100.0%,0.0%,29
+Germany - Bundesliga,Freiburg,1,0.0%,100.0%,58
+Germany - Bundesliga,FC Koln,1,0.0%,100.0%,90
+Germany - 2. Bundesliga,,Scored,1st half,2nd half,Avg. minute
+Germany - 2. Bundesliga,Bielefeld,8,37.5%,62.5%,58
+Germany - 2. Bundesliga,Hannover 96,6,33.3%,66.7%,63
 Germany - 2. Bundesliga,Darmstadt,5,40.0%,60.0%,49
+Germany - 2. Bundesliga,Dynamo Dresden,5,60.0%,40.0%,48
+Germany - 2. Bundesliga,Greuther Furth,5,60.0%,40.0%,33
+Germany - 2. Bundesliga,Karlsruher SC,5,60.0%,40.0%,38
+Germany - 2. Bundesliga,Preuss. Munster,5,60.0%,40.0%,50
+Germany - 2. Bundesliga,Schalke 04,4,50.0%,50.0%,48
+Germany - 2. Bundesliga,Paderborn,4,50.0%,50.0%,56
 Germany - 2. Bundesliga,Braunschweig,4,50.0%,50.0%,60
-Germany - 2. Bundesliga,Bochum,3,33.3%,66.7%,63
-Germany - 2. Bundesliga,Dynamo Dresden,3,66.7%,33.3%,43
-Germany - 2. Bundesliga,Hannover 96,3,0.0%,100.0%,75
-Germany - 2. Bundesliga,Karlsruher SC,3,66.7%,33.3%,39
-Germany - 2. Bundesliga,Paderborn,3,66.7%,33.3%,47
-Germany - 2. Bundesliga,Preuss. Munster,3,33.3%,66.7%,58
-Germany - 2. Bundesliga,Schalke 04,2,100.0%,0.0%,20
-Germany - 2. Bundesliga,Magdeburg,2,100.0%,0.0%,36
-Germany - 2. Bundesliga,Holstein Kiel,1,0.0%,100.0%,84
-Germany - 2. Bundesliga,Kaiserslautern,1,0.0%,100.0%,55
-Germany - 2. Bundesliga,Elversberg,1,0.0%,100.0%,90
-Germany - 2. Bundesliga,Dusseldorf,1,100.0%,0.0%,35
+Germany - 2. Bundesliga,Bochum,4,25.0%,75.0%,64
+Germany - 2. Bundesliga,Holstein Kiel,3,33.3%,66.7%,68
+Germany - 2. Bundesliga,Magdeburg,3,66.7%,33.3%,45
+Germany - 2. Bundesliga,Elversberg,3,33.3%,66.7%,74
+Germany - 2. Bundesliga,Dusseldorf,3,100.0%,0.0%,37
+Germany - 2. Bundesliga,Kaiserslautern,2,0.0%,100.0%,67
 Germany - 2. Bundesliga,Hertha Berlin,1,0.0%,100.0%,89
-Germany - 3. Liga,MSV Duisburg,6,33.3%,66.7%,48
+Germany - 2. Bundesliga,FC Nurnberg,1,0.0%,100.0%,74
+Germany - 3. Liga,,Scored,1st half,2nd half,Avg. minute
+Germany - 3. Liga,MSV Duisburg,8,37.5%,62.5%,50
+Germany - 3. Liga,Hoffenheim B,8,62.5%,37.5%,35
+Germany - 3. Liga,Wehen Wiesbaden,8,50.0%,50.0%,46
+Germany - 3. Liga,Energie Cottbus,6,33.3%,66.7%,57
+Germany - 3. Liga,1860 Munchen,6,33.3%,66.7%,58
+Germany - 3. Liga,RW Essen,6,16.7%,83.3%,62
+Germany - 3. Liga,Verl,5,60.0%,40.0%,35
 Germany - 3. Liga,Saarbrucken,5,60.0%,40.0%,45
-Germany - 3. Liga,Energie Cottbus,5,40.0%,60.0%,54
-Germany - 3. Liga,Wehen Wiesbaden,5,60.0%,40.0%,37
-Germany - 3. Liga,Verl,4,50.0%,50.0%,43
-Germany - 3. Liga,Hoffenheim B,4,50.0%,50.0%,41
-Germany - 3. Liga,1860 Munchen,4,50.0%,50.0%,43
+Germany - 3. Liga,Mannheim,4,75.0%,25.0%,40
+Germany - 3. Liga,Regensburg,4,25.0%,75.0%,68
+Germany - 3. Liga,VfB Stuttgart B,4,75.0%,25.0%,32
+Germany - 3. Liga,Ulm,3,33.3%,66.7%,68
+Germany - 3. Liga,FC Ingolstadt,3,33.3%,66.7%,46
 Germany - 3. Liga,Viktoria Koln,3,0.0%,100.0%,74
-Germany - 3. Liga,VfB Stuttgart B,3,66.7%,33.3%,41
+Germany - 3. Liga,Osnabruck,3,0.0%,100.0%,79
+Germany - 3. Liga,Havelse,2,50.0%,50.0%,48
+Germany - 3. Liga,Hansa Rostock,2,0.0%,100.0%,68
+Germany - 3. Liga,Erzgebirge Aue,2,0.0%,100.0%,74
 Germany - 3. Liga,Alemannia A.,2,50.0%,50.0%,53
-Germany - 3. Liga,FC Ingolstadt,2,50.0%,50.0%,41
-Germany - 3. Liga,Mannheim,2,50.0%,50.0%,45
-Germany - 3. Liga,RW Essen,2,50.0%,50.0%,48
-Germany - 3. Liga,Ulm,2,50.0%,50.0%,64
-Germany - 3. Liga,Havelse,1,0.0%,100.0%,90
-Germany - 3. Liga,Hansa Rostock,1,0.0%,100.0%,78
-Germany - 3. Liga,Regensburg,1,0.0%,100.0%,90
-Germany - 3. Liga,Osnabruck,1,0.0%,100.0%,75
-Guatemala - Liga Nacional - Apertura,Antigua GFC,7,57.1%,42.9%,44
-Guatemala - Liga Nacional - Apertura,Municipal,6,16.7%,83.3%,58
-Guatemala - Liga Nacional - Apertura,Mixco,6,33.3%,66.7%,55
-Guatemala - Liga Nacional - Apertura,Malacateco,5,40.0%,60.0%,50
-Guatemala - Liga Nacional - Apertura,Comunicaciones,5,60.0%,40.0%,38
-Guatemala - Liga Nacional - Apertura,Aurora,5,40.0%,60.0%,50
-Guatemala - Liga Nacional - Apertura,Achuapa,5,20.0%,80.0%,58
-Guatemala - Liga Nacional - Apertura,Guastatoya,3,100.0%,0.0%,16
-Guatemala - Liga Nacional - Apertura,Xelaju,2,50.0%,50.0%,40
-Guatemala - Liga Nacional - Apertura,Mictlan,2,0.0%,100.0%,74
-Guatemala - Liga Nacional - Apertura,Marquense,2,0.0%,100.0%,83
-Guatemala - Liga Nacional - Apertura,Coban Imperial,1,0.0%,100.0%,78
+Greece - Super League,,Scored,1st half,2nd half,Avg. minute
+Greece - Super League,Levadiakos,3,66.7%,33.3%,47
+Greece - Super League,Olympiakos,2,0.0%,100.0%,90
+Greece - Super League,Kifisia,2,100.0%,0.0%,21
+Greece - Super League,Atromitos,2,50.0%,50.0%,61
+Greece - Super League,Aris,2,0.0%,100.0%,66
+Greece - Super League,AEK Athens,2,100.0%,0.0%,25
+Greece - Super League,PAOK,1,0.0%,100.0%,47
+Guatemala - Liga Nacional - Apertura,,Scored,1st half,2nd half,Avg. minute
+Guatemala - Liga Nacional - Apertura,Antigua GFC,11,54.5%,45.5%,47
+Guatemala - Liga Nacional - Apertura,Municipal,10,40.0%,60.0%,46
+Guatemala - Liga Nacional - Apertura,Comunicaciones,9,66.7%,33.3%,37
+Guatemala - Liga Nacional - Apertura,Aurora,9,55.6%,44.4%,46
+Guatemala - Liga Nacional - Apertura,Achuapa,9,22.2%,77.8%,57
+Guatemala - Liga Nacional - Apertura,Xelaju,8,25.0%,75.0%,55
+Guatemala - Liga Nacional - Apertura,Malacateco,8,50.0%,50.0%,49
+Guatemala - Liga Nacional - Apertura,Mixco,7,28.6%,71.4%,56
+Guatemala - Liga Nacional - Apertura,Marquense,6,33.3%,66.7%,60
+Guatemala - Liga Nacional - Apertura,Mictlan,5,20.0%,80.0%,56
+Guatemala - Liga Nacional - Apertura,Guastatoya,4,75.0%,25.0%,27
+Guatemala - Liga Nacional - Apertura,Coban Imperial,4,50.0%,50.0%,46
+Guatemala - Liga Nacional - Clausura,,Scored,1st half,2nd half,Avg. minute
 Guatemala - Liga Nacional - Clausura,Malacateco,30,36.7%,63.3%,56
 Guatemala - Liga Nacional - Clausura,Antigua GFC,29,44.8%,55.2%,49
 Guatemala - Liga Nacional - Clausura,Xelaju,28,57.1%,42.9%,47
@@ -796,6 +949,7 @@ Guatemala - Liga Nacional - Clausura,Mixco,21,42.9%,57.1%,47
 Guatemala - Liga Nacional - Clausura,Xinabajul,18,27.8%,72.2%,56
 Guatemala - Liga Nacional - Clausura,Marquense,18,61.1%,38.9%,44
 Guatemala - Liga Nacional - Clausura,Achuapa,18,44.4%,55.6%,52
+Hong Kong - Premier League,,Scored,1st half,2nd half,Avg. minute
 Hong Kong - Premier League,Tai Po,62,51.6%,48.4%,49
 Hong Kong - Premier League,Kitchee,55,49.1%,50.9%,50
 Hong Kong - Premier League,LM Warriors,54,29.6%,70.4%,59
@@ -805,224 +959,273 @@ Hong Kong - Premier League,North District,37,51.4%,48.6%,47
 Hong Kong - Premier League,Kowloon City,36,50.0%,50.0%,49
 Hong Kong - Premier League,Southern D.,34,50.0%,50.0%,48
 Hong Kong - Premier League,Hong Kong FC,21,66.7%,33.3%,43
-Hungary - NB I,Paks,10,60.0%,40.0%,49
-Hungary - NB I,Ferencvaros,8,75.0%,25.0%,38
-Hungary - NB I,Zalaegerszegi,6,50.0%,50.0%,51
-Hungary - NB I,Puskas A.,6,33.3%,66.7%,54
-Hungary - NB I,MTK Budapest,6,66.7%,33.3%,40
-Hungary - NB I,Debrecen,6,33.3%,66.7%,57
-Hungary - NB I,Ujpest,5,60.0%,40.0%,49
-Hungary - NB I,Gyor,5,40.0%,60.0%,63
-Hungary - NB I,Nyiregyhaza,4,50.0%,50.0%,50
-Hungary - NB I,Kisvarda,4,100.0%,0.0%,24
-Hungary - NB I,DVTK,3,66.7%,33.3%,46
-Hungary - NB I,Kazincbarcika,2,50.0%,50.0%,68
-Iceland - Urvalsdeild,Valur,46,45.7%,54.3%,49
-Iceland - Urvalsdeild,KR Reykjavik,39,43.6%,56.4%,53
-Iceland - Urvalsdeild,Stjarnan,34,41.2%,58.8%,50
-Iceland - Urvalsdeild,Vikingur R.,33,51.5%,48.5%,45
-Iceland - Urvalsdeild,Hafnarfjordur,31,45.2%,54.8%,51
-Iceland - Urvalsdeild,Breidablik,30,53.3%,46.7%,47
+Hungary - NB I,,Scored,1st half,2nd half,Avg. minute
+Hungary - NB I,Paks,15,53.3%,46.7%,50
+Hungary - NB I,Gyor,12,50.0%,50.0%,55
+Hungary - NB I,MTK Budapest,10,50.0%,50.0%,46
+Hungary - NB I,Debrecen,10,40.0%,60.0%,58
+Hungary - NB I,Zalaegerszegi,9,44.4%,55.6%,55
+Hungary - NB I,Ujpest,9,55.6%,44.4%,44
+Hungary - NB I,Puskas A.,9,33.3%,66.7%,53
+Hungary - NB I,Ferencvaros,9,77.8%,22.2%,37
+Hungary - NB I,DVTK,9,33.3%,66.7%,63
+Hungary - NB I,Nyiregyhaza,7,28.6%,71.4%,57
+Hungary - NB I,Kisvarda,5,80.0%,20.0%,33
+Hungary - NB I,Kazincbarcika,4,75.0%,25.0%,42
+Iceland - Urvalsdeild,,Scored,1st half,2nd half,Avg. minute
+Iceland - Urvalsdeild,Valur,51,41.2%,58.8%,51
+Iceland - Urvalsdeild,KR Reykjavik,41,43.9%,56.1%,52
+Iceland - Urvalsdeild,Vikingur R.,38,50.0%,50.0%,45
+Iceland - Urvalsdeild,Stjarnan,38,44.7%,55.3%,48
+Iceland - Urvalsdeild,Hafnarfjordur,37,40.5%,59.5%,52
+Iceland - Urvalsdeild,Breidablik,34,52.9%,47.1%,48
 Iceland - Urvalsdeild,Fram,28,53.6%,46.4%,47
-Iceland - Urvalsdeild,Afturelding,21,28.6%,71.4%,53
+Iceland - Urvalsdeild,Afturelding,27,29.6%,70.4%,56
+Iceland - Urvalsdeild,KA Akureyri,23,43.5%,56.5%,56
+Iceland - Urvalsdeild,Vestri,21,57.1%,42.9%,47
+Iceland - Urvalsdeild,IBV,21,47.6%,52.4%,50
 Iceland - Urvalsdeild,IA Akranes,20,55.0%,45.0%,46
-Iceland - Urvalsdeild,Vestri,19,57.9%,42.1%,48
-Iceland - Urvalsdeild,KA Akureyri,18,38.9%,61.1%,58
-Iceland - Urvalsdeild,IBV,16,50.0%,50.0%,49
-Iceland - 1. Deild,Njardvik,38,44.7%,55.3%,51
-Iceland - 1. Deild,Thor Akureyri,37,51.4%,48.6%,48
-Iceland - 1. Deild,Grindavik,31,32.3%,67.7%,55
-Iceland - 1. Deild,Volsungur,30,43.3%,56.7%,57
-Iceland - 1. Deild,Throttur R.,30,36.7%,63.3%,55
-Iceland - 1. Deild,Keflavik,30,50.0%,50.0%,47
-Iceland - 1. Deild,IR Reykjavik,30,46.7%,53.3%,48
-Iceland - 1. Deild,HK Kopavogur,29,58.6%,41.4%,48
-Iceland - 1. Deild,Fjolnir,25,60.0%,40.0%,41
-Iceland - 1. Deild,Fylkir,21,38.1%,61.9%,51
-Iceland - 1. Deild,Selfoss,16,68.8%,31.3%,38
-Iceland - 1. Deild,Leiknir R.,15,20.0%,80.0%,60
+Iceland - 1. Deild,,Scored,1st half,2nd half,Avg. minute
+Iceland - 1. Deild,Njardvik,43,41.9%,58.1%,52
+Iceland - 1. Deild,Thor Akureyri,41,51.2%,48.8%,47
+Iceland - 1. Deild,Keflavik,41,48.8%,51.2%,48
+Iceland - 1. Deild,Throttur R.,38,39.5%,60.5%,54
+Iceland - 1. Deild,HK Kopavogur,37,54.1%,45.9%,51
+Iceland - 1. Deild,Grindavik,34,32.4%,67.6%,54
+Iceland - 1. Deild,Volsungur,33,42.4%,57.6%,57
+Iceland - 1. Deild,IR Reykjavik,32,46.9%,53.1%,47
+Iceland - 1. Deild,Fylkir,29,41.4%,58.6%,51
+Iceland - 1. Deild,Fjolnir,29,62.1%,37.9%,40
+Iceland - 1. Deild,Selfoss,21,61.9%,38.1%,41
+Iceland - 1. Deild,Leiknir R.,19,21.1%,78.9%,60
+Ireland - Premier Division,,Scored,1st half,2nd half,Avg. minute
 Ireland - Premier Division,Shamrock Rovers,46,45.7%,54.3%,51
-Ireland - Premier Division,Derry City,36,50.0%,50.0%,45
+Ireland - Premier Division,Derry City,38,50.0%,50.0%,47
+Ireland - Premier Division,Bohemians,36,41.7%,58.3%,53
+Ireland - Premier Division,Sligo Rovers,35,45.7%,54.3%,52
 Ireland - Premier Division,Shelbourne,34,52.9%,47.1%,40
-Ireland - Premier Division,Sligo Rovers,33,48.5%,51.5%,50
-Ireland - Premier Division,Bohemians,33,42.4%,57.6%,52
-Ireland - Premier Division,Waterford,32,56.3%,43.8%,42
-Ireland - Premier Division,St. Patricks,32,56.3%,43.8%,49
+Ireland - Premier Division,Waterford,33,57.6%,42.4%,42
+Ireland - Premier Division,St. Patricks,33,54.5%,45.5%,51
+Ireland - Premier Division,Galway Utd,30,46.7%,53.3%,50
 Ireland - Premier Division,Drogheda Utd,30,53.3%,46.7%,48
-Ireland - Premier Division,Galway Utd,29,44.8%,55.2%,51
 Ireland - Premier Division,Cork City,27,33.3%,66.7%,54
-Ireland - First Division,Dundalk,50,46.0%,54.0%,51
-Ireland - First Division,Cobh Ramblers,50,58.0%,42.0%,42
-Ireland - First Division,Bray Wanderers,46,45.7%,54.3%,49
+Ireland - First Division,,Scored,1st half,2nd half,Avg. minute
+Ireland - First Division,Dundalk,57,47.4%,52.6%,50
+Ireland - First Division,Cobh Ramblers,52,57.7%,42.3%,42
+Ireland - First Division,Bray Wanderers,47,46.8%,53.2%,48
 Ireland - First Division,Treaty Utd,41,26.8%,73.2%,59
 Ireland - First Division,Wexford,33,36.4%,63.6%,54
-Ireland - First Division,Finn Harps,30,33.3%,66.7%,52
-Ireland - First Division,Kerry,29,62.1%,37.9%,43
-Ireland - First Division,UC Dublin,27,40.7%,59.3%,55
+Ireland - First Division,Finn Harps,32,34.4%,65.6%,52
+Ireland - First Division,Kerry,30,60.0%,40.0%,43
+Ireland - First Division,UC Dublin,29,41.4%,58.6%,55
 Ireland - First Division,Longford Town,27,44.4%,55.6%,50
-Ireland - First Division,Athlone Town,20,50.0%,50.0%,49
-Israel - Ligat HaAl,M. Tel Aviv,83,47.0%,53.0%,50
-Israel - Ligat HaAl,H. Beer Sheva,75,34.7%,65.3%,56
-Israel - Ligat HaAl,Maccabi Haifa,65,38.5%,61.5%,55
-Israel - Ligat HaAl,B. Jerusalem,58,39.7%,60.3%,53
-Israel - Ligat HaAl,Maccabi Netanya,51,51.0%,49.0%,50
-Israel - Ligat HaAl,Hapoel Haifa,51,54.9%,45.1%,44
-Israel - Ligat HaAl,Ashdod,48,56.3%,43.8%,45
-Israel - Ligat HaAl,H. Jerusalem,47,48.9%,51.1%,46
-Israel - Ligat HaAl,M. Bnei Raina,36,52.8%,47.2%,45
-Israel - Ligat HaAl,Kiryat Shmona,32,43.8%,56.3%,51
-Israel - Ligat HaAl,M. Petah Tikva,31,41.9%,58.1%,50
-Israel - Ligat HaAl,Hapoel Hadera,31,51.6%,48.4%,48
-Israel - Ligat HaAl,Ironi Tiberias,28,39.3%,60.7%,55
-Israel - Ligat HaAl,Sakhnin,26,53.8%,46.2%,48
-Italy - Serie C - Group A,Atalanta B,65,36.9%,63.1%,54
-Italy - Serie C - Group A,Padova,65,41.5%,58.5%,50
-Italy - Serie C - Group A,Vicenza,59,49.2%,50.8%,49
-Italy - Serie C - Group A,FeralpiSalo,53,37.7%,62.3%,54
-Italy - Serie C - Group A,Virtus Verona,52,48.1%,51.9%,47
-Italy - Serie C - Group A,Trento,47,29.8%,70.2%,54
-Italy - Serie C - Group A,AlbinoLeffe,46,32.6%,67.4%,56
-Italy - Serie C - Group A,Arzignano,45,42.2%,57.8%,53
-Italy - Serie C - Group A,Giana Erminio,44,45.5%,54.5%,50
-Italy - Serie C - Group A,Novara,42,47.6%,52.4%,48
-Italy - Serie C - Group A,Lumezzane,40,42.5%,57.5%,50
-Italy - Serie C - Group A,Triestina,40,40.0%,60.0%,51
-Italy - Serie C - Group A,Caldiero Terme,39,43.6%,56.4%,51
-Italy - Serie C - Group A,Pergolettese,36,66.7%,33.3%,40
-Italy - Serie C - Group A,Lecco,36,41.7%,58.3%,50
-Italy - Serie C - Group A,Renate,35,42.9%,57.1%,53
-Italy - Serie C - Group A,Clodiense,34,41.2%,58.8%,54
-Italy - Serie C - Group A,Alcione,33,57.6%,42.4%,42
-Italy - Serie C - Group A,Pro Patria,32,46.9%,53.1%,45
-Italy - Serie C - Group A,Pro Vercelli,30,43.3%,56.7%,51
-Italy - Serie C - Group B,Ternana,64,43.8%,56.3%,50
-Italy - Serie C - Group B,Entella,61,47.5%,52.5%,49
-Italy - Serie C - Group B,Pescara,55,41.8%,58.2%,53
-Italy - Serie C - Group B,Torres,55,43.6%,56.4%,52
-Italy - Serie C - Group B,Pontedera,54,46.3%,53.7%,49
-Italy - Serie C - Group B,Arezzo,48,43.8%,56.3%,54
-Italy - Serie C - Group B,Pianese,48,54.2%,45.8%,46
-Italy - Serie C - Group B,Lucchese,47,48.9%,51.1%,44
-Italy - Serie C - Group B,Pineto,46,56.5%,43.5%,44
-Italy - Serie C - Group B,Rimini,45,44.4%,55.6%,48
-Italy - Serie C - Group B,Vis Pesaro,44,43.2%,56.8%,50
-Italy - Serie C - Group B,Perugia,43,37.2%,62.8%,55
-Italy - Serie C - Group B,Athletic Carpi,41,46.3%,53.7%,50
-Italy - Serie C - Group B,SPAL,41,39.0%,61.0%,55
-Italy - Serie C - Group B,Ascoli,37,37.8%,62.2%,49
-Italy - Serie C - Group B,AC Milan B,36,52.8%,47.2%,49
-Italy - Serie C - Group B,Campobasso,36,36.1%,63.9%,57
-Italy - Serie C - Group B,Sestri Levante,34,38.2%,61.8%,52
-Italy - Serie C - Group B,Gubbio,32,37.5%,62.5%,54
-Italy - Serie C - Group B,Legnago Salus,30,30.0%,70.0%,59
-Japan - J1 League,Kyoto Sanga,42,33.3%,66.7%,56
-Japan - J1 League,Cerezo Osaka,40,47.5%,52.5%,48
-Japan - J1 League,K. Frontale,40,37.5%,62.5%,55
-Japan - J1 League,Kashima Antlers,37,48.6%,51.4%,50
-Japan - J1 League,Machida Zelvia,36,50.0%,50.0%,49
-Japan - J1 League,Kashiwa Reysol,35,42.9%,57.1%,53
-Japan - J1 League,Urawa RD,34,44.1%,55.9%,51
-Japan - J1 League,Vissel Kobe,34,38.2%,61.8%,54
-Japan - J1 League,Shimizu S-Pulse,29,41.4%,58.6%,53
-Japan - J1 League,S. Hiroshima,29,31.0%,69.0%,57
-Japan - J1 League,Nagoya G.,29,31.0%,69.0%,56
-Japan - J1 League,Gamba Osaka,29,44.8%,55.2%,49
-Japan - J1 League,FC Tokyo,27,29.6%,70.4%,60
-Japan - J1 League,Avispa Fukuoka,26,42.3%,57.7%,56
-Japan - J1 League,Albirex Niigata,25,56.0%,44.0%,45
-Japan - J1 League,Yokohama M.,23,56.5%,43.5%,49
-Japan - J1 League,Fagiano Okayama,23,47.8%,52.2%,49
-Japan - J1 League,Shonan Bellmare,20,40.0%,60.0%,52
+Ireland - First Division,Athlone Town,21,47.6%,52.4%,50
+Indonesia - Liga 1,,Scored,1st half,2nd half,Avg. minute
+Indonesia - Liga 1,Persija,8,25.0%,75.0%,67
+Indonesia - Liga 1,Malut United,7,42.9%,57.1%,52
+Indonesia - Liga 1,Arema,7,42.9%,57.1%,57
+Indonesia - Liga 1,Bali Utd,6,33.3%,66.7%,61
+Indonesia - Liga 1,Persebaya S.,6,50.0%,50.0%,50
+Indonesia - Liga 1,Borneo,5,60.0%,40.0%,48
+Indonesia - Liga 1,Persis Solo,4,50.0%,50.0%,45
+Indonesia - Liga 1,Persijap,4,0.0%,100.0%,81
+Indonesia - Liga 1,Madura Utd,4,50.0%,50.0%,46
+Indonesia - Liga 1,Dewa Utd,4,50.0%,50.0%,53
+Indonesia - Liga 1,Persib,4,25.0%,75.0%,78
+Indonesia - Liga 1,Persik Kediri,3,0.0%,100.0%,75
+Indonesia - Liga 1,Semen Padang,3,33.3%,66.7%,68
+Indonesia - Liga 1,PSBS Biak N.,3,33.3%,66.7%,63
+Indonesia - Liga 1,PSIM Yogyakarta,3,0.0%,100.0%,81
+Indonesia - Liga 1,PSM,3,66.7%,33.3%,41
+Indonesia - Liga 1,Bhayangkara S.,2,50.0%,50.0%,34
+Indonesia - Liga 1,Persita,1,0.0%,100.0%,64
+Israel - Ligat HaAl,,Scored,1st half,2nd half,Avg. minute
+Israel - Ligat HaAl,Maccabi Haifa,4,25.0%,75.0%,56
+Israel - Ligat HaAl,H. Beer Sheva,4,75.0%,25.0%,46
+Israel - Ligat HaAl,Maccabi Netanya,2,100.0%,0.0%,14
+Israel - Ligat HaAl,Hapoel Tel Aviv,2,0.0%,100.0%,66
+Israel - Ligat HaAl,B. Jerusalem,2,100.0%,0.0%,32
+Israel - Ligat HaAl,Ashdod,2,0.0%,100.0%,64
+Israel - Ligat HaAl,Sakhnin,1,100.0%,0.0%,44
+Israel - Ligat HaAl,Kiryat Shmona,1,0.0%,100.0%,48
+Israel - Ligat HaAl,Ironi Tiberias,1,0.0%,100.0%,54
+Israel - Ligat HaAl,H. Jerusalem,1,100.0%,0.0%,38
+Italy - Serie A,,Scored,1st half,2nd half,Avg. minute
+Italy - Serie A,Inter Milan,5,40.0%,60.0%,48
+Italy - Serie A,Napoli,2,50.0%,50.0%,37
+Italy - Serie A,Juventus,2,0.0%,100.0%,72
+Italy - Serie A,Cremonese,2,50.0%,50.0%,44
+Italy - Serie A,Como,2,0.0%,100.0%,60
+Italy - Serie A,Udinese,1,0.0%,100.0%,53
+Italy - Serie A,Pisa,1,100.0%,0.0%,26
+Italy - Serie A,Hellas Verona,1,0.0%,100.0%,73
+Italy - Serie A,Fiorentina,1,0.0%,100.0%,68
+Italy - Serie A,Cagliari,1,0.0%,100.0%,90
+Italy - Serie A,Atalanta,1,0.0%,100.0%,50
+Italy - Serie A,AS Roma,1,0.0%,100.0%,53
+Italy - Serie A,AC Milan,1,100.0%,0.0%,45
+Italy - Serie B,,Scored,1st half,2nd half,Avg. minute
+Italy - Serie B,Cesena,3,33.3%,66.7%,47
+Italy - Serie B,Empoli,3,66.7%,33.3%,42
+Italy - Serie B,Modena,2,0.0%,100.0%,82
+Italy - Serie B,Carrarese,2,50.0%,50.0%,58
+Italy - Serie B,Frosinone,2,100.0%,0.0%,16
+Italy - Serie B,Venezia,2,100.0%,0.0%,26
+Italy - Serie B,Palermo,2,50.0%,50.0%,51
+Italy - Serie B,Monza,1,0.0%,100.0%,56
+Italy - Serie B,Padova,1,100.0%,0.0%,25
+Italy - Serie B,Bari,1,100.0%,0.0%,26
+Italy - Serie B,Entella,1,0.0%,100.0%,60
+Italy - Serie B,Pescara,1,100.0%,0.0%,35
+Italy - Serie B,Reggiana,1,0.0%,100.0%,62
+Italy - Serie B,Catanzaro,1,0.0%,100.0%,61
+Italy - Serie B,Sudtirol,1,100.0%,0.0%,13
+Italy - Serie B,Juve Stabia,1,0.0%,100.0%,47
+Italy - Serie C - Group A,,Scored,1st half,2nd half,Avg. minute
+Italy - Serie C - Group A,Vicenza,5,40.0%,60.0%,59
+Italy - Serie C - Group A,Pro Vercelli,3,33.3%,66.7%,65
+Italy - Serie C - Group A,Lecco,2,100.0%,0.0%,19
+Italy - Serie C - Group A,Trento,2,0.0%,100.0%,59
+Italy - Serie C - Group A,Arzignano,2,0.0%,100.0%,78
+Italy - Serie C - Group A,Pro Patria,2,50.0%,50.0%,48
+Italy - Serie C - Group A,D. Bellunesi,2,100.0%,0.0%,44
+Italy - Serie C - Group A,AlbinoLeffe,2,50.0%,50.0%,47
+Italy - Serie C - Group A,Alcione,1,100.0%,0.0%,13
+Italy - Serie C - Group A,Cittadella,1,0.0%,100.0%,84
+Italy - Serie C - Group A,Inter II,1,100.0%,0.0%,22
+Italy - Serie C - Group A,Ospitaletto,1,0.0%,100.0%,57
+Italy - Serie C - Group A,Virtus Verona,1,0.0%,100.0%,90
+Italy - Serie C - Group A,Renate,1,100.0%,0.0%,45
+Italy - Serie C - Group A,Union Brescia,1,100.0%,0.0%,41
+Italy - Serie C - Group A,Novara,1,0.0%,100.0%,64
+Italy - Serie C - Group B,,Scored,1st half,2nd half,Avg. minute
+Italy - Serie C - Group B,Ravenna,3,100.0%,0.0%,20
+Italy - Serie C - Group B,Campobasso,2,50.0%,50.0%,62
+Italy - Serie C - Group B,Vis Pesaro,1,100.0%,0.0%,8
+Italy - Serie C - Group B,Torres,1,100.0%,0.0%,30
+Italy - Serie C - Group B,Sambenedettese,1,100.0%,0.0%,35
+Italy - Serie C - Group B,Pineto,1,100.0%,0.0%,17
+Italy - Serie C - Group B,Livorno,1,0.0%,100.0%,48
+Italy - Serie C - Group B,Juventus U23,1,0.0%,100.0%,90
+Italy - Serie C - Group B,Gubbio,1,0.0%,100.0%,52
+Italy - Serie C - Group B,Athletic Carpi,1,0.0%,100.0%,77
+Italy - Serie C - Group B,Arezzo,1,0.0%,100.0%,50
+Japan - J1 League,,Scored,1st half,2nd half,Avg. minute
+Japan - J1 League,Kyoto Sanga,47,36.2%,63.8%,54
+Japan - J1 League,K. Frontale,45,40.0%,60.0%,54
+Japan - J1 League,Machida Zelvia,42,50.0%,50.0%,50
+Japan - J1 League,Cerezo Osaka,41,48.8%,51.2%,47
+Japan - J1 League,Kashima Antlers,40,47.5%,52.5%,51
+Japan - J1 League,Kashiwa Reysol,40,37.5%,62.5%,57
+Japan - J1 League,Urawa RD,38,50.0%,50.0%,48
+Japan - J1 League,Vissel Kobe,36,36.1%,63.9%,55
+Japan - J1 League,Nagoya G.,33,33.3%,66.7%,56
+Japan - J1 League,S. Hiroshima,33,33.3%,66.7%,56
+Japan - J1 League,Gamba Osaka,33,42.4%,57.6%,51
+Japan - J1 League,Shimizu S-Pulse,30,40.0%,60.0%,55
+Japan - J1 League,FC Tokyo,29,31.0%,69.0%,58
+Japan - J1 League,Avispa Fukuoka,27,40.7%,59.3%,55
+Japan - J1 League,Albirex Niigata,27,59.3%,40.7%,43
+Japan - J1 League,Yokohama M.,26,57.7%,42.3%,48
+Japan - J1 League,Fagiano Okayama,26,46.2%,53.8%,49
+Japan - J1 League,Shonan Bellmare,22,36.4%,63.6%,54
+Japan - J1 League,Yokohama FC,18,44.4%,55.6%,49
 Japan - J1 League,Tokyo Verdy,16,43.8%,56.3%,52
-Japan - J1 League,Yokohama FC,15,46.7%,53.3%,45
-Japan - J2 League,V-V. Nagasaki,41,29.3%,70.7%,57
-Japan - J2 League,Mito Hollyhock,39,46.2%,53.8%,49
-Japan - J2 League,Jubilo Iwata,38,44.7%,55.3%,53
-Japan - J2 League,JEF Utd Chiba,36,47.2%,52.8%,47
-Japan - J2 League,M. Yamagata,35,54.3%,45.7%,48
-Japan - J2 League,Omiya Ardija,34,35.3%,64.7%,54
-Japan - J2 League,Iwaki,33,33.3%,66.7%,56
-Japan - J2 League,Blaublitz Akita,32,37.5%,62.5%,51
-Japan - J2 League,C. Sapporo,32,34.4%,65.6%,59
-Japan - J2 League,FC Imabari,31,35.5%,64.5%,55
-Japan - J2 League,R. Kumamoto,30,40.0%,60.0%,53
-Japan - J2 League,Vegalta Sendai,28,50.0%,50.0%,49
-Japan - J2 League,Fujieda MYFC,28,64.3%,35.7%,43
-Japan - J2 League,Sagan Tosu,26,69.2%,30.8%,42
-Japan - J2 League,Tokushima V.,26,46.2%,53.8%,49
-Japan - J2 League,Ventforet Kofu,25,32.0%,68.0%,49
-Japan - J2 League,Ehime FC,23,39.1%,60.9%,49
+Japan - J2 League,,Scored,1st half,2nd half,Avg. minute
+Japan - J2 League,V-V. Nagasaki,44,29.5%,70.5%,57
+Japan - J2 League,Jubilo Iwata,43,48.8%,51.2%,50
+Japan - J2 League,Mito Hollyhock,42,45.2%,54.8%,50
+Japan - J2 League,Omiya Ardija,38,34.2%,65.8%,56
+Japan - J2 League,Iwaki,37,35.1%,64.9%,56
+Japan - J2 League,JEF Utd Chiba,37,45.9%,54.1%,48
+Japan - J2 League,M. Yamagata,36,52.8%,47.2%,50
+Japan - J2 League,Blaublitz Akita,35,40.0%,60.0%,50
+Japan - J2 League,FC Imabari,35,40.0%,60.0%,53
+Japan - J2 League,C. Sapporo,34,38.2%,61.8%,57
+Japan - J2 League,Fujieda MYFC,33,57.6%,42.4%,46
+Japan - J2 League,R. Kumamoto,32,43.8%,56.3%,51
+Japan - J2 League,Vegalta Sendai,31,51.6%,48.4%,48
+Japan - J2 League,Sagan Tosu,29,65.5%,34.5%,44
+Japan - J2 League,Ventforet Kofu,28,32.1%,67.9%,50
+Japan - J2 League,Tokushima V.,27,48.1%,51.9%,48
+Japan - J2 League,Ehime FC,24,41.7%,58.3%,48
+Japan - J2 League,R. Yamaguchi,23,47.8%,52.2%,51
 Japan - J2 League,Oita Trinita,22,50.0%,50.0%,45
-Japan - J2 League,R. Yamaguchi,21,47.6%,52.4%,51
-Japan - J2 League,Kataller Toyama,21,57.1%,42.9%,47
-Japan - J3 League,Kagoshima Utd,37,35.1%,64.9%,55
-Japan - J3 League,Fukushima Utd,35,45.7%,54.3%,50
-Japan - J3 League,Osaka,35,28.6%,71.4%,60
+Japan - J2 League,Kataller Toyama,22,54.5%,45.5%,49
+Japan - J3 League,,Scored,1st half,2nd half,Avg. minute
+Japan - J3 League,Kagoshima Utd,46,34.8%,65.2%,55
+Japan - J3 League,Fukushima Utd,39,48.7%,51.3%,49
+Japan - J3 League,Tochigi City,36,47.2%,52.8%,52
+Japan - J3 League,Osaka,36,27.8%,72.2%,61
 Japan - J3 League,Kochi United,33,45.5%,54.5%,47
-Japan - J3 League,Tochigi City,33,48.5%,51.5%,51
-Japan - J3 League,V. Hachinohe,31,51.6%,48.4%,43
-Japan - J3 League,Kusatsu,30,53.3%,46.7%,46
-Japan - J3 League,Nara Club,29,41.4%,58.6%,49
-Japan - J3 League,T. Miyazaki,28,21.4%,78.6%,61
+Japan - J3 League,V. Hachinohe,33,51.5%,48.5%,43
+Japan - J3 League,T. Miyazaki,33,30.3%,69.7%,56
+Japan - J3 League,Nara Club,33,42.4%,57.6%,48
+Japan - J3 League,Kusatsu,32,56.3%,43.8%,44
+Japan - J3 League,Z. Kanazawa,27,48.1%,51.9%,47
+Japan - J3 League,Matsumoto Y.,26,50.0%,50.0%,40
+Japan - J3 League,AC Numazu,25,36.0%,64.0%,54
+Japan - J3 League,Gifu,25,72.0%,28.0%,38
 Japan - J3 League,G. Kitakyushu,25,40.0%,60.0%,46
-Japan - J3 League,Matsumoto Y.,25,52.0%,48.0%,38
-Japan - J3 League,Gifu,24,70.8%,29.2%,39
-Japan - J3 League,Z. Kanazawa,23,52.2%,47.8%,46
-Japan - J3 League,SC Sagamihara,23,65.2%,34.8%,41
-Japan - J3 League,AC Numazu,22,31.8%,68.2%,57
-Japan - J3 League,Gainare Tottori,22,45.5%,54.5%,52
-Japan - J3 League,FC Ryukyu,22,59.1%,40.9%,45
-Japan - J3 League,Kamatamare S.,21,52.4%,47.6%,49
+Japan - J3 League,SC Sagamihara,24,62.5%,37.5%,42
+Japan - J3 League,FC Ryukyu,24,58.3%,41.7%,44
+Japan - J3 League,Kamatamare S.,23,47.8%,52.2%,52
+Japan - J3 League,Gainare Tottori,23,43.5%,56.5%,53
+Japan - J3 League,Tochigi SC,21,52.4%,47.6%,47
 Japan - J3 League,Nagano Parceiro,17,41.2%,58.8%,54
-Japan - J3 League,Tochigi SC,17,52.9%,47.1%,49
-Kazakhstan - Premier League,FC Astana,41,51.2%,48.8%,50
-Kazakhstan - Premier League,Kairat Almaty,39,43.6%,56.4%,49
-Kazakhstan - Premier League,Tobol,32,53.1%,46.9%,50
-Kazakhstan - Premier League,Yelimay Semey,28,35.7%,64.3%,60
-Kazakhstan - Premier League,Okzhetpes,27,59.3%,40.7%,40
-Kazakhstan - Premier League,Aktobe,27,48.1%,51.9%,48
-Kazakhstan - Premier League,Zhenys,22,40.9%,59.1%,55
-Kazakhstan - Premier League,Ordabasy,22,36.4%,63.6%,61
-Kazakhstan - Premier League,Kyzylzhar,20,45.0%,55.0%,54
+Kazakhstan - Premier League,,Scored,1st half,2nd half,Avg. minute
+Kazakhstan - Premier League,FC Astana,47,46.8%,53.2%,52
+Kazakhstan - Premier League,Kairat Almaty,41,46.3%,53.7%,48
+Kazakhstan - Premier League,Tobol,37,56.8%,43.2%,48
+Kazakhstan - Premier League,Yelimay Semey,33,39.4%,60.6%,59
+Kazakhstan - Premier League,Aktobe,32,43.8%,56.3%,51
+Kazakhstan - Premier League,Okzhetpes,27,55.6%,44.4%,40
+Kazakhstan - Premier League,Zhenys,26,38.5%,61.5%,57
+Kazakhstan - Premier League,Ordabasy,25,32.0%,68.0%,62
+Kazakhstan - Premier League,Kyzylzhar,21,42.9%,57.1%,55
 Kazakhstan - Premier League,Kaisar K.,19,36.8%,63.2%,58
-Kazakhstan - Premier League,Zhetysu,17,23.5%,76.5%,61
-Kazakhstan - Premier League,Turan,14,35.7%,64.3%,57
+Kazakhstan - Premier League,Zhetysu,17,17.6%,82.4%,66
+Kazakhstan - Premier League,Turan,15,40.0%,60.0%,55
+Kazakhstan - Premier League,Ulytau,13,46.2%,53.8%,49
 Kazakhstan - Premier League,Atyrau,13,15.4%,84.6%,65
-Kazakhstan - Premier League,Ulytau,11,45.5%,54.5%,50
+Latvia - Virsliga,,Scored,1st half,2nd half,Avg. minute
 Latvia - Virsliga,RFS,70,48.6%,51.4%,47
 Latvia - Virsliga,Riga FC,61,44.3%,55.7%,50
 Latvia - Virsliga,Liepaja,44,56.8%,43.2%,46
-Latvia - Virsliga,Daugavpils,38,42.1%,57.9%,51
-Latvia - Virsliga,Auda,34,35.3%,64.7%,52
-Latvia - Virsliga,Tukums,28,64.3%,35.7%,46
-Latvia - Virsliga,Super Nova,28,35.7%,64.3%,58
-Latvia - Virsliga,Metta,23,26.1%,73.9%,56
+Latvia - Virsliga,Daugavpils,42,40.5%,59.5%,51
+Latvia - Virsliga,Auda,35,34.3%,65.7%,52
+Latvia - Virsliga,Super Nova,31,35.5%,64.5%,57
+Latvia - Virsliga,Tukums,29,65.5%,34.5%,45
+Latvia - Virsliga,Metta,25,28.0%,72.0%,55
+Latvia - Virsliga,FS Jelgava,24,45.8%,54.2%,49
 Latvia - Virsliga,Grobina,23,52.2%,47.8%,49
-Latvia - Virsliga,FS Jelgava,23,43.5%,56.5%,51
-Latvia - 1. Liga,Riga Mariners,43,37.2%,62.8%,56
-Latvia - 1. Liga,Ogre United,43,41.9%,58.1%,51
-Latvia - 1. Liga,Alberts JDFS,36,47.2%,52.8%,49
-Latvia - 1. Liga,Smiltene,30,46.7%,53.3%,48
-Latvia - 1. Liga,RFS B,27,40.7%,59.3%,52
-Latvia - 1. Liga,Leevon PPK,26,46.2%,53.8%,45
-Latvia - 1. Liga,JFK Ventspils,26,42.3%,57.7%,50
+Latvia - 1. Liga,,Scored,1st half,2nd half,Avg. minute
+Latvia - 1. Liga,Riga Mariners,46,37.0%,63.0%,57
+Latvia - 1. Liga,Ogre United,46,39.1%,60.9%,52
+Latvia - 1. Liga,Alberts JDFS,39,48.7%,51.3%,48
+Latvia - 1. Liga,Smiltene,33,45.5%,54.5%,48
+Latvia - 1. Liga,RFS B,30,43.3%,56.7%,51
+Latvia - 1. Liga,JFK Ventspils,30,43.3%,56.7%,50
+Latvia - 1. Liga,Leevon PPK,28,42.9%,57.1%,47
+Latvia - 1. Liga,Tukums B,23,52.2%,47.8%,46
 Latvia - 1. Liga,Skanste,23,26.1%,73.9%,59
-Latvia - 1. Liga,Tukums B,22,54.5%,45.5%,44
+Latvia - 1. Liga,AFA Olaine,22,50.0%,50.0%,48
 Latvia - 1. Liga,Marupe,21,19.0%,81.0%,61
-Latvia - 1. Liga,AFA Olaine,19,57.9%,42.1%,47
 Latvia - 1. Liga,Rezekne,17,64.7%,35.3%,45
-Latvia - 1. Liga,Riga FC B,12,66.7%,33.3%,42
-Latvia - 1. Liga,Augsdaugava,12,58.3%,41.7%,44
-Lithuania - A Lyga,Kauno Zalgiris,43,37.2%,62.8%,55
-Lithuania - A Lyga,Siauliai,38,44.7%,55.3%,50
-Lithuania - A Lyga,Hegelmann L.,36,33.3%,66.7%,55
-Lithuania - A Lyga,Panevezys,34,47.1%,52.9%,51
-Lithuania - A Lyga,Suduva,33,57.6%,42.4%,46
-Lithuania - A Lyga,Zalgiris,30,53.3%,46.7%,47
-Lithuania - A Lyga,Riteriai,25,32.0%,68.0%,55
-Lithuania - A Lyga,Dziugas Telsiai,21,47.6%,52.4%,51
-Lithuania - A Lyga,Dainava,20,50.0%,50.0%,50
-Lithuania - A Lyga,Banga,19,47.4%,52.6%,54
+Latvia - 1. Liga,Augsdaugava,15,60.0%,40.0%,44
+Latvia - 1. Liga,Riga FC B,13,61.5%,38.5%,46
+Lithuania - A Lyga,,Scored,1st half,2nd half,Avg. minute
+Lithuania - A Lyga,Kauno Zalgiris,47,40.4%,59.6%,54
+Lithuania - A Lyga,Siauliai,42,45.2%,54.8%,49
+Lithuania - A Lyga,Hegelmann L.,42,42.9%,57.1%,51
+Lithuania - A Lyga,Panevezys,37,45.9%,54.1%,51
+Lithuania - A Lyga,Suduva,36,52.8%,47.2%,47
+Lithuania - A Lyga,Zalgiris,35,48.6%,51.4%,48
+Lithuania - A Lyga,Riteriai,26,34.6%,65.4%,53
+Lithuania - A Lyga,Banga,25,48.0%,52.0%,51
+Lithuania - A Lyga,Dziugas Telsiai,24,45.8%,54.2%,51
+Lithuania - A Lyga,Dainava,21,47.6%,52.4%,52
+Lithuania - 1st League,,Scored,1st half,2nd half,Avg. minute
 Lithuania - 1st League,TransINVEST,48,37.5%,62.5%,52
 Lithuania - 1st League,Neptuna K.,35,62.9%,37.1%,42
 Lithuania - 1st League,Zalgiris B,33,39.4%,60.6%,52
@@ -1039,24 +1242,26 @@ Lithuania - 1st League,Be1 NFA,14,50.0%,50.0%,51
 Lithuania - 1st League,Ekranas,13,46.2%,53.8%,43
 Lithuania - 1st League,Minija,12,33.3%,66.7%,57
 Lithuania - 1st League,Jonava,10,30.0%,70.0%,55
-Mexico - Liga MX - Apertura,Tigres,12,41.7%,58.3%,50
-Mexico - Liga MX - Apertura,Toluca,12,41.7%,58.3%,56
-Mexico - Liga MX - Apertura,Pachuca,10,50.0%,50.0%,46
-Mexico - Liga MX - Apertura,Cruz Azul,9,0.0%,100.0%,69
-Mexico - Liga MX - Apertura,Monterrey,7,57.1%,42.9%,51
-Mexico - Liga MX - Apertura,Atlas,7,57.1%,42.9%,40
-Mexico - Liga MX - Apertura,CF America,6,66.7%,33.3%,43
+Mexico - Liga MX - Apertura,,Scored,1st half,2nd half,Avg. minute
+Mexico - Liga MX - Apertura,Tigres,15,46.7%,53.3%,49
+Mexico - Liga MX - Apertura,Monterrey,13,69.2%,30.8%,41
+Mexico - Liga MX - Apertura,CF America,13,46.2%,53.8%,54
+Mexico - Liga MX - Apertura,Cruz Azul,13,15.4%,84.6%,64
+Mexico - Liga MX - Apertura,Toluca,13,38.5%,61.5%,57
+Mexico - Liga MX - Apertura,Atlas,12,50.0%,50.0%,44
+Mexico - Liga MX - Apertura,Pachuca,11,54.5%,45.5%,43
+Mexico - Liga MX - Apertura,Tijuana,10,50.0%,50.0%,46
+Mexico - Liga MX - Apertura,Santos Laguna,9,66.7%,33.3%,35
+Mexico - Liga MX - Apertura,A. San Luis,9,22.2%,77.8%,63
+Mexico - Liga MX - Apertura,Guadalajara,8,25.0%,75.0%,70
+Mexico - Liga MX - Apertura,Mazatlan,8,50.0%,50.0%,45
+Mexico - Liga MX - Apertura,Queretaro,7,28.6%,71.4%,62
+Mexico - Liga MX - Apertura,Juarez,6,16.7%,83.3%,73
+Mexico - Liga MX - Apertura,Pumas UNAM,6,66.7%,33.3%,33
 Mexico - Liga MX - Apertura,Necaxa,6,66.7%,33.3%,41
-Mexico - Liga MX - Apertura,Santos Laguna,6,66.7%,33.3%,38
-Mexico - Liga MX - Apertura,Pumas UNAM,5,60.0%,40.0%,37
-Mexico - Liga MX - Apertura,A. San Luis,5,0.0%,100.0%,74
-Mexico - Liga MX - Apertura,Tijuana,5,40.0%,60.0%,53
+Mexico - Liga MX - Apertura,Club Leon,5,40.0%,60.0%,53
 Mexico - Liga MX - Apertura,Puebla,4,25.0%,75.0%,66
-Mexico - Liga MX - Apertura,Guadalajara,4,50.0%,50.0%,58
-Mexico - Liga MX - Apertura,Mazatlan,4,50.0%,50.0%,49
-Mexico - Liga MX - Apertura,Club Leon,3,0.0%,100.0%,69
-Mexico - Liga MX - Apertura,Juarez,2,0.0%,100.0%,81
-Mexico - Liga MX - Apertura,Queretaro,1,100.0%,0.0%,33
+Mexico - Liga MX - Clausura,,Scored,1st half,2nd half,Avg. minute
 Mexico - Liga MX - Clausura,Toluca,41,56.1%,43.9%,47
 Mexico - Liga MX - Clausura,Necaxa,36,47.2%,52.8%,49
 Mexico - Liga MX - Clausura,CF America,34,44.1%,55.9%,46
@@ -1075,87 +1280,108 @@ Mexico - Liga MX - Clausura,Juarez,16,62.5%,37.5%,41
 Mexico - Liga MX - Clausura,Mazatlan,16,50.0%,50.0%,52
 Mexico - Liga MX - Clausura,Santos Laguna,15,53.3%,46.7%,54
 Mexico - Liga MX - Clausura,Puebla,12,58.3%,41.7%,40
-Netherlands - Eredivisie,PSV Eindhoven,6,50.0%,50.0%,48
-Netherlands - Eredivisie,NEC Nijmegen,5,20.0%,80.0%,55
-Netherlands - Eredivisie,FC Utrecht,4,25.0%,75.0%,61
-Netherlands - Eredivisie,AZ Alkmaar,4,75.0%,25.0%,36
-Netherlands - Eredivisie,Go Ahead Eagles,2,50.0%,50.0%,60
-Netherlands - Eredivisie,Fortuna Sittard,2,50.0%,50.0%,65
-Netherlands - Eredivisie,Feyenoord,2,50.0%,50.0%,29
-Netherlands - Eredivisie,Ajax Amsterdam,2,50.0%,50.0%,51
-Netherlands - Eredivisie,Sparta,1,0.0%,100.0%,63
-Netherlands - Eredivisie,PEC Zwolle,1,100.0%,0.0%,8
-Netherlands - Eredivisie,Heerenveen,1,100.0%,0.0%,4
-Netherlands - Eredivisie,FC Volendam,1,0.0%,100.0%,65
-Netherlands - Eredivisie,FC Groningen,1,100.0%,0.0%,44
-Netherlands - Eerste Divisie,ADO Den Haag,5,20.0%,80.0%,56
-Netherlands - Eerste Divisie,TOP Oss,4,25.0%,75.0%,54
-Netherlands - Eerste Divisie,Roda JC,3,66.7%,33.3%,53
-Netherlands - Eerste Divisie,RKC Waalwijk,3,66.7%,33.3%,38
-Netherlands - Eerste Divisie,Jong PSV,3,33.3%,66.7%,52
+Netherlands - Eredivisie,,Scored,1st half,2nd half,Avg. minute
+Netherlands - Eredivisie,PSV Eindhoven,12,41.7%,58.3%,45
+Netherlands - Eredivisie,NEC Nijmegen,12,25.0%,75.0%,57
+Netherlands - Eredivisie,FC Utrecht,9,33.3%,66.7%,56
+Netherlands - Eredivisie,Sparta,6,33.3%,66.7%,60
+Netherlands - Eredivisie,AZ Alkmaar,6,66.7%,33.3%,35
+Netherlands - Eredivisie,Ajax Amsterdam,6,66.7%,33.3%,45
+Netherlands - Eredivisie,FC Groningen,5,60.0%,40.0%,58
+Netherlands - Eredivisie,FC Volendam,5,20.0%,80.0%,57
+Netherlands - Eredivisie,Go Ahead Eagles,4,75.0%,25.0%,46
+Netherlands - Eredivisie,Feyenoord,4,75.0%,25.0%,28
+Netherlands - Eredivisie,Heerenveen,3,66.7%,33.3%,36
+Netherlands - Eredivisie,PEC Zwolle,3,66.7%,33.3%,23
+Netherlands - Eredivisie,Fortuna Sittard,3,33.3%,66.7%,69
+Netherlands - Eredivisie,Telstar,2,100.0%,0.0%,43
+Netherlands - Eredivisie,FC Twente,2,50.0%,50.0%,48
+Netherlands - Eredivisie,NAC Breda,2,50.0%,50.0%,40
+Netherlands - Eredivisie,Excelsior,2,50.0%,50.0%,46
+Netherlands - Eredivisie,Heracles Almelo,1,100.0%,0.0%,3
+Netherlands - Eerste Divisie,,Scored,1st half,2nd half,Avg. minute
+Netherlands - Eerste Divisie,Jong Ajax,7,42.9%,57.1%,49
+Netherlands - Eerste Divisie,FC Den Bosch,7,71.4%,28.6%,36
+Netherlands - Eerste Divisie,Jong PSV,7,42.9%,57.1%,45
+Netherlands - Eerste Divisie,ADO Den Haag,7,14.3%,85.7%,57
+Netherlands - Eerste Divisie,TOP Oss,6,33.3%,66.7%,50
+Netherlands - Eerste Divisie,Jong Utrecht,6,16.7%,83.3%,49
+Netherlands - Eerste Divisie,VVV,5,40.0%,60.0%,49
+Netherlands - Eerste Divisie,Roda JC,5,40.0%,60.0%,54
+Netherlands - Eerste Divisie,Almere City,4,75.0%,25.0%,28
+Netherlands - Eerste Divisie,Helmond Sport,4,50.0%,50.0%,48
+Netherlands - Eerste Divisie,RKC Waalwijk,4,75.0%,25.0%,30
+Netherlands - Eerste Divisie,FC Eindhoven,3,0.0%,100.0%,81
+Netherlands - Eerste Divisie,FC Dordrecht,3,33.3%,66.7%,44
 Netherlands - Eerste Divisie,De Graafschap,3,66.7%,33.3%,32
-Netherlands - Eerste Divisie,VVV,2,50.0%,50.0%,48
-Netherlands - Eerste Divisie,Jong AZ,2,100.0%,0.0%,22
-Netherlands - Eerste Divisie,FC Den Bosch,2,50.0%,50.0%,44
-Netherlands - Eerste Divisie,Willem II,1,100.0%,0.0%,40
-Netherlands - Eerste Divisie,Helmond Sport,1,0.0%,100.0%,69
-Netherlands - Eerste Divisie,FC Emmen,1,0.0%,100.0%,78
-Netherlands - Eerste Divisie,FC Eindhoven,1,0.0%,100.0%,69
-Netherlands - Eerste Divisie,FC Dordrecht,1,100.0%,0.0%,28
-Northern Ireland - NIFL Premiership,Carrick Rangers,4,50.0%,50.0%,55
-Northern Ireland - NIFL Premiership,Linfield,3,0.0%,100.0%,63
-Northern Ireland - NIFL Premiership,Crusaders,3,100.0%,0.0%,18
-Northern Ireland - NIFL Premiership,Bangor,3,33.3%,66.7%,66
-Northern Ireland - NIFL Premiership,Ballymena Utd,2,50.0%,50.0%,52
-Northern Ireland - NIFL Premiership,Glentoran,1,100.0%,0.0%,43
-Northern Ireland - NIFL Premiership,Coleraine,1,0.0%,100.0%,86
-Northern Ireland - NIFL Premiership,Cliftonville,1,0.0%,100.0%,52
+Netherlands - Eerste Divisie,Jong AZ,3,100.0%,0.0%,19
+Netherlands - Eerste Divisie,Willem II,2,50.0%,50.0%,46
+Netherlands - Eerste Divisie,FC Emmen,2,50.0%,50.0%,46
+Netherlands - Eerste Divisie,Cambuur,2,100.0%,0.0%,11
+Netherlands - Eerste Divisie,MVV Maastricht,1,0.0%,100.0%,89
+Northern Ireland - NIFL Premiership,,Scored,1st half,2nd half,Avg. minute
+Northern Ireland - NIFL Premiership,Ballymena Utd,8,37.5%,62.5%,50
+Northern Ireland - NIFL Premiership,Carrick Rangers,7,71.4%,28.6%,42
+Northern Ireland - NIFL Premiership,Glentoran,6,66.7%,33.3%,50
+Northern Ireland - NIFL Premiership,Crusaders,6,83.3%,16.7%,30
+Northern Ireland - NIFL Premiership,Larne,5,60.0%,40.0%,42
+Northern Ireland - NIFL Premiership,Coleraine,5,60.0%,40.0%,56
+Northern Ireland - NIFL Premiership,Portadown,4,50.0%,50.0%,48
+Northern Ireland - NIFL Premiership,Linfield,4,25.0%,75.0%,54
+Northern Ireland - NIFL Premiership,Bangor,4,50.0%,50.0%,50
+Northern Ireland - NIFL Premiership,Cliftonville,2,0.0%,100.0%,52
+Northern Ireland - NIFL Premiership,Glenavon,1,0.0%,100.0%,71
+Northern Ireland - NIFL Premiership,Dungannon,1,100.0%,0.0%,25
+Norway - Eliteserien,,Scored,1st half,2nd half,Avg. minute
+Norway - Eliteserien,Bodo/Glimt,49,55.1%,44.9%,44
 Norway - Eliteserien,Viking,47,36.2%,63.8%,54
-Norway - Eliteserien,Bodo/Glimt,44,54.5%,45.5%,44
-Norway - Eliteserien,Sandefjord,33,54.5%,45.5%,49
-Norway - Eliteserien,Brann,31,35.5%,64.5%,58
-Norway - Eliteserien,KFUM Oslo,29,37.9%,62.1%,58
-Norway - Eliteserien,Tromso,29,41.4%,58.6%,51
+Norway - Eliteserien,Sandefjord,35,51.4%,48.6%,49
+Norway - Eliteserien,Brann,33,33.3%,66.7%,59
+Norway - Eliteserien,KFUM Oslo,31,35.5%,64.5%,58
+Norway - Eliteserien,Valerenga,31,38.7%,61.3%,54
+Norway - Eliteserien,Tromso,30,43.3%,56.7%,51
 Norway - Eliteserien,Sarpsborg 08,28,28.6%,71.4%,61
-Norway - Eliteserien,Molde,25,48.0%,52.0%,48
+Norway - Eliteserien,Molde,27,48.1%,51.9%,48
 Norway - Eliteserien,Rosenborg,24,54.2%,45.8%,46
-Norway - Eliteserien,Valerenga,24,37.5%,62.5%,54
 Norway - Eliteserien,Fredrikstad,23,52.2%,47.8%,53
-Norway - Eliteserien,Stromsgodset,21,42.9%,57.1%,51
-Norway - Eliteserien,Bryne,21,52.4%,47.6%,40
-Norway - Eliteserien,HamKam,18,50.0%,50.0%,42
-Norway - Eliteserien,Kristiansund,18,50.0%,50.0%,54
-Norway - Eliteserien,Haugesund,8,25.0%,75.0%,62
-Norway - 1st Division,Lillestrom,42,57.1%,42.9%,47
-Norway - 1st Division,Start,37,32.4%,67.6%,54
-Norway - 1st Division,Kongsvinger,36,38.9%,61.1%,56
-Norway - 1st Division,Sogndal,32,43.8%,56.3%,49
-Norway - 1st Division,Lyn,29,27.6%,72.4%,57
-Norway - 1st Division,Egersund,29,44.8%,55.2%,54
-Norway - 1st Division,Raufoss,29,51.7%,48.3%,45
-Norway - 1st Division,Aalesund,29,27.6%,72.4%,55
-Norway - 1st Division,Moss,27,51.9%,48.1%,48
-Norway - 1st Division,Ranheim,24,41.7%,58.3%,56
-Norway - 1st Division,Stabaek,23,34.8%,65.2%,53
-Norway - 1st Division,Odd,22,31.8%,68.2%,52
-Norway - 1st Division,Hodd,22,59.1%,40.9%,40
-Norway - 1st Division,Asane,21,33.3%,66.7%,54
-Norway - 1st Division,Mjondalen,21,38.1%,61.9%,52
-Norway - 1st Division,Skeid,20,60.0%,40.0%,44
-Norway - Division 3,Sandnes Ulf,43,37.2%,62.8%,54
-Norway - Division 3,Sotra,34,50.0%,50.0%,48
-Norway - Division 3,Brattvag,33,51.5%,48.5%,47
-Norway - Division 3,Arendal,33,45.5%,54.5%,50
-Norway - Division 3,Jerv,29,37.9%,62.1%,53
-Norway - Division 3,V. Haugesund,26,61.5%,38.5%,48
-Norway - Division 3,Brann B,25,28.0%,72.0%,55
+Norway - Eliteserien,Bryne,23,47.8%,52.2%,43
+Norway - Eliteserien,Stromsgodset,23,43.5%,56.5%,50
+Norway - Eliteserien,HamKam,21,47.6%,52.4%,44
+Norway - Eliteserien,Kristiansund,21,47.6%,52.4%,56
+Norway - Eliteserien,Haugesund,10,30.0%,70.0%,57
+Norway - 1st Division,,Scored,1st half,2nd half,Avg. minute
+Norway - 1st Division,Lillestrom,47,53.2%,46.8%,49
+Norway - 1st Division,Kongsvinger,42,40.5%,59.5%,55
+Norway - 1st Division,Start,40,32.5%,67.5%,54
+Norway - 1st Division,Sogndal,37,48.6%,51.4%,47
+Norway - 1st Division,Aalesund,36,30.6%,69.4%,55
+Norway - 1st Division,Lyn,33,30.3%,69.7%,55
+Norway - 1st Division,Raufoss,32,53.1%,46.9%,45
+Norway - 1st Division,Egersund,31,45.2%,54.8%,54
+Norway - 1st Division,Moss,30,46.7%,53.3%,50
+Norway - 1st Division,Asane,26,42.3%,57.7%,50
+Norway - 1st Division,Odd,25,32.0%,68.0%,52
+Norway - 1st Division,Ranheim,25,40.0%,60.0%,57
+Norway - 1st Division,Stabaek,25,36.0%,64.0%,52
+Norway - 1st Division,Mjondalen,25,36.0%,64.0%,53
+Norway - 1st Division,Hodd,24,58.3%,41.7%,42
+Norway - 1st Division,Skeid,23,65.2%,34.8%,41
+Norway - Division 3,,Scored,1st half,2nd half,Avg. minute
+Norway - Division 3,Sandnes Ulf,45,37.8%,62.2%,54
+Norway - Division 3,Brattvag,38,52.6%,47.4%,48
+Norway - Division 3,Arendal,38,44.7%,55.3%,50
+Norway - Division 3,Sotra,34,50.0%,50.0%,47
+Norway - Division 3,Jerv,30,40.0%,60.0%,53
+Norway - Division 3,V. Haugesund,28,60.7%,39.3%,49
+Norway - Division 3,Brann B,28,35.7%,64.3%,53
+Norway - Division 3,Pors Grenland,27,29.6%,70.4%,59
+Norway - Division 3,Sandviken,24,50.0%,50.0%,50
+Norway - Division 3,Flekkeroy,23,30.4%,69.6%,60
 Norway - Division 3,Eik Tonsberg,23,47.8%,52.2%,43
-Norway - Division 3,Sandviken,21,47.6%,52.4%,51
-Norway - Division 3,Flekkeroy,21,28.6%,71.4%,61
-Norway - Division 3,Pors Grenland,20,30.0%,70.0%,57
-Norway - Division 3,Lysekloster,20,40.0%,60.0%,49
+Norway - Division 3,Lysekloster,22,40.9%,59.1%,50
+Norway - Division 3,Notodden,20,35.0%,65.0%,53
 Norway - Division 3,Traef,18,38.9%,61.1%,54
-Norway - Division 3,Notodden,18,38.9%,61.1%,51
+Paraguay - Primera Div. - Apertura,,Scored,1st half,2nd half,Avg. minute
 Paraguay - Primera Div. - Apertura,Libertad,35,34.3%,65.7%,57
 Paraguay - Primera Div. - Apertura,Cerro Porteno,33,48.5%,51.5%,48
 Paraguay - Primera Div. - Apertura,D. Recoleta,29,44.8%,55.2%,51
@@ -1168,18 +1394,20 @@ Paraguay - Primera Div. - Apertura,G. Caballero,19,57.9%,42.1%,43
 Paraguay - Primera Div. - Apertura,A. Tembetary,17,41.2%,58.8%,57
 Paraguay - Primera Div. - Apertura,2 de Mayo,15,46.7%,53.3%,47
 Paraguay - Primera Div. - Apertura,S. Luqueno,13,23.1%,76.9%,59
-Paraguay - Primera Div. - Clausura,Guarani,15,53.3%,46.7%,50
-Paraguay - Primera Div. - Clausura,Cerro Porteno,13,46.2%,53.8%,51
-Paraguay - Primera Div. - Clausura,S. Trinidense,12,41.7%,58.3%,54
-Paraguay - Primera Div. - Clausura,S. Luqueno,12,33.3%,66.7%,51
+Paraguay - Primera Div. - Clausura,,Scored,1st half,2nd half,Avg. minute
+Paraguay - Primera Div. - Clausura,Guarani,22,54.5%,45.5%,50
+Paraguay - Primera Div. - Clausura,Cerro Porteno,18,50.0%,50.0%,47
+Paraguay - Primera Div. - Clausura,S. Trinidense,15,40.0%,60.0%,56
+Paraguay - Primera Div. - Clausura,S. Luqueno,13,38.5%,61.5%,48
+Paraguay - Primera Div. - Clausura,D. Recoleta,12,16.7%,83.3%,68
 Paraguay - Primera Div. - Clausura,Olimpia,11,63.6%,36.4%,42
-Paraguay - Primera Div. - Clausura,D. Recoleta,11,18.2%,81.8%,68
-Paraguay - Primera Div. - Clausura,Libertad,9,44.4%,55.6%,49
-Paraguay - Primera Div. - Clausura,Nacional,8,50.0%,50.0%,52
-Paraguay - Primera Div. - Clausura,2 de Mayo,8,37.5%,62.5%,50
-Paraguay - Primera Div. - Clausura,A. Tembetary,5,60.0%,40.0%,40
-Paraguay - Primera Div. - Clausura,S. Ameliano,4,75.0%,25.0%,36
-Paraguay - Primera Div. - Clausura,G. Caballero,2,0.0%,100.0%,84
+Paraguay - Primera Div. - Clausura,Nacional,11,54.5%,45.5%,50
+Paraguay - Primera Div. - Clausura,Libertad,10,40.0%,60.0%,50
+Paraguay - Primera Div. - Clausura,2 de Mayo,10,40.0%,60.0%,48
+Paraguay - Primera Div. - Clausura,S. Ameliano,7,71.4%,28.6%,40
+Paraguay - Primera Div. - Clausura,G. Caballero,7,14.3%,85.7%,72
+Paraguay - Primera Div. - Clausura,A. Tembetary,7,42.9%,57.1%,51
+Paraguay - Division Intermedia,,Scored,1st half,2nd half,Avg. minute
 Paraguay - Division Intermedia,Rubio Nu,28,46.4%,53.6%,49
 Paraguay - Division Intermedia,Resistencia,28,57.1%,42.9%,45
 Paraguay - Division Intermedia,12 de Junio VH,26,30.8%,69.2%,55
@@ -1196,6 +1424,7 @@ Paraguay - Division Intermedia,D. Santani,16,50.0%,50.0%,43
 Paraguay - Division Intermedia,F. de la Mora,14,42.9%,57.1%,53
 Paraguay - Division Intermedia,Guairena,14,50.0%,50.0%,50
 Paraguay - Division Intermedia,Sol de America,10,20.0%,80.0%,58
+Peru - Liga 1 - Apertura,,Scored,1st half,2nd half,Avg. minute
 Peru - Liga 1 - Apertura,Universitario,38,31.6%,68.4%,54
 Peru - Liga 1 - Apertura,Cusco,34,47.1%,52.9%,48
 Peru - Liga 1 - Apertura,S. Cristal,31,54.8%,45.2%,47
@@ -1215,343 +1444,480 @@ Peru - Liga 1 - Apertura,Cajamarca,17,52.9%,47.1%,53
 Peru - Liga 1 - Apertura,Comerciantes U.,17,35.3%,64.7%,55
 Peru - Liga 1 - Apertura,A. Huanuco,16,50.0%,50.0%,50
 Peru - Liga 1 - Apertura,Ayacucho,14,71.4%,28.6%,35
-Poland - Ekstraklasa,Cracovia Krakow,10,60.0%,40.0%,40
-Poland - Ekstraklasa,Lechia Gdansk,9,55.6%,44.4%,46
-Poland - Ekstraklasa,Radomiak Radom,9,11.1%,88.9%,64
-Poland - Ekstraklasa,Jagiellonia,8,25.0%,75.0%,62
-Poland - Ekstraklasa,Wisla Plock,7,57.1%,42.9%,54
-Poland - Ekstraklasa,Widzew Lodz,7,57.1%,42.9%,52
-Poland - Ekstraklasa,Pogon Szczecin,7,42.9%,57.1%,51
-Poland - Ekstraklasa,Lech Poznan,7,14.3%,85.7%,60
-Poland - Ekstraklasa,T. Nieciecza,6,83.3%,16.7%,39
+Poland - Ekstraklasa,,Scored,1st half,2nd half,Avg. minute
+Poland - Ekstraklasa,Lechia Gdansk,12,50.0%,50.0%,49
+Poland - Ekstraklasa,Radomiak Radom,11,27.3%,72.7%,56
+Poland - Ekstraklasa,Cracovia Krakow,11,54.5%,45.5%,43
+Poland - Ekstraklasa,Wisla Plock,10,50.0%,50.0%,53
+Poland - Ekstraklasa,Zaglebie Lubin,10,50.0%,50.0%,48
+Poland - Ekstraklasa,Gornik Zabrze,10,20.0%,80.0%,63
+Poland - Ekstraklasa,Jagiellonia,10,30.0%,70.0%,59
+Poland - Ekstraklasa,T. Nieciecza,9,77.8%,22.2%,36
+Poland - Ekstraklasa,Pogon Szczecin,9,44.4%,55.6%,54
+Poland - Ekstraklasa,Widzew Lodz,8,62.5%,37.5%,48
+Poland - Ekstraklasa,Lech Poznan,8,12.5%,87.5%,63
+Poland - Ekstraklasa,Korona Kielce,7,28.6%,71.4%,54
+Poland - Ekstraklasa,Katowice,7,28.6%,71.4%,53
+Poland - Ekstraklasa,Rakow C.,6,33.3%,66.7%,49
 Poland - Ekstraklasa,Motor Lublin,5,60.0%,40.0%,38
 Poland - Ekstraklasa,Legia Warsaw,5,40.0%,60.0%,56
-Poland - Ekstraklasa,Korona Kielce,4,50.0%,50.0%,51
-Poland - Ekstraklasa,Gornik Zabrze,4,25.0%,75.0%,69
-Poland - Ekstraklasa,Arka Gdynia,3,66.7%,33.3%,46
-Poland - Ekstraklasa,Katowice,3,0.0%,100.0%,73
-Poland - Ekstraklasa,Zaglebie Lubin,3,66.7%,33.3%,44
-Poland - Ekstraklasa,Rakow C.,3,33.3%,66.7%,46
-Poland - 1. Liga,Wisla Krakow,16,62.5%,37.5%,40
-Poland - 1. Liga,Polonia Warszaw,9,44.4%,55.6%,49
-Poland - 1. Liga,Tychy,9,22.2%,77.8%,55
-Poland - 1. Liga,Pogon Grodzisk,9,66.7%,33.3%,41
-Poland - 1. Liga,Wieczysta K.,8,37.5%,62.5%,55
-Poland - 1. Liga,Slask Wroclaw,8,75.0%,25.0%,36
-Poland - 1. Liga,Stal Mielec,7,28.6%,71.4%,66
-Poland - 1. Liga,LKS Lodz,7,28.6%,71.4%,57
-Poland - 1. Liga,Chrobry Glogow,7,28.6%,71.4%,54
-Poland - 1. Liga,Stal Rzeszow,6,33.3%,66.7%,55
-Poland - 1. Liga,Znicz Pruszkow,5,20.0%,80.0%,69
-Poland - 1. Liga,Miedz Legnica,5,40.0%,60.0%,51
-Poland - 1. Liga,Gornik Leczna,4,75.0%,25.0%,34
-Poland - 1. Liga,Pogon Siedlce,4,100.0%,0.0%,36
-Poland - 1. Liga,Puszcza Niepolo,4,50.0%,50.0%,42
-Poland - 1. Liga,Ruch Chorzow,4,50.0%,50.0%,51
-Poland - 1. Liga,Polonia Bytom,4,50.0%,50.0%,47
-Poland - 1. Liga,Odra Opole,3,66.7%,33.3%,44
-Portugal - Liga Portugal,Sporting Braga,3,66.7%,33.3%,48
-Portugal - Liga Portugal,FC Porto,3,66.7%,33.3%,41
-Portugal - Liga Portugal,Famalicao,3,66.7%,33.3%,26
-Portugal - Liga Portugal,Arouca,3,33.3%,66.7%,41
-Portugal - Liga Portugal,Sporting CP,2,50.0%,50.0%,52
-Portugal - Liga Portugal,Moreirense,2,50.0%,50.0%,58
+Poland - Ekstraklasa,Arka Gdynia,4,75.0%,25.0%,45
+Poland - 1. Liga,,Scored,1st half,2nd half,Avg. minute
+Poland - 1. Liga,Wisla Krakow,28,53.6%,46.4%,43
+Poland - 1. Liga,Wieczysta K.,16,37.5%,62.5%,57
+Poland - 1. Liga,Pogon Grodzisk,14,64.3%,35.7%,45
+Poland - 1. Liga,Tychy,13,30.8%,69.2%,52
+Poland - 1. Liga,Polonia Warszaw,12,50.0%,50.0%,47
+Poland - 1. Liga,LKS Lodz,12,25.0%,75.0%,60
+Poland - 1. Liga,Slask Wroclaw,11,72.7%,27.3%,41
+Poland - 1. Liga,Chrobry Glogow,11,27.3%,72.7%,54
+Poland - 1. Liga,Miedz Legnica,11,36.4%,63.6%,48
+Poland - 1. Liga,Stal Mielec,10,30.0%,70.0%,66
+Poland - 1. Liga,Stal Rzeszow,9,33.3%,66.7%,56
+Poland - 1. Liga,Ruch Chorzow,9,44.4%,55.6%,45
+Poland - 1. Liga,Gornik Leczna,9,44.4%,55.6%,51
+Poland - 1. Liga,Polonia Bytom,8,37.5%,62.5%,56
+Poland - 1. Liga,Znicz Pruszkow,8,37.5%,62.5%,54
+Poland - 1. Liga,Pogon Siedlce,7,71.4%,28.6%,44
+Poland - 1. Liga,Puszcza Niepolo,7,71.4%,28.6%,39
+Poland - 1. Liga,Odra Opole,5,40.0%,60.0%,55
+Portugal - Liga Portugal,,Scored,1st half,2nd half,Avg. minute
+Portugal - Liga Portugal,Sporting CP,12,33.3%,66.7%,57
+Portugal - Liga Portugal,FC Porto,9,66.7%,33.3%,38
+Portugal - Liga Portugal,Sporting Braga,8,75.0%,25.0%,39
+Portugal - Liga Portugal,Arouca,6,33.3%,66.7%,52
+Portugal - Liga Portugal,Moreirense,5,40.0%,60.0%,44
+Portugal - Liga Portugal,Benfica,4,50.0%,50.0%,56
+Portugal - Liga Portugal,Famalicao,4,50.0%,50.0%,36
+Portugal - Liga Portugal,Rio Ave,4,25.0%,75.0%,50
+Portugal - Liga Portugal,Guimaraes,3,33.3%,66.7%,54
+Portugal - Liga Portugal,Alverca,3,100.0%,0.0%,42
+Portugal - Liga Portugal,Estoril,3,66.7%,33.3%,39
+Portugal - Liga Portugal,AVS,3,66.7%,33.3%,51
+Portugal - Liga Portugal,Estrela Amadora,3,33.3%,66.7%,61
 Portugal - Liga Portugal,Gil Vicente,2,100.0%,0.0%,40
-Portugal - Liga Portugal,Estrela Amadora,1,0.0%,100.0%,75
-Portugal - Liga Portugal,Estoril,1,100.0%,0.0%,36
-Portugal - Liga Portugal,AVS,1,0.0%,100.0%,90
-Portugal - Liga Portugal,Alverca,1,100.0%,0.0%,44
+Portugal - Liga Portugal,Casa Pia,2,50.0%,50.0%,44
+Portugal - Liga Portugal,Nacional,2,50.0%,50.0%,43
+Portugal - Liga Portugal 2,,Scored,1st half,2nd half,Avg. minute
+Portugal - Liga Portugal 2,Vizela,7,28.6%,71.4%,57
+Portugal - Liga Portugal 2,Leixoes,7,71.4%,28.6%,44
+Portugal - Liga Portugal 2,Torreense,5,20.0%,80.0%,55
+Portugal - Liga Portugal 2,Lusitania FC,4,25.0%,75.0%,58
+Portugal - Liga Portugal 2,Portimonense,4,75.0%,25.0%,21
+Portugal - Liga Portugal 2,Chaves,4,100.0%,0.0%,26
+Portugal - Liga Portugal 2,Feirense,4,25.0%,75.0%,78
 Portugal - Liga Portugal 2,Uniao de Leiria,3,33.3%,66.7%,70
-Portugal - Liga Portugal 2,Leixoes,3,66.7%,33.3%,54
-Portugal - Liga Portugal 2,Vizela,2,0.0%,100.0%,57
-Portugal - Liga Portugal 2,Portimonense,2,50.0%,50.0%,36
-Portugal - Liga Portugal 2,Academico Viseu,2,50.0%,50.0%,43
-Portugal - Liga Portugal 2,Sporting CP B,1,0.0%,100.0%,89
-Portugal - Liga Portugal 2,Penafiel,1,100.0%,0.0%,33
+Portugal - Liga Portugal 2,Benfica B,3,66.7%,33.3%,40
+Portugal - Liga Portugal 2,Penafiel,3,33.3%,66.7%,68
+Portugal - Liga Portugal 2,Farense,3,66.7%,33.3%,38
+Portugal - Liga Portugal 2,Academico Viseu,3,66.7%,33.3%,29
+Portugal - Liga Portugal 2,Oliveirense,2,100.0%,0.0%,32
+Portugal - Liga Portugal 2,Sporting CP B,2,50.0%,50.0%,67
+Portugal - Liga Portugal 2,Maritimo,2,50.0%,50.0%,50
+Portugal - Liga Portugal 2,Felgueiras,1,0.0%,100.0%,48
 Portugal - Liga Portugal 2,Pacos Ferreira,1,100.0%,0.0%,25
-Portugal - Liga Portugal 2,Oliveirense,1,100.0%,0.0%,19
-Portugal - Liga Portugal 2,Lusitania FC,1,0.0%,100.0%,90
-Portugal - Liga Portugal 2,Farense,1,0.0%,100.0%,90
-Portugal - Liga Portugal 2,Chaves,1,100.0%,0.0%,20
-Portugal - Liga Portugal 2,Benfica B,1,100.0%,0.0%,7
-Romania - Liga 1,Univ. Craiova,12,58.3%,41.7%,43
-Romania - Liga 1,U. Cluj,9,44.4%,55.6%,56
-Romania - Liga 1,Botosani,9,44.4%,55.6%,53
-Romania - Liga 1,UTA Arad,9,44.4%,55.6%,58
+Romania - Liga 1,,Scored,1st half,2nd half,Avg. minute
+Romania - Liga 1,Univ. Craiova,16,50.0%,50.0%,47
+Romania - Liga 1,Botosani,15,40.0%,60.0%,56
+Romania - Liga 1,Rapid Bucharest,12,50.0%,50.0%,44
+Romania - Liga 1,Unirea Slobozia,11,36.4%,63.6%,66
+Romania - Liga 1,UTA Arad,11,54.5%,45.5%,53
+Romania - Liga 1,Arges,11,36.4%,63.6%,57
+Romania - Liga 1,U. Cluj,10,50.0%,50.0%,50
+Romania - Liga 1,Din. Bucharest,10,50.0%,50.0%,48
+Romania - Liga 1,Otelul,9,55.6%,44.4%,49
+Romania - Liga 1,CFR Cluj,9,44.4%,55.6%,53
 Romania - Liga 1,Farul Constanta,9,33.3%,66.7%,53
-Romania - Liga 1,Unirea Slobozia,8,50.0%,50.0%,58
-Romania - Liga 1,Rapid Bucharest,8,50.0%,50.0%,40
-Romania - Liga 1,Din. Bucharest,8,62.5%,37.5%,42
-Romania - Liga 1,Arges,7,57.1%,42.9%,49
-Romania - Liga 1,FCSB,6,33.3%,66.7%,54
-Romania - Liga 1,CFR Cluj,5,40.0%,60.0%,53
-Romania - Liga 1,Hermannstadt,5,40.0%,60.0%,44
-Romania - Liga 1,Otelul,5,60.0%,40.0%,47
-Romania - Liga 1,Petrolul,5,80.0%,20.0%,30
-Romania - Liga 1,Csikszereda,4,100.0%,0.0%,20
-Romania - Liga 1,Metaloglobus,4,0.0%,100.0%,60
+Romania - Liga 1,FCSB,8,37.5%,62.5%,49
+Romania - Liga 1,Hermannstadt,7,42.9%,57.1%,45
+Romania - Liga 1,Csikszereda,6,83.3%,16.7%,28
+Romania - Liga 1,Petrolul,6,66.7%,33.3%,34
+Romania - Liga 1,Metaloglobus,6,33.3%,66.7%,50
+Scotland - Premiership,,Scored,1st half,2nd half,Avg. minute
+Scotland - Premiership,Hearts,8,25.0%,75.0%,59
+Scotland - Premiership,Celtic,6,16.7%,83.3%,62
 Scotland - Premiership,Livingston,5,40.0%,60.0%,61
-Scotland - Premiership,Hearts,5,40.0%,60.0%,50
+Scotland - Premiership,Motherwell,4,25.0%,75.0%,55
 Scotland - Premiership,Kilmarnock,4,75.0%,25.0%,43
 Scotland - Premiership,Hibernian,4,100.0%,0.0%,26
 Scotland - Premiership,Dundee Utd,4,75.0%,25.0%,44
+Scotland - Premiership,Rangers,3,33.3%,66.7%,61
 Scotland - Premiership,Falkirk,3,0.0%,100.0%,66
-Scotland - Premiership,Celtic,3,33.3%,66.7%,60
-Scotland - Premiership,Rangers,2,50.0%,50.0%,52
 Scotland - Premiership,Dundee FC,2,50.0%,50.0%,44
-Scotland - Premiership,Motherwell,1,0.0%,100.0%,87
-Scotland - Championship,St. Johnstone,6,50.0%,50.0%,49
+Scotland - Premiership,St. Mirren,1,100.0%,0.0%,32
+Scotland - Championship,,Scored,1st half,2nd half,Avg. minute
+Scotland - Championship,St. Johnstone,9,44.4%,55.6%,51
+Scotland - Championship,Partick Thistle,5,40.0%,60.0%,46
+Scotland - Championship,Raith Rovers,4,50.0%,50.0%,40
 Scotland - Championship,Arbroath,4,0.0%,100.0%,65
-Scotland - Championship,Ross County,2,50.0%,50.0%,34
-Scotland - Championship,Raith Rovers,2,50.0%,50.0%,41
-Scotland - Championship,Queens Park,2,50.0%,50.0%,46
-Scotland - Championship,Partick Thistle,2,50.0%,50.0%,32
+Scotland - Championship,Ross County,3,33.3%,66.7%,44
+Scotland - Championship,Queens Park,3,33.3%,66.7%,57
+Scotland - Championship,Greenock Morton,3,66.7%,33.3%,48
+Scotland - Championship,Ayr Utd,3,33.3%,66.7%,39
+Scotland - Championship,Airdrieonians,3,0.0%,100.0%,63
 Scotland - Championship,Dunfermline,2,100.0%,0.0%,42
-Scotland - Championship,Airdrieonians,2,0.0%,100.0%,68
-Scotland - Championship,Greenock Morton,1,100.0%,0.0%,33
-Scotland - Championship,Ayr Utd,1,100.0%,0.0%,5
-Serbia - Super Liga,Red Star,12,41.7%,58.3%,50
-Serbia - Super Liga,Partizan,10,30.0%,70.0%,63
-Serbia - Super Liga,Vojvodina,7,42.9%,57.1%,52
-Serbia - Super Liga,Radnicki Nis,7,57.1%,42.9%,52
-Serbia - Super Liga,Cukaricki,6,66.7%,33.3%,52
-Serbia - Super Liga,Novi Pazar,6,16.7%,83.3%,64
-Serbia - Super Liga,Z. Pancevo,5,60.0%,40.0%,47
-Serbia - Super Liga,IMT N. Beograd,5,60.0%,40.0%,57
-Serbia - Super Liga,S. Subotica,5,40.0%,60.0%,53
+Serbia - Super Liga,,Scored,1st half,2nd half,Avg. minute
+Serbia - Super Liga,Partizan,17,41.2%,58.8%,57
+Serbia - Super Liga,Red Star,16,37.5%,62.5%,56
+Serbia - Super Liga,Vojvodina,11,45.5%,54.5%,49
+Serbia - Super Liga,Z. Pancevo,10,50.0%,50.0%,50
+Serbia - Super Liga,Novi Pazar,9,33.3%,66.7%,54
+Serbia - Super Liga,Radnicki Nis,9,55.6%,44.4%,53
+Serbia - Super Liga,IMT N. Beograd,8,50.0%,50.0%,55
+Serbia - Super Liga,Cukaricki,8,62.5%,37.5%,53
+Serbia - Super Liga,OFK Beograd,8,37.5%,62.5%,58
+Serbia - Super Liga,S. Subotica,7,28.6%,71.4%,61
+Serbia - Super Liga,Mladost Lucani,6,50.0%,50.0%,35
+Serbia - Super Liga,Backa Topola,5,40.0%,60.0%,56
 Serbia - Super Liga,Radnicki 1923,4,50.0%,50.0%,40
-Serbia - Super Liga,Backa Topola,4,25.0%,75.0%,61
+Serbia - Super Liga,R. Surdulica,4,50.0%,50.0%,58
 Serbia - Super Liga,Napredak,4,25.0%,75.0%,46
-Serbia - Super Liga,Mladost Lucani,4,50.0%,50.0%,31
-Serbia - Super Liga,OFK Beograd,4,50.0%,50.0%,56
-Serbia - Super Liga,R. Surdulica,3,66.7%,33.3%,54
-Serbia - Super Liga,Javor Ivanjica,2,100.0%,0.0%,22
-Singapore - Premier League,Geylang,97,39.2%,60.8%,54
-Singapore - Premier League,Lion City,96,46.9%,53.1%,48
-Singapore - Premier League,Tampines Rovers,84,38.1%,61.9%,49
-Singapore - Premier League,Khalsa,84,40.5%,59.5%,53
-Singapore - Premier League,Hougang,61,50.8%,49.2%,49
-Singapore - Premier League,A. Niigata (S),55,40.0%,60.0%,55
-Singapore - Premier League,DPMM FC,54,53.7%,46.3%,45
-Singapore - Premier League,Young Lions,47,44.7%,55.3%,50
-Singapore - Premier League,Tanjong Pagar,35,51.4%,48.6%,52
-Slovenia - Prva Liga,NK Celje,12,33.3%,66.7%,54
-Slovenia - Prva Liga,NK Olimpija,7,42.9%,57.1%,45
-Slovenia - Prva Liga,Maribor,7,57.1%,42.9%,52
-Slovenia - Prva Liga,Koper,7,28.6%,71.4%,53
-Slovenia - Prva Liga,Bravo,7,42.9%,57.1%,56
-Slovenia - Prva Liga,Radomlje,5,80.0%,20.0%,24
-Slovenia - Prva Liga,Aluminij,5,40.0%,60.0%,57
-Slovenia - Prva Liga,Primorje,4,0.0%,100.0%,75
+Serbia - Super Liga,Javor Ivanjica,4,50.0%,50.0%,53
+Singapore - Premier League,,Scored,1st half,2nd half,Avg. minute
+Singapore - Premier League,Lion City,2,50.0%,50.0%,29
+Singapore - Premier League,Khalsa,2,50.0%,50.0%,46
+Singapore - Premier League,A. Niigata (S),2,100.0%,0.0%,32
+Singapore - Premier League,Hougang,1,100.0%,0.0%,29
+Slovenia - Prva Liga,,Scored,1st half,2nd half,Avg. minute
+Slovenia - Prva Liga,NK Celje,20,40.0%,60.0%,52
+Slovenia - Prva Liga,Maribor,15,40.0%,60.0%,56
+Slovenia - Prva Liga,Koper,12,25.0%,75.0%,57
+Slovenia - Prva Liga,Bravo,10,40.0%,60.0%,59
+Slovenia - Prva Liga,Radomlje,9,55.6%,44.4%,42
+Slovenia - Prva Liga,NK Olimpija,9,55.6%,44.4%,42
+Slovenia - Prva Liga,Aluminij,9,44.4%,55.6%,56
+Slovenia - Prva Liga,Primorje,6,0.0%,100.0%,70
+Slovenia - Prva Liga,Mura,5,40.0%,60.0%,40
 Slovenia - Prva Liga,Domzale,4,50.0%,50.0%,56
-Slovenia - Prva Liga,Mura,1,100.0%,0.0%,6
-Slovakia - Fortuna Liga,Z. Michalovce,6,33.3%,66.7%,55
-Slovakia - Fortuna Liga,S. Bratislava,6,66.7%,33.3%,50
-Slovakia - Fortuna Liga,Podbrezova,6,50.0%,50.0%,58
-Slovakia - Fortuna Liga,Zilina,5,80.0%,20.0%,36
-Slovakia - Fortuna Liga,Spartak Trnava,5,60.0%,40.0%,46
-Slovakia - Fortuna Liga,Trencin,3,33.3%,66.7%,46
-Slovakia - Fortuna Liga,DAC Streda,3,33.3%,66.7%,65
-Slovakia - Fortuna Liga,Skalica,2,0.0%,100.0%,60
-Slovakia - Fortuna Liga,Presov,2,50.0%,50.0%,42
-Slovakia - Fortuna Liga,Komarno,2,100.0%,0.0%,20
-Slovakia - Fortuna Liga,FC Kosice,1,0.0%,100.0%,62
+Slovakia - Fortuna Liga,,Scored,1st half,2nd half,Avg. minute
+Slovakia - Fortuna Liga,Zilina,9,66.7%,33.3%,39
+Slovakia - Fortuna Liga,Spartak Trnava,9,66.7%,33.3%,43
+Slovakia - Fortuna Liga,Z. Michalovce,8,37.5%,62.5%,54
+Slovakia - Fortuna Liga,S. Bratislava,8,75.0%,25.0%,46
+Slovakia - Fortuna Liga,Podbrezova,8,62.5%,37.5%,47
+Slovakia - Fortuna Liga,Skalica,7,14.3%,85.7%,59
+Slovakia - Fortuna Liga,DAC Streda,7,42.9%,57.1%,62
+Slovakia - Fortuna Liga,Trencin,6,33.3%,66.7%,50
+Slovakia - Fortuna Liga,Presov,4,25.0%,75.0%,58
+Slovakia - Fortuna Liga,Komarno,4,50.0%,50.0%,36
+Slovakia - Fortuna Liga,FC Kosice,4,25.0%,75.0%,50
+Slovakia - Fortuna Liga,Ruzomberok,2,50.0%,50.0%,54
+South Africa - Premier Division ,,Scored,1st half,2nd half,Avg. minute
+South Africa - Premier Division ,TS Galaxy,6,50.0%,50.0%,57
+South Africa - Premier Division ,Mamelodi S.,5,20.0%,80.0%,67
+South Africa - Premier Division ,Sekhukhune,5,20.0%,80.0%,58
+South Africa - Premier Division ,Durban City,4,25.0%,75.0%,51
+South Africa - Premier Division ,Kaizer Chiefs,4,25.0%,75.0%,60
+South Africa - Premier Division ,Marumo G.,4,50.0%,50.0%,57
+South Africa - Premier Division ,Orlando Pirates,3,66.7%,33.3%,29
 South Africa - Premier Division ,Siwelele,3,66.7%,33.3%,33
-South Africa - Premier Division ,Marumo G.,2,50.0%,50.0%,46
-South Africa - Premier Division ,Kaizer Chiefs,2,50.0%,50.0%,52
-South Africa - Premier Division ,Durban City,2,0.0%,100.0%,53
-South Africa - Premier Division ,Sekhukhune,1,0.0%,100.0%,48
-South Africa - Premier Division ,Richards Bay,1,0.0%,100.0%,55
-South Africa - Premier Division ,Mamelodi S.,1,100.0%,0.0%,32
-South Africa - Premier Division ,Golden Arrows,1,0.0%,100.0%,50
-South Africa - Premier Division ,Chippa Utd,1,0.0%,100.0%,65
-South Africa - Premier Division ,AmaZulu,1,100.0%,0.0%,23
-South Korea - K League 1,Jeonbuk,45,48.9%,51.1%,52
-South Korea - K League 1,Daejeon Citizen,35,40.0%,60.0%,53
-South Korea - K League 1,Gimcheon Sangmu,34,38.2%,61.8%,56
-South Korea - K League 1,Suwon City,33,42.4%,57.6%,56
-South Korea - K League 1,Ulsan,31,35.5%,64.5%,55
-South Korea - K League 1,Pohang Steelers,31,41.9%,58.1%,54
-South Korea - K League 1,Anyang,30,40.0%,60.0%,55
-South Korea - K League 1,Seoul,29,41.4%,58.6%,54
-South Korea - K League 1,Jeju Utd,27,29.6%,70.4%,57
-South Korea - K League 1,Daegu,26,34.6%,65.4%,58
-South Korea - K League 1,Gwangju,25,48.0%,52.0%,52
-South Korea - K League 1,Gangwon,24,33.3%,66.7%,61
-South Korea - K League 2,Suwon Bluewings,50,48.0%,52.0%,49
-South Korea - K League 2,Incheon Utd,46,41.3%,58.7%,54
-South Korea - K League 2,Bucheon FC,41,39.0%,61.0%,56
-South Korea - K League 2,Jeonnam,38,34.2%,65.8%,57
-South Korea - K League 2,Seoul E-Land,34,50.0%,50.0%,46
-South Korea - K League 2,Asan,33,45.5%,54.5%,50
-South Korea - K League 2,Busan IPark,30,50.0%,50.0%,50
-South Korea - K League 2,Gimpo,27,37.0%,63.0%,55
-South Korea - K League 2,Cheongju,26,50.0%,50.0%,49
+South Africa - Premier Division ,Golden Arrows,3,33.3%,66.7%,58
+South Africa - Premier Division ,Richards Bay,2,50.0%,50.0%,50
+South Africa - Premier Division ,AmaZulu,2,100.0%,0.0%,34
+South Africa - Premier Division ,Stellenbosch,2,50.0%,50.0%,32
+South Africa - Premier Division ,Chippa Utd,2,50.0%,50.0%,35
+South Africa - Premier Division ,Polokwane,1,100.0%,0.0%,18
+South Africa - Premier Division ,Magesi,1,100.0%,0.0%,27
+South Africa - Premier Division ,Orbit College,1,0.0%,100.0%,73
+South Korea - K League 1,,Scored,1st half,2nd half,Avg. minute
+South Korea - K League 1,Jeonbuk,49,49.0%,51.0%,52
+South Korea - K League 1,Gimcheon Sangmu,43,41.9%,58.1%,55
+South Korea - K League 1,Suwon City,39,41.0%,59.0%,55
+South Korea - K League 1,Daejeon Citizen,37,40.5%,59.5%,52
+South Korea - K League 1,Ulsan,35,37.1%,62.9%,55
+South Korea - K League 1,Pohang Steelers,35,48.6%,51.4%,50
+South Korea - K League 1,Seoul,34,50.0%,50.0%,50
+South Korea - K League 1,Anyang,33,39.4%,60.6%,56
+South Korea - K League 1,Jeju Utd,29,27.6%,72.4%,57
+South Korea - K League 1,Daegu,28,32.1%,67.9%,57
+South Korea - K League 1,Gwangju,27,48.1%,51.9%,51
+South Korea - K League 1,Gangwon,25,36.0%,64.0%,59
+South Korea - K League 2,,Scored,1st half,2nd half,Avg. minute
+South Korea - K League 2,Suwon Bluewings,52,46.2%,53.8%,50
+South Korea - K League 2,Incheon Utd,51,41.2%,58.8%,53
+South Korea - K League 2,Jeonnam,42,31.0%,69.0%,59
+South Korea - K League 2,Bucheon FC,42,38.1%,61.9%,56
+South Korea - K League 2,Seoul E-Land,36,47.2%,52.8%,48
+South Korea - K League 2,Asan,35,48.6%,51.4%,49
+South Korea - K League 2,Busan IPark,32,50.0%,50.0%,49
+South Korea - K League 2,Gimpo,31,35.5%,64.5%,55
+South Korea - K League 2,Cheongju,27,48.1%,51.9%,49
 South Korea - K League 2,Cheonan City,26,34.6%,65.4%,61
-South Korea - K League 2,Hwaseong,22,36.4%,63.6%,51
-South Korea - K League 2,Seongnam,21,47.6%,52.4%,51
-South Korea - K League 2,Gyeongnam,21,38.1%,61.9%,55
+South Korea - K League 2,Seongnam,25,52.0%,48.0%,49
+South Korea - K League 2,Hwaseong,24,37.5%,62.5%,53
+South Korea - K League 2,Gyeongnam,23,39.1%,60.9%,54
 South Korea - K League 2,Ansan Greeners,20,30.0%,70.0%,61
-Sweden - Allsvenskan,Mjallby,38,47.4%,52.6%,49
-Sweden - Allsvenskan,Hammarby,36,33.3%,66.7%,57
-Sweden - Allsvenskan,Elfsborg,35,40.0%,60.0%,53
-Sweden - Allsvenskan,Brommapojkarna,30,36.7%,63.3%,54
-Sweden - Allsvenskan,Norrkoping,29,51.7%,48.3%,44
-Sweden - Allsvenskan,Malmo FF,29,48.3%,51.7%,48
-Sweden - Allsvenskan,GAIS,29,44.8%,55.2%,47
-Sweden - Allsvenskan,IFK Goteborg,28,60.7%,39.3%,44
-Sweden - Allsvenskan,Hacken,26,30.8%,69.2%,62
-Sweden - Allsvenskan,AIK,24,37.5%,62.5%,57
-Sweden - Allsvenskan,Sirius,24,45.8%,54.2%,46
-Sweden - Allsvenskan,Djurgarden,22,63.6%,36.4%,39
-Sweden - Allsvenskan,Varnamo,19,26.3%,73.7%,55
-Sweden - Allsvenskan,Degerfors,18,27.8%,72.2%,57
-Sweden - Allsvenskan,Halmstad,15,60.0%,40.0%,44
-Sweden - Allsvenskan,Oster,14,35.7%,64.3%,56
-Sweden - Superettan,Orgryte,40,40.0%,60.0%,52
-Sweden - Superettan,Utsikten,30,43.3%,56.7%,56
-Sweden - Superettan,Kalmar,30,53.3%,46.7%,44
-Sweden - Superettan,Vasteras,29,55.2%,44.8%,47
-Sweden - Superettan,Brage,29,37.9%,62.1%,56
-Sweden - Superettan,Falkenberg,28,50.0%,50.0%,46
-Sweden - Superettan,Landskrona,28,25.0%,75.0%,58
-Sweden - Superettan,Varberg BoIS,27,51.9%,48.1%,44
+Spain - La Liga,,Scored,1st half,2nd half,Avg. minute
+Spain - La Liga,Villarreal,7,85.7%,14.3%,29
+Spain - La Liga,FC Barcelona,6,33.3%,66.7%,52
+Spain - La Liga,Athletic Bilbao,4,50.0%,50.0%,56
+Spain - La Liga,Real Madrid,4,25.0%,75.0%,65
+Spain - La Liga,Getafe,4,25.0%,75.0%,46
+Spain - La Liga,Espanyol,4,50.0%,50.0%,53
+Spain - La Liga,Levante,3,66.7%,33.3%,43
+Spain - La Liga,Sevilla FC,3,33.3%,66.7%,59
+Spain - La Liga,Real Sociedad,3,0.0%,100.0%,63
+Spain - La Liga,Rayo Vallecano,3,100.0%,0.0%,28
+Spain - La Liga,Real Betis,2,100.0%,0.0%,18
+Spain - La Liga,Atletico Madrid,2,100.0%,0.0%,22
+Spain - La Liga,Alaves,2,50.0%,50.0%,63
+Spain - La Liga,Elche,2,50.0%,50.0%,48
+Spain - La Liga,Celta Vigo,1,100.0%,0.0%,38
+Spain - La Liga,Mallorca,1,0.0%,100.0%,87
+Spain - La Liga,Osasuna,1,100.0%,0.0%,9
+Spain - La Liga,Valencia,1,0.0%,100.0%,57
+Spain - La Liga,Girona,1,0.0%,100.0%,57
+Spain - La Liga 2,,Scored,1st half,2nd half,Avg. minute
+Spain - La Liga 2,Racing,6,33.3%,66.7%,58
+Spain - La Liga 2,Albacete,6,16.7%,83.3%,54
+Spain - La Liga 2,Almeria,5,20.0%,80.0%,58
+Spain - La Liga 2,Burgos,5,60.0%,40.0%,44
+Spain - La Liga 2,FC Andorra,4,25.0%,75.0%,57
+Spain - La Liga 2,Las Palmas,4,50.0%,50.0%,42
+Spain - La Liga 2,Valladolid,4,75.0%,25.0%,40
+Spain - La Liga 2,Eibar,4,25.0%,75.0%,51
+Spain - La Liga 2,Sporting Gijon,3,66.7%,33.3%,34
+Spain - La Liga 2,Deportivo,3,33.3%,66.7%,61
+Spain - La Liga 2,Cadiz,2,50.0%,50.0%,45
+Spain - La Liga 2,Cordoba,2,50.0%,50.0%,54
+Spain - La Liga 2,Huesca,2,50.0%,50.0%,54
+Spain - La Liga 2,Leganes,2,50.0%,50.0%,48
+Spain - La Liga 2,Malaga,2,0.0%,100.0%,75
+Spain - La Liga 2,Leonesa,1,0.0%,100.0%,50
+Spain - La Liga 2,Castellon,1,100.0%,0.0%,45
+Spain - La Liga 2,Real Sociedad B,1,100.0%,0.0%,35
+Spain - La Liga 2,Real Zaragoza,1,0.0%,100.0%,78
+Spain - La Liga 2,Granada,1,0.0%,100.0%,54
+Sweden - Allsvenskan,,Scored,1st half,2nd half,Avg. minute
+Sweden - Allsvenskan,Mjallby,41,43.9%,56.1%,51
+Sweden - Allsvenskan,Hammarby,38,34.2%,65.8%,56
+Sweden - Allsvenskan,Elfsborg,37,37.8%,62.2%,54
+Sweden - Allsvenskan,Norrkoping,33,51.5%,48.5%,44
+Sweden - Allsvenskan,Malmo FF,33,51.5%,48.5%,46
+Sweden - Allsvenskan,Brommapojkarna,32,34.4%,65.6%,54
+Sweden - Allsvenskan,GAIS,31,45.2%,54.8%,47
+Sweden - Allsvenskan,Hacken,31,32.3%,67.7%,60
+Sweden - Allsvenskan,Sirius,31,38.7%,61.3%,48
+Sweden - Allsvenskan,IFK Goteborg,30,60.0%,40.0%,44
+Sweden - Allsvenskan,AIK,26,38.5%,61.5%,55
+Sweden - Allsvenskan,Djurgarden,24,66.7%,33.3%,39
+Sweden - Allsvenskan,Varnamo,23,30.4%,69.6%,53
+Sweden - Allsvenskan,Degerfors,20,30.0%,70.0%,56
+Sweden - Allsvenskan,Oster,17,35.3%,64.7%,59
+Sweden - Allsvenskan,Halmstad,17,58.8%,41.2%,47
+Sweden - Superettan,,Scored,1st half,2nd half,Avg. minute
+Sweden - Superettan,Orgryte,45,37.8%,62.2%,53
+Sweden - Superettan,Vasteras,35,51.4%,48.6%,48
+Sweden - Superettan,Brage,34,38.2%,61.8%,56
+Sweden - Superettan,Kalmar,33,54.5%,45.5%,44
+Sweden - Superettan,Falkenberg,32,50.0%,50.0%,46
+Sweden - Superettan,Utsikten,31,41.9%,58.1%,56
+Sweden - Superettan,Varberg BoIS,29,51.7%,48.3%,45
+Sweden - Superettan,Landskrona,29,27.6%,72.4%,56
 Sweden - Superettan,Helsingborg,27,44.4%,55.6%,49
-Sweden - Superettan,Oddevold,23,34.8%,65.2%,51
-Sweden - Superettan,Ostersunds,22,50.0%,50.0%,48
-Sweden - Superettan,GIF Sundsvall,22,31.8%,68.2%,60
+Sweden - Superettan,Oddevold,27,33.3%,66.7%,54
+Sweden - Superettan,GIF Sundsvall,25,32.0%,68.0%,59
+Sweden - Superettan,Ostersunds,24,45.8%,54.2%,51
 Sweden - Superettan,Sandviken,21,42.9%,57.1%,51
-Sweden - Superettan,Orebro,16,62.5%,37.5%,35
-Sweden - Superettan,Umea,15,40.0%,60.0%,57
-Sweden - Superettan,Trelleborg,11,45.5%,54.5%,48
-Sweden - Sodra,Ljungskile,48,50.0%,50.0%,50
-Sweden - Sodra,Norrby,31,32.3%,67.7%,55
-Sweden - Sodra,Angelholm,30,43.3%,56.7%,42
-Sweden - Sodra,Lund,29,37.9%,62.1%,55
-Sweden - Sodra,Trollhattan,27,40.7%,59.3%,52
-Sweden - Sodra,Torslanda,27,51.9%,48.1%,48
-Sweden - Sodra,Ariana,27,37.0%,63.0%,55
-Sweden - Sodra,Skovde AIK,26,26.9%,73.1%,60
-Sweden - Sodra,Husqvarna,25,32.0%,68.0%,56
-Sweden - Sodra,Hassleholms IF,23,56.5%,43.5%,48
-Sweden - Sodra,Jonkopings,22,40.9%,59.1%,53
-Sweden - Sodra,Olympic,20,45.0%,55.0%,50
-Sweden - Sodra,Rosengard,19,42.1%,57.9%,48
-Sweden - Sodra,IFK Skovde,17,52.9%,47.1%,51
-Sweden - Sodra,Eskilsminne,16,37.5%,62.5%,58
-Sweden - Sodra,Oskarshamns,14,50.0%,50.0%,53
+Sweden - Superettan,Orebro,19,63.2%,36.8%,36
+Sweden - Superettan,Umea,16,43.8%,56.3%,56
+Sweden - Superettan,Trelleborg,14,50.0%,50.0%,46
+Sweden - Sodra,,Scored,1st half,2nd half,Avg. minute
+Sweden - Sodra,Ljungskile,54,50.0%,50.0%,49
+Sweden - Sodra,Norrby,37,40.5%,59.5%,52
+Sweden - Sodra,Trollhattan,33,45.5%,54.5%,50
+Sweden - Sodra,Angelholm,31,45.2%,54.8%,43
+Sweden - Sodra,Lund,31,38.7%,61.3%,54
+Sweden - Sodra,Skovde AIK,29,27.6%,72.4%,59
+Sweden - Sodra,Hassleholms IF,29,55.2%,44.8%,47
+Sweden - Sodra,Ariana,29,37.9%,62.1%,54
+Sweden - Sodra,Torslanda,28,50.0%,50.0%,49
+Sweden - Sodra,Husqvarna,28,35.7%,64.3%,56
+Sweden - Sodra,Jonkopings,28,39.3%,60.7%,52
+Sweden - Sodra,Olympic,25,44.0%,56.0%,50
+Sweden - Sodra,Rosengard,23,47.8%,52.2%,48
+Sweden - Sodra,IFK Skovde,20,50.0%,50.0%,52
+Sweden - Sodra,Eskilsminne,19,42.1%,57.9%,56
+Sweden - Sodra,Oskarshamns,15,46.7%,53.3%,53
+Switzerland - Super League,,Scored,1st half,2nd half,Avg. minute
 Switzerland - Super League,St. Gallen,11,54.5%,45.5%,46
+Switzerland - Super League,Thun,10,40.0%,60.0%,49
 Switzerland - Super League,FC Basel,8,37.5%,62.5%,61
 Switzerland - Super League,Sion,7,28.6%,71.4%,64
-Switzerland - Super League,Thun,6,33.3%,66.7%,48
-Switzerland - Super League,Luzern,5,60.0%,40.0%,42
+Switzerland - Super League,Luzern,6,66.7%,33.3%,35
+Switzerland - Super League,Grasshopper,6,66.7%,33.3%,35
+Switzerland - Super League,Winterthur,5,20.0%,80.0%,66
 Switzerland - Super League,Lausanne Sport,5,20.0%,80.0%,69
 Switzerland - Super League,FC Zurich,5,40.0%,60.0%,50
 Switzerland - Super League,BSC Young Boys,5,80.0%,20.0%,30
 Switzerland - Super League,Lugano,4,75.0%,25.0%,37
-Switzerland - Super League,Grasshopper,4,75.0%,25.0%,34
-Switzerland - Super League,Winterthur,3,33.3%,66.7%,57
 Switzerland - Super League,Servette,3,66.7%,33.3%,46
-Switzerland - Challenge League,Yverdon,7,28.6%,71.4%,69
-Switzerland - Challenge League,Vaduz,6,50.0%,50.0%,43
-Switzerland - Challenge League,Neuchatel Xamax,6,33.3%,66.7%,48
-Switzerland - Challenge League,Lausanne Ouchy,5,80.0%,20.0%,29
-Switzerland - Challenge League,Aarau,5,60.0%,40.0%,56
-Switzerland - Challenge League,Wil,3,33.3%,66.7%,54
+Switzerland - Challenge League,,Scored,1st half,2nd half,Avg. minute
+Switzerland - Challenge League,Aarau,14,42.9%,57.1%,53
+Switzerland - Challenge League,Vaduz,13,46.2%,53.8%,46
+Switzerland - Challenge League,Yverdon,11,18.2%,81.8%,73
+Switzerland - Challenge League,Neuchatel Xamax,9,44.4%,55.6%,43
+Switzerland - Challenge League,Stade Nyonnais,7,28.6%,71.4%,52
+Switzerland - Challenge League,Lausanne Ouchy,7,57.1%,42.9%,41
+Switzerland - Challenge League,Rapperswil,5,40.0%,60.0%,52
+Switzerland - Challenge League,Wil,4,25.0%,75.0%,58
+Switzerland - Challenge League,Etoile Carouge,3,66.7%,33.3%,39
 Switzerland - Challenge League,Bellinzona,3,66.7%,33.3%,36
-Switzerland - Challenge League,Stade Nyonnais,2,50.0%,50.0%,52
-Switzerland - Challenge League,Rapperswil,1,0.0%,100.0%,61
-Switzerland - Challenge League,Etoile Carouge,1,100.0%,0.0%,21
-Turkey - Super Lig,Konyaspor,4,75.0%,25.0%,34
-Turkey - Super Lig,Goztepe,3,0.0%,100.0%,77
-Turkey - Super Lig,Galatasaray,3,100.0%,0.0%,24
-Turkey - Super Lig,Samsunspor,2,50.0%,50.0%,52
-Turkey - Super Lig,Antalyaspor,2,100.0%,0.0%,30
-Turkey - Super Lig,Trabzonspor,1,0.0%,100.0%,49
+Thailand - Thai League 1,,Scored,1st half,2nd half,Avg. minute
+Thailand - Thai League 1,Buriram Utd,8,25.0%,75.0%,59
+Thailand - Thai League 1,Bangkok Utd,6,33.3%,66.7%,64
+Thailand - Thai League 1,Pathum Utd,4,0.0%,100.0%,77
+Thailand - Thai League 1,Kanchanaburi,4,50.0%,50.0%,54
+Thailand - Thai League 1,Rayong,3,33.3%,66.7%,58
+Thailand - Thai League 1,Prachuap,3,33.3%,66.7%,40
+Thailand - Thai League 1,Port FC,3,100.0%,0.0%,17
+Thailand - Thai League 1,Muang Thong Utd,3,0.0%,100.0%,85
+Thailand - Thai League 1,Lamphun Warrior,3,100.0%,0.0%,33
+Thailand - Thai League 1,Chiangrai Utd,3,66.7%,33.3%,45
+Thailand - Thai League 1,Ayutthaya Utd,3,66.7%,33.3%,34
+Thailand - Thai League 1,Uthai Thani,2,0.0%,100.0%,72
+Thailand - Thai League 1,Ratchaburi,2,0.0%,100.0%,64
+Thailand - Thai League 1,N. Ratchasima,2,50.0%,50.0%,32
+Thailand - Thai League 1,Sukhothai,1,0.0%,100.0%,46
+Turkey - Super Lig,,Scored,1st half,2nd half,Avg. minute
+Turkey - Super Lig,Galatasaray,10,50.0%,50.0%,50
+Turkey - Super Lig,Konyaspor,7,57.1%,42.9%,41
+Turkey - Super Lig,Goztepe,5,20.0%,80.0%,67
+Turkey - Super Lig,Eyupspor,4,50.0%,50.0%,37
+Turkey - Super Lig,Samsunspor,3,33.3%,66.7%,62
+Turkey - Super Lig,Antalyaspor,3,66.7%,33.3%,47
+Turkey - Super Lig,Trabzonspor,3,33.3%,66.7%,54
+Turkey - Super Lig,Fenerbahce,3,33.3%,66.7%,41
+Turkey - Super Lig,Besiktas,2,50.0%,50.0%,54
+Turkey - Super Lig,Genclerbirligi,2,50.0%,50.0%,48
+Turkey - Super Lig,Gaziantep,2,50.0%,50.0%,67
+Turkey - Super Lig,Alanyaspor,1,0.0%,100.0%,67
 Turkey - Super Lig,Kasimpasa,1,100.0%,0.0%,31
-Turkey - Super Lig,Genclerbirligi,1,0.0%,100.0%,88
-Turkey - Super Lig,Eyupspor,1,0.0%,100.0%,51
-Ukraine - Premier League,Dynamo Kyiv,6,33.3%,66.7%,50
-Ukraine - Premier League,Shakhtar,4,50.0%,50.0%,48
-Ukraine - Premier League,Kudrivka,4,50.0%,50.0%,40
-Ukraine - Premier League,Rukh Lviv,3,33.3%,66.7%,62
-Ukraine - Premier League,Kryvbas KR,3,33.3%,66.7%,66
-Ukraine - Premier League,Kolos Kovalivka,3,33.3%,66.7%,44
-Ukraine - Premier League,Karpaty Lviv,3,33.3%,66.7%,61
-Ukraine - Premier League,Zorya Luhansk,2,50.0%,50.0%,39
-Ukraine - Premier League,SK Poltava,2,100.0%,0.0%,26
+Turkey - Super Lig,Kayserispor,1,0.0%,100.0%,68
+Turkey - Super Lig,Basaksehir,1,100.0%,0.0%,41
+Turkey - Super Lig,Kocaelispor,1,100.0%,0.0%,22
+Turkey - 1,,Scored,1st half,2nd half,Avg. minute
+Turkey - 1,Corum,7,57.1%,42.9%,56
+Turkey - 1,Erokspor,7,57.1%,42.9%,51
+Turkey - 1,Erzurum BB,7,57.1%,42.9%,39
+Turkey - 1,Amed SK,6,33.3%,66.7%,49
+Turkey - 1,Pendikspor,6,16.7%,83.3%,69
+Turkey - 1,Bandirmaspor,5,40.0%,60.0%,56
+Turkey - 1,Bodrumspor,5,60.0%,40.0%,42
+Turkey - 1,Boluspor,5,80.0%,20.0%,31
+Turkey - 1,Sakaryaspor,5,80.0%,20.0%,33
+Turkey - 1,Igdir,4,75.0%,25.0%,38
+Turkey - 1,Manisa BB,4,25.0%,75.0%,65
+Turkey - 1,Keciorengucu,4,25.0%,75.0%,62
+Turkey - 1,Van Spor,4,25.0%,75.0%,67
+Turkey - 1,Hatayspor,3,66.7%,33.3%,35
+Turkey - 1,Sariyer,3,33.3%,66.7%,66
+Turkey - 1,Sivasspor,3,0.0%,100.0%,74
+Turkey - 1,Umraniyespor,3,33.3%,66.7%,69
+Turkey - 1,Adana Demirspor,2,0.0%,100.0%,61
+Turkey - 1,Serik Belediyes,1,100.0%,0.0%,45
+Turkey - 1,Istanbulspor,1,100.0%,0.0%,16
+UAE - Pro League,,Scored,1st half,2nd half,Avg. minute
+UAE - Pro League,Al Ain,5,60.0%,40.0%,53
+UAE - Pro League,Khorfakkan,4,25.0%,75.0%,57
+UAE - Pro League,D. Al Fujairah,3,33.3%,66.7%,49
+UAE - Pro League,Al Wasl,3,66.7%,33.3%,45
+UAE - Pro League,Al Sharjah,3,33.3%,66.7%,65
+UAE - Pro League,Al Jazira,3,0.0%,100.0%,70
+UAE - Pro League,Al Dhafra,3,33.3%,66.7%,47
+UAE - Pro League,Al Bataeh,3,33.3%,66.7%,59
+UAE - Pro League,Shabab Al Ahli,2,100.0%,0.0%,19
+UAE - Pro League,Al Wahda,2,0.0%,100.0%,59
+UAE - Pro League,Al Nasr,2,0.0%,100.0%,64
+UAE - Pro League,Ittihad Kalba,1,0.0%,100.0%,89
+Ukraine - Premier League,,Scored,1st half,2nd half,Avg. minute
+Ukraine - Premier League,Dynamo Kyiv,10,40.0%,60.0%,50
+Ukraine - Premier League,Kudrivka,7,57.1%,42.9%,35
+Ukraine - Premier League,Shakhtar,6,50.0%,50.0%,50
+Ukraine - Premier League,Kryvbas KR,6,50.0%,50.0%,46
+Ukraine - Premier League,Zorya Luhansk,4,50.0%,50.0%,47
+Ukraine - Premier League,Rukh Lviv,4,25.0%,75.0%,62
+Ukraine - Premier League,Metalist 1925,4,0.0%,100.0%,76
+Ukraine - Premier League,Kolos Kovalivka,4,50.0%,50.0%,38
+Ukraine - Premier League,Karpaty Lviv,4,25.0%,75.0%,62
+Ukraine - Premier League,SK Poltava,3,66.7%,33.3%,47
+Ukraine - Premier League,Obolon,3,33.3%,66.7%,49
+Ukraine - Premier League,LNZ Cherkasy,3,66.7%,33.3%,47
 Ukraine - Premier League,Polessya,2,100.0%,0.0%,34
-Ukraine - Premier League,Oleksandria,1,100.0%,0.0%,26
-Ukraine - Premier League,Obolon,1,0.0%,100.0%,46
-Ukraine - Premier League,LNZ Cherkasy,1,100.0%,0.0%,22
-USA - MLS,Inter Miami,50,56.0%,44.0%,45
-USA - MLS,San Diego,50,44.0%,56.0%,55
-USA - MLS,Orlando City,50,50.0%,50.0%,48
-USA - MLS,SJ Earthquakes,49,42.9%,57.1%,54
-USA - MLS,Chicago Fire,47,55.3%,44.7%,46
-USA - MLS,Charlotte,44,36.4%,63.6%,52
-USA - MLS,Philadelphia,44,40.9%,59.1%,51
-USA - MLS,Nashville SC,43,46.5%,53.5%,49
-USA - MLS,Minnesota Utd,43,48.8%,51.2%,49
-USA - MLS,Vancouver,43,51.2%,48.8%,47
-USA - MLS,Seattle,43,46.5%,53.5%,50
-USA - MLS,New York RB,41,51.2%,48.8%,49
-USA - MLS,Columbus Crew,41,53.7%,46.3%,46
-USA - MLS,Los Angeles FC,41,46.3%,53.7%,53
-USA - MLS,Cincinnati,39,46.2%,53.8%,50
-USA - MLS,Dallas,37,40.5%,59.5%,53
-USA - MLS,Sporting KC,36,33.3%,66.7%,56
-USA - MLS,New York City,34,29.4%,70.6%,53
-USA - MLS,New England,33,48.5%,51.5%,50
-USA - MLS,Colorado Rapids,33,45.5%,54.5%,50
-USA - MLS,Portland,33,42.4%,57.6%,50
-USA - MLS,Houston Dynamo,32,40.6%,59.4%,57
-USA - MLS,Atlanta Utd,30,33.3%,66.7%,59
-USA - MLS,LA Galaxy,28,42.9%,57.1%,53
-USA - MLS,Real Salt Lake,27,63.0%,37.0%,40
-USA - MLS,St. Louis City,27,48.1%,51.9%,51
-USA - MLS,Toronto,26,34.6%,65.4%,54
-USA - MLS,CF Montreal,24,50.0%,50.0%,47
-USA - MLS,Austin,23,52.2%,47.8%,46
-USA - MLS,DC United,22,50.0%,50.0%,49
-USL Championship,Charleston,39,56.4%,43.6%,42
-USL Championship,Louisville City,38,47.4%,52.6%,48
-USL Championship,FC Tulsa,35,40.0%,60.0%,54
-USL Championship,El Paso,30,53.3%,46.7%,45
-USL Championship,Phoenix Rising,30,43.3%,56.7%,52
-USL Championship,Loudoun Utd,28,46.4%,53.6%,51
-USL Championship,North Carolina,28,53.6%,46.4%,52
-USL Championship,Indy Eleven,27,59.3%,40.7%,47
-USL Championship,Orange County,27,44.4%,55.6%,51
-USL Championship,Sacramento R.,26,38.5%,61.5%,56
+Ukraine - Premier League,Oleksandria,2,50.0%,50.0%,56
+Ukraine - Premier League,Episentr,1,100.0%,0.0%,38
+USA - MLS,,Scored,1st half,2nd half,Avg. minute
+USA - MLS,Inter Miami,54,53.7%,46.3%,47
+USA - MLS,Orlando City,54,48.1%,51.9%,49
+USA - MLS,SJ Earthquakes,52,42.3%,57.7%,54
+USA - MLS,San Diego,52,42.3%,57.7%,56
+USA - MLS,Chicago Fire,50,54.0%,46.0%,47
+USA - MLS,Nashville SC,49,51.0%,49.0%,47
+USA - MLS,Seattle,48,45.8%,54.2%,50
+USA - MLS,Philadelphia,48,39.6%,60.4%,52
+USA - MLS,Minnesota Utd,47,48.9%,51.1%,48
+USA - MLS,Vancouver,47,51.1%,48.9%,48
+USA - MLS,Charlotte,46,39.1%,60.9%,52
+USA - MLS,Los Angeles FC,44,45.5%,54.5%,53
+USA - MLS,Columbus Crew,43,53.5%,46.5%,46
+USA - MLS,New York RB,42,50.0%,50.0%,49
+USA - MLS,Cincinnati,42,50.0%,50.0%,48
+USA - MLS,Dallas,39,43.6%,56.4%,52
+USA - MLS,Sporting KC,39,35.9%,64.1%,55
+USA - MLS,New York City,37,29.7%,70.3%,53
+USA - MLS,Colorado Rapids,36,44.4%,55.6%,50
+USA - MLS,New England,35,51.4%,48.6%,49
+USA - MLS,Portland,35,42.9%,57.1%,50
+USA - MLS,Houston Dynamo,34,38.2%,61.8%,58
+USA - MLS,LA Galaxy,32,40.6%,59.4%,52
+USA - MLS,St. Louis City,31,45.2%,54.8%,51
+USA - MLS,Atlanta Utd,31,35.5%,64.5%,58
+USA - MLS,Real Salt Lake,28,64.3%,35.7%,39
+USA - MLS,CF Montreal,28,53.6%,46.4%,46
+USA - MLS,Toronto,27,33.3%,66.7%,54
+USA - MLS,Austin,26,50.0%,50.0%,47
+USA - MLS,DC United,24,54.2%,45.8%,47
+USL Championship,,Scored,1st half,2nd half,Avg. minute
+USL Championship,Charleston,45,55.6%,44.4%,42
+USL Championship,Louisville City,42,47.6%,52.4%,47
+USL Championship,FC Tulsa,37,43.2%,56.8%,53
+USL Championship,Phoenix Rising,35,45.7%,54.3%,50
+USL Championship,El Paso,33,54.5%,45.5%,45
+USL Championship,Indy Eleven,32,53.1%,46.9%,49
+USL Championship,Loudoun Utd,32,40.6%,59.4%,54
+USL Championship,North Carolina,31,54.8%,45.2%,51
+USL Championship,Hartford A.,29,51.7%,48.3%,46
+USL Championship,Sacramento R.,29,41.4%,58.6%,54
+USL Championship,Orange County,28,42.9%,57.1%,51
+USL Championship,New Mexico,26,42.3%,57.7%,53
 USL Championship,San Antonio,25,44.0%,56.0%,49
-USL Championship,Hartford A.,25,56.0%,44.0%,45
-USL Championship,New Mexico,24,41.7%,58.3%,54
-USL Championship,Colorado S.,24,50.0%,50.0%,50
-USL Championship,Birmingham L.,23,34.8%,65.2%,57
-USL Championship,Monterey Bay,21,33.3%,66.7%,51
-USL Championship,Tampa Bay,21,33.3%,66.7%,61
-USL Championship,Detroit City,21,52.4%,47.6%,47
-USL Championship,Lexington,20,50.0%,50.0%,47
-USL Championship,Oakland Roots,20,50.0%,50.0%,49
-USL Championship,Pittsburgh,18,38.9%,61.1%,53
-USL Championship,Miami FC,17,64.7%,35.3%,39
+USL Championship,Colorado S.,25,52.0%,48.0%,49
+USL Championship,Birmingham L.,24,37.5%,62.5%,56
+USL Championship,Oakland Roots,24,54.2%,45.8%,47
+USL Championship,Detroit City,24,54.2%,45.8%,46
+USL Championship,Lexington,23,47.8%,52.2%,48
+USL Championship,Monterey Bay,23,34.8%,65.2%,51
+USL Championship,Tampa Bay,22,31.8%,68.2%,61
+USL Championship,Miami FC,21,66.7%,33.3%,39
+USL Championship,Pittsburgh,20,40.0%,60.0%,51
+USL Championship,Las Vegas L.,17,29.4%,70.6%,58
 USL Championship,Rhode Island,15,66.7%,33.3%,47
-USL Championship,Las Vegas L.,14,28.6%,71.4%,58
-USA - USL League One,Charlotte I.,34,38.2%,61.8%,52
-USA - USL League One,Chattanooga RW,30,46.7%,53.3%,50
+USA - USL League One,,Scored,1st half,2nd half,Avg. minute
+USA - USL League One,Charlotte I.,36,38.9%,61.1%,52
+USA - USL League One,Chattanooga RW,33,48.5%,51.5%,50
+USA - USL League One,Alta,31,45.2%,54.8%,53
+USA - USL League One,Tormenta,29,58.6%,41.4%,43
+USA - USL League One,Greenville,29,44.8%,55.2%,53
+USA - USL League One,Westchester SC,28,64.3%,35.7%,38
+USA - USL League One,Union Omaha,28,46.4%,53.6%,51
+USA - USL League One,Texoma,28,46.4%,53.6%,53
+USA - USL League One,Richmond K.,28,60.7%,39.3%,42
 USA - USL League One,Naples,28,60.7%,39.3%,44
-USA - USL League One,Greenville,28,46.4%,53.6%,52
-USA - USL League One,Alta,27,48.1%,51.9%,52
-USA - USL League One,Westchester SC,26,61.5%,38.5%,38
-USA - USL League One,Tormenta,26,57.7%,42.3%,43
-USA - USL League One,Spokane V.,26,53.8%,46.2%,43
-USA - USL League One,Richmond K.,25,60.0%,40.0%,41
-USA - USL League One,Texoma,24,41.7%,58.3%,57
-USA - USL League One,One Knoxville,24,50.0%,50.0%,49
-USA - USL League One,Union Omaha,22,45.5%,54.5%,53
-USA - USL League One,Portland Hearts,18,38.9%,61.1%,56
+USA - USL League One,Spokane V.,27,55.6%,44.4%,43
+USA - USL League One,One Knoxville,25,48.0%,52.0%,50
+USA - USL League One,Portland Hearts,21,47.6%,52.4%,53
 USA - USL League One,Forward Madison,17,41.2%,58.8%,51
+Venezuela - Primera Division - Apertura,,Scored,1st half,2nd half,Avg. minute
 Venezuela - Primera Division - Apertura,D. La Guaira,20,50.0%,50.0%,51
 Venezuela - Primera Division - Apertura,D. Tachira,19,57.9%,42.1%,41
 Venezuela - Primera Division - Apertura,Monagas,17,41.2%,58.8%,52
